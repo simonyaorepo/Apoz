@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import { useState } from "react";
+import { Navigation } from "./components/Navigation";
+import { HomePage } from "./components/HomePage";
+import { AboutPage } from "./components/AboutPage";
+import { ProjectsPage } from "./components/ProjectsPage";
+import { NewsPage } from "./components/NewsPage";
+import { ContactPage } from "./components/ContactPage";
+import { Footer } from "./components/Footer";
+
+const PAGES = {
+  home: HomePage,
+  about: AboutPage,
+  projects: ProjectsPage,
+  news: NewsPage,
+  contact: ContactPage,
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [page, setPage] = useState<"home" | "about" | "projects" | "news" | "contact">("home");
+  const PageComponent = PAGES[page];
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navigation currentPage={page} onNavigate={p => setPage(p as typeof page)} />
+      <main style={{ marginTop: "5rem" }}>
+        <PageComponent onNavigate={p => setPage(p as typeof page)} />
+      </main>
+      <Footer onNavigate={p => setPage(p as typeof page)} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
