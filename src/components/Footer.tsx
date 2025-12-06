@@ -1,4 +1,5 @@
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Globe } from "lucide-react";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { Mail, Globe } from "lucide-react";
 import styled, { useTheme } from "styled-components";
 
 interface FooterProps {
@@ -212,10 +213,10 @@ export function Footer({ onNavigate }: FooterProps) {
             </LogoRow>
             <Description>{FOOTER_CONTENT.descriptionBlock}</Description>
             <SocialRow>
-              <SocialIcon href="#"><Facebook size={20} color={theme.colors.primary} /></SocialIcon>
-              <SocialIcon href="#"><Twitter size={20} color={theme.colors.primary} /></SocialIcon>
-              <SocialIcon href="#"><Linkedin size={20} color={theme.colors.primary} /></SocialIcon>
-              <SocialIcon href="#"><Instagram size={20} color={theme.colors.primary} /></SocialIcon>
+              <SocialIcon href="#"><FaFacebookF size={20} color={theme.colors.gold} /></SocialIcon>
+              <SocialIcon href="#"><FaTwitter size={20} color={theme.colors.gold} /></SocialIcon>
+              <SocialIcon href="#"><FaLinkedinIn size={20} color={theme.colors.gold} /></SocialIcon>
+              <SocialIcon href="#"><FaInstagram size={20} color={theme.colors.gold} /></SocialIcon>
             </SocialRow>
           </CompanyInfo>
           {/* Quick Links */}

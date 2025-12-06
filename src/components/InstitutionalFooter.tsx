@@ -1,4 +1,6 @@
-import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin } from "lucide-react";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { Mail, MapPin } from "lucide-react";
 import styled from "styled-components";
 
 interface InstitutionalFooterProps {
@@ -19,18 +21,39 @@ const FooterContainer = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 4rem;
+  align-items: start;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
 `;
 
-const Brand = styled.div``;
+const Brand = styled.div`
+  margin-top: 0.7rem;
+  @media (max-width: 600px) {
+    text-align: center;
+    margin-top: 0.3rem;
+    margin-bottom: 1.2rem;
+  }
+`;
 
 const LogoRow = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+  @media (max-width: 600px) {
+    justify-content: center;
+    gap: 0.7rem;
+  }
 `;
 
 const LogoIcon = styled.div`
@@ -65,35 +88,57 @@ const Description = styled.p`
 const SocialRow = styled.div`
   display: flex;
   gap: 1rem;
+  @media (max-width: 600px) {
+    justify-content: center;
+    gap: 0.7rem;
+  }
 `;
 
 const SocialIcon = styled.button`
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 999px;
-  border: 1px solid ${({ theme }) => theme.colors.goldAccent};
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 2px solid ${({ theme }) => theme.colors.goldAccent};
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) => theme.colors.grayAccent};
+  background: none;
+  box-shadow: none;
+  transition: border-color 0.2s, color 0.2s;
   & > svg {
     color: ${({ theme }) => theme.colors.gold};
+    fill: ${({ theme }) => theme.colors.gold};
+    width: 2.5rem;
+    height: 2.5rem;
   }
-  background: none;
-  transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
   &:hover {
+    border-color: ${({ theme }) => theme.colors.gold};
+  }
+  &:hover > svg {
     color: ${({ theme }) => theme.colors.goldAccent};
-    border-color: ${({ theme }) => theme.colors.goldAccent};
-    box-shadow: ${({ theme }) => theme.colors.boxShadowGoldGlow};
+    fill: ${({ theme }) => theme.colors.goldAccent};
+  }
+  @media (max-width: 600px) {
+    width: 2.2rem;
+    height: 2.2rem;
+    & > svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 `;
 
 const SectionTitle = styled.h3`
-  color: ${({ theme }) => theme.colors.foreground};
+  color: ${({ theme }) => theme.colors.white};
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   font-size: ${({ theme }) => theme.fontSizes.lg};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
   letter-spacing: 0.05em;
+  @media (max-width: 600px) {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
 `;
 
 const LinkList = styled.ul`
@@ -110,10 +155,21 @@ const LinkButton = styled.button`
   border: none;
   color: ${({ theme }) => theme.colors.muted};
   font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-weight: 400;
   cursor: pointer;
-  transition: color ${({ theme }) => theme.transition.button};
+  transition: color ${({ theme }) => theme.transition.button}, font-weight 0.2s;
   &:hover {
     color: ${({ theme }) => theme.colors.gold};
+    font-weight: 600;
+  }
+  &.active {
+    color: ${({ theme }) => theme.colors.gold};
+    font-weight: 600;
+  }
+  @media (max-width: 600px) {
+    text-align: center;
+    font-size: 0.97rem;
+    margin-bottom: 0.5rem;
   }
 `;
 
@@ -155,9 +211,19 @@ const LegalLinks = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.sm};
 `;
 
+// Add types for footer sections
+interface FooterLink {
+  label: string;
+  page?: string;
+}
+interface FooterSection {
+  title: string;
+  links?: FooterLink[];
+  items?: { icon: React.ElementType; text: string }[];
+}
 
 export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
-  const footerSections = [
+  const footerSections: FooterSection[] = [
     {
       title: "Navigation",
       links: [
@@ -166,15 +232,6 @@ export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
         { label: "Projects", page: "projects" },
         { label: "News", page: "news" },
         { label: "Contact", page: "contact" },
-      ],
-    },
-    {
-      title: "Projects",
-      links: [
-        { label: "Residential Communities" },
-        { label: "Commercial Zones" },
-        { label: "Industrial Parks" },
-        { label: "Free Trade Zone" },
       ],
     },
     {
@@ -205,28 +262,35 @@ export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
               Building sustainable communities and fostering economic growth through master-planned development in Greater Houston.
             </Description>
             <SocialRow>
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, index) => (
-                <SocialIcon key={index}>
-                  <Icon size={16} />
-                </SocialIcon>
-              ))}
+              <SocialIcon><FaFacebookF size={40} /></SocialIcon>
+              <SocialIcon><FaXTwitter size={40} /></SocialIcon>
+              <SocialIcon><FaLinkedinIn size={40} /></SocialIcon>
+              <SocialIcon><FaInstagram size={40} /></SocialIcon>
             </SocialRow>
           </Brand>
           {/* Footer Sections */}
           {footerSections.map((section, index) => (
-            <div key={index}>
+            <div
+              key={index}
+              style={{
+                gridColumn:
+                  footerSections.length === 2 && index === 0
+                    ? '3 / span 1'
+                    : undefined
+              }}
+            >
               <SectionTitle>{section.title}</SectionTitle>
               <LinkList>
-                {section.links?.map((link, linkIndex) => (
+                {section.links && section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    {"page" in link ? (
-                      <LinkButton onClick={() => onNavigate(link.page)}>{link.label}</LinkButton>
+                    {"page" in link && link.page ? (
+                      <LinkButton onClick={() => onNavigate(link.page!)}>{link.label}</LinkButton>
                     ) : (
                       <LinkButton>{link.label}</LinkButton>
                     )}
                   </li>
                 ))}
-                {section.items?.map((item, itemIndex) => {
+                {section.items && section.items.map((item, itemIndex) => {
                   const Icon = item.icon;
                   return (
                     <ItemRow key={itemIndex}>
