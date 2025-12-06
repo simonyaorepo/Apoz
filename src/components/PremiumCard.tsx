@@ -1,19 +1,9 @@
-import type { ReactNode } from "react";
 import styled from "styled-components";
 import { SkytowerArrow } from "./SkytowerArrow";
 
-interface PremiumCardProps {
-  image: string;
-  title: string;
-  subtitle?: string;
-  meta?: string;
-  onClick?: () => void;
-  children?: ReactNode;
-}
-
 const Card = styled.div`
   cursor: pointer;
-  border-radius: 14px;
+  border-radius: ${({ theme }) => theme.radii.lg};
   overflow: hidden;
   background: ${({ theme }) => theme.colors.card};
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
@@ -50,21 +40,21 @@ const GradientOverlay = styled.div`
 `;
 
 const Meta = styled.div`
-  color: #C9A24D;
-  font-size: 13px;
+  color: ${({ theme }) => theme.colors.gold};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 0.5rem;
 `;
 
 const CardTitle = styled.h3`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   margin-bottom: 0.5rem;
   line-height: 1.2;
 `;
 
 const CardSubtitle = styled.p`
-  color: rgba(255,255,255,0.8);
+  color: ${({ theme }) => theme.colors.white}CC;
   font-size: 0.95rem;
 `;
 
@@ -74,7 +64,19 @@ const ArrowBox = styled.div`
   right: 1.5rem;
 `;
 
+// Removed duplicate interface and function implementation
+
+interface PremiumCardProps {
+  image: string;
+  title: string;
+  subtitle?: string;
+  meta?: string;
+  onClick?: () => void;
+  children?: React.ReactNode;
+}
+
 export function PremiumCard({ image, title, subtitle, meta, onClick, children }: PremiumCardProps) {
+  // ...existing code...
   return (
     <Card onClick={onClick}>
       <ImageBox>
@@ -92,3 +94,5 @@ export function PremiumCard({ image, title, subtitle, meta, onClick, children }:
     </Card>
   );
 }
+
+

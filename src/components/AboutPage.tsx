@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { CheckCircle2, Target, Eye, Award } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import { lightTheme, breakpoints } from "../theme";
+// No direct theme import; all theme usage is via styled-components
 
 // ============================================
 // ABOUT PAGE CONTENT BLOCKS
@@ -81,43 +81,56 @@ const LEADERSHIP_SECTION = {
 // Styled Components
 // =====================
 interface SectionProps {
-  bg?: string;
-  dark?: boolean;
+  variant?: 'hero' | 'default' | 'muted' | 'dark';
 }
 const Section = styled.section<SectionProps>`
   position: relative;
-  padding: 6rem 0;
-  background: ${({ bg, theme }) => bg || theme.colors.background};
-  color: ${({ dark, theme }) => (dark ? theme.colors.foreground : "inherit")};
-  @media (max-width: ${breakpoints.md}) {
-    padding: 3rem 0;
+  padding: ${({ theme }) => theme.spacing.section} 0;
+  background: ${({ variant, theme }) =>
+    variant === 'hero' ? theme.gradients.hero :
+    variant === 'muted' ? theme.colors.muted :
+    variant === 'dark' ? theme.colors.darkBlue :
+    theme.colors.background};
+  color: ${({ variant, theme }) =>
+    variant === 'hero' ? theme.colors.white :
+    variant === 'dark' ? theme.colors.white :
+    'inherit'};
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: ${({ theme }) => theme.spacing.lg} 0;
   }
 `;
 
 const Container = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
-  @media (min-width: ${breakpoints.sm}) {
-    padding: 0 1.5rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: 0 ${({ theme }) => theme.spacing.md};
   }
-  @media (min-width: ${breakpoints.lg}) {
-    padding: 0 2rem;
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding: 0 ${({ theme }) => theme.spacing.lg};
   }
+`;
+
+const Centered = styled.div`
+  text-align: center;
 `;
 
 const HeroTag = styled.div`
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: ${({ theme }) => theme.spacing.pill};
   background: ${({ theme }) => theme.colors.accent};
   backdrop-filter: blur(4px);
-  border-radius: 999px;
+  border-radius: ${({ theme }) => theme.radii.full};
   border: 1px solid ${({ theme }) => theme.colors.accent};
   margin-bottom: 2rem;
+  span {
+    color: ${({ theme }) => theme.colors.accent};
+  }
 `;
 
 const HeroTitle = styled.h1`
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.white};
   margin-bottom: 1.5rem;
   font-size: ${({ theme }) => theme.fontSizes["2xl"]};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
@@ -126,13 +139,10 @@ const HeroTitle = styled.h1`
   margin-right: auto;
 `;
 
-interface DividerProps {
-  color?: string;
-}
-const Divider = styled.div<DividerProps>`
+const Divider = styled.div`
   width: 4rem;
   height: 0.25rem;
-  background: ${({ color, theme }) => color || theme.colors.accent};
+  background: ${({ theme }) => theme.colors.gold};
   margin: 0 auto 2rem auto;
   border-radius: 2px;
 `;
@@ -153,7 +163,7 @@ const Grid = styled.div<GridProps>`
   gap: 3rem;
   align-items: center;
   grid-template-columns: 1fr;
-  @media (min-width: ${breakpoints.lg}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: ${({ cols }) =>
       cols === 2 ? "1fr 1fr" : "1fr"};
   }
@@ -192,127 +202,238 @@ const LeadershipCard = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.sidebarBorder};
 `;
 
+const SectionHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.md};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
+`;
+
+const IconContainer = styled.div`
+  width: ${({ theme }) => theme.spacing.xxl};
+  height: ${({ theme }) => theme.spacing.xxl};
+  background: ${({ theme }) => theme.gradients.hero};
+  border-radius: ${({ theme }) => theme.radii.card};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    width: ${({ theme }) => theme.spacing.xl};
+    height: ${({ theme }) => theme.spacing.xl};
+    color: ${({ theme }) => theme.colors.gold};
+  }
+`;
+
+const TagPill = styled.div`
+  display: inline-block;
+  padding: ${({ theme }) => theme.spacing.pill};
+  background: ${({ theme }) => theme.colors.gold};
+  opacity: ${({ theme }) => theme.opacity.low};
+  border-radius: ${({ theme }) => theme.radii.full};
+  span {
+    color: ${({ theme }) => theme.colors.gold};
+    letter-spacing: ${({ theme }) => theme.letterSpacing.wide};
+  }
+`;
+
+const SectionTitle = styled.h2`
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
+`;
+
+const SectionParagraph = styled.p`
+  color: ${({ theme }) => theme.colors.mutedForeground};
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  line-height: 1.7;
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
+`;
+
+const SectionParagraphMuted = styled.p`
+  color: ${({ theme }) => theme.colors.muted};
+  line-height: 1.7;
+`;
+
+const ImageWrapper = styled.div`
+  aspect-ratio: ${({ theme }) => theme.aspect.fourThree};
+  border-radius: ${({ theme }) => theme.radii.card};
+  overflow: hidden;
+`;
+
+const ImageAccent = styled.div<{ position?: "left" | "right"; variant?: 'gold' | 'darkBlue' }>`
+  position: absolute;
+  bottom: -${({ theme }) => theme.spacing.xxl};
+  ${({ position, theme }) => position === "left" ? `left: -${theme.spacing.xxl};` : `right: -${theme.spacing.xxl};`}
+  width: ${({ theme }) => theme.spacing.xxxl};
+  height: ${({ theme }) => theme.spacing.xxxl};
+  background: ${({ variant, theme }) =>
+    variant === 'darkBlue' ? theme.colors.darkBlue : theme.colors.gold};
+  opacity: ${({ variant, theme }) =>
+    variant === 'darkBlue' ? theme.opacity.med : theme.opacity.low};
+  border-radius: ${({ theme }) => theme.radii.card};
+  z-index: -1;
+`;
+
 // =====================
 // AboutPage Component
 // =====================
+
+// Helper styled-components for layout previously handled by inline styles
+const RelativeDiv = styled.div`
+  position: relative;
+`;
+const OrderedDiv = styled.div<{ order?: number }>`
+  order: ${({ order }) => order};
+`;
+const CenteredMargin = styled(Centered)`
+  margin-bottom: ${({ theme }) => theme.spacing.xxxl};
+`;
+const SectionHeaderCentered = styled(SectionHeader)`
+  justify-content: center;
+`;
+const SectionTitleWithMargin = styled(SectionTitle)`
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+`;
+const SectionParagraphMutedMax = styled(SectionParagraphMuted)`
+  max-width: ${({ theme }) => theme.spacing.xxxl};
+  margin: 0 auto;
+`;
+const GridMax = styled(Grid)`
+  max-width: ${({ theme }) => theme.spacing.xxxl};
+  margin: 0 auto;
+`;
+const ContainerMax = styled(Container)`
+  max-width: ${({ theme }) => theme.spacing.xxxl};
+`;
+const CenteredXXL = styled(Centered)`
+  margin-bottom: ${({ theme }) => theme.spacing.xxl};
+`;
+const SectionTitleWhite = styled(SectionTitle)`
+  color: ${({ theme }) => theme.colors.white};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+`;
+
 export function AboutPage() {
   return (
     <div>
       {/* Hero Section */}
-      <Section bg="linear-gradient(135deg, #0A1628 0%, #1a2942 100%)" dark>
-        <Container style={{ textAlign: "center" }}>
-          <HeroTag>
-            <span style={{ color: lightTheme.colors.accent }}>{ABOUT_HERO.tag}</span>
-          </HeroTag>
-          <HeroTitle style={{ color: "#fff" }}>{ABOUT_HERO.heroBlock}</HeroTitle>
-          <Divider color="#D4AF37" />
-          <HeroParagraph>{ABOUT_HERO.paragraphBlock1}</HeroParagraph>
-          <HeroParagraph>{ABOUT_HERO.paragraphBlock2}</HeroParagraph>
+      <Section variant="hero">
+        <Container>
+          <Centered>
+            <HeroTag>
+              <span>{ABOUT_HERO.tag}</span>
+            </HeroTag>
+            <HeroTitle>{ABOUT_HERO.heroBlock}</HeroTitle>
+            <Divider />
+            <HeroParagraph>{ABOUT_HERO.paragraphBlock1}</HeroParagraph>
+            <HeroParagraph>{ABOUT_HERO.paragraphBlock2}</HeroParagraph>
+          </Centered>
         </Container>
       </Section>
 
       {/* Mission Section */}
-      <Section bg={lightTheme.colors.background}>
+      <Section variant="default">
         <Container>
           <Grid cols={2}>
-            <div style={{ position: "relative" }}>
-              <div style={{ aspectRatio: "4/3", borderRadius: lightTheme.borderRadius, overflow: "hidden" }}>
+            <RelativeDiv>
+              <ImageWrapper>
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBoYW5kc2hha2UlMjBidXNpbmVzc3xlbnwxfHx8fDE3NjQ2NTg4MDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                   alt="Mission"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
-              </div>
-              <div style={{ position: "absolute", bottom: "-2rem", left: "-2rem", width: "16rem", height: "16rem", background: "#D4AF37", opacity: 0.1, borderRadius: lightTheme.borderRadius, zIndex: -1 }}></div>
-            </div>
+              </ImageWrapper>
+              <ImageAccent position="left" variant="gold" />
+            </RelativeDiv>
             <div>
-              <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
-                <div style={{ width: "3rem", height: "3rem", background: "linear-gradient(135deg, #0A1628 0%, #1a2942 100%)", borderRadius: lightTheme.borderRadius, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Target style={{ width: "1.5rem", height: "1.5rem", color: "#D4AF37" }} />
-                </div>
-                <div style={{ display: "inline-block", padding: "0.5rem 1rem", background: "#D4AF37", opacity: 0.1, borderRadius: "999px" }}>
-                  <span style={{ color: "#D4AF37", letterSpacing: "0.05em" }}>{MISSION_SECTION.tag}</span>
-                </div>
-              </div>
-              <h2 style={{ color: lightTheme.colors.primary, marginBottom: "1.5rem" }}>{MISSION_SECTION.titleBlock}</h2>
-              <p style={{ color: lightTheme.colors.mutedForeground, fontSize: lightTheme.fontSizes.lg, lineHeight: 1.7, marginBottom: "1.5rem" }}>{MISSION_SECTION.missionBlock1}</p>
-              <p style={{ color: lightTheme.colors.mutedForeground, fontSize: lightTheme.fontSizes.lg, lineHeight: 1.7, marginBottom: "1.5rem" }}>{MISSION_SECTION.missionBlock2}</p>
-              <p style={{ color: lightTheme.colors.muted, lineHeight: 1.7 }}>{MISSION_SECTION.missionBlock3}</p>
+              <SectionHeader>
+                <IconContainer>
+                  <Target />
+                </IconContainer>
+                <TagPill>
+                  <span>{MISSION_SECTION.tag}</span>
+                </TagPill>
+              </SectionHeader>
+              <SectionTitle>{MISSION_SECTION.titleBlock}</SectionTitle>
+              <SectionParagraph>{MISSION_SECTION.missionBlock1}</SectionParagraph>
+              <SectionParagraph>{MISSION_SECTION.missionBlock2}</SectionParagraph>
+              <SectionParagraphMuted>{MISSION_SECTION.missionBlock3}</SectionParagraphMuted>
             </div>
           </Grid>
         </Container>
       </Section>
 
       {/* Vision Section */}
-      <Section bg={lightTheme.colors.muted}>
+      <Section variant="muted">
         <Container>
           <Grid cols={2}>
-            <div style={{ order: 2, position: "relative" }}>
-              <div style={{ aspectRatio: "4/3", borderRadius: lightTheme.borderRadius, overflow: "hidden" }}>
+            <OrderedDiv order={2} style={{ position: "relative" }}>
+              <ImageWrapper>
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1695067438561-75492f7b6a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjQ2MDkxMDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                   alt="Vision"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
-              </div>
-              <div style={{ position: "absolute", bottom: "-2rem", right: "-2rem", width: "16rem", height: "16rem", background: "#0A1628", opacity: 0.05, borderRadius: lightTheme.borderRadius, zIndex: -1 }}></div>
-            </div>
-            <div style={{ order: 1 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
-                <div style={{ width: "3rem", height: "3rem", background: "linear-gradient(135deg, #0A1628 0%, #1a2942 100%)", borderRadius: lightTheme.borderRadius, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Eye style={{ width: "1.5rem", height: "1.5rem", color: "#D4AF37" }} />
-                </div>
-                <div style={{ display: "inline-block", padding: "0.5rem 1rem", background: "#D4AF37", opacity: 0.1, borderRadius: "999px" }}>
-                  <span style={{ color: "#D4AF37", letterSpacing: "0.05em" }}>{VISION_SECTION.tag}</span>
-                </div>
-              </div>
-              <h2 style={{ color: lightTheme.colors.primary, marginBottom: "1.5rem" }}>{VISION_SECTION.titleBlock}</h2>
-              <p style={{ color: lightTheme.colors.mutedForeground, fontSize: lightTheme.fontSizes.lg, lineHeight: 1.7, marginBottom: "1.5rem" }}>{VISION_SECTION.visionBlock1}</p>
-              <p style={{ color: lightTheme.colors.muted, lineHeight: 1.7 }}>{VISION_SECTION.visionBlock2}</p>
-            </div>
+              </ImageWrapper>
+              <ImageAccent position="right" variant="darkBlue" />
+            </OrderedDiv>
+            <OrderedDiv order={1}>
+              <SectionHeader>
+                <IconContainer>
+                  <Eye />
+                </IconContainer>
+                <TagPill>
+                  <span>{VISION_SECTION.tag}</span>
+                </TagPill>
+              </SectionHeader>
+              <SectionTitle>{VISION_SECTION.titleBlock}</SectionTitle>
+              <SectionParagraph>{VISION_SECTION.visionBlock1}</SectionParagraph>
+              <SectionParagraphMuted>{VISION_SECTION.visionBlock2}</SectionParagraphMuted>
+            </OrderedDiv>
           </Grid>
         </Container>
       </Section>
 
       {/* Core Features */}
-      <Section bg={lightTheme.colors.background}>
+      <Section variant="default">
         <Container>
-          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginBottom: "1.5rem" }}>
-              <div style={{ width: "3rem", height: "3rem", background: "linear-gradient(135deg, #0A1628 0%, #1a2942 100%)", borderRadius: lightTheme.borderRadius, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Award style={{ width: "1.5rem", height: "1.5rem", color: "#D4AF37" }} />
-              </div>
-            </div>
-            <h2 style={{ color: lightTheme.colors.primary, marginBottom: "1rem" }}>{CORE_FEATURES.titleBlock}</h2>
-            <Divider color="#D4AF37" />
-            <p style={{ color: lightTheme.colors.muted, maxWidth: "32rem", margin: "0 auto" }}>{CORE_FEATURES.descriptionBlock}</p>
-          </div>
-          <Grid cols={2} style={{ maxWidth: "64rem", margin: "0 auto" }}>
+          <CenteredMargin>
+            <SectionHeaderCentered>
+              <IconContainer>
+                <Award />
+              </IconContainer>
+            </SectionHeaderCentered>
+            <SectionTitleWithMargin>{CORE_FEATURES.titleBlock}</SectionTitleWithMargin>
+            <Divider />
+            <SectionParagraphMutedMax>{CORE_FEATURES.descriptionBlock}</SectionParagraphMutedMax>
+          </CenteredMargin>
+          <GridMax cols={2}>
             {CORE_FEATURES.features.map((feature, index) => (
               <FeatureCard key={index}>
-                <CheckCircle2 style={{ width: "1.5rem", height: "1.5rem", color: "#D4AF37", flexShrink: 0, marginTop: "0.25rem" }} />
+                <IconContainer>
+                  <CheckCircle2 />
+                </IconContainer>
                 <div>
                   <FeatureTitle>{feature.titleBlock}</FeatureTitle>
                   <FeatureDesc>{feature.descriptionBlock}</FeatureDesc>
                 </div>
               </FeatureCard>
             ))}
-          </Grid>
+          </GridMax>
         </Container>
       </Section>
 
       {/* Leadership Section */}
-      <Section bg="#0A1628" dark>
-        <Container style={{ maxWidth: "48rem" }}>
-          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <h2 style={{ color: "#fff", marginBottom: "1rem" }}>{LEADERSHIP_SECTION.titleBlock}</h2>
-            <Divider color="#D4AF37" />
-          </div>
+      <Section variant="dark">
+        <ContainerMax>
+          <CenteredXXL>
+            <SectionTitleWhite>{LEADERSHIP_SECTION.titleBlock}</SectionTitleWhite>
+            <Divider />
+          </CenteredXXL>
           <LeadershipCard>
-            <p style={{ color: lightTheme.colors.mutedForeground, fontSize: lightTheme.fontSizes.lg, lineHeight: 1.7, marginBottom: "1.5rem" }}>{LEADERSHIP_SECTION.paragraphBlock1}</p>
-            <p style={{ color: lightTheme.colors.mutedForeground, lineHeight: 1.7 }}>{LEADERSHIP_SECTION.paragraphBlock2}</p>
+            <SectionParagraph>{LEADERSHIP_SECTION.paragraphBlock1}</SectionParagraph>
+            <SectionParagraphMuted>{LEADERSHIP_SECTION.paragraphBlock2}</SectionParagraphMuted>
           </LeadershipCard>
-        </Container>
+        </ContainerMax>
       </Section>
     </div>
   );

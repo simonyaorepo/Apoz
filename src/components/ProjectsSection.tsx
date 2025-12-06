@@ -3,6 +3,23 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { Button } from "./ui/button";
 import styled from "styled-components";
 
+// Icon styled-components
+const CalendarIcon = styled(Calendar)`
+  width: 20px;
+  height: 20px;
+  color: ${({ theme }) => theme.colors.primary};
+`;
+
+const ArrowRightIcon = styled(ArrowRight)`
+  width: 20px;
+  height: 20px;
+  color: ${({ theme }) => theme.colors.primary};
+`;
+
+const ArrowRightIconSpaced = styled(ArrowRightIcon)`
+  margin-left: ${({ theme }) => theme.spacing.xs};
+`;
+
 const timeline = [
   {
     period: "Q2 2025",
@@ -60,31 +77,31 @@ interface ProjectsSectionProps {
 }
 
 const Section = styled.section`
-  background: #fff;
-  padding: 5rem 0;
+  background: ${({ theme }) => theme.colors.background};
+  padding: ${({ theme }) => theme.spacing.lg} 0;
 `;
 
 const Container = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
 `;
 
 const Header = styled.div`
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 `;
 
 const Tag = styled.div`
   color: ${({ theme }) => theme.colors.accentForeground};
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
 `;
 
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   font-size: ${({ theme }) => theme.fontSizes["2xl"]};
   font-weight: 600;
 `;
@@ -109,10 +126,10 @@ const TimelineGrid = styled.div`
 
 const TimelineCard = styled.div<{ status: string }>`
   position: relative;
-  background: linear-gradient(135deg, #e3f2fd 0%, #fff 100%);
-  padding: 2rem;
+  background: ${({ theme }) => theme.gradients.feature};
+  padding: ${({ theme }) => theme.spacing.lg};
   border-radius: ${({ theme }) => theme.radii.xl};
-  border: 2px solid #90caf9;
+  border: 2px solid ${({ theme }) => theme.colors.grayBorder};
 `;
 
 const TimelineMeta = styled.div`
@@ -123,16 +140,16 @@ const TimelineMeta = styled.div`
 `;
 
 const TimelinePeriod = styled.span`
-  color: #1976d2;
+  color: ${({ theme }) => theme.colors.primary};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
 `;
 
 const TimelineStatus = styled.span<{ status: string }>`
   margin-left: auto;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
+  padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
+  border-radius: ${({ theme }) => theme.radii.full};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   background: ${({ status }) =>
     status === "In Progress"
@@ -173,13 +190,13 @@ const PhasesGrid = styled.div`
 `;
 
 const PhaseCard = styled.div`
-  background: #fff;
+  background: ${({ theme }) => theme.colors.card};
   border-radius: ${({ theme }) => theme.radii.xl};
   overflow: hidden;
   border: 1px solid ${({ theme }) => theme.colors.border};
   transition: box-shadow 0.2s, border-color 0.2s;
   &:hover {
-    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    box-shadow: ${({ theme }) => theme.colors.boxShadow};
     border-color: ${({ theme }) => theme.colors.accent};
   }
 `;
@@ -211,17 +228,17 @@ const PhaseMetaRow = styled.div`
 `;
 
 const PhaseMeta = styled.span`
-  color: #1976d2;
+  color: ${({ theme }) => theme.colors.primary};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
 `;
 
 const PhaseStatus = styled.span`
-  padding: 0.25rem 0.75rem;
+  padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
   background: #f5f5f5;
   color: #616161;
-  border-radius: 999px;
-  font-size: 0.85rem;
+  border-radius: ${({ theme }) => theme.radii.full};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;
 
@@ -236,41 +253,41 @@ const PhaseDesc = styled.p`
 `;
 
 const LearnMoreBtn = styled.button`
-  color: #1976d2;
+  color: ${({ theme }) => theme.colors.primary};
   background: none;
   border: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
+  gap: ${({ theme }) => theme.spacing.xs};
+  font-size: ${({ theme }) => theme.fontSizes.md};
   cursor: pointer;
   transition: color 0.2s;
   &:hover {
-    color: #1565c0;
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
 const PartnershipCTA = styled.div`
-  background: linear-gradient(90deg, #1976d2 0%, #1565c0 100%);
-  color: #fff;
-  border-radius: 2rem;
-  padding: 2rem;
+  background: ${({ theme }) => theme.gradients.hero};
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: ${({ theme }) => theme.radii.xl};
+  padding: ${({ theme }) => theme.spacing.lg};
   text-align: center;
-  margin-top: 2rem;
+  margin-top: ${({ theme }) => theme.spacing.lg};
   @media (min-width: 768px) {
-    padding: 3rem;
+    padding: ${({ theme }) => theme.spacing.xl};
   }
 `;
 
 const PartnershipTitle = styled.h3`
-  color: #fff;
-  margin-bottom: 1rem;
+  color: ${({ theme }) => theme.colors.white};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 
 const PartnershipDesc = styled.p`
-  color: #bbdefb;
+  color: ${({ theme }) => theme.colors.mutedForeground};
   max-width: 48rem;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto ${({ theme }) => theme.spacing.xl} auto;
 `;
 
 export function ProjectsSection({ onNavigate }: ProjectsSectionProps) {
@@ -288,7 +305,7 @@ export function ProjectsSection({ onNavigate }: ProjectsSectionProps) {
           {timeline.map((item, index) => (
             <TimelineCard key={index} status={item.status}>
               <TimelineMeta>
-                <Calendar size={20} color="#1976d2" />
+                <CalendarIcon />
                 <TimelinePeriod>{item.period}</TimelinePeriod>
                 <TimelineStatus status={item.status}>{item.status}</TimelineStatus>
               </TimelineMeta>
@@ -315,7 +332,7 @@ export function ProjectsSection({ onNavigate }: ProjectsSectionProps) {
                 <PhaseDesc>{project.description}</PhaseDesc>
                 <LearnMoreBtn>
                   Learn More
-                  <ArrowRight size={16} />
+                  <ArrowRightIcon />
                 </LearnMoreBtn>
               </PhaseContent>
             </PhaseCard>
@@ -328,10 +345,11 @@ export function ProjectsSection({ onNavigate }: ProjectsSectionProps) {
           </PartnershipDesc>
           <Button onClick={() => onNavigate("contact")}> 
             Get Involved
-            <ArrowRight style={{ marginLeft: "0.5rem" }} size={20} />
+            <ArrowRightIconSpaced />
           </Button>
         </PartnershipCTA>
       </Container>
     </Section>
   );
 }
+

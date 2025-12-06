@@ -1,7 +1,7 @@
 import { Building2, Globe2, Home, Leaf, Users, TrendingUp, Calendar, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -12,12 +12,12 @@ const HERO_CONTENT = {
   textBlock1: "Shaping the Future of Global Trade & Community Living",
   textBlock2: "A master-planned economic zone integrating industrial, commercial, and affordable residential development in Southeast Texas.",
   button1: "Explore Projects",
-  button2: "Learn More",
+    button2: "Learn More"
 };
 
 const INTRO_CONTENT = {
   textBlock3: "The Asia Pacific Opportunity Zone (APOZ) is more than just a development — it's a blueprint for sustainable economic growth and inclusive community building in Greater Houston.",
-  textBlock4: "Strategically planned by ASC Global Inc., APOZ integrates residential, industrial, and commercial zones into a single, forward-looking ecosystem.",
+  textBlock4: "Strategically planned by ASC Global Inc., APOZ integrates residential, industrial, and commercial zones into a single, forward-looking ecosystem."
 };
 
 const VALUE_GRID = {
@@ -28,21 +28,21 @@ const VALUE_GRID = {
     { block1: "Affordable Living", block2: "High-quality homes starting at $188,000 to support working families and first-time buyers." },
     { block1: "Sustainability Focus", block2: "Thoughtfully planned green spaces and long-term environmental resilience." },
     { block1: "Strategic Partnerships", block2: "Developed in collaboration with the International Trade Center and local leadership." },
-    { block1: "Investment-Ready", block2: "Multiple development phases underway, with active interest from U.S. and Asia-Pacific investors." },
-  ],
+    { block1: "Investment-Ready", block2: "Multiple development phases underway, with active interest from U.S. and Asia-Pacific investors." }
+  ]
 };
 
 const MISSION_CONTENT = {
   tag: "Our Mission",
   titleBlock: "Our Mission",
   paragraphBlock1: "APOZ is dedicated to creating a dynamic, sustainable, and innovation-driven industrial and residential community in Southeast Texas.",
-  paragraphBlock2: "By integrating smart infrastructure, green energy, and global partnerships, APOZ aims to become a hub for advanced manufacturing, international trade, and inclusive housing.",
+  paragraphBlock2: "By integrating smart infrastructure, green energy, and global partnerships, APOZ aims to become a hub for advanced manufacturing, international trade, and inclusive housing."
 };
 
 const VISION_CONTENT = {
   tag: "Our Vision",
   titleBlock: "Our Vision",
-  paragraphBlock3: "Our vision is to empower growth — not only for businesses but also for the communities they serve — by transforming underdeveloped land into high-value economic zones that support long-term prosperity and global collaboration.",
+  paragraphBlock3: "Our vision is to empower growth — not only for businesses but also for the communities they serve — by transforming underdeveloped land into high-value economic zones that support long-term prosperity and global collaboration."
 };
 
 const PROJECT_HIGHLIGHTS = {
@@ -51,19 +51,19 @@ const PROJECT_HIGHLIGHTS = {
     {
       block1: "Phase 1 — Infrastructure & Site Preparation (2025–2026)",
       block2: "Initial groundwork, utilities planning, and zoning preparation for residential and industrial sectors.",
-      image: "https://images.unsplash.com/photo-1613928270169-4e4462c75a79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZGV2ZWxvcG1lbnQlMjBjb25zdHJ1Y3Rpb258ZW58MXx8fHwxNzY0NjU4ODA4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1613928270169-4e4462c75a79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZGV2ZWxvcG1lbnQlMjBjb25zdHJ1Y3Rpb258ZW58MXx8fHwxNzY0NjU4ODA4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
     },
     {
       block1: "Residential Communities",
       block2: "Planned single-family homes starting at $188K, supporting families and workforce housing needs.",
-      image: "https://images.unsplash.com/photo-1758304480344-f8d0de5f4f25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNpZGVudGlhbCUyMGNvbW11bml0eSUyMGFlcmlhbHxlbnwxfHx8fDE3NjQ1ODk5NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1758304480344-f8d0de5f4f25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNpZGVudGlhbCUyMGNvbW11bml0eSUyMGFlcmlhbHxlbnwxfHx8fDE3NjQ1ODk5NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
     },
     {
       block1: "Industrial & Logistics Parks",
       block2: "Advanced facilities for manufacturers, warehousing, distribution, and global trade operations.",
-      image: "https://images.unsplash.com/photo-1695067438561-75492f7b6a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjQ2MDkxMDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-  ],
+      image: "https://images.unsplash.com/photo-1695067438561-75492f7b6a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjQ2MDkxMDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    }
+  ]
 };
 
 const TIMELINE_CONTENT = {
@@ -72,8 +72,8 @@ const TIMELINE_CONTENT = {
     "Q2 2025: Completion of Phase 1.1 architectural design",
     "Q2 2025: Submission of plans to Chambers County for approval",
     "Q4 2025: Commencement of construction",
-    "2026 and beyond: Development of residential and commercial areas",
-  ],
+    "2026 and beyond: Development of residential and commercial areas"
+  ]
 };
 
 const NEWS_CONTENT = {
@@ -127,12 +127,12 @@ const valueIcons = [Globe2, Building2, Home, Leaf, Users, TrendingUp];
 // import { breakpoints } from "../theme"; // Removed unused import
 const Section = styled.section<{ bg?: string }>`
   background: ${({ bg }) => bg || "inherit"};
-  padding: 6rem 0;
+  padding: ${({ theme }) => theme.spacing.section} 0;
 `;
 const Container = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
 `;
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
@@ -189,43 +189,113 @@ const CardText = styled.p`
   line-height: 1.6;
 `;
 
+// Dependent styled-components
+const CenterTitle = styled(Title)`
+  color: ${({ theme }) => theme.colors.gold};
+  text-align: center;
+`;
+
+const CenterSubtitle = styled(Subtitle)`
+  color: ${({ theme }) => theme.colors.foreground};
+  text-align: center;
+  font-size: ${({ theme }) => theme.fontSizes["2xl"]};
+`;
+
+const MutedSubtitle = styled(Subtitle)`
+  color: ${({ theme }) => theme.colors.muted};
+  text-align: center;
+`;
+
+const ButtonRow = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing.md};
+  margin-top: ${({ theme }) => theme.spacing.lg};
+`;
+
+const ArrowIcon = styled(ArrowRight)`
+  margin-left: ${({ theme }) => theme.spacing.xs};
+  color: ${({ theme }) => theme.colors.gold};
+`;
+
+const MissionImage = styled(ImageWithFallback)`
+  width: 100%;
+  border-radius: ${({ theme }) => theme.radii.lg};
+`;
+
+const ProjectImage = styled(ImageWithFallback)`
+  width: 100%;
+  border-radius: ${({ theme }) => theme.radii.lg};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+`;
+
+const TimelineCard = styled(Card)`
+  background: ${({ theme }) => theme.colors.darkBlue};
+  color: ${({ theme }) => theme.colors.muted};
+`;
+
+const TimelineIconRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.xs};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+`;
+
+const NewsCard = styled(Card)`
+  display: flex;
+  flex-direction: row;
+  gap: ${({ theme }) => theme.spacing.lg};
+  align-items: flex-start;
+`;
+
+const NewsImage = styled(ImageWithFallback)`
+  width: 320px;
+  border-radius: ${({ theme }) => theme.radii.lg};
+`;
+
+const NewsButton = styled(Button)`
+  margin-top: ${({ theme }) => theme.spacing.md};
+`;
+
+
 export function HomePage({ onNavigate }: HomePageProps) {
+  const theme = useTheme();
   return (
     <div>
       {/* SECTION 1 — HERO */}
-      <Section bg="linear-gradient(90deg, #0A1628 95%, #0A1628 85%, #0A1628 75%)">
+      <Section bg={theme.gradients.hero}>
         <Container>
-          <Title style={{ color: "#D4AF37", textAlign: "center" }}>{HERO_CONTENT.tagline}</Title>
+          <CenterTitle>{HERO_CONTENT.tagline}</CenterTitle>
           <Divider />
-          <Subtitle style={{ color: "#fff", textAlign: "center", fontSize: "2rem" }}>{HERO_CONTENT.textBlock1}</Subtitle>
-          <Subtitle style={{ color: "#ececf0", textAlign: "center" }}>{HERO_CONTENT.textBlock2}</Subtitle>
-          <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "2rem" }}>
-            <Button onClick={() => onNavigate("projects")}>{HERO_CONTENT.button1} <ArrowRight style={{ marginLeft: "0.5rem" }} size={20} /></Button>
+          <CenterSubtitle>{HERO_CONTENT.textBlock1}</CenterSubtitle>
+          <MutedSubtitle>{HERO_CONTENT.textBlock2}</MutedSubtitle>
+          <ButtonRow>
+            <Button onClick={() => onNavigate("projects")}>{HERO_CONTENT.button1} <ArrowIcon size={20} /></Button>
             <Button onClick={() => onNavigate("about")}>{HERO_CONTENT.button2}</Button>
-          </div>
+          </ButtonRow>
         </Container>
       </Section>
 
       {/* SECTION 2 — INTRO */}
-      <Section bg="#fff">
+      <Section bg={theme.colors.background}>
         <Container>
           <Divider />
-          <Subtitle style={{ color: "#333", textAlign: "center" }}>{INTRO_CONTENT.textBlock3}</Subtitle>
-          <Subtitle style={{ color: "#333", textAlign: "center" }}>{INTRO_CONTENT.textBlock4}</Subtitle>
+          <CenterSubtitle style={{ color: theme.colors.primary }}>{INTRO_CONTENT.textBlock3}</CenterSubtitle>
+          <CenterSubtitle style={{ color: theme.colors.primary }}>{INTRO_CONTENT.textBlock4}</CenterSubtitle>
         </Container>
       </Section>
 
       {/* SECTION 3 — VALUE GRID */}
-      <Section bg="#f7f7fa">
+      <Section bg={theme.colors.backgroundAlt}>
         <Container>
-          <Title style={{ color: "#0A1628", textAlign: "center" }}>{VALUE_GRID.title}</Title>
+          <CenterTitle style={{ color: theme.colors.primary }}>{VALUE_GRID.title}</CenterTitle>
           <Divider />
           <Grid cols={3}>
             {VALUE_GRID.cards.map((card, index) => {
               const Icon = valueIcons[index];
               return (
                 <Card key={index}>
-                  <CardIcon><Icon size={32} color="#D4AF37" /></CardIcon>
+                  <CardIcon><Icon size={32} color={theme.colors.gold} /></CardIcon>
                   <CardTitle>{card.block1}</CardTitle>
                   <CardText>{card.block2}</CardText>
                 </Card>
@@ -236,47 +306,47 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </Section>
 
       {/* SECTION 4 — MISSION */}
-      <Section bg="#fff">
+      <Section bg={theme.colors.background}>
         <Container>
           <Grid cols={2}>
             <div>
-              <ImageWithFallback src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBoYW5kc2hha2UlMjBidXNpbmVzc3xlbnwxfHx8fDE3NjQ2NTg4MDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Our Mission" style={{ width: "100%", borderRadius: "1rem" }} />
+              <MissionImage src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBoYW5kc2hha2UlMjBidXNpbmVzc3xlbnwxfHx8fDE3NjQ2NTg4MDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Our Mission" />
             </div>
             <div>
-              <Title style={{ color: "#0A1628" }}>{MISSION_CONTENT.titleBlock}</Title>
+              <Title style={{ color: theme.colors.primary }}>{MISSION_CONTENT.titleBlock}</Title>
               <Divider />
-              <Subtitle style={{ color: "#333" }}>{MISSION_CONTENT.paragraphBlock1}</Subtitle>
-              <Subtitle style={{ color: "#333" }}>{MISSION_CONTENT.paragraphBlock2}</Subtitle>
+              <Subtitle style={{ color: theme.colors.primary }}>{MISSION_CONTENT.paragraphBlock1}</Subtitle>
+              <Subtitle style={{ color: theme.colors.primary }}>{MISSION_CONTENT.paragraphBlock2}</Subtitle>
             </div>
           </Grid>
         </Container>
       </Section>
 
       {/* SECTION 5 — VISION */}
-      <Section bg="#f7f7fa">
+      <Section bg={theme.colors.backgroundAlt}>
         <Container>
           <Grid cols={2}>
             <div>
-              <Title style={{ color: "#0A1628" }}>{VISION_CONTENT.titleBlock}</Title>
+              <Title style={{ color: theme.colors.primary }}>{VISION_CONTENT.titleBlock}</Title>
               <Divider />
-              <Subtitle style={{ color: "#333" }}>{VISION_CONTENT.paragraphBlock3}</Subtitle>
+              <Subtitle style={{ color: theme.colors.primary }}>{VISION_CONTENT.paragraphBlock3}</Subtitle>
             </div>
             <div>
-              <ImageWithFallback src="https://images.unsplash.com/photo-1695067438561-75492f7b6a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjQ2MDkxMDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Our Vision" style={{ width: "100%", borderRadius: "1rem" }} />
+              <ProjectImage src="https://images.unsplash.com/photo-1695067438561-75492f7b6a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjQ2MDkxMDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Our Vision" />
             </div>
           </Grid>
         </Container>
       </Section>
 
       {/* SECTION 6 — PROJECT HIGHLIGHTS */}
-      <Section bg="#fff">
+      <Section bg={theme.colors.background}>
         <Container>
-          <Title style={{ color: "#0A1628", textAlign: "center" }}>{PROJECT_HIGHLIGHTS.titleBlock}</Title>
+          <CenterTitle style={{ color: theme.colors.primary }}>{PROJECT_HIGHLIGHTS.titleBlock}</CenterTitle>
           <Divider />
           <Grid cols={3}>
             {PROJECT_HIGHLIGHTS.cards.map((card, index) => (
               <Card key={index}>
-                <ImageWithFallback src={card.image} alt={card.block1} style={{ width: "100%", borderRadius: "1rem", marginBottom: "1rem" }} />
+                <ProjectImage src={card.image} alt={card.block1} />
                 <CardTitle>{card.block1}</CardTitle>
                 <CardText>{card.block2}</CardText>
               </Card>
@@ -286,42 +356,40 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </Section>
 
       {/* SECTION 7 — TIMELINE */}
-      <Section bg="#0A1628">
+      <Section bg={theme.colors.primary}>
         <Container>
-          <Title style={{ color: "#fff", textAlign: "center" }}>{TIMELINE_CONTENT.titleBlock}</Title>
+          <CenterTitle style={{ color: theme.colors.foreground }}>{TIMELINE_CONTENT.titleBlock}</CenterTitle>
           <Divider />
           <Grid cols={4}>
             {TIMELINE_CONTENT.blocks.map((block, index) => (
-              <Card key={index} style={{ background: "#1a2942", color: "#ececf0" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
-                  <Calendar size={20} color="#D4AF37" />
-                </div>
+              <TimelineCard key={index}>
+                <TimelineIconRow>
+                  <Calendar size={20} color={theme.colors.gold} />
+                </TimelineIconRow>
                 <CardText>{block}</CardText>
-              </Card>
+              </TimelineCard>
             ))}
           </Grid>
         </Container>
       </Section>
 
       {/* SECTION 8 — NEWS */}
-      <Section bg="#f7f7fa">
+      <Section bg={theme.colors.backgroundAlt}>
         <Container>
-          <Title style={{ color: "#0A1628", textAlign: "center" }}>{NEWS_CONTENT.titleBlock}</Title>
+          <CenterTitle style={{ color: theme.colors.primary }}>{NEWS_CONTENT.titleBlock}</CenterTitle>
           <Divider />
           <Grid cols={1}>
             {NEWS_CONTENT.articles.map((article, index) => (
-              <Card key={index} style={{ display: "flex", flexDirection: "row", gap: "2rem", alignItems: "flex-start" }}>
-                <ImageWithFallback src={article.image} alt={article.titleBlock} style={{ width: "320px", borderRadius: "1rem" }} />
+              <NewsCard key={index}>
+                <NewsImage src={article.image} alt={article.titleBlock} />
                 <div>
                   <CardTitle>{article.titleBlock}</CardTitle>
                   <CardText>{article.paragraphBlock1}</CardText>
                   <CardText>{article.paragraphBlock2}</CardText>
                   <CardText>{article.paragraphBlock3}</CardText>
-                  <Button onClick={() => onNavigate("news")} style={{ marginTop: "1rem" }}>
-                    Read Full Article <ArrowRight style={{ marginLeft: "0.5rem" }} size={16} />
-                  </Button>
+                  <NewsButton onClick={() => onNavigate("news")}>Read Full Article <ArrowIcon size={16} /></NewsButton>
                 </div>
-              </Card>
+              </NewsCard>
             ))}
           </Grid>
         </Container>

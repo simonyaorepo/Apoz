@@ -5,7 +5,7 @@ const StyledButton = styled.button<ButtonHTMLAttributes<HTMLButtonElement>>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
+  padding: ${({ theme }) => theme.spacing.pill};
   font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   border-radius: ${({ theme }) => theme.radii.lg};
@@ -15,7 +15,7 @@ const StyledButton = styled.button<ButtonHTMLAttributes<HTMLButtonElement>>`
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   &:hover {
-    background: #AA8A2E;
+    background: ${({ theme }) => theme.colors.goldAccentHover};
     color: ${({ theme }) => theme.colors.background};
   }
 `;

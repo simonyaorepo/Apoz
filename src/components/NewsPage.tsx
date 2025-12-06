@@ -1,5 +1,6 @@
 import { Calendar, MapPin, ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from "styled-components";
 import styled from "styled-components";
 
 // ============================================
@@ -57,34 +58,34 @@ const PageWrapper = styled.div``;
 
 const HeroSection = styled.section`
   position: relative;
-  padding: 8rem 0;
-  background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+  padding: ${({ theme }) => theme.spacing.xl} 0;
+  background: ${({ theme }) => theme.gradients.hero};
 `;
 
 const HeroContent = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
   text-align: center;
 `;
 
 const HeroTag = styled.div`
   display: inline-block;
-  padding: 0.5rem 1.5rem;
-  background: rgba(212, 175, 55, 0.2);
+  padding: ${({ theme }) => theme.spacing.pill};
+  background: ${({ theme }) => `rgba(${parseInt(theme.colors.goldAccent.slice(1,3),16)},${parseInt(theme.colors.goldAccent.slice(3,5),16)},${parseInt(theme.colors.goldAccent.slice(5,7),16)},0.2)`};
   backdrop-filter: blur(4px);
-  border-radius: 999px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: ${({ theme }) => theme.radii.full};
+  border: 1px solid ${({ theme }) => `rgba(${parseInt(theme.colors.goldAccent.slice(1,3),16)},${parseInt(theme.colors.goldAccent.slice(3,5),16)},${parseInt(theme.colors.goldAccent.slice(5,7),16)},0.3)`};
   margin-bottom: 2rem;
 `;
 
 const HeroTagText = styled.span`
-  color: #D4AF37;
+  color: ${({ theme }) => theme.colors.gold};
   letter-spacing: 0.05em;
 `;
 
 const HeroTitle = styled.h1`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   margin-bottom: 1.5rem;
   max-width: 64rem;
   margin-left: auto;
@@ -94,13 +95,13 @@ const HeroTitle = styled.h1`
 const HeroDivider = styled.div`
   width: 4rem;
   height: 0.25rem;
-  background: #D4AF37;
+  background: ${({ theme }) => theme.colors.gold};
   margin: 0 auto 2rem auto;
 `;
 
 const HeroDesc = styled.p`
-  color: #b3b3b3;
-  font-size: 1.25rem;
+  color: ${({ theme }) => theme.colors.mutedForeground};
+  font-size: ${({ theme }) => theme.fontSizes.xl};
   max-width: 48rem;
   margin: 0 auto;
   line-height: 1.7;
@@ -108,7 +109,7 @@ const HeroDesc = styled.p`
 
 const ArticlesSection = styled.section`
   padding: 6rem 0;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 const ArticlesContainer = styled.div`
@@ -124,15 +125,15 @@ const ArticlesList = styled.div`
 `;
 
 const ArticleCard = styled.article`
-  background: #fff;
+  background: ${({ theme }) => theme.colors.card};
   border-radius: ${({ theme }) => theme.radii.lg};
   overflow: hidden;
   border: 1px solid ${({ theme }) => theme.colors.border};
   transition: box-shadow 0.3s, border-color 0.3s;
   cursor: pointer;
   &:hover {
-    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-    border-color: #D4AF37;
+    box-shadow: ${({ theme }) => theme.colors.boxShadowGold};
+    border-color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
@@ -171,15 +172,15 @@ const ArticleMeta = styled.div`
 `;
 
 const ArticleMetaHighlight = styled.span`
-  color: #D4AF37;
+  color: ${({ theme }) => theme.colors.gold};
 `;
 
 const ArticleTitle = styled.h2`
-  color: #0A1628;
+  color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 1rem;
   transition: color 0.2s;
   &:hover {
-    color: #D4AF37;
+    color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
@@ -190,7 +191,7 @@ const ArticleDesc = styled.p`
 `;
 
 const ReadMoreBtn = styled.button`
-  color: #D4AF37;
+  color: ${({ theme }) => theme.colors.gold};
   background: none;
   border: none;
   display: inline-flex;
@@ -200,7 +201,7 @@ const ReadMoreBtn = styled.button`
   cursor: pointer;
   transition: color 0.2s;
   &:hover {
-    color: #AA8A2E;
+    color: ${({ theme }) => theme.colors.goldSecondary};
   }
 `;
 
@@ -208,7 +209,7 @@ const ReadMoreBtn = styled.button`
 const ArticleDetailHeader = styled.section`
   position: relative;
   padding: 8rem 0 0 0;
-  background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+  background: ${({ theme }) => theme.gradients.hero};
 `;
 
 const ArticleDetailContainer = styled.div`
@@ -221,7 +222,7 @@ const BackBtn = styled.button`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #D4AF37;
+  color: ${({ theme }) => theme.colors.gold};
   background: none;
   border: none;
   margin-bottom: 2rem;
@@ -229,7 +230,7 @@ const BackBtn = styled.button`
   font-size: 1rem;
   transition: color 0.2s;
   &:hover {
-    color: #AA8A2E;
+    color: ${({ theme }) => theme.colors.goldSecondary};
   }
 `;
 
@@ -242,19 +243,19 @@ const ArticleDetailMeta = styled.div`
 `;
 
 const ArticleDetailTitle = styled.h1`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   margin-bottom: 1.5rem;
 `;
 
 const ArticleDetailDivider = styled.div`
   width: 4rem;
   height: 0.25rem;
-  background: #D4AF37;
+  background: ${({ theme }) => theme.colors.gold};
 `;
 
 const ArticleDetailImageSection = styled.section`
   padding: 3rem 0;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 const ArticleDetailImageBox = styled.div`
@@ -277,10 +278,11 @@ const ArticleDetailContent = styled.div`
 `;
 
 const ArticleDetailParagraph = styled.p`
-  color: #333;
+  color: ${({ theme }) => theme.colors.primary};
   font-size: 1.125rem;
   line-height: 1.7;
 `;
+
 
 export function NewsPage() {
   const [selectedArticle, setSelectedArticle] = useState<number | null>(null);
@@ -354,7 +356,7 @@ export function NewsPage() {
                   </ArticleImageBox>
                   <ArticleContent>
                     <ArticleMeta>
-                      <span><Calendar size={16} style={{ color: "#D4AF37" }} /> <ArticleMetaHighlight>{article.dateBlock}</ArticleMetaHighlight></span>
+                      <span><Calendar size={16} /> <ArticleMetaHighlight>{article.dateBlock}</ArticleMetaHighlight></span>
                       <span>•</span>
                       <span><MapPin size={16} /> {article.locationBlock}</span>
                     </ArticleMeta>
@@ -362,7 +364,7 @@ export function NewsPage() {
                     <ArticleDesc>{article.paragraphBlock1}</ArticleDesc>
                     <ReadMoreBtn>
                       Read Full Article
-                      <ArrowLeft size={16} style={{ transform: "rotate(180deg)" }} />
+                      <ArrowLeft size={16} />
                     </ReadMoreBtn>
                   </ArticleContent>
                 </ArticleGrid>

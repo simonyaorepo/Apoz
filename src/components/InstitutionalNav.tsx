@@ -14,14 +14,14 @@ const NavBar = styled.nav<{ scrolled: boolean }>`
   right: 0;
   z-index: 50;
   transition: all 0.3s;
-  background: ${({ scrolled }) => scrolled ? "#0B1C2D" : "transparent"};
+  background: ${({ scrolled, theme }) => scrolled ? theme.colors.darkBlue : "transparent"};
   box-shadow: ${({ scrolled }) => scrolled ? "0 8px 32px rgba(0,0,0,0.15)" : "none"};
 `;
 
 const NavContainer = styled.div`
-  max-width: 1320px;
+  max-width: 82.5rem;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 ${({ theme }) => theme.spacing.md};
 `;
 
 const NavRow = styled.div`
@@ -41,7 +41,7 @@ const LogoRow = styled.div`
 const LogoIcon = styled.div`
   width: 3rem;
   height: 3rem;
-  background: linear-gradient(135deg, #C9A24D 0%, #A68A3E 100%);
+  background: ${({ theme }) => theme.colors.goldGradient};
   border-radius: ${({ theme }) => theme.radii.lg};
   display: flex;
   align-items: center;
@@ -49,13 +49,13 @@ const LogoIcon = styled.div`
 `;
 
 const LogoText = styled.div`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
 `;
 
 const LogoSubText = styled.div`
-  color: #C9A24D;
+  color: ${({ theme }) => theme.colors.goldAccent};
   font-size: ${({ theme }) => theme.fontSizes.sm};
   letter-spacing: 0.05em;
 `;
@@ -70,15 +70,15 @@ const NavButton = styled.button<{ active?: boolean }>`
   position: relative;
   background: none;
   border: none;
-  color: ${({ active }) => active ? "#C9A24D" : "#fff"};
-  font-size: 1rem;
-  font-weight: 500;
+  color: ${({ theme, active }) => active ? theme.colors.gold : theme.colors.foreground};
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.03em;
-  padding: 0.5rem 0;
+  padding: ${({ theme }) => theme.spacing.xs} 0;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color ${({ theme }) => theme.transition.button};
   &:hover {
-    color: #C9A24D;
+    color: ${({ theme }) => theme.colors.gold};
   }
   &::after {
     content: "";
@@ -87,7 +87,7 @@ const NavButton = styled.button<{ active?: boolean }>`
     left: 0;
     width: ${({ active }) => active ? "100%" : "0"};
     height: 2px;
-    background: #C9A24D;
+    background: ${({ theme }) => theme.colors.gold};
     transition: width 0.3s;
   }
 `;
@@ -96,12 +96,12 @@ const MegaMenu = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 1rem;
+  margin-top: ${({ theme }) => theme.spacing.md};
   width: 16rem;
-  background: #0B1C2D;
-  border: 1px solid rgba(201,162,77,0.2);
+  background: ${({ theme }) => theme.colors.darkBlueAlt};
+  border: 1px solid ${({ theme }) => theme.colors.goldAccent};
   border-radius: ${({ theme }) => theme.radii.lg};
-  padding: 1.5rem;
+  padding: ${({ theme }) => theme.spacing.lg};
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
   z-index: 100;
 `;
@@ -110,34 +110,38 @@ const MegaMenuButton = styled.button`
   width: 100%;
   background: none;
   border: none;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.foreground};
   text-align: left;
-  font-size: 0.95rem;
-  padding: 0.5rem 0;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  padding: ${({ theme }) => theme.spacing.xs} 0;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color ${({ theme }) => theme.transition.button};
   &:hover {
-    color: #C9A24D;
+    color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
 const LanguageButton = styled.button`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(201,162,77,0.4);
-  border-radius: 999px;
-  color: #fff;
+  gap: ${({ theme }) => theme.spacing.xs};
+  padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.md};
+  border: 1px solid ${({ theme }) => theme.colors.goldAccent};
+  border-radius: ${({ theme }) => theme.radii.full};
+  color: ${({ theme }) => theme.colors.foreground};
   background: none;
-  font-size: 0.95rem;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color ${({ theme }) => theme.transition.button}, border-color ${({ theme }) => theme.transition.button};
+  & > svg {
+    color: ${({ theme }) => theme.colors.gold};
+  }
   &:hover {
-    color: #C9A24D;
-    border-color: #C9A24D;
+    color: ${({ theme }) => theme.colors.gold};
+    border-color: ${({ theme }) => theme.colors.gold};
   }
 `;
+
 
 export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavProps) {
   const [scrolled, setScrolled] = useState(false);

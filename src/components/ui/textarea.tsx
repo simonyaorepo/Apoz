@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledTextarea = styled.textarea`
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: ${({ theme }) => theme.spacing.pill};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.radii.lg};
   background: ${({ theme }) => theme.colors.inputBackground};

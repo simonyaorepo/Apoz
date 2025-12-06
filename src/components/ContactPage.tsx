@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { breakpoints } from "../theme";
 
 // ============================================
@@ -73,25 +73,25 @@ const PARTNERSHIP_CTA = {
 // =====================
 const Section = styled.section`
   position: relative;
-  padding: 6rem 0;
+  padding: ${({ theme }) => theme.spacing.section} 0;
   background: ${({ theme }) => theme.gradients.hero};
 `;
 
 const Container = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
   @media (min-width: ${breakpoints.sm}) {
-    padding: 0 1.5rem;
+    padding: 0 ${({ theme }) => theme.spacing.md};
   }
   @media (min-width: ${breakpoints.lg}) {
-    padding: 0 2rem;
+    padding: 0 ${({ theme }) => theme.spacing.lg};
   }
 `;
 
 const HeroTag = styled.div`
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: ${({ theme }) => theme.spacing.pill};
   background: ${({ theme }) => theme.colors.accent};
   backdrop-filter: blur(4px);
   border-radius: ${({ theme }) => theme.radii.full};
@@ -159,11 +159,12 @@ const InfoText = styled.div`
 `;
 
 const InfoEmail = styled.a`
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.gold};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   text-decoration: none;
+  transition: color ${({ theme }) => theme.transition.fast};
   &:hover {
-    color: #AA8A2E;
+    color: ${({ theme }) => theme.colors.goldSecondary};
   }
 `;
 
@@ -231,13 +232,14 @@ const StyledSelect = styled.select`
 const StyledButton = styled(Button)`
   width: 100%;
   height: 3rem;
-  background: ${({ theme }) => theme.colors.accent};
+  background: ${({ theme }) => theme.colors.gold};
   color: ${({ theme }) => theme.colors.primary};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   font-size: ${({ theme }) => theme.fontSizes.md};
   border-radius: ${({ theme }) => theme.radii.lg};
+  transition: background ${({ theme }) => theme.transition.button};
   &:hover {
-    background: #AA8A2E;
+    background: ${({ theme }) => theme.colors.goldSecondary};
     color: ${({ theme }) => theme.colors.background};
   }
 `;
@@ -270,25 +272,57 @@ const PartnershipButton = styled.button<PartnershipButtonProps>`
   font-size: ${({ theme }) => theme.fontSizes.md};
   border-radius: ${({ theme }) => theme.radii.lg};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
-  border: 2px solid ${({ theme }) => theme.colors.primary};
+  border: 2px solid ${({ theme }) => theme.colors.gold};
   background: ${({ theme, $variant }) =>
     $variant === "primary"
-      ? theme.colors.primary
+      ? theme.colors.gold
       : "transparent"};
   color: ${({ theme, $variant }) =>
     $variant === "primary"
       ? theme.colors.background
-      : theme.colors.primary};
-  transition: background 0.2s, color 0.2s;
+      : theme.colors.gold};
+  transition: background ${({ theme }) => theme.transition.button};
   cursor: pointer;
   &:hover {
-    background: ${({ theme }) => theme.colors.foreground};
+    background: ${({ theme }) => theme.colors.goldSecondary};
     color: ${({ theme }) => theme.colors.background};
   }
   margin-right: 1rem;
 `;
 
+// Layout styled-components (move to top level)
+const ContactGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: ${({ theme }) => theme.spacing.xxl};
+`;
+
+const InfoFlex = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing.md};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+`;
+
+const OfficeHoursFlex = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.sm};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+`;
+
+const CenteredContainer = styled(Container)`
+  text-align: center;
+`;
+
+const PartnershipButtonRow = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing.md};
+`;
+
+
 export function ContactPage() {
+  const theme = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -319,14 +353,14 @@ export function ContactPage() {
       {/* Contact Section */}
       <FormSection>
         <Container>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }}>
+          <ContactGrid>
             {/* Contact Information */}
             <div>
               <FormTitle>Our Offices</FormTitle>
               <InfoCard>
-                <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>
+                <InfoFlex>
                   <InfoIcon>
-                    <MapPin size={28} color="#D4AF37" />
+                    <MapPin size={28} color={theme.colors.gold} />
                   </InfoIcon>
                   <div>
                     <InfoTitle>{HOUSTON_OFFICE.titleBlock}</InfoTitle>
@@ -336,21 +370,21 @@ export function ContactPage() {
                       <p>{HOUSTON_OFFICE.addressBlock3}</p>
                     </InfoText>
                   </div>
-                </div>
-                <div style={{ display: "flex", gap: "1rem" }}>
+                </InfoFlex>
+                <InfoFlex>
                   <InfoIcon>
-                    <Mail size={28} color="#D4AF37" />
+                    <Mail size={28} color={theme.colors.gold} />
                   </InfoIcon>
                   <div>
                     <InfoTitle>Email</InfoTitle>
                     <InfoEmail href={`mailto:${HOUSTON_OFFICE.emailBlock}`}>{HOUSTON_OFFICE.emailBlock}</InfoEmail>
                   </div>
-                </div>
+                </InfoFlex>
               </InfoCard>
               <InfoCard>
-                <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>
+                <InfoFlex>
                   <InfoIcon>
-                    <MapPin size={28} color="#D4AF37" />
+                    <MapPin size={28} color={theme.colors.gold} />
                   </InfoIcon>
                   <div>
                     <InfoTitle>{DC_OFFICE.titleBlock}</InfoTitle>
@@ -359,22 +393,22 @@ export function ContactPage() {
                       <p>{DC_OFFICE.addressBlock2}</p>
                     </InfoText>
                   </div>
-                </div>
-                <div style={{ display: "flex", gap: "1rem" }}>
+                </InfoFlex>
+                <InfoFlex>
                   <InfoIcon>
-                    <Mail size={28} color="#D4AF37" />
+                    <Mail size={28} color={theme.colors.gold} />
                   </InfoIcon>
                   <div>
                     <InfoTitle>Email</InfoTitle>
                     <InfoEmail href={`mailto:${DC_OFFICE.emailBlock}`}>{DC_OFFICE.emailBlock}</InfoEmail>
                   </div>
-                </div>
+                </InfoFlex>
               </InfoCard>
               <OfficeHoursCard>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem" }}>
-                  <Phone size={24} color="#D4AF37" />
+                <OfficeHoursFlex>
+                  <Phone size={24} color={theme.colors.gold} />
                   <OfficeHoursTitle>{OFFICE_HOURS.titleBlock}</OfficeHoursTitle>
-                </div>
+                </OfficeHoursFlex>
                 <OfficeHoursText>
                   <p>{OFFICE_HOURS.hoursBlock1}</p>
                   <p>{OFFICE_HOURS.hoursBlock2}</p>
@@ -445,28 +479,28 @@ export function ContactPage() {
                 </div>
                 <StyledButton type="submit">
                   {CONTACT_FORM.submitButton}
-                  <Send style={{ marginLeft: "0.5rem" }} size={16} />
+                  <Send style={{ marginLeft: theme.spacing.xs }} size={16} />
                 </StyledButton>
               </StyledForm>
             </div>
-          </div>
+          </ContactGrid>
         </Container>
       </FormSection>
 
       {/* Partnership CTA Section */}
       <PartnershipSection>
-        <Container style={{ textAlign: "center" }}>
+        <CenteredContainer>
           <PartnershipTitle>{PARTNERSHIP_CTA.titleBlock}</PartnershipTitle>
           <PartnershipDesc>{PARTNERSHIP_CTA.descriptionBlock}</PartnershipDesc>
-          <div style={{ display: "flex", justifyContent: "center", gap: "1rem" }}>
+          <PartnershipButtonRow>
             <PartnershipButton $variant="primary">
               {PARTNERSHIP_CTA.button1}
             </PartnershipButton>
             <PartnershipButton $variant="secondary">
               {PARTNERSHIP_CTA.button2}
             </PartnershipButton>
-          </div>
-        </Container>
+          </PartnershipButtonRow>
+        </CenteredContainer>
       </PartnershipSection>
     </div>
   );

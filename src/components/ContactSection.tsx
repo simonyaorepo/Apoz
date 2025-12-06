@@ -3,41 +3,45 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { breakpoints } from "../theme";
+
+const SendIcon = styled(Send)`
+  margin-left: ${({ theme }) => theme.spacing.xs};
+`;
 
 const Section = styled.section`
   background: ${({ theme }) => theme.colors.background};
-  padding: 5rem 0;
+  padding: ${({ theme }) => theme.spacing.lg} 0;
 `;
 
 const Container = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
   @media (min-width: ${breakpoints.sm}) {
-    padding: 0 1.5rem;
+    padding: 0 ${({ theme }) => theme.spacing.md};
   }
   @media (min-width: ${breakpoints.lg}) {
-    padding: 0 2rem;
+    padding: 0 ${({ theme }) => theme.spacing.lg};
   }
 `;
 
 const Header = styled.div`
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 `;
 
 const Tag = styled.div`
   color: ${({ theme }) => theme.colors.accent};
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
 `;
 
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.foreground};
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   font-size: ${({ theme }) => theme.fontSizes["2xl"]};
   font-weight: 600;
 `;
@@ -74,7 +78,7 @@ const InfoCard = styled.div`
 const InfoIcon = styled.div`
   width: 3rem;
   height: 3rem;
-  background: ${({ theme }) => theme.colors.accent};
+  background: ${({ theme }) => theme.colors.gold};
   border-radius: ${({ theme }) => theme.radii.lg};
   display: flex;
   align-items: center;
@@ -94,10 +98,10 @@ const InfoText = styled.div`
 `;
 
 const OfficeHoursCard = styled.div`
-  background: ${({ theme }) => theme.colors.accent};
-  padding: 1.5rem;
+  background: ${({ theme }) => theme.colors.gold};
+  padding: ${({ theme }) => theme.spacing.lg};
   border-radius: ${({ theme }) => theme.radii.xl};
-  margin-top: 2rem;
+  margin-top: ${({ theme }) => theme.spacing.lg};
 `;
 
 const OfficeHoursTitle = styled.div`
@@ -145,20 +149,25 @@ const StyledSelect = styled.select`
   }
 `;
 
+
 const StyledButton = styled(Button)`
   width: 100%;
-  background: ${({ theme }) => theme.colors.accent};
+  background: ${({ theme }) => theme.colors.gold};
   color: ${({ theme }) => theme.colors.primary};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   font-size: ${({ theme }) => theme.fontSizes.md};
   border-radius: ${({ theme }) => theme.radii.lg};
+  transition: background ${({ theme }) => theme.transition.button};
   &:hover {
-    background: #AA8A2E;
+    background: ${({ theme }) => theme.colors.goldSecondary};
     color: ${({ theme }) => theme.colors.background};
   }
 `;
 
+
+
 export function ContactSection() {
+  const theme = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -189,7 +198,7 @@ export function ContactSection() {
             <InfoTitle>Get in Touch</InfoTitle>
             <InfoCard>
               <InfoIcon>
-                <MapPin size={24} color="#0A1628" />
+                <MapPin size={24} color={theme.colors.primary} />
               </InfoIcon>
               <div>
                 <InfoLabel>Houston Headquarters</InfoLabel>
@@ -202,7 +211,7 @@ export function ContactSection() {
             </InfoCard>
             <InfoCard>
               <InfoIcon>
-                <MapPin size={24} color="#0A1628" />
+                <MapPin size={24} color={theme.colors.primary} />
               </InfoIcon>
               <div>
                 <InfoLabel>Washington D.C. Office</InfoLabel>
@@ -214,7 +223,7 @@ export function ContactSection() {
             </InfoCard>
             <InfoCard>
               <InfoIcon>
-                <Mail size={24} color="#0A1628" />
+                <Mail size={24} color={theme.colors.primary} />
               </InfoIcon>
               <div>
                 <InfoLabel>Email</InfoLabel>
@@ -226,7 +235,7 @@ export function ContactSection() {
             </InfoCard>
             <InfoCard>
               <InfoIcon>
-                <Phone size={24} color="#0A1628" />
+                <Phone size={24} color={theme.colors.primary} />
               </InfoIcon>
               <div>
                 <InfoLabel>Phone</InfoLabel>
@@ -305,7 +314,7 @@ export function ContactSection() {
               </div>
               <StyledButton type="submit">
                 Send Message
-                <Send style={{ marginLeft: "0.5rem" }} size={16} />
+                <SendIcon size={16} />
               </StyledButton>
             </StyledForm>
           </div>

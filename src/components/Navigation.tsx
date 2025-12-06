@@ -18,9 +18,9 @@ const Nav = styled.nav`
 `;
 
 const Container = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
 `;
 
 const Flex = styled.div`
@@ -34,13 +34,16 @@ const LogoGroup = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  & > div {
+    margin-left: ${({ theme }) => theme.spacing.md};
+  }
 `;
 
 const LogoBox = styled.div`
   position: relative;
   width: 3rem;
   height: 3rem;
-  background: linear-gradient(135deg, #D4AF37 0%, #AA8A2E 100%);
+  background: ${({ theme }) => theme.colors.goldGradient};
   border-radius: ${({ theme }) => theme.radii.lg};
   display: flex;
   align-items: center;
@@ -48,7 +51,7 @@ const LogoBox = styled.div`
 `;
 
 const LogoText = styled.span`
-  color: #0A1628;
+  color: ${({ theme }) => theme.colors.darkBlue};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
 `;
@@ -60,7 +63,7 @@ const Brand = styled.div`
 
 const SubBrand = styled.div`
   font-size: 0.75rem;
-  color: #D4AF37;
+  color: ${({ theme }) => theme.colors.gold};
   letter-spacing: 0.05em;
 `;
 
@@ -77,14 +80,14 @@ const MenuButton = styled.button<{ active?: boolean }>`
   padding: 0.5rem 0;
   transition: color 0.2s, border-color 0.2s;
   letter-spacing: 0.05em;
-  color: ${({ active }) => (active ? "#D4AF37" : "#fff")};
-  border-bottom: ${({ active }) => (active ? "2px solid #D4AF37" : "none")};
+  color: ${({ theme, active }) => (active ? theme.colors.gold : theme.colors.darkBlue)};
+  border-bottom: ${({ theme, active }) => (active ? `2px solid ${theme.colors.gold}` : "none")};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   background: none;
   border: none;
   cursor: pointer;
   &:hover {
-    color: #D4AF37;
+    color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
@@ -92,29 +95,35 @@ const LangButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.foreground};
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1rem;
   transition: color 0.2s;
+  & > svg {
+    color: ${({ theme }) => theme.colors.gold};
+  }
   &:hover {
-    color: #D4AF37;
+    color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
 const MobileMenuBtn = styled.button`
   display: block;
   padding: 0.5rem;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.foreground};
   background: none;
   border: none;
   cursor: pointer;
   @media (min-width: 1024px) {
     display: none;
   }
+  & > svg {
+    color: ${({ theme }) => theme.colors.gold};
+  }
   &:hover {
-    color: #D4AF37;
+    color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
@@ -131,16 +140,17 @@ const MobileMenuItem = styled.button<{ active?: boolean }>`
   width: 100%;
   text-align: left;
   padding: 0.75rem 1rem;
-  color: ${({ active }) => (active ? "#D4AF37" : "#fff")};
-  background: ${({ active }) => (active ? "#1a2942" : "none")};
+  color: ${({ theme, active }) => (active ? theme.colors.gold : theme.colors.foreground)};
+  background: ${({ theme, active }) => (active ? theme.overlays.hero : "none")};
   border: none;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   &:hover {
-    background: #1a2942;
+    background: ${({ theme }) => theme.overlays.hero};
   }
 `;
+
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -162,7 +172,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             <LogoBox>
               <LogoText>APOZ</LogoText>
             </LogoBox>
-            <div style={{ marginLeft: "0.75rem" }}>
+            <div>
               <Brand>APOZ</Brand>
               <SubBrand>Asia Pacific Opportunity Zone</SubBrand>
             </div>

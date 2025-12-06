@@ -16,11 +16,22 @@ export const fontSizes = {
   lg: '1.125rem', // 18px
   xl: '1.25rem', // 20px
   '2xl': '1.5rem', // 24px
+  logo: '1.25rem',
+  hero: '5.5rem', // 88px
+  h1: '3rem', // 48px
+  h2: '2.625rem', // 42px
+  h3: '1.625rem', // 26px
+  h4: '1.375rem', // 22px
+  h5: '1.125rem', // 18px
+  h6: '1.0625rem', // 17px
+  small: '0.875rem', // 14px
+  xsmall: '0.8125rem', // 13px
 };
 
 export const fontWeights = {
   normal: 400,
   medium: 500,
+  bold: 700,
 };
 
 export const gradients = {
@@ -34,21 +45,62 @@ export const radii = {
   lg: '1rem',
   xl: '2rem',
   full: '999px',
+  pill: '999px',
+  thin: '2px',
+  card: '14px',
 };
 
 const common = {
   borderRadius: radii.md,
+  maxWidth: {
+    container: '112rem',
+    home: '1320px',
+  },
+  overlays: {
+    hero: 'linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%)',
+  },
   breakpoints,
   fontSizes,
   fontWeights,
   gradients,
   radii,
+  spacing: {
+    xxs: '0.125rem', // 2px
+    xs: '0.25rem', // 4px
+    sm: '0.5rem', // 8px
+    md: '1rem', // 16px
+    lg: '1.5rem', // 24px
+    xl: '2rem', // 32px
+    xxl: '3rem', // 48px
+    xxxl: '5rem', // 80px
+    section: '7.5rem', // 120px
+    card: '2rem', // 32px
+    pill: '0.5rem 1rem',
+    hero: '5.5rem', // 88px
+    dividerW: '8rem', // 128px
+    dividerH: '0.25rem', // 4px
+    mb2: '2rem',
+  },
 };
 
 export const lightTheme = {
   ...common,
   colors: {
+    gold: '#D4AF37',
+    goldSecondary: '#AA8A2E',
+    goldGradient: 'linear-gradient(135deg, #D4AF37 0%, #AA8A2E 100%)',
+    white: '#fff',
+    darkBlue: '#0A1628',
+    darkBlueAlt: '#0B1C2D',
+    goldAccent: '#C9A24D',
+    goldAccentHover: '#A68A3E',
+    grayAccent: '#8B95A5',
+    grayBorder: '#e5e7eb',
+    boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
+    boxShadowGold: '0 8px 32px rgba(201,162,77,0.08)',
+    boxShadowGoldGlow: '0 0 40px rgba(201,162,77,0.4)',
     background: '#ffffff',
+    backgroundAlt: '#F7F8FA',
     foreground: 'oklch(0.145 0 0)',
     card: '#ffffff',
     cardForeground: 'oklch(0.145 0 0)',
@@ -82,6 +134,28 @@ export const lightTheme = {
     sidebarAccentForeground: 'oklch(0.205 0 0)',
     sidebarBorder: 'oklch(0.922 0 0)',
     sidebarRing: 'oklch(0.708 0 0)',
+  },
+  opacity: {
+    low: 0.2,
+    med: 0.3,
+    high: 0.6,
+  },
+  letterSpacing: {
+    wide: '0.04em',
+  },
+  aspect: {
+    wide: '16/9',
+    fourThree: '4/3',
+  },
+  transition: {
+    fast: 'all 0.3s',
+    slow: 'all 0.5s',
+    button: 'background 0.2s, color 0.2s',
+  },
+  zIndex: {
+    base: 1,
+    overlay: 10,
+    modal: 100,
   },
 };
 

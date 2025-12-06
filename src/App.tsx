@@ -1,11 +1,11 @@
 
 import { useState } from "react";
 import { Navigation } from "./components/Navigation";
-import { HomePage } from "./components/HomePage";
-import { AboutPage } from "./components/AboutPage";
-import { ProjectsPage } from "./components/ProjectsPage";
-import { NewsPage } from "./components/NewsPage";
-import { ContactPage } from "./components/ContactPage";
+import { HomePage } from "./pages/HomePage";
+import { AboutPage } from "./pages/AboutPage";
+import { ProjectsPage } from "./pages/ProjectsPage";
+import { NewsPage } from "./pages/NewsPage";
+import { ContactPage } from "./pages/ContactPage";
 import { Footer } from "./components/Footer";
 
 const PAGES = {

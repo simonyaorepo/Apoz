@@ -1,10 +1,12 @@
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 
 interface HeroProps {
   onNavigate: (page: string) => void;
 }
+
+// ...existing styled-components...
 
 const HeroSection = styled.div`
   position: relative;
@@ -27,15 +29,15 @@ const BgImage = styled.div<{ image: string }>`
 const GradientOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%);
+  background: ${({ theme }) => theme.overlays.hero};
 `;
 
 const Content = styled.div`
   position: relative;
   z-index: 10;
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
   color: ${({ theme }) => theme.colors.foreground};
 `;
 
@@ -96,6 +98,12 @@ const StatValue = styled.div`
   color: ${({ theme }) => theme.colors.mutedForeground};
 `;
 
+const ArrowIcon = styled(ArrowRight)`
+  margin-left: ${({ theme }) => theme.spacing.xs};
+  color: ${({ theme }) => theme.colors.gold};
+`;
+
+
 export function Hero({ onNavigate }: HeroProps) {
   return (
     <HeroSection>
@@ -109,7 +117,7 @@ export function Hero({ onNavigate }: HeroProps) {
             The Asia Pacific Opportunity Zone (APOZ) is more than just a development — it's a blueprint for sustainable economic growth and inclusive community building in Greater Houston. Strategically planned by ASC Global Inc., APOZ integrates residential, industrial, and commercial zones into a single, forward-looking ecosystem.
           </Subtitle>
           <ButtonRow>
-            <Button onClick={() => onNavigate("contact")}>Invest Now <ArrowRight style={{ marginLeft: "0.5rem" }} size={20} /></Button>
+            <Button onClick={() => onNavigate("contact")}>Invest Now <ArrowIcon size={20} /></Button>
             <Button onClick={() => onNavigate("projects")}>View Projects</Button>
           </ButtonRow>
           <StatsGrid>

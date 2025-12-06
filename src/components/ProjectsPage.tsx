@@ -2,6 +2,7 @@ import { Building2, Home, Factory, TrendingUp } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import styled from "styled-components";
 
+
 const phases = [
   {
     icon: Building2,
@@ -66,38 +67,49 @@ const phases = [
 ];
 
 // Styled Components
+const PhaseIcon = styled.svg`
+  width: 28px;
+  height: 28px;
+  color: ${({ theme }) => theme.colors.gold};
+`;
+
+const TrendingUpIcon = styled(TrendingUp)`
+  width: 24px;
+  height: 24px;
+  color: ${({ theme }) => theme.colors.gold};
+`;
 const PageWrapper = styled.div``;
 
 const HeroSection = styled.section`
   position: relative;
-  padding: 8rem 0;
-  background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+  padding: ${({ theme }) => theme.spacing.xl} 0;
+  background: ${({ theme }) => theme.gradients.hero};
 `;
 
 const HeroContent = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
   text-align: center;
 `;
 
 const HeroTag = styled.div`
   display: inline-block;
-  padding: 0.5rem 1.5rem;
-  background: rgba(212, 175, 55, 0.2);
+  padding: ${({ theme }) => theme.spacing.pill};
+  background: ${({ theme }) => theme.colors.goldAccent};
   backdrop-filter: blur(4px);
-  border-radius: 999px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  margin-bottom: 2rem;
+  border-radius: ${({ theme }) => theme.radii.full};
+  border: 1px solid ${({ theme }) => theme.colors.gold};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
 `;
 
 const HeroTagText = styled.span`
-  color: #D4AF37;
+  color: ${({ theme }) => theme.colors.gold};
   letter-spacing: 0.05em;
 `;
 
 const HeroTitle = styled.h1`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   margin-bottom: 1.5rem;
   max-width: 64rem;
   margin-left: auto;
@@ -105,23 +117,23 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroDivider = styled.div`
-  width: 4rem;
-  height: 0.25rem;
-  background: #D4AF37;
-  margin: 0 auto 2rem auto;
+  width: ${({ theme }) => theme.spacing.dividerW};
+  height: ${({ theme }) => theme.spacing.dividerH};
+  background: ${({ theme }) => theme.colors.gold};
+  margin: 0 auto ${({ theme }) => theme.spacing.xl} auto;
 `;
 
 const HeroDesc = styled.p`
-  color: #b3b3b3;
-  font-size: 1.25rem;
+  color: ${({ theme }) => theme.colors.mutedForeground};
+  font-size: ${({ theme }) => theme.fontSizes.xl};
   max-width: 64rem;
   margin: 0 auto;
   line-height: 1.7;
 `;
 
 const PhaseSection = styled.section`
-  padding: 6rem 0;
-  background: #fff;
+  padding: ${({ theme }) => theme.spacing.section} 0;
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 const PhaseContainer = styled.div`
@@ -185,7 +197,7 @@ const PhaseIconRow = styled.div`
 const PhaseIconBox = styled.div`
   width: 3.5rem;
   height: 3.5rem;
-  background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+  background: ${({ theme }) => theme.gradients.hero};
   border-radius: ${({ theme }) => theme.radii.lg};
   display: flex;
   align-items: center;
@@ -194,26 +206,26 @@ const PhaseIconBox = styled.div`
 
 const PhasePeriod = styled.div`
   display: inline-block;
-  padding: 0.5rem 1rem;
-  background: rgba(212,175,55,0.10);
-  border-radius: 999px;
+  padding: ${({ theme }) => theme.spacing.pill};
+  background: ${({ theme }) => theme.colors.goldAccent};
+  border-radius: ${({ theme }) => theme.radii.full};
 `;
 
 const PhasePeriodText = styled.span`
-  color: #D4AF37;
+  color: ${({ theme }) => theme.colors.gold};
   letter-spacing: 0.05em;
 `;
 
 const PhaseTitle = styled.h2`
-  color: #0A1628;
-  margin-bottom: 1.5rem;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 `;
 
 const PhaseDesc = styled.p`
-  color: #333;
-  font-size: 1.125rem;
+  color: ${({ theme }) => theme.colors.mutedForeground};
+  font-size: ${({ theme }) => theme.fontSizes.lg};
   line-height: 1.7;
-  margin-bottom: 1.5rem;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 `;
 
 const PhaseDetails = styled.div`
@@ -231,18 +243,18 @@ const PhaseDetailRow = styled.div`
 const PhaseDetailDot = styled.div`
   width: 0.5rem;
   height: 0.5rem;
-  background: #D4AF37;
-  border-radius: 999px;
-  margin-top: 0.5rem;
+  background: ${({ theme }) => theme.colors.gold};
+  border-radius: ${({ theme }) => theme.radii.full};
+  margin-top: ${({ theme }) => theme.spacing.xs};
   flex-shrink: 0;
 `;
 
 const PhaseDetailText = styled.span`
-  color: #666;
+  color: ${({ theme }) => theme.colors.mutedForeground};
 `;
 
 const FutureSection = styled.section`
-  padding: 6rem 0;
+  padding: ${({ theme }) => theme.spacing.section} 0;
   background: ${({ theme }) => theme.colors.accent};
 `;
 
@@ -268,7 +280,7 @@ const FutureIconRow = styled.div`
 const FutureIconBox = styled.div`
   width: 3rem;
   height: 3rem;
-  background: linear-gradient(135deg, #0A1628 0%, #1a2942 100%);
+  background: ${({ theme }) => theme.gradients.hero};
   border-radius: ${({ theme }) => theme.radii.lg};
   display: flex;
   align-items: center;
@@ -276,15 +288,15 @@ const FutureIconBox = styled.div`
 `;
 
 const FutureTitle = styled.h2`
-  color: #0A1628;
-  margin-bottom: 1rem;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 
 const FutureDivider = styled.div`
-  width: 4rem;
-  height: 0.25rem;
-  background: #D4AF37;
-  margin: 0 auto 1.5rem auto;
+  width: ${({ theme }) => theme.spacing.dividerW};
+  height: ${({ theme }) => theme.spacing.dividerH};
+  background: ${({ theme }) => theme.colors.gold};
+  margin: 0 auto ${({ theme }) => theme.spacing.lg} auto;
 `;
 
 const FutureCardGrid = styled.div`
@@ -298,16 +310,16 @@ const FutureCardGrid = styled.div`
 
 const FutureCard = styled.div`
   background: ${({ theme }) => theme.colors.card};
-  padding: 2rem;
+  padding: ${({ theme }) => theme.spacing.lg};
   border-radius: ${({ theme }) => theme.radii.lg};
-  color: #0A1628;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  color: ${({ theme }) => theme.colors.primary};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
 `;
 
 const CTASection = styled.section`
-  padding: 6rem 0;
-  background: #0A1628;
-  color: #fff;
+  padding: ${({ theme }) => theme.spacing.section} 0;
+  background: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const CTAContainer = styled.div`
@@ -318,14 +330,14 @@ const CTAContainer = styled.div`
 `;
 
 const CTATitle = styled.h2`
-  color: #fff;
-  margin-bottom: 1.5rem;
+  color: ${({ theme }) => theme.colors.white};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 `;
 
 const CTADesc = styled.p`
-  color: #b3b3b3;
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
+  color: ${({ theme }) => theme.colors.mutedForeground};
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
   line-height: 1.7;
 `;
 
@@ -337,18 +349,18 @@ const CTAButtonRow = styled.div`
 `;
 
 const CTAButton = styled.button<{ primary?: boolean }>`
-  padding: 2rem 3rem;
+  padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
   border-radius: ${({ theme }) => theme.radii.lg};
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
-  border: ${({ primary }) => (primary ? "none" : "2px solid #fff")};
-  background: ${({ primary }) => (primary ? "#D4AF37" : "transparent")};
-  color: ${({ primary }) => (primary ? "#0A1628" : "#fff")};
+  border: ${({ primary, theme }) => (primary ? "none" : `2px solid ${theme.colors.white}`)};
+  background: ${({ primary, theme }) => (primary ? theme.colors.gold : "transparent")};
+  color: ${({ primary, theme }) => (primary ? theme.colors.primary : theme.colors.white)};
   &:hover {
-    background: ${({ primary }) => (primary ? "#AA8A2E" : "rgba(255,255,255,0.08)")};
-    color: ${({ primary }) => (primary ? "#fff" : "#fff")};
+    background: ${({ primary, theme }) => (primary ? theme.colors.goldAccentHover : theme.colors.accent)};
+    color: ${({ primary, theme }) => (primary ? theme.colors.white : theme.colors.white)};
   }
 `;
 
@@ -382,7 +394,7 @@ export function ProjectsPage() {
                   <PhaseContent even={even}>
                     <PhaseIconRow>
                       <PhaseIconBox>
-                        <Icon size={28} color="#D4AF37" />
+                        <PhaseIcon as={Icon} />
                       </PhaseIconBox>
                       <PhasePeriod>
                         <PhasePeriodText>{phase.period}</PhasePeriodText>
@@ -409,9 +421,9 @@ export function ProjectsPage() {
         <FutureContainer>
           <FutureHeader>
             <FutureIconRow>
-              <FutureIconBox>
-                <TrendingUp size={24} color="#D4AF37" />
-              </FutureIconBox>
+                <FutureIconBox>
+                  <TrendingUpIcon />
+                </FutureIconBox>
             </FutureIconRow>
             <FutureTitle>Future Build-Out & Expansion</FutureTitle>
             <FutureDivider />

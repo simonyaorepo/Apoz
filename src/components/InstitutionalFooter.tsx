@@ -6,15 +6,15 @@ interface InstitutionalFooterProps {
 }
 
 const FooterWrapper = styled.footer`
-  background: #0B1C2D;
-  color: #8B95A5;
-  border-top: 1px solid rgba(201,162,77,0.2);
+  background: ${({ theme }) => theme.colors.darkBlue};
+  color: ${({ theme }) => theme.colors.muted};
+  border-top: 1px solid ${({ theme }) => theme.colors.goldGradient};
 `;
 
 const FooterContainer = styled.div`
-  max-width: 1320px;
+  max-width: 82.5rem;
   margin: 0 auto;
-  padding: 5rem 1.5rem;
+  padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.md};
 `;
 
 const Grid = styled.div`
@@ -36,7 +36,7 @@ const LogoRow = styled.div`
 const LogoIcon = styled.div`
   width: 3rem;
   height: 3rem;
-  background: linear-gradient(135deg, #C9A24D 0%, #A68A3E 100%);
+  background: ${({ theme }) => theme.colors.goldGradient};
   border-radius: ${({ theme }) => theme.radii.lg};
   display: flex;
   align-items: center;
@@ -44,19 +44,19 @@ const LogoIcon = styled.div`
 `;
 
 const LogoText = styled.div`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
 `;
 
 const LogoSubText = styled.div`
-  color: #C9A24D;
+  color: ${({ theme }) => theme.colors.goldAccent};
   font-size: ${({ theme }) => theme.fontSizes.sm};
   letter-spacing: 0.05em;
 `;
 
 const Description = styled.p`
-  color: #8B95A5;
+  color: ${({ theme }) => theme.colors.grayAccent};
   font-size: ${({ theme }) => theme.fontSizes.sm};
   margin-bottom: 1.5rem;
   line-height: 1.6;
@@ -71,23 +71,26 @@ const SocialIcon = styled.button`
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 999px;
-  border: 1px solid rgba(201,162,77,0.4);
+  border: 1px solid ${({ theme }) => theme.colors.goldAccent};
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8B95A5;
+  color: ${({ theme }) => theme.colors.grayAccent};
+  & > svg {
+    color: ${({ theme }) => theme.colors.gold};
+  }
   background: none;
   transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
   &:hover {
-    color: #C9A24D;
-    border-color: #C9A24D;
-    box-shadow: 0 0 20px rgba(201,162,77,0.3);
+    color: ${({ theme }) => theme.colors.goldAccent};
+    border-color: ${({ theme }) => theme.colors.goldAccent};
+    box-shadow: ${({ theme }) => theme.colors.boxShadowGoldGlow};
   }
 `;
 
 const SectionTitle = styled.h3`
-  color: #fff;
-  margin-bottom: 1.5rem;
+  color: ${({ theme }) => theme.colors.foreground};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
   font-size: ${({ theme }) => theme.fontSizes.lg};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
@@ -105,52 +108,53 @@ const LinkList = styled.ul`
 const LinkButton = styled.button`
   background: none;
   border: none;
-  color: #8B95A5;
+  color: ${({ theme }) => theme.colors.muted};
   font-size: ${({ theme }) => theme.fontSizes.sm};
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color ${({ theme }) => theme.transition.button};
   &:hover {
-    color: #C9A24D;
+    color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
 const ItemRow = styled.li`
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.spacing.xs};
 `;
 
 const ItemIcon = styled.span`
-  color: #C9A24D;
-  margin-top: 0.25rem;
+  color: ${({ theme }) => theme.colors.gold};
+  margin-top: ${({ theme }) => theme.spacing.xxs};
   flex-shrink: 0;
 `;
 
 const ItemText = styled.span`
-  color: #8B95A5;
+  color: ${({ theme }) => theme.colors.muted};
   font-size: ${({ theme }) => theme.fontSizes.sm};
   line-height: 1.6;
 `;
 
 const BottomBar = styled.div`
-  padding-top: 2rem;
-  border-top: 1px solid rgba(201,162,77,0.1);
+  padding-top: ${({ theme }) => theme.spacing.lg};
+  border-top: 1px solid ${({ theme }) => theme.colors.goldAccent};
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 const Copyright = styled.p`
-  color: #8B95A5;
+  color: ${({ theme }) => theme.colors.muted};
   font-size: ${({ theme }) => theme.fontSizes.sm};
 `;
 
 const LegalLinks = styled.div`
   display: flex;
-  gap: 2rem;
-  color: #8B95A5;
+  gap: ${({ theme }) => theme.spacing.lg};
+  color: ${({ theme }) => theme.colors.muted};
   font-size: ${({ theme }) => theme.fontSizes.sm};
 `;
+
 
 export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
   const footerSections = [

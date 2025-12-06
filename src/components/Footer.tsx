@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Globe } from "lucide-react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -28,13 +28,13 @@ const FOOTER_CONTENT = {
 
 const FooterWrapper = styled.footer`
   background: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.mutedForeground};
+  color: ${({ theme }) => theme.colors.foreground};
 `;
 
 const FooterContainer = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: ${({ theme }) => theme.spacing.section} ${({ theme }) => theme.spacing.md};
 `;
 
 const Grid = styled.div`
@@ -61,9 +61,9 @@ const LogoRow = styled.div`
 `;
 
 const LogoIcon = styled.div`
-  width: 3rem;
-  height: 3rem;
-  background: linear-gradient(135deg, #D4AF37 0%, #AA8A2E 100%);
+  width: ${({ theme }) => theme.spacing.card};
+  height: ${({ theme }) => theme.spacing.card};
+  background: ${({ theme }) => theme.colors.goldGradient};
   border-radius: ${({ theme }) => theme.radii.lg};
   display: flex;
   align-items: center;
@@ -71,13 +71,14 @@ const LogoIcon = styled.div`
 `;
 
 const LogoText = styled.div`
-  color: ${({ theme }) => theme.colors.foreground};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  color: ${({ theme }) => theme.colors.gold};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-size: ${({ theme }) => theme.fontSizes.logo};
   letter-spacing: 0.05em;
 `;
 
 const LogoSubText = styled.div`
-  color: #D4AF37;
+  color: ${({ theme }) => theme.colors.goldSecondary};
   font-size: ${({ theme }) => theme.fontSizes.sm};
   letter-spacing: 0.05em;
 `;
@@ -95,26 +96,26 @@ const SocialRow = styled.div`
 `;
 
 const SocialIcon = styled.a`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: ${({ theme }) => theme.spacing.card};
+  height: ${({ theme }) => theme.spacing.card};
   background: ${({ theme }) => theme.colors.card};
   border-radius: ${({ theme }) => theme.radii.lg};
   display: flex;
   align-items: center;
   justify-content: center;
   color: ${({ theme }) => theme.colors.foreground};
-  transition: background 0.2s, color 0.2s;
+  transition: background ${({ theme }) => theme.transition.button}, color ${({ theme }) => theme.transition.button};
   &:hover {
-    background: #D4AF37;
-    color: #0A1628;
+    background: ${({ theme }) => theme.colors.gold};
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
 const SectionTitle = styled.h3`
-  color: ${({ theme }) => theme.colors.foreground};
-  margin-bottom: 1.5rem;
+  color: ${({ theme }) => theme.colors.gold};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
   font-size: ${({ theme }) => theme.fontSizes.lg};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
 `;
 
 const LinkList = styled.ul`
@@ -123,7 +124,7 @@ const LinkList = styled.ul`
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacing.md};
 `;
 
 const LinkButton = styled.button`
@@ -134,44 +135,44 @@ const LinkButton = styled.button`
   cursor: pointer;
   transition: color 0.2s;
   &:hover {
-    color: #D4AF37;
+    color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
 const ContactLink = styled.a`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.spacing.xs};
   color: ${({ theme }) => theme.colors.mutedForeground};
   font-size: ${({ theme }) => theme.fontSizes.md};
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color ${({ theme }) => theme.transition.button};
   &:hover {
-    color: #D4AF37;
+    color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
 const LanguageButton = styled.button`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.spacing.xs};
   color: ${({ theme }) => theme.colors.muted};
   background: none;
   border: none;
   font-size: ${({ theme }) => theme.fontSizes.md};
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color ${({ theme }) => theme.transition.button};
   &:hover {
-    color: #D4AF37;
+    color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
 const BottomBar = styled.div`
-  padding-top: 2rem;
-  border-top: 1px solid #1a2942;
+  padding-top: ${({ theme }) => theme.spacing.lg};
+  border-top: 1px solid ${({ theme }) => theme.colors.darkBlue};
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacing.md};
   align-items: center;
   justify-content: space-between;
   @media (min-width: 768px) {
@@ -180,7 +181,7 @@ const BottomBar = styled.div`
 `;
 
 const Copyright = styled.div`
-  color: ${({ theme }) => theme.colors.muted};
+  color: ${({ theme }) => theme.colors.foreground};
   font-size: ${({ theme }) => theme.fontSizes.sm};
 `;
 
@@ -191,7 +192,9 @@ const LegalLinks = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.sm};
 `;
 
+
 export function Footer({ onNavigate }: FooterProps) {
+  const theme = useTheme();
   return (
     <FooterWrapper>
       <FooterContainer>
@@ -209,10 +212,10 @@ export function Footer({ onNavigate }: FooterProps) {
             </LogoRow>
             <Description>{FOOTER_CONTENT.descriptionBlock}</Description>
             <SocialRow>
-              <SocialIcon href="#"><Facebook size={20} /></SocialIcon>
-              <SocialIcon href="#"><Twitter size={20} /></SocialIcon>
-              <SocialIcon href="#"><Linkedin size={20} /></SocialIcon>
-              <SocialIcon href="#"><Instagram size={20} /></SocialIcon>
+              <SocialIcon href="#"><Facebook size={20} color={theme.colors.primary} /></SocialIcon>
+              <SocialIcon href="#"><Twitter size={20} color={theme.colors.primary} /></SocialIcon>
+              <SocialIcon href="#"><Linkedin size={20} color={theme.colors.primary} /></SocialIcon>
+              <SocialIcon href="#"><Instagram size={20} color={theme.colors.primary} /></SocialIcon>
             </SocialRow>
           </CompanyInfo>
           {/* Quick Links */}
@@ -231,13 +234,13 @@ export function Footer({ onNavigate }: FooterProps) {
             <SectionTitle>{FOOTER_CONTENT.contactTitle}</SectionTitle>
             <LinkList>
               <li>
-                <ContactLink href={`mailto:${FOOTER_CONTENT.email1}`}><Mail size={16} />{FOOTER_CONTENT.email1}</ContactLink>
+                <ContactLink href={`mailto:${FOOTER_CONTENT.email1}`}><Mail size={16} color={theme.colors.gold} />{FOOTER_CONTENT.email1}</ContactLink>
               </li>
               <li>
-                <ContactLink href={`mailto:${FOOTER_CONTENT.email2}`}><Mail size={16} />{FOOTER_CONTENT.email2}</ContactLink>
+                <ContactLink href={`mailto:${FOOTER_CONTENT.email2}`}><Mail size={16} color={theme.colors.gold} />{FOOTER_CONTENT.email2}</ContactLink>
               </li>
               <li>
-                <LanguageButton><Globe size={16} /><span>{FOOTER_CONTENT.languageToggle}</span></LanguageButton>
+                <LanguageButton><Globe size={16} color={theme.colors.gold} /><span>{FOOTER_CONTENT.languageToggle}</span></LanguageButton>
               </li>
             </LinkList>
           </div>

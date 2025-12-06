@@ -10,15 +10,15 @@ const ArrowButton = styled.button`
   position: relative;
   width: 2.75rem;
   height: 2.75rem;
-  border-radius: 999px;
-  border: 1.5px solid #C9A24D;
+  border-radius: ${({ theme }) => theme.radii.full};
+  border: 1.5px solid ${({ theme }) => theme.colors.gold};
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.12s, transform 0.12s;
   &:hover {
-    background: #C9A24D;
+    background: ${({ theme }) => theme.colors.gold};
     transform: scale(1.05);
   }
 `;
@@ -26,10 +26,10 @@ const ArrowButton = styled.button`
 const StyledArrow = styled(ArrowUpRight)`
   width: 1.25rem;
   height: 1.25rem;
-  color: #C9A24D;
+  color: ${({ theme }) => theme.colors.gold};
   transition: color 0.12s, transform 0.12s;
   ${ArrowButton}:hover & {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
     transform: rotate(45deg);
   }
 `;

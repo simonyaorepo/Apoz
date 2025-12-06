@@ -26,30 +26,30 @@ const highlights = [
 
 const Section = styled.section`
   background: ${({ theme }) => theme.colors.accent};
-  padding: 5rem 0;
+  padding: ${({ theme }) => theme.spacing.lg} 0;
 `;
 
 const Container = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
 `;
 
 const Header = styled.div`
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 `;
 
 const Tag = styled.div`
   color: ${({ theme }) => theme.colors.accentForeground};
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
 `;
 
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   font-size: ${({ theme }) => theme.fontSizes["2xl"]};
   font-weight: 600;
 `;
@@ -95,6 +95,9 @@ const CardIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
+  & > svg {
+    color: ${({ theme }) => theme.colors.gold};
+  }
 `;
 
 const CardTitle = styled.h3`
@@ -108,6 +111,7 @@ const CardText = styled.p`
   color: ${({ theme }) => theme.colors.mutedForeground};
   line-height: 1.6;
 `;
+
 
 export function KeyHighlights() {
   return (
@@ -126,7 +130,7 @@ export function KeyHighlights() {
             return (
               <Card key={index}>
                 <CardIcon>
-                  <Icon size={28} color="#1976d2" />
+                  <Icon size={28} />
                 </CardIcon>
                 <CardTitle>{highlight.title}</CardTitle>
                 <CardText>{highlight.description}</CardText>

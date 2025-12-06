@@ -1,5 +1,6 @@
 import { Calendar, ArrowRight } from "lucide-react";
 import styled from "styled-components";
+import { useTheme } from "styled-components";
 
 const newsItems = [
   {
@@ -27,30 +28,30 @@ const newsItems = [
 
 const Section = styled.section`
   background: ${({ theme }) => theme.colors.accent};
-  padding: 5rem 0;
+  padding: ${({ theme }) => theme.spacing.lg} 0;
 `;
 
 const Container = styled.div`
-  max-width: 112rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 ${({ theme }) => theme.spacing.sm};
 `;
 
 const Header = styled.div`
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 `;
 
 const Tag = styled.div`
   color: ${({ theme }) => theme.colors.accentForeground};
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
 `;
 
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   font-size: ${({ theme }) => theme.fontSizes["2xl"]};
   font-weight: 600;
 `;
@@ -111,6 +112,9 @@ const CardMeta = styled.div`
   gap: 1rem;
   margin-bottom: 0.75rem;
   color: ${({ theme }) => theme.colors.mutedForeground};
+  & > svg {
+    color: ${({ theme }) => theme.colors.gold};
+  }
 `;
 
 const CardCategory = styled.span`
@@ -138,7 +142,7 @@ const CardExcerpt = styled.p`
 `;
 
 const ReadMoreBtn = styled.button`
-  color: ${({ theme }) => theme.colors.accentForeground};
+  color: ${({ theme }) => theme.colors.gold};
   background: none;
   border: none;
   display: flex;
@@ -147,10 +151,14 @@ const ReadMoreBtn = styled.button`
   font-size: 1rem;
   cursor: pointer;
   transition: color 0.2s;
+  & > svg {
+    color: ${({ theme }) => theme.colors.gold};
+  }
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
   }
 `;
+
 
 export function NewsSection() {
   return (
