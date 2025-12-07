@@ -91,11 +91,12 @@ const NavButton = styled.button<{ active?: boolean }>`
   border: none;
   color: ${({ theme, active }) => active ? theme.colors.gold : theme.colors.foreground};
   font-size: 1rem;
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-weight: 400;
   letter-spacing: 0.03em;
   padding: 0.25rem 0;
   cursor: pointer;
   transition: color ${({ theme }) => theme.transition.button};
+  text-transform: capitalize;
   &:hover {
     color: ${({ theme }) => theme.colors.gold};
   }
@@ -122,7 +123,7 @@ const MegaMenu = styled.div<{ left: number | null }>`
   transform: translateX(-50%);
   min-width: 8rem;
   max-width: 10rem;
-  background: ${({ theme }) => theme.colors.darkBlueAlt};
+  background: rgba(11, 28, 45, 0.92); /* slightly see-through */
   border: none;
   border-radius: 0;
   padding: 0;
@@ -140,12 +141,14 @@ const MegaMenuButton = styled.button`
   border: none;
   color: ${({ theme }) => theme.colors.white};
   text-align: left;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 400;
   padding: 0.4rem 0.75rem;
   cursor: pointer;
   transition: color ${({ theme }) => theme.transition.button}, background 0.2s;
   border-bottom: 1px solid rgba(255,255,255,0.12);
   border-radius: 0;
+  text-transform: none;
   &:last-child {
     border-bottom: none;
   }
@@ -154,7 +157,7 @@ const MegaMenuButton = styled.button`
     background: rgba(255,255,255,0.04);
   }
   @media (max-width: 600px) {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     padding: 0.3rem 0.5rem;
   }
 `;
