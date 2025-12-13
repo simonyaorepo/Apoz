@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { InstitutionalNav } from "./components/InstitutionalNav";
-import { HomePage } from "./pages/HomePage";
-import { AboutPage } from "./pages/AboutPage";
+import  HomePage  from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
-import { NewsPage } from "./pages/NewsPage";
-import { ContactPage } from "./pages/ContactPage";
+import  NewsPage  from "./pages/NewsPage";
+import ContactPage from "./pages/ContactPage";
 import { InstitutionalFooter } from "./components/InstitutionalFooter";
 
 const PAGES = {

@@ -2,8 +2,17 @@ import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import styled, { useTheme } from "styled-components";
 
+interface Breadcrumb {
+  label: string;
+  href?: string;
+}
+
 interface HeroProps {
-  onNavigate: (page: string) => void;
+  backgroundImage: string;
+  breadcrumbs?: Breadcrumb[];
+  title: string;
+  subtitle?: string;
+  children?: React.ReactNode;
 }
 
 // ...existing styled-components...
@@ -104,36 +113,32 @@ const ArrowIcon = styled(ArrowRight)`
 `;
 
 
-export function Hero({ onNavigate }: HeroProps) {
+export default function Hero({ backgroundImage, breadcrumbs, title, subtitle, children }: HeroProps) {
   return (
     <HeroSection>
-      <BgImage image="https://images.unsplash.com/photo-1764343875123-8d3f95a9a5b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjaXR5JTIwc2t5bGluZSUyMHN1bnNldHxlbnwxfHx8fDE3NjQ2NTU1OTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" />
+      <BgImage image={backgroundImage} />
       <GradientOverlay />
       <Content>
         <Inner>
-          <Tag>Building Tomorrow's Communities Today</Tag>
-          <Title>Shaping the Future of Global Trade & Community Living</Title>
-          <Subtitle>
-            The Asia Pacific Opportunity Zone (APOZ) is more than just a development — it's a blueprint for sustainable economic growth and inclusive community building in Greater Houston. Strategically planned by ASC Global Inc., APOZ integrates residential, industrial, and commercial zones into a single, forward-looking ecosystem.
-          </Subtitle>
-          <ButtonRow>
-            <Button onClick={() => onNavigate("contact")}>Invest Now <ArrowIcon size={20} /></Button>
-            <Button onClick={() => onNavigate("projects")}>View Projects</Button>
-          </ButtonRow>
-          <StatsGrid>
-            <div>
-              <StatTitle>Homes Starting At</StatTitle>
-              <StatValue>$188,000</StatValue>
-            </div>
-            <div>
-              <StatTitle>Location</StatTitle>
-              <StatValue>Greater Houston</StatValue>
-            </div>
-            <div>
-              <StatTitle>Special Zone</StatTitle>
-              <StatValue>Free Trade</StatValue>
-            </div>
-          </StatsGrid>
+          {breadcrumbs && breadcrumbs.length > 0 && (
+            <nav aria-label="Breadcrumb" style={{ marginBottom: '1.5rem' }}>
+              <ol style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', listStyle: 'none', padding: 0, margin: 0, color: '#fff', fontSize: '1rem', opacity: 0.9 }}>
+                {breadcrumbs.map((crumb, idx) => (
+                  <li key={idx} style={{ display: 'flex', alignItems: 'center' }}>
+                    {crumb.href ? (
+                      <a href={crumb.href} style={{ color: '#fff', textDecoration: 'underline', opacity: 0.9 }}>{crumb.label}</a>
+                    ) : (
+                      <span style={{ color: '#fff', opacity: 0.9 }}>{crumb.label}</span>
+                    )}
+                    {idx < breadcrumbs.length - 1 && <span style={{ margin: '0 0.5rem' }}>&gt;</span>}
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+          <Title style={{ fontSize: '2.5rem', color: '#fff', marginBottom: '1rem', fontWeight: 700, textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>{title}</Title>
+          {subtitle && <Subtitle style={{ color: '#fff', textShadow: '0 1px 4px rgba(0,0,0,0.12)' }}>{subtitle}</Subtitle>}
+          {children}
         </Inner>
       </Content>
     </HeroSection>

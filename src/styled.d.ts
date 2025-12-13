@@ -61,6 +61,14 @@ declare module 'styled-components' {
       sidebarAccentForeground: string;
       sidebarBorder: string;
       sidebarRing: string;
+
+      // Status badge colors
+      statusInProgressBg: string;
+      statusInProgressText: string;
+      statusUpcomingBg: string;
+      statusUpcomingText: string;
+      statusDefaultBg: string;
+      statusDefaultText: string;
     };
     opacity: typeof import('./theme').lightTheme.opacity;
     letterSpacing: typeof import('./theme').lightTheme.letterSpacing;

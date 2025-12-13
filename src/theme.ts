@@ -134,6 +134,14 @@ export const lightTheme = {
     sidebarAccentForeground: 'oklch(0.205 0 0)',
     sidebarBorder: 'oklch(0.922 0 0)',
     sidebarRing: 'oklch(0.708 0 0)',
+
+    // Status badge colors
+    statusInProgressBg: '#e8f5e9',
+    statusInProgressText: '#388e3c',
+    statusUpcomingBg: '#e3f2fd',
+    statusUpcomingText: '#1976d2',
+    statusDefaultBg: '#f5f5f5',
+    statusDefaultText: '#616161',
   },
   opacity: {
     low: 0.2,
@@ -197,6 +205,14 @@ export const darkTheme = {
     sidebarAccentForeground: 'oklch(0.985 0 0)',
     sidebarBorder: 'oklch(0.269 0 0)',
     sidebarRing: 'oklch(0.439 0 0)',
+
+    // Status badge colors (dark mode variants)
+    statusInProgressBg: '#23472b',
+    statusInProgressText: '#a5d6a7',
+    statusUpcomingBg: '#1a2a3a',
+    statusUpcomingText: '#90caf9',
+    statusDefaultBg: '#222',
+    statusDefaultText: '#bbb',
   },
 };
 
