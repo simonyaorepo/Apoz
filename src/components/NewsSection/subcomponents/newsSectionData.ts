@@ -45,5 +45,20 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       "ASC Global Inc. is committed to collaborating with the City of Houston and the ITC to meet this growing need.",
     ],
   },
-  // ...add remaining articles as needed
+  {
+    id: 3,
+    title: "Token Communities Ltd. Hosts First Overseas APOZ Conference in Shanghai",
+    date: "May 20, 2025",
+    location: "Asian Pacific Industrial Park",
+    category: "Event",
+    image: "https://images.unsplash.com/photo-1505624198937-c704aff72608?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBtZWV0aW5nJTIwcm9vbXxlbnwxfHx8fDE3NjQ2NTg4MTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    paragraphs: [
+      "On May 20, 2025, Token Communities Ltd. (OTC: TKCM), through its subsidiary ASC Global Inc., hosted its inaugural overseas APOZ conference at the Westin Bund Center in Shanghai.",
+      "The event aimed to introduce the APOZ initiative to the Asia Pacific business community, highlighting investment opportunities and fostering regional engagement.",
+      "CEO David Champ announced plans for additional conferences in Taiwan, Singapore, and other Asian cities, citing significant interest from the region.",
+      "These events are part of the company's strategy to expand the APOZ initiative within the Asia Pacific markets.",
+      "Project director Leo Lei indicated that final site-plan modifications are underway with assistance from local government agencies.",
+      "A groundbreaking ceremony is anticipated for September 2025, marking a significant milestone in the project's development and implementation.",
+    ],
+  },
 ];

@@ -32,17 +32,33 @@ const Grid = styled.div`
   gap: ${({ theme }) => theme.spacing.xxl};
 `;
 
+const EmptyState = styled.div`
+  grid-column: 1 / -1;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.grayAccent};
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  padding: 48px 0;
+`;
+
 const NewsGrid = ({ articles, filter, onSelect }: NewsGridProps) => (
   <GridSection>
     <GridInner>
       <Grid>
-        {articles.filter(a => filter === "All" || a.category === filter).map(article => (
-          <NewsArticle
-            key={article.id}
-            article={article}
-            onClick={() => onSelect(article)}
-          />
-        ))}
+        {articles.filter(a => filter === "All" || a.category === filter).length > 0 ? (
+          articles
+            .filter(a => filter === "All" || a.category === filter)
+            .map(article => (
+              <NewsArticle
+                key={article.id}
+                article={article}
+                onClick={() => onSelect(article)}
+              />
+            ))
+        ) : (
+          <EmptyState>
+            No news articles found for this category.
+          </EmptyState>
+        )}
       </Grid>
     </GridInner>
   </GridSection>
