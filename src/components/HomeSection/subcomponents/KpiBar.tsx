@@ -20,6 +20,14 @@ const Grid = styled.div`
   grid-template-columns: repeat(5, 1fr);
   border-left: 1px solid ${({ theme }) => theme.colors.goldAccent}20;
   border-right: 1px solid ${({ theme }) => theme.colors.goldAccent}20;
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    border-left: none;
+    border-right: none;
+  }
 `;
 
 const Metric = styled.div<{ isLast: boolean }>`

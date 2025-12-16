@@ -23,18 +23,27 @@ const ArticleWrapper = styled.div<{ clickable: boolean }>`
   border-radius: ${({ theme }) => theme.radii.card};
   padding: ${({ theme }) => theme.spacing.xl};
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  @media (max-width: 600px) {
+    padding: ${({ theme }) => theme.spacing.md};
+  }
 `;
 
 const ArticleImage = styled.img`
   width: 100%;
   border-radius: ${({ theme }) => theme.radii.md};
   margin-bottom: ${({ theme }) => theme.spacing.lg};
+  @media (max-width: 600px) {
+    margin-bottom: ${({ theme }) => theme.spacing.md};
+  }
 `;
 
 const ArticleTitle = styled.h3`
   color: ${({ theme }) => theme.colors.darkBlueAlt};
   font-size: ${({ theme }) => theme.fontSizes.h3};
   margin-bottom: ${({ theme }) => theme.spacing.md};
+  @media (max-width: 600px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const ArticleMeta = styled.p`
@@ -48,6 +57,10 @@ const ArticleParagraphs = styled.ul`
   font-size: ${({ theme }) => theme.fontSizes.lg};
   line-height: 1.7;
   padding-left: 1.5rem;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
 `;
 
 const ArticleParagraph = styled.li`

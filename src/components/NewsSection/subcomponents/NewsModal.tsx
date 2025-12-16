@@ -93,6 +93,13 @@ const ModalContent = styled.article`
   max-width: 900px;
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.lg};
+  @media (max-width: 900px) {
+    max-width: 100vw;
+    padding: ${({ theme }) => theme.spacing.lg};
+  }
+  @media (max-width: 600px) {
+    padding: ${({ theme }) => theme.spacing.md};
+  }
 `;
 
 const NewsModal = ({ article, onClose, onNext, onPrevious }: NewsModalProps) => {

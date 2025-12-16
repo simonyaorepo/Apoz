@@ -22,6 +22,10 @@ const FutureGrid = styled.div`
   gap: ${({ theme }) => theme.spacing.xxl};
   max-width: 800px;
   margin: 0 auto;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: ${({ theme }) => theme.spacing.lg};
+  }
 `;
 const FutureCard = styled.div`
   background: ${({ theme }) => theme.colors.darkBlueAlt};

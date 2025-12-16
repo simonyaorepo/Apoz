@@ -27,6 +27,10 @@ export const Grid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: ${({ theme }) => theme.spacing.xxxl};
   align-items: center;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: ${({ theme }) => theme.spacing.lg};
+  }
 `;
 export const SectionImage = styled.img`
   width: 100%;

@@ -37,7 +37,7 @@ const NewsSection: React.FC = () => {
     <SectionWrapper>
       <NewsHero />
       <NewsFilterTabs filters={filters} filter={filter} setFilter={setFilter} />
-      <NewsGrid articles={NEWS_ARTICLES} filter={filter} onSelect={handleSelect} />
+      <NewsGrid articles={NEWS_ARTICLES} filter={filter} />
       {selectedArticle && (
         <NewsModal
           article={selectedArticle}

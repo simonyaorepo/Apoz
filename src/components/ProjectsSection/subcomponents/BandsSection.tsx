@@ -24,6 +24,10 @@ const BandGrid = styled.div<{ reverse?: boolean }>`
   grid-template-columns: 3fr 2fr;
   gap: ${({ theme }) => theme.spacing.xxl};
   align-items: center;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: ${({ theme }) => theme.spacing.lg};
+  }
 `;
 const BandImageWrap = styled.div<{ reverse?: boolean }>`
   order: ${({ reverse }) => (reverse ? 2 : 1)};
