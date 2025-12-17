@@ -1,0 +1,147 @@
+import React from "react";
+import styled from "styled-components";
+
+const HeroSection = styled.section`
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  height: 45vh;
+  max-height: 500px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: ${({ theme }) => theme.colors.darkBlue};
+  
+  @media (max-width: 768px) {
+    min-height: 250px;
+    height: 35vh;
+  }
+`;
+
+const HeroImage = styled.img`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2;
+`;
+
+const ContentBox = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.xxxl};
+  width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: ${({ theme }) => theme.spacing.sm};
+  
+  @media (max-width: 1200px) {
+    width: 520px;
+  }
+  
+  @media (max-width: 992px) {
+    width: 480px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.lg};
+    width: 90%;
+  }
+  
+  @media (max-width: 480px) {
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.md};
+    width: 95%;
+  }
+`;
+
+const Breadcrumb = styled.nav`
+  color: ${({ theme }) => theme.colors.foreground};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-weight: ${({ theme }) => theme.fontWeights.normal};
+  letter-spacing: 0.02em;
+  margin-bottom: ${({ theme }) => theme.spacing.xs};
+  opacity: 0.8;
+  
+  a {
+    color: ${({ theme }) => theme.colors.foreground};
+    text-decoration: none;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: ${({ theme }) => theme.colors.goldAccent};
+    }
+  }
+  
+  .separator {
+    margin: 0 ${({ theme }) => theme.spacing.sm};
+  }
+  
+  .current {
+    color: ${({ theme }) => theme.colors.foreground};
+  }
+`;
+
+const Title = styled.h1`
+  font-size: ${({ theme }) => theme.fontSizes.h1};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  color: ${({ theme }) => theme.colors.darkBlue};
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.h2};
+  }
+`;
+
+interface PageHeroProps {
+  title: string;
+  backgroundImage: string;
+  breadcrumbs?: Array<{ label: string; href?: string }>;
+}
+
+const PageHero: React.FC<PageHeroProps> = ({
+  title,
+  backgroundImage,
+  breadcrumbs = [{ label: "Home", href: "/" }],
+}) => {
+  return (
+    <HeroSection>
+      <HeroImage src={backgroundImage} alt={title} />
+      <Overlay />
+      <ContentBox>
+        <Breadcrumb>
+          {breadcrumbs.map((crumb, index) => (
+            <React.Fragment key={index}>
+              {crumb.href ? (
+                <a href={crumb.href}>{crumb.label}</a>
+              ) : (
+                <span className="current">{crumb.label}</span>
+              )}
+              {index < breadcrumbs.length - 1 && <span className="separator">›</span>}
+            </React.Fragment>
+          ))}
+        </Breadcrumb>
+        <Title>{title}</Title>
+      </ContentBox>
+    </HeroSection>
+  );
+};
+
+export default PageHero;

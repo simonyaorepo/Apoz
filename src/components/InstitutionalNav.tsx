@@ -16,7 +16,7 @@ const NavBar = styled.nav<{ scrolled: boolean }>`
   transition: all 0.3s;
   background: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ scrolled }) => scrolled ? "0 8px 32px rgba(0,0,0,0.15)" : "none"};
-  min-height: 3.5rem;
+  min-height: 5rem;
 `;
 
 const NavContainer = styled.div`
@@ -33,9 +33,9 @@ const NavRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 3.5rem;
+  height: 5rem;
   @media (max-width: 600px) {
-    height: 2.5rem;
+    height: 3rem;
   }
 `;
 
@@ -118,7 +118,7 @@ const NavButton = styled.button<{ active?: boolean }>`
 
 const MegaMenu = styled.div<{ left: number | null }>`
   position: fixed;
-  top: 3.5rem;
+  top: 5rem;
   left: ${({ left }) => (left !== null ? `${left}px` : '50%')};
   transform: translateX(-50%);
   min-width: 8rem;
@@ -216,16 +216,17 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
   }, []);
 
   const menuItems = [
-    { id: "home", label: "Home" },
     { 
       id: "about", 
       label: "About Us",
       submenu: [
-        { label: "Mission & Vision", id: "mission" },
-        { label: "Leadership", id: "leadership" },
-        { label: "Partners", id: "partners" },
+        { label: "Our Mission", id: "about/mission" },
+        { label: "Our Vision", id: "about/vision" },
+        { label: "Our Approach", id: "about/approach" },
+        { label: "Our Partnership", id: "about/partnership" },
       ]
     },
+    { id: "leadership", label: "Leadership" },
     { 
       id: "projects", 
       label: "Projects",

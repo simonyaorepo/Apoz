@@ -1,181 +1,171 @@
-
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { Button } from "../../ui/button";
+import GoldButton from "../../ui/GoldButton";
 import { NEWS_ARTICLES } from "../../NewsSection/subcomponents/newsSectionData";
 
 const HeroSection = styled.section`
   position: relative;
-  width: 100vw;
+  width: 100%;
   min-height: 600px;
   height: 70vh;
+  max-height: 800px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   overflow: hidden;
-  background: #000;
+  background: ${({ theme }) => theme.colors.darkBlue};
+  
+  @media (max-width: 768px) {
+    min-height: 500px;
+    height: 60vh;
+  }
 `;
 
 const HeroImage = styled.img`
   position: absolute;
   inset: 0;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  transition: transform 0.5s ease;
 `;
 
 const Overlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg,rgba(0,0,0,0.10) 0%,rgba(0,0,0,0.55) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 100%);
   z-index: 2;
 `;
 
 const ContentBox = styled.div`
   position: absolute;
-  left: 36px;
-  bottom: 36px;
+  left: 0;
+  bottom: 0;
   z-index: 3;
-  background: rgba(10, 30, 30, 0.92);
-  border-radius: ${({ theme }) => theme.radii.lg};
-  padding: 18px 22px 16px 22px;
-  max-width: 370px;
+  background: rgba(10, 30, 30, 0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 0;
+  padding: 40px 56px;
+  max-width: 680px;
   color: ${({ theme }) => theme.colors.white};
-  box-shadow: 0 4px 32px rgba(0,0,0,0.12);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @media (max-width: 900px) {
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    padding: 10px 8px 10px 10px;
-    max-width: 96vw;
+  gap: 14px;
+  
+  @media (max-width: 768px) {
+    padding: 24px 28px;
+    max-width: 100%;
+    gap: 10px;
   }
 `;
 
 const Subtitle = styled.div`
   color: ${({ theme }) => theme.colors.goldAccent};
-  font-size: ${({ theme }) => theme.fontSizes.md};
-  font-weight: 500;
-  margin-bottom: 8px;
+  font-size: 0.8125rem;
+  font-weight: 400;
   letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.4;
 `;
 
 const Headline = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.xl};
+  font-size: 1.625rem;
   font-weight: 700;
-  margin-bottom: 16px;
   color: ${({ theme }) => theme.colors.white};
   line-height: 1.25;
-  @media (max-width: 700px) {
-    font-size: ${({ theme }) => theme.fontSizes.lg};
+  margin: 0;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
   }
 `;
 
 const Summary = styled.p`
-  color: ${({ theme }) => theme.colors.backgroundAlt};
-  font-size: ${({ theme }) => theme.fontSizes.md};
-  margin-bottom: 20px;
-  line-height: 1.6;
-  max-width: 90%;
-  @media (max-width: 700px) {
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    margin-bottom: 8px;
-  }
-`;
-
-const StyledButton = styled(Button)`
-  margin-top: 8px;
-  font-size: ${({ theme }) => theme.fontSizes.md};
-  font-weight: 600;
-  padding: 8px 28px;
-  border-radius: ${({ theme }) => theme.radii.md};
-  background: ${({ theme }) => theme.colors.goldAccent};
-  color: ${({ theme }) => theme.colors.darkBlue};
-  &:hover {
-    background: ${({ theme }) => theme.colors.goldAccentHover};
-    color: ${({ theme }) => theme.colors.background};
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin: 0;
+  font-weight: 400;
+  
+  @media (max-width: 768px) {
+    font-size: 0.8125rem;
   }
 `;
 
 // Square, theme-driven arrow button
 const ArrowButton = styled.button`
-  width: 44px;
-  height: 44px;
-  border-radius: ${({ theme }) => theme.radii.card || '8px'};
-  border: 2px solid ${({ theme }) => theme.colors.goldAccent};
+  width: 3rem;
+  height: 3rem;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border-radius: 2px;
+  border: 2px solid white;
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 8px;
-  margin-right: 8px;
   cursor: pointer;
-  transition: background 0.12s, transform 0.12s, color 0.12s;
-  color: ${({ theme }) => theme.colors.goldAccent};
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  &:hover {
-    background: ${({ theme }) => theme.colors.goldAccent};
-    color: ${({ theme }) => theme.colors.white};
-    transform: scale(1.05);
+  transition: all 0.2s ease;
+  color: white;
+  padding: 5px;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
-`;
-
-const StyledArrowIcon = styled.svg`
-  width: 44px;
-  height: 44px;
-  display: block;
-  stroke: currentColor;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: color 0.12s, transform 0.12s;
-  ${ArrowButton}:hover & {
-    color: ${({ theme }) => theme.colors.white};
-    transform: scale(1.08);
+  
+  &:hover,
+  &:focus {
+    outline: none;
+    background: white;
+    border-color: white;
+    color: ${({ theme }) => theme.colors.darkBlue};
+  }
+  
+  @media (max-width: 768px) {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 `;
 
 // Row for arrow buttons, positioned bottom right
 const ArrowButtonRow = styled.div`
   position: absolute;
-  right: 36px;
-  bottom: 36px;
+  right: 32px;
+  bottom: 32px;
   z-index: 4;
   display: flex;
   flex-direction: row;
-  @media (max-width: 900px) {
-    right: 12px;
-    bottom: 12px;
+  align-items: center;
+  gap: 12px;
+  
+  @media (max-width: 768px) {
+    right: 20px;
+    bottom: 20px;
+    gap: 10px;
   }
 `;
 
-const ArrowIcon = styled.svg`
-  display: block;
-  width: 2.2em;
-  height: 2.2em;
-  stroke: currentColor;
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-`;
-
 const ArrowLeft = () => (
-  <StyledArrowIcon viewBox="0 0 44 44" aria-hidden="true" fill="none">
-    <polyline points="34 38 10 22 34 6" strokeWidth={2.5} />
-  </StyledArrowIcon>
+  <svg viewBox="0 0 24 24" fill="none">
+    <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
 );
 const ArrowRight = () => (
-  <StyledArrowIcon viewBox="0 0 44 44" aria-hidden="true" fill="none">
-    <polyline points="10 6 34 22 10 38" strokeWidth={2.5} />
-  </StyledArrowIcon>
+  <svg viewBox="0 0 24 24" fill="none">
+    <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
 );
 
 
 const HomeHero: React.FC = () => {
+  const navigate = useNavigate();
   const [index, setIndex] = useState(0);
   const article = NEWS_ARTICLES[index];
   const goLeft = () => setIndex(i => (i === 0 ? NEWS_ARTICLES.length - 1 : i - 1));
@@ -195,9 +185,9 @@ const HomeHero: React.FC = () => {
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
         <Headline>{article.title}</Headline>
         <Summary>{summary}</Summary>
-        <StyledButton onClick={() => window.location.href = `/news/${article.id}`}>
+        <GoldButton onClick={() => navigate(`/news/${article.id}`)}>
           Learn More
-        </StyledButton>
+        </GoldButton>
       </ContentBox>
       <ArrowButtonRow>
         <ArrowButton aria-label="Previous article" onClick={goLeft}><ArrowLeft /></ArrowButton>

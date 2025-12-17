@@ -1,4 +1,5 @@
 
+import { useParams } from "react-router-dom";
 import AboutSection from "../components/AboutSection/AboutSection";
 
 
@@ -7,5 +8,6 @@ interface AboutPageProps {
 }
 
 export default function AboutPage({ onNavigate }: AboutPageProps) {
-  return <AboutSection onNavigate={onNavigate} />;
+  const { section } = useParams<{ section?: string }>();
+  return <AboutSection onNavigate={onNavigate} section={section} />;
 }

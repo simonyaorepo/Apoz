@@ -27,7 +27,7 @@ const Flex = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5rem;
+  height: 6rem;
 `;
 
 const LogoGroup = styled.div`
@@ -156,8 +156,8 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
-    { id: "home", label: "Home" },
     { id: "about", label: "About Us" },
+    { id: "leadership", label: "Leadership" },
     { id: "projects", label: "Projects" },
     { id: "news", label: "News" },
     { id: "contact", label: "Contact" },
