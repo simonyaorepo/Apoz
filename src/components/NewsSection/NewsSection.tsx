@@ -1,51 +1,43 @@
-
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import NewsHero from "./subcomponents/NewsHero";
-import NewsFilterTabs from "./subcomponents/NewsFilterTabs";
+import PageHero from "../PageHero";
 import NewsGrid from "./subcomponents/NewsGrid";
-import NewsModal from "./subcomponents/NewsModal";
 
-import type { NewsArticle } from "./subcomponents/newsSectionData";
 import { NEWS_ARTICLES } from "./subcomponents/newsSectionData";
-
-const filters = ["All", "Press Release", "Event"];
 
 const SectionWrapper = styled.div`
   width: 100%;
-  background: ${({ theme }) => theme.colors.backgroundAlt};
+  background: ${({ theme }) => theme.colors.white};
+`;
+
+const TitleSection = styled.section`
+  background: ${({ theme }) => theme.colors.white};
+  padding: ${({ theme }) => theme.spacing.xxxl} 5vw ${({ theme }) => theme.spacing.xl};
+  
+  h1 {
+    font-size: ${({ theme }) => theme.fontSizes.h2};
+    font-weight: ${({ theme }) => theme.fontWeights.bold};
+    color: ${({ theme }) => theme.colors.darkBlue};
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 `;
 
 const NewsSection: React.FC = () => {
-  const [selectedArticle, setSelectedArticle] = useState<NewsArticle | null>(null);
-  const [filter, setFilter] = useState("All");
-
-  const handleSelect = (article: NewsArticle) => setSelectedArticle(article);
-  const handleClose = () => setSelectedArticle(null);
-  const handleNext = () => {
-    if (!selectedArticle) return;
-    const idx = NEWS_ARTICLES.findIndex((a: NewsArticle) => a.id === selectedArticle.id);
-    setSelectedArticle(NEWS_ARTICLES[(idx + 1) % NEWS_ARTICLES.length]);
-  };
-  const handlePrevious = () => {
-    if (!selectedArticle) return;
-    const idx = NEWS_ARTICLES.findIndex((a: NewsArticle) => a.id === selectedArticle.id);
-    setSelectedArticle(NEWS_ARTICLES[(idx - 1 + NEWS_ARTICLES.length) % NEWS_ARTICLES.length]);
-  };
-
   return (
     <SectionWrapper>
-      <NewsHero />
-      <NewsFilterTabs filters={filters} filter={filter} setFilter={setFilter} />
-      <NewsGrid articles={NEWS_ARTICLES} filter={filter} />
-      {selectedArticle && (
-        <NewsModal
-          article={selectedArticle}
-          onClose={handleClose}
-          onNext={handleNext}
-          onPrevious={handlePrevious}
-        />
-      )}
+      <PageHero
+        title="News"
+        backgroundImage="https://images.unsplash.com/photo-1504711434969-e33886168f5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "News" }
+        ]}
+      />
+      <TitleSection>
+        <h1>News Release</h1>
+      </TitleSection>
+      <NewsGrid articles={NEWS_ARTICLES} />
     </SectionWrapper>
   );
 };

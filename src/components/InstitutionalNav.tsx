@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Globe, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import styled from "styled-components";
 
 interface InstitutionalNavProps {
@@ -119,8 +119,8 @@ const NavButton = styled.button<{ active?: boolean }>`
 const MegaMenu = styled.div<{ left: number | null }>`
   position: fixed;
   top: 5rem;
-  left: ${({ left }) => (left !== null ? `${left}px` : '50%')};
-  transform: translateX(-50%);
+  left: ${({ left }) => (left !== null ? `${left}px` : '0')};
+  transform: ${({ left }) => left !== null ? 'translateX(-50%)' : 'none'};
   min-width: 8rem;
   max-width: 10rem;
   background: rgba(11, 28, 45, 0.92); /* slightly see-through */
@@ -159,27 +159,6 @@ const MegaMenuButton = styled.button`
   @media (max-width: 600px) {
     font-size: 0.75rem;
     padding: 0.3rem 0.5rem;
-  }
-`;
-
-const LanguageButton = styled.button`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing.xs};
-  padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.md};
-  border: 1px solid ${({ theme }) => theme.colors.goldAccent};
-  border-radius: ${({ theme }) => theme.radii.full};
-  color: ${({ theme }) => theme.colors.foreground};
-  background: none;
-  font-size: ${({ theme }) => theme.fontSizes.sm};
-  cursor: pointer;
-  transition: color ${({ theme }) => theme.transition.button}, border-color ${({ theme }) => theme.transition.button};
-  & > svg {
-    color: ${({ theme }) => theme.colors.gold};
-  }
-  &:hover {
-    color: ${({ theme }) => theme.colors.gold};
-    border-color: ${({ theme }) => theme.colors.gold};
   }
 `;
 
@@ -231,13 +210,15 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
       id: "projects", 
       label: "Projects",
       submenu: [
-        { label: "Residential", id: "residential" },
-        { label: "Commercial", id: "commercial" },
-        { label: "Industrial", id: "industrial" },
+        { label: "Phase 1 – Infrastructure", id: "projects/phase1" },
+        { label: "Residential Communities", id: "projects/residential" },
+        { label: "Commercial & Retail", id: "projects/commercial" },
+        { label: "Industrial & Logistics", id: "projects/industrial" },
+        { label: "Future Developments", id: "projects/future" },
       ]
     },
+    { id: "investment", label: "Investment Opportunities" },
     { id: "news", label: "News" },
-    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -300,10 +281,6 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
                 </NavItemWrapper>
               );
             })}
-            <LanguageButton>
-              <Globe size={16} />
-              <span>EN / 中文</span>
-            </LanguageButton>
           </NavLinks>
         </NavRow>
       </NavContainer>

@@ -54,7 +54,7 @@ const Paragraph = styled.p`
 const MissionVision: React.FC<MissionVisionProps> = ({ mission, vision }) => (
   <Wrapper>
     {/* Mission */}
-    <Section bg="#fff">
+    <Section style={{ background: '#fff' }}>
       <Grid>
         <Img src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBoYW5kc2hha2UlMjBidXNpbmVzc3xlbnwxfHx8fDE3NjQ2NTg4MDh8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Mission" />
         <MissionText>

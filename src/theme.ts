@@ -38,6 +38,8 @@ export const fontWeights = {
 export const gradients = {
   hero: 'linear-gradient(135deg, #0A1628 0%, #1a2942 100%)',
   feature: 'linear-gradient(135deg, #eff6ff 0%, #fff 100%)',
+  teal: 'linear-gradient(135deg, #0a3a3f 0%, #0d4a50 100%)',
+  tealOverlay: 'linear-gradient(135deg, rgba(10, 58, 63, 0.95) 0%, rgba(13, 74, 80, 0.95) 100%)',
 };
 
 export const radii = {
@@ -93,6 +95,10 @@ export const lightTheme = {
     white: '#fff',
     darkBlue: '#0A1628',
     darkBlueAlt: '#0B1C2D',
+    teal: '#0a3a3f',
+    tealDark: '#0d4a50',
+    grey: '#f5f5f5',
+    greyDark: '#e5e7eb',
     goldAccent: '#C9A24D',
     goldAccentHover: '#A68A3E',
     grayAccent: '#8B95A5',

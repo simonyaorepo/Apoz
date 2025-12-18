@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const breakpoints = {
-  mobile: '768px',
-  tablet: '968px',
-};
-
 export const WhiteSection = styled.section`
   background: ${({ theme }) => theme.colors.white};
   width: 100%;
@@ -13,7 +8,7 @@ export const WhiteSection = styled.section`
 `;
 
 export const GreySection = styled.section`
-  background: #f5f5f5;
+  background: ${({ theme }) => theme.colors.grey};
   width: 100%;
   padding: 0 0 ${({ theme }) => theme.spacing.xxxl} 0;
 `;
@@ -30,7 +25,7 @@ export const Grid = styled.div<{ reverse?: boolean }>`
   gap: ${({ theme }) => theme.spacing.xxl};
   align-items: start;
   
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.xl};
   }
@@ -39,7 +34,7 @@ export const Grid = styled.div<{ reverse?: boolean }>`
 export const PhotoWrapper = styled.div<{ reverse?: boolean }>`
   order: ${({ reverse }) => reverse ? 2 : 1};
   
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     order: 1;
   }
 `;
@@ -47,7 +42,7 @@ export const PhotoWrapper = styled.div<{ reverse?: boolean }>`
 export const ContentWrapper = styled.div<{ reverse?: boolean }>`
   order: ${({ reverse }) => reverse ? 1 : 2};
   
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     order: 2;
   }
 `;

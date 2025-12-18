@@ -19,6 +19,10 @@ declare module 'styled-components' {
       white: string;
       darkBlue: string;
       darkBlueAlt: string;
+      teal: string;
+      tealDark: string;
+      grey: string;
+      greyDark: string;
       goldAccent: string;
       goldAccentHover: string;
       grayAccent: string;

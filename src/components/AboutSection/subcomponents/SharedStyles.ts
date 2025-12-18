@@ -1,26 +1,20 @@
 import styled from "styled-components";
 
-// Breakpoints
-export const breakpoints = {
-  mobile: '768px',
-  tablet: '968px',
-};
-
 export const WhiteSection = styled.section`
   background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.xl};
   
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
   }
 `;
 
 export const GreySection = styled.section`
-  background: #f5f5f5;
+  background: ${({ theme }) => theme.colors.grey};
   padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.xl};
   position: relative;
   
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
   }
 `;
@@ -30,7 +24,7 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0 ${({ theme }) => theme.spacing.md};
   
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: 0 ${({ theme }) => theme.spacing.sm};
   }
 `;
@@ -41,7 +35,7 @@ export const ContentGrid = styled.div`
   gap: ${({ theme }) => theme.spacing.xxl};
   align-items: center;
   
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.xl};
   }
@@ -53,7 +47,7 @@ export const GreyContentGrid = styled.div`
   gap: ${({ theme }) => theme.spacing.md};
   align-items: start;
   
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.lg};
   }
@@ -71,7 +65,7 @@ export const TextContent = styled.div`
     }
   }
   
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     p {
       font-size: ${({ theme }) => theme.fontSizes.sm};
       line-height: 1.6;
@@ -80,18 +74,18 @@ export const TextContent = styled.div`
 `;
 
 export const TealSection = styled.section`
-  background: linear-gradient(to bottom, ${({ theme }) => theme.colors.white} 50%, #f5f5f5 50%);
+  background: linear-gradient(to bottom, ${({ theme }) => theme.colors.white} 50%, ${({ theme }) => theme.colors.grey} 50%);
   padding: ${({ theme }) => theme.spacing.xl} 0;
   position: relative;
   z-index: 10;
   
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: ${({ theme }) => theme.spacing.lg} 0;
   }
 `;
 
 export const TealBox = styled.div`
-  background: linear-gradient(135deg, #0a3a3f 0%, #0d4a50 100%);
+  background: ${({ theme }) => theme.gradients.teal};
   padding: ${({ theme }) => theme.spacing.xl};
   width: 54%;
   max-width: 75%;
@@ -103,7 +97,7 @@ export const TealBox = styled.div`
     margin: 0;
   }
   
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 85%;
     max-width: 100%;
     padding: ${({ theme }) => theme.spacing.lg};
@@ -113,7 +107,7 @@ export const TealBox = styled.div`
     }
   }
   
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 95%;
     padding: ${({ theme }) => theme.spacing.md};
   }
@@ -126,7 +120,7 @@ export const IllustrationBox = styled.div`
   aspect-ratio: 8 / 3;
   min-height: 120px;
   max-height: 180px;
-  background: #e5e7eb;
+  background: ${({ theme }) => theme.colors.greyDark};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,7 +133,7 @@ export const IllustrationBox = styled.div`
     height: auto;
   }
   
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 100%;
     margin: 0;
     max-height: 150px;
@@ -158,7 +152,7 @@ export const ImageBox = styled.div`
     object-fit: cover;
   }
   
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     max-width: 100%;
     aspect-ratio: 16 / 9;
   }

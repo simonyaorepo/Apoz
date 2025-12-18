@@ -1,75 +1,113 @@
 import styled from "styled-components";
-import NewsArticle from "./NewsArticle";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import type { NewsArticle as NewsArticleType } from "./newsSectionData";
 
 interface NewsGridProps {
   articles: NewsArticleType[];
-  filter: string;
 }
 
 const GridSection = styled.section`
-  padding: ${({ theme }) => theme.spacing.section} 0;
-  background: ${({ theme }) => theme.colors.backgroundAlt};
-  @media (max-width: 600px) {
-    padding: ${({ theme }) => theme.spacing.lg} 0;
-  }
+  padding: 0 5vw ${({ theme }) => theme.spacing.xxxl};
+  background: ${({ theme }) => theme.colors.white};
 `;
+
 const GridInner = styled.div`
-  max-width: ${({ theme }) => theme.maxWidth.home};
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 ${({ theme }) => theme.spacing.lg};
-  @media (max-width: 900px) {
-    max-width: 100vw;
-    padding: 0 8px;
-  }
 `;
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: ${({ theme }) => theme.spacing.xxl};
-  @media (max-width: 900px) {
+  gap: ${({ theme }) => theme.spacing.xl};
+  
+  @media (max-width: 968px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: ${({ theme }) => theme.spacing.lg};
   }
-  @media (max-width: 600px) {
+  
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: ${({ theme }) => theme.spacing.md};
   }
 `;
 
-const EmptyState = styled.div`
-  grid-column: 1 / -1;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.grayAccent};
+const ArticleCard = styled.article`
+  cursor: pointer;
+  transition: transform 0.2s;
+  
+  &:hover {
+    transform: translateY(-4px);
+  }
+`;
+
+const ArticleImage = styled.div`
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+const ArticleTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.lg};
-  padding: 48px 0;
-  @media (max-width: 600px) {
-    font-size: 1rem;
-    padding: 24px 0;
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  color: ${({ theme }) => theme.colors.darkBlue};
+  margin: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+  line-height: 1.4;
+`;
+
+const ArticleExcerpt = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  color: ${({ theme }) => theme.colors.foreground};
+  line-height: 1.6;
+  margin: 0 0 ${({ theme }) => theme.spacing.md} 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+`;
+
+const ArticleDate = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  color: ${({ theme }) => theme.colors.foreground};
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.xs};
+  
+  &::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
+    background-size: contain;
   }
 `;
 
-const NewsGrid = ({ articles, filter }: NewsGridProps) => (
-  <GridSection>
-    <GridInner>
-      <Grid>
-        {articles.filter(a => filter === "All" || a.category === filter).length > 0 ? (
-          articles
-            .filter(a => filter === "All" || a.category === filter)
-            .map(article => (
-              <Link key={article.id} to={`/news/${article.id}`} style={{ textDecoration: 'none' }}>
-                <NewsArticle article={article} />
-              </Link>
-            ))
-        ) : (
-          <EmptyState>
-            No news articles found for this category.
-          </EmptyState>
-        )}
-      </Grid>
-    </GridInner>
-  </GridSection>
-);
+const NewsGrid = ({ articles }: NewsGridProps) => {
+  const navigate = useNavigate();
+  
+  return (
+    <GridSection>
+      <GridInner>
+        <Grid>
+          {articles.map(article => (
+            <ArticleCard key={article.id} onClick={() => navigate(`/news/${article.id}`)}>
+              <ArticleImage>
+                <img src={article.image} alt={article.title} />
+              </ArticleImage>
+              <ArticleTitle>{article.title}</ArticleTitle>
+              <ArticleExcerpt>{article.paragraphs[0]}</ArticleExcerpt>
+              <ArticleDate>{article.date}</ArticleDate>
+            </ArticleCard>
+          ))}
+        </Grid>
+      </GridInner>
+    </GridSection>
+  );
+};
 
 export default NewsGrid;

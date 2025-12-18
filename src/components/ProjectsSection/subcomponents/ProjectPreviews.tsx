@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Section = styled.section`
-  background: linear-gradient(135deg, rgba(10, 58, 63, 0.95) 0%, rgba(13, 74, 80, 0.95) 100%),
+  background: ${({ theme }) => theme.gradients.tealOverlay},
     url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920') center/cover;
   padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
   position: relative;
@@ -114,48 +114,50 @@ const ArrowButton = styled.div`
   }
 `;
 
-interface SectionPreviewsProps {
-  onNavigate: (page: string) => void;
-}
-
-const SectionPreviews: React.FC<SectionPreviewsProps> = ({ onNavigate }) => {
+const ProjectPreviews: React.FC = () => {
   const navigate = useNavigate();
   
-  const sections = [
+  const projects = [
     {
-      id: "mission",
-      title: "Our Mission",
-      description: "APOZ (Asia Pacific Opportunity Zone) is dedicated to creating a dynamic, sustainable, and innovation-driven industrial and residential community in Southeast Texas. By integrating smart infrastructure, green energy, and global partnerships, APOZ aims to become a hub for advanced manufacturing, international trade, and inclusive housing.",
-      route: "/about/mission"
+      id: "phase1",
+      title: "Phase 1 – Infrastructure & Site Preparation (2025–2026)",
+      description: "Roads, utilities, and core infrastructure underway. Partnerships with local contractors and public agencies. Approved master plan submitted to Chambers County.",
+      route: "/projects/phase1"
     },
     {
-      id: "vision",
-      title: "Our Vision",
-      description: "Our vision is to empower growth — not only for businesses but also for the communities they serve — by transforming underdeveloped land into high-value economic zones that support long-term prosperity and global collaboration.",
-      route: "/about/vision"
+      id: "residential",
+      title: "Residential Communities",
+      description: "Affordable homes starting at $188,000. Family-friendly neighborhoods with parks, schools, and services. Energy-efficient construction and green space integration.",
+      route: "/projects/residential"
     },
     {
-      id: "approach",
-      title: "Our Approach",
-      description: "From affordable housing to industrial parks, free trade zones, and sustainable development — APOZ delivers comprehensive infrastructure designed to attract investment and create lasting community value through strategic planning and execution.",
-      route: "/about/approach"
+      id: "commercial",
+      title: "Commercial & Retail Zones",
+      description: "Mixed-use developments for retail, dining, and office space. Designed for walkability and local entrepreneurship. Leasing available for early tenants and investors.",
+      route: "/projects/commercial"
     },
     {
-      id: "partnership",
-      title: "Our Partnership",
-      description: "At the forefront of the APOZ initiative is ASC Global Inc., supported by collaboration with the International Trade Center – Houston, City of Houston leadership, and strategic partners from Asia Pacific and North America.",
-      route: "/about/partnership"
+      id: "industrial",
+      title: "Industrial & Logistics Parks",
+      description: "Strategically located near ports and major highways. Zoned for manufacturing, warehousing, and global trade. Attracting companies focused on U.S.–Asia supply chain efficiency.",
+      route: "/projects/industrial"
+    },
+    {
+      id: "future",
+      title: "Future Developments",
+      description: "Sustainability & Innovation District with smart city infrastructure, renewable energy, and tech incubators. Education & Workforce Development including trade schools and university partnerships.",
+      route: "/projects/future"
     }
   ];
 
   return (
     <Section>
       <Container>
-        {sections.map((section) => (
-          <SectionItem key={section.id} onClick={() => navigate(section.route)}>
+        {projects.map((project) => (
+          <SectionItem key={project.id} onClick={() => navigate(project.route)}>
             <Content>
-              <Title>{section.title}</Title>
-              <Description>{section.description}</Description>
+              <Title>{project.title}</Title>
+              <Description>{project.description}</Description>
             </Content>
             <ArrowButton className="arrow-button">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -170,4 +172,4 @@ const SectionPreviews: React.FC<SectionPreviewsProps> = ({ onNavigate }) => {
   );
 };
 
-export default SectionPreviews;
+export default ProjectPreviews;

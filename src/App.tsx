@@ -8,7 +8,7 @@ import LeadershipPage from "./pages/LeadershipPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
 import NewsPage from "./pages/NewsPage";
 import NewsArticlePage from "./pages/NewsArticlePage";
-import ContactPage from "./pages/ContactPage";
+import InvestmentPage from "./pages/InvestmentPage";
 import { InstitutionalFooter } from "./components/InstitutionalFooter";
 
 const NAV_PAGES = [
@@ -16,8 +16,8 @@ const NAV_PAGES = [
   { id: "about", path: "/about", element: AboutPage },
   { id: "leadership", path: "/leadership", element: LeadershipPage },
   { id: "projects", path: "/projects", element: ProjectsPage },
+  { id: "investment", path: "/investment", element: InvestmentPage },
   { id: "news", path: "/news", element: NewsPage },
-  { id: "contact", path: "/contact", element: ContactPage },
 ];
 
 function AppLayout() {
@@ -54,6 +54,7 @@ function AppLayout() {
           ))}
           <Route path="/news/:id" element={<NewsArticlePage />} />
           <Route path="/about/:section" element={<AboutPage onNavigate={handleNavigate} />} />
+          <Route path="/projects/:section" element={<ProjectsPage onNavigate={handleNavigate} />} />
         </Routes>
       </main>
       <InstitutionalFooter onNavigate={handleNavigate} />

@@ -1,22 +1,45 @@
+import React from "react";
 import ProjectsHero from "./subcomponents/ProjectsHero";
-import BandsSection from "./subcomponents/BandsSection";
-import PROJECT_BANDS from "./subcomponents/projectBandsData";
-import FuturePhasesSection from "./subcomponents/FuturePhasesSection";
-import CTASection from "./subcomponents/CTASection";
-
-
+import ProjectsSummary from "./subcomponents/ProjectsSummary";
+import ProjectPreviews from "./subcomponents/ProjectPreviews";
+import Phase1Section from "./subcomponents/Phase1Section";
+import ResidentialSection from "./subcomponents/ResidentialSection";
+import CommercialSection from "./subcomponents/CommercialSection";
+import IndustrialSection from "./subcomponents/IndustrialSection";
+import FutureSection from "./subcomponents/FutureSection";
 
 interface ProjectsSectionProps {
-  onNavigate: (page: string) => void;
+  section?: string;
 }
 
-const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onNavigate }) => {
+const ProjectsSection: React.FC<ProjectsSectionProps> = ({ section }) => {
+  // If a specific section is requested, render only that section
+  if (section === 'phase1') {
+    return <Phase1Section />;
+  }
+  
+  if (section === 'residential') {
+    return <ResidentialSection />;
+  }
+  
+  if (section === 'commercial') {
+    return <CommercialSection />;
+  }
+  
+  if (section === 'industrial') {
+    return <IndustrialSection />;
+  }
+  
+  if (section === 'future') {
+    return <FutureSection />;
+  }
+  
+  // Default: render full Projects page
   return (
     <>
-      <ProjectsHero onNavigate={onNavigate} />
-      <BandsSection bands={PROJECT_BANDS} onNavigate={onNavigate} />
-      <FuturePhasesSection />
-      <CTASection onNavigate={onNavigate} />
+      <ProjectsHero />
+      <ProjectsSummary />
+      <ProjectPreviews />
     </>
   );
 };
