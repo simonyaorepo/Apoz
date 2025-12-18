@@ -13,7 +13,11 @@ import {
   ImageBox,
 } from "./SharedStyles";
 
-const PartnershipSection: React.FC = () => {
+interface PartnershipSectionProps {
+  onNavigate: (page: string) => void;
+}
+
+const PartnershipSection: React.FC<PartnershipSectionProps> = ({ onNavigate: _onNavigate }) => {
   return (
     <>
       <TextHero

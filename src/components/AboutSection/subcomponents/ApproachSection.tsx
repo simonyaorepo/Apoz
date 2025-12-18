@@ -13,7 +13,11 @@ import {
   ImageBox,
 } from "./SharedStyles";
 
-const ApproachSection: React.FC = () => {
+interface ApproachSectionProps {
+  onNavigate: (page: string) => void;
+}
+
+const ApproachSection: React.FC<ApproachSectionProps> = ({ onNavigate: _onNavigate }) => {
   return (
     <>
       <TextHero

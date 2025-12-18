@@ -43,13 +43,13 @@ const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="50" y="120" width="80" height="120" stroke="currentColor" strokeWidth="2" fill="#e0f2fe"/>
-                <rect x="140" y="90" width="60" height="150" stroke="currentColor" strokeWidth="2" fill="#bae6fd"/>
-                <rect x="210" y="110" width="70" height="130" stroke="currentColor" strokeWidth="2" fill="#e0f2fe"/>
-                <rect x="290" y="100" width="60" height="140" stroke="currentColor" strokeWidth="2" fill="#bae6fd"/>
-                <circle cx="320" cy="50" r="25" stroke="#D4AF37" strokeWidth="2" fill="#fef3c7"/>
-                <path d="M 20 240 L 380 240" stroke="currentColor" strokeWidth="3"/>
-                <path d="M 80 140 L 120 140 M 100 140 L 100 180" stroke="currentColor" strokeWidth="2"/>
+                <rect x="50" y="120" width="80" height="120" stroke="#0a3a3f" strokeWidth="2" fill="#e0f2fe"/>
+                <rect x="140" y="90" width="60" height="150" stroke="#0a3a3f" strokeWidth="2" fill="#bae6fd"/>
+                <rect x="210" y="110" width="70" height="130" stroke="#0a3a3f" strokeWidth="2" fill="#e0f2fe"/>
+                <rect x="290" y="100" width="60" height="140" stroke="#0a3a3f" strokeWidth="2" fill="#bae6fd"/>
+                <circle cx="320" cy="50" r="25" stroke="#d4af37" strokeWidth="2" fill="#fef3c7"/>
+                <path d="M 20 240 L 380 240" stroke="#0a3a3f" strokeWidth="3"/>
+                <path d="M 80 140 L 120 140 M 100 140 L 100 180" stroke="#0a3a3f" strokeWidth="2"/>
               </svg>
             </IllustrationBox>
           </ContentGrid>

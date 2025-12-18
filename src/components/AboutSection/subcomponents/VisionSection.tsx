@@ -13,7 +13,11 @@ import {
   ImageBox,
 } from "./SharedStyles";
 
-const VisionSection: React.FC = () => {
+interface VisionSectionProps {
+  onNavigate: (page: string) => void;
+}
+
+const VisionSection: React.FC<VisionSectionProps> = ({ onNavigate: _onNavigate }) => {
   return (
     <>
       <TextHero
@@ -39,17 +43,17 @@ const VisionSection: React.FC = () => {
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="200" cy="150" r="80" stroke="currentColor" strokeWidth="2" fill="#e0f2fe"/>
-                <circle cx="200" cy="150" r="60" stroke="currentColor" strokeWidth="2" fill="#bae6fd"/>
-                <circle cx="200" cy="150" r="40" stroke="#D4AF37" strokeWidth="3" fill="#fef3c7"/>
-                <line x1="200" y1="70" x2="200" y2="30" stroke="currentColor" strokeWidth="2"/>
-                <line x1="200" y1="230" x2="200" y2="270" stroke="currentColor" strokeWidth="2"/>
-                <line x1="120" y1="150" x2="80" y2="150" stroke="currentColor" strokeWidth="2"/>
-                <line x1="280" y1="150" x2="320" y2="150" stroke="currentColor" strokeWidth="2"/>
-                <circle cx="200" cy="30" r="8" fill="#D4AF37"/>
-                <circle cx="200" cy="270" r="8" fill="#D4AF37"/>
-                <circle cx="80" cy="150" r="8" fill="#D4AF37"/>
-                <circle cx="320" cy="150" r="8" fill="#D4AF37"/>
+                <circle cx="200" cy="150" r="80" stroke="#0a3a3f" strokeWidth="2" fill="#e0f2fe"/>
+                <circle cx="200" cy="150" r="60" stroke="#0a3a3f" strokeWidth="2" fill="#bae6fd"/>
+                <circle cx="200" cy="150" r="40" stroke="#d4af37" strokeWidth="3" fill="#fef3c7"/>
+                <line x1="200" y1="70" x2="200" y2="30" stroke="#0a3a3f" strokeWidth="2"/>
+                <line x1="200" y1="230" x2="200" y2="270" stroke="#0a3a3f" strokeWidth="2"/>
+                <line x1="120" y1="150" x2="80" y2="150" stroke="#0a3a3f" strokeWidth="2"/>
+                <line x1="280" y1="150" x2="320" y2="150" stroke="#0a3a3f" strokeWidth="2"/>
+                <circle cx="200" cy="30" r="8" fill="#d4af37"/>
+                <circle cx="200" cy="270" r="8" fill="#d4af37"/>
+                <circle cx="80" cy="150" r="8" fill="#d4af37"/>
+                <circle cx="320" cy="150" r="8" fill="#d4af37"/>
               </svg>
             </IllustrationBox>
           </ContentGrid>
