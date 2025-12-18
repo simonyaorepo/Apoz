@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const WhiteSection = styled.section`
   background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.xl};
+  overflow-x: hidden;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
@@ -114,29 +115,42 @@ export const TealBox = styled.div`
 `;
 
 export const IllustrationBox = styled.div`
-  width: 45vw;
-  margin-right: -50vw;
+  width: 50vw;
+  margin-right: calc(-50vw + 50%);
   margin-left: 0;
-  aspect-ratio: 8 / 3;
-  min-height: 120px;
+  margin-top: -50px;
+  aspect-ratio: 20 / 5;
+  min-height: 140px;
   max-height: 180px;
   background: ${({ theme }) => theme.colors.greyDark};
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: ${({ theme }) => theme.spacing.md};
+  justify-content: flex-start;
+  padding: ${({ theme }) => theme.spacing.lg};
   flex-shrink: 0;
+  position: relative;
   
   svg {
-    width: 100%;
-    max-width: 200px;
+    width: 80%;
     height: auto;
+    transform: translate(-10%, -60px);
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 100%;
     margin: 0;
     max-height: 150px;
+    padding: ${({ theme }) => theme.spacing.md};
+    
+    svg {
+      width: 100%;
+      transform: none;
+    }
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    max-height: 120px;
+    padding: ${({ theme }) => theme.spacing.sm};
   }
 `;
 
