@@ -7,7 +7,7 @@ interface InstitutionalNavProps {
   onNavigate: (page: string) => void;
 }
 
-const NavBar = styled.nav<{ scrolled: boolean }>`
+const NavBar = styled.nav<{ $scrolled: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@ const NavBar = styled.nav<{ scrolled: boolean }>`
   z-index: 50;
   transition: all 0.3s;
   background: ${({ theme }) => theme.colors.white};
-  box-shadow: ${({ scrolled }) => scrolled ? "0 8px 32px rgba(0,0,0,0.15)" : "none"};
+  box-shadow: ${({ $scrolled }) => $scrolled ? "0 8px 32px rgba(0,0,0,0.15)" : "none"};
   min-height: 5rem;
 `;
 
@@ -85,11 +85,11 @@ const NavLinks = styled.div`
   }
 `;
 
-const NavButton = styled.button<{ active?: boolean }>`
+const NavButton = styled.button<{ $active?: boolean }>`
   position: relative;
   background: none;
   border: none;
-  color: ${({ theme, active }) => active ? theme.colors.gold : theme.colors.foreground};
+  color: ${({ theme, $active }) => $active ? theme.colors.gold : theme.colors.foreground};
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -105,7 +105,7 @@ const NavButton = styled.button<{ active?: boolean }>`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: ${({ active }) => active ? "100%" : "0"};
+    width: ${({ $active }) => $active ? "100%" : "0"};
     height: 2px;
     background: ${({ theme }) => theme.colors.gold};
     transition: width 0.3s;
@@ -116,11 +116,11 @@ const NavButton = styled.button<{ active?: boolean }>`
   }
 `;
 
-const MegaMenu = styled.div<{ left: number | null }>`
+const MegaMenu = styled.div<{ $left: number | null }>`
   position: fixed;
   top: 5rem;
-  left: ${({ left }) => (left !== null ? `${left}px` : '0')};
-  transform: ${({ left }) => left !== null ? 'translateX(-50%)' : 'none'};
+  left: ${({ $left }) => ($left !== null ? `${$left}px` : '0')};
+  transform: ${({ $left }) => $left !== null ? 'translateX(-50%)' : 'none'};
   min-width: 8rem;
   max-width: 10rem;
   background: rgba(11, 28, 45, 0.92); /* slightly see-through */
@@ -222,7 +222,7 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
   ];
 
   return (
-    <NavBar scrolled={scrolled}>
+    <NavBar $scrolled={scrolled}>
       <NavContainer>
         <NavRow>
           {/* Logo */}
@@ -263,14 +263,14 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
                   <NavLinkWrapper
                     ref={el => { navLinkRefs.current[item.id] = el; }}
                   >
-                    <NavButton active={currentPage === item.id} onClick={() => onNavigate(item.id)}>
+                      <NavButton $active={currentPage === item.id} onClick={() => onNavigate(item.id)}>
                       {item.label}
                       {item.submenu && <ChevronDown size={16} style={{ marginLeft: 4, verticalAlign: 'middle' }} />}
                     </NavButton>
                   </NavLinkWrapper>
                   {/* Mega Menu */}
                   {item.submenu && megaMenuOpen === item.id && (
-                    <MegaMenu left={dropdownLeft}>
+                    <MegaMenu $left={dropdownLeft}>
                       {item.submenu.map((subItem) => (
                         <MegaMenuButton key={subItem.id} onClick={() => onNavigate(subItem.id)}>
                           {subItem.label}

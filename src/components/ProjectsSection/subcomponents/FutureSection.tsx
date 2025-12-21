@@ -12,9 +12,8 @@ const FutureSection: React.FC = () => {
       breadcrumbLabel="Future Developments"
       content={[
         PHASE_THREE_DATA.description,
-        `${PHASE_THREE_DATA.components[0].name}: ${PHASE_THREE_DATA.components[0].description}`,
-        `${PHASE_THREE_DATA.components[1].name}: ${PHASE_THREE_DATA.components[1].description}`,
-        `${PHASE_THREE_DATA.components[2].name}: ${PHASE_THREE_DATA.components[2].description} This isn't just development; it's investment in human potential and community prosperity."
+        ...PHASE_THREE_DATA.vision,
+        ...PHASE_THREE_DATA.goals.map(goal => `${goal.title}: ${goal.description}`)
       ]}
       quote="The future of development is sustainable, intelligent, and community-driven. APOZ is building not just for today, but for the generations who will call this place home."
     />
