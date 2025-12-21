@@ -12,6 +12,7 @@ import {
   IllustrationBox,
   ImageBox,
 } from "./SharedStyles";
+import { APPROACH_DATA } from "./aboutSectionData";
 
 interface ApproachSectionProps {
   onNavigate: (page: string) => void;
@@ -21,25 +22,18 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ onNavigate: _onNaviga
   return (
     <>
       <TextHero
-        title="Our Approach"
-        backgroundImage="https://images.unsplash.com/photo-1500382017468-9049fed747ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
-          { label: "Our Approach" }
-        ]}
+        title={APPROACH_DATA.title}
+        backgroundImage={APPROACH_DATA.backgroundImage}
+        breadcrumbs={APPROACH_DATA.breadcrumbs}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              <p>
-                APOZ's approach centers on creating comprehensive, sustainable development zones that serve as bridges between Asian Pacific markets and North American industry. We don't just develop land—we architect economic ecosystems that generate long-term value for communities, investors, and international partners.
-              </p>
-              <p>
-                Our methodology combines strategic site selection in Southeast Texas, robust infrastructure planning leveraging Houston's port and transportation networks, international partnership cultivation with established trade corporations, and community-focused execution that prioritizes local employment and quality of life.
-              </p>
+              {APPROACH_DATA.content.intro.map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,10 +104,8 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ onNavigate: _onNaviga
       
       <TealSection>
         <TealBox>
-            <p>
-              APOZ employs a holistic development strategy that emphasizes infrastructure-first planning, sustainable growth patterns, and strategic partnerships with government entities like the City of Houston and international corporations such as ITC Houston. Our approach ensures that industrial, commercial, and residential components work in harmony to create vibrant, economically resilient communities positioned to capitalize on global trade opportunities.
-            </p>
-          </TealBox>
+          <p>{APPROACH_DATA.content.highlight}</p>
+        </TealBox>
       </TealSection>
       
       <GreySection>
@@ -126,12 +118,15 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ onNavigate: _onNaviga
               />
             </ImageBox>
             <TextContent>
-              <p>
-                APOZ's success stems from strategic alliances with key partners across government, industry, and international trade sectors. Our collaboration with ASC Global Inc. provides leadership and global market access, while partnerships with the City of Houston ensure regulatory alignment and infrastructure support.
-              </p>
-              <p>
-                Through entities like ITC Houston, we facilitate connections between Asian Pacific manufacturers and North American markets, creating mutually beneficial trade relationships. Our approach combines public-private cooperation, international investment coordination, and community engagement to deliver developments that transform regional economies.
-              </p>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#0a3a3f' }}>
+                {APPROACH_DATA.content.strengths.heading}
+              </h3>
+              {APPROACH_DATA.content.strengths.items.map((item, idx) => (
+                <div key={idx} style={{ marginBottom: '1rem' }}>
+                  <h4 style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>{item.title}</h4>
+                  <p>{item.description}</p>
+                </div>
+              ))}
             </TextContent>
           </GreyContentGrid>
         </Container>

@@ -12,6 +12,7 @@ import {
   IllustrationBox,
   ImageBox,
 } from "./SharedStyles";
+import { MISSION_DATA } from "./aboutSectionData";
 
 interface MissionSectionProps {
   onNavigate: (page: string) => void;
@@ -21,25 +22,18 @@ const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate
   return (
     <>
       <TextHero
-        title="Our Mission"
-        backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
-          { label: "Our Mission" }
-        ]}
+        title={MISSION_DATA.title}
+        backgroundImage={MISSION_DATA.backgroundImage}
+        breadcrumbs={MISSION_DATA.breadcrumbs}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              <p>
-                APOZ (Asia Pacific Opportunity Zone) is dedicated to creating a dynamic, sustainable, and innovation-driven industrial and residential community in Southeast Texas. Our mission goes beyond simple development—we're architecting the future of economic opportunity in one of America's fastest-growing regions.
-              </p>
-              <p>
-                By integrating smart infrastructure, affordable housing solutions, and strategic global partnerships, APOZ aims to become the premier hub for advanced manufacturing, international trade, and inclusive community development. We bridge continents, connecting Asian Pacific investment with North American opportunity while creating lasting value for local communities and regional economies.
-              </p>
+              {MISSION_DATA.content.intro.map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,10 +104,8 @@ const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate
       
       <TealSection>
         <TealBox>
-            <p>
-              Every APOZ project is evaluated through the lens of people, planet, and profit. We prioritize affordable housing starting at $188,000 for working families, sustainable development practices that protect environmental resources, and economic structures that generate lasting value. Our mission extends beyond construction—we're building vibrant communities where businesses flourish, families thrive, and future generations inherit a legacy of opportunity.
-            </p>
-          </TealBox>
+          <p>{MISSION_DATA.content.highlight}</p>
+        </TealBox>
       </TealSection>
       
       <GreySection>
@@ -126,12 +118,9 @@ const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate
               />
             </ImageBox>
             <TextContent>
-              <p>
-                APOZ integrates multiple development pillars: industrial parks designed to attract Fortune 500 manufacturers with Free Trade Zone advantages, commercial districts featuring retail, healthcare, and essential services, and residential communities that provide quality affordable housing for the workforce powering our industrial zones.
-              </p>
-              <p>
-                Our strategic positioning in Southeast Texas leverages Houston's global port access, existing transportation infrastructure, and status as an international trade gateway. This creates unique competitive advantages for companies seeking to establish North American operations while maintaining efficient supply chain connections to Asian Pacific markets.
-              </p>
+              {MISSION_DATA.content.integration.map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
             </TextContent>
           </GreyContentGrid>
         </Container>

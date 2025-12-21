@@ -12,6 +12,7 @@ import {
   IllustrationBox,
   ImageBox,
 } from "./SharedStyles";
+import { PARTNERSHIP_DATA } from "./aboutSectionData";
 
 interface PartnershipSectionProps {
   onNavigate: (page: string) => void;
@@ -21,25 +22,18 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({ onNavigate: _on
   return (
     <>
       <TextHero
-        title="Our Partnership"
-        backgroundImage="https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
-          { label: "Our Partnership" }
-        ]}
+        title={PARTNERSHIP_DATA.title}
+        backgroundImage={PARTNERSHIP_DATA.backgroundImage}
+        breadcrumbs={PARTNERSHIP_DATA.breadcrumbs}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              <p>
-                APOZ's partnership strategy is built on creating mutually beneficial relationships across government, industry, and international trade sectors. We bring together diverse stakeholders—from local municipalities to Fortune 500 corporations, from Asian Pacific investors to North American manufacturers—to create development ecosystems that deliver value for all participants.
-              </p>
-              <p>
-                Our approach prioritizes transparency, shared risk, and aligned incentives. By partnering with established entities that bring complementary strengths—whether regulatory expertise, market access, or financial resources—APOZ accelerates project timelines and ensures communities benefit from world-class infrastructure and economic opportunities.
-              </p>
+              {PARTNERSHIP_DATA.content.intro.map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,10 +104,8 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({ onNavigate: _on
       
       <TealSection>
         <TealBox>
-            <p>
-              APOZ collaborates with ASC Global Inc. as our primary development partner, providing leadership and international market expertise. We work closely with the City of Houston for regulatory alignment and infrastructure coordination, while partnerships with ITC Houston and Asia Pacific trade networks facilitate cross-border investment and business establishment. These strategic alliances combine government support, corporate expertise, and international connections to create seamless pathways for development success.
-            </p>
-          </TealBox>
+          <p>{PARTNERSHIP_DATA.content.highlight}</p>
+        </TealBox>
       </TealSection>
       
       <GreySection>
@@ -126,12 +118,16 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({ onNavigate: _on
               />
             </ImageBox>
             <TextContent>
-              <p>
-                Our partnership model extends beyond traditional developer relationships. We cultivate connections with Asian Pacific investment groups seeking North American market access, domestic manufacturers looking for strategic logistics positioning, and community organizations focused on affordable housing and workforce development.
-              </p>
-              <p>
-                Through these diverse partnerships, APOZ creates integrated ecosystems where international trade corporations, local governments, Fortune 500 companies, and community stakeholders work together toward shared prosperity. This collaborative approach ensures our developments deliver economic growth, housing accessibility, and sustainable community benefits that extend far beyond individual project boundaries.
-              </p>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#0a3a3f' }}>
+                {PARTNERSHIP_DATA.content.servicePartners.heading}
+              </h3>
+              {PARTNERSHIP_DATA.content.servicePartners.partners.map((partner, idx) => (
+                <div key={idx} style={{ marginBottom: '1rem' }}>
+                  <h4 style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>{partner.category}</h4>
+                  <p style={{ marginBottom: '0.25rem' }}><strong>{partner.name}</strong></p>
+                  <p style={{ fontSize: '0.9rem', color: '#666' }}>{partner.contact}</p>
+                </div>
+              ))}
             </TextContent>
           </GreyContentGrid>
         </Container>

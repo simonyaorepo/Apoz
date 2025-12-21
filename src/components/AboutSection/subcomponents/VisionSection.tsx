@@ -12,6 +12,7 @@ import {
   IllustrationBox,
   ImageBox,
 } from "./SharedStyles";
+import { VISION_DATA } from "./aboutSectionData";
 
 interface VisionSectionProps {
   onNavigate: (page: string) => void;
@@ -21,25 +22,18 @@ const VisionSection: React.FC<VisionSectionProps> = ({ onNavigate: _onNavigate }
   return (
     <>
       <TextHero
-        title="Our Vision"
-        backgroundImage="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
-          { label: "Our Vision" }
-        ]}
+        title={VISION_DATA.title}
+        backgroundImage={VISION_DATA.backgroundImage}
+        breadcrumbs={VISION_DATA.breadcrumbs}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              <p>
-                APOZ envisions becoming the premier Asia Pacific-North American economic bridge in Southeast Texas—a world-class development zone where international commerce, advanced manufacturing, and thriving residential communities converge to create unprecedented regional prosperity.
-              </p>
-              <p>
-                We see a future where underdeveloped Texas land transforms into vibrant economic hubs attracting Fortune 500 companies, supporting thousands of quality jobs, and providing affordable housing for working families. Our vision extends beyond economic metrics to community vitality, environmental sustainability, and creating a model for how 21st-century development can benefit all stakeholders.
-              </p>
+              {VISION_DATA.content.intro.map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,9 +104,7 @@ const VisionSection: React.FC<VisionSectionProps> = ({ onNavigate: _onNavigate }
       
       <TealSection>
         <TealBox>
-          <p>
-            APOZ will serve as the primary destination for Asian Pacific companies establishing North American operations, leveraging Houston's strategic port access, Free Trade Zone benefits, and established international trade networks. We envision industrial zones buzzing with advanced manufacturing, logistics centers connecting continents, commercial districts serving diverse communities, and residential neighborhoods providing quality affordable housing—all working in harmony to demonstrate that economic growth and community well-being are complementary outcomes of thoughtful development.
-          </p>
+          <p>{VISION_DATA.content.highlight}</p>
         </TealBox>
       </TealSection>
       
@@ -126,12 +118,9 @@ const VisionSection: React.FC<VisionSectionProps> = ({ onNavigate: _onNavigate }
               />
             </ImageBox>
             <TextContent>
-              <p>
-                Our vision is creating a lasting legacy that transforms how development happens—proving that large-scale industrial and residential projects can prioritize affordability, sustainability, and community benefit while delivering strong returns for investors and partners.
-              </p>
-              <p>
-                APOZ will demonstrate that strategic international partnerships, government collaboration, and community-focused planning create better outcomes than traditional development models. We envision setting new standards for how economic zones integrate housing affordability, environmental stewardship, and job creation into core development frameworks.
-              </p>
+              {VISION_DATA.content.legacy.map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
             </TextContent>
           </GreyContentGrid>
         </Container>

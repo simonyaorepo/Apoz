@@ -34,10 +34,10 @@ export const FEATURE_TILES = [
 
 export const KPI_METRICS = [
   { value: "$188K", label: "Starting Home Price" },
-  { value: "2025", label: "Groundbreaking" },
-  { value: "1,320", label: "Acres Planned" },
-  { value: "5,000+", label: "Projected Jobs" },
-  { value: "100%", label: "FTZ Designation" },
+  { value: "646+", label: "Acres Development" },
+  { value: "7,000+", label: "Jobs Created" },
+  { value: "$500M+", label: "Foreign Investment" },
+  { value: "Only", label: "FTZ+QOZ in U.S." },
 ];
 
 export const VALUE_PROPS = [
