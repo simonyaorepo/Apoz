@@ -14,7 +14,8 @@ const Wrapper = styled.div`
 
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.white};
-  font-size: 36px;
+  font-size: ${({ theme }) => theme.fontSizes.h3};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: 24px;
 `;
 

@@ -7,8 +7,8 @@ export const INVESTMENT_OVERVIEW = {
   highlights: [
     "Only FTZ + QOZ dual-status business park in the U.S.",
     "Enables manufacturers to localize production and reduce tariffs",
-    "$500M+ in projected foreign direct investment (FDI)",
-    "$234.4M projected annual revenue at full buildout",
+    "646+ acres of master-planned development",
+    "9.8M sq ft industrial + 3,000 residential units planned",
     "5,000-7,000 jobs created across sectors"
   ],
   ecosystem: "APOZ provides a full-service ecosystem—integrating industrial, commercial, and residential components—that connects global investors to growth opportunities, delivering strong returns while supporting workforce development and community growth in Greater Houston."
@@ -76,147 +76,6 @@ export const DUAL_STATUS_BENEFITS = {
   }
 };
 
-// Financial Projections
-export const FINANCIAL_PROJECTIONS = {
-  phaseOne: {
-    title: "Phase One: 436 Acres (Build-to-Lease)",
-    industrial: {
-      sqft: "9,800,000",
-      rate: "$1.50/sq ft/month",
-      annualIncome: "$176,400,000"
-    },
-    commercial: {
-      sqft: "700,000",
-      rate: "$2.50/sq ft/month",
-      annualIncome: "$21,000,000"
-    },
-    residential: {
-      units: 1500,
-      rate: "$1,500/unit/month",
-      annualIncome: "$27,000,000"
-    },
-    other: {
-      annualIncome: "$10,000,000"
-    },
-    total: {
-      annualIncome: "$234,400,000"
-    }
-  },
-  phaseTwo: {
-    title: "Phase Two: 210 Acres (Build-to-Sale)",
-    residential: {
-      units: 1500,
-      salesPrice: "$188,000",
-      totalCost: "$132,000,000",
-      totalRevenue: "$282,000,000",
-      grossProfit: "$150,000,000"
-    }
-  },
-  timeline: {
-    2026: "$1,000,000",
-    2027: "$11,500,000",
-    2028: "$56,600,000",
-    2029: "$132,800,000",
-    2030: "$178,200,000",
-    "End of 2030": "$234,400,000"
-  }
-};
-
-// Use of Funds
-export const USE_OF_FUNDS = {
-  phaseOneStageOne: {
-    title: "Phase One Stage One: 31 Acres",
-    landAcquisition: "$7,200,000",
-    softCosts: "$600,000",
-    hardCosts: {
-      construction: "$20,000,000",
-      waterSewer: "$550,000",
-      sitework: "$2,000,000",
-      misc: "$250,000",
-      total: "$22,800,000"
-    },
-    totalCost: "$30,600,000",
-    deliverables: "3 buildings totaling 400,000 sq ft"
-  },
-  phaseOneStageTwo: {
-    title: "Phase One Stage Two: 405 Acres",
-    softCosts: "$5,000,000",
-    hardCosts: {
-      industrial: "$470,000,000",
-      commercial: "$35,000,000",
-      residential: "$132,000,000",
-      sitework: "$2,500,000",
-      total: "$639,500,000"
-    },
-    totalCost: "$644,500,000",
-    deliverables: "9.4M sq ft industrial, 700K sq ft commercial, 1,500 residential units"
-  }
-};
-
-// Economic Impact
-export const ECONOMIC_IMPACT = {
-  title: "Economic & Social Impact",
-  description: "APOZ delivers broad benefits to the Greater Houston region by combining industrial growth with community development.",
-  impacts: [
-    {
-      category: "Job Creation",
-      value: "5,000-7,000",
-      description: "Jobs across construction, manufacturing, and service sectors"
-    },
-    {
-      category: "Foreign Direct Investment",
-      value: "$500M+",
-      description: "From Asia-Pacific firms expanding into U.S. market"
-    },
-    {
-      category: "Land Revitalization",
-      value: "646+ acres",
-      description: "Underutilized QOZ land transformed into productive assets"
-    },
-    {
-      category: "Affordable Housing",
-      value: "3,000 units",
-      description: "Quality homes starting at $188,000 for working families"
-    }
-  ],
-  regionalBenefits: [
-    "Strengthens regional economy through industrial development",
-    "Enhances livability and workforce stability",
-    "Provides workforce housing in growing metropolitan area",
-    "Creates sustainable, self-sufficient community model"
-  ]
-};
-
-// SWOT Analysis
-export const SWOT_ANALYSIS = {
-  strengths: [
-    "Only FTZ + QOZ dual-status park in the U.S.",
-    "Strategic location near Port of Houston (#1 U.S. marine port)",
-    "Interstate I-10 accessibility across sun belt states",
-    "29% lower electricity costs than national average",
-    "No city tax, no state tax",
-    "Access to multiple government incentive programs"
-  ],
-  weaknesses: [
-    "New development requiring 3 years to reach maturity",
-    "30 miles from downtown Houston (45-minute drive)",
-    "Reliant on Winnie school district and public services"
-  ],
-  opportunities: [
-    "Unprecedented demand from tariff war and reshoring trends",
-    "Hundreds of inquiries from global manufacturers",
-    "Multiple confirmed LOIs from public companies",
-    "Diverse revenue streams (rental, sales, fees, services)",
-    "Potential to become incorporated APOZ City by 2030",
-    "First Asia-Pacific focused business park in U.S."
-  ],
-  threats: [
-    "Potential competing dual-status parks in Texas",
-    "Elimination of tariff policies (unlikely)",
-    "Cancellation of FTZ or QOZ programs (unlikely)"
-  ]
-};
-
 // Investment Opportunities
 export const benefits = [
   {
@@ -236,8 +95,8 @@ export const benefits = [
   },
   {
     icon: Shield,
-    title: "Stable Revenue Model",
-    description: "$234M+ projected annual income from diversified sources: industrial leases, commercial rents, residential sales, and tenant services."
+    title: "Diversified Development Model",
+    description: "Stable revenue from diversified sources: industrial leases, commercial rents, residential sales, and tenant services across 646+ acres of development."
   },
   {
     icon: Zap,
@@ -254,12 +113,12 @@ export const benefits = [
 export const opportunities = [
   {
     title: "Industrial Park Investment",
-    description: "Invest in FTZ #171 manufacturing facilities—9.8M sq ft generating $176M+ annual revenue",
+    description: "Invest in FTZ #171 manufacturing facilities—9.8M sq ft serving international manufacturers",
     image: "https://images.unsplash.com/photo-1565008576549-57569a49371d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
     metrics: {
       sqft: "9,800,000",
-      annualRevenue: "$176,400,000",
-      targetTenants: "500+ manufacturers"
+      capacity: "500+ tenant spaces",
+      targetTenants: "Asia-Pacific manufacturers"
     }
   },
   {
@@ -268,18 +127,18 @@ export const opportunities = [
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
     metrics: {
       sqft: "700,000",
-      annualRevenue: "$21,000,000",
+      location: "I-10 Exit 822",
       traffic: "30,000+ vehicles/day"
     }
   },
   {
     title: "Residential Development",
-    description: "Affordable workforce housing—3,000 units generating rental income and sales profits",
+    description: "Affordable workforce housing—3,000 units supporting industrial park employees and local community",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
     metrics: {
-      units: 3000,
-      rentalIncome: "$27,000,000/year",
-      salesProfit: "$150,000,000"
+      units: "3,000 units",
+      phase1: "1,500 build-to-lease",
+      phase2: "1,500 build-to-sell"
     }
   },
   {
@@ -293,3 +152,231 @@ export const opportunities = [
     }
   }
 ];
+
+// Financial Projections - 5 Year Revenue Forecast
+export const FINANCIAL_PROJECTIONS = {
+  title: "Five-Year Financial Projections",
+  subtitle: "Phase One Development (436 acres) - Annual Revenue Growth",
+  projections: [
+    {
+      year: 2026,
+      industrial: { sqft: 400000, revenue: 0 },
+      commercial: { sqft: 0, revenue: 0 },
+      residential: { units: 100, revenue: 0 },
+      otherIncome: 1000000,
+      totalRevenue: 1000000,
+      note: "Stage 1: 3 buildings (400K sq ft total)"
+    },
+    {
+      year: 2027,
+      industrial: { sqft: 2400000, revenue: 7200000 },
+      commercial: { sqft: 100000, revenue: 0 },
+      residential: { units: 300, revenue: 1800000 },
+      otherIncome: 2500000,
+      totalRevenue: 11500000,
+      note: "10 buildings + 200 residential units"
+    },
+    {
+      year: 2028,
+      industrial: { sqft: 5400000, revenue: 43200000 },
+      commercial: { sqft: 500000, revenue: 3000000 },
+      residential: { units: 700, revenue: 5400000 },
+      otherIncome: 5000000,
+      totalRevenue: 56600000,
+      note: "15 buildings + 400 residential units"
+    },
+    {
+      year: 2029,
+      industrial: { sqft: 7400000, revenue: 97200000 },
+      commercial: { sqft: 600000, revenue: 15000000 },
+      residential: { units: 1000, revenue: 12600000 },
+      otherIncome: 8000000,
+      totalRevenue: 132800000,
+      note: "10 buildings + 300 residential units"
+    },
+    {
+      year: 2030,
+      industrial: { sqft: 9800000, revenue: 133200000 },
+      commercial: { sqft: 700000, revenue: 18000000 },
+      residential: { units: 1500, revenue: 18000000 },
+      otherIncome: 9000000,
+      totalRevenue: 178200000,
+      note: "12 buildings + 500 residential units"
+    },
+    {
+      year: "2030+",
+      industrial: { sqft: 9800000, revenue: 176400000 },
+      commercial: { sqft: 700000, revenue: 21000000 },
+      residential: { units: 1500, revenue: 27000000 },
+      otherIncome: 10000000,
+      totalRevenue: 234400000,
+      note: "Full buildout - stabilized operations"
+    }
+  ],
+  rentalRates: {
+    industrial: "$1.50/sq ft/month ($1.00 base + $0.50 TICAM)",
+    commercial: "$2.50/sq ft/month ($2.00 base + $0.50 TICAM)",
+    residential: "$1,500/unit/month ($18,000/year per unit)"
+  },
+  fullBuildout: {
+    industrialArea: "9,800,000 sq ft",
+    commercialArea: "700,000 sq ft",
+    residentialUnits: "1,500 units",
+    annualRevenue: "$234,400,000",
+    description: "Combined rental income from industrial, commercial, and residential at full capacity"
+  }
+};
+
+// SWOT Analysis
+export const SWOT_ANALYSIS = {
+  title: "Strategic Analysis",
+  subtitle: "Comprehensive SWOT Assessment",
+  
+  strengths: [
+    {
+      title: "Only FTZ + QOZ Dual Status in U.S.",
+      description: "Unique position as the nation's sole business park combining Foreign Trade Zone #171 and Qualified Opportunity Zone benefits—delivering unmatched tariff savings and tax advantages.",
+      icon: Shield
+    },
+    {
+      title: "Prime Strategic Location",
+      description: "Adjacent to I-10 in center of Sun Belt states, near Port of Houston (#1 U.S. marine port), connecting Pacific Ocean, Gulf of America, and Atlantic Ocean. Links top 3 U.S. states: CA, TX, FL.",
+      icon: Globe
+    },
+    {
+      title: "Superior Business Environment",
+      description: "Electricity 29% cheaper than national average, minimum wage $7.25/hour, no city tax, no state income tax. Multiple government incentives available (Enterprise Fund, Skills Development, JETI Act, TSIF).",
+      icon: TrendingUp
+    },
+    {
+      title: "Powerful Tax Benefits",
+      description: "QOZ capital gains: 10% reduction at 5 years, 15% at 7 years, 100% exclusion at 10 years. FTZ duty deferral and reduction significantly improve cash flow and working capital.",
+      icon: DollarSign
+    }
+  ],
+  
+  weaknesses: [
+    {
+      title: "New Development Timeline",
+      description: "As a brand-new master planned development, APOZ will require approximately 3 years to reach mature status with full local amenities and infrastructure.",
+      icon: Zap
+    },
+    {
+      title: "Distance from Houston Center",
+      description: "Located 30 miles from downtown Houston (45-minute drive), requiring travel for premium dining, shopping, cultural activities, and entertainment.",
+      icon: Building2
+    }
+  ],
+  
+  opportunities: [
+    {
+      title: "Unprecedented Tariff War Demand",
+      description: "Current reciprocal tariff policies creating massive surge in inquiries. Hundreds of foreign companies from Taiwan, China, Cambodia, Mexico, Canada, Malaysia, Vietnam relocating to U.S. to avoid tariff burden—APOZ is the ideal solution.",
+      highlight: true
+    },
+    {
+      title: "$500M+ Foreign Direct Investment",
+      description: "Strong interest from Asia-Pacific manufacturers and even domestic U.S. companies from NY, CA, NJ seeking FTZ+QOZ advantages. Multiple confirmed Letters of Intent from publicly-traded companies.",
+      highlight: true
+    },
+    {
+      title: "Multiple Revenue Streams",
+      description: "11+ income sources: rental income, direct operations, joint ventures, affordable home sales, IPO incubation fees, visa services, FTZ admin fees, QOZ fund income, HOA/CAM, tenant services, solar farm.",
+      highlight: false
+    },
+    {
+      title: "Future Incorporated City",
+      description: "Master plan designed to become self-governed incorporated city 'APOZ City' by 2030 through resident vote, creating long-term sustainability and governance control.",
+      highlight: false
+    }
+  ],
+  
+  threats: [
+    {
+      title: "Potential Competing Parks",
+      description: "Risk of another FTZ+QOZ dual-status park emerging in Texas, though currently APOZ maintains unique monopoly position.",
+      severity: "low"
+    },
+    {
+      title: "Policy Changes",
+      description: "Potential cancellation of tariff measures (extremely unlikely) or FTZ/QOZ programs by U.S. government could reduce competitive advantages.",
+      severity: "low"
+    }
+  ]
+};
+
+// Use of Funds Breakdown
+export const USE_OF_FUNDS = {
+  title: "Use of Funds",
+  subtitle: "Investment Allocation & Project Costs",
+  
+  phaseOne: {
+    title: "Phase One - Stage One (31 acres)",
+    landAndSoft: {
+      label: "Land Acquisition & Soft Costs",
+      items: [
+        { name: "Land Acquisition", amount: 7200000 },
+        { name: "Architectural, Design, Engineering & Others", amount: 600000 }
+      ],
+      subtotal: 7800000
+    },
+    hardCosts: {
+      label: "Hard Costs - Construction & Infrastructure",
+      items: [
+        { name: "Building Construction (3 buildings, 400K sq ft)", amount: 20000000 },
+        { name: "Water & Sewer Connections", amount: 550000 },
+        { name: "Parking Lot, Green Belts, Retention Ponds", amount: 2000000 },
+        { name: "Miscellaneous Expenses", amount: 250000 }
+      ],
+      subtotal: 22800000
+    },
+    total: 30600000,
+    note: "Initial 3 buildings (400K sq ft) establishing FTZ operations and management offices"
+  },
+  
+  phaseOneStageTwo: {
+    title: "Phase One - Stage Two (405 acres)",
+    costs: {
+      label: "Full Development Costs",
+      items: [
+        { name: "Soft Costs (Architect, Survey, Engineering)", amount: 5000000 },
+        { name: "Industrial Space (9.4M sq ft @ $50/sq ft)", amount: 470000000 },
+        { name: "Commercial Space (700K sq ft @ $50/sq ft)", amount: 35000000 },
+        { name: "Residential Units (1,500 units @ $88K/unit)", amount: 132000000 },
+        { name: "Miscellaneous (Parking, Green Belt, etc.)", amount: 2500000 }
+      ],
+      subtotal: 644500000
+    },
+    total: 644500000,
+    note: "Complete buildout of industrial, commercial, and residential components"
+  },
+  
+  phaseTwo: {
+    title: "Phase Two (210 acres) - Build-to-Sell",
+    residential: {
+      label: "Affordable Housing Sales",
+      units: 800,
+      costPerUnit: 88000,
+      salesPricePerUnit: 188000,
+      profitPerUnit: 100000,
+      totalCost: 70400000,
+      totalRevenue: 150400000,
+      grossProfit: 80000000
+    },
+    breakdown: {
+      homeSiteCost: 5000,
+      softCost: 3000,
+      hardCost: 70000,
+      miscExpenses: 10000,
+      totalPerUnit: 88000
+    },
+    note: "High-end modular homes (3BR, 1,200 sq ft) on 10,000 sq ft lots"
+  },
+  
+  totalInvestment: {
+    phaseOneStageOne: 30600000,
+    phaseOneStageTwo: 644500000,
+    phaseTwo: 70400000,
+    grandTotal: 745500000
+  }
+};

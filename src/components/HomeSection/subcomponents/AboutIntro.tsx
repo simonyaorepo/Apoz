@@ -41,7 +41,7 @@ const TextContent = styled.div`
 
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.darkBlue};
-  font-size: ${({ theme }) => theme.fontSizes.h1};
+  font-size: ${({ theme }) => theme.fontSizes.h2};
   font-weight: 400;
   line-height: 1.3;
   margin: 0;

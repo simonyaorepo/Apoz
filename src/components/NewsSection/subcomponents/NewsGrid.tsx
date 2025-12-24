@@ -54,7 +54,7 @@ const ArticleImage = styled.div`
 
 const ArticleTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.lg};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.darkBlue};
   margin: 0 0 ${({ theme }) => theme.spacing.sm} 0;
   line-height: 1.4;

@@ -27,8 +27,8 @@ export const Tag = styled.div`
 export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: ${({ theme }) => theme.spacing.sm};
-  font-size: ${({ theme }) => theme.fontSizes["2xl"]};
-  font-weight: 600;
+  font-size: ${({ theme }) => theme.fontSizes.h3};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;
 
 export const Subtitle = styled.p`
@@ -78,6 +78,7 @@ export const PartnershipCTA = styled.div`
 
 export const PartnershipTitle = styled.h3`
   color: ${({ theme }) => theme.colors.white};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 

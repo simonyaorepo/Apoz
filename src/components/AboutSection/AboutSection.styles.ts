@@ -62,7 +62,8 @@ export const SectionIcon = styled.div<{ bg: string }>`
 `;
 export const SectionTitle = styled.h2<{ color: string; center?: boolean }>`
   color: ${({ color }) => color};
-  font-size: ${({ theme }) => theme.fontSizes.h2};
+  font-size: ${({ theme }) => theme.fontSizes.h3};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: 0;
   text-align: ${({ center }) => center ? 'center' : 'left'};
 `;

@@ -8,7 +8,7 @@ interface InstitutionalFooterProps {
 }
 
 const FooterWrapper = styled.footer`
-  background: ${({ theme }) => theme.colors.darkBlue};
+  background: ${({ theme }) => theme.colors.teal};
   color: ${({ theme }) => theme.colors.muted};
   border-top: 1px solid ${({ theme }) => theme.colors.goldGradient};
 `;
@@ -24,6 +24,7 @@ const Grid = styled.div`
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 4rem;
+  padding-top: 2rem;
   align-items: start;
   @media (max-width: 900px) {
     grid-template-columns: 1fr 1fr;
@@ -56,14 +57,10 @@ const LogoRow = styled.div`
   }
 `;
 
-const LogoIcon = styled.div`
-  width: 3rem;
+const LogoIcon = styled.img`
   height: 3rem;
-  background: ${({ theme }) => theme.colors.goldGradient};
-  border-radius: ${({ theme }) => theme.radii.lg};
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: auto;
+  object-fit: contain;
 `;
 
 const LogoText = styled.div`
@@ -132,7 +129,7 @@ const SectionTitle = styled.h3`
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   font-size: ${({ theme }) => theme.fontSizes.lg};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
   @media (max-width: 600px) {
     text-align: center;
@@ -160,11 +157,11 @@ const LinkButton = styled.button`
   transition: color ${({ theme }) => theme.transition.button}, font-weight 0.2s;
   &:hover {
     color: ${({ theme }) => theme.colors.gold};
-    font-weight: 600;
+    font-weight: 500;
   }
   &.active {
     color: ${({ theme }) => theme.colors.gold};
-    font-weight: 600;
+    font-weight: 500;
   }
   @media (max-width: 600px) {
     text-align: center;
@@ -228,7 +225,8 @@ export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
       title: "Navigation",
       links: [
         { label: "Home", page: "home" },
-        { label: "About Us", page: "about" },
+        { label: "About", page: "about" },
+        { label: "Investment", page: "investment" },
         { label: "Projects", page: "projects" },
         { label: "News", page: "news" },
         { label: "Contact", page: "contact" },
@@ -250,9 +248,7 @@ export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
           {/* Brand */}
           <Brand>
             <LogoRow>
-              <LogoIcon>
-                <span>APOZ</span>
-              </LogoIcon>
+              <LogoIcon src="/assets/images/transparent-light-logo.png" alt="APOZ Logo" />
               <div>
                 <LogoText>APOZ</LogoText>
                 <LogoSubText>Asia Pacific Opportunity Zone</LogoSubText>

@@ -7,6 +7,7 @@ import {
   Grid,
   PhotoWrapper,
   ContentWrapper,
+  GreyContentWrapper,
   LeaderTitle,
   LeaderName,
   LeaderBio,
@@ -23,6 +24,7 @@ export interface TeamMember {
 
 interface LeaderCardProps {
   member: TeamMember;
+  index: number;
   reverse: boolean;
   expanded: boolean;
   onToggleExpanded: (id: string) => void;
@@ -30,6 +32,7 @@ interface LeaderCardProps {
 
 export const LeaderCard: React.FC<LeaderCardProps> = ({
   member,
+  index,
   reverse,
   expanded,
   onToggleExpanded,
@@ -50,14 +53,14 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({
         </Container>
       </WhiteSection>
       
-      <GreySection>
+      <GreySection $index={index}>
         <Container>
           <Grid reverse={reverse}>
             <PhotoWrapper reverse={reverse}>
               <LeaderPhoto photo={member.photo} name={member.name} half="bottom" />
             </PhotoWrapper>
-            <ContentWrapper reverse={reverse}>
-              <LeaderBio expanded={expanded}>
+            <GreyContentWrapper reverse={reverse} $index={index}>
+              <LeaderBio expanded={expanded} $index={index}>
                 {member.bio.map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -65,7 +68,7 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({
               <ReadMoreButton onClick={() => onToggleExpanded(member.id)}>
                 {expanded ? 'READ LESS' : 'READ MORE'}
               </ReadMoreButton>
-            </ContentWrapper>
+            </GreyContentWrapper>
           </Grid>
         </Container>
       </GreySection>

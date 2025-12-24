@@ -66,6 +66,7 @@ const TileDate = styled.div`
 const TileTitle = styled.h3`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.h4};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;
 
 const TileArrow = styled.div`

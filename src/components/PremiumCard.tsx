@@ -49,6 +49,7 @@ const Meta = styled.div`
 
 const CardTitle = styled.h3`
   color: ${({ theme }) => theme.colors.white};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: 0.5rem;
   line-height: 1.2;
 `;

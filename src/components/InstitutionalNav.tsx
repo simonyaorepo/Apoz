@@ -46,15 +46,10 @@ const LogoRow = styled.div`
   cursor: pointer;
 `;
 
-const LogoIcon = styled.div`
-  width: 2rem;
-  height: 2rem;
-  background: ${({ theme }) => theme.colors.goldGradient};
-  border-radius: ${({ theme }) => theme.radii.lg};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+const LogoIcon = styled.img`
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
 `;
 
 const LogoText = styled.div`
@@ -141,9 +136,9 @@ const MegaMenuButton = styled.button`
   border: none;
   color: ${({ theme }) => theme.colors.white};
   text-align: left;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 400;
-  padding: 0.4rem 0.75rem;
+  padding: 0.85rem 1rem;
   cursor: pointer;
   transition: color ${({ theme }) => theme.transition.button}, background 0.2s;
   border-bottom: 1px solid rgba(255,255,255,0.12);
@@ -157,8 +152,8 @@ const MegaMenuButton = styled.button`
     background: rgba(255,255,255,0.04);
   }
   @media (max-width: 600px) {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+    padding: 0.6rem 0.7rem;
   }
 `;
 
@@ -210,11 +205,9 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
       id: "projects", 
       label: "Projects",
       submenu: [
-        { label: "Phase 1 – Infrastructure", id: "projects/phase1" },
-        { label: "Residential Communities", id: "projects/residential" },
-        { label: "Commercial & Retail", id: "projects/commercial" },
-        { label: "Industrial & Logistics", id: "projects/industrial" },
-        { label: "Future Developments", id: "projects/future" },
+        { label: "Phase 1", id: "projects/phase1" },
+        { label: "Phase 2", id: "projects/phase2" },
+        { label: "Phase 3", id: "projects/phase3" },
       ]
     },
     { id: "investment", label: "Investment Opportunities" },
@@ -227,9 +220,7 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
         <NavRow>
           {/* Logo */}
           <LogoRow onClick={() => onNavigate("home")}> 
-            <LogoIcon>
-              <span>APOZ</span>
-            </LogoIcon>
+            <LogoIcon src="/assets/images/trasnparent-normal-logo.png" alt="APOZ Logo" />
             <div>
               <LogoText>APOZ</LogoText>
               <LogoSubText>Asia Pacific Opportunity Zone</LogoSubText>

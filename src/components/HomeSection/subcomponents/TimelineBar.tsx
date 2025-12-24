@@ -18,7 +18,8 @@ const Wrapper = styled.div`
 
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.white};
-  font-size: 48px;
+  font-size: ${({ theme }) => theme.fontSizes.h3};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: ${({ theme }) => theme.spacing.md};
   text-align: center;
 `;
@@ -58,7 +59,7 @@ const NumberCircle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   font-size: 20px;
 `;
 
@@ -72,6 +73,7 @@ const Period = styled.div`
 const Label = styled.h3`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.h4};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: ${({ theme }) => theme.spacing.sm};
 `;
 

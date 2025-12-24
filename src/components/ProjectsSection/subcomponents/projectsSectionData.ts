@@ -3,7 +3,48 @@
 export const PROJECTS_OVERVIEW = {
   title: "Development Projects",
   subtitle: "A phased approach to sustainable growth",
-  description: "APOZ's master-planned development spans 646+ acres across three strategic phases, combining industrial infrastructure, commercial centers, and residential communities to create a thriving economic ecosystem."
+  description: "APOZ's master-planned development spans 646+ acres across three strategic phases, combining industrial infrastructure, commercial centers, and residential communities to create a thriving economic ecosystem.",
+  
+  timeline: {
+    groundbreaking: "Q3 2026",
+    phaseOneCompletion: "2030",
+    fullBuildout: "2030+"
+  },
+  
+  economicImpact: {
+    jobCreation: "5,000-7,000 jobs",
+    jobSectors: "Construction, manufacturing, and service sectors",
+    foreignInvestment: "$500M+",
+    investmentSource: "Asia-Pacific firms expanding to U.S. market",
+    landRevitalization: "Transforms underutilized QOZ-designated land into productive industrial and residential hub",
+    affordableHousing: "Hundreds of homes starting at $188,000 for working-class families"
+  },
+  
+  locationAdvantages: {
+    title: "Strategic Location Benefits",
+    highlights: [
+      {
+        feature: "Port of Houston Access",
+        description: "Adjacent to the #1 U.S. marine port by total tonnage, enabling seamless international trade and logistics"
+      },
+      {
+        feature: "Interstate 10 Corridor",
+        description: "Located directly on I-10 (Exit 822), the major east-west artery connecting California, Texas, and Florida—the nation's top 3 economic states"
+      },
+      {
+        feature: "Sun Belt Position",
+        description: "Center of the fastest-growing economic region in the U.S., connecting Pacific Ocean, Gulf of America, and Atlantic Ocean"
+      },
+      {
+        feature: "Houston Metropolitan Area",
+        description: "30 miles from downtown Houston, close to Baytown and Beaumont, with access to world-class workforce and infrastructure"
+      },
+      {
+        feature: "Multimodal Transportation",
+        description: "Road, rail, maritime, and air connectivity radiating to all U.S. and global markets"
+      }
+    ]
+  }
 };
 
 export const PHASE_ONE_DATA = {

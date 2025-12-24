@@ -10,7 +10,8 @@ const Section = styled.section`
 `;
 
 const CTATitle = styled.h2`
-  font-size: ${({ theme }) => theme.fontSizes.h2};
+  font-size: ${({ theme }) => theme.fontSizes.h3};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
@@ -27,7 +28,7 @@ const CTAButton = styled.button`
   background: ${({ theme }) => theme.colors.gold};
   color: ${({ theme }) => theme.colors.darkBlue};
   font-size: ${({ theme }) => theme.fontSizes.lg};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.xxl};
   border: none;
   border-radius: ${({ theme }) => theme.radii.md};

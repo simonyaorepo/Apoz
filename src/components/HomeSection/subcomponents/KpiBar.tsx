@@ -38,7 +38,8 @@ const Metric = styled.div<{ isLast: boolean }>`
 
 const Value = styled.div`
   color: ${({ theme }) => theme.colors.goldAccent};
-  font-size: 42px;
+  font-size: ${({ theme }) => theme.fontSizes.h3};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: 8px;
 `;
 

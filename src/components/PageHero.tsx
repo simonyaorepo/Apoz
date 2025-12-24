@@ -97,13 +97,13 @@ const Breadcrumb = styled.nav`
 `;
 
 const Title = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.h1};
+  font-size: ${({ theme }) => theme.fontSizes.h2};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.darkBlue};
   line-height: 1.2;
   margin: 0;
   letter-spacing: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamilies.heading};
   
   @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.fontSizes.h2};

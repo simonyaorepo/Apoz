@@ -34,7 +34,7 @@ const LeftContent = styled.div`
 
 const Title = styled.h2`
   color: white;
-  font-size: ${({ theme }) => theme.fontSizes.h1};
+  font-size: ${({ theme }) => theme.fontSizes.h2};
   font-weight: 400;
   line-height: 1.2;
   margin: 0;

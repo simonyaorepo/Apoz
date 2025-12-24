@@ -3,14 +3,13 @@ import styled from "styled-components";
 export const WhiteSection = styled.section`
   background: ${({ theme }) => theme.colors.white};
   width: 100%;
-  padding: ${({ theme }) => theme.spacing.xxxl} 0;
-  padding-bottom: 0;
+  padding: ${({ theme }) => theme.spacing.xxxl} 0 0 0;
 `;
 
-export const GreySection = styled.section`
+export const GreySection = styled.section<{ $index?: number }>`
   background: ${({ theme }) => theme.colors.grey};
   width: 100%;
-  padding: 0 0 ${({ theme }) => theme.spacing.xxxl} 0;
+  padding: 0;
 `;
 
 export const Container = styled.div`
@@ -47,20 +46,52 @@ export const ContentWrapper = styled.div<{ reverse?: boolean }>`
   }
 `;
 
+export const GreyContentWrapper = styled(ContentWrapper)<{ $index?: number }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  ${({ theme, $index }) => {
+    if ($index === undefined) {
+      return `padding: ${theme.spacing.xl} 0;`;
+    }
+    
+    // Equal top and bottom padding for balanced spacing
+    const verticalPadding = [
+      theme.spacing.xl,  // David Champ - normal
+      `calc(${theme.spacing.xl} + 2rem)`,  // Eric Fang - taller
+      `calc(${theme.spacing.xl} - 0.5rem)`,  // Bo Collins - shorter
+      `calc(${theme.spacing.xl} + 0.75rem)`,  // Trey Boring - slightly taller
+      `calc(${theme.spacing.xl} + 1.5rem)`,  // Kenar Liu - taller
+      `calc(${theme.spacing.xl} - 0.25rem)`,  // Tina Wise - shorter
+    ];
+    
+    return `padding: ${verticalPadding[$index]} 0;`;
+  }}
+`;
+
 export const LeaderTitle = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.sm};
   color: ${({ theme }) => theme.colors.foreground};
   margin-bottom: ${({ theme }) => theme.spacing.xs};
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
 `;
 
-export const LeaderName = styled.h2`
-  font-size: ${({ theme }) => theme.fontSizes.h2};
+export const LeaderName = styled.h3`
+  font-size: ${({ theme }) => theme.fontSizes.xl};
   color: ${({ theme }) => theme.colors.darkBlue};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin: 0;
+  font-family: ${({ theme }) => theme.fontFamilies.heading};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+  }
 `;
 
-export const LeaderBio = styled.div<{ expanded: boolean }>`
+export const LeaderBio = styled.div<{ expanded: boolean; $index?: number }>`
   color: ${({ theme }) => theme.colors.foreground};
   font-size: ${({ theme }) => theme.fontSizes.md};
   line-height: 1.8;
@@ -73,12 +104,28 @@ export const LeaderBio = styled.div<{ expanded: boolean }>`
     }
   }
   
-  ${({ expanded }) => !expanded && `
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  `}
+  ${({ expanded, $index }) => {
+    if (expanded) return '';
+    
+    // Line clamp values that match the grey section heights
+    const lineClamps = [
+      3,  // David Champ - normal
+      5,  // Eric Fang - much taller, show more text
+      2,  // Bo Collins - shorter, show less text
+      4,  // Trey Boring - slightly taller
+      5,  // Kenar Liu - taller, show more text
+      2,  // Tina Wise - shorter, show less text
+    ];
+    
+    const clampValue = $index !== undefined ? lineClamps[$index] : 3;
+    
+    return `
+      display: -webkit-box;
+      -webkit-line-clamp: ${clampValue};
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    `;
+  }}
 `;
 
 export const ReadMoreButton = styled.button`

@@ -12,26 +12,35 @@ export const breakpoints = {
 export const fontSizes = {
   base: '1rem', // 16px
   sm: '0.875rem', // 14px
-  md: '1rem', // 16px
-  lg: '1.125rem', // 18px
-  xl: '1.25rem', // 20px
-  '2xl': '1.5rem', // 24px
-  logo: '1.25rem',
-  hero: '5.5rem', // 88px
-  h1: '3rem', // 48px
-  h2: '2.625rem', // 42px
-  h3: '1.625rem', // 26px
-  h4: '1.375rem', // 22px
-  h5: '1.125rem', // 18px
-  h6: '1.0625rem', // 17px
+  md: '1.0625rem', // 17px
+  lg: '1.25rem', // 20px
+  xl: '1.5rem', // 24px
+  '2xl': '1.875rem', // 30px
+  logo: '1.375rem', // 22px
+  hero: '4.5rem', // 72px
+  h1: '3.5rem', // 56px
+  h2: '2.75rem', // 44px
+  h3: '2rem', // 32px
+  h4: '1.5rem', // 24px
+  h5: '1.25rem', // 20px
+  h6: '1.125rem', // 18px
   small: '0.875rem', // 14px
-  xsmall: '0.8125rem', // 13px
+  xsmall: '0.75rem', // 12px
+};
+
+export const fontFamilies = {
+  body: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif",
+  heading: "'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  monospace: "'Courier New', 'Monaco', 'Consolas', monospace"
 };
 
 export const fontWeights = {
+  light: 300,
   normal: 400,
   medium: 500,
+  semibold: 600,
   bold: 700,
+  extrabold: 800,
   black: 900,
 };
 
@@ -64,6 +73,7 @@ const common = {
   },
   breakpoints,
   fontSizes,
+  fontFamilies,
   fontWeights,
   gradients,
   radii,

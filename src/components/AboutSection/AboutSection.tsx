@@ -26,7 +26,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate, section }) => {
   if (section === 'vision') {
     return (
       <SectionWrapper>
-        <VisionSection />
+        <VisionSection onNavigate={onNavigate} />
       </SectionWrapper>
     );
   }
@@ -34,7 +34,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate, section }) => {
   if (section === 'approach') {
     return (
       <SectionWrapper>
-        <ApproachSection />
+        <ApproachSection onNavigate={onNavigate} />
       </SectionWrapper>
     );
   }
@@ -42,7 +42,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate, section }) => {
   if (section === 'partnership') {
     return (
       <SectionWrapper>
-        <PartnershipSection />
+        <PartnershipSection onNavigate={onNavigate} />
       </SectionWrapper>
     );
   }

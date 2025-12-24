@@ -41,7 +41,8 @@ const VisionText = styled.div`
 
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.darkBlueAlt};
-  font-size: 36px;
+  font-size: ${({ theme }) => theme.fontSizes.h3};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: 24px;
 `;
 

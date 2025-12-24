@@ -74,7 +74,7 @@ const Subtitle = styled.div`
 
 const Headline = styled.h1`
   font-size: 1.625rem;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.white};
   line-height: 1.25;
   margin: 0;

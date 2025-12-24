@@ -3,7 +3,7 @@ import InvestmentHero from "./subcomponents/InvestmentHero";
 import InvestmentSummary from "./subcomponents/InvestmentSummary";
 import BenefitsSection from "./subcomponents/BenefitsSection";
 import OpportunitiesSection from "./subcomponents/OpportunitiesSection";
-import CTASection from "./subcomponents/CTASection";
+import SWOTAnalysis from "./subcomponents/SWOTAnalysis";
 
 const InvestmentSection: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const InvestmentSection: React.FC = () => {
       <InvestmentSummary />
       <BenefitsSection />
       <OpportunitiesSection />
-      <CTASection />
+      <SWOTAnalysis />
     </>
   );
 };

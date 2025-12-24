@@ -74,7 +74,7 @@ const Content = styled.div`
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.h3};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin: 0;
 `;
 

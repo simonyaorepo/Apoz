@@ -23,6 +23,7 @@ export const LeadershipSection: React.FC = () => {
         <LeaderCard
           key={member.id}
           member={member}
+          index={index}
           reverse={index % 2 === 1}
           expanded={expandedMembers.has(member.id)}
           onToggleExpanded={toggleExpanded}

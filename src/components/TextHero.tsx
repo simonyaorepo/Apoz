@@ -80,8 +80,8 @@ const Breadcrumb = styled.nav`
 `;
 
 const Title = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.h1};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-size: ${({ theme }) => theme.fontSizes.h2};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.white};
   line-height: 1.2;
   margin: 0;

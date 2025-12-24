@@ -55,7 +55,7 @@ const HeroOverlay = styled.div`
 const HeroTitle = styled.h1`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.h2};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   text-align: center;
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);

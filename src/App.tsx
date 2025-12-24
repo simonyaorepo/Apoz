@@ -45,9 +45,9 @@ function AppLayout() {
   };
 
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <InstitutionalNav currentPage={currentPage} onNavigate={handleNavigate} />
-      <main>
+      <main style={{ flex: 1 }}>
         <Routes>
           {NAV_PAGES.map(({ id, path, element: Element }) => (
             <Route key={id} path={path} element={<Element onNavigate={handleNavigate} />} />
@@ -58,7 +58,7 @@ function AppLayout() {
         </Routes>
       </main>
       <InstitutionalFooter onNavigate={handleNavigate} />
-    </>
+    </div>
   );
 }
 

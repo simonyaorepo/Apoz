@@ -3,10 +3,8 @@ import ProjectsHero from "./subcomponents/ProjectsHero";
 import ProjectsSummary from "./subcomponents/ProjectsSummary";
 import ProjectPreviews from "./subcomponents/ProjectPreviews";
 import Phase1Section from "./subcomponents/Phase1Section";
-import ResidentialSection from "./subcomponents/ResidentialSection";
-import CommercialSection from "./subcomponents/CommercialSection";
-import IndustrialSection from "./subcomponents/IndustrialSection";
-import FutureSection from "./subcomponents/FutureSection";
+import Phase2Section from "./subcomponents/Phase2Section";
+import Phase3Section from "./subcomponents/Phase3Section";
 
 interface ProjectsSectionProps {
   section?: string;
@@ -18,20 +16,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ section }) => {
     return <Phase1Section />;
   }
   
-  if (section === 'residential') {
-    return <ResidentialSection />;
+  if (section === 'phase2') {
+    return <Phase2Section />;
   }
   
-  if (section === 'commercial') {
-    return <CommercialSection />;
-  }
-  
-  if (section === 'industrial') {
-    return <IndustrialSection />;
-  }
-  
-  if (section === 'future') {
-    return <FutureSection />;
+  if (section === 'phase3') {
+    return <Phase3Section />;
   }
   
   // Default: render full Projects page

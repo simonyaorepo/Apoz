@@ -136,3 +136,67 @@ export const PARTNERSHIP_DATA = {
     }
   }
 };
+
+// Service Strategic Partners
+export const PARTNERS_DATA = {
+  title: "Our Strategic Partners",
+  subtitle: "World-Class Professional Services Supporting APOZ Development",
+  partners: [
+    {
+      category: "SEC Security Attorneys",
+      firm: "JMS Law Group, PLLC",
+      contact: "Jeffrey Stein, Esq.",
+      role: "Chief Legal Counsel",
+      location: "Plainview, NY",
+      phone: "(516) 448-8487"
+    },
+    {
+      category: "Accounting / CPA",
+      firm: "Lakeland Accounting & Tax LLC",
+      contact: "Philip Whiting, CPA",
+      role: "Chief Corporate Accountant",
+      location: "Lakeland, Florida",
+      phone: "(863) 899-9000"
+    },
+    {
+      category: "Architectural Design",
+      firm: "Maxx Designers",
+      contact: "",
+      role: "Architectural Design Team",
+      location: "Stafford, TX",
+      phone: "(832) 871-4166"
+    },
+    {
+      category: "FTZ Service Consultants",
+      firm: "IMS Worldwide",
+      contact: "Trey W. Boring",
+      role: "FTZ Expert & Strategic Partner",
+      location: "Webster, TX",
+      phone: "(281) 554-9099"
+    },
+    {
+      category: "SEC Auditors",
+      firm: "Beckles & Co.",
+      contact: "",
+      role: "SEC Compliance & Auditing",
+      location: "West Palm Beach, FL",
+      phone: "(754) 512-5016"
+    },
+    {
+      category: "Stock Transfer Service",
+      firm: "Transhare Corporation",
+      contact: "",
+      role: "Transfer Agent Services",
+      location: "Clearwater, FL",
+      phone: "(303) 662-1112"
+    },
+    {
+      category: "PR / Press Release",
+      firm: "Access News Wire",
+      contact: "",
+      role: "Public Relations & Media Distribution",
+      location: "",
+      phone: "(888) 808-2227"
+    }
+  ]
+};

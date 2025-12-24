@@ -9,7 +9,7 @@ const StyledButton = styled.button`
   background: ${({ theme }) => theme.colors.goldAccent};
   color: white;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   padding: 12px 32px;
   border: none;
   border-radius: 0;

@@ -10,42 +10,6 @@ const HeroWrapper = styled.div`
   }
 `;
 
-const OverlayBox = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 5vw;
-  transform: translateY(50%);
-  background: ${({ theme }) => theme.gradients.teal};
-  padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
-  max-width: 320px;
-  z-index: 10;
-  
-  h2 {
-    color: ${({ theme }) => theme.colors.gold};
-    font-size: ${({ theme }) => theme.fontSizes.h3};
-    font-weight: ${({ theme }) => theme.fontWeights.bold};
-    margin: 0 0 ${({ theme }) => theme.spacing.xs} 0;
-    line-height: 1.2;
-    font-family: Georgia, serif;
-  }
-  
-  h3 {
-    color: ${({ theme }) => theme.colors.white};
-    font-size: ${({ theme }) => theme.fontSizes.h3};
-    font-weight: ${({ theme }) => theme.fontWeights.bold};
-    margin: 0;
-    line-height: 1.2;
-    font-family: Georgia, serif;
-  }
-  
-  @media (max-width: 768px) {
-    position: static;
-    transform: none;
-    max-width: 100%;
-    margin: -${({ theme }) => theme.spacing.xl} 5vw 0;
-  }
-`;
-
 const WhiteSection = styled.section`
   background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
@@ -75,19 +39,20 @@ const TextContent = styled.div`
 `;
 
 const GreySection = styled.section`
-  background: ${({ theme }) => theme.colors.grey};
+  background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
   text-align: center;
 `;
 
 const QuoteMark = styled.div`
-  font-size: 140px;
-  line-height: 0.8;
-  color: ${({ theme }) => theme.colors.foreground};
-  opacity: 0.08;
-  margin-bottom: 0;
+  font-size: 120px;
+  line-height: 1;
+  color: ${({ theme }) => theme.colors.white};
+  -webkit-text-stroke: 2px ${({ theme }) => theme.colors.grey};
+  opacity: 1;
+  margin-bottom: -20px;
   font-family: Georgia, serif;
-  font-weight: 300;
+  font-weight: 400;
   
   &::before {
     content: '\\201C';
@@ -106,18 +71,14 @@ const QuoteText = styled.p`
 
 interface OverviewSectionProps {
   title: string;
-  overlayTitle: string;
-  overlaySubtitle: string;
-  content: string[];
-  quote: string;
+  content?: string[];
+  quote?: string;
   backgroundImage: string;
   breadcrumbLabel: string;
 }
 
 const OverviewSection: React.FC<OverviewSectionProps> = ({
   title,
-  overlayTitle,
-  overlaySubtitle,
   content,
   quote,
   backgroundImage,
@@ -135,28 +96,28 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({
             { label: breadcrumbLabel }
           ]}
         />
-        <OverlayBox>
-          <h2>{overlayTitle}</h2>
-          <h3>{overlaySubtitle}</h3>
-        </OverlayBox>
       </HeroWrapper>
       
-      <WhiteSection>
-        <Container>
-          <TextContent>
-            {content.map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
-            ))}
-          </TextContent>
-        </Container>
-      </WhiteSection>
+      {content && content.length > 0 && (
+        <WhiteSection>
+          <Container>
+            <TextContent>
+              {content.map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
+            </TextContent>
+          </Container>
+        </WhiteSection>
+      )}
       
-      <GreySection>
-        <Container>
-          <QuoteMark />
-          <QuoteText>{quote}</QuoteText>
-        </Container>
-      </GreySection>
+      {quote && (
+        <GreySection>
+          <Container>
+            <QuoteMark />
+            <QuoteText>{quote}</QuoteText>
+          </Container>
+        </GreySection>
+      )}
     </>
   );
 };

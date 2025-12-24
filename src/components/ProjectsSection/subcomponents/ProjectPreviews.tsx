@@ -74,7 +74,7 @@ const Content = styled.div`
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.h3};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin: 0;
 `;
 
@@ -120,33 +120,21 @@ const ProjectPreviews: React.FC = () => {
   const projects = [
     {
       id: "phase1",
-      title: "Phase 1 – Infrastructure & Site Preparation (2025–2026)",
-      description: "Roads, utilities, and core infrastructure underway. Partnerships with local contractors and public agencies. Approved master plan submitted to Chambers County.",
+      title: "Phase 1",
+      description: "Infrastructure & Site Preparation (2025–2026). Roads, utilities, and core infrastructure underway. Partnerships with local contractors and public agencies.",
       route: "/projects/phase1"
     },
     {
-      id: "residential",
-      title: "Residential Communities",
-      description: "Affordable homes starting at $188,000. Family-friendly neighborhoods with parks, schools, and services. Energy-efficient construction and green space integration.",
-      route: "/projects/residential"
+      id: "phase2",
+      title: "Phase 2",
+      description: "Residential Expansion. Affordable homes starting at $188,000. Family-friendly neighborhoods with parks, schools, and services. Energy-efficient construction and green space integration.",
+      route: "/projects/phase2"
     },
     {
-      id: "commercial",
-      title: "Commercial & Retail Zones",
-      description: "Mixed-use developments for retail, dining, and office space. Designed for walkability and local entrepreneurship. Leasing available for early tenants and investors.",
-      route: "/projects/commercial"
-    },
-    {
-      id: "industrial",
-      title: "Industrial & Logistics Parks",
-      description: "Strategically located near ports and major highways. Zoned for manufacturing, warehousing, and global trade. Attracting companies focused on U.S.–Asia supply chain efficiency.",
-      route: "/projects/industrial"
-    },
-    {
-      id: "future",
-      title: "Future Developments",
-      description: "Sustainability & Innovation District with smart city infrastructure, renewable energy, and tech incubators. Education & Workforce Development including trade schools and university partnerships.",
-      route: "/projects/future"
+      id: "phase3",
+      title: "Phase 3",
+      description: "Future Development. Commercial zones, innovation districts, and sustainability initiatives. Smart city infrastructure, renewable energy, and workforce development.",
+      route: "/projects/phase3"
     }
   ];
 

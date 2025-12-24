@@ -6,6 +6,7 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     breakpoints: typeof import('./theme').breakpoints;
     fontSizes: typeof import('./theme').fontSizes;
+    fontFamilies: typeof import('./theme').fontFamilies;
     fontWeights: typeof import('./theme').fontWeights;
     gradients: typeof import('./theme').gradients;
     radii: typeof import('./theme').radii;

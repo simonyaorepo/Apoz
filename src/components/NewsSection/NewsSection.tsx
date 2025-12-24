@@ -16,7 +16,7 @@ const TitleSection = styled.section`
   
   h1 {
     font-size: ${({ theme }) => theme.fontSizes.h2};
-    font-weight: ${({ theme }) => theme.fontWeights.bold};
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
     color: ${({ theme }) => theme.colors.darkBlue};
     max-width: 1200px;
     margin: 0 auto;

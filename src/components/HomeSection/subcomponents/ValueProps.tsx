@@ -12,7 +12,7 @@ interface ValuePropsProps {
 
 const SectionTitle = styled.h2`
   color: ${({ theme }) => theme.colors.darkBlueAlt};
-  font-size: ${({ theme }) => theme.fontSizes.h1};
+  font-size: ${({ theme }) => theme.fontSizes.h2};
   margin-bottom: ${({ theme }) => theme.spacing.md};
   text-align: center;
 `;
@@ -48,6 +48,7 @@ const Card = styled.div`
 const CardTitle = styled.h3`
   color: ${({ theme }) => theme.colors.darkBlueAlt};
   font-size: ${({ theme }) => theme.fontSizes.h4};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 

@@ -12,7 +12,7 @@ import {
   IllustrationBox,
   ImageBox,
 } from "./SharedStyles";
-import { PARTNERSHIP_DATA } from "./aboutSectionData";
+import { PARTNERSHIP_DATA, PARTNERS_DATA } from "./aboutSectionData";
 
 interface PartnershipSectionProps {
   onNavigate: (page: string) => void;
@@ -118,16 +118,35 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({ onNavigate: _on
               />
             </ImageBox>
             <TextContent>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#0a3a3f' }}>
-                {PARTNERSHIP_DATA.content.servicePartners.heading}
-              </h3>
-              {PARTNERSHIP_DATA.content.servicePartners.partners.map((partner, idx) => (
-                <div key={idx} style={{ marginBottom: '1rem' }}>
-                  <h4 style={{ fontWeight: 'bold', marginBottom: '0.25rem' }}>{partner.category}</h4>
-                  <p style={{ marginBottom: '0.25rem' }}><strong>{partner.name}</strong></p>
-                  <p style={{ fontSize: '0.9rem', color: '#666' }}>{partner.contact}</p>
-                </div>
-              ))}
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Our Strategic Partners</h3>
+              <div style={{ 
+                display: 'grid', 
+                gridTemplateColumns: 'repeat(3, 1fr)', 
+                gap: '2rem',
+                marginBottom: '1rem'
+              }}>
+                {PARTNERS_DATA.partners.map((partner, idx) => (
+                  <div key={idx} style={{ 
+                    padding: '1.5rem',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    borderRadius: '8px',
+                    border: '1px solid rgba(212, 175, 55, 0.2)'
+                  }}>
+                    <p style={{ 
+                      marginBottom: '0.75rem',
+                      fontWeight: '600',
+                      fontSize: '0.95rem',
+                      color: '#d4af37'
+                    }}>
+                      {partner.category}
+                    </p>
+                    <p style={{ marginBottom: '0.5rem', fontWeight: '500' }}>{partner.firm}</p>
+                    {partner.contact && <p style={{ marginBottom: '0.25rem', fontSize: '0.9rem' }}>{partner.contact}</p>}
+                    {partner.location && <p style={{ marginBottom: '0.25rem', fontSize: '0.9rem' }}>{partner.location}</p>}
+                    {partner.phone && <p style={{ fontSize: '0.9rem' }}>{partner.phone}</p>}
+                  </div>
+                ))}
+              </div>
             </TextContent>
           </GreyContentGrid>
         </Container>

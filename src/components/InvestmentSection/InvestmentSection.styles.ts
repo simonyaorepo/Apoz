@@ -12,10 +12,11 @@ export const Container = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: ${({ theme }) => theme.fontSizes.h2};
+  font-size: ${({ theme }) => theme.fontSizes.h3};
   color: ${({ theme }) => theme.colors.foreground};
   text-align: center;
   margin-bottom: ${({ theme }) => theme.spacing.xxl};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;
 
 export const SectionText = styled.p`

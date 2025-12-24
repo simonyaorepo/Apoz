@@ -118,14 +118,13 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ onNavigate: _onNaviga
               />
             </ImageBox>
             <TextContent>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#0a3a3f' }}>
-                {APPROACH_DATA.content.strengths.heading}
-              </h3>
+              <p>
+                <strong>{APPROACH_DATA.content.strengths.heading}</strong>
+              </p>
               {APPROACH_DATA.content.strengths.items.map((item, idx) => (
-                <div key={idx} style={{ marginBottom: '1rem' }}>
-                  <h4 style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>{item.title}</h4>
-                  <p>{item.description}</p>
-                </div>
+                <p key={idx}>
+                  <strong>{item.title}:</strong> {item.description}
+                </p>
               ))}
             </TextContent>
           </GreyContentGrid>
