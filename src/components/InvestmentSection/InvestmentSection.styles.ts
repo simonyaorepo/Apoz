@@ -7,7 +7,7 @@ export const Section = styled.section<{ $background?: string }>`
 `;
 
 export const Container = styled.div`
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
 `;
 

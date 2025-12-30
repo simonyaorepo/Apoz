@@ -10,7 +10,7 @@ const Block = styled.div<{ $reverse?: boolean }>`
   padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
   align-items: center;
   
-  @media (max-width: 968px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.xl};
   }
@@ -19,7 +19,7 @@ const Block = styled.div<{ $reverse?: boolean }>`
 const ImageWrapper = styled.div<{ $reverse?: boolean }>`
   order: ${({ $reverse }) => $reverse ? 2 : 1};
   
-  @media (max-width: 968px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     order: 1;
   }
 `;
@@ -34,7 +34,7 @@ const Image = styled.img`
 const TextContent = styled.div<{ $reverse?: boolean }>`
   order: ${({ $reverse }) => $reverse ? 1 : 2};
   
-  @media (max-width: 968px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     order: 2;
   }
 `;

@@ -20,7 +20,7 @@ const Container = styled.div`
   gap: 80px;
   align-items: center;
   
-  @media (max-width: 900px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
     gap: 40px;
   }

@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import styled from "styled-components";
 import { InstitutionalNav } from "./components/InstitutionalNav";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -10,6 +11,16 @@ import NewsPage from "./pages/NewsPage";
 import NewsArticlePage from "./pages/NewsArticlePage";
 import InvestmentPage from "./pages/InvestmentPage";
 import { InstitutionalFooter } from "./components/InstitutionalFooter";
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const MainContent = styled.main`
+  flex: 1;
+`;
 
 const NAV_PAGES = [
   { id: "home", path: "/", element: HomePage },
@@ -45,9 +56,9 @@ function AppLayout() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <AppContainer>
       <InstitutionalNav currentPage={currentPage} onNavigate={handleNavigate} />
-      <main style={{ flex: 1 }}>
+      <MainContent>
         <Routes>
           {NAV_PAGES.map(({ id, path, element: Element }) => (
             <Route key={id} path={path} element={<Element onNavigate={handleNavigate} />} />
@@ -56,9 +67,9 @@ function AppLayout() {
           <Route path="/about/:section" element={<AboutPage onNavigate={handleNavigate} />} />
           <Route path="/projects/:section" element={<ProjectsPage onNavigate={handleNavigate} />} />
         </Routes>
-      </main>
+      </MainContent>
       <InstitutionalFooter onNavigate={handleNavigate} />
-    </div>
+    </AppContainer>
   );
 }
 

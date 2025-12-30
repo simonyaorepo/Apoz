@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import TextHero from "../../TextHero";
 import {
   WhiteSection,
@@ -13,6 +14,54 @@ import {
   ImageBox,
 } from "./SharedStyles";
 import { PARTNERSHIP_DATA, PARTNERS_DATA } from "./aboutSectionData";
+
+const PartnersTitle = styled.h3`
+  font-size: ${({ theme }) => theme.fontSizes.h4};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
+`;
+
+const PartnersGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: ${({ theme }) => theme.spacing.xl};
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const PartnerCard = styled.div`
+  padding: ${({ theme }) => theme.spacing.lg};
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: ${({ theme }) => theme.radii.md};
+  border: 1px solid rgba(212, 175, 55, 0.2);
+`;
+
+const CategoryLabel = styled.p`
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  color: ${({ theme }) => theme.colors.goldAccent};
+`;
+
+const FirmName = styled.p`
+  margin-bottom: ${({ theme }) => theme.spacing.xs};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+`;
+
+const ContactInfo = styled.p`
+  margin-bottom: ${({ theme }) => theme.spacing.xxs};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
 
 interface PartnershipSectionProps {
   onNavigate: (page: string) => void;
@@ -118,35 +167,18 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({ onNavigate: _on
               />
             </ImageBox>
             <TextContent>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Our Strategic Partners</h3>
-              <div style={{ 
-                display: 'grid', 
-                gridTemplateColumns: 'repeat(3, 1fr)', 
-                gap: '2rem',
-                marginBottom: '1rem'
-              }}>
+              <PartnersTitle>Our Strategic Partners</PartnersTitle>
+              <PartnersGrid>
                 {PARTNERS_DATA.partners.map((partner, idx) => (
-                  <div key={idx} style={{ 
-                    padding: '1.5rem',
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    borderRadius: '8px',
-                    border: '1px solid rgba(212, 175, 55, 0.2)'
-                  }}>
-                    <p style={{ 
-                      marginBottom: '0.75rem',
-                      fontWeight: '600',
-                      fontSize: '0.95rem',
-                      color: '#d4af37'
-                    }}>
-                      {partner.category}
-                    </p>
-                    <p style={{ marginBottom: '0.5rem', fontWeight: '500' }}>{partner.firm}</p>
-                    {partner.contact && <p style={{ marginBottom: '0.25rem', fontSize: '0.9rem' }}>{partner.contact}</p>}
-                    {partner.location && <p style={{ marginBottom: '0.25rem', fontSize: '0.9rem' }}>{partner.location}</p>}
-                    {partner.phone && <p style={{ fontSize: '0.9rem' }}>{partner.phone}</p>}
-                  </div>
+                  <PartnerCard key={idx}>
+                    <CategoryLabel>{partner.category}</CategoryLabel>
+                    <FirmName>{partner.firm}</FirmName>
+                    {partner.contact && <ContactInfo>{partner.contact}</ContactInfo>}
+                    {partner.location && <ContactInfo>{partner.location}</ContactInfo>}
+                    {partner.phone && <ContactInfo>{partner.phone}</ContactInfo>}
+                  </PartnerCard>
                 ))}
-              </div>
+              </PartnersGrid>
             </TextContent>
           </GreyContentGrid>
         </Container>

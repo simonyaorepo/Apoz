@@ -11,6 +11,7 @@ const FooterWrapper = styled.footer`
   background: ${({ theme }) => theme.colors.teal};
   color: ${({ theme }) => theme.colors.muted};
   border-top: 1px solid ${({ theme }) => theme.colors.goldGradient};
+  margin-top: ${({ theme }) => theme.spacing.xxxl};
 `;
 
 const FooterContainer = styled.div`
@@ -26,11 +27,11 @@ const Grid = styled.div`
   margin-bottom: 4rem;
   padding-top: 2rem;
   align-items: start;
-  @media (max-width: 900px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     grid-template-columns: 1fr;
     gap: 1.2rem;
     margin-bottom: 2rem;
@@ -39,7 +40,7 @@ const Grid = styled.div`
 
 const Brand = styled.div`
   margin-top: 0.7rem;
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     text-align: center;
     margin-top: 0.3rem;
     margin-bottom: 1.2rem;
@@ -51,7 +52,7 @@ const LogoRow = styled.div`
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.5rem;
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     justify-content: center;
     gap: 0.7rem;
   }
@@ -85,7 +86,7 @@ const Description = styled.p`
 const SocialRow = styled.div`
   display: flex;
   gap: 1rem;
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     justify-content: center;
     gap: 0.7rem;
   }
@@ -115,7 +116,7 @@ const SocialIcon = styled.button`
     color: ${({ theme }) => theme.colors.goldAccent};
     fill: ${({ theme }) => theme.colors.goldAccent};
   }
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 2.2rem;
     height: 2.2rem;
     & > svg {
@@ -131,7 +132,7 @@ const SectionTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.lg};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     text-align: center;
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
@@ -163,7 +164,7 @@ const LinkButton = styled.button`
     color: ${({ theme }) => theme.colors.gold};
     font-weight: 500;
   }
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     text-align: center;
     font-size: 0.97rem;
     margin-bottom: 0.5rem;

@@ -98,6 +98,18 @@ const Subtotal = styled.div`
   margin-top: ${({ theme }) => theme.spacing.md};
 `;
 
+const PhaseSubtotal = styled(Subtotal)`
+  margin-top: ${({ theme }) => theme.spacing.xl};
+  background: ${({ theme }) => theme.colors.teal};
+`;
+
+const SuccessSubtotal = styled(Subtotal)`
+  background: ${({ theme }) => theme.colors.success};
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: 4px;
+  margin-top: ${({ theme }) => theme.spacing.md};
+`;
+
 const SubtotalLabel = styled.span`
   font-size: ${({ theme }) => theme.fontSizes.lg};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
@@ -185,10 +197,10 @@ const UseOfFunds: React.FC = () => {
                 </Subtotal>
               </CategorySection>
               
-              <Subtotal style={{ marginTop: '2rem', background: '#0a3a3f' }}>
+              <PhaseSubtotal>
                 <SubtotalLabel>Phase Total</SubtotalLabel>
-                <SubtotalAmount>{formatCurrency(USE_OF_FUNDS.phaseOne.total)}</SubtotalAmount>
-              </Subtotal>
+                <SubtotalAmount>{formatCurrency(USE_OF_FUNDS.phaseOneStageTwo.total)}</SubtotalAmount>
+              </PhaseSubtotal>
             </PhaseBody>
           </PhaseCard>
           
@@ -211,12 +223,12 @@ const UseOfFunds: React.FC = () => {
                 </ItemsGrid>
               </CategorySection>
               
-              <Subtotal style={{ marginTop: '2rem', background: '#0a3a3f' }}>
+              <PhaseSubtotal>
                 <SubtotalLabel>Phase Total</SubtotalLabel>
                 <SubtotalAmount>
                   {formatCurrency(USE_OF_FUNDS.phaseOneStageTwo.total)}
                 </SubtotalAmount>
-              </Subtotal>
+              </PhaseSubtotal>
             </PhaseBody>
           </PhaseCard>
           
@@ -259,12 +271,12 @@ const UseOfFunds: React.FC = () => {
                     </ItemAmount>
                   </Item>
                 </ItemsGrid>
-                <Subtotal style={{ background: '#2a7c2e' }}>
+                <SuccessSubtotal>
                   <SubtotalLabel>Gross Profit</SubtotalLabel>
                   <SubtotalAmount>
                     {formatCurrency(USE_OF_FUNDS.phaseTwo.residential.grossProfit)}
                   </SubtotalAmount>
-                </Subtotal>
+                </SuccessSubtotal>
               </CategorySection>
             </PhaseBody>
           </PhaseCard>

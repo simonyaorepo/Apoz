@@ -42,11 +42,11 @@ const NewsGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: ${({ theme }) => theme.spacing.xl};
   
-  @media (max-width: 968px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     grid-template-columns: 1fr;
   }
 `;

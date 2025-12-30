@@ -24,10 +24,12 @@ declare module 'styled-components' {
       tealDark: string;
       grey: string;
       greyDark: string;
+      lightGrey: string;
       goldAccent: string;
       goldAccentHover: string;
       grayAccent: string;
       grayBorder: string;
+      success: string;
       boxShadow: string;
       boxShadowGold: string;
       boxShadowGoldGlow: string;

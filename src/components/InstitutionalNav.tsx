@@ -20,10 +20,10 @@ const NavBar = styled.nav<{ $scrolled: boolean }>`
 `;
 
 const NavContainer = styled.div`
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
   padding: 0 1rem;
-  @media (max-width: 900px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     max-width: 100vw;
     padding: 0 0.5rem;
   }
@@ -34,7 +34,7 @@ const NavRow = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 5rem;
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     height: 3rem;
   }
 `;
@@ -57,7 +57,7 @@ const LogoText = styled.div`
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
   font-size: 1rem;
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     font-size: 0.85rem;
   }
 `;
@@ -66,7 +66,7 @@ const LogoSubText = styled.div`
   color: ${({ theme }) => theme.colors.goldAccent};
   font-size: 0.75rem;
   letter-spacing: 0.05em;
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     font-size: 0.65rem;
   }
 `;
@@ -75,7 +75,7 @@ const NavLinks = styled.div`
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  @media (max-width: 900px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     gap: 0.75rem;
   }
 `;
@@ -105,7 +105,7 @@ const NavButton = styled.button<{ $active?: boolean }>`
     background: ${({ theme }) => theme.colors.gold};
     transition: width 0.3s;
   }
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     font-size: 0.9rem;
     padding: 0.15rem 0;
   }
@@ -124,7 +124,7 @@ const MegaMenu = styled.div<{ $left: number | null }>`
   padding: 0;
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
   z-index: 100;
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     min-width: 6.5rem;
     max-width: 8rem;
   }
@@ -151,7 +151,7 @@ const MegaMenuButton = styled.button`
     color: ${({ theme }) => theme.colors.gold};
     background: rgba(255,255,255,0.04);
   }
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     font-size: 0.8rem;
     padding: 0.6rem 0.7rem;
   }

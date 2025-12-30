@@ -65,7 +65,9 @@ export const radii = {
 const common = {
   borderRadius: radii.md,
   maxWidth: {
-    container: '112rem',
+    container: '1200px',
+    content: '900px',
+    wide: '1400px',
     home: '1320px',
   },
   overlays: {
@@ -91,6 +93,7 @@ const common = {
     pill: '0.5rem 1rem',
     hero: '5.5rem', // 88px
     dividerW: '8rem', // 128px
+    dividerWidth: '6rem', // 96px - standard divider width
     dividerH: '0.25rem', // 4px
     mb2: '2rem',
   },
@@ -109,10 +112,12 @@ export const lightTheme = {
     tealDark: '#0d4a50',
     grey: '#f5f5f5',
     greyDark: '#e5e7eb',
+    lightGrey: '#f8f9fa',
     goldAccent: '#C9A24D',
     goldAccentHover: '#A68A3E',
     grayAccent: '#8B95A5',
     grayBorder: '#e5e7eb',
+    success: '#2a7c2e',
     boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
     boxShadowGold: '0 8px 32px rgba(201,162,77,0.08)',
     boxShadowGoldGlow: '0 0 40px rgba(201,162,77,0.4)',
@@ -166,7 +171,10 @@ export const lightTheme = {
     high: 0.6,
   },
   letterSpacing: {
+    tight: '0.02em',
+    normal: '0.05em',
     wide: '0.04em',
+    wider: '0.125rem', // 2px
   },
   aspect: {
     wide: '16/9',

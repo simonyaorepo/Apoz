@@ -19,7 +19,7 @@ const HeroSection = styled.section`
   align-items: flex-end;
   background: ${({ theme }) => theme.colors.statusDefaultBg};
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     min-height: 180px;
     max-height: 240px;
   }
@@ -32,7 +32,7 @@ const HeroImage = styled.img`
   object-position: center;
   filter: brightness(0.7);
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     min-height: 180px;
     max-height: 240px;
   }
@@ -48,7 +48,7 @@ const HeroOverlay = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     padding: ${({ theme }) => `${theme.spacing.lg} 0 ${theme.spacing.md} 0`};
   }
 `;
@@ -59,9 +59,9 @@ const HeroTitle = styled.h1`
   text-align: center;
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  max-width: 900px;
+  max-width: ${({ theme }) => theme.maxWidth.content};
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     font-size: 1.25rem;
     padding: 0 8px;
     max-width: 98vw;
@@ -81,13 +81,13 @@ const PageBackground = styled.div`
   background: ${({ theme }) => theme.colors.background};
 `;
 const ContentWrapper = styled.div`
-  max-width: 900px;
+  max-width: ${({ theme }) => theme.maxWidth.content};
   margin: ${({ theme }) => `${theme.spacing.xxxl} auto 0 auto`};
   padding: 0 ${({ theme }) => theme.spacing.lg};
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.foreground};
 
-  @media (max-width: 900px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     max-width: 100vw;
     padding: 0 8px;
   }
@@ -98,7 +98,7 @@ const ArticleParagraph = styled.p`
   line-height: 1.8;
   margin-bottom: ${({ theme }) => theme.spacing.lg};
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     font-size: 1rem;
     line-height: 1.6;
   }

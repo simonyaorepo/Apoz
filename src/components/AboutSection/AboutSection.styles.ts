@@ -27,7 +27,7 @@ export const Grid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: ${({ theme }) => theme.spacing.xxxl};
   align-items: center;
-  @media (max-width: 900px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.lg};
   }
