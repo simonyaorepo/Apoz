@@ -47,7 +47,7 @@ const LogoRow = styled.div`
 `;
 
 const LogoIcon = styled.img`
-  height: 3rem;
+  height: 4rem;
   width: auto;
   object-fit: contain;
 `;
@@ -219,8 +219,8 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
       <NavContainer>
         <NavRow>
           {/* Logo */}
-          <LogoRow onClick={() => onNavigate("home")}> 
-            <LogoIcon src="/assets/images/trasnparent-normal-logo.png" alt="APOZ Logo" />
+          <LogoRow onClick={() => onNavigate("home")}>
+            <LogoIcon src="/assets/images/logo-transparent-light.png" alt="APOZ Logo" />
             <div>
               <LogoText>APOZ</LogoText>
               <LogoSubText>Asia Pacific Opportunity Zone</LogoSubText>

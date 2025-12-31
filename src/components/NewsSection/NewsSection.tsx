@@ -24,6 +24,11 @@ const TitleSection = styled.section`
 `;
 
 const NewsSection: React.FC = () => {
+  // Sort articles by date (newest first)
+  const sortedArticles = [...NEWS_ARTICLES].sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+
   return (
     <SectionWrapper>
       <PageHero
@@ -37,7 +42,7 @@ const NewsSection: React.FC = () => {
       <TitleSection>
         <h1>News Release</h1>
       </TitleSection>
-      <NewsGrid articles={NEWS_ARTICLES} />
+      <NewsGrid articles={sortedArticles} />
     </SectionWrapper>
   );
 };

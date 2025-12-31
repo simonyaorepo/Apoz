@@ -59,7 +59,7 @@ const LogoRow = styled.div`
 `;
 
 const LogoIcon = styled.img`
-  height: 3rem;
+  height: 4rem;
   width: auto;
   object-fit: contain;
 `;
@@ -249,7 +249,7 @@ export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
           {/* Brand */}
           <Brand>
             <LogoRow>
-              <LogoIcon src="/assets/images/transparent-light-logo.png" alt="APOZ Logo" />
+              <LogoIcon src="/assets/images/logo-transparent-light.png" alt="APOZ Logo" />
               <div>
                 <LogoText>APOZ</LogoText>
                 <LogoSubText>Asia Pacific Opportunity Zone</LogoSubText>

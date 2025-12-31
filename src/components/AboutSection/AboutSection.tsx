@@ -1,6 +1,7 @@
 import React from "react";
 import AboutHero from "./subcomponents/AboutHero";
 import AboutSummary from "./subcomponents/AboutSummary";
+import AboutVideo from "./subcomponents/AboutVideo";
 import AboutPreviews from "./subcomponents/AboutPreviews";
 import MissionSection from "./subcomponents/MissionSection";
 import VisionSection from "./subcomponents/VisionSection";
@@ -54,6 +55,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate, section }) => {
       <AboutHero />
       {/* SUMMARY */}
       <AboutSummary />
+      {/* VIDEO */}
+      <AboutVideo />
       {/* SECTION PREVIEWS */}
       <AboutPreviews onNavigate={onNavigate} />
     </SectionWrapper>
