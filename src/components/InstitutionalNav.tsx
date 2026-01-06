@@ -191,26 +191,57 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
 
   const menuItems = [
     { 
-      id: "about", 
-      label: "About Us",
+      id: "home", 
+      label: "Home",
       submenu: [
-        { label: "Our Mission", id: "about/mission" },
-        { label: "Our Vision", id: "about/vision" },
-        { label: "Our Approach", id: "about/approach" },
-        { label: "Our Partnership", id: "about/partnership" },
+        { label: "Overview", id: "home/overview" },
+        { label: "Who Are We", id: "home/who-are-we" },
+        { label: "Our Vision", id: "home/vision" },
+        { label: "Our Mission", id: "home/mission" },
+        { label: "Management", id: "home/management" },
       ]
     },
-    { id: "leadership", label: "Leadership" },
     { 
-      id: "projects", 
-      label: "Projects",
+      id: "master-plan", 
+      label: "Master Plan",
       submenu: [
-        { label: "Phase 1", id: "projects/phase1" },
-        { label: "Phase 2", id: "projects/phase2" },
-        { label: "Phase 3", id: "projects/phase3" },
+        { label: "Industry Zone", id: "master-plan/industry-zone" },
+        { label: "Affordable Living Zone", id: "master-plan/affordable-living-zone" },
+        { label: "International Hub", id: "master-plan/international-hub" },
+        { label: "FTZ Zone", id: "master-plan/ftz-zone" },
+        { label: "QOZ Zone", id: "master-plan/qoz-zone" },
+        { label: "QOF Zone", id: "master-plan/qof-zone" },
       ]
     },
-    { id: "investment", label: "Investment Opportunities" },
+    { 
+      id: "services", 
+      label: "Our Services",
+      submenu: [
+        { label: "Overview", id: "services/overview" },
+        { label: "Community Management", id: "services/community-management" },
+        { label: "Industry Zone Management", id: "services/industry-zone-management" },
+        { label: "Residential Management", id: "services/residential-management" },
+      ]
+    },
+    { 
+      id: "investment", 
+      label: "Investment",
+      submenu: [
+        { label: "Overview", id: "investment/overview" },
+        { label: "Industry Zone", id: "investment/industry-zone" },
+        { label: "Residential Zone", id: "investment/residential-zone" },
+        { label: "Infrastructure", id: "investment/infrastructure" },
+      ]
+    },
+    { 
+      id: "development", 
+      label: "Development",
+      submenu: [
+        { label: "Phase 1", id: "development/phase1" },
+        { label: "Phase 2", id: "development/phase2" },
+        { label: "Phase 3", id: "development/phase3" },
+      ]
+    },
     { id: "news", label: "News" },
   ];
 

@@ -226,11 +226,11 @@ export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
       title: "Navigation",
       links: [
         { label: "Home", page: "home" },
-        { label: "About", page: "about" },
+        { label: "Master Plan", page: "master-plan" },
+        { label: "Our Services", page: "services" },
         { label: "Investment", page: "investment" },
-        { label: "Projects", page: "projects" },
+        { label: "Development", page: "development" },
         { label: "News", page: "news" },
-        { label: "Contact", page: "contact" },
       ],
     },
     {

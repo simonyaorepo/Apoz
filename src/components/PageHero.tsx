@@ -4,18 +4,28 @@ import styled from "styled-components";
 const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  min-height: 350px;
-  height: 45vh;
-  max-height: 500px;
+  min-height: 450px;
+  height: 50vh;
+  max-height: 600px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   overflow: hidden;
   background: ${({ theme }) => theme.colors.darkBlue};
   
+  @media (max-width: 1024px) {
+    min-height: 450px;
+    height: 48vh;
+  }
+  
   @media (max-width: 768px) {
-    min-height: 250px;
-    height: 35vh;
+    min-height: 420px;
+    height: 45vh;
+  }
+  
+  @media (max-width: 480px) {
+    min-height: 380px;
+    height: 45vh;
   }
 `;
 
@@ -52,20 +62,22 @@ const ContentBox = styled.div`
   
   @media (max-width: 1200px) {
     width: 520px;
+    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xxl};
   }
   
   @media (max-width: 992px) {
     width: 480px;
+    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xxl};
   }
   
   @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.lg};
-    width: 90%;
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
+    width: 85%;
   }
   
   @media (max-width: 480px) {
-    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.md};
-    width: 95%;
+    padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.lg};
+    width: 90%;
   }
 `;
 
@@ -105,8 +117,16 @@ const Title = styled.h1`
   letter-spacing: 0;
   font-family: ${({ theme }) => theme.fontFamilies.heading};
   
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
+  
   @media (max-width: 768px) {
-    font-size: ${({ theme }) => theme.fontSizes.h2};
+    font-size: 1.75rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
   }
 `;
 

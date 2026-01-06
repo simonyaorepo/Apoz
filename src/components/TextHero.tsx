@@ -4,18 +4,28 @@ import styled from "styled-components";
 const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  min-height: 350px;
-  height: 45vh;
-  max-height: 500px;
+  min-height: 450px;
+  height: 50vh;
+  max-height: 600px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   overflow: hidden;
   background: ${({ theme }) => theme.colors.darkBlue};
   
+  @media (max-width: 1024px) {
+    min-height: 450px;
+    height: 48vh;
+  }
+  
   @media (max-width: 768px) {
-    min-height: 250px;
-    height: 35vh;
+    min-height: 420px;
+    height: 45vh;
+  }
+  
+  @media (max-width: 480px) {
+    min-height: 380px;
+    height: 45vh;
   }
 `;
 
@@ -47,8 +57,16 @@ const ContentBox = styled.div`
   align-items: flex-start;
   gap: ${({ theme }) => theme.spacing.sm};
   
+  @media (max-width: 1024px) {
+    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xxl};
+  }
+  
   @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.lg};
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
+  }
+  
+  @media (max-width: 480px) {
+    padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.lg};
   }
 `;
 
@@ -87,8 +105,16 @@ const Title = styled.h1`
   margin: 0;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
+  
   @media (max-width: 768px) {
-    font-size: ${({ theme }) => theme.fontSizes.h2};
+    font-size: 1.75rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
   }
 `;
 

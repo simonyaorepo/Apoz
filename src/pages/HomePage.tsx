@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import HomeSection from "../components/HomeSection/HomeSection";
 
 interface HomePageProps {
@@ -7,7 +8,8 @@ interface HomePageProps {
 
 
 const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
-  return <HomeSection onNavigate={onNavigate} />;
+  const { section } = useParams<{ section?: string }>();
+  return <HomeSection onNavigate={onNavigate} section={section} />;
 };
 
 export default HomePage;

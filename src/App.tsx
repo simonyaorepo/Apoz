@@ -4,9 +4,9 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import { InstitutionalNav } from "./components/InstitutionalNav";
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import LeadershipPage from "./pages/LeadershipPage";
-import { ProjectsPage } from "./pages/ProjectsPage";
+import { DevelopmentPage } from "./pages/DevelopmentPage";
+import MasterPlanPage from "./pages/MasterPlanPage";
+import ServicesPage from "./pages/ServicesPage";
 import NewsPage from "./pages/NewsPage";
 import NewsArticlePage from "./pages/NewsArticlePage";
 import InvestmentPage from "./pages/InvestmentPage";
@@ -24,10 +24,10 @@ const MainContent = styled.main`
 
 const NAV_PAGES = [
   { id: "home", path: "/", element: HomePage },
-  { id: "about", path: "/about", element: AboutPage },
-  { id: "leadership", path: "/leadership", element: LeadershipPage },
-  { id: "projects", path: "/projects", element: ProjectsPage },
+  { id: "master-plan", path: "/master-plan", element: MasterPlanPage },
+  { id: "services", path: "/services", element: ServicesPage },
   { id: "investment", path: "/investment", element: InvestmentPage },
+  { id: "development", path: "/development", element: DevelopmentPage },
   { id: "news", path: "/news", element: NewsPage },
 ];
 
@@ -41,7 +41,9 @@ function AppLayout() {
   }, [location.pathname]);
   
   // Determine current page id from path
-  const currentPage = NAV_PAGES.find(p => p.path === location.pathname)?.id || "home";
+  // Handle both exact matches and subsection paths (e.g., /investment/overview)
+  const pathSegments = location.pathname.split('/').filter(Boolean);
+  const currentPage = pathSegments.length > 0 ? pathSegments[0] : "home";
 
   // Navigation handler for nav/footer
   const handleNavigate = (page: string) => {
@@ -64,8 +66,13 @@ function AppLayout() {
             <Route key={id} path={path} element={<Element onNavigate={handleNavigate} />} />
           ))}
           <Route path="/news/:id" element={<NewsArticlePage />} />
-          <Route path="/about/:section" element={<AboutPage onNavigate={handleNavigate} />} />
-          <Route path="/projects/:section" element={<ProjectsPage onNavigate={handleNavigate} />} />
+          <Route path="/home/:section" element={<HomePage onNavigate={handleNavigate} />} />
+          <Route path="/master-plan/:section" element={<MasterPlanPage onNavigate={handleNavigate} />} />
+          <Route path="/services/:section" element={<ServicesPage onNavigate={handleNavigate} />} />
+          <Route path="/investment/:section" element={<InvestmentPage onNavigate={handleNavigate} />} />
+          <Route path="/development/:section" element={<DevelopmentPage onNavigate={handleNavigate} />} />
+          {/* Legacy redirect for old projects path */}
+          <Route path="/projects/:section" element={<DevelopmentPage onNavigate={handleNavigate} />} />
         </Routes>
       </MainContent>
       <InstitutionalFooter onNavigate={handleNavigate} />

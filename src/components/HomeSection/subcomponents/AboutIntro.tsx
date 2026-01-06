@@ -81,20 +81,31 @@ const AboutIntro: React.FC = () => {
           />
         </ImageWrapper>
         <TextContent>
-          <Title>Asia Pacific Opportunity Zone</Title>
+          <Title>Join America's New Industrial Revolution</Title>
           <Divider />
-          <TagLine>Sustainable Growth and Global Connection</TagLine>
+          <TagLine>Partnering in U.S. Re-Industrialization</TagLine>
           <Description>
-            The Asia Pacific Opportunity Zone (APOZ) is a bold, master-planned development 
-            located in the Greater Houston area. Designed to address the region's urgent need 
-            for affordable housing and industrial growth, APOZ integrates residential, commercial, 
-            and industrial sectors into a unified, future-ready community.
+            The United States is embarking on a bold re-industrialization journey, and we, at APOZ, 
+            invite manufacturers, enterprises, and investors from around the world to be part of it. 
+            Today, "Made in USA" is more than a label—it is a symbol of market access, innovation, 
+            and long-term growth. By localizing production in America, global partners can tap into 
+            the world's largest consumer market, align with forward-looking U.S. policies, and create 
+            sustainable value for their businesses and communities.
           </Description>
           <Description>
-            Spearheaded by ASC Global Inc., a subsidiary of Token Communities Ltd., APOZ reflects 
-            a deep commitment to strategic growth, international trade, and equitable living. As 
-            part of a designated Free Trade Zone, the project is positioned to become a hub for 
-            commerce and innovation in the U.S. and beyond.
+            For Chinese, Korean, Taiwanese, and Japanese manufacturers, this is the moment to 
+            expand beyond exports and establish a direct presence in the U.S. Local production 
+            reduces risks from trade barriers, strengthens customer trust, and unlocks new 
+            opportunities in high-demand sectors such as semiconductors, automotive, clean energy, 
+            pharmaceuticals, and advanced machinery.
+          </Description>
+          <Description>
+            Saudi Arabian and Middle East enterprises are also uniquely positioned to seize this 
+            opportunity with investment. Aligned with Vision 2030, Saudi investors and industrial 
+            champions can extend their capabilities into the U.S. by localizing energy, chemicals, 
+            advanced materials, and green technologies. This partnership bridges two transforming 
+            economies, amplifying growth in both markets while reinforcing the global strength of 
+            "Made in USA."
           </Description>
         </TextContent>
       </Container>

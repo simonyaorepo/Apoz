@@ -3,15 +3,74 @@ import { DollarSign, Globe, TrendingUp, Shield, Zap, Building2 } from "lucide-re
 // Investment Overview
 export const INVESTMENT_OVERVIEW = {
   title: "Investment Overview",
-  description: "The Asia Pacific Opportunity Zone (APOZ) in Winnie, Texas, is a master-planned development business park uniquely positioned at the forefront of America's re-industrialization initiative.",
+  description: "Asia Pacific Opportunity Zone (APOZ) in Winnie, Texas is a comprehensive development combining industrial park, affordable housing, and bonded logistics facilities.",
   highlights: [
     "Only FTZ + QOZ dual-status business park in the U.S.",
-    "Enables manufacturers to localize production and reduce tariffs",
-    "646+ acres of master-planned development",
-    "9.8M sq ft industrial + 3,000 residential units planned",
-    "5,000-7,000 jobs created across sectors"
+    "Total planned development: Industrial park + affordable housing + bonded logistics",
+    "Special Incentives: QOZ capital gains tax benefits + FTZ duty-free operations",
+    "REIT-ready structure designed for IPO or REIT conversion"
   ],
-  ecosystem: "APOZ provides a full-service ecosystem—integrating industrial, commercial, and residential components—that connects global investors to growth opportunities, delivering strong returns while supporting workforce development and community growth in Greater Houston."
+  investmentStrategy: [
+    {
+      phase: "Phase 1",
+      scope: "Industrial park + warehouses + logistics facilities",
+      capitalRequired: "~$24MM",
+      fundingSources: "QOF + LPs + strategic partners"
+    },
+    {
+      phase: "Phase 2",
+      scope: "2,000 affordable homes + community infrastructure",
+      capitalRequired: "TBD",
+      fundingSources: "QOF + LIHTC + debt financing"
+    },
+    {
+      phase: "Phase 3",
+      scope: "Retail, data center, and additional manufacturing hubs",
+      capitalRequired: "TBD",
+      fundingSources: "REIT + private equity"
+    }
+  ],
+  capitalStructure: [
+    {
+      layer: "Equity – QOF Investors (30-40%)",
+      role: "Invest capital gains into APOZ QOF",
+      returnType: "Tax-free gains after 10 years"
+    },
+    {
+      layer: "Preferred LP Investors (25-35%)",
+      role: "Family offices, institutions, strategic partners",
+      returnType: "Fixed IRR + upside sharing"
+    },
+    {
+      layer: "Senior Debt (25-35%)",
+      role: "Construction loans + infrastructure financing",
+      returnType: "Interest + collateral"
+    },
+    {
+      layer: "Developer Promote (5-10%)",
+      role: "APOZ sponsor equity",
+      returnType: "Performance-based carry"
+    }
+  ],
+  investorBenefits: {
+    qozTax: [
+      "Defer capital gains until Dec 31, 2026",
+      "Pay zero federal capital gains tax on APOZ investment profits after 10 years"
+    ],
+    ftzOperating: [
+      "Attracts global manufacturing tenants",
+      "Duty-free imports/export improve tenant margins → stronger rental yield"
+    ],
+    irrPotential: {
+      baseCase: "~15-18%",
+      withQOZ: "+3-5% IRR uplift"
+    }
+  },
+  exitStrategy: [
+    "REIT Conversion: Pool APOZ assets into a publicly traded REIT.",
+    "Strategic Sale: Sell stabilized assets to institutional investors.",
+    "IPO Listing: Potential for cross-border listing in the U.S."
+  ]
 };
 
 // FTZ + QOZ Dual Benefits
@@ -378,5 +437,84 @@ export const USE_OF_FUNDS = {
     phaseOneStageTwo: 644500000,
     phaseTwo: 70400000,
     grandTotal: 745500000
+  }
+};
+
+export const INFRASTRUCTURE_INVESTMENT_DATA = {
+  title: "Infrastructure Investment",
+  backgroundImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920",
+  breadcrumbs: [
+    { label: "Home", href: "/" },
+    { label: "Investment", href: "/investment" },
+    { label: "Infrastructure" }
+  ],
+  content: {
+    intro: [
+      "The Asia Pacific Opportunity Zone (APOZ) in Winnie, Texas is designed as a fully integrated industrial, logistics, residential, and commercial hub.",
+      "Infrastructure development underpins the success of Phase 1 industrial facilities and Phase 2 affordable housing, ensuring APOZ becomes a world-class trade and manufacturing ecosystem."
+    ],
+    scope: [
+      {
+        category: "Transportation",
+        components: "Internal roads, highway connectors, truck corridors, EV charging stations",
+        purpose: "Ensures smooth tenant operations & last-mile delivery"
+      },
+      {
+        category: "Utilities",
+        components: "Power grid, renewable energy integration, water, wastewater, natural gas",
+        purpose: "Supports manufacturing & residential demand"
+      },
+      {
+        category: "Digital Connectivity",
+        components: "Fiber optic backbone, 5G-enabled industrial zones, smart IoT integration",
+        purpose: "Enables \"smart zone\" logistics & AI-driven operations"
+      },
+      {
+        category: "FTZ Facilities",
+        components: "Bonded warehouses, customs inspection zones, cargo processing",
+        purpose: "Unlocks APOZ's FTZ-171 benefits"
+      },
+      {
+        category: "Residential Infrastructure",
+        components: "Affordable housing utilities, community parks, schools, clinics",
+        purpose: "Supports APOZ's Phase 2 2,000-home development"
+      },
+      {
+        category: "Environmental Systems",
+        components: "Stormwater drainage, sustainable landscaping, recycling facilities",
+        purpose: "ESG-aligned development strategy"
+      }
+    ],
+    timeline: [
+      {
+        phase: "Phase 1 (2025–2026)",
+        scope: "Industrial Park site prep, bonded warehouses, initial utilities",
+        milestones: "Power, roads, FTZ-ready logistics"
+      },
+      {
+        phase: "Phase 2 (2026–2027)",
+        scope: "Affordable homes, schools, community facilities",
+        milestones: "Residential water, gas, telecom integration"
+      }
+    ],
+    funding: {
+      heading: "Investment & Funding Structure",
+      sources: [
+        "Private Capital via QOF: Leverage Qualified Opportunity Zone (QOZ) tax benefits.",
+        "Infrastructure Financing: Partnerships with Texas development authorities.",
+        "Tenant Participation: Built-to-suit facilities include partial cost-sharing.",
+        "Public-Private Grants: Potential HUD and DOE programs for sustainable energy and housing."
+      ]
+    },
+    benefits: {
+      tenants: [
+        "Reliable bonded logistics infrastructure",
+        "Duty-free imports & exports under FTZ-171",
+        "High-speed connectivity for Industry 4.0 manufacturing"
+      ],
+      investors: [
+        "Increased APOZ valuation via infrastructure improvements"
+      ]
+    }
   }
 };

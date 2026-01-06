@@ -112,30 +112,28 @@ const Arrow = styled.svg`
   }
 `;
 
-interface WhoWeAreProps {
+interface HomePreviewsProps {
   onNavigate: (page: string) => void;
 }
 
-const IconApproach = () => (
+const IconOverview = () => (
   <Icon viewBox="0 0 24 24">
-    <path d="M12 2v20M2 12h20" strokeLinecap="round"/>
-    <path d="M12 7l-2-2m2 2l2-2M12 17l-2 2m2-2l2 2M7 12l-2-2m2 2l-2 2M17 12l2-2m-2 2l2 2" strokeLinecap="round"/>
+    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 12h.01M12 8v2" strokeLinecap="round"/>
   </Icon>
 );
 
-const IconPartnership = () => (
+const IconWhoWeAre = () => (
   <Icon viewBox="0 0 24 24">
-    <path d="M9 11a4 4 0 014-4 4 4 0 014 4M7 15c0-1.5 1-2.5 2.5-2.5h.5a3 3 0 013 3v3.5h-6V15z"/>
-    <path d="M15 15c0-1.5 1-2.5 2.5-2.5h.5a3 3 0 013 3v3.5h-6V15z"/>
-    <path d="M11 13.5c.5.5 2 .5 2.5 0"/>
+    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M9 22V12h6v10" strokeLinecap="round" strokeLinejoin="round"/>
   </Icon>
 );
 
 const IconVision = () => (
   <Icon viewBox="0 0 24 24">
-    <circle cx="8" cy="12" r="4"/>
-    <circle cx="16" cy="12" r="4"/>
-    <path d="M8 8c-2-2-5-2-6 0M16 8c2-2 5-2 6 0"/>
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7z"/>
   </Icon>
 );
 
@@ -148,37 +146,36 @@ const IconMission = () => (
   </Icon>
 );
 
-const WhoWeAre: React.FC<WhoWeAreProps> = ({ onNavigate }) => {
+const IconManagement = () => (
+  <Icon viewBox="0 0 24 24">
+    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" strokeLinecap="round" strokeLinejoin="round"/>
+  </Icon>
+);
+
+const HomePreviews: React.FC<HomePreviewsProps> = ({ onNavigate }) => {
   const navItems = [
-    { Icon: IconApproach, title: "Our Approach", route: "/about/approach" },
-    { Icon: IconPartnership, title: "Our Partnership", route: "/about/partnership" },
+    { Icon: IconOverview, title: "Overview", route: "home/overview" },
+    { Icon: IconWhoWeAre, title: "Who We Are", route: "home/who-are-we" },
     { Icon: IconVision, title: "Our Vision", route: "home/vision" },
     { Icon: IconMission, title: "Our Mission", route: "home/mission" },
+    { Icon: IconManagement, title: "Management", route: "home/management" },
   ];
+  
   return (
     <Section>
       <Container>
         <LeftContent>
-          <Title>Who We Are</Title>
+          <Title>Learn More About APOZ</Title>
           <Divider />
           <Description>
-            The Houston APOZ Free Trade Zone located in Winnie, Texas, within U.S. Foreign 
-            Trade Zone (FTZ) 171 is being established as a strategic gateway for global 
-            manufacturers and investors to participate in the United States' re-industrialization 
-            movement. Designed with both Free Trade Zone (FTZ) and Qualified Opportunity Zone 
-            (QOZ) benefits, APOZ offers an unmatched platform for enterprises from China, Korea, 
-            Japan, Saudi Arabia, and other international partners to localize production investment 
-            and proudly manufacture under the "Made in USA" brand.
-          </Description>
-          <Description>
-            Beyond its economic advantages, APOZ is conceived as a sustainable growth 
-            community—integrating industrial infrastructure with residential, commercial, and 
-            township development. This forward-looking ecosystem ensures that companies, 
-            workers, and families can thrive together, creating not only industrial prosperity but also 
-            vibrant communities that support long-term growth.
+            Explore the strategic advantages, mission, vision, and leadership behind Houston APOZ—
+            America's premier gateway for international manufacturers seeking to establish operations 
+            in the United States through our unique FTZ and QOZ dual-status platform.
           </Description>
           <div>
-            <GoldButton onClick={() => onNavigate('about')}>Learn More</GoldButton>
+            <GoldButton onClick={() => onNavigate('master-plan')}>View Master Plan</GoldButton>
           </div>
         </LeftContent>
         <RightContent>
@@ -200,4 +197,4 @@ const WhoWeAre: React.FC<WhoWeAreProps> = ({ onNavigate }) => {
   );
 };
 
-export default WhoWeAre;
+export default HomePreviews;
