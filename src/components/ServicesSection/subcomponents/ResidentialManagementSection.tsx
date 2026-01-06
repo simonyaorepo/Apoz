@@ -240,29 +240,18 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
         </TealBox>
       </TealSection>
 
-      <GoldDivider />
-
-      <Section>
-        <ContentWrapper>
+      <GreySection>
+        <GreyContent>
           <SectionTitle>Technology & Smart Community Features</SectionTitle>
           <BulletList>
             {RESIDENTIAL_MANAGEMENT_DATA.content.technology.map((tech, index) => (
               <li key={index}>{tech}</li>
             ))}
           </BulletList>
-        </ContentWrapper>
-      </Section>
-
-      <GreySection>
-        <GreyContent>
-          <SectionTitle>Financial Benefits for Investors</SectionTitle>
-          <CardGrid>
-            {RESIDENTIAL_MANAGEMENT_DATA.content.benefits.map((benefit, index) => (
-              <BenefitItem key={index}>{benefit}</BenefitItem>
-            ))}
-          </CardGrid>
         </GreyContent>
       </GreySection>
+
+      <GoldDivider />
     </>
   );
 };

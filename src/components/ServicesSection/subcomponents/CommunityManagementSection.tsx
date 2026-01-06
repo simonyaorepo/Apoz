@@ -111,16 +111,18 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
 
       <TealSection>
         <TealBox>
-          <h3 style={{ marginBottom: '1rem', color: 'white' }}>Key Community Management Services</h3>
-          <CardGrid>
-            {COMMUNITY_MANAGEMENT_DATA.content.services.map((service, idx) => (
-              <ServiceCard key={idx}>
-                <h4>{service.category}</h4>
-                <p className="scope"><strong>Scope:</strong> {service.scope}</p>
-                <p className="impact"><strong>Impact:</strong> {service.impact}</p>
-              </ServiceCard>
-            ))}
-          </CardGrid>
+          <h3 style={{ marginBottom: '1.5rem', color: 'white' }}>Key Community Management Services</h3>
+          {COMMUNITY_MANAGEMENT_DATA.content.services.map((service, idx) => (
+            <div key={idx} style={{ marginBottom: '2rem' }}>
+              <h4 style={{ color: 'white', fontSize: '1.25rem', marginBottom: '0.5rem' }}>{service.category}</h4>
+              <p style={{ color: 'white', fontSize: '1rem', marginBottom: '0.25rem', opacity: 0.9 }}>
+                <strong>Scope:</strong> {service.scope}
+              </p>
+              <p style={{ color: 'white', fontSize: '1rem', opacity: 0.9 }}>
+                <strong>Impact:</strong> {service.impact}
+              </p>
+            </div>
+          ))}
         </TealBox>
       </TealSection>
       
@@ -146,7 +148,7 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
         </Container>
       </GreySection>
 
-      <WhiteSection>
+      <GreySection>
         <Container>
           <TextContent>
             <h3 style={{ marginBottom: '1.5rem' }}>{COMMUNITY_MANAGEMENT_DATA.content.teamFunctions.heading}</h3>
@@ -158,22 +160,6 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
                 </OutlineCard>
               ))}
             </TwoColumnGrid>
-          </TextContent>
-        </Container>
-      </WhiteSection>
-
-      <GreySection>
-        <Container>
-          <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>{COMMUNITY_MANAGEMENT_DATA.content.advantages.heading}</h3>
-            <CardGrid>
-              {COMMUNITY_MANAGEMENT_DATA.content.advantages.items.map((item, idx) => (
-                <ServiceCard key={idx}>
-                  <h4>{item.title}</h4>
-                  <p className="scope">{item.description}</p>
-                </ServiceCard>
-              ))}
-            </CardGrid>
           </TextContent>
         </Container>
       </GreySection>

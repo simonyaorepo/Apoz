@@ -110,16 +110,18 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
 
       <TealSection>
         <TealBox>
-          <h3 style={{ marginBottom: '1rem', color: 'white' }}>Key Management Services</h3>
-          <CardGrid>
-            {INDUSTRY_ZONE_MANAGEMENT_DATA.content.services.map((service, idx) => (
-              <ServiceCard key={idx}>
-                <h4>{service.category}</h4>
-                <p className="scope"><strong>Scope:</strong> {service.scope}</p>
-                <p className="impact"><strong>Impact:</strong> {service.impact}</p>
-              </ServiceCard>
-            ))}
-          </CardGrid>
+          <h3 style={{ marginBottom: '1.5rem', color: 'white' }}>Key Management Services</h3>
+          {INDUSTRY_ZONE_MANAGEMENT_DATA.content.services.map((service, idx) => (
+            <div key={idx} style={{ marginBottom: '2rem' }}>
+              <h4 style={{ color: 'white', fontSize: '1.25rem', marginBottom: '0.5rem' }}>{service.category}</h4>
+              <p style={{ color: 'white', fontSize: '1rem', marginBottom: '0.25rem', opacity: 0.9 }}>
+                <strong>Scope:</strong> {service.scope}
+              </p>
+              <p style={{ color: 'white', fontSize: '1rem', opacity: 0.9 }}>
+                <strong>Impact:</strong> {service.impact}
+              </p>
+            </div>
+          ))}
         </TealBox>
       </TealSection>
       
@@ -144,7 +146,7 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
         </Container>
       </GreySection>
 
-      <WhiteSection>
+      <GreySection>
         <Container>
           <TextContent>
             <h3 style={{ marginBottom: '1.5rem' }}>{INDUSTRY_ZONE_MANAGEMENT_DATA.content.technology.heading}</h3>
@@ -153,22 +155,6 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
                 <li key={idx}>{feature}</li>
               ))}
             </BulletList>
-          </TextContent>
-        </Container>
-      </WhiteSection>
-
-      <GreySection>
-        <Container>
-          <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>Governance & Revenue Model</h3>
-            <CardGrid>
-              {INDUSTRY_ZONE_MANAGEMENT_DATA.content.revenue.map((item, idx) => (
-                <OutlineCard key={idx}>
-                  <h4>{item.source}</h4>
-                  <p>{item.description}</p>
-                </OutlineCard>
-              ))}
-            </CardGrid>
           </TextContent>
         </Container>
       </GreySection>

@@ -12,44 +12,51 @@ const HeroSection = styled.section`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  min-height: 340px;
-  max-height: 480px;
+  min-height: 600px;
+  height: 70vh;
+  max-height: 800px;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
   background: ${({ theme }) => theme.colors.statusDefaultBg};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    min-height: 180px;
-    max-height: 240px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    min-height: 550px;
+    height: 65vh;
   }
-`;
-const HeroImage = styled.img`
-  width: 100vw;
-  min-height: 340px;
-  max-height: 480px;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.7);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    min-height: 180px;
-    max-height: 240px;
+    min-height: 500px;
+    height: 60vh;
   }
 `;
+
+const HeroImage = styled.img<{ $showTop?: boolean }>`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: ${({ $showTop }) => $showTop ? 'cover' : 'contain'};
+  object-position: ${({ $showTop }) => $showTop ? 'center -10%' : 'center center'};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    object-position: ${({ $showTop }) => $showTop ? 'center -10%' : 'center center'};
+  }
+`;
+
 const HeroOverlay = styled.div`
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: ${({ theme }) => `${theme.spacing.xxxl} 0 ${theme.spacing.xxl} 0`};
-  background: linear-gradient(180deg,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.7) 100%);
+  padding: ${({ theme }) => `${theme.spacing.xxxl} ${theme.spacing.lg} ${theme.spacing.xxl} ${theme.spacing.lg}`};
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    padding: ${({ theme }) => `${theme.spacing.lg} 0 ${theme.spacing.md} 0`};
+    padding: ${({ theme }) => `${theme.spacing.xl} ${theme.spacing.md} ${theme.spacing.lg} ${theme.spacing.md}`};
   }
 `;
 const HeroTitle = styled.h1`
@@ -108,6 +115,9 @@ export default function NewsArticlePage() {
   const { id } = useParams<{ id: string }>();
   const article = NEWS_ARTICLES.find(a => a.id === Number(id));
   const navigate = useNavigate();
+  
+  // Check if this needs top positioning (faces at top)
+  const showTop = article?.image.includes('07-21-25') || article?.image.includes('09-13-25');
 
   if (!article) {
     return (
@@ -123,7 +133,7 @@ export default function NewsArticlePage() {
   return (
     <PageBackground>
       <HeroSection>
-        <HeroImage src={article.image} alt={article.title} />
+        <HeroImage src={article.image} alt={article.title} $showTop={showTop} />
         <HeroOverlay>
           <HeroTitle>{article.title}</HeroTitle>
           <HeroMeta>

@@ -4,9 +4,9 @@ import styled from "styled-components";
 const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  min-height: 450px;
-  height: 50vh;
-  max-height: 600px;
+  min-height: 550px;
+  height: 60vh;
+  max-height: 750px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -14,18 +14,18 @@ const HeroSection = styled.section`
   background: ${({ theme }) => theme.colors.darkBlue};
   
   @media (max-width: 1024px) {
-    min-height: 450px;
-    height: 48vh;
+    min-height: 500px;
+    height: 55vh;
   }
   
   @media (max-width: 768px) {
-    min-height: 420px;
-    height: 45vh;
+    min-height: 450px;
+    height: 50vh;
   }
   
   @media (max-width: 480px) {
-    min-height: 380px;
-    height: 45vh;
+    min-height: 400px;
+    height: 48vh;
   }
 `;
 

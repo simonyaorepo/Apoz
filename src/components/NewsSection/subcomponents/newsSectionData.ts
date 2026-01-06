@@ -17,7 +17,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "October 30, 2025",
     location: "Bradenton, Florida",
     category: "Company Update",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/10-30-25.jpg",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), ASC Global team met with the delegation from AIMA Technology Group led by its senior executive management team on October 28th in Sarasota, Florida.",
       "According to Mr. David Champ, the President & CEO of the company, AIMA E-Bike is a global leader in electric two-wheel mobility, specialized in stylish, high-performance e-bikes, e-scooters, and electric motorcycles, with annual sales exceeds $3 billion dollars worldwide (U.S., Europe and Southeast Asia).",
@@ -32,7 +32,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "October 17, 2025",
     location: "Houston, Texas",
     category: "Company Update",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/10-17-25.jpg",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), is making an announcement today that a rare earth trade delegation from Asia is coming to visit APOZ next week.",
       "According to Mr. David Champ, the President & CEO of the company, a MOU of bilateral cooperation was executed with this rare earth company on June 8th this year, and an invitation was issued to this delegation shortly after.",
@@ -48,7 +48,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "October 10, 2025",
     location: "Taipei, Taiwan",
     category: "Company Update",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/10-10-25.jpg",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), on October 7th, 2025 has started a J.V. discussion with American Software Capital (D/B/A American Softbank Capital) to co-develop the largest house boat resort project on Paradise Island, Florida.",
       "According to David Champ, President and CEO of the company, as ASC Global Inc. is working on an ADU Space Capsule Prefab home project at its APOZ (Asia Pacific Opportunity Zone) business park in Texas, and house boat just happens to be one of the ADU (accessory dwelling unit) products it offers, therefore it makes perfect business sense to utilize this house boat product on the Paradise Island project in Florida.",
@@ -62,7 +62,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "October 8, 2025",
     location: "Bradenton, Florida",
     category: "Event",
-    image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/10-08-25.png",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), was invited by the Ministry of Economic Affairs of Taiwan (R.O.C.) to attend the Aerospace and UAV Summit to be held in Taipei on October 23rd, 2025.",
       "According to David Champ, President and CEO of the company, this very important summit will be held at the Sheraton Grand Hotel in Taipei on October 23rd. It is focused to promote the collaboration between U.S. and Taiwan in 'Non-Red Supply Chain' and to encourage the Taiwanese companies to set up their manufacturing operations in the U.S.",
@@ -78,7 +78,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "October 2, 2025",
     location: "Bradenton, Florida",
     category: "Company Update",
-    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/10-02-25.jpg",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), is getting ready to start the very first Space Capsule Home production facility in the U.S.",
       "According to Mr. David Champ, President and CEO of the company: 'We're building a new generation of modular camp pods - blending aesthetics, functionality, and compliance into one intelligent unit. Each StarPod features modern and advanced smart control systems, hurricane-rated structure, and sustainable materials, backed by ASTM and Miami-Dade certifications for deployment in high-wind zones like Florida and Texas.'",
@@ -94,7 +94,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "September 30, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Company Update",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/09-30-25.png",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), is now gearing up to enter the 700 billion dollar affordable housing market in the U.S.",
       "According to David Champ, President and CEO of the company, affordable housing has been in huge demand throughout the U.S. in recent years (approximately 9 million units according to NLIHC), driven by a mix of economic pressures, demographics shifts, and policy uncertainty.",
@@ -110,7 +110,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "September 19, 2025",
     location: "Bradenton, Florida",
     category: "Company Update",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/09-19-25.png",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), is announcing the completion of the architectural design of Paradise Island's Phase One development project.",
       "According to David Champ, President and CEO of the company, ASC Global Inc. executed a L.O.I. with American Software Capital (ASC) in October 2024 to acquire the Paradise Island Project in Florida. It is a 165 acres premium development site, consisted by a peninsula, two larger islands and several smaller islands.",
@@ -126,7 +126,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "September 15, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Event",
-    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/09-15-25.jpg",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), held another successful online summit on Zoom for its APOZ (Asia Pacific Opportunity Zone) project on September 5th.",
       "As per Mr. David Champ, President & CEO of Token Communities and Founder of APOZ, now more and more people are realizing this rare and unique FTZ + QOZ dual-status master planned development project is the answer to the present tariff war era as it can create an ideal and harmonious solution to U.S. economic growth and overseas manufacturers.",
@@ -142,7 +142,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "July 11, 2025",
     location: "Bradenton, Florida",
     category: "Company Update",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/07-11-25.jpg",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), a luxury waterfront real estate development company in Florida, is pleased to announce multiple new waterfront luxury homes are getting ready to be listed with its local Coldwell Bankers realtors.",
       "According to Mr. David Champ, the President & CEO of the company, the first group of new construction homes located in Northport (Sarasota County) and Port Charlotte (Charlotte County) are gradually being completed at the moment.",
@@ -158,7 +158,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "August 13, 2025",
     location: "Houston, Texas",
     category: "Press Release",
-    image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/09-13-25.jpg",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), has reached an agreement with a major hydraulic valves manufacturer to set up their final assembly plant at APOZ (Asia Pacific Opportunity Zone) in Chambers County, Texas.",
       "According to Mr. David Champ, the President & CEO of the company, the CEO of Bundor Valves visited the APOZ job site earlier this year, and performed a very thorough due diligence of the investment environment of APOZ and the market of Texas. He is very pleased with the strategic location, and the benefits of FTZ + QOZ (Free Trade Zone + Qualified Opportunity Zone) combined, which can significantly maximize the operating performance and the bottom line profit of his company.",
@@ -173,7 +173,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "August 11, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Press Release",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/08-11-25.jpg",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), recently has received a great deal of interests and inquiries from many domestic companies in the U.S.",
       "According to Mr. David Champ, the President & CEO of the company, as the APOZ (Asia Pacific Opportunity Zone) project is moving forward steadily over the past few months, this unique FTZ + QOZ Business Park concept is quickly gaining name recognition from the business communities around the globe.",
@@ -189,7 +189,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "July 22, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Press Release",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/07-22-25.jpg",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), is now gearing up to build its APOZ Project (Asia Pacific Opportunity Zone) to become the very first solar town in the U.S.",
       "According to Mr. David Champ, the President & CEO of the company, the Greater Houston Area is one of the most ideal areas in the U.S. to create a solar city. It has over 2,600 hours of qualified solar condition annually, and the State of Texas has many incentive programs available, such as ITC (Federal Solar Investment Tax Credit), Property Tax Exemption, Local Utility Rebates and Solar Buy Back Plans.",
@@ -206,7 +206,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "July 21, 2025",
     location: "New York City, New York",
     category: "Event",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/07-21-25.jpg",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), held another conference at the Sheraton Four Point Hotel on July 19th in New York.",
       "According to Mr. David Champ, the President & CEO of the company, nearly 100 interested investors attended this event, including local real estate developers, business owners and friends from the media.",
@@ -222,7 +222,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "July 17, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Press Release",
-    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    image: "/assets/images/news/07-17-25.png",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), has executed an agreement with LOBO EV (a Nasdaq company) to develop a strategic cooperation relationship to set up a production facility at APOZ (Asia Pacific Opportunity Zone) to manufacture various types of electric vehicles, including electric scooters, electric bikes, electric golf carts and others.",
       "According to Mr. David Champ, the President & CEO of the company, LOBO EV is a very reputable EV products manufacturer, and it has been growing steadily over the past years with excellent growth potential in the North America market.",
@@ -237,7 +237,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "June 4, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Press Release",
-    image: "https://images.unsplash.com/photo-1613928270169-4e4462c75a79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZGV2ZWxvcG1lbnQlMjBjb25zdHJ1Y3Rpb258ZW58MXx8fHwxNzY0NjU4ODA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/assets/images/news/06-04-25.jpg",
     paragraphs: [
       "As global awareness of the Asia Pacific Opportunity Zone (APOZ) grows, Token Communities Ltd. (OTC: TKCM) and its subsidiary ASC Global Inc. are preparing for the next major milestone — the official groundbreaking ceremony, scheduled for September 2025 in Greater Houston.",
       "Following successful presentations at the International Trade Center in Houston and the first overseas APOZ conference in Shanghai, interest from both domestic and international investors has surged.",
@@ -255,7 +255,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "May 24, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Event",
-    image: "https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBoYW5kc2hha2UlMjBidXNpbmVzc3xlbnwxfHx8fDE3NjQ2NTg4MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/assets/images/news/05-24-26.jpg",
     paragraphs: [
       "On May 23, 2025, Token Communities Ltd. (OTC PINK: TKCM), through its subsidiary ASC Global Inc., presented the Asia Pacific Opportunity Zone (APOZ) Project at the International Trade Center (ITC) Board of Directors Inauguration Ceremony in Houston.",
       "The APOZ Project is a master-planned community set to commence construction in Q4 2025.",
@@ -271,7 +271,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "May 20, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Event",
-    image: "https://images.unsplash.com/photo-1505624198937-c704aff72608?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBtZWV0aW5nJTIwcm9vbXxlbnwxfHx8fDE3NjQ2NTg4MTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/assets/images/news/05-20-25.jpg",
     paragraphs: [
       "On May 20, 2025, Token Communities Ltd. (OTC: TKCM), through its subsidiary ASC Global Inc., hosted its inaugural overseas APOZ conference at the Westin Bund Center in Shanghai.",
       "The event aimed to introduce the APOZ initiative to the Asia Pacific business community, highlighting investment opportunities and fostering regional engagement.",

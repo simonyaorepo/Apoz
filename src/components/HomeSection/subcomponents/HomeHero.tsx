@@ -7,9 +7,9 @@ import { NEWS_ARTICLES } from "../../NewsSection/subcomponents/newsSectionData";
 const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  min-height: 600px;
-  height: 70vh;
-  max-height: 800px;
+  min-height: 700px;
+  height: 80vh;
+  max-height: 900px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -17,18 +17,18 @@ const HeroSection = styled.section`
   background: ${({ theme }) => theme.colors.darkBlue};
   
   @media (max-width: 768px) {
-    min-height: 500px;
-    height: 60vh;
+    min-height: 600px;
+    height: 70vh;
   }
 `;
 
-const HeroImage = styled.img`
+const HeroImage = styled.img<{ $showTop?: boolean }>`
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: ${({ $showTop }) => $showTop ? 'cover' : 'contain'};
+  object-position: ${({ $showTop }) => $showTop ? 'center -10%' : 'center center'};
   z-index: 1;
   transition: transform 0.5s ease;
 `;
@@ -174,11 +174,14 @@ const HomeHero: React.FC = () => {
   const summary = article.paragraphs?.[0] || '';
   // Use subtitle from data, fallback to empty string
   const subtitle = (article as any).subtitle || '';
+  // Check if this needs top positioning (faces at top)
+  const showTop = article.image.includes('07-21-25') || article.image.includes('09-13-25');
   return (
     <HeroSection>
       <HeroImage
         src={article.image}
         alt={article.title}
+        $showTop={showTop}
       />
       <Overlay />
       <ContentBox>

@@ -200,16 +200,18 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
 
       <TealSection>
         <TealBox>
-          <h3 style={{ marginBottom: '1rem', color: 'white' }}>Infrastructure Scope</h3>
-          <ScopeTable>
-            {INFRASTRUCTURE_INVESTMENT_DATA.content.scope.map((item, idx) => (
-              <ScopeCard key={idx}>
-                <h4>{item.category}</h4>
-                <p className="components"><strong>Key Components:</strong> {item.components}</p>
-                <p className="purpose"><strong>Purpose:</strong> {item.purpose}</p>
-              </ScopeCard>
-            ))}
-          </ScopeTable>
+          <h3 style={{ marginBottom: '1.5rem', color: 'white' }}>Infrastructure Scope</h3>
+          {INFRASTRUCTURE_INVESTMENT_DATA.content.scope.map((item, idx) => (
+            <div key={idx} style={{ marginBottom: '2rem' }}>
+              <h4 style={{ color: 'white', fontSize: '1.25rem', marginBottom: '0.5rem' }}>{item.category}</h4>
+              <p style={{ color: 'white', fontSize: '1rem', marginBottom: '0.25rem', opacity: 0.9 }}>
+                <strong>Key Components:</strong> {item.components}
+              </p>
+              <p style={{ color: 'white', fontSize: '1rem', opacity: 0.9 }}>
+                <strong>Purpose:</strong> {item.purpose}
+              </p>
+            </div>
+          ))}
         </TealBox>
       </TealSection>
       
