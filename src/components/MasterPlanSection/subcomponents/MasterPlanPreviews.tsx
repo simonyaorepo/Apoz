@@ -26,6 +26,18 @@ const MasterPlanPreviews: React.FC = () => {
       title: "QOZ Zone",
       description: "Qualified Opportunity Zone designation providing tax incentives for long-term investment. Capital gains deferral, basis step-up (10%), and permanent exclusion (10 years+) driving community development.",
       route: "/master-plan/qoz-zone"
+    },
+    {
+      id: "industry-zone",
+      title: "Industry Zone",
+      description: "Manufacturing and industrial district leveraging FTZ advantages for international trade and production. Advanced manufacturing, logistics, and value-added processing facilities.",
+      route: "/master-plan/industry-zone"
+    },
+    {
+      id: "affordable-living-zone",
+      title: "Affordable Living Zone",
+      description: "Sustainable residential development providing workforce housing and community amenities. Mixed-income housing, green spaces, educational facilities, and social infrastructure.",
+      route: "/master-plan/affordable-living-zone"
     }
   ];
 

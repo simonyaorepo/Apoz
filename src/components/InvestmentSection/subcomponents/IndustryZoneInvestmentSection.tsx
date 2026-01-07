@@ -19,10 +19,14 @@ interface IndustryZoneInvestmentSectionProps {
 
 
 const TealTitle = styled.h3`
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: ${({ theme }) => theme.fontSizes.h4};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: white;
-  margin-bottom: 1.5rem;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes.h5};
+  }
 `;
 
 const BenefitsList = styled.ul`
@@ -172,63 +176,83 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
       <TealSection>
         <TealBox>
           <TealTitle>Key FTZ Benefits for Investors & Tenants</TealTitle>
-          <WhiteBenefitsList>
-            <WhiteBenefitsItem>
-              <strong>Duty Deferral:</strong> Pay customs duties only when products enter the U.S. market, improving cash flow
-            </WhiteBenefitsItem>
-            <WhiteBenefitsItem>
-              <strong>Duty Elimination:</strong> No duties on re-exported goods, ideal for global supply chains
-            </WhiteBenefitsItem>
-            <WhiteBenefitsItem>
-              <strong>Inverted Tariffs:</strong> If components have higher duties than finished products, pay the lower finished-product duty rate
-            </WhiteBenefitsItem>
-            <WhiteBenefitsItem>
-              <strong>Cash Flow Improvement:</strong> Lower upfront costs improve working capital and investor ROI
-            </WhiteBenefitsItem>
-            <WhiteBenefitsItem>
-              <strong>QOZ + FTZ Synergy:</strong> Combine capital gains tax deferral with customs savings for maximum returns
-            </WhiteBenefitsItem>
-          </WhiteBenefitsList>
+          <div style={{ color: 'white', fontSize: '0.9375rem', lineHeight: '1.7' }}>
+            <p style={{ marginBottom: '1rem' }}>
+              <strong>Duty Deferral:</strong> Pay customs duties only when products enter the U.S. market, improving cash flow.
+            </p>
+            <p style={{ marginBottom: '1rem' }}>
+              <strong>Duty Elimination:</strong> No duties on re-exported goods, ideal for global supply chains.
+            </p>
+            <p style={{ marginBottom: '1rem' }}>
+              <strong>Inverted Tariffs:</strong> If components have higher duties than finished products, pay the lower finished-product duty rate.
+            </p>
+            <p style={{ marginBottom: '1rem' }}>
+              <strong>Cash Flow Improvement:</strong> Lower upfront costs improve working capital and investor ROI.
+            </p>
+            <p style={{ marginBottom: '0' }}>
+              <strong>QOZ + FTZ Synergy:</strong> Combine capital gains tax deferral with customs savings for maximum returns.
+            </p>
+          </div>
         </TealBox>
       </TealSection>
 
-      <Section>
+      <Section $background='grey'>
         <ContentWrapper>
           <SectionTitle>Target Industries & Investment Opportunities</SectionTitle>
           
           <HighlightBox>
             <SectionTitle>Renewable Energy & Clean Tech</SectionTitle>
-            <BenefitsList>
-              <BenefitsItem><strong>Solar panel manufacturing and assembly</strong> - Import components duty-free, assemble in APOZ</BenefitsItem>
-              <BenefitsItem><strong>EV battery production</strong> - Leverage FTZ for cost-effective battery cell imports</BenefitsItem>
-              <BenefitsItem><strong>Hydrogen fuel cell manufacturing</strong> - Process components for domestic and export markets</BenefitsItem>
-              <BenefitsItem><strong>Energy storage systems</strong> - Assembly and distribution hub for North America</BenefitsItem>
-            </BenefitsList>
+            <IntroText>
+              <strong>Solar panel manufacturing and assembly:</strong> Import components duty-free and assemble in APOZ for domestic distribution.
+            </IntroText>
+            <IntroText>
+              <strong>EV battery production:</strong> Leverage FTZ for cost-effective battery cell imports and assembly operations.
+            </IntroText>
+            <IntroText>
+              <strong>Hydrogen fuel cell manufacturing:</strong> Process components for both domestic and export markets.
+            </IntroText>
+            <IntroText>
+              <strong>Energy storage systems:</strong> Serve as assembly and distribution hub for North America.
+            </IntroText>
           </HighlightBox>
 
           <HighlightBox>
             <SectionTitle>Advanced Manufacturing</SectionTitle>
-            <BenefitsList>
-              <BenefitsItem><strong>Electronics & semiconductors</strong> - Assembly operations with duty advantages</BenefitsItem>
-              <BenefitsItem><strong>Smart manufacturing & IoT</strong> - Robotics and automation systems production</BenefitsItem>
-              <BenefitsItem><strong>Consumer goods</strong> - Final assembly and packaging for U.S. distribution</BenefitsItem>
-              <BenefitsItem><strong>Medical devices</strong> - Manufacturing with regulatory compliance support</BenefitsItem>
-            </BenefitsList>
+            <IntroText>
+              <strong>Electronics & semiconductors:</strong> Assembly operations with duty advantages for components.
+            </IntroText>
+            <IntroText>
+              <strong>Smart manufacturing & IoT:</strong> Robotics and automation systems production.
+            </IntroText>
+            <IntroText>
+              <strong>Consumer goods:</strong> Final assembly and packaging for U.S. distribution networks.
+            </IntroText>
+            <IntroText>
+              <strong>Medical devices:</strong> Manufacturing with regulatory compliance support.
+            </IntroText>
           </HighlightBox>
 
           <HighlightBox>
             <SectionTitle>Logistics & E-Commerce</SectionTitle>
-            <BenefitsList>
-              <BenefitsItem><strong>Cross-border fulfillment centers</strong> - Bonded warehousing for Asia-Pacific goods</BenefitsItem>
-              <BenefitsItem><strong>Last-mile distribution hubs</strong> - Strategic Houston metro access</BenefitsItem>
-              <BenefitsItem><strong>Cold storage facilities</strong> - Temperature-controlled logistics for specialized goods</BenefitsItem>
-              <BenefitsItem><strong>Transloading operations</strong> - Container-to-truck transfer with duty deferral</BenefitsItem>
-            </BenefitsList>
+            <IntroText>
+              <strong>Cross-border fulfillment centers:</strong> Bonded warehousing for Asia-Pacific goods.
+            </IntroText>
+            <IntroText>
+              <strong>Last-mile distribution hubs:</strong> Strategic Houston metro access for rapid delivery.
+            </IntroText>
+            <IntroText>
+              <strong>Cold storage facilities:</strong> Temperature-controlled logistics for specialized goods.
+            </IntroText>
+            <IntroText>
+              <strong>Transloading operations:</strong> Container-to-truck transfer with duty deferral benefits.
+            </IntroText>
           </HighlightBox>
         </ContentWrapper>
       </Section>
 
-      <Section>
+      <GoldDivider />
+
+      <Section $background='grey'>
         <ContentWrapper>
           <SectionTitle>Investment Returns & Tenant Advantages</SectionTitle>
           
@@ -253,19 +277,26 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
 
           <SectionTitle>Asia-Pacific Manufacturing Partnerships</SectionTitle>
           <IntroText>
-            APOZ specifically targets manufacturers from China, ASEAN, Korea, Japan, and India seeking "friend-shoring" alternatives and U.S. market access. FTZ status makes APOZ ideal for:
+            APOZ specifically targets manufacturers from China, ASEAN, Korea, Japan, and India seeking "friend-shoring" alternatives and U.S. market access.
           </IntroText>
-
-          <BenefitsList>
-            <BenefitsItem>Companies establishing U.S. manufacturing footprint while maintaining Asia-Pacific supply chains</BenefitsItem>
-            <BenefitsItem>Joint ventures between U.S. and Asia-Pacific firms requiring duty-efficient operations</BenefitsItem>
-            <BenefitsItem>Export-oriented manufacturers serving both U.S. and global markets</BenefitsItem>
-            <BenefitsItem>Firms seeking to diversify away from single-country manufacturing risk</BenefitsItem>
-          </BenefitsList>
+          <IntroText>
+            FTZ status makes APOZ ideal for companies establishing U.S. manufacturing footprints while maintaining Asia-Pacific supply chains.
+          </IntroText>
+          <IntroText>
+            The zone supports joint ventures between U.S. and Asia-Pacific firms requiring duty-efficient operations.
+          </IntroText>
+          <IntroText>
+            Export-oriented manufacturers serving both U.S. and global markets benefit from the strategic positioning.
+          </IntroText>
+          <IntroText>
+            Firms seeking to diversify away from single-country manufacturing risk find APOZ an attractive option.
+          </IntroText>
         </ContentWrapper>
       </Section>
 
-      <Section>
+      <GoldDivider />
+
+      <Section $background='grey'>
         <ContentWrapper>
           <SectionTitle>Combined QOZ + FTZ Investment Benefits</SectionTitle>
           
@@ -297,21 +328,35 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
           </StyledTable>
 
           <SectionTitle>Exit Strategies</SectionTitle>
-          <BenefitsList>
-            <BenefitsItem>Sale to industrial REITs specializing in logistics and manufacturing properties</BenefitsItem>
-            <BenefitsItem>Portfolio securitization of stabilized FTZ assets</BenefitsItem>
-            <BenefitsItem>Strategic sale to foreign investors seeking U.S. industrial exposure</BenefitsItem>
-            <BenefitsItem>Refinancing after 10-year QOZ hold for tax-free appreciation</BenefitsItem>
-          </BenefitsList>
+          <IntroText>
+            Exit pathways include sale to industrial REITs specializing in logistics and manufacturing properties.
+          </IntroText>
+          <IntroText>
+            Portfolio securitization of stabilized FTZ assets offers another attractive option.
+          </IntroText>
+          <IntroText>
+            Strategic sale to foreign investors seeking U.S. industrial exposure provides international exit opportunities.
+          </IntroText>
+          <IntroText>
+            Refinancing after the 10-year QOZ hold period allows investors to realize tax-free appreciation.
+          </IntroText>
 
           <SectionTitle>Best Practices for FTZ Investment Success</SectionTitle>
-          <BenefitsList>
-            <BenefitsItem><strong>Early Engagement:</strong> Bring FTZ specialists and customs brokers into project planning</BenefitsItem>
-            <BenefitsItem><strong>Integrated Incentives:</strong> Layer FTZ + QOZ + state/local incentives to maximize ROI</BenefitsItem>
-            <BenefitsItem><strong>Digital Inventory Systems:</strong> Use ERP systems to manage bonded inventory and avoid CBP penalties</BenefitsItem>
-            <BenefitsItem><strong>Tenant Education:</strong> Provide training and legal support to maximize tenant FTZ utilization</BenefitsItem>
-            <BenefitsItem><strong>Marketing to Asia-Pacific:</strong> Highlight duty savings in bilingual investor/tenant materials</BenefitsItem>
-          </BenefitsList>
+          <IntroText>
+            <strong>Early Engagement:</strong> Bring FTZ specialists and customs brokers into project planning from the outset.
+          </IntroText>
+          <IntroText>
+            <strong>Integrated Incentives:</strong> Layer FTZ, QOZ, and state/local incentives to maximize ROI.
+          </IntroText>
+          <IntroText>
+            <strong>Digital Inventory Systems:</strong> Use ERP systems to manage bonded inventory and avoid CBP penalties.
+          </IntroText>
+          <IntroText>
+            <strong>Tenant Education:</strong> Provide training and legal support to maximize tenant FTZ utilization.
+          </IntroText>
+          <IntroText>
+            <strong>Marketing to Asia-Pacific:</strong> Highlight duty savings in bilingual investor and tenant materials.
+          </IntroText>
         </ContentWrapper>
       </Section>
 

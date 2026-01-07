@@ -2,21 +2,21 @@ import styled from "styled-components";
 
 export const WhiteSection = styled.section`
   background: ${({ theme }) => theme.colors.white};
-  padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.xl};
   overflow-x: hidden;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
+    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.lg};
   }
 `;
 
 export const GreySection = styled.section`
   background: ${({ theme }) => theme.colors.grey};
-  padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.xl};
   position: relative;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
+    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.lg};
   }
 `;
 
@@ -196,9 +196,13 @@ export const IntroText = styled.p`
 
 export const SectionTitle = styled.h2`
   font-size: ${({ theme }) => theme.fontSizes.h3};
-  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.primary};
-  margin: ${({ theme }) => theme.spacing.xxxl} 0 ${({ theme }) => theme.spacing.lg};
+  margin: ${({ theme }) => theme.spacing.xxl} 0 ${({ theme }) => theme.spacing.lg};
+  
+  &:first-child {
+    margin-top: 0;
+  }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: ${({ theme }) => theme.fontSizes.h4};

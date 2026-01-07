@@ -13,6 +13,7 @@ import {
   ContentWrapper,
   IntroText,
   SectionTitle,
+  SubsectionTitle,
   StyledTable,
 } from "./SharedStyles";
 
@@ -69,13 +70,10 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
               <IntroText>
                 The residential component of APOZ supports the Phase 1 industrial tenants by providing affordable, high-quality workforce housing within walking or short commuting distance to the industrial park.
               </IntroText>
-              <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Development Objectives</h3>
-              <BulletList>
-                <li>Manage 2,000 affordable homes under Phase 2 development.</li>
-                <li>Provide property services and community amenities to residents.</li>
-                <li>Ensure sustainable, livable, and attractive environments for families.</li>
-                <li>Support APOZ's vision as an integrated 'live-work-play' ecosystem.</li>
-              </BulletList>
+              <SubsectionTitle>Development Objectives</SubsectionTitle>
+              <p>
+                Manage 2,000 affordable homes under Phase 2 development. Provide property services and community amenities to residents. Ensure sustainable, livable, and attractive environments for families. Support APOZ's vision as an integrated 'live-work-play' ecosystem.
+              </p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,9 +101,9 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
                 <rect x="455" y="275" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
                 <rect x="445" y="293" width="15" height="15" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
                 <circle cx="540" cy="275" r="35" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <path d="M 515 285 Q 530 270 545 285" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <circle cx="525" cy="275" r="3" fill="#0a3a3f"/>
-                <circle cx="545" cy="275" r="3" fill="#0a3a3f"/>
+                <path d="M 515 285 Q 530 295 545 285" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <circle cx="525" cy="270" r="3" fill="#0a3a3f"/>
+                <circle cx="555" cy="270" r="3" fill="#0a3a3f"/>
               </svg>
             </IllustrationBox>
           </ContentGrid>
@@ -161,7 +159,7 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
               </tbody>
             </StyledTable>
 
-            <SectionTitle style={{ marginTop: '3rem' }}>Integration Benefits</SectionTitle>
+            <SubsectionTitle>Integration Benefits</SubsectionTitle>
             <BulletList>
               <li>Attracts skilled labor for Phase 1 industrial tenants.</li>
               <li>Improves employee retention through housing stability.</li>

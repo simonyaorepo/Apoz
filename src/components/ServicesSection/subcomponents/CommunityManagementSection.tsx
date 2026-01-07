@@ -55,11 +55,9 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
                 <p key={idx}>{paragraph}</p>
               ))}
               <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Core Goals</h3>
-              <BulletList>
-                {COMMUNITY_MANAGEMENT_DATA.content.coreGoals.map((goal, idx) => (
-                  <li key={idx}>{goal}</li>
-                ))}
-              </BulletList>
+              <p>
+                The community management team focuses on fostering a safe, vibrant, and sustainable residential environment for all residents. They maintain high-quality amenities and common areas while building a strong sense of community through events and programming. The team also coordinates seamlessly with the industrial park operations to ensure residents benefit from proximity to employment opportunities.
+              </p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,11 +136,9 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
             <TextContent>
               <h3 style={{ marginBottom: '1.5rem' }}>{COMMUNITY_MANAGEMENT_DATA.content.integration.heading}</h3>
               <p>{COMMUNITY_MANAGEMENT_DATA.content.integration.description}</p>
-              <BulletList>
-                {COMMUNITY_MANAGEMENT_DATA.content.integration.points.map((point, idx) => (
-                  <li key={idx}>{point}</li>
-                ))}
-              </BulletList>
+              <p>
+                The residential zone provides workforce housing for industrial park employees, creating a live-work ecosystem that reduces commute times and improves quality of life. Community programs are designed to support working families with childcare services and after-school activities. Shared infrastructure including transit connections and recreational facilities benefit both residential and commercial areas, while the overall development attracts skilled workers and their families to support long-term industrial growth.
+              </p>
             </TextContent>
           </GreyContentGrid>
         </Container>

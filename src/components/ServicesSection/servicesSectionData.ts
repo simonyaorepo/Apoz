@@ -57,10 +57,10 @@ export const SERVICES_OVERVIEW_DATA = {
     tenantServices: {
       heading: "Tenant & Partner Services",
       services: [
-        "Built-to-Suit Facilities — Customizable manufacturing or warehouse layouts.",
-        "One-Stop Permitting Assistance — Fast-tracking business licensing and FTZ activation.",
-        "Local Workforce Housing (Phase 2) — Provides stable, affordable housing for employees.",
-        "Government Incentive Navigation — Integrating federal, state, and municipal tax benefits."
+        "<strong>Built-to-Suit Facilities</strong> — Customizable manufacturing or warehouse layouts.",
+        "<strong>One-Stop Permitting Assistance</strong> — Fast-tracking business licensing and FTZ activation.",
+        "<strong>Local Workforce Housing (Phase 2)</strong> — Provides stable, affordable housing for employees.",
+        "<strong>Government Incentive Navigation</strong> — Integrating federal, state, and municipal tax benefits."
       ]
     },
     advantages: [

@@ -132,6 +132,31 @@ export const DUAL_STATUS_BENEFITS = {
         description: "Wide range of qualifying real estate and business investments"
       }
     ]
+  },
+  residential: {
+    title: "Residential Development Benefits",
+    benefits: [
+      {
+        name: "10-Year Hold + Tax-Free Gains",
+        description: "QOZ investors who hold for 10+ years pay zero capital gains tax on the appreciation of the Residential Village"
+      },
+      {
+        name: "LIHTC-Enhanced Returns",
+        description: "Up to 9% Low-Income Housing Tax Credits improve overall project economics and attract institutional equity at lower cost of capital"
+      },
+      {
+        name: "Steady Cash Flow",
+        description: "Rental income from ~2,000 units stabilizes returns and reduces downside volatility"
+      },
+      {
+        name: "Exit Flexibility",
+        description: "The project can evolve from rental to for-sale units over time, unlocking realized gains as the market appreciates"
+      },
+      {
+        name: "Workforce Synergy",
+        description: "Industrial park employment ensures high occupancy and minimal vacancy risk for residential units"
+      }
+    ]
   }
 };
 
@@ -500,10 +525,10 @@ export const INFRASTRUCTURE_INVESTMENT_DATA = {
     funding: {
       heading: "Investment & Funding Structure",
       sources: [
-        "Private Capital via QOF: Leverage Qualified Opportunity Zone (QOZ) tax benefits.",
-        "Infrastructure Financing: Partnerships with Texas development authorities.",
-        "Tenant Participation: Built-to-suit facilities include partial cost-sharing.",
-        "Public-Private Grants: Potential HUD and DOE programs for sustainable energy and housing."
+        "<strong>Private Capital via QOF:</strong> Leverage Qualified Opportunity Zone (QOZ) tax benefits.",
+        "<strong>Infrastructure Financing:</strong> Partnerships with Texas development authorities.",
+        "<strong>Tenant Participation:</strong> Built-to-suit facilities include partial cost-sharing.",
+        "<strong>Public-Private Grants:</strong> Potential HUD and DOE programs for sustainable energy and housing."
       ]
     },
     benefits: {

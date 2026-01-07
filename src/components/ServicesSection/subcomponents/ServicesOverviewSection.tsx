@@ -187,15 +187,13 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
 
       <TealSection>
         <TealBox>
-          <h3 style={{ marginBottom: '1rem', color: 'white' }}>{SERVICES_OVERVIEW_DATA.content.tradeLogistics.heading}</h3>
-          <ServicesList>
-            {SERVICES_OVERVIEW_DATA.content.tradeLogistics.services.map((service, idx) => (
-              <ServiceCard key={idx}>
-                <h4>{service.title}</h4>
-                <p>{service.description}</p>
-              </ServiceCard>
-            ))}
-          </ServicesList>
+          <h3 style={{ marginBottom: '1.5rem', color: 'white' }}>{SERVICES_OVERVIEW_DATA.content.tradeLogistics.heading}</h3>
+          {SERVICES_OVERVIEW_DATA.content.tradeLogistics.services.map((service, idx) => (
+            <div key={idx} style={{ marginBottom: idx === SERVICES_OVERVIEW_DATA.content.tradeLogistics.services.length - 1 ? '0' : '1.5rem' }}>
+              <h4 style={{ color: 'white', fontSize: '1.125rem', marginBottom: '0.5rem' }}>{service.title}</h4>
+              <p style={{ color: 'white', fontSize: '0.9375rem', opacity: 0.95, margin: 0 }}>{service.description}</p>
+            </div>
+          ))}
         </TealBox>
       </TealSection>
       
@@ -203,11 +201,9 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
         <Container>
           <TextContent>
             <h3 style={{ marginBottom: '1.5rem' }}>{SERVICES_OVERVIEW_DATA.content.tenantServices.heading}</h3>
-            <TenantList>
-              {SERVICES_OVERVIEW_DATA.content.tenantServices.services.map((service, idx) => (
-                <li key={idx}>{service}</li>
-              ))}
-            </TenantList>
+            {SERVICES_OVERVIEW_DATA.content.tenantServices.services.map((service, idx) => (
+              <p key={idx} style={{ marginBottom: '0.75rem' }} dangerouslySetInnerHTML={{ __html: service }} />
+            ))}
           </TextContent>
         </Container>
       </WhiteSection>

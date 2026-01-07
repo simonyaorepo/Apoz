@@ -12,6 +12,7 @@ import {
   TealBox,
   IllustrationBox,
   ImageBox,
+  SubsectionTitle,
 } from "./SharedStyles";
 import { INFRASTRUCTURE_INVESTMENT_DATA } from "./investmentSectionData";
 
@@ -200,7 +201,7 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
 
       <TealSection>
         <TealBox>
-          <h3 style={{ marginBottom: '1.5rem', color: 'white' }}>Infrastructure Scope</h3>
+          <SubsectionTitle style={{ color: 'white' }}>Infrastructure Scope</SubsectionTitle>
           {INFRASTRUCTURE_INVESTMENT_DATA.content.scope.map((item, idx) => (
             <div key={idx} style={{ marginBottom: '2rem' }}>
               <h4 style={{ color: 'white', fontSize: '1.25rem', marginBottom: '0.5rem' }}>{item.category}</h4>
@@ -225,7 +226,7 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
               />
             </ImageBox>
             <TextContent>
-              <h3 style={{ marginBottom: '1.5rem' }}>Construction & Development Timeline</h3>
+              <SubsectionTitle>Construction & Development Timeline</SubsectionTitle>
               {INFRASTRUCTURE_INVESTMENT_DATA.content.timeline.map((item, idx) => (
                 <TimelineCard key={idx}>
                   <h4>{item.phase}</h4>
@@ -241,12 +242,19 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
       <WhiteSection>
         <Container>
           <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>{INFRASTRUCTURE_INVESTMENT_DATA.content.funding.heading}</h3>
-            <FundingList>
-              {INFRASTRUCTURE_INVESTMENT_DATA.content.funding.sources.map((source, idx) => (
-                <li key={idx}>{source}</li>
-              ))}
-            </FundingList>
+            <SubsectionTitle>{INFRASTRUCTURE_INVESTMENT_DATA.content.funding.heading}</SubsectionTitle>
+            <p style={{ marginBottom: '0.75rem' }}>
+              <strong>Private Capital via QOF:</strong> Leverage Qualified Opportunity Zone (QOZ) tax benefits.
+            </p>
+            <p style={{ marginBottom: '0.75rem' }}>
+              <strong>Infrastructure Financing:</strong> Partnerships with Texas development authorities.
+            </p>
+            <p style={{ marginBottom: '0.75rem' }}>
+              <strong>Tenant Participation:</strong> Built-to-suit facilities include partial cost-sharing.
+            </p>
+            <p style={{ marginBottom: '0.75rem' }}>
+              <strong>Public-Private Grants:</strong> Potential HUD and DOE programs for sustainable energy and housing.
+            </p>
           </TextContent>
         </Container>
       </WhiteSection>
@@ -254,23 +262,19 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
       <GreySection>
         <Container>
           <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>Benefits for Tenants & Investors</h3>
+            <SubsectionTitle>Benefits for Tenants & Investors</SubsectionTitle>
             <BenefitsGrid>
               <BenefitCard>
                 <h4>For Tenants</h4>
-                <ul>
-                  {INFRASTRUCTURE_INVESTMENT_DATA.content.benefits.tenants.map((benefit, idx) => (
-                    <li key={idx}>{benefit}</li>
-                  ))}
-                </ul>
+                {INFRASTRUCTURE_INVESTMENT_DATA.content.benefits.tenants.map((benefit, idx) => (
+                  <p key={idx} style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>{benefit}</p>
+                ))}
               </BenefitCard>
               <BenefitCard>
                 <h4>For Investors</h4>
-                <ul>
-                  {INFRASTRUCTURE_INVESTMENT_DATA.content.benefits.investors.map((benefit, idx) => (
-                    <li key={idx}>{benefit}</li>
-                  ))}
-                </ul>
+                {INFRASTRUCTURE_INVESTMENT_DATA.content.benefits.investors.map((benefit, idx) => (
+                  <p key={idx} style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>{benefit}</p>
+                ))}
               </BenefitCard>
             </BenefitsGrid>
           </TextContent>

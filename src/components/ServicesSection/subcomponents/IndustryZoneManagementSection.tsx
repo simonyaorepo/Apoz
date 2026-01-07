@@ -54,11 +54,18 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
                 <p key={idx}>{paragraph}</p>
               ))}
               <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Core Responsibilities</h3>
-              <BulletList>
-                {INDUSTRY_ZONE_MANAGEMENT_DATA.content.coreResponsibilities.map((responsibility, idx) => (
-                  <li key={idx}>{responsibility}</li>
-                ))}
-              </BulletList>
+              <p style={{ marginBottom: '0.75rem' }}>
+                The management team oversees day-to-day operations of all industrial facilities including maintenance, security, and regulatory compliance.
+              </p>
+              <p style={{ marginBottom: '0.75rem' }}>
+                They coordinate Foreign-Trade Zone (FTZ) operations and ensure all customs procedures meet federal requirements.
+              </p>
+              <p style={{ marginBottom: '0.75rem' }}>
+                Supporting tenant businesses through lease management and operational services is a key priority.
+              </p>
+              <p>
+                Maintaining infrastructure systems such as utilities, roads, and waste management ensures smooth operations across the park.
+              </p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,11 +143,18 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
             </ImageBox>
             <TextContent>
               <h3 style={{ marginBottom: '1.5rem' }}>{INDUSTRY_ZONE_MANAGEMENT_DATA.content.tenantSupport.heading}</h3>
-              <BulletList>
-                {INDUSTRY_ZONE_MANAGEMENT_DATA.content.tenantSupport.services.map((service, idx) => (
-                  <li key={idx}>{service}</li>
-                ))}
-              </BulletList>
+              <p style={{ marginBottom: '0.75rem' }}>
+                Tenants receive comprehensive support including FTZ compliance assistance to maximize duty savings and navigate customs regulations.
+              </p>
+              <p style={{ marginBottom: '0.75rem' }}>
+                The team provides ongoing operational guidance for manufacturing and logistics processes.
+              </p>
+              <p style={{ marginBottom: '0.75rem' }}>
+                They facilitate connections to local suppliers, service providers, and business networks.
+              </p>
+              <p>
+                Additional support includes workforce recruitment assistance and training program coordination to help businesses build and retain qualified teams.
+              </p>
             </TextContent>
           </GreyContentGrid>
         </Container>
@@ -150,11 +164,18 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
         <Container>
           <TextContent>
             <h3 style={{ marginBottom: '1.5rem' }}>{INDUSTRY_ZONE_MANAGEMENT_DATA.content.technology.heading}</h3>
-            <BulletList>
-              {INDUSTRY_ZONE_MANAGEMENT_DATA.content.technology.features.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
-              ))}
-            </BulletList>
+            <p style={{ marginBottom: '0.75rem' }}>
+              The industrial zone leverages advanced technology systems for enhanced security and operational efficiency.
+            </p>
+            <p style={{ marginBottom: '0.75rem' }}>
+              Real-time monitoring of utilities and environmental systems ensures optimal facility performance.
+            </p>
+            <p style={{ marginBottom: '0.75rem' }}>
+              Digital platforms streamline FTZ documentation and customs reporting.
+            </p>
+            <p>
+              Smart building controls optimize energy usage across all facilities, reducing costs and supporting sustainability goals.
+            </p>
           </TextContent>
         </Container>
       </GreySection>

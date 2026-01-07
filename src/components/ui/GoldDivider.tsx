@@ -5,6 +5,12 @@ interface GoldDividerProps {
   maxWidth?: string;
 }
 
+const GreyBackground = styled.div`
+  width: 100%;
+  background: ${({ theme }) => theme.colors.grey};
+  padding: 0;
+`;
+
 const DividerWrapper = styled.div<{ $fullWidth?: boolean; $maxWidth?: string }>`
   position: relative;
   width: 100%;
@@ -22,9 +28,11 @@ const Divider = styled.div`
 
 const GoldDivider = ({ fullWidth = false, maxWidth }: GoldDividerProps) => {
   return (
-    <DividerWrapper $fullWidth={fullWidth} $maxWidth={maxWidth}>
-      <Divider />
-    </DividerWrapper>
+    <GreyBackground>
+      <DividerWrapper $fullWidth={fullWidth} $maxWidth={maxWidth}>
+        <Divider />
+      </DividerWrapper>
+    </GreyBackground>
   );
 };
 

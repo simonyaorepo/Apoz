@@ -4,13 +4,11 @@ import { INVESTMENT_OVERVIEW } from "./investmentSectionData";
 
 const SUMMARY_TEXT = `${INVESTMENT_OVERVIEW.description}
 
-${INVESTMENT_OVERVIEW.highlights.join(' ')}
+APOZ is strategically positioned in federally designated Qualified Opportunity Zone (QOZ) and Foreign-Trade Zone (FTZ) frameworks, offering investors dual tax and duty advantages. The development accommodates both equity and debt investors across multiple phases, with flexible structures designed to maximize returns through QOZ tax benefits and FTZ operational savings.
 
-Our investment strategy unfolds across three phases: ${INVESTMENT_OVERVIEW.investmentStrategy.map(p => `${p.phase} (${p.scope}, ${p.capitalRequired})`).join(', ')}.
+Our phased development approach includes ${INVESTMENT_OVERVIEW.investmentStrategy.map(p => p.scope).join(', ')} with total capital requirements spanning ${INVESTMENT_OVERVIEW.investmentStrategy.map(p => p.capitalRequired).join(' to ')}. The recommended capital structure leverages ${INVESTMENT_OVERVIEW.capitalStructure.map(c => c.layer).join(', ')}, providing multiple entry points for sophisticated investors.
 
-The recommended capital structure includes ${INVESTMENT_OVERVIEW.capitalStructure.map(c => c.layer).join(', ')}, providing multiple pathways for investor participation. With base case IRR of ${INVESTMENT_OVERVIEW.investorBenefits.irrPotential.baseCase} and QOZ tax advantages providing ${INVESTMENT_OVERVIEW.investorBenefits.irrPotential.withQOZ} additional uplift, APOZ offers compelling returns.
-
-Exit opportunities include ${INVESTMENT_OVERVIEW.exitStrategy.join(' ')}`;
+Target returns include base case IRR of ${INVESTMENT_OVERVIEW.investorBenefits.irrPotential.baseCase}, with QOZ tax advantages delivering an additional ${INVESTMENT_OVERVIEW.investorBenefits.irrPotential.withQOZ} uplift. Exit strategies range from REIT conversion to institutional portfolio sales, ensuring liquidity for long-term investors.`;
 
 const InvestmentSummary: React.FC = () => {
   return <SummarySection text={SUMMARY_TEXT} />;

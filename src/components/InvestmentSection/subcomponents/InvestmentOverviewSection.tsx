@@ -24,7 +24,7 @@ const IntroText = styled.p`
 
 const SectionTitle = styled.h2`
   font-size: ${({ theme }) => theme.fontSizes.h3};
-  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.primary};
   margin: ${({ theme }) => theme.spacing.xxxl} 0 ${({ theme }) => theme.spacing.lg};
   
@@ -256,11 +256,9 @@ const InvestmentOverviewSection: React.FC<InvestmentOverviewSectionProps> = ({ o
       <IntroSection>
         <Container>
           <IntroText>{INVESTMENT_OVERVIEW.description}</IntroText>
-          <BenefitsList>
-            {INVESTMENT_OVERVIEW.highlights.map((highlight, index) => (
-              <li key={index}>{highlight}</li>
-            ))}
-          </BenefitsList>
+          <IntroText>
+            APOZ is strategically located in a federally designated Qualified Opportunity Zone (QOZ) and Foreign-Trade Zone (FTZ), offering investors powerful tax incentives including capital gains deferral and duty savings. The project is structured to accommodate both equity and debt investors across multiple phases, with strong exit strategies through REIT conversion or institutional buyouts.
+          </IntroText>
 
           <SectionTitle>Investment Strategy</SectionTitle>
           <StrategyTable>
@@ -298,18 +296,14 @@ const InvestmentOverviewSection: React.FC<InvestmentOverviewSectionProps> = ({ o
           <SectionTitle>Investor Benefits</SectionTitle>
           <div>
             <SubsectionTitle>QOZ Tax Benefits</SubsectionTitle>
-            <BenefitsList>
-              {INVESTMENT_OVERVIEW.investorBenefits.qozTax.map((benefit, index) => (
-                <li key={index}>{benefit}</li>
-              ))}
-            </BenefitsList>
+            <InfoText>
+              Investors can defer capital gains taxes until December 31, 2026 by investing through a Qualified Opportunity Fund (QOF). After holding the investment for 10 years, all appreciation becomes permanently tax-free, creating significant long-term wealth-building potential.
+            </InfoText>
 
             <SubsectionTitle>FTZ Operating Advantages</SubsectionTitle>
-            <BenefitsList>
-              {INVESTMENT_OVERVIEW.investorBenefits.ftzOperating.map((benefit, index) => (
-                <li key={index}>{benefit}</li>
-              ))}
-            </BenefitsList>
+            <InfoText>
+              The Foreign-Trade Zone designation allows tenants to defer or eliminate customs duties on imported goods, significantly reducing operating costs. Companies engaged in manufacturing or re-export can achieve substantial savings, improving overall project returns and tenant retention.
+            </InfoText>
 
             <SubsectionTitle>IRR Potential</SubsectionTitle>
             <InfoText><strong>Base Case:</strong> {INVESTMENT_OVERVIEW.investorBenefits.irrPotential.baseCase}</InfoText>
@@ -317,11 +311,9 @@ const InvestmentOverviewSection: React.FC<InvestmentOverviewSectionProps> = ({ o
           </div>
 
           <SectionTitle>Exit Strategy</SectionTitle>
-          <ExitStrategyList>
-            {INVESTMENT_OVERVIEW.exitStrategy.map((strategy, index) => (
-              <li key={index}>{strategy}</li>
-            ))}
-          </ExitStrategyList>
+          {INVESTMENT_OVERVIEW.exitStrategy.map((strategy, index) => (
+            <InfoText key={index}>{strategy}</InfoText>
+          ))}
         </Container>
       </IntroSection>
 

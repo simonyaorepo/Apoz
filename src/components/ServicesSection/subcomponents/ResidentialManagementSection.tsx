@@ -198,11 +198,18 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
           ))}
 
           <SectionTitle>Primary Objectives</SectionTitle>
-          <BulletList>
-            {RESIDENTIAL_MANAGEMENT_DATA.content.objectives.map((objective, index) => (
-              <li key={index}>{objective}</li>
-            ))}
-          </BulletList>
+          <IntroText>
+            The residential management team is committed to providing high-quality, affordable housing options for workforce families and creating a safe, welcoming community environment.
+          </IntroText>
+          <IntroText>
+            They maintain excellent property conditions through proactive maintenance and capital improvements.
+          </IntroText>
+          <IntroText>
+            The team offers resident support services including financial literacy programs and job placement assistance.
+          </IntroText>
+          <IntroText>
+            They work closely with local schools and community organizations to ensure residents have access to education and enrichment opportunities.
+          </IntroText>
 
           <SectionTitle>Core Residential Management Services</SectionTitle>
           <StyledTable>
@@ -232,22 +239,29 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
           <IntroText style={{ color: 'white', marginBottom: '1rem' }}>
             Residential management is a critical part of APOZ's ecosystem:
           </IntroText>
-          <TealList>
-            {RESIDENTIAL_MANAGEMENT_DATA.content.integration.map((point, index) => (
-              <li key={index}>{point}</li>
-            ))}
-          </TealList>
+          {RESIDENTIAL_MANAGEMENT_DATA.content.integration.map((point, index) => (
+            <p key={index} style={{ color: 'white', fontSize: '0.9375rem', lineHeight: '1.7', opacity: 0.95, marginBottom: index === RESIDENTIAL_MANAGEMENT_DATA.content.integration.length - 1 ? '0' : '1rem' }}>
+              {point}
+            </p>
+          ))}
         </TealBox>
       </TealSection>
 
       <GreySection>
         <GreyContent>
           <SectionTitle>Technology & Smart Community Features</SectionTitle>
-          <BulletList>
-            {RESIDENTIAL_MANAGEMENT_DATA.content.technology.map((tech, index) => (
-              <li key={index}>{tech}</li>
-            ))}
-          </BulletList>
+          <IntroText>
+            APOZ residential zones incorporate smart home technology for energy efficiency and resident convenience, including programmable thermostats and LED lighting systems.
+          </IntroText>
+          <IntroText>
+            An online resident portal enables easy rent payment, maintenance requests, and community communication.
+          </IntroText>
+          <IntroText>
+            Advanced security systems with access control provide peace of mind for all residents.
+          </IntroText>
+          <IntroText>
+            Community Wi-Fi in common areas keeps families connected and supports remote work opportunities.
+          </IntroText>
         </GreyContent>
       </GreySection>
 

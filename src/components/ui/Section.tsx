@@ -6,8 +6,8 @@ interface SectionProps {
 
 export const Section = styled.section<SectionProps>`
   background: ${({ theme, $background }) => 
-    $background === 'grey' ? theme.colors.background : theme.colors.white};
-  padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
+    $background === 'grey' ? theme.colors.grey : theme.colors.white};
+  padding: ${({ theme }) => theme.spacing.xxl} 5vw;
 `;
 
 export const Container = styled.div<{ $maxWidth?: string }>`

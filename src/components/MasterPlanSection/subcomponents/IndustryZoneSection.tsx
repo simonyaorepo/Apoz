@@ -1,5 +1,4 @@
 import React from "react";
-import TextHero from "../../TextHero";
 import styled from "styled-components";
 import {
   WhiteSection,
@@ -13,8 +12,128 @@ import {
   ContentWrapper,
   IntroText,
   SectionTitle,
+  SubsectionTitle,
   StyledTable,
 } from "./SharedStyles";
+
+const HeroSection = styled.section`
+  position: relative;
+  width: 100%;
+  min-height: 550px;
+  height: 60vh;
+  max-height: 750px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: ${({ theme }) => theme.colors.darkBlue};
+  
+  @media (max-width: 1024px) {
+    min-height: 500px;
+    height: 55vh;
+  }
+  
+  @media (max-width: 768px) {
+    min-height: 450px;
+    height: 50vh;
+  }
+  
+  @media (max-width: 480px) {
+    min-height: 400px;
+    height: 48vh;
+  }
+`;
+
+const HeroImage = styled.img`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  z-index: 1;
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+`;
+
+const ContentBox = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.xxxl};
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: ${({ theme }) => theme.spacing.sm};
+  
+  @media (max-width: 1024px) {
+    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xxl};
+  }
+  
+  @media (max-width: 768px) {
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
+  }
+  
+  @media (max-width: 480px) {
+    padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.lg};
+  }
+`;
+
+const Breadcrumb = styled.nav`
+  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-weight: ${({ theme }) => theme.fontWeights.normal};
+  letter-spacing: 0.02em;
+  margin-bottom: ${({ theme }) => theme.spacing.xs};
+  opacity: 0.9;
+  
+  a {
+    color: ${({ theme }) => theme.colors.white};
+    text-decoration: none;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: ${({ theme }) => theme.colors.goldAccent};
+    }
+  }
+  
+  .separator {
+    margin: 0 ${({ theme }) => theme.spacing.sm};
+  }
+  
+  .current {
+    color: ${({ theme }) => theme.colors.white};
+  }
+`;
+
+const Title = styled.h1`
+  font-size: ${({ theme }) => theme.fontSizes.h2};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  color: ${({ theme }) => theme.colors.white};
+  line-height: 1.2;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0;
+  font-family: ${({ theme }) => theme.fontFamilies.heading};
+  
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+`;
 
 const BulletList = styled.ul`
   list-style: none;
@@ -52,15 +171,20 @@ interface IndustryZoneSectionProps {
 const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _onNavigate }) => {
   return (
     <>
-      <TextHero
-        title="Industry Zone"
-        backgroundImage="https://images.unsplash.com/photo-1581094271901-8022df4466f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Master Plan", href: "/master-plan" },
-          { label: "Industry Zone" }
-        ]}
-      />
+      <HeroSection>
+        <HeroImage src="/assets/images/masterPlan/industryZone/hero.jpg" alt="Industry Zone" />
+        <Overlay />
+        <ContentBox>
+          <Breadcrumb>
+            <a href="/">Home</a>
+            <span className="separator">›</span>
+            <a href="/master-plan">Master Plan</a>
+            <span className="separator">›</span>
+            <span className="current">Industry Zone</span>
+          </Breadcrumb>
+          <Title>Industry Zone</Title>
+        </ContentBox>
+      </HeroSection>
       
       <WhiteSection>
         <Container>
@@ -72,13 +196,10 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
               <IntroText>
                 Industrial zone management ensures smooth operations for tenants while maximizing the site's competitive benefits.
               </IntroText>
-              <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Core Development Features</h3>
-              <BulletList>
-                <li>Manage facilities, infrastructure, and bonded warehouses.</li>
-                <li>Coordinate with U.S. Customs & Border Protection (CBP) for FTZ compliance.</li>
-                <li>Provide integrated logistics, supply chain, and tenant services.</li>
-                <li>Support cross-border manufacturers relocating to the U.S.</li>
-              </BulletList>
+              <SubsectionTitle>Core Development Features</SubsectionTitle>
+              <p>
+                Manage facilities, infrastructure, and bonded warehouses. Coordinate with U.S. Customs & Border Protection (CBP) for FTZ compliance. Provide integrated logistics, supply chain, and tenant services. Support cross-border manufacturers relocating to the U.S.
+              </p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">

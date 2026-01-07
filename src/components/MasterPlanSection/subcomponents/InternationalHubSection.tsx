@@ -145,11 +145,9 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
                 <p key={idx}>{paragraph}</p>
               ))}
               <SubsectionTitle>Target Partners</SubsectionTitle>
-              <PartnersList>
-                {INTERNATIONAL_HUB_DATA.content.targetPartners.map((partner, idx) => (
-                  <li key={idx}>{partner}</li>
-                ))}
-              </PartnersList>
+              {INTERNATIONAL_HUB_DATA.content.targetPartners.map((partner, idx) => (
+                <p key={idx} style={{ marginBottom: idx < INTERNATIONAL_HUB_DATA.content.targetPartners.length - 1 ? '0.75rem' : '0' }} dangerouslySetInnerHTML={{ __html: partner }} />
+              ))}
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -193,16 +191,20 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
 
       <TealSection>
         <TealBox>
-          <h3 style={{ marginBottom: '1rem', color: 'white' }}>Core Functions of the International Hub</h3>
-          <FunctionsTable>
-            {INTERNATIONAL_HUB_DATA.content.coreFunctions.map((item, idx) => (
-              <FunctionCard key={idx}>
-                <h4>{item.function}</h4>
-                <p className="description"><strong>Description:</strong> {item.description}</p>
-                <p className="impact"><strong>Impact:</strong> {item.impact}</p>
-              </FunctionCard>
-            ))}
-          </FunctionsTable>
+          <h3 style={{ marginBottom: '1.5rem', color: 'white', fontSize: '1.5rem', fontWeight: '500' }}>Core Functions of the International Hub</h3>
+          {INTERNATIONAL_HUB_DATA.content.coreFunctions.map((item, idx) => (
+            <div key={idx} style={{ marginBottom: '2rem' }}>
+              <h4 style={{ color: 'white', fontSize: '1.125rem', fontWeight: '500', marginBottom: '0.5rem' }}>
+                {item.function}
+              </h4>
+              <p style={{ color: 'white', fontSize: '0.9375rem', marginBottom: '0.5rem', opacity: 0.9 }}>
+                <strong>Description:</strong> {item.description}
+              </p>
+              <p style={{ color: 'white', fontSize: '0.9375rem', opacity: 0.85 }}>
+                <strong>Impact:</strong> {item.impact}
+              </p>
+            </div>
+          ))}
         </TealBox>
       </TealSection>
       
@@ -217,11 +219,9 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
             </ImageBox>
             <TextContent>
               <h3 style={{ marginBottom: '1.5rem' }}>{INTERNATIONAL_HUB_DATA.content.advantages.heading}</h3>
-              <PartnersList>
-                {INTERNATIONAL_HUB_DATA.content.advantages.items.map((advantage, idx) => (
-                  <li key={idx}>{advantage}</li>
-                ))}
-              </PartnersList>
+              {INTERNATIONAL_HUB_DATA.content.advantages.items.map((item, idx) => (
+                <p key={idx} style={{ marginBottom: idx < INTERNATIONAL_HUB_DATA.content.advantages.items.length - 1 ? '0.75rem' : '0' }} dangerouslySetInnerHTML={{ __html: item }} />
+              ))}
             </TextContent>
           </GreyContentGrid>
         </Container>

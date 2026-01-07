@@ -12,11 +12,11 @@ export const WhiteSection = styled.section`
 
 export const GreySection = styled.section`
   background: ${({ theme }) => theme.colors.grey};
-  padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xl};
   position: relative;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.lg};
   }
 `;
 
@@ -176,10 +176,10 @@ export const ImageBox = styled.div`
 export const ContentWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 0 2rem 4rem;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: 3rem 1.5rem;
+    padding: 0 1.5rem 3rem;
   }
 `;
 
@@ -196,13 +196,25 @@ export const IntroText = styled.p`
 
 export const SectionTitle = styled.h2`
   font-size: ${({ theme }) => theme.fontSizes['2xl']};
-  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.primary};
   margin: 3rem 0 1.5rem;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: ${({ theme }) => theme.fontSizes.xl};
     margin: 2rem 0 1rem;
+  }
+`;
+
+export const SubsectionTitle = styled.h3`
+  font-size: ${({ theme }) => theme.fontSizes.h4};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  color: ${({ theme }) => theme.colors.darkBlue};
+  margin-top: ${({ theme }) => theme.spacing.xxl};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes.h5};
   }
 `;
 

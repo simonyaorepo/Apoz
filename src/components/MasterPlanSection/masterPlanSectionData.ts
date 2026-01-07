@@ -44,10 +44,10 @@ export const INTERNATIONAL_HUB_DATA = {
     advantages: {
       heading: "Strategic Advantages",
       items: [
-        "FTZ-171 Status: Duty-free imports/exports for global supply chains.",
-        "QOZ Tax Benefits: Attracts global capital through capital gains tax deferral and tax-free growth.",
-        "Proximity to Houston Port: Seamless integration with one of the busiest shipping hubs in the U.S.",
-        "Asia-Pacific Connectivity: Focused on serving Chinese, ASEAN, Korean, Japanese, and Indian manufacturers seeking 'friend-shoring' options."
+        "<strong>FTZ-171 Status:</strong> Duty-free imports/exports for global supply chains.",
+        "<strong>QOZ Tax Benefits:</strong> Attracts global capital through capital gains tax deferral and tax-free growth.",
+        "<strong>Proximity to Houston Port:</strong> Seamless integration with one of the busiest shipping hubs in the U.S.",
+        "<strong>Asia-Pacific Connectivity:</strong> Focused on serving Chinese, ASEAN, Korean, Japanese, and Indian manufacturers seeking 'friend-shoring' options."
       ]
     },
     industries: {

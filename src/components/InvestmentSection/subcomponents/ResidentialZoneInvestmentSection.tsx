@@ -18,10 +18,14 @@ interface ResidentialZoneInvestmentSectionProps {
 
 
 const TealTitle = styled.h3`
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: ${({ theme }) => theme.fontSizes.h4};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: white;
-  margin-bottom: 1.5rem;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes.h5};
+  }
 `;
 
 const BenefitsTable = styled.table`
@@ -217,7 +221,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
         </TealBox>
       </TealSection>
 
-      <Section>
+      <Section $background='grey'>
         <ContentWrapper>
           <SectionTitle>How Qualified Opportunity Funds (QOFs) Work</SectionTitle>
           <IntroText>
@@ -263,75 +267,74 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
 
           <HighlightBox>
             <SectionTitle>QOF Requirements</SectionTitle>
-            <BenefitsList>
-              <BenefitsItem>
-                <strong>90% Asset Test:</strong> At least 90% of QOF assets must be in QOZ property or businesses
-              </BenefitsItem>
-              <BenefitsItem>
-                <strong>180-Day Reinvestment Window:</strong> Investors must invest capital gains into the QOF within 180 days of realizing them
-              </BenefitsItem>
-              <BenefitsItem>
-                <strong>Substantial Improvement:</strong> If buying existing property, QOF must double the investment basis within 30 months
-              </BenefitsItem>
-            </BenefitsList>
+            <IntroText>
+              <strong>90% Asset Test:</strong> At least 90% of QOF assets must be in QOZ property or businesses.
+            </IntroText>
+            <IntroText>
+              <strong>180-Day Reinvestment Window:</strong> Investors must invest capital gains into the QOF within 180 days of realizing them.
+            </IntroText>
+            <IntroText>
+              <strong>Substantial Improvement:</strong> If buying existing property, QOF must double the investment basis within 30 months.
+            </IntroText>
           </HighlightBox>
         </ContentWrapper>
       </Section>
 
-      <Section>
+      <GoldDivider />
+
+      <Section $background='grey'>
         <ContentWrapper>
           <SectionTitle>LIHTC Financing for Affordable Housing</SectionTitle>
           <IntroText>
             The Low-Income Housing Tax Credit (LIHTC) program provides federal tax credits to developers who build or rehabilitate affordable rental housing. APOZ residential projects can layer LIHTC financing with QOZ/QOF incentives.
           </IntroText>
 
-          <BenefitsList>
-            <BenefitsItem>
-              <strong>Federal Tax Credits:</strong> Dollar-for-dollar reduction in federal tax liability over 10 years
-            </BenefitsItem>
-            <BenefitsItem>
-              <strong>Equity Investment:</strong> LIHTC syndicators provide upfront equity in exchange for tax credits
-            </BenefitsItem>
-            <BenefitsItem>
-              <strong>Affordability Requirements:</strong> Units must remain affordable for 30+ years, ensuring community impact
-            </BenefitsItem>
-            <BenefitsItem>
-              <strong>Combined QOZ + LIHTC:</strong> Maximize capital stack with both federal incentive programs
-            </BenefitsItem>
-          </BenefitsList>
+          <IntroText>
+            <strong>Federal Tax Credits:</strong> Dollar-for-dollar reduction in federal tax liability over 10 years.
+          </IntroText>
+          <IntroText>
+            <strong>Equity Investment:</strong> LIHTC syndicators provide upfront equity in exchange for tax credits.
+          </IntroText>
+          <IntroText>
+            <strong>Affordability Requirements:</strong> Units must remain affordable for 30+ years, ensuring community impact.
+          </IntroText>
+          <IntroText>
+            <strong>Combined QOZ + LIHTC:</strong> Maximize capital stack with both federal incentive programs.
+          </IntroText>
         </ContentWrapper>
       </Section>
 
-      <Section>
+      <GoldDivider />
+
+      <Section $background='grey'>
         <ContentWrapper>
           <SectionTitle>Investment Structure & Returns</SectionTitle>
           
           <ExampleBox>
             <ExampleTitle>Target Returns (Illustrative)</ExampleTitle>
-            <ExampleList>
-              <ExampleItem>8-12% Stabilized Yield on affordable housing portfolio</ExampleItem>
-              <ExampleItem>15-20% IRR with QOZ tax benefits factored in</ExampleItem>
-              <ExampleItem>Zero federal capital gains tax on exit after 10 years</ExampleItem>
-              <ExampleItem>Strong ESG profile attracts institutional investors</ExampleItem>
-            </ExampleList>
+            <IntroText>
+              The affordable housing portfolio targets an 8-12% stabilized yield, with projected IRRs of 15-20% when QOZ tax benefits are factored in. After the 10-year hold period, investors pay zero federal capital gains tax on exit. The strong ESG profile makes this particularly attractive to institutional investors.
+            </IntroText>
           </ExampleBox>
 
           <SectionTitle>Target Investor Profile</SectionTitle>
-          <BenefitsList>
-            <BenefitsItem>High-net-worth individuals with recent capital gains</BenefitsItem>
-            <BenefitsItem>Family offices seeking tax-advantaged real estate investments</BenefitsItem>
-            <BenefitsItem>Impact investors focused on affordable housing and community development</BenefitsItem>
-            <BenefitsItem>Institutional funds with LIHTC investment mandates</BenefitsItem>
-            <BenefitsItem>Asia-Pacific investors seeking U.S. market entry with tax benefits</BenefitsItem>
-          </BenefitsList>
+          <IntroText>
+            This opportunity is ideal for high-net-worth individuals with recent capital gains, as well as family offices seeking tax-advantaged real estate investments. Impact investors focused on affordable housing and community development will appreciate the social returns, while institutional funds with LIHTC investment mandates can fulfill their requirements. Asia-Pacific investors seeking U.S. market entry will find the combined tax benefits particularly compelling.
+          </IntroText>
 
           <SectionTitle>Exit Strategies</SectionTitle>
-          <BenefitsList>
-            <BenefitsItem>REIT conversion and securitization of stabilized assets</BenefitsItem>
-            <BenefitsItem>Portfolio sale to institutional affordable housing funds</BenefitsItem>
-            <BenefitsItem>Refinancing after 10-year hold for tax-free gains</BenefitsItem>
-            <BenefitsItem>Strategic sale to public housing authorities or non-profits</BenefitsItem>
-          </BenefitsList>
+          <IntroText>
+            Multiple exit pathways exist for investors, including REIT conversion and securitization of stabilized assets.
+          </IntroText>
+          <IntroText>
+            Portfolio sale to institutional affordable housing funds offers a direct exit strategy.
+          </IntroText>
+          <IntroText>
+            Investors can also refinance after the 10-year hold period to realize tax-free gains while retaining ownership.
+          </IntroText>
+          <IntroText>
+            Strategic sales to public housing authorities or non-profit organizations provide mission-aligned exit opportunities.
+          </IntroText>
         </ContentWrapper>
       </Section>
 
