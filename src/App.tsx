@@ -11,7 +11,7 @@ import NewsPage from "./pages/NewsPage";
 import NewsArticlePage from "./pages/NewsArticlePage";
 import InvestmentPage from "./pages/InvestmentPage";
 import { InstitutionalFooter } from "./components/InstitutionalFooter";
-
+//deployment test
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
