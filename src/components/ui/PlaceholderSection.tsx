@@ -1,9 +1,10 @@
 import React from "react";
 import TextHero from "../TextHero";
 import styled from "styled-components";
-import { Section, Container } from "../ui/Section";
+import { WhiteSection } from "./Sections";
+import { Container } from "./Containers";
 
-const ContentSection = styled(Section)`
+const ContentSection = styled(WhiteSection)`
   background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing.xxxl} 0;
   

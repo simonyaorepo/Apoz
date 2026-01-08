@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Section, Container, SectionTitle } from "../../ui/Section";
+import { GreySection } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { SectionTitle } from "../../ui/Typography";
 import { Card, CardTitle, CardDescription } from "../../ui/Card";
 import { IconCircle } from "../../ui/IconCircle";
 import { benefits } from "./investmentSectionData";
@@ -22,7 +24,7 @@ const CenteredCard = styled.div`
 
 const BenefitsSection: React.FC = () => {
   return (
-    <Section $background="grey">
+    <GreySection>
       <Container>
         <SectionTitle>Why Invest in APOZ?</SectionTitle>
         <BenefitsGrid>
@@ -42,7 +44,7 @@ const BenefitsSection: React.FC = () => {
           })}
         </BenefitsGrid>
       </Container>
-    </Section>
+    </GreySection>
   );
 };
 

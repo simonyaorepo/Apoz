@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { DollarSign, Building2, Home } from "lucide-react";
-import { Section, Container, SectionTitle } from "../InvestmentSection.styles";
+import { WhiteSection } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { SectionTitle } from "../../ui/Typography";
 import { FINANCIAL_PROJECTIONS } from "./investmentSectionData";
 
 const ProjectionsGrid = styled.div`
@@ -148,7 +150,7 @@ const formatNumber = (value: number): string => {
 
 const FinancialProjections: React.FC = () => {
   return (
-    <Section>
+    <WhiteSection>
       <Container>
         <SectionTitle>{FINANCIAL_PROJECTIONS.title}</SectionTitle>
         <Subtitle>{FINANCIAL_PROJECTIONS.subtitle}</Subtitle>
@@ -237,7 +239,7 @@ const FinancialProjections: React.FC = () => {
           })}
         </ProjectionsGrid>
       </Container>
-    </Section>
+    </WhiteSection>
   );
 };
 

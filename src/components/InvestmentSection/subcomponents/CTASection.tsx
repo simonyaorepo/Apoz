@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../InvestmentSection.styles";
+import { Container } from "../../ui/Containers";
 
 const Section = styled.section`
   background: ${({ theme }) => theme.gradients.tealOverlay},

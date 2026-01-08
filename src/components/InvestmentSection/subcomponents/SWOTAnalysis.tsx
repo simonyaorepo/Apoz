@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { AlertCircle, CheckCircle, TrendingUp, AlertTriangle } from "lucide-react";
-import { Section, Container, SectionTitle } from "../InvestmentSection.styles";
+import { WhiteSection, GreySection } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { SectionTitle } from "../../ui/Typography";
 import { SWOT_ANALYSIS } from "./investmentSectionData";
 
 const TabsContainer = styled.div`
@@ -192,7 +194,7 @@ const SWOTAnalysis: React.FC = () => {
   };
 
   return (
-    <Section style={{ background: '#f8f9fa' }}>
+    <GreySection style={{ background: '#f8f9fa' }}>
       <Container>
         <SectionTitle>{SWOT_ANALYSIS.title}</SectionTitle>
         <Subtitle>{SWOT_ANALYSIS.subtitle}</Subtitle>
@@ -226,7 +228,7 @@ const SWOTAnalysis: React.FC = () => {
         
         {renderContent()}
       </Container>
-    </Section>
+    </GreySection>
   );
 };
 

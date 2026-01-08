@@ -1,11 +1,10 @@
 import React from "react";
 import TextHero from "../../TextHero";
-import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
 import { ContentWrapper, GreyContent } from "../../ui/Containers";
 import { IntroText, SectionTitle } from "../../ui/Typography";
 import { StyledTable } from "../../ui/Table";
-import { GreySection } from "../../ui/Sections";
+import { WhiteSection, GreySection } from "../../ui/Sections";
 import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 
 interface QOFZoneSectionProps {
@@ -25,13 +24,13 @@ const QOFZoneSection: React.FC<QOFZoneSectionProps> = () => {
         ]}
       />
 
-      <Section>
+      <WhiteSection>
         <ContentWrapper>
           <IntroText>
             A Qualified Opportunity Fund (QOF) is an investment vehicle organized as a corporation or partnership for the purpose of investing in Qualified Opportunity Zone property. QOFs must hold at least 90% of their assets in QOZ property to maintain qualified status.
           </IntroText>
         </ContentWrapper>
-      </Section>
+      </WhiteSection>
 
       <GoldDivider />
 
@@ -73,7 +72,7 @@ const QOFZoneSection: React.FC<QOFZoneSectionProps> = () => {
 
       <GoldDivider />
 
-      <Section>
+      <WhiteSection>
         <ContentWrapper>
           <SectionTitle>QOF Formation Process</SectionTitle>
           <RequirementsList>
@@ -99,7 +98,7 @@ const QOFZoneSection: React.FC<QOFZoneSectionProps> = () => {
             </div>
           </RequirementsList>
         </ContentWrapper>
-      </Section>
+      </WhiteSection>
     </>
   );
 };

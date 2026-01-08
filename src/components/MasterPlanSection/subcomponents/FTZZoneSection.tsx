@@ -1,11 +1,10 @@
 import React from "react";
 import TextHero from "../../TextHero";
-import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
 import { ContentWrapper, GreyContent } from "../../ui/Containers";
 import { IntroText, SectionTitle } from "../../ui/Typography";
 import { StyledTable } from "../../ui/Table";
-import { GreySection } from "../../ui/Sections";
+import { WhiteSection, GreySection } from "../../ui/Sections";
 import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 import { GreyContentGrid } from "../../ui/Grids";
 import { ImageBox } from "../../ui/Media";
@@ -28,13 +27,13 @@ const FTZZoneSection: React.FC<FTZZoneSectionProps> = () => {
         ]}
       />
 
-      <Section>
+      <WhiteSection>
         <ContentWrapper>
           <IntroText>
             Foreign Trade Zone 171 (FTZ-171) is a designated U.S. Customs and Border Protection territory that allows businesses to defer, reduce, or eliminate customs duties on foreign goods. The APOZ property operates under FTZ-171 activation, enabling international trade advantages for industrial tenants.
           </IntroText>
         </ContentWrapper>
-      </Section>
+      </WhiteSection>
 
       <GoldDivider />
 

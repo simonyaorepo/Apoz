@@ -4,10 +4,11 @@ import BenefitsSection from "./BenefitsSection";
 import OpportunitiesSection from "./OpportunitiesSection";
 import SWOTAnalysis from "./SWOTAnalysis";
 import styled from "styled-components";
-import { Section, Container } from "../../ui/Section";
+import { WhiteSection } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
 import { INVESTMENT_OVERVIEW } from "./investmentSectionData";
 
-const IntroSection = styled(Section)`
+const IntroSection = styled(WhiteSection)`
   background: ${({ theme }) => theme.colors.white};
 `;
 

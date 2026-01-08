@@ -1,12 +1,11 @@
 import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
-import { Section } from "../../ui/Section";
+import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import GoldDivider from "../../ui/GoldDivider";
 import { ContentWrapper } from "../../ui/Containers";
 import { IntroText, SectionTitle } from "../../ui/Typography";
 import { StyledTable } from "../../ui/Table";
-import { TealSection, TealBox } from "../../ui/Sections";
 import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 
 interface IndustryZoneInvestmentSectionProps {
@@ -67,7 +66,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
         ]}
       />
       
-      <Section>
+      <WhiteSection>
         <ContentWrapper>
           <IntroText>
             APOZ's industrial zone leverages Foreign Trade Zone (FTZ-171) designation to provide significant cost advantages for manufacturing, logistics, and import/export operations. Combined with strategic location along the Houston Gulf Coast Corridor, this creates compelling investment opportunities in advanced manufacturing and global trade infrastructure.
@@ -120,7 +119,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
             </tbody>
           </StyledTable>
         </ContentWrapper>
-      </Section>
+      </WhiteSection>
 
       <TealSection>
         <TealBox>
@@ -145,7 +144,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
         </TealBox>
       </TealSection>
 
-      <Section $background='grey'>
+      <GreySection>
         <ContentWrapper>
           <SectionTitle>Target Industries & Investment Opportunities</SectionTitle>
           
@@ -215,11 +214,11 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
             </RequirementsList>
           </HighlightBox>
         </ContentWrapper>
-      </Section>
+      </GreySection>
 
       <GoldDivider />
 
-      <Section $background='grey'>
+      <GreySection>
         <ContentWrapper>
           <SectionTitle>Investment Returns & Tenant Advantages</SectionTitle>
           
@@ -261,11 +260,11 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
             </div>
           </RequirementsList>
         </ContentWrapper>
-      </Section>
+      </GreySection>
 
       <GoldDivider />
 
-      <Section $background='grey'>
+      <GreySection>
         <ContentWrapper>
           <SectionTitle>Combined QOZ + FTZ Investment Benefits</SectionTitle>
           
@@ -336,7 +335,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
             </div>
           </RequirementsList>
         </ContentWrapper>
-      </Section>
+      </GreySection>
 
       <GoldDivider />
     </>

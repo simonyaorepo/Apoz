@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import TextHero from "../../TextHero";
-import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
 import { RESIDENTIAL_MANAGEMENT_DATA } from "../servicesSectionData";
-import { TealSection, TealBox } from "../../ui/Sections";
+import { WhiteSection, TealSection, TealBox } from "../../ui/Sections";
 
 const ContentWrapper = styled.div`
   max-width: 1200px;
@@ -110,7 +109,7 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
         breadcrumbs={RESIDENTIAL_MANAGEMENT_DATA.breadcrumbs}
       />
       
-      <Section>
+      <WhiteSection>
         <ContentWrapper>
           {RESIDENTIAL_MANAGEMENT_DATA.content.intro.map((paragraph, index) => (
             <IntroText key={index}>{paragraph}</IntroText>
@@ -150,7 +149,7 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
             </tbody>
           </StyledTable>
         </ContentWrapper>
-      </Section>
+      </WhiteSection>
 
       <TealSection>
         <TealBox>

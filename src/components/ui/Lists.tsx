@@ -6,7 +6,7 @@ export const BulletList = styled.ul`
   margin: 0;
   
   li {
-    font-size: ${({ theme }) => theme.fontSizes.lg};
+    font-size: ${({ theme }) => theme.fontSizes.md};
     line-height: 1.8;
     color: ${({ theme }) => theme.colors.darkBlue};
     margin-bottom: 1rem;
@@ -24,7 +24,7 @@ export const BulletList = styled.ul`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     li {
-      font-size: ${({ theme }) => theme.fontSizes.md};
+      font-size: ${({ theme }) => theme.fontSizes.sm};
     }
   }
 `;

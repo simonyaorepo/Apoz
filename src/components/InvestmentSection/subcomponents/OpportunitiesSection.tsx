@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Section, Container, SectionTitle } from "../../ui/Section";
+import { WhiteSection } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { SectionTitle } from "../../ui/Typography";
 import { Card } from "../../ui/Card";
 import { opportunities } from "./investmentSectionData";
 
@@ -34,7 +36,7 @@ const OpportunityDescription = styled.p`
 
 const OpportunitiesSection: React.FC = () => {
   return (
-    <Section style={{ paddingBottom: '6rem' }}>
+    <WhiteSection style={{ paddingBottom: '6rem' }}>
       <Container>
         <SectionTitle>Current Opportunities</SectionTitle>
         <OpportunitiesGrid>
@@ -48,7 +50,7 @@ const OpportunitiesSection: React.FC = () => {
           ))}
         </OpportunitiesGrid>
       </Container>
-    </Section>
+    </WhiteSection>
   );
 };
 

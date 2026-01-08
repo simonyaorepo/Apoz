@@ -1,12 +1,11 @@
 import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
-import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
 import { ContentWrapper } from "../../ui/Containers";
 import { IntroText, SectionTitle } from "../../ui/Typography";
 import { StyledTable } from "../../ui/Table";
-import { TealSection, TealBox } from "../../ui/Sections";
+import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 
 interface ResidentialZoneInvestmentSectionProps {
@@ -91,7 +90,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
         ]}
       />
       
-      <Section>
+      <WhiteSection>
         <ContentWrapper>
           <IntroText>
             APOZ's residential zone combines affordable housing development with powerful tax incentives through Qualified Opportunity Zone (QOZ) and Qualified Opportunity Fund (QOF) structures, plus Low-Income Housing Tax Credit (LIHTC) financing.
@@ -132,7 +131,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
             </tbody>
           </StyledTable>
         </ContentWrapper>
-      </Section>
+      </WhiteSection>
 
       <TealSection>
         <TealBox>
@@ -172,7 +171,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
         </TealBox>
       </TealSection>
 
-      <Section $background='grey'>
+      <GreySection>
         <ContentWrapper>
           <SectionTitle>How Qualified Opportunity Funds (QOFs) Work</SectionTitle>
           <IntroText>
@@ -234,11 +233,11 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
             </RequirementsList>
           </HighlightBox>
         </ContentWrapper>
-      </Section>
+      </GreySection>
 
       <GoldDivider />
 
-      <Section $background='grey'>
+      <GreySection>
         <ContentWrapper>
           <SectionTitle>LIHTC Financing for Affordable Housing</SectionTitle>
           <IntroText>
@@ -264,11 +263,11 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
             </div>
           </RequirementsList>
         </ContentWrapper>
-      </Section>
+      </GreySection>
 
       <GoldDivider />
 
-      <Section $background='grey'>
+      <GreySection>
         <ContentWrapper>
           <SectionTitle>Investment Structure & Returns</SectionTitle>
           
@@ -300,7 +299,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
             </div>
           </RequirementsList>
         </ContentWrapper>
-      </Section>
+      </GreySection>
 
       <GoldDivider />
     </>

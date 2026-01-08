@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Section, Container, SectionTitle } from "../InvestmentSection.styles";
+import { GreySection } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { SectionTitle } from "../../ui/Typography";
 import { USE_OF_FUNDS } from "./investmentSectionData";
 
 const PhasesContainer = styled.div`
@@ -149,7 +151,7 @@ const formatCurrency = (value: number): string => {
 
 const UseOfFunds: React.FC = () => {
   return (
-    <Section>
+    <WhiteSection>
       <Container>
         <SectionTitle>{USE_OF_FUNDS.title}</SectionTitle>
         
@@ -289,7 +291,7 @@ const UseOfFunds: React.FC = () => {
           </TotalAmount>
         </Total>
       </Container>
-    </Section>
+    </WhiteSection>
   );
 };
 

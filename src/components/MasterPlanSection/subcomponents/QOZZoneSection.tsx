@@ -1,11 +1,10 @@
 import React from "react";
 import TextHero from "../../TextHero";
-import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
 import { ContentWrapper, GreyContent } from "../../ui/Containers";
 import { IntroText, SectionTitle } from "../../ui/Typography";
 import { StyledTable } from "../../ui/Table";
-import { GreySection } from "../../ui/Sections";
+import { WhiteSection, GreySection } from "../../ui/Sections";
 import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 
 interface QOZZoneSectionProps {
@@ -25,13 +24,13 @@ const QOZZoneSection: React.FC<QOZZoneSectionProps> = () => {
         ]}
       />
 
-      <Section>
+      <WhiteSection>
         <ContentWrapper>
           <IntroText>
             Qualified Opportunity Zones (QOZs) are economically distressed census tracts designated by the U.S. Treasury to incentivize long-term investment through tax benefits. The APOZ property is located within a federally certified QOZ, making it eligible for significant tax advantages when invested through a Qualified Opportunity Fund.
           </IntroText>
         </ContentWrapper>
-      </Section>
+      </WhiteSection>
 
       <GoldDivider />
 
@@ -69,7 +68,7 @@ const QOZZoneSection: React.FC<QOZZoneSectionProps> = () => {
 
       <GoldDivider />
 
-      <Section>
+      <WhiteSection>
         <ContentWrapper>
           <SectionTitle>APOZ QOZ Compliance Requirements</SectionTitle>
           <RequirementsList>
@@ -95,7 +94,7 @@ const QOZZoneSection: React.FC<QOZZoneSectionProps> = () => {
             </div>
           </RequirementsList>
         </ContentWrapper>
-      </Section>
+      </WhiteSection>
     </>
   );
 };

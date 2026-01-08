@@ -7,35 +7,7 @@ import { ContentGrid } from "../../ui/Grids";
 import { TextContent, IntroText, SectionTitle, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
-
-const BulletList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-  
-  li {
-    font-size: ${({ theme }) => theme.fontSizes.lg};
-    line-height: 1.8;
-    color: ${({ theme }) => theme.colors.darkBlue};
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
-
-    &:before {
-      content: "•";
-      color: ${({ theme }) => theme.colors.accent};
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-    }
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    li {
-      font-size: ${({ theme }) => theme.fontSizes.md};
-    }
-  }
-`;
+import { BulletList } from "../../ui/Lists";
 
 interface AffordableLivingZoneSectionProps {
   onNavigate: (page: string) => void;
