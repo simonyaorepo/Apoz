@@ -1,20 +1,14 @@
 import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
-import {
-  WhiteSection,
-  GreySection,
-  Container,
-  ContentGrid,
-  GreyContentGrid,
-  TextContent,
-  TealSection,
-  TealBox,
-  IllustrationBox,
-  ImageBox,
-  SubsectionTitle,
-} from "./SharedStyles";
+import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
+import { Container, ContentWrapper } from "../../ui/Containers";
+import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
+import { TextContent, SubsectionTitle, SectionTitle } from "../../ui/Typography";
+import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { INFRASTRUCTURE_INVESTMENT_DATA } from "./investmentSectionData";
+import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
+import { StyledTable } from "../../ui/Table";
 
 const ScopeTable = styled.div`
   display: grid;
@@ -201,21 +195,38 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
 
       <TealSection>
         <TealBox>
-          <SubsectionTitle style={{ color: 'white' }}>Infrastructure Scope</SubsectionTitle>
-          {INFRASTRUCTURE_INVESTMENT_DATA.content.scope.map((item, idx) => (
-            <div key={idx} style={{ marginBottom: '2rem' }}>
-              <h4 style={{ color: 'white', fontSize: '1.25rem', marginBottom: '0.5rem' }}>{item.category}</h4>
-              <p style={{ color: 'white', fontSize: '1rem', marginBottom: '0.25rem', opacity: 0.9 }}>
-                <strong>Key Components:</strong> {item.components}
-              </p>
-              <p style={{ color: 'white', fontSize: '1rem', opacity: 0.9 }}>
-                <strong>Purpose:</strong> {item.purpose}
-              </p>
-            </div>
-          ))}
+          <p style={{ color: 'white', fontSize: '1.125rem', lineHeight: '1.8' }}>
+            Infrastructure development underpins the success of APOZ's industrial facilities and affordable housing, creating a fully integrated trade and manufacturing ecosystem with transportation, utilities, digital connectivity, FTZ facilities, residential infrastructure, and environmental systems.
+          </p>
         </TealBox>
       </TealSection>
       
+      <GreySection>
+        <Container>
+          <ContentWrapper>
+            <SectionTitle>Infrastructure Scope</SectionTitle>
+            <StyledTable>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Key Components</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                {INFRASTRUCTURE_INVESTMENT_DATA.content.scope.map((item, idx) => (
+                  <tr key={idx}>
+                    <td><strong>{item.category}</strong></td>
+                    <td>{item.components}</td>
+                    <td>{item.purpose}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </StyledTable>
+          </ContentWrapper>
+        </Container>
+      </GreySection>
+
       <GreySection>
         <Container>
           <GreyContentGrid>
@@ -243,43 +254,27 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
         <Container>
           <TextContent>
             <SubsectionTitle>{INFRASTRUCTURE_INVESTMENT_DATA.content.funding.heading}</SubsectionTitle>
-            <p style={{ marginBottom: '0.75rem' }}>
-              <strong>Private Capital via QOF:</strong> Leverage Qualified Opportunity Zone (QOZ) tax benefits.
-            </p>
-            <p style={{ marginBottom: '0.75rem' }}>
-              <strong>Infrastructure Financing:</strong> Partnerships with Texas development authorities.
-            </p>
-            <p style={{ marginBottom: '0.75rem' }}>
-              <strong>Tenant Participation:</strong> Built-to-suit facilities include partial cost-sharing.
-            </p>
-            <p style={{ marginBottom: '0.75rem' }}>
-              <strong>Public-Private Grants:</strong> Potential HUD and DOE programs for sustainable energy and housing.
-            </p>
+            <RequirementsList>
+              <div>
+                <RequirementTitle>Private Capital via QOF</RequirementTitle>
+                <RequirementText>Leverage Qualified Opportunity Zone (QOZ) tax benefits.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Infrastructure Financing</RequirementTitle>
+                <RequirementText>Partnerships with Texas development authorities.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Tenant Participation</RequirementTitle>
+                <RequirementText>Built-to-suit facilities include partial cost-sharing.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Public-Private Grants</RequirementTitle>
+                <RequirementText>Potential HUD and DOE programs for sustainable energy and housing.</RequirementText>
+              </div>
+            </RequirementsList>
           </TextContent>
         </Container>
       </WhiteSection>
-
-      <GreySection>
-        <Container>
-          <TextContent>
-            <SubsectionTitle>Benefits for Tenants & Investors</SubsectionTitle>
-            <BenefitsGrid>
-              <BenefitCard>
-                <h4>For Tenants</h4>
-                {INFRASTRUCTURE_INVESTMENT_DATA.content.benefits.tenants.map((benefit, idx) => (
-                  <p key={idx} style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>{benefit}</p>
-                ))}
-              </BenefitCard>
-              <BenefitCard>
-                <h4>For Investors</h4>
-                {INFRASTRUCTURE_INVESTMENT_DATA.content.benefits.investors.map((benefit, idx) => (
-                  <p key={idx} style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>{benefit}</p>
-                ))}
-              </BenefitCard>
-            </BenefitsGrid>
-          </TextContent>
-        </Container>
-      </GreySection>
     </>
   );
 };

@@ -2,14 +2,11 @@ import React from "react";
 import TextHero from "../../TextHero";
 import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
-import {
-  ContentWrapper,
-  IntroText,
-  SectionTitle,
-  StyledTable,
-  GreySection,
-  GreyContent,
-} from "./SharedStyles";
+import { ContentWrapper, GreyContent } from "../../ui/Containers";
+import { IntroText, SectionTitle } from "../../ui/Typography";
+import { StyledTable } from "../../ui/Table";
+import { GreySection } from "../../ui/Sections";
+import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 
 interface QOFZoneSectionProps {
   onNavigate: (page: string) => void;
@@ -79,21 +76,28 @@ const QOFZoneSection: React.FC<QOFZoneSectionProps> = () => {
       <Section>
         <ContentWrapper>
           <SectionTitle>QOF Formation Process</SectionTitle>
-          <IntroText>
-            <strong>1. Entity Formation:</strong> Organize as corporation or partnership for investment purposes
-          </IntroText>
-          <IntroText>
-            <strong>2. Self-Certification:</strong> File IRS Form 8996 to certify QOF status
-          </IntroText>
-          <IntroText>
-            <strong>3. Acquire QOZ Property:</strong> Purchase or develop qualifying property within designated zones
-          </IntroText>
-          <IntroText>
-            <strong>4. Maintain Compliance:</strong> Meet 90% asset test measured semi-annually, file annual certifications
-          </IntroText>
-          <IntroText>
-            <strong>5. Documentation:</strong> Maintain records of all QOZ property investments and improvements
-          </IntroText>
+          <RequirementsList>
+            <div>
+              <RequirementTitle>1. Entity Formation</RequirementTitle>
+              <RequirementText>Organize as corporation or partnership for investment purposes</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>2. Self-Certification</RequirementTitle>
+              <RequirementText>File IRS Form 8996 to certify QOF status</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>3. Acquire QOZ Property</RequirementTitle>
+              <RequirementText>Purchase or develop qualifying property within designated zones</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>4. Maintain Compliance</RequirementTitle>
+              <RequirementText>Meet 90% asset test measured semi-annually, file annual certifications</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>5. Documentation</RequirementTitle>
+              <RequirementText>Maintain records of all QOZ property investments and improvements</RequirementText>
+            </div>
+          </RequirementsList>
         </ContentWrapper>
       </Section>
     </>

@@ -3,13 +3,11 @@ import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
-import {  ContentWrapper,
-  IntroText,
-  SectionTitle,
-  StyledTable,
-  TealSection,
-  TealBox,
-} from "./SharedStyles";
+import { ContentWrapper } from "../../ui/Containers";
+import { IntroText, SectionTitle } from "../../ui/Typography";
+import { StyledTable } from "../../ui/Table";
+import { TealSection, TealBox } from "../../ui/Sections";
+import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 
 interface ResidentialZoneInvestmentSectionProps {
   onNavigate: (page: string) => void;
@@ -267,15 +265,20 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
 
           <HighlightBox>
             <SectionTitle>QOF Requirements</SectionTitle>
-            <IntroText>
-              <strong>90% Asset Test:</strong> At least 90% of QOF assets must be in QOZ property or businesses.
-            </IntroText>
-            <IntroText>
-              <strong>180-Day Reinvestment Window:</strong> Investors must invest capital gains into the QOF within 180 days of realizing them.
-            </IntroText>
-            <IntroText>
-              <strong>Substantial Improvement:</strong> If buying existing property, QOF must double the investment basis within 30 months.
-            </IntroText>
+            <RequirementsList>
+              <div>
+                <RequirementTitle>90% Asset Test</RequirementTitle>
+                <RequirementText>At least 90% of QOF assets must be in QOZ property or businesses.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>180-Day Reinvestment Window</RequirementTitle>
+                <RequirementText>Investors must invest capital gains into the QOF within 180 days of realizing them.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Substantial Improvement</RequirementTitle>
+                <RequirementText>If buying existing property, QOF must double the investment basis within 30 months.</RequirementText>
+              </div>
+            </RequirementsList>
           </HighlightBox>
         </ContentWrapper>
       </Section>
@@ -289,18 +292,24 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
             The Low-Income Housing Tax Credit (LIHTC) program provides federal tax credits to developers who build or rehabilitate affordable rental housing. APOZ residential projects can layer LIHTC financing with QOZ/QOF incentives.
           </IntroText>
 
-          <IntroText>
-            <strong>Federal Tax Credits:</strong> Dollar-for-dollar reduction in federal tax liability over 10 years.
-          </IntroText>
-          <IntroText>
-            <strong>Equity Investment:</strong> LIHTC syndicators provide upfront equity in exchange for tax credits.
-          </IntroText>
-          <IntroText>
-            <strong>Affordability Requirements:</strong> Units must remain affordable for 30+ years, ensuring community impact.
-          </IntroText>
-          <IntroText>
-            <strong>Combined QOZ + LIHTC:</strong> Maximize capital stack with both federal incentive programs.
-          </IntroText>
+          <RequirementsList>
+            <div>
+              <RequirementTitle>Federal Tax Credits</RequirementTitle>
+              <RequirementText>Dollar-for-dollar reduction in federal tax liability over 10 years.</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Equity Investment</RequirementTitle>
+              <RequirementText>LIHTC syndicators provide upfront equity in exchange for tax credits.</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Affordability Requirements</RequirementTitle>
+              <RequirementText>Units must remain affordable for 30+ years, ensuring community impact.</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Combined QOZ + LIHTC</RequirementTitle>
+              <RequirementText>Maximize capital stack with both federal incentive programs.</RequirementText>
+            </div>
+          </RequirementsList>
         </ContentWrapper>
       </Section>
 
@@ -323,18 +332,20 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
           </IntroText>
 
           <SectionTitle>Exit Strategies</SectionTitle>
-          <IntroText>
-            Multiple exit pathways exist for investors, including REIT conversion and securitization of stabilized assets.
-          </IntroText>
-          <IntroText>
-            Portfolio sale to institutional affordable housing funds offers a direct exit strategy.
-          </IntroText>
-          <IntroText>
-            Investors can also refinance after the 10-year hold period to realize tax-free gains while retaining ownership.
-          </IntroText>
-          <IntroText>
-            Strategic sales to public housing authorities or non-profit organizations provide mission-aligned exit opportunities.
-          </IntroText>
+          <RequirementsList>
+            <div>
+              <RequirementText>Multiple exit pathways exist for investors, including REIT conversion and securitization of stabilized assets.</RequirementText>
+            </div>
+            <div>
+              <RequirementText>Portfolio sale to institutional affordable housing funds offers a direct exit strategy.</RequirementText>
+            </div>
+            <div>
+              <RequirementText>Investors can also refinance after the 10-year hold period to realize tax-free gains while retaining ownership.</RequirementText>
+            </div>
+            <div>
+              <RequirementText>Strategic sales to public housing authorities or non-profit organizations provide mission-aligned exit opportunities.</RequirementText>
+            </div>
+          </RequirementsList>
         </ContentWrapper>
       </Section>
 

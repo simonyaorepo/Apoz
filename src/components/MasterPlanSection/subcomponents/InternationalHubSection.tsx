@@ -1,18 +1,11 @@
 import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
-import {
-  WhiteSection,
-  GreySection,
-  Container,
-  ContentGrid,
-  GreyContentGrid,
-  TextContent,
-  TealSection,
-  TealBox,
-  IllustrationBox,
-  ImageBox,
-} from "./SharedStyles";
+import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
+import { TextContent } from "../../ui/Typography";
+import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { INTERNATIONAL_HUB_DATA } from "../masterPlanSectionData";
 
 const PartnersList = styled.ul`

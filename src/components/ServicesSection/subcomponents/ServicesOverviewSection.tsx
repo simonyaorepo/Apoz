@@ -2,11 +2,8 @@ import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { SERVICES_OVERVIEW_DATA } from "../servicesSectionData";
-import {
-  TealSection,
-  TealBox,
-  IllustrationBox,
-} from "./SharedStyles";
+import { TealSection, TealBox } from "../../ui/Sections";
+import { IllustrationBox } from "../../ui/Media";
 
 const TealTitle = styled.h3`
   color: white;
@@ -16,12 +13,12 @@ const TealTitle = styled.h3`
 
 const WhiteSection = styled.section`
   background: white;
-  padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
+  padding: ${({ theme }) => theme.spacing.xxl} 5vw;
 `;
 
 const GreySection = styled.section`
-  background: ${({ theme }) => theme.colors.backgroundAlt};
-  padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
+  background: ${({ theme }) => theme.colors.grey};
+  padding: ${({ theme }) => theme.spacing.xxl} 5vw;
 `;
 
 const Container = styled.div`
@@ -197,7 +194,7 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
         </TealBox>
       </TealSection>
       
-      <WhiteSection>
+      <GreySection>
         <Container>
           <TextContent>
             <h3 style={{ marginBottom: '1.5rem' }}>{SERVICES_OVERVIEW_DATA.content.tenantServices.heading}</h3>
@@ -206,7 +203,7 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
             ))}
           </TextContent>
         </Container>
-      </WhiteSection>
+      </GreySection>
 
       <GreySection>
         <Container>

@@ -3,14 +3,11 @@ import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
-import {
-  ContentWrapper,
-  IntroText,
-  SectionTitle,
-  StyledTable,
-  TealSection,
-  TealBox,
-} from "./SharedStyles";
+import { ContentWrapper } from "../../ui/Containers";
+import { IntroText, SectionTitle } from "../../ui/Typography";
+import { StyledTable } from "../../ui/Table";
+import { TealSection, TealBox } from "../../ui/Sections";
+import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 
 interface IndustryZoneInvestmentSectionProps {
   onNavigate: (page: string) => void;
@@ -202,50 +199,68 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
           
           <HighlightBox>
             <SectionTitle>Renewable Energy & Clean Tech</SectionTitle>
-            <IntroText>
-              <strong>Solar panel manufacturing and assembly:</strong> Import components duty-free and assemble in APOZ for domestic distribution.
-            </IntroText>
-            <IntroText>
-              <strong>EV battery production:</strong> Leverage FTZ for cost-effective battery cell imports and assembly operations.
-            </IntroText>
-            <IntroText>
-              <strong>Hydrogen fuel cell manufacturing:</strong> Process components for both domestic and export markets.
-            </IntroText>
-            <IntroText>
-              <strong>Energy storage systems:</strong> Serve as assembly and distribution hub for North America.
-            </IntroText>
+            <RequirementsList>
+              <div>
+                <RequirementTitle>Solar panel manufacturing and assembly</RequirementTitle>
+                <RequirementText>Import components duty-free and assemble in APOZ for domestic distribution.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>EV battery production</RequirementTitle>
+                <RequirementText>Leverage FTZ for cost-effective battery cell imports and assembly operations.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Hydrogen fuel cell manufacturing</RequirementTitle>
+                <RequirementText>Process components for both domestic and export markets.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Energy storage systems</RequirementTitle>
+                <RequirementText>Serve as assembly and distribution hub for North America.</RequirementText>
+              </div>
+            </RequirementsList>
           </HighlightBox>
 
           <HighlightBox>
             <SectionTitle>Advanced Manufacturing</SectionTitle>
-            <IntroText>
-              <strong>Electronics & semiconductors:</strong> Assembly operations with duty advantages for components.
-            </IntroText>
-            <IntroText>
-              <strong>Smart manufacturing & IoT:</strong> Robotics and automation systems production.
-            </IntroText>
-            <IntroText>
-              <strong>Consumer goods:</strong> Final assembly and packaging for U.S. distribution networks.
-            </IntroText>
-            <IntroText>
-              <strong>Medical devices:</strong> Manufacturing with regulatory compliance support.
-            </IntroText>
+            <RequirementsList>
+              <div>
+                <RequirementTitle>Electronics & semiconductors</RequirementTitle>
+                <RequirementText>Assembly operations with duty advantages for components.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Smart manufacturing & IoT</RequirementTitle>
+                <RequirementText>Robotics and automation systems production.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Consumer goods</RequirementTitle>
+                <RequirementText>Final assembly and packaging for U.S. distribution networks.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Medical devices</RequirementTitle>
+                <RequirementText>Manufacturing with regulatory compliance support.</RequirementText>
+              </div>
+            </RequirementsList>
           </HighlightBox>
 
           <HighlightBox>
             <SectionTitle>Logistics & E-Commerce</SectionTitle>
-            <IntroText>
-              <strong>Cross-border fulfillment centers:</strong> Bonded warehousing for Asia-Pacific goods.
-            </IntroText>
-            <IntroText>
-              <strong>Last-mile distribution hubs:</strong> Strategic Houston metro access for rapid delivery.
-            </IntroText>
-            <IntroText>
-              <strong>Cold storage facilities:</strong> Temperature-controlled logistics for specialized goods.
-            </IntroText>
-            <IntroText>
-              <strong>Transloading operations:</strong> Container-to-truck transfer with duty deferral benefits.
-            </IntroText>
+            <RequirementsList>
+              <div>
+                <RequirementTitle>Cross-border fulfillment centers</RequirementTitle>
+                <RequirementText>Bonded warehousing for Asia-Pacific goods.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Last-mile distribution hubs</RequirementTitle>
+                <RequirementText>Strategic Houston metro access for rapid delivery.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Cold storage facilities</RequirementTitle>
+                <RequirementText>Temperature-controlled logistics for specialized goods.</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>Transloading operations</RequirementTitle>
+                <RequirementText>Container-to-truck transfer with duty deferral benefits.</RequirementText>
+              </div>
+            </RequirementsList>
           </HighlightBox>
         </ContentWrapper>
       </Section>
@@ -276,21 +291,23 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
           </ExampleBox>
 
           <SectionTitle>Asia-Pacific Manufacturing Partnerships</SectionTitle>
-          <IntroText>
-            APOZ specifically targets manufacturers from China, ASEAN, Korea, Japan, and India seeking "friend-shoring" alternatives and U.S. market access.
-          </IntroText>
-          <IntroText>
-            FTZ status makes APOZ ideal for companies establishing U.S. manufacturing footprints while maintaining Asia-Pacific supply chains.
-          </IntroText>
-          <IntroText>
-            The zone supports joint ventures between U.S. and Asia-Pacific firms requiring duty-efficient operations.
-          </IntroText>
-          <IntroText>
-            Export-oriented manufacturers serving both U.S. and global markets benefit from the strategic positioning.
-          </IntroText>
-          <IntroText>
-            Firms seeking to diversify away from single-country manufacturing risk find APOZ an attractive option.
-          </IntroText>
+          <RequirementsList>
+            <div>
+              <RequirementText>APOZ specifically targets manufacturers from China, ASEAN, Korea, Japan, and India seeking "friend-shoring" alternatives and U.S. market access.</RequirementText>
+            </div>
+            <div>
+              <RequirementText>FTZ status makes APOZ ideal for companies establishing U.S. manufacturing footprints while maintaining Asia-Pacific supply chains.</RequirementText>
+            </div>
+            <div>
+              <RequirementText>The zone supports joint ventures between U.S. and Asia-Pacific firms requiring duty-efficient operations.</RequirementText>
+            </div>
+            <div>
+              <RequirementText>Export-oriented manufacturers serving both U.S. and global markets benefit from the strategic positioning.</RequirementText>
+            </div>
+            <div>
+              <RequirementText>Firms seeking to diversify away from single-country manufacturing risk find APOZ an attractive option.</RequirementText>
+            </div>
+          </RequirementsList>
         </ContentWrapper>
       </Section>
 
@@ -328,35 +345,44 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
           </StyledTable>
 
           <SectionTitle>Exit Strategies</SectionTitle>
-          <IntroText>
-            Exit pathways include sale to industrial REITs specializing in logistics and manufacturing properties.
-          </IntroText>
-          <IntroText>
-            Portfolio securitization of stabilized FTZ assets offers another attractive option.
-          </IntroText>
-          <IntroText>
-            Strategic sale to foreign investors seeking U.S. industrial exposure provides international exit opportunities.
-          </IntroText>
-          <IntroText>
-            Refinancing after the 10-year QOZ hold period allows investors to realize tax-free appreciation.
-          </IntroText>
+          <RequirementsList>
+            <div>
+              <RequirementText>Exit pathways include sale to industrial REITs specializing in logistics and manufacturing properties.</RequirementText>
+            </div>
+            <div>
+              <RequirementText>Portfolio securitization of stabilized FTZ assets offers another attractive option.</RequirementText>
+            </div>
+            <div>
+              <RequirementText>Strategic sale to foreign investors seeking U.S. industrial exposure provides international exit opportunities.</RequirementText>
+            </div>
+            <div>
+              <RequirementText>Refinancing after the 10-year QOZ hold period allows investors to realize tax-free appreciation.</RequirementText>
+            </div>
+          </RequirementsList>
 
           <SectionTitle>Best Practices for FTZ Investment Success</SectionTitle>
-          <IntroText>
-            <strong>Early Engagement:</strong> Bring FTZ specialists and customs brokers into project planning from the outset.
-          </IntroText>
-          <IntroText>
-            <strong>Integrated Incentives:</strong> Layer FTZ, QOZ, and state/local incentives to maximize ROI.
-          </IntroText>
-          <IntroText>
-            <strong>Digital Inventory Systems:</strong> Use ERP systems to manage bonded inventory and avoid CBP penalties.
-          </IntroText>
-          <IntroText>
-            <strong>Tenant Education:</strong> Provide training and legal support to maximize tenant FTZ utilization.
-          </IntroText>
-          <IntroText>
-            <strong>Marketing to Asia-Pacific:</strong> Highlight duty savings in bilingual investor and tenant materials.
-          </IntroText>
+          <RequirementsList>
+            <div>
+              <RequirementTitle>Early Engagement</RequirementTitle>
+              <RequirementText>Bring FTZ specialists and customs brokers into project planning from the outset.</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Integrated Incentives</RequirementTitle>
+              <RequirementText>Layer FTZ, QOZ, and state/local incentives to maximize ROI.</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Digital Inventory Systems</RequirementTitle>
+              <RequirementText>Use ERP systems to manage bonded inventory and avoid CBP penalties.</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Tenant Education</RequirementTitle>
+              <RequirementText>Provide training and legal support to maximize tenant FTZ utilization.</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Marketing to Asia-Pacific</RequirementTitle>
+              <RequirementText>Highlight duty savings in bilingual investor and tenant materials.</RequirementText>
+            </div>
+          </RequirementsList>
         </ContentWrapper>
       </Section>
 

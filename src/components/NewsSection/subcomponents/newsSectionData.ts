@@ -255,7 +255,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "May 24, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Event",
-    image: "/assets/images/news/05-24-26.jpg",
+    image: "/assets/images/news/05-24-25.jpg",
     paragraphs: [
       "On May 23, 2025, Token Communities Ltd. (OTC PINK: TKCM), through its subsidiary ASC Global Inc., presented the Asia Pacific Opportunity Zone (APOZ) Project at the International Trade Center (ITC) Board of Directors Inauguration Ceremony in Houston.",
       "The APOZ Project is a master-planned community set to commence construction in Q4 2025.",

@@ -1,20 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  WhiteSection,
-  GreySection,
-  Container,
-  ContentGrid,
-  TextContent,
-  TealSection,
-  TealBox,
-  IllustrationBox,
-  ContentWrapper,
-  IntroText,
-  SectionTitle,
-  SubsectionTitle,
-  StyledTable,
-} from "./SharedStyles";
+import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
+import { Container, ContentWrapper, GreyContent } from "../../ui/Containers";
+import { ContentGrid } from "../../ui/Grids";
+import { TextContent, IntroText, SectionTitle, SubsectionTitle } from "../../ui/Typography";
+import { IllustrationBox } from "../../ui/Media";
+import { StyledTable } from "../../ui/Table";
 
 const HeroSection = styled.section`
   position: relative;

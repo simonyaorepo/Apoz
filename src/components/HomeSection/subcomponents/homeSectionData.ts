@@ -112,7 +112,7 @@ export const TIMELINE_ITEMS = [
 
 export const OVERVIEW_DATA = {
   title: "Overview",
-  backgroundImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920",
+  backgroundImage: "/assets/images/home/overview/hero.png",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Overview" }
@@ -137,7 +137,7 @@ export const OVERVIEW_DATA = {
 
 export const WHO_WE_ARE_DATA = {
   title: "Who We Are",
-  backgroundImage: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920",
+  backgroundImage: "/assets/images/home/whoWeAre/hero.jpeg",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Who We Are" }

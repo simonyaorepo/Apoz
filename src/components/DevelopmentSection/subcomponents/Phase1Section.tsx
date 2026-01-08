@@ -153,7 +153,7 @@ const Phase1Section: React.FC = () => {
       <PhaseSection>
         <SummaryBlock
           content={PHASE_1_DATA.overview.intro}
-          imageSrc="/assets/images/development/phase1/1.png"
+          imageSrc="/assets/images/development/phase1/1.jpg"
           imageAlt="Phase 1 Overview"
           reverse={true}
         />
@@ -180,7 +180,7 @@ const Phase1Section: React.FC = () => {
         <PhaseContentBlock $reverse>
           <PhaseImageWrapper $reverse>
             <PhaseImage 
-              src="/assets/images/development/phase1/3.jpg" 
+              src="/assets/images/development/phase1/3.png" 
               alt="Key Objectives"
             />
           </PhaseImageWrapper>
@@ -206,7 +206,7 @@ const Phase1Section: React.FC = () => {
         <PhaseContentBlock>
           <PhaseImageWrapper>
             <PhaseImage 
-              src="/assets/images/development/phase1/1.png" 
+              src="/assets/images/development/phase1/4.jpg" 
               alt="Investment Timeline"
             />
           </PhaseImageWrapper>
@@ -225,7 +225,7 @@ const Phase1Section: React.FC = () => {
         <PhaseContentBlock $reverse>
           <PhaseImageWrapper $reverse>
             <PhaseImage 
-              src="/assets/images/development/phase1/2.png" 
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920" 
               alt="Financing Structure"
             />
           </PhaseImageWrapper>

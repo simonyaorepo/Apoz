@@ -2,14 +2,11 @@ import React from "react";
 import TextHero from "../../TextHero";
 import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
-import {
-  ContentWrapper,
-  IntroText,
-  SectionTitle,
-  StyledTable,
-  GreySection,
-  GreyContent,
-} from "./SharedStyles";
+import { ContentWrapper, GreyContent } from "../../ui/Containers";
+import { IntroText, SectionTitle } from "../../ui/Typography";
+import { StyledTable } from "../../ui/Table";
+import { GreySection } from "../../ui/Sections";
+import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 
 interface QOZZoneSectionProps {
   onNavigate: (page: string) => void;
@@ -75,21 +72,28 @@ const QOZZoneSection: React.FC<QOZZoneSectionProps> = () => {
       <Section>
         <ContentWrapper>
           <SectionTitle>APOZ QOZ Compliance Requirements</SectionTitle>
-          <IntroText>
-            <strong>Property Location:</strong> All development must occur within the designated QOZ census tract boundaries
-          </IntroText>
-          <IntroText>
-            <strong>Substantial Improvement:</strong> Acquired property must be substantially improved (investment ≥ purchase price) within 30 months
-          </IntroText>
-          <IntroText>
-            <strong>Original Use or Rehabilitation:</strong> Property must be new construction or substantially rehabilitated existing property
-          </IntroText>
-          <IntroText>
-            <strong>Trade or Business Use:</strong> Property must be used in active trade or business (not investment holding)
-          </IntroText>
-          <IntroText>
-            <strong>Documentation:</strong> Maintain records demonstrating QOZ property qualification and ongoing use
-          </IntroText>
+          <RequirementsList>
+            <div>
+              <RequirementTitle>Property Location</RequirementTitle>
+              <RequirementText>All development must occur within the designated QOZ census tract boundaries</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Substantial Improvement</RequirementTitle>
+              <RequirementText>Acquired property must be substantially improved (investment ≥ purchase price) within 30 months</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Original Use or Rehabilitation</RequirementTitle>
+              <RequirementText>Property must be new construction or substantially rehabilitated existing property</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Trade or Business Use</RequirementTitle>
+              <RequirementText>Property must be used in active trade or business (not investment holding)</RequirementText>
+            </div>
+            <div>
+              <RequirementTitle>Documentation</RequirementTitle>
+              <RequirementText>Maintain records demonstrating QOZ property qualification and ongoing use</RequirementText>
+            </div>
+          </RequirementsList>
         </ContentWrapper>
       </Section>
     </>

@@ -36,7 +36,7 @@ const Phase2Section: React.FC = () => {
         <PhaseContentBlock>
           <PhaseImageWrapper>
             <PhaseImage 
-              src="/assets/images/development/phase2/1.jpg" 
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920" 
               alt="Development Objectives"
             />
           </PhaseImageWrapper>

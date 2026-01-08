@@ -1,22 +1,13 @@
 import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
-import {
-  WhiteSection,
-  GreySection,
-  Container,
-  ContentGrid,
-  GreyContentGrid,
-  TextContent,
-  TealSection,
-  TealBox,
-  IllustrationBox,
-  ImageBox,
-  BulletList,
-  CardGrid,
-  BorderCard,
-  OutlineCard,
-} from "./SharedStyles";
+import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
+import { TextContent } from "../../ui/Typography";
+import { IllustrationBox, ImageBox } from "../../ui/Media";
+import { BorderCard } from "../../ui/Cards";
+import { StyledTable } from "../../ui/Table";
 import { INDUSTRY_ZONE_MANAGEMENT_DATA } from "../servicesSectionData";
 
 const ServiceCard = styled(BorderCard)`
@@ -117,21 +108,38 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
 
       <TealSection>
         <TealBox>
-          <h3 style={{ marginBottom: '1.5rem', color: 'white' }}>Key Management Services</h3>
-          {INDUSTRY_ZONE_MANAGEMENT_DATA.content.services.map((service, idx) => (
-            <div key={idx} style={{ marginBottom: '2rem' }}>
-              <h4 style={{ color: 'white', fontSize: '1.25rem', marginBottom: '0.5rem' }}>{service.category}</h4>
-              <p style={{ color: 'white', fontSize: '1rem', marginBottom: '0.25rem', opacity: 0.9 }}>
-                <strong>Scope:</strong> {service.scope}
-              </p>
-              <p style={{ color: 'white', fontSize: '1rem', opacity: 0.9 }}>
-                <strong>Impact:</strong> {service.impact}
-              </p>
-            </div>
-          ))}
+          <p style={{ color: 'white', fontSize: '1.125rem', lineHeight: '1.8' }}>
+            APOZ industrial zone management integrates Foreign-Trade Zone (FTZ) operations with comprehensive tenant services, infrastructure oversight, and logistics coordination to maximize cost savings and operational efficiency for manufacturing and distribution tenants.
+          </p>
         </TealBox>
       </TealSection>
       
+      <GreySection>
+        <Container>
+          <TextContent>
+            <h3 style={{ marginBottom: '1.5rem' }}>Key Management Services</h3>
+            <StyledTable>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Scope</th>
+                  <th>Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                {INDUSTRY_ZONE_MANAGEMENT_DATA.content.services.map((service, idx) => (
+                  <tr key={idx}>
+                    <td>{service.category}</td>
+                    <td>{service.scope}</td>
+                    <td>{service.impact}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </StyledTable>
+          </TextContent>
+        </Container>
+      </GreySection>
+
       <GreySection>
         <Container>
           <GreyContentGrid>

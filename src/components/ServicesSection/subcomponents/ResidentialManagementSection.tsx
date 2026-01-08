@@ -4,10 +4,7 @@ import TextHero from "../../TextHero";
 import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
 import { RESIDENTIAL_MANAGEMENT_DATA } from "../servicesSectionData";
-import {
-  TealSection,
-  TealBox,
-} from "./SharedStyles";
+import { TealSection, TealBox } from "../../ui/Sections";
 
 const ContentWrapper = styled.div`
   max-width: 1200px;

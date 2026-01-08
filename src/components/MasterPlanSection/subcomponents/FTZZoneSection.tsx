@@ -2,14 +2,14 @@ import React from "react";
 import TextHero from "../../TextHero";
 import { Section } from "../../ui/Section";
 import GoldDivider from "../../ui/GoldDivider";
-import {
-  ContentWrapper,
-  IntroText,
-  SectionTitle,
-  StyledTable,
-  GreySection,
-  GreyContent,
-} from "./SharedStyles";
+import { ContentWrapper, GreyContent } from "../../ui/Containers";
+import { IntroText, SectionTitle } from "../../ui/Typography";
+import { StyledTable } from "../../ui/Table";
+import { GreySection } from "../../ui/Sections";
+import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
+import { GreyContentGrid } from "../../ui/Grids";
+import { ImageBox } from "../../ui/Media";
+import { Container } from "../../ui/Containers";
 
 interface FTZZoneSectionProps {
   onNavigate: (page: string) => void;
@@ -80,29 +80,48 @@ const FTZZoneSection: React.FC<FTZZoneSectionProps> = () => {
 
       <GoldDivider />
 
-      <Section>
-        <ContentWrapper>
-          <SectionTitle>FTZ Compliance Requirements</SectionTitle>
-          <IntroText>
-            <strong>Security & Fencing:</strong> Secure perimeter with controlled access points monitored by CBP
-          </IntroText>
-          <IntroText>
-            <strong>Inventory Tracking:</strong> Real-time digital system tracking all admitted, manipulated, and removed merchandise
-          </IntroText>
-          <IntroText>
-            <strong>Record Keeping:</strong> Maintain detailed records of all FTZ transactions for CBP audit (5 years minimum)
-          </IntroText>
-          <IntroText>
-            <strong>CBP Access:</strong> Provide 24/7 CBP access to FTZ facilities for inspection and supervision
-          </IntroText>
-          <IntroText>
-            <strong>Prohibited Activities:</strong> No retail trade, domestic merchandise storage (except for export), or activities violating CBP regulations
-          </IntroText>
-          <IntroText>
-            <strong>Annual Certification:</strong> Submit annual FTZ activity reports and pay grantee fees
-          </IntroText>
-        </ContentWrapper>
-      </Section>
+      <GreySection>
+        <Container>
+          <GreyContentGrid style={{ gridTemplateColumns: '1.5fr 1.25fr', alignItems: 'center' }}>
+            <div>
+              <SectionTitle>FTZ Compliance Requirements</SectionTitle>
+              <RequirementsList>
+                <div>
+                  <RequirementTitle>Security & Fencing</RequirementTitle>
+                  <RequirementText>Secure perimeter with controlled access points monitored by CBP</RequirementText>
+                </div>
+                <div>
+                  <RequirementTitle>Inventory Tracking</RequirementTitle>
+                  <RequirementText>Real-time digital system tracking all admitted, manipulated, and removed merchandise</RequirementText>
+                </div>
+                <div>
+                  <RequirementTitle>Record Keeping</RequirementTitle>
+                  <RequirementText>Maintain detailed records of all FTZ transactions for CBP audit (5 years minimum)</RequirementText>
+                </div>
+                <div>
+                  <RequirementTitle>CBP Access</RequirementTitle>
+                  <RequirementText>Provide 24/7 CBP access to FTZ facilities for inspection and supervision</RequirementText>
+                </div>
+                <div>
+                  <RequirementTitle>Prohibited Activities</RequirementTitle>
+                  <RequirementText>No retail trade, domestic merchandise storage (except for export), or activities violating CBP regulations</RequirementText>
+                </div>
+                <div>
+                  <RequirementTitle>Annual Certification</RequirementTitle>
+                  <RequirementText>Submit annual FTZ activity reports and pay grantee fees</RequirementText>
+                </div>
+              </RequirementsList>
+            </div>
+            <ImageBox style={{ maxWidth: '100%', marginLeft: 'auto' }}>
+              <img 
+                src="/assets/images/masterPlan/FTZ/1.png" 
+                alt="FTZ Compliance"
+                style={{ objectFit: 'contain' }}
+              />
+            </ImageBox>
+          </GreyContentGrid>
+        </Container>
+      </GreySection>
 
       <GoldDivider />
 
