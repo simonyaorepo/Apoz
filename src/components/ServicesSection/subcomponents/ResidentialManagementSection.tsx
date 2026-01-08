@@ -39,35 +39,6 @@ const SectionTitle = styled.h2`
   }
 `;
 
-const BulletList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  
-  li {
-    font-size: ${({ theme }) => theme.fontSizes.lg};
-    line-height: 1.8;
-    color: ${({ theme }) => theme.colors.darkBlue};
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
-
-    &:before {
-      content: "•";
-      color: ${({ theme }) => theme.colors.accent};
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-    }
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    li {
-      font-size: ${({ theme }) => theme.fontSizes.md};
-    }
-  }
-`;
-
 const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -112,35 +83,6 @@ const TealTitle = styled.h3`
   }
 `;
 
-const TealList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  
-  li {
-    font-size: ${({ theme }) => theme.fontSizes.lg};
-    line-height: 1.8;
-    color: white;
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
-
-    &:before {
-      content: "✓";
-      color: ${({ theme }) => theme.colors.goldAccent};
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-    }
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    li {
-      font-size: ${({ theme }) => theme.fontSizes.md};
-    }
-  }
-`;
-
 const GreySection = styled.div`
   background: ${({ theme }) => theme.colors.backgroundAlt};
   padding: 4rem 2rem;
@@ -153,26 +95,6 @@ const GreySection = styled.div`
 const GreyContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-`;
-
-const CardGrid = styled.div`
-  display: grid;
-  gap: ${({ theme }) => theme.spacing.lg};
-  margin-top: 2rem;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    gap: ${({ theme }) => theme.spacing.md};
-  }
-`;
-
-const BenefitItem = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
-  line-height: 1.8;
-  color: ${({ theme }) => theme.colors.darkBlue};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.md};
-  }
 `;
 
 interface ResidentialManagementSectionProps {

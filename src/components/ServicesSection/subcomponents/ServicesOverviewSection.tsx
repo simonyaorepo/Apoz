@@ -5,12 +5,6 @@ import { SERVICES_OVERVIEW_DATA } from "../servicesSectionData";
 import { TealSection, TealBox } from "../../ui/Sections";
 import { IllustrationBox } from "../../ui/Media";
 
-const TealTitle = styled.h3`
-  color: white;
-  font-size: ${({ theme }) => theme.fontSizes.h3};
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
-`;
-
 const WhiteSection = styled.section`
   background: white;
   padding: ${({ theme }) => theme.spacing.xxl} 5vw;
@@ -61,26 +55,6 @@ const ServiceCard = styled.div`
     font-size: ${({ theme }) => theme.fontSizes.sm};
     color: ${({ theme }) => theme.colors.foreground};
     margin: 0;
-  }
-`;
-
-const TenantList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: ${({ theme }) => theme.spacing.lg} 0;
-  
-  li {
-    padding-left: ${({ theme }) => theme.spacing.lg};
-    position: relative;
-    margin-bottom: ${({ theme }) => theme.spacing.sm};
-    
-    &:before {
-      content: "•";
-      color: ${({ theme }) => theme.colors.goldAccent};
-      font-size: 1.5rem;
-      position: absolute;
-      left: 0;
-    }
   }
 `;
 

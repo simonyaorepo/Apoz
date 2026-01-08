@@ -293,7 +293,7 @@ export const StyledTable = styled.table`
     thead tr th,
     tbody tr td {
       padding: ${({ theme }) => theme.spacing.sm};
-      font-size: ${({ theme }) => theme.fontSizes.xs};
+      font-size: ${({ theme }) => theme.fontSizes.sm};
     }
   }
 `;

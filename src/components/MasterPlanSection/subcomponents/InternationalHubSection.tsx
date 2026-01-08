@@ -8,33 +8,6 @@ import { TextContent } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { INTERNATIONAL_HUB_DATA } from "../masterPlanSectionData";
 
-const PartnersList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: ${({ theme }) => theme.spacing.lg} 0;
-  
-  li {
-    padding-left: ${({ theme }) => theme.spacing.lg};
-    position: relative;
-    margin-bottom: ${({ theme }) => theme.spacing.sm};
-    font-size: ${({ theme }) => theme.fontSizes.md};
-    
-    &:before {
-      content: "•";
-      color: ${({ theme }) => theme.colors.goldAccent};
-      font-size: 1.5rem;
-      position: absolute;
-      left: 0;
-    }
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    li {
-      font-size: ${({ theme }) => theme.fontSizes.sm};
-    }
-  }
-`;
-
 const SubsectionTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.h4};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
@@ -44,37 +17,6 @@ const SubsectionTitle = styled.h3`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: ${({ theme }) => theme.fontSizes.h5};
-  }
-`;
-
-const FunctionsTable = styled.div`
-  display: grid;
-  gap: ${({ theme }) => theme.spacing.md};
-  margin-top: ${({ theme }) => theme.spacing.xl};
-`;
-
-const FunctionCard = styled.div`
-  border-left: 3px solid ${({ theme }) => theme.colors.goldAccent};
-  padding: ${({ theme }) => theme.spacing.lg};
-  background: rgba(10, 58, 63, 0.03);
-  
-  h4 {
-    color: ${({ theme }) => theme.colors.darkBlue};
-    font-size: ${({ theme }) => theme.fontSizes.lg};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-    margin-bottom: ${({ theme }) => theme.spacing.sm};
-  }
-  
-  .description {
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    color: ${({ theme }) => theme.colors.foreground};
-    margin-bottom: ${({ theme }) => theme.spacing.xs};
-  }
-  
-  .impact {
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    color: ${({ theme }) => theme.colors.teal};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
   }
 `;
 
@@ -103,17 +45,6 @@ const IndustryCard = styled.div`
   p {
     font-size: ${({ theme }) => theme.fontSizes.sm};
     margin: 0;
-  }
-`;
-
-const BenefitSection = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
-  
-  h4 {
-    color: ${({ theme }) => theme.colors.darkBlue};
-    font-size: ${({ theme }) => theme.fontSizes.lg};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-    margin-bottom: ${({ theme }) => theme.spacing.sm};
   }
 `;
 

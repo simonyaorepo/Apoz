@@ -10,20 +10,6 @@ import { BorderCard, OutlineCard } from "../../ui/Cards";
 import { StyledTable } from "../../ui/Table";
 import { COMMUNITY_MANAGEMENT_DATA } from "../servicesSectionData";
 
-const ServiceCard = styled(BorderCard)`
-  .scope {
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    color: ${({ theme }) => theme.colors.foreground};
-    margin-bottom: ${({ theme }) => theme.spacing.xs};
-  }
-  
-  .impact {
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    color: ${({ theme }) => theme.colors.teal};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-  }
-`;
-
 interface CommunityManagementSectionProps {
   onNavigate: (page: string) => void;
 }
