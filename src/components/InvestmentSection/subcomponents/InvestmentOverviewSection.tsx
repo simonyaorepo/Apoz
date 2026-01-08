@@ -176,66 +176,6 @@ const CapitalCard = styled.div`
   }
 `;
 
-const BenefitsList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: ${({ theme }) => theme.spacing.lg} 0;
-  
-  li {
-    padding-left: ${({ theme }) => theme.spacing.lg};
-    position: relative;
-    margin-bottom: ${({ theme }) => theme.spacing.md};
-    font-size: ${({ theme }) => theme.fontSizes.md};
-    color: ${({ theme }) => theme.colors.foreground};
-    line-height: 1.7;
-    
-    &:before {
-      content: "✓";
-      color: ${({ theme }) => theme.colors.goldAccent};
-      font-weight: ${({ theme }) => theme.fontWeights.bold};
-      position: absolute;
-      left: 0;
-      font-size: ${({ theme }) => theme.fontSizes.lg};
-    }
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    li {
-      font-size: ${({ theme }) => theme.fontSizes.sm};
-    }
-  }
-`;
-
-const ExitStrategyList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: ${({ theme }) => theme.spacing.lg} 0;
-  
-  li {
-    padding-left: ${({ theme }) => theme.spacing.lg};
-    position: relative;
-    margin-bottom: ${({ theme }) => theme.spacing.lg};
-    font-size: ${({ theme }) => theme.fontSizes.md};
-    color: ${({ theme }) => theme.colors.foreground};
-    line-height: 1.7;
-    
-    &:before {
-      content: "→";
-      color: ${({ theme }) => theme.colors.goldAccent};
-      font-weight: ${({ theme }) => theme.fontWeights.bold};
-      position: absolute;
-      left: 0;
-      font-size: ${({ theme }) => theme.fontSizes.lg};
-    }
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    li {
-      font-size: ${({ theme }) => theme.fontSizes.sm};
-    }
-  }
-`;
-
 interface InvestmentOverviewSectionProps {
   onNavigate: (page: string) => void;
 }

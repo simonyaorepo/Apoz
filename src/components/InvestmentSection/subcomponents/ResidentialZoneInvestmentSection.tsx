@@ -71,53 +71,6 @@ const ExampleTitle = styled.h4`
   margin-bottom: 1rem;
 `;
 
-const ExampleList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0 0;
-`;
-
-const ExampleItem = styled.li`
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: ${({ theme }) => theme.colors.darkBlue};
-  margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  position: relative;
-
-  &:before {
-    content: "→";
-    color: ${({ theme }) => theme.colors.accent};
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-  }
-`;
-
-const BenefitsList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-`;
-
-const BenefitsItem = styled.li`
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: ${({ theme }) => theme.colors.darkBlue};
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  position: relative;
-
-  &:before {
-    content: "•";
-    color: ${({ theme }) => theme.colors.accent};
-    font-weight: bold;
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0;
-  }
-`;
-
 const HighlightBox = styled.div`
   background: ${({ theme }) => theme.colors.backgroundAlt};
   padding: 2rem;

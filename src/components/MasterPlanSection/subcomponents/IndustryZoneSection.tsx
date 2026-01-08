@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
-import { Container, ContentWrapper, GreyContent } from "../../ui/Containers";
+import { Container, ContentWrapper } from "../../ui/Containers";
 import { ContentGrid } from "../../ui/Grids";
 import { TextContent, IntroText, SectionTitle, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox } from "../../ui/Media";

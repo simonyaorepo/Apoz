@@ -10,37 +10,6 @@ import { INFRASTRUCTURE_INVESTMENT_DATA } from "./investmentSectionData";
 import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 import { StyledTable } from "../../ui/Table";
 
-const ScopeTable = styled.div`
-  display: grid;
-  gap: ${({ theme }) => theme.spacing.md};
-  margin-top: ${({ theme }) => theme.spacing.xl};
-`;
-
-const ScopeCard = styled.div`
-  border-left: 3px solid ${({ theme }) => theme.colors.goldAccent};
-  padding: ${({ theme }) => theme.spacing.lg};
-  background: rgba(10, 58, 63, 0.03);
-  
-  h4 {
-    color: ${({ theme }) => theme.colors.darkBlue};
-    font-size: ${({ theme }) => theme.fontSizes.lg};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-    margin-bottom: ${({ theme }) => theme.spacing.sm};
-  }
-  
-  .components {
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    color: ${({ theme }) => theme.colors.foreground};
-    margin-bottom: ${({ theme }) => theme.spacing.xs};
-  }
-  
-  .purpose {
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    color: ${({ theme }) => theme.colors.teal};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-  }
-`;
-
 const TimelineCard = styled.div`
   padding: ${({ theme }) => theme.spacing.lg};
   border: 1px solid ${({ theme }) => theme.colors.goldAccent};
@@ -63,70 +32,6 @@ const TimelineCard = styled.div`
     font-size: ${({ theme }) => theme.fontSizes.sm};
     color: ${({ theme }) => theme.colors.teal};
     font-weight: ${({ theme }) => theme.fontWeights.medium};
-  }
-`;
-
-const FundingList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: ${({ theme }) => theme.spacing.lg} 0;
-  
-  li {
-    padding-left: ${({ theme }) => theme.spacing.lg};
-    position: relative;
-    margin-bottom: ${({ theme }) => theme.spacing.sm};
-    
-    &:before {
-      content: "•";
-      color: ${({ theme }) => theme.colors.goldAccent};
-      font-size: 1.5rem;
-      position: absolute;
-      left: 0;
-    }
-  }
-`;
-
-const BenefitsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: ${({ theme }) => theme.spacing.lg};
-  margin-top: ${({ theme }) => theme.spacing.lg};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const BenefitCard = styled.div`
-  padding: ${({ theme }) => theme.spacing.lg};
-  border: 1px solid ${({ theme }) => theme.colors.goldAccent};
-  
-  h4 {
-    color: ${({ theme }) => theme.colors.darkBlue};
-    font-size: ${({ theme }) => theme.fontSizes.md};
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-    margin-bottom: ${({ theme }) => theme.spacing.sm};
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    
-    li {
-      padding-left: ${({ theme }) => theme.spacing.lg};
-      position: relative;
-      margin-bottom: ${({ theme }) => theme.spacing.xs};
-      font-size: ${({ theme }) => theme.fontSizes.sm};
-      
-      &:before {
-        content: "•";
-        color: ${({ theme }) => theme.colors.goldAccent};
-        font-size: 1.2rem;
-        position: absolute;
-        left: 0;
-      }
-    }
   }
 `;
 

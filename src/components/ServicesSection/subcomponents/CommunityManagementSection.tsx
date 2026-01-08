@@ -1,12 +1,11 @@
 import React from "react";
 import TextHero from "../../TextHero";
-import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid, TwoColumnGrid } from "../../ui/Grids";
 import { TextContent } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
-import { BorderCard, OutlineCard } from "../../ui/Cards";
+import { OutlineCard } from "../../ui/Cards";
 import { StyledTable } from "../../ui/Table";
 import { COMMUNITY_MANAGEMENT_DATA } from "../servicesSectionData";
 
