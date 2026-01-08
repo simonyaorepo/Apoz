@@ -26,54 +26,6 @@ const TealTitle = styled.h3`
   }
 `;
 
-const BenefitsList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-`;
-
-const BenefitsItem = styled.li`
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: ${({ theme }) => theme.colors.darkBlue};
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  position: relative;
-
-  &:before {
-    content: "•";
-    color: ${({ theme }) => theme.colors.accent};
-    font-weight: bold;
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0;
-  }
-`;
-
-const WhiteBenefitsList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-`;
-
-const WhiteBenefitsItem = styled.li`
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: white;
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  position: relative;
-
-  &:before {
-    content: "•";
-    color: ${({ theme }) => theme.colors.accent};
-    font-weight: bold;
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0;
-  }
-`;
-
 const ExampleBox = styled.div`
   background: white;
   padding: 2rem;
