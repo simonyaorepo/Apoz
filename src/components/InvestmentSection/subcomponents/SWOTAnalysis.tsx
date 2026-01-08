@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { AlertCircle, CheckCircle, TrendingUp, AlertTriangle } from "lucide-react";
-import { WhiteSection, GreySection } from "../../ui/Sections";
+import { GreySection } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { SectionTitle } from "../../ui/Typography";
 import { SWOT_ANALYSIS } from "./investmentSectionData";

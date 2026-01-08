@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { GreySection } from "../../ui/Sections";
+import { WhiteSection } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { SectionTitle } from "../../ui/Typography";
 import { USE_OF_FUNDS } from "./investmentSectionData";

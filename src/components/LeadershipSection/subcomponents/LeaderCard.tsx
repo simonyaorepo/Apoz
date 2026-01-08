@@ -41,11 +41,11 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({
     <React.Fragment>
       <WhiteSection>
         <Container>
-          <Grid reverse={reverse}>
-            <PhotoWrapper reverse={reverse}>
-              <LeaderPhoto photo={member.photo} name={member.name} half="top" />
+          <Grid $reverse={reverse}>
+            <PhotoWrapper $reverse={reverse}>
+              <LeaderPhoto photo={member.photo} name={member.name} half="top" mobile="full" />
             </PhotoWrapper>
-            <ContentWrapper reverse={reverse}>
+            <ContentWrapper $reverse={reverse}>
               <LeaderTitle>{member.title}</LeaderTitle>
               <LeaderName>{member.name}</LeaderName>
             </ContentWrapper>
@@ -55,12 +55,12 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({
       
       <GreySection $index={index}>
         <Container>
-          <Grid reverse={reverse}>
-            <PhotoWrapper reverse={reverse}>
+          <Grid $reverse={reverse}>
+            <PhotoWrapper $reverse={reverse} style={{ display: 'none' }} className="mobile-hide-photo">
               <LeaderPhoto photo={member.photo} name={member.name} half="bottom" />
             </PhotoWrapper>
-            <GreyContentWrapper reverse={reverse} $index={index}>
-              <LeaderBio expanded={expanded} $index={index}>
+            <GreyContentWrapper $reverse={reverse} $index={index}>
+              <LeaderBio $expanded={expanded} $index={index}>
                 {member.bio.map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}

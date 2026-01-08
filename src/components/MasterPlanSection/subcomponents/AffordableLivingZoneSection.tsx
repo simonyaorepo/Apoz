@@ -1,6 +1,5 @@
 import React from "react";
 import TextHero from "../../TextHero";
-import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { Container, ContentWrapper } from "../../ui/Containers";
 import { ContentGrid } from "../../ui/Grids";

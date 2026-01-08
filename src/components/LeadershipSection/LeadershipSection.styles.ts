@@ -18,9 +18,9 @@ export const Container = styled.div`
   padding: 0 ${({ theme }) => theme.spacing.xl};
 `;
 
-export const Grid = styled.div<{ reverse?: boolean }>`
+export const Grid = styled.div<{ $reverse?: boolean }>`
   display: grid;
-  grid-template-columns: ${({ reverse }) => reverse ? '1fr 250px' : '250px 1fr'};
+  grid-template-columns: ${({ $reverse }) => $reverse ? '1fr minmax(250px, 250px)' : 'minmax(250px, 250px) 1fr'};
   gap: ${({ theme }) => theme.spacing.xxl};
   align-items: start;
   
@@ -30,16 +30,27 @@ export const Grid = styled.div<{ reverse?: boolean }>`
   }
 `;
 
-export const PhotoWrapper = styled.div<{ reverse?: boolean }>`
-  order: ${({ reverse }) => reverse ? 2 : 1};
+export const PhotoWrapper = styled.div<{ $reverse?: boolean }>`
+  order: ${({ $reverse }) => $reverse ? 2 : 1};
+  width: 250px;
+  flex-shrink: 0;
+  
+  &.mobile-hide-photo {
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+      display: none !important;
+    }
+  }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     order: 1;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
   }
 `;
 
-export const ContentWrapper = styled.div<{ reverse?: boolean }>`
-  order: ${({ reverse }) => reverse ? 1 : 2};
+export const ContentWrapper = styled.div<{ $reverse?: boolean }>`
+  order: ${({ $reverse }) => $reverse ? 1 : 2};
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     order: 2;
@@ -91,7 +102,7 @@ export const LeaderName = styled.h3`
   }
 `;
 
-export const LeaderBio = styled.div<{ expanded: boolean; $index?: number }>`
+export const LeaderBio = styled.div<{ $expanded: boolean; $index?: number }>`
   color: ${({ theme }) => theme.colors.foreground};
   font-size: ${({ theme }) => theme.fontSizes.md};
   line-height: 1.8;
@@ -104,8 +115,8 @@ export const LeaderBio = styled.div<{ expanded: boolean; $index?: number }>`
     }
   }
   
-  ${({ expanded, $index }) => {
-    if (expanded) return '';
+  ${({ $expanded, $index }) => {
+    if ($expanded) return '';
     
     // Line clamp values that match the grey section heights
     const lineClamps = [
