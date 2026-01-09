@@ -30,7 +30,6 @@ const HeroImage = styled.img<{ $showTop?: boolean }>`
   object-fit: cover;
   object-position: ${({ $showTop }) => $showTop ? 'center -10%' : 'center center'};
   z-index: 1;
-  transition: transform 0.5s ease;
 `;
 
 const Overlay = styled.div`
