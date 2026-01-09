@@ -113,9 +113,9 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
               <tbody>
                 {INDUSTRY_ZONE_MANAGEMENT_DATA.content.services.map((service, idx) => (
                   <tr key={idx}>
-                    <td>{service.category}</td>
-                    <td>{service.scope}</td>
-                    <td>{service.impact}</td>
+                    <td data-label="Category">{service.category}</td>
+                    <td data-label="Scope">{service.scope}</td>
+                    <td data-label="Impact">{service.impact}</td>
                   </tr>
                 ))}
               </tbody>

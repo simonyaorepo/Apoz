@@ -95,29 +95,29 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Leasing & Tenant Relations</strong></td>
-                  <td>Manage rental agreements, onboarding, and renewals.</td>
-                  <td>Maintains high occupancy rates and predictable income.</td>
+                  <td data-label="Category"><strong>Leasing & Tenant Relations</strong></td>
+                  <td data-label="Scope">Manage rental agreements, onboarding, and renewals.</td>
+                  <td data-label="Impact">Maintains high occupancy rates and predictable income.</td>
                 </tr>
                 <tr>
-                  <td><strong>Property Maintenance</strong></td>
-                  <td>Ongoing repairs, landscaping, and facility upkeep.</td>
-                  <td>Enhances asset value and resident satisfaction.</td>
+                  <td data-label="Category"><strong>Property Maintenance</strong></td>
+                  <td data-label="Scope">Ongoing repairs, landscaping, and facility upkeep.</td>
+                  <td data-label="Impact">Enhances asset value and resident satisfaction.</td>
                 </tr>
                 <tr>
-                  <td><strong>Community Services</strong></td>
-                  <td>Operate parks, schools, clinics, recreation areas, and local retail.</td>
-                  <td>Creates a well-rounded residential experience.</td>
+                  <td data-label="Category"><strong>Community Services</strong></td>
+                  <td data-label="Scope">Operate parks, schools, clinics, recreation areas, and local retail.</td>
+                  <td data-label="Impact">Creates a well-rounded residential experience.</td>
                 </tr>
                 <tr>
-                  <td><strong>Security & Safety</strong></td>
-                  <td>On-site 24/7 security and compliance with housing regulations.</td>
-                  <td>Ensures a safe and comfortable living environment.</td>
+                  <td data-label="Category"><strong>Security & Safety</strong></td>
+                  <td data-label="Scope">On-site 24/7 security and compliance with housing regulations.</td>
+                  <td data-label="Impact">Ensures a safe and comfortable living environment.</td>
                 </tr>
                 <tr>
-                  <td><strong>Sustainability Programs</strong></td>
-                  <td>Implement energy efficiency, waste management, and green spaces.</td>
-                  <td>Aligns with ESG-focused investment strategies.</td>
+                  <td data-label="Category"><strong>Sustainability Programs</strong></td>
+                  <td data-label="Scope">Implement energy efficiency, waste management, and green spaces.</td>
+                  <td data-label="Impact">Aligns with ESG-focused investment strategies.</td>
                 </tr>
               </tbody>
             </StyledTable>

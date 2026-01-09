@@ -49,28 +49,28 @@ const FTZZoneSection: React.FC<FTZZoneSectionProps> = () => {
             </thead>
             <tbody>
               <tr>
-                <td><strong>1. Site Application</strong></td>
-                <td>Submit FTZ site activation application to grantee (Guam Economic Development Authority)</td>
+                <td data-label="Step"><strong>1. Site Application</strong></td>
+                <td data-label="Process">Submit FTZ site activation application to grantee (Guam Economic Development Authority)</td>
               </tr>
               <tr>
-                <td><strong>2. CBP Review</strong></td>
-                <td>U.S. Customs and Border Protection reviews application and conducts site inspection</td>
+                <td data-label="Step"><strong>2. CBP Review</strong></td>
+                <td data-label="Process">U.S. Customs and Border Protection reviews application and conducts site inspection</td>
               </tr>
               <tr>
-                <td><strong>3. Approval & Bonding</strong></td>
-                <td>CBP approves activation; operator obtains FTZ activity bond</td>
+                <td data-label="Step"><strong>3. Approval & Bonding</strong></td>
+                <td data-label="Process">CBP approves activation; operator obtains FTZ activity bond</td>
               </tr>
               <tr>
-                <td><strong>4. Inventory System</strong></td>
-                <td>Implement CBP-approved inventory tracking system (RFID/digital)</td>
+                <td data-label="Step"><strong>4. Inventory System</strong></td>
+                <td data-label="Process">Implement CBP-approved inventory tracking system (RFID/digital)</td>
               </tr>
               <tr>
-                <td><strong>5. Operations Start</strong></td>
-                <td>Begin FTZ operations under CBP supervision with admitted foreign merchandise</td>
+                <td data-label="Step"><strong>5. Operations Start</strong></td>
+                <td data-label="Process">Begin FTZ operations under CBP supervision with admitted foreign merchandise</td>
               </tr>
               <tr>
-                <td><strong>6. Annual Reporting</strong></td>
-                <td>Submit annual reports to CBP and grantee on FTZ activities</td>
+                <td data-label="Step"><strong>6. Annual Reporting</strong></td>
+                <td data-label="Process">Submit annual reports to CBP and grantee on FTZ activities</td>
               </tr>
             </tbody>
           </StyledTable>
@@ -136,28 +136,28 @@ const FTZZoneSection: React.FC<FTZZoneSectionProps> = () => {
             </thead>
             <tbody>
               <tr>
-                <td><strong>Storage</strong></td>
-                <td>Indefinite storage of foreign merchandise without duty payment</td>
+                <td data-label="Activity"><strong>Storage</strong></td>
+                <td data-label="Description">Indefinite storage of foreign merchandise without duty payment</td>
               </tr>
               <tr>
-                <td><strong>Manufacturing</strong></td>
-                <td>Processing, assembly, manufacturing using foreign and domestic components</td>
+                <td data-label="Activity"><strong>Manufacturing</strong></td>
+                <td data-label="Description">Processing, assembly, manufacturing using foreign and domestic components</td>
               </tr>
               <tr>
-                <td><strong>Exhibition</strong></td>
-                <td>Display of foreign merchandise for trade shows or demonstrations</td>
+                <td data-label="Activity"><strong>Exhibition</strong></td>
+                <td data-label="Description">Display of foreign merchandise for trade shows or demonstrations</td>
               </tr>
               <tr>
-                <td><strong>Sampling & Testing</strong></td>
-                <td>Product testing, quality control, and sample distribution</td>
+                <td data-label="Activity"><strong>Sampling & Testing</strong></td>
+                <td data-label="Description">Product testing, quality control, and sample distribution</td>
               </tr>
               <tr>
-                <td><strong>Destruction</strong></td>
-                <td>Destruction of defective or obsolete merchandise without duty</td>
+                <td data-label="Activity"><strong>Destruction</strong></td>
+                <td data-label="Description">Destruction of defective or obsolete merchandise without duty</td>
               </tr>
               <tr>
-                <td><strong>Re-Export</strong></td>
-                <td>Export of foreign merchandise to third countries duty-free</td>
+                <td data-label="Activity"><strong>Re-Export</strong></td>
+                <td data-label="Description">Export of foreign merchandise to third countries duty-free</td>
               </tr>
             </tbody>
           </StyledTable>

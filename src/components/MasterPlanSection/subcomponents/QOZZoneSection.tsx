@@ -46,20 +46,20 @@ const QOZZoneSection: React.FC<QOZZoneSectionProps> = () => {
             </thead>
             <tbody>
               <tr>
-                <td><strong>Census Tract Poverty Rate</strong></td>
-                <td>Poverty rate ≥20% or median family income ≤80% of area median</td>
+                <td data-label="Criterion"><strong>Census Tract Poverty Rate</strong></td>
+                <td data-label="Description">Poverty rate ≥20% or median family income ≤80% of area median</td>
               </tr>
               <tr>
-                <td><strong>Adjacent Tracts</strong></td>
-                <td>Low-income tracts adjacent to qualified tracts may be designated</td>
+                <td data-label="Criterion"><strong>Adjacent Tracts</strong></td>
+                <td data-label="Description">Low-income tracts adjacent to qualified tracts may be designated</td>
               </tr>
               <tr>
-                <td><strong>Federal Certification</strong></td>
-                <td>Nominated by states/territories, certified by U.S. Treasury</td>
+                <td data-label="Criterion"><strong>Federal Certification</strong></td>
+                <td data-label="Description">Nominated by states/territories, certified by U.S. Treasury</td>
               </tr>
               <tr>
-                <td><strong>Designation Period</strong></td>
-                <td>Remains QOZ designation through December 31, 2028 (or later)</td>
+                <td data-label="Criterion"><strong>Designation Period</strong></td>
+                <td data-label="Description">Remains QOZ designation through December 31, 2028 (or later)</td>
               </tr>
             </tbody>
           </StyledTable>

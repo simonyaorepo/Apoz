@@ -46,24 +46,24 @@ const QOFZoneSection: React.FC<QOFZoneSectionProps> = () => {
             </thead>
             <tbody>
               <tr>
-                <td><strong>90% Asset Test</strong></td>
-                <td>At least 90% of fund assets must be invested in QOZ property</td>
+                <td data-label="Requirement"><strong>90% Asset Test</strong></td>
+                <td data-label="Description">At least 90% of fund assets must be invested in QOZ property</td>
               </tr>
               <tr>
-                <td><strong>Self-Certification</strong></td>
-                <td>Fund must self-certify to the IRS using Form 8996</td>
+                <td data-label="Requirement"><strong>Self-Certification</strong></td>
+                <td data-label="Description">Fund must self-certify to the IRS using Form 8996</td>
               </tr>
               <tr>
-                <td><strong>Annual Reporting</strong></td>
-                <td>Submit compliance certification annually with federal tax return</td>
+                <td data-label="Requirement"><strong>Annual Reporting</strong></td>
+                <td data-label="Description">Submit compliance certification annually with federal tax return</td>
               </tr>
               <tr>
-                <td><strong>180-Day Investment</strong></td>
-                <td>Investors must invest capital gains within 180 days of realization</td>
+                <td data-label="Requirement"><strong>180-Day Investment</strong></td>
+                <td data-label="Description">Investors must invest capital gains within 180 days of realization</td>
               </tr>
               <tr>
-                <td><strong>Substantial Improvement</strong></td>
-                <td>Must improve existing QOZ property by amount equal to purchase price within 30 months</td>
+                <td data-label="Requirement"><strong>Substantial Improvement</strong></td>
+                <td data-label="Description">Must improve existing QOZ property by amount equal to purchase price within 30 months</td>
               </tr>
             </tbody>
           </StyledTable>

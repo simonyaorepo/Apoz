@@ -24,12 +24,17 @@ export const IllustrationBox = styled.div`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 100%;
-    margin: 0;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: ${({ theme }) => theme.spacing.lg};
     max-height: 150px;
     padding: ${({ theme }) => theme.spacing.md};
+    max-width: 100%;
     
     svg {
       width: 100%;
+      height: auto;
+      max-width: 100%;
       transform: none;
     }
   }

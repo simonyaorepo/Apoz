@@ -4,6 +4,7 @@ import TextHero from "../../TextHero";
 import GoldDivider from "../../ui/GoldDivider";
 import { RESIDENTIAL_MANAGEMENT_DATA } from "../servicesSectionData";
 import { WhiteSection, TealSection, TealBox } from "../../ui/Sections";
+import { StyledTable } from "../../ui/Table";
 
 const ContentWrapper = styled.div`
   max-width: ${({ theme }) => theme.maxWidth.content};
@@ -37,39 +38,6 @@ const SectionTitle = styled.h2`
     margin: 2rem 0 1rem;
   }
 `;
-
-const StyledTable = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2rem 0;
-  font-size: ${({ theme }) => theme.fontSizes.md};
-
-  th, td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  }
-
-  th {
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: white;
-    font-weight: ${({ theme }) => theme.fontWeights.semibold};
-  }
-
-  tr:hover {
-    background-color: ${({ theme }) => theme.colors.backgroundAlt};
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    
-    th, td {
-      padding: 0.75rem;
-    }
-  }
-`;
-
-
 
 const TealTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.h5};
@@ -145,9 +113,9 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
             <tbody>
               {RESIDENTIAL_MANAGEMENT_DATA.content.coreServices.map((service, index) => (
                 <tr key={index}>
-                  <td><strong>{service.category}</strong></td>
-                  <td>{service.scope}</td>
-                  <td>{service.impact}</td>
+                  <td data-label="Service Category"><strong>{service.category}</strong></td>
+                  <td data-label="Scope">{service.scope}</td>
+                  <td data-label="Impact">{service.impact}</td>
                 </tr>
               ))}
             </tbody>

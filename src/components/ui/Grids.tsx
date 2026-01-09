@@ -10,6 +10,13 @@ export const ContentGrid = styled.div`
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.xl};
     align-items: center;
+    width: 100%;
+    min-width: 0;
+    
+    > * {
+      min-width: 0;
+      max-width: 100%;
+    }
   }
 `;
 
@@ -22,6 +29,13 @@ export const GreyContentGrid = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.lg};
+    width: 100%;
+    min-width: 0;
+    
+    > * {
+      min-width: 0;
+      max-width: 100%;
+    }
   }
 `;
 

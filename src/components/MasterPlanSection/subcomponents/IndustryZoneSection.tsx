@@ -89,29 +89,29 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Tenant Operations</strong></td>
-                  <td>Leasing, onboarding, site orientation, and ongoing tenant relations.</td>
-                  <td>Increases occupancy & tenant retention.</td>
+                  <td data-label="Category"><strong>Tenant Operations</strong></td>
+                  <td data-label="Scope">Leasing, onboarding, site orientation, and ongoing tenant relations.</td>
+                  <td data-label="Impact">Increases occupancy & tenant retention.</td>
                 </tr>
                 <tr>
-                  <td><strong>FTZ Administration</strong></td>
-                  <td>Duty-free operations, customs reporting, bonded storage, and compliance audits.</td>
-                  <td>Maximizes cost savings for tenants and investors.</td>
+                  <td data-label="Category"><strong>FTZ Administration</strong></td>
+                  <td data-label="Scope">Duty-free operations, customs reporting, bonded storage, and compliance audits.</td>
+                  <td data-label="Impact">Maximizes cost savings for tenants and investors.</td>
                 </tr>
                 <tr>
-                  <td><strong>Infrastructure Management</strong></td>
-                  <td>Roads, drainage, power, telecom, EV-ready facilities.</td>
-                  <td>Maintains site efficiency & reliability.</td>
+                  <td data-label="Category"><strong>Infrastructure Management</strong></td>
+                  <td data-label="Scope">Roads, drainage, power, telecom, EV-ready facilities.</td>
+                  <td data-label="Impact">Maintains site efficiency & reliability.</td>
                 </tr>
                 <tr>
-                  <td><strong>Logistics Coordination</strong></td>
-                  <td>Trucking, rail, and last-mile distribution optimization.</td>
-                  <td>Reduces supply chain costs & increases APOZ competitiveness.</td>
+                  <td data-label="Category"><strong>Logistics Coordination</strong></td>
+                  <td data-label="Scope">Trucking, rail, and last-mile distribution optimization.</td>
+                  <td data-label="Impact">Reduces supply chain costs & increases APOZ competitiveness.</td>
                 </tr>
                 <tr>
-                  <td><strong>Safety & Security</strong></td>
-                  <td>24/7 monitoring, customs-controlled entry, and ESG compliance.</td>
-                  <td>Protects tenants, workers, and cargo.</td>
+                  <td data-label="Category"><strong>Safety & Security</strong></td>
+                  <td data-label="Scope">24/7 monitoring, customs-controlled entry, and ESG compliance.</td>
+                  <td data-label="Impact">Protects tenants, workers, and cargo.</td>
                 </tr>
               </tbody>
             </StyledTable>

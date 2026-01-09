@@ -138,9 +138,9 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
               <tbody>
                 {INTERNATIONAL_HUB_DATA.content.coreFunctions.map((item, idx) => (
                   <tr key={idx}>
-                    <td><strong>{item.function}</strong></td>
-                    <td>{item.description}</td>
-                    <td>{item.impact}</td>
+                    <td data-label="Function"><strong>{item.function}</strong></td>
+                    <td data-label="Description">{item.description}</td>
+                    <td data-label="Impact">{item.impact}</td>
                   </tr>
                 ))}
               </tbody>

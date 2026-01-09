@@ -72,9 +72,12 @@ export const StyledTable = styled.table`
     }
     
     tbody tr td {
-      position: relative;
-      padding-left: 50%;
+      display: grid;
+      grid-template-columns: 40% 60%;
+      gap: ${({ theme }) => theme.spacing.sm};
+      padding: ${({ theme }) => theme.spacing.md};
       border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+      align-items: start;
       
       &:last-child {
         border-bottom: none;
@@ -82,12 +85,11 @@ export const StyledTable = styled.table`
       
       &:before {
         content: attr(data-label);
-        position: absolute;
-        left: ${({ theme }) => theme.spacing.md};
-        top: ${({ theme }) => theme.spacing.sm};
         font-weight: ${({ theme }) => theme.fontWeights.semibold};
         color: ${({ theme }) => theme.colors.primary};
         font-size: ${({ theme }) => theme.fontSizes.sm};
+        word-wrap: break-word;
+        line-height: 1.4;
       }
     }
   }
