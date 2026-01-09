@@ -259,10 +259,10 @@ export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
               Building sustainable communities and fostering economic growth through master-planned development in Greater Houston.
             </Description>
             <SocialRow>
-              <SocialIcon><FaFacebookF size={40} /></SocialIcon>
-              <SocialIcon><FaXTwitter size={40} /></SocialIcon>
-              <SocialIcon><FaLinkedinIn size={40} /></SocialIcon>
-              <SocialIcon><FaInstagram size={40} /></SocialIcon>
+              <SocialIcon><FaFacebookF /></SocialIcon>
+              <SocialIcon><FaXTwitter /></SocialIcon>
+              <SocialIcon><FaLinkedinIn /></SocialIcon>
+              <SocialIcon><FaInstagram /></SocialIcon>
             </SocialRow>
           </Brand>
           {/* Footer Sections */}
