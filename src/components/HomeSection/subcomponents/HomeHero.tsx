@@ -27,7 +27,7 @@ const HeroImage = styled.img<{ $showTop?: boolean }>`
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: ${({ $showTop }) => $showTop ? 'cover' : 'contain'};
+  object-fit: cover;
   object-position: ${({ $showTop }) => $showTop ? 'center -10%' : 'center center'};
   z-index: 1;
   transition: transform 0.5s ease;
