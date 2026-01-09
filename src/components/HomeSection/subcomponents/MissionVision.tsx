@@ -38,7 +38,12 @@ const Title = styled.h2`
   color: ${({ theme }) => theme.colors.darkBlueAlt};
   font-size: ${({ theme }) => theme.fontSizes.h3};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
-  margin-bottom: 24px;
+  line-height: 1.25;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes.h4};
+  }
 `;
 
 const Paragraph = styled.p`

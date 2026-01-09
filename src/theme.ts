@@ -5,12 +5,14 @@ export const breakpoints = {
   xs: '320px',
   sm: '480px',
   md: '768px',
-  lg: '1024px',
-  xl: '1280px',
+  lg: '992px',
+  xl: '1024px',
+  '2xl': '1280px',
 };
 
 export const fontSizes = {
   base: '1rem', // 16px
+  xs: '0.75rem', // 12px
   sm: '0.875rem', // 14px
   md: '1.0625rem', // 17px
   lg: '1.25rem', // 20px
@@ -26,6 +28,17 @@ export const fontSizes = {
   h6: '1.125rem', // 18px
   small: '0.875rem', // 14px
   xsmall: '0.75rem', // 12px
+  // Custom sizes used in components
+  '0.65': '0.65rem', // 10.4px
+  '0.8': '0.8rem', // 12.8px
+  '0.8125': '0.8125rem', // 13px
+  '0.85': '0.85rem', // 13.6px
+  '0.9': '0.9rem', // 14.4px
+  '0.95': '0.95rem', // 15.2px
+  '0.97': '0.97rem', // 15.52px
+  '1.1': '1.1rem', // 17.6px
+  '1.625': '1.625rem', // 26px
+  '1.75': '1.75rem', // 28px
 };
 
 export const fontFamilies = {
@@ -62,6 +75,17 @@ export const radii = {
   card: '14px',
 };
 
+const dimensions = {
+  heroMin: '550px',
+  heroMinMd: '500px',
+  heroMinSm: '400px',
+  heroMinXs: '350px',
+  heroMax: '750px',
+  contentBoxWidth: '580px',
+  contentBoxWidthMd: '520px',
+  contentBoxWidthLg: '480px',
+};
+
 const common = {
   borderRadius: radii.md,
   maxWidth: {
@@ -79,6 +103,7 @@ const common = {
   fontWeights,
   gradients,
   radii,
+  dimensions,
   spacing: {
     xxs: '0.125rem', // 2px
     xs: '0.25rem', // 4px

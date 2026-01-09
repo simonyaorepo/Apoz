@@ -2,24 +2,24 @@ import styled from "styled-components";
 
 const Section = styled.section`
   background: ${({ theme }) => theme.colors.backgroundAlt};
-  padding: 80px 5vw;
+  padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
   
   @media (max-width: 768px) {
-    padding: 60px 5vw;
+    padding: ${({ theme }) => theme.spacing.xxl} 5vw;
   }
 `;
 
 const Container = styled.div`
-  max-width: 1400px;
+  max-width: 1180px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1.618fr;
+  gap: ${({ theme }) => theme.spacing.xxxl};
   align-items: center;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: ${({ theme }) => theme.spacing.xl};
   }
 `;
 
@@ -42,12 +42,12 @@ const TextContent = styled.div`
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.darkBlue};
   font-size: ${({ theme }) => theme.fontSizes.h2};
-  font-weight: 400;
-  line-height: 1.3;
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  line-height: 1.25;
   margin: 0;
   
-  @media (max-width: 768px) {
-    font-size: ${({ theme }) => theme.fontSizes.h2};
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes.h3};
   }
 `;
 

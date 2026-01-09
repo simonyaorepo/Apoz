@@ -2,21 +2,21 @@ import styled from "styled-components";
 
 export const WhiteSection = styled.section`
   background: ${({ theme }) => theme.colors.white};
-  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.section} ${({ theme }) => theme.spacing.xl};
   overflow-x: hidden;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.lg};
+    padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.lg};
   }
 `;
 
 export const GreySection = styled.section`
   background: ${({ theme }) => theme.colors.grey};
-  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.section} ${({ theme }) => theme.spacing.xl};
   position: relative;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.lg};
+    padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.lg};
   }
 `;
 
@@ -174,7 +174,7 @@ export const ImageBox = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 4rem 2rem;
   

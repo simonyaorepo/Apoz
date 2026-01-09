@@ -111,19 +111,19 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
             </thead>
             <tbody>
               <tr>
-                <td><strong>Capital Gains Deferral</strong></td>
-                <td>Pay no federal tax on reinvested gains until Dec 31, 2026</td>
-                <td>Up to ~2 years (if invested now)</td>
+                <td data-label="Benefit"><strong>Capital Gains Deferral</strong></td>
+                <td data-label="Details">Pay no federal tax on reinvested gains until Dec 31, 2026</td>
+                <td data-label="Timeline">Up to ~2 years (if invested now)</td>
               </tr>
               <tr>
-                <td><strong>Tax-Free Growth</strong></td>
-                <td>After 10+ years, pay zero federal capital gains tax on profits from the QOZ investment</td>
-                <td>10+ years</td>
+                <td data-label="Benefit"><strong>Tax-Free Growth</strong></td>
+                <td data-label="Details">After 10+ years, pay zero federal capital gains tax on profits from the QOZ investment</td>
+                <td data-label="Timeline">10+ years</td>
               </tr>
               <tr>
-                <td><strong>Step-Up in Basis</strong></td>
-                <td>Previously reduced taxable gains by up to 15% after 7 years (expired for new investors in 2021)</td>
-                <td>N/A</td>
+                <td data-label="Benefit"><strong>Step-Up in Basis</strong></td>
+                <td data-label="Details">Previously reduced taxable gains by up to 15% after 7 years (expired for new investors in 2021)</td>
+                <td data-label="Timeline">N/A</td>
               </tr>
             </tbody>
           </StyledTable>
@@ -185,29 +185,29 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
             </thead>
             <tbody>
               <tr>
-                <td><strong>1. Capital Gain Event</strong></td>
-                <td>Investor sells stock, crypto, business, or property and realizes gains</td>
-                <td>Investor</td>
+                <td data-label="Step"><strong>1. Capital Gain Event</strong></td>
+                <td data-label="Process">Investor sells stock, crypto, business, or property and realizes gains</td>
+                <td data-label="Who's Involved">Investor</td>
               </tr>
               <tr>
-                <td><strong>2. Invest into QOF</strong></td>
-                <td>Within 180 days, investor contributes gains into a QOF</td>
-                <td>Investor + QOF</td>
+                <td data-label="Step"><strong>2. Invest into QOF</strong></td>
+                <td data-label="Process">Within 180 days, investor contributes gains into a QOF</td>
+                <td data-label="Who's Involved">Investor + QOF</td>
               </tr>
               <tr>
-                <td><strong>3. QOF Deploys Funds</strong></td>
-                <td>QOF invests at least 90% of assets into QOZ projects like APOZ</td>
-                <td>QOF Manager + Developer</td>
+                <td data-label="Step"><strong>3. QOF Deploys Funds</strong></td>
+                <td data-label="Process">QOF invests at least 90% of assets into QOZ projects like APOZ</td>
+                <td data-label="Who's Involved">QOF Manager + Developer</td>
               </tr>
               <tr>
-                <td><strong>4. Hold Investment</strong></td>
-                <td>Investors hold their QOF shares for 5, 7, or 10+ years to unlock tax breaks</td>
-                <td>Investor</td>
+                <td data-label="Step"><strong>4. Hold Investment</strong></td>
+                <td data-label="Process">Investors hold their QOF shares for 5, 7, or 10+ years to unlock tax breaks</td>
+                <td data-label="Who's Involved">Investor</td>
               </tr>
               <tr>
-                <td><strong>5. Exit & Tax-Free Growth</strong></td>
-                <td>After 10+ years, any appreciation on the QOF investment is tax-free</td>
-                <td>Investor</td>
+                <td data-label="Step"><strong>5. Exit & Tax-Free Growth</strong></td>
+                <td data-label="Process">After 10+ years, any appreciation on the QOF investment is tax-free</td>
+                <td data-label="Who's Involved">Investor</td>
               </tr>
             </tbody>
           </StyledTable>

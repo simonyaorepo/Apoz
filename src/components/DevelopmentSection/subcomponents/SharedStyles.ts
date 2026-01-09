@@ -49,7 +49,7 @@ export const PhaseTitle = styled.h2`
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.darkBlue};
   margin-bottom: ${({ theme }) => theme.spacing.lg};
-  line-height: 1.2;
+  line-height: 1.25;
 `;
 
 export const PhaseParagraph = styled.p`

@@ -135,7 +135,7 @@ const CapitalStructureGrid = styled.div`
 `;
 
 const CapitalCard = styled.div`
-  border-left: 3px solid ${({ theme }) => theme.colors.goldAccent};
+  border-left: 3px solid ${({ theme }) => theme.colors.teal};
   padding: ${({ theme }) => theme.spacing.lg};
   background: ${({ theme }) => theme.colors.backgroundAlt};
   transition: ${({ theme }) => theme.transition.fast};
@@ -213,10 +213,10 @@ const InvestmentOverviewSection: React.FC<InvestmentOverviewSectionProps> = ({ o
             <tbody>
               {INVESTMENT_OVERVIEW.investmentStrategy.map((phase, index) => (
                 <tr key={index}>
-                  <td><strong>{phase.phase}</strong></td>
-                  <td>{phase.scope}</td>
-                  <td>{phase.capitalRequired}</td>
-                  <td>{phase.fundingSources}</td>
+                  <td data-label="Phase"><strong>{phase.phase}</strong></td>
+                  <td data-label="Scope">{phase.scope}</td>
+                  <td data-label="Capital Required">{phase.capitalRequired}</td>
+                  <td data-label="Funding Sources">{phase.fundingSources}</td>
                 </tr>
               ))}
             </tbody>

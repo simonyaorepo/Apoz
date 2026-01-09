@@ -44,21 +44,26 @@ const ContentBox = styled.div`
   left: 0;
   bottom: 0;
   z-index: 3;
-  background: rgba(10, 30, 30, 0.75);
-  backdrop-filter: blur(4px);
+  background: rgba(10, 30, 30, 0.78);
+  backdrop-filter: blur(6px);
   border-radius: 0;
-  padding: 40px 56px;
-  max-width: 680px;
+  padding: ${({ theme }) => theme.spacing.xxl} 64px;
+  max-width: 700px;
   color: ${({ theme }) => theme.colors.white};
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 14px;
+  gap: ${({ theme }) => theme.spacing.md};
   
-  @media (max-width: 768px) {
-    padding: 24px 28px;
-    max-width: 100%;
-    gap: 10px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xxl};
+    max-width: 90%;
+    gap: ${({ theme }) => theme.spacing.sm};
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
+    max-width: 95%;
   }
 `;
 
@@ -72,26 +77,30 @@ const Subtitle = styled.div`
 `;
 
 const Headline = styled.h1`
-  font-size: 1.625rem;
+  font-size: ${({ theme }) => theme.fontSizes.h3};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.white};
   line-height: 1.25;
   margin: 0;
   
-  @media (max-width: 768px) {
-    font-size: 1.25rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes['1.75']};
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: ${({ theme }) => theme.fontSizes.xl};
   }
 `;
 
 const Summary = styled.p`
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.875rem;
-  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  line-height: 1.6;
   margin: 0;
   font-weight: 400;
   
-  @media (max-width: 768px) {
-    font-size: 0.8125rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes.sm};
   }
 `;
 

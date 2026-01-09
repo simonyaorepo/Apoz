@@ -123,9 +123,9 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
               <tbody>
                 {INFRASTRUCTURE_INVESTMENT_DATA.content.scope.map((item, idx) => (
                   <tr key={idx}>
-                    <td><strong>{item.category}</strong></td>
-                    <td>{item.components}</td>
-                    <td>{item.purpose}</td>
+                    <td data-label="Category"><strong>{item.category}</strong></td>
+                    <td data-label="Key Components">{item.components}</td>
+                    <td data-label="Purpose">{item.purpose}</td>
                   </tr>
                 ))}
               </tbody>

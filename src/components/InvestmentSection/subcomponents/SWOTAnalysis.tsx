@@ -196,7 +196,7 @@ const SWOTAnalysis: React.FC = () => {
   return (
     <GreySection style={{ background: '#f8f9fa' }}>
       <Container>
-        <SectionTitle>{SWOT_ANALYSIS.title}</SectionTitle>
+        <SectionTitle style={{ textAlign: 'center' }}>{SWOT_ANALYSIS.title}</SectionTitle>
         <Subtitle>{SWOT_ANALYSIS.subtitle}</Subtitle>
         
         <TabsContainer>

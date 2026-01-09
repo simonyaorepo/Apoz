@@ -6,10 +6,10 @@ import { Container } from "./Containers";
 
 const ContentSection = styled(WhiteSection)`
   background: ${({ theme }) => theme.colors.white};
-  padding: ${({ theme }) => theme.spacing.xxxl} 0;
+  padding: ${({ theme }) => theme.spacing.section} 0;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) => theme.spacing.xxl} 0;
+    padding: ${({ theme }) => theme.spacing.xxxl} 0;
   }
 `;
 
@@ -24,7 +24,7 @@ const PlaceholderContent = styled.div`
 
 const Title = styled.h2`
   font-size: ${({ theme }) => theme.fontSizes.h3};
-  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   

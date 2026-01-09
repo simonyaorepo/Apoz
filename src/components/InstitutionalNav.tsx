@@ -27,8 +27,9 @@ const NavContainer = styled.div`
   max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
   padding: 0 1rem;
+  width: 100%;
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    max-width: 100vw;
+    max-width: 100%;
     padding: 0 0.5rem;
   }
 `;
@@ -73,18 +74,18 @@ const LogoText = styled.div`
   color: ${({ theme }) => theme.colors.darkBlue};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   letter-spacing: 0.05em;
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSizes.base};
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    font-size: 0.85rem;
+    font-size: ${({ theme }) => theme.fontSizes['0.85']};
   }
 `;
 
 const LogoSubText = styled.div`
   color: ${({ theme }) => theme.colors.goldAccent};
-  font-size: 0.75rem;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   letter-spacing: 0.05em;
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    font-size: 0.65rem;
+    font-size: ${({ theme }) => theme.fontSizes['0.65']};
   }
 `;
 
@@ -151,7 +152,7 @@ const NavButton = styled.button<{ $active?: boolean }>`
   background: none;
   border: none;
   color: ${({ theme, $active }) => $active ? theme.colors.gold : theme.colors.foreground};
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSizes.base};
   font-weight: 400;
   letter-spacing: 0.03em;
   padding: 0.25rem 0;
@@ -174,7 +175,7 @@ const NavButton = styled.button<{ $active?: boolean }>`
     transition: width 0.3s;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    font-size: 0.9rem;
+    font-size: ${({ theme }) => theme.fontSizes['0.9']};
     padding: 0.15rem 0;
   }
   
@@ -185,7 +186,7 @@ const NavButton = styled.button<{ $active?: boolean }>`
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: 1.1rem;
+    font-size: ${({ theme }) => theme.fontSizes['1.1']};
     width: 100%;
     text-align: left;
     
@@ -224,7 +225,7 @@ const MegaMenuButton = styled.button`
   border: none;
   color: ${({ theme }) => theme.colors.white};
   text-align: left;
-  font-size: 0.95rem;
+  font-size: ${({ theme }) => theme.fontSizes['0.95']};
   font-weight: 400;
   padding: 0.85rem 1rem;
   cursor: pointer;
@@ -240,7 +241,7 @@ const MegaMenuButton = styled.button`
     background: rgba(255,255,255,0.04);
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    font-size: 0.8rem;
+    font-size: ${({ theme }) => theme.fontSizes['0.8']};
     padding: 0.6rem 0.7rem;
   }
 `;

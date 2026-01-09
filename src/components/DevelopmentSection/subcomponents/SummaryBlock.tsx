@@ -5,7 +5,7 @@ const Block = styled.div<{ $reverse?: boolean }>`
   display: grid;
   grid-template-columns: ${({ $reverse }) => $reverse ? '1fr 1fr' : '1fr 1fr'};
   gap: ${({ theme }) => theme.spacing.xxxl};
-  max-width: 1400px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
   align-items: center;

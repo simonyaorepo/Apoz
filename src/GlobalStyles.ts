@@ -5,6 +5,11 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   body {
     margin: 0;
     padding: 0;
@@ -14,12 +19,18 @@ const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.foreground};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga', 'kern';
+    overflow-x: hidden;
+    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: ${({ theme }) => theme.fontFamilies.heading};
     margin: 0;
     line-height: 1.2;
+    font-feature-settings: 'liga', 'kern';
+    text-rendering: optimizeLegibility;
   }
 
   h1 {

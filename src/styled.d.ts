@@ -10,6 +10,16 @@ declare module 'styled-components' {
     fontWeights: typeof import('./theme').fontWeights;
     gradients: typeof import('./theme').gradients;
     radii: typeof import('./theme').radii;
+    dimensions: {
+      heroMin: string;
+      heroMinMd: string;
+      heroMinSm: string;
+      heroMinXs: string;
+      heroMax: string;
+      contentBoxWidth: string;
+      contentBoxWidthMd: string;
+      contentBoxWidthLg: string;
+    };
     spacing: typeof import('./theme').lightTheme.spacing;
     maxWidth: typeof import('./theme').lightTheme.maxWidth;
     overlays: typeof import('./theme').lightTheme.overlays;

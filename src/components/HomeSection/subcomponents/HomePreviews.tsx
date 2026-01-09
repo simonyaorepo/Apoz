@@ -5,24 +5,24 @@ import GoldButton from "../../ui/GoldButton";
 const Section = styled.section`
   background: linear-gradient(rgba(10, 40, 45, 0.85), rgba(10, 40, 45, 0.85)),
     url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=80') center/cover;
-  padding: 100px 5vw;
+  padding: ${({ theme }) => theme.spacing.section} 5vw;
   
   @media (max-width: 768px) {
-    padding: 60px 5vw;
+    padding: ${({ theme }) => theme.spacing.xxl} 5vw;
   }
 `;
 
 const Container = styled.div`
-  max-width: 1400px;
+  max-width: 1180px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.618fr 1fr;
+  gap: ${({ theme }) => theme.spacing.xxxl};
   align-items: center;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: ${({ theme }) => theme.spacing.xl};
   }
 `;
 

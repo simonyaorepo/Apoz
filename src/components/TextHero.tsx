@@ -4,31 +4,31 @@ import styled from "styled-components";
 const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  min-height: 550px;
+  min-height: ${({ theme }) => theme.dimensions.heroMin};
   height: 60vh;
-  max-height: 750px;
+  max-height: ${({ theme }) => theme.dimensions.heroMax};
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   overflow: hidden;
   background: ${({ theme }) => theme.colors.darkBlue};
-  margin-top: 5rem;
+  margin-top: ${({ theme }) => theme.spacing.xxxl};
   
-  @media (max-width: 1024px) {
-    min-height: 500px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.xl}) {
+    min-height: ${({ theme }) => theme.dimensions.heroMinMd};
     height: 55vh;
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    min-height: 400px;
+    min-height: ${({ theme }) => theme.dimensions.heroMinSm};
     height: 50vh;
-    margin-top: 4rem;
+    margin-top: ${({ theme }) => theme.spacing.xxl};
   }
   
-  @media (max-width: 480px) {
-    min-height: 350px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    min-height: ${({ theme }) => theme.dimensions.heroMinXs};
     height: 45vh;
-    margin-top: 3.5rem;
+    margin-top: ${({ theme }) => theme.spacing.xl};
   }
 `;
 
@@ -40,6 +40,8 @@ const HeroImage = styled.img`
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  filter: contrast(1.02) saturate(1.05);
+  image-rendering: -webkit-optimize-contrast;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     object-fit: cover;
@@ -89,10 +91,10 @@ const Breadcrumb = styled.nav`
   a {
     color: ${({ theme }) => theme.colors.white};
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: opacity 0.3s ease;
     
     &:hover {
-      color: ${({ theme }) => theme.colors.goldAccent};
+      opacity: 0.8;
     }
   }
   
@@ -111,18 +113,18 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.white};
   line-height: 1.2;
   margin: 0;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
   
-  @media (max-width: 1024px) {
-    font-size: 2rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.xl}) {
+    font-size: ${({ theme }) => theme.fontSizes.h3};
   }
   
-  @media (max-width: 768px) {
-    font-size: 1.75rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes['1.75']};
   }
   
-  @media (max-width: 480px) {
-    font-size: 1.5rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: ${({ theme }) => theme.fontSizes.xl};
   }
 `;
 

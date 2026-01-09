@@ -36,6 +36,7 @@ export const SectionTitle = styled.h2`
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.primary};
   margin: ${({ theme }) => theme.spacing.xxl} 0 ${({ theme }) => theme.spacing.lg};
+  line-height: 1.25;
   
   &:first-child {
     margin-top: 0;
@@ -47,13 +48,14 @@ export const SectionTitle = styled.h2`
 `;
 
 export const SubsectionTitle = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.h4};
+  font-size: ${({ theme }) => theme.fontSizes.h3};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.darkBlue};
   margin-top: ${({ theme }) => theme.spacing.xxl};
-  margin-bottom: ${({ theme }) => theme.spacing.md};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  line-height: 1.25;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.h5};
+    font-size: ${({ theme }) => theme.fontSizes.h4};
   }
 `;

@@ -50,4 +50,45 @@ export const StyledTable = styled.table`
       font-size: ${({ theme }) => theme.fontSizes.sm};
     }
   }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    thead {
+      display: none;
+    }
+    
+    tbody, tr, td {
+      display: block;
+      width: 100%;
+    }
+    
+    tbody tr {
+      margin-bottom: ${({ theme }) => theme.spacing.lg};
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      background: ${({ theme }) => theme.colors.white};
+    }
+    
+    tbody tr td {
+      position: relative;
+      padding-left: 50%;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      &:before {
+        content: attr(data-label);
+        position: absolute;
+        left: ${({ theme }) => theme.spacing.md};
+        top: ${({ theme }) => theme.spacing.sm};
+        font-weight: ${({ theme }) => theme.fontWeights.semibold};
+        color: ${({ theme }) => theme.colors.primary};
+        font-size: ${({ theme }) => theme.fontSizes.sm};
+      }
+    }
+  }
 `;

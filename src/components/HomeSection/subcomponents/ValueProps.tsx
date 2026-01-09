@@ -13,8 +13,14 @@ interface ValuePropsProps {
 const SectionTitle = styled.h2`
   color: ${({ theme }) => theme.colors.darkBlueAlt};
   font-size: ${({ theme }) => theme.fontSizes.h2};
-  margin-bottom: ${({ theme }) => theme.spacing.md};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
   text-align: center;
+  line-height: 1.25;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes.h3};
+  }
 `;
 
 const Divider = styled.div`

@@ -8,9 +8,9 @@ interface GoldButtonProps {
 const StyledButton = styled.button`
   background: ${({ theme }) => theme.colors.goldAccent};
   color: white;
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
-  padding: 12px 32px;
+  padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.xl};
   border: none;
   border-radius: 0;
   text-transform: uppercase;
@@ -18,22 +18,25 @@ const StyledButton = styled.button`
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  transition: all 0.2s ease;
+  gap: ${({ theme }) => theme.spacing.sm};
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-feature-settings: 'liga', 'kern';
+  text-rendering: optimizeLegibility;
   
   &::after {
     content: '→';
     font-size: 1em;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   &:hover {
     background: ${({ theme }) => theme.colors.goldAccentHover};
-    transform: translateX(3px);
+    transform: translateX(2px);
+    box-shadow: 0 4px 12px rgba(201, 162, 77, 0.2);
   }
   
   &:hover::after {
-    transform: translateX(3px);
+    transform: translateX(4px);
   }
 `;
 

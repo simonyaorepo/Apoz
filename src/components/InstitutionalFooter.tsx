@@ -10,7 +10,7 @@ interface InstitutionalFooterProps {
 const FooterWrapper = styled.footer`
   background: ${({ theme }) => theme.colors.teal};
   color: ${({ theme }) => theme.colors.muted};
-  border-top: 1px solid ${({ theme }) => theme.colors.goldGradient};
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: ${({ theme }) => theme.spacing.xxxl};
 `;
 
@@ -18,6 +18,8 @@ const FooterContainer = styled.div`
   max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.md};
+  width: 100%;
+  overflow-x: hidden;
 `;
 
 const Grid = styled.div`
@@ -96,14 +98,14 @@ const SocialIcon = styled.button`
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  border: 2px solid ${({ theme }) => theme.colors.goldAccent};
+  border: 2px solid rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   background: none;
   box-shadow: none;
-  transition: border-color 0.2s, color 0.2s;
-  color: ${({ theme }) => theme.colors.gold};
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: ${({ theme }) => theme.colors.white};
   
   svg {
     width: 2.5rem;
@@ -112,7 +114,8 @@ const SocialIcon = styled.button`
   
   &:hover {
     border-color: ${({ theme }) => theme.colors.gold};
-    color: ${({ theme }) => theme.colors.goldAccent};
+    color: ${({ theme }) => theme.colors.gold};
+    transform: translateY(-2px);
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
@@ -134,7 +137,7 @@ const SectionTitle = styled.h3`
   letter-spacing: 0.05em;
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: ${({ theme }) => theme.fontSizes['1.1']};
     margin-bottom: 0.8rem;
   }
 `;
@@ -155,18 +158,18 @@ const LinkButton = styled.button`
   font-size: ${({ theme }) => theme.fontSizes.sm};
   font-weight: 400;
   cursor: pointer;
-  transition: color ${({ theme }) => theme.transition.button}, font-weight 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    color: ${({ theme }) => theme.colors.gold};
-    font-weight: 500;
+    color: ${({ theme }) => theme.colors.white};
+    transform: translateX(2px);
   }
   &.active {
-    color: ${({ theme }) => theme.colors.gold};
+    color: ${({ theme }) => theme.colors.white};
     font-weight: 500;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     text-align: center;
-    font-size: 0.97rem;
+    font-size: ${({ theme }) => theme.fontSizes['0.97']};
     margin-bottom: 0.5rem;
   }
 `;
@@ -191,10 +194,18 @@ const ItemText = styled.span`
 
 const BottomBar = styled.div`
   padding-top: ${({ theme }) => theme.spacing.lg};
-  border-top: 1px solid ${({ theme }) => theme.colors.goldAccent};
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: ${({ theme }) => theme.spacing.md};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    flex-direction: column;
+    text-align: center;
+    gap: ${({ theme }) => theme.spacing.sm};
+  }
 `;
 
 const Copyright = styled.p`
@@ -207,6 +218,12 @@ const LegalLinks = styled.div`
   gap: ${({ theme }) => theme.spacing.lg};
   color: ${({ theme }) => theme.colors.muted};
   font-size: ${({ theme }) => theme.fontSizes.sm};
+  flex-wrap: wrap;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    justify-content: center;
+    gap: ${({ theme }) => theme.spacing.md};
+  }
 `;
 
 // Add types for footer sections
@@ -267,15 +284,7 @@ export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
           </Brand>
           {/* Footer Sections */}
           {footerSections.map((section, index) => (
-            <div
-              key={index}
-              style={{
-                gridColumn:
-                  footerSections.length === 2 && index === 0
-                    ? '3 / span 1'
-                    : undefined
-              }}
-            >
+            <div key={index}>
               <SectionTitle>{section.title}</SectionTitle>
               <LinkList>
                 {section.links && section.links.map((link, linkIndex) => (

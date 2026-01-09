@@ -75,34 +75,34 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
             </thead>
             <tbody>
               <tr>
-                <td><strong>1. Apply for FTZ Designation</strong></td>
-                <td>File with the U.S. Foreign-Trade Zones Board for activation</td>
-                <td>Project developer, FTZ consultant</td>
+                <td data-label="Step"><strong>1. Apply for FTZ Designation</strong></td>
+                <td data-label="Process">File with the U.S. Foreign-Trade Zones Board for activation</td>
+                <td data-label="Who's Involved">Project developer, FTZ consultant</td>
               </tr>
               <tr>
-                <td><strong>2. Activate the Zone</strong></td>
-                <td>Coordinate with U.S. Customs and Border Protection (CBP) for site inspection & approval</td>
-                <td>Developer, CBP</td>
+                <td data-label="Step"><strong>2. Activate the Zone</strong></td>
+                <td data-label="Process">Coordinate with U.S. Customs and Border Protection (CBP) for site inspection & approval</td>
+                <td data-label="Who's Involved">Developer, CBP</td>
               </tr>
               <tr>
-                <td><strong>3. Operate Under FTZ Status</strong></td>
-                <td>Tenants import raw materials or finished goods into the zone duty-free</td>
-                <td>Tenants, customs brokers</td>
+                <td data-label="Step"><strong>3. Operate Under FTZ Status</strong></td>
+                <td data-label="Process">Tenants import raw materials or finished goods into the zone duty-free</td>
+                <td data-label="Who's Involved">Tenants, customs brokers</td>
               </tr>
               <tr>
-                <td><strong>4. Manufacturing & Storage</strong></td>
-                <td>Goods can be processed, assembled, packaged, or stored within the zone</td>
-                <td>Manufacturers, logistics firms</td>
+                <td data-label="Step"><strong>4. Manufacturing & Storage</strong></td>
+                <td data-label="Process">Goods can be processed, assembled, packaged, or stored within the zone</td>
+                <td data-label="Who's Involved">Manufacturers, logistics firms</td>
               </tr>
               <tr>
-                <td><strong>5. Entry to U.S. Commerce</strong></td>
-                <td>Duties are paid only when goods leave FTZ into U.S. markets</td>
-                <td>Importers, CBP</td>
+                <td data-label="Step"><strong>5. Entry to U.S. Commerce</strong></td>
+                <td data-label="Process">Duties are paid only when goods leave FTZ into U.S. markets</td>
+                <td data-label="Who's Involved">Importers, CBP</td>
               </tr>
               <tr>
-                <td><strong>6. Re-export Without Duty</strong></td>
-                <td>Goods shipped overseas incur zero U.S. customs duties</td>
-                <td>Exporters</td>
+                <td data-label="Step"><strong>6. Re-export Without Duty</strong></td>
+                <td data-label="Process">Goods shipped overseas incur zero U.S. customs duties</td>
+                <td data-label="Who's Involved">Exporters</td>
               </tr>
             </tbody>
           </StyledTable>
@@ -264,19 +264,19 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
             </thead>
             <tbody>
               <tr>
-                <td><strong>QOZ (Investor Side)</strong></td>
-                <td>Capital gains tax deferral + tax-free growth</td>
-                <td>Attracts equity investors with 15-20% IRR boost</td>
+                <td data-label="Incentive Structure"><strong>QOZ (Investor Side)</strong></td>
+                <td data-label="Tax/Duty Benefit">Capital gains tax deferral + tax-free growth</td>
+                <td data-label="Impact on Investment">Attracts equity investors with 15-20% IRR boost</td>
               </tr>
               <tr>
-                <td><strong>FTZ (Tenant Side)</strong></td>
-                <td>Eliminates or defers customs duties</td>
-                <td>Attracts import/export tenants, higher rents</td>
+                <td data-label="Incentive Structure"><strong>FTZ (Tenant Side)</strong></td>
+                <td data-label="Tax/Duty Benefit">Eliminates or defers customs duties</td>
+                <td data-label="Impact on Investment">Attracts import/export tenants, higher rents</td>
               </tr>
               <tr>
-                <td><strong>Combined Effect</strong></td>
-                <td>Lower overall project costs + higher returns</td>
-                <td>Premium property valuations and exits</td>
+                <td data-label="Incentive Structure"><strong>Combined Effect</strong></td>
+                <td data-label="Tax/Duty Benefit">Lower overall project costs + higher returns</td>
+                <td data-label="Impact on Investment">Premium property valuations and exits</td>
               </tr>
             </tbody>
           </StyledTable>

@@ -7,10 +7,11 @@ const Card = styled.div`
   overflow: hidden;
   background: ${({ theme }) => theme.colors.card};
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s, transform 0.3s;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
   &:hover {
-    box-shadow: 0 12px 48px rgba(0,0,0,0.16);
-    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    transform: translateY(-4px);
   }
 `;
 
@@ -24,9 +25,12 @@ const CardImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: contrast(1.02) saturate(1.05);
+  image-rendering: -webkit-optimize-contrast;
+  
   ${Card}:hover & {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 `;
 
