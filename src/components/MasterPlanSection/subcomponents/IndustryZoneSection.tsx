@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import TextHero from "../../TextHero";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { TealText } from "../../ui/TealComponents";
 import { Container } from "../../ui/Containers";
@@ -8,125 +8,6 @@ import { TextContent, IntroText, SectionTitle, SubsectionTitle } from "../../ui/
 import { IllustrationBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
 
-const HeroSection = styled.section`
-  position: relative;
-  width: 100%;
-  min-height: 550px;
-  height: 60vh;
-  max-height: 750px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  overflow: hidden;
-  background: ${({ theme }) => theme.colors.darkBlue};
-  
-  @media (max-width: 1024px) {
-    min-height: 500px;
-    height: 55vh;
-  }
-  
-  @media (max-width: 768px) {
-    min-height: 450px;
-    height: 50vh;
-  }
-  
-  @media (max-width: 480px) {
-    min-height: 400px;
-    height: 48vh;
-  }
-`;
-
-const HeroImage = styled.img`
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 1;
-`;
-
-const Overlay = styled.div`
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 2;
-`;
-
-const ContentBox = styled.div`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 3;
-  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.xxxl};
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: ${({ theme }) => theme.spacing.sm};
-  
-  @media (max-width: 1024px) {
-    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.xxl};
-  }
-  
-  @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.xl};
-  }
-  
-  @media (max-width: 480px) {
-    padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.lg};
-  }
-`;
-
-const Breadcrumb = styled.nav`
-  color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.fontSizes.sm};
-  font-weight: ${({ theme }) => theme.fontWeights.normal};
-  letter-spacing: 0.02em;
-  margin-bottom: ${({ theme }) => theme.spacing.xs};
-  opacity: 0.9;
-  
-  a {
-    color: ${({ theme }) => theme.colors.white};
-    text-decoration: none;
-    transition: color 0.2s ease;
-    
-    &:hover {
-      color: ${({ theme }) => theme.colors.goldAccent};
-    }
-  }
-  
-  .separator {
-    margin: 0 ${({ theme }) => theme.spacing.sm};
-  }
-  
-  .current {
-    color: ${({ theme }) => theme.colors.white};
-  }
-`;
-
-const Title = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.h2};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
-  color: ${({ theme }) => theme.colors.white};
-  line-height: 1.2;
-  margin: 0;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  letter-spacing: 0;
-  font-family: ${({ theme }) => theme.fontFamilies.heading};
-  
-  @media (max-width: 1024px) {
-    font-size: 2rem;
-  }
-  
-  @media (max-width: 768px) {
-    font-size: 1.75rem;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.5rem;
-  }
-`;
-
 interface IndustryZoneSectionProps {
   onNavigate: (page: string) => void;
 }
@@ -134,20 +15,15 @@ interface IndustryZoneSectionProps {
 const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _onNavigate }) => {
   return (
     <>
-      <HeroSection>
-        <HeroImage src="/assets/images/masterPlan/industryZone/hero.jpg" alt="Industry Zone" />
-        <Overlay />
-        <ContentBox>
-          <Breadcrumb>
-            <a href="/">Home</a>
-            <span className="separator">›</span>
-            <a href="/master-plan">Master Plan</a>
-            <span className="separator">›</span>
-            <span className="current">Industry Zone</span>
-          </Breadcrumb>
-          <Title>Industry Zone</Title>
-        </ContentBox>
-      </HeroSection>
+      <TextHero
+        title="Industry Zone"
+        backgroundImage="/assets/images/masterPlan/industryZone/hero.jpg"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Master Plan", href: "/master-plan" },
+          { label: "Industry Zone" }
+        ]}
+      />
       
       <WhiteSection>
         <Container>
