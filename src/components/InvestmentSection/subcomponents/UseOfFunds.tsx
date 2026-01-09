@@ -113,7 +113,7 @@ const SuccessSubtotal = styled(Subtotal)`
 `;
 
 const SubtotalLabel = styled.span`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
+dd  font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;
 

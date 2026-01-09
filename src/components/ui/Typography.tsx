@@ -21,13 +21,13 @@ export const TextContent = styled.div`
 `;
 
 export const IntroText = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
-  line-height: 1.8;
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  line-height: 1.7;
   color: ${({ theme }) => theme.colors.darkBlue};
   margin-bottom: 2rem;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.md};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
   }
 `;
 

@@ -16,8 +16,8 @@ export const ContentGrid = styled.div`
 export const GreyContentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: ${({ theme }) => theme.spacing.md};
-  align-items: start;
+  gap: ${({ theme }) => theme.spacing.xxl};
+  align-items: center;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;

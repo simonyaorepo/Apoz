@@ -1,13 +1,22 @@
 import React from "react";
 import TextHero from "../../TextHero";
+import GoldDivider from "../../ui/GoldDivider";
+import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid, TwoColumnGrid } from "../../ui/Grids";
-import { TextContent } from "../../ui/Typography";
+import { TextContent, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { OutlineCard } from "../../ui/Cards";
 import { StyledTable } from "../../ui/Table";
 import { COMMUNITY_MANAGEMENT_DATA } from "../servicesSectionData";
+
+const TealText = styled.p`
+  color: white;
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  line-height: 1.7;
+  margin: 0;
+`;
 
 interface CommunityManagementSectionProps {
   onNavigate: (page: string) => void;
@@ -29,7 +38,7 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
               {COMMUNITY_MANAGEMENT_DATA.content.intro.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
-              <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Core Goals</h3>
+              <SubsectionTitle>Core Goals</SubsectionTitle>
               <p>
                 The community management team focuses on fostering a safe, vibrant, and sustainable residential environment for all residents. They maintain high-quality amenities and common areas while building a strong sense of community through events and programming. The team also coordinates seamlessly with the industrial park operations to ensure residents benefit from proximity to employment opportunities.
               </p>
@@ -84,16 +93,16 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
 
       <TealSection>
         <TealBox>
-          <p style={{ color: 'white', fontSize: '1.125rem', lineHeight: '1.8' }}>
+          <TealText>
             APOZ community management delivers comprehensive residential services, amenities, and tenant support programs that create a thriving live-work ecosystem for industrial park employees and their families.
-          </p>
+          </TealText>
         </TealBox>
       </TealSection>
       
       <GreySection>
         <Container>
           <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>Key Community Management Services</h3>
+            <SubsectionTitle>Key Community Management Services</SubsectionTitle>
             <StyledTable>
               <thead>
                 <tr>
@@ -116,6 +125,8 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
         </Container>
       </GreySection>
 
+      <GoldDivider />
+
       <GreySection>
         <Container>
           <GreyContentGrid>
@@ -126,19 +137,9 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
               />
             </ImageBox>
             <TextContent>
-              <h3 style={{ marginBottom: '1.5rem' }}>{COMMUNITY_MANAGEMENT_DATA.content.integration.heading}</h3>
-              <p>{COMMUNITY_MANAGEMENT_DATA.content.integration.description}</p>
-              <p style={{ marginBottom: '0.75rem' }}>
-                The residential zone provides workforce housing for industrial park employees, creating a live-work ecosystem that reduces commute times and improves quality of life.
-              </p>
-              <p style={{ marginBottom: '0.75rem' }}>
-                Community programs are designed to support working families with childcare services and after-school activities.
-              </p>
-              <p style={{ marginBottom: '0.75rem' }}>
-                Shared infrastructure including transit connections and recreational facilities benefit both residential and commercial areas.
-              </p>
+              <SubsectionTitle>{COMMUNITY_MANAGEMENT_DATA.content.integration.heading}</SubsectionTitle>
               <p>
-                The overall development attracts skilled workers and their families to support long-term industrial growth.
+                {COMMUNITY_MANAGEMENT_DATA.content.integration.description} The residential zone provides workforce housing for industrial park employees, creating a live-work ecosystem that reduces commute times and improves quality of life. Community programs are designed to support working families with childcare services and after-school activities, while shared infrastructure including transit connections and recreational facilities benefits both residential and commercial areas. The overall development attracts skilled workers and their families to support long-term industrial growth.
               </p>
             </TextContent>
           </GreyContentGrid>
@@ -148,7 +149,7 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
       <GreySection>
         <Container>
           <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>{COMMUNITY_MANAGEMENT_DATA.content.teamFunctions.heading}</h3>
+            <SubsectionTitle>{COMMUNITY_MANAGEMENT_DATA.content.teamFunctions.heading}</SubsectionTitle>
             <TwoColumnGrid>
               {COMMUNITY_MANAGEMENT_DATA.content.teamFunctions.divisions.map((division, idx) => (
                 <OutlineCard key={idx}>

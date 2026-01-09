@@ -13,13 +13,13 @@ const IntroSection = styled(WhiteSection)`
 `;
 
 const IntroText = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
-  line-height: 1.8;
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  line-height: 1.7;
   color: ${({ theme }) => theme.colors.darkBlue};
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.md};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
   }
 `;
 
@@ -196,9 +196,8 @@ const InvestmentOverviewSection: React.FC<InvestmentOverviewSectionProps> = ({ o
       
       <IntroSection>
         <Container>
-          <IntroText>{INVESTMENT_OVERVIEW.description}</IntroText>
           <IntroText>
-            APOZ is strategically located in a federally designated Qualified Opportunity Zone (QOZ) and Foreign-Trade Zone (FTZ), offering investors powerful tax incentives including capital gains deferral and duty savings. The project is structured to accommodate both equity and debt investors across multiple phases, with strong exit strategies through REIT conversion or institutional buyouts.
+            {INVESTMENT_OVERVIEW.description} APOZ is strategically located in a federally designated Qualified Opportunity Zone and Foreign-Trade Zone, offering investors powerful tax incentives including capital gains deferral and duty savings. The project is structured to accommodate both equity and debt investors across multiple phases, with strong exit strategies through REIT conversion or institutional buyouts.
           </IntroText>
 
           <SectionTitle>Investment Strategy</SectionTitle>

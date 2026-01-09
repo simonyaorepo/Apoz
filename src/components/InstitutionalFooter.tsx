@@ -15,7 +15,7 @@ const FooterWrapper = styled.footer`
 `;
 
 const FooterContainer = styled.div`
-  max-width: 82.5rem;
+  max-width: ${({ theme }) => theme.maxWidth.container};
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.md};
 `;

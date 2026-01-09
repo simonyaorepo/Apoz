@@ -49,8 +49,8 @@ const Divider = styled.div`
 
 const Description = styled.p`
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  line-height: 1.6;
   margin: 0;
   max-width: 550px;
 `;
@@ -96,7 +96,7 @@ const Icon = styled.svg`
 `;
 
 const NavTitle = styled.span`
-  font-size: 1.125rem;
+  font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: 400;
 `;
 

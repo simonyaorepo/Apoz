@@ -31,4 +31,17 @@ export const OutlineCard = styled.div`
   &:hover {
     border-color: ${({ theme }) => theme.colors.accent};
   }
+  
+  h4 {
+    color: ${({ theme }) => theme.colors.primary};
+    font-size: ${({ theme }) => theme.fontSizes.md};
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
+    margin-bottom: ${({ theme }) => theme.spacing.sm};
+  }
+  
+  p {
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    line-height: 1.6;
+    margin: 0;
+  }
 `;

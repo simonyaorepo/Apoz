@@ -136,19 +136,12 @@ export const PHASE_1_DATA = {
   financing: {
     targetRaise: "~$24MM",
     sources: [
-      "<strong>Equity via QOF</strong> — For tax-incentivized investors",
-      "<strong>Strategic LPs / Family Offices</strong>",
-      "<strong>Bank Debt & Construction Loans</strong>",
-      "<strong>Potential REIT exit or IPO conversion</strong>"
+      "<strong>Equity via QOF (~30–40%):</strong> Tax-advantaged capital from QOZ investors seeking capital gains deferral and potential elimination",
+      "<strong>Strategic LPs / Family Offices (~15–20%):</strong> Private equity partners seeking stable returns enhanced by FTZ operational advantages",
+      "<strong>Bank Debt & Construction Loans (~25–35%):</strong> Senior debt financing for infrastructure and facility development",
+      "<strong>Potential REIT exit or IPO conversion:</strong> Long-term liquidity pathway for stabilized assets"
     ],
-    returns: {
-      description: "Phase 1 offers attractive returns enhanced by both QOZ tax benefits and FTZ operational advantages.",
-      details: [
-        "QOZ-adjusted IRR provides additional uplift for qualified investors",
-        "FTZ-enhanced EBITDA growth through duty savings and streamlined customs operations",
-        "Multiple exit pathways through REIT conversion or IPO structuring"
-      ]
-    }
+    returnsSummary: "Phase 1 delivers attractive returns enhanced by both QOZ tax benefits and FTZ operational advantages. QOZ-adjusted IRR provides additional uplift for qualified investors through capital gains tax deferral and potential elimination after 10+ years, while FTZ-enhanced EBITDA growth delivers operational advantages through duty savings and streamlined customs operations."
   }
 };
 

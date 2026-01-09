@@ -4,8 +4,9 @@ import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
-import { TextContent } from "../../ui/Typography";
+import { TextContent, SectionTitle } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
+import { StyledTable } from "../../ui/Table";
 import { INTERNATIONAL_HUB_DATA } from "../masterPlanSectionData";
 
 const SubsectionTitle = styled.h3`
@@ -115,22 +116,37 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
 
       <TealSection>
         <TealBox>
-          <h3 style={{ marginBottom: '1.5rem', color: 'white', fontSize: '1.5rem', fontWeight: '500' }}>Core Functions of the International Hub</h3>
-          {INTERNATIONAL_HUB_DATA.content.coreFunctions.map((item, idx) => (
-            <div key={idx} style={{ marginBottom: '2rem' }}>
-              <h4 style={{ color: 'white', fontSize: '1.125rem', fontWeight: '500', marginBottom: '0.5rem' }}>
-                {item.function}
-              </h4>
-              <p style={{ color: 'white', fontSize: '0.9375rem', marginBottom: '0.5rem', opacity: 0.9 }}>
-                <strong>Description:</strong> {item.description}
-              </p>
-              <p style={{ color: 'white', fontSize: '0.9375rem', opacity: 0.85 }}>
-                <strong>Impact:</strong> {item.impact}
-              </p>
-            </div>
-          ))}
+          <p style={{ color: 'white', lineHeight: '1.8' }}>
+            APOZ's International Hub serves as a global trade gateway connecting Asia-Pacific manufacturers with U.S. markets through FTZ-171 duty-free operations, cross-border e-commerce platforms, advanced manufacturing clusters, and tax-advantaged investment structures for international capital.
+          </p>
         </TealBox>
       </TealSection>
+      
+      <GreySection>
+        <Container>
+          <TextContent>
+            <SectionTitle>Core Functions of the International Hub</SectionTitle>
+            <StyledTable>
+              <thead>
+                <tr>
+                  <th>Function</th>
+                  <th>Description</th>
+                  <th>Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                {INTERNATIONAL_HUB_DATA.content.coreFunctions.map((item, idx) => (
+                  <tr key={idx}>
+                    <td><strong>{item.function}</strong></td>
+                    <td>{item.description}</td>
+                    <td>{item.impact}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </StyledTable>
+          </TextContent>
+        </Container>
+      </GreySection>
       
       <GreySection>
         <Container>

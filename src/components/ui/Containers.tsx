@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  max-width: ${({ theme }) => theme.maxWidth.container};
+  max-width: ${({ theme }) => theme.maxWidth.content};
   margin: 0 auto;
   padding: 0 ${({ theme }) => theme.spacing.md};
   
@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.maxWidth.content};
   margin: 0 auto;
   padding: 4rem 2rem;
   
@@ -21,6 +21,6 @@ export const ContentWrapper = styled.div`
 `;
 
 export const GreyContent = styled.div`
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.maxWidth.content};
   margin: 0 auto;
 `;

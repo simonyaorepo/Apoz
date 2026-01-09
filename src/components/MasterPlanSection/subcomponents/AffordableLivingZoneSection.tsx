@@ -74,7 +74,7 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
 
       <TealSection>
         <TealBox>
-          <p style={{ color: 'white', fontSize: '1.125rem', lineHeight: '1.8' }}>
+          <p style={{ color: 'white', lineHeight: '1.8' }}>
             Affordable housing development integrated with QOF/LIHTC financing creates a sustainable residential ecosystem supporting industrial workforce needs while delivering long-term value through high occupancy stability and tax-advantaged returns.
           </p>
         </TealBox>
@@ -82,7 +82,7 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
 
       <GreySection>
         <Container>
-          <ContentWrapper>
+          <TextContent>
             <SectionTitle>Core Development Services</SectionTitle>
             <StyledTable>
               <thead>
@@ -130,7 +130,7 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
               <li>QOZ Tax Advantages: Residential investments benefit from capital gains deferral and tax-free growth.</li>
               <li>REIT Readiness: Stabilized residential assets can be securitized for exit strategies.</li>
             </BulletList>
-          </ContentWrapper>
+          </TextContent>
         </Container>
       </GreySection>
     </>

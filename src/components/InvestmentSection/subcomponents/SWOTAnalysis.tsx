@@ -90,7 +90,7 @@ const CardDescription = styled.p<{ $highlight?: boolean }>`
 `;
 
 const Subtitle = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
+  font-size: ${({ theme }) => theme.fontSizes.md};
   color: ${({ theme }) => theme.colors.foreground};
   text-align: center;
   margin-bottom: ${({ theme }) => theme.spacing.xl};

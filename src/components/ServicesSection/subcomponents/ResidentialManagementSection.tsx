@@ -6,7 +6,7 @@ import { RESIDENTIAL_MANAGEMENT_DATA } from "../servicesSectionData";
 import { WhiteSection, TealSection, TealBox } from "../../ui/Sections";
 
 const ContentWrapper = styled.div`
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.maxWidth.content};
   margin: 0 auto;
   padding: 4rem 2rem;
   
@@ -16,13 +16,13 @@ const ContentWrapper = styled.div`
 `;
 
 const IntroText = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
-  line-height: 1.8;
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  line-height: 1.7;
   color: ${({ theme }) => theme.colors.darkBlue};
   margin-bottom: 2rem;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.md};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
   }
 `;
 
@@ -72,13 +72,24 @@ const StyledTable = styled.table`
 
 
 const TealTitle = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.xl};
+  font-size: ${({ theme }) => theme.fontSizes.h5};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
   color: white;
   margin-bottom: 1.5rem;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.lg};
+    font-size: ${({ theme }) => theme.fontSizes.md};
+  }
+`;
+
+const TealText = styled.p`
+  color: rgba(255, 255, 255, 0.95);
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
@@ -92,7 +103,7 @@ const GreySection = styled.div`
 `;
 
 const GreyContent = styled.div`
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.maxWidth.content};
   margin: 0 auto;
 `;
 
@@ -117,17 +128,10 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
 
           <SectionTitle>Primary Objectives</SectionTitle>
           <IntroText>
-            The residential management team is committed to providing high-quality, affordable housing options for workforce families and creating a safe, welcoming community environment.
+            The residential management team is committed to providing high-quality, affordable housing options for workforce families while creating a safe and welcoming community environment. Beyond property management, the team maintains excellent conditions through proactive maintenance and capital improvements. Resident support extends to financial literacy programs and job placement assistance, and through close partnerships with local schools and community organizations, residents gain access to education and enrichment opportunities.
           </IntroText>
-          <IntroText>
-            They maintain excellent property conditions through proactive maintenance and capital improvements.
-          </IntroText>
-          <IntroText>
-            The team offers resident support services including financial literacy programs and job placement assistance.
-          </IntroText>
-          <IntroText>
-            They work closely with local schools and community organizations to ensure residents have access to education and enrichment opportunities.
-          </IntroText>
+
+          <GoldDivider />
 
           <SectionTitle>Core Residential Management Services</SectionTitle>
           <StyledTable>
@@ -154,14 +158,9 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
       <TealSection>
         <TealBox>
           <TealTitle>Integration with APOZ Industrial Park</TealTitle>
-          <IntroText style={{ color: 'white', marginBottom: '1rem' }}>
-            Residential management is a critical part of APOZ's ecosystem:
-          </IntroText>
-          {RESIDENTIAL_MANAGEMENT_DATA.content.integration.map((point, index) => (
-            <p key={index} style={{ color: 'white', fontSize: '0.9375rem', lineHeight: '1.7', opacity: 0.95, marginBottom: index === RESIDENTIAL_MANAGEMENT_DATA.content.integration.length - 1 ? '0' : '1rem' }}>
-              {point}
-            </p>
-          ))}
+          <TealText>
+            Residential management is a critical part of APOZ's ecosystem, attracting skilled labor for Phase 1 industrial tenants while improving employee retention through housing stability. This integrated approach enhances the long-term appeal of APOZ for manufacturers and logistics operators seeking a reliable workforce.
+          </TealText>
         </TealBox>
       </TealSection>
 
@@ -169,21 +168,10 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
         <GreyContent>
           <SectionTitle>Technology & Smart Community Features</SectionTitle>
           <IntroText>
-            APOZ residential zones incorporate smart home technology for energy efficiency and resident convenience, including programmable thermostats and LED lighting systems.
-          </IntroText>
-          <IntroText>
-            An online resident portal enables easy rent payment, maintenance requests, and community communication.
-          </IntroText>
-          <IntroText>
-            Advanced security systems with access control provide peace of mind for all residents.
-          </IntroText>
-          <IntroText>
-            Community Wi-Fi in common areas keeps families connected and supports remote work opportunities.
+            APOZ residential zones leverage smart home technology to enhance energy efficiency and resident convenience, featuring programmable thermostats and LED lighting systems throughout. Residents benefit from an intuitive online portal that streamlines rent payment, maintenance requests, and community communication. Security is prioritized through advanced access control systems, providing peace of mind for all families. Additionally, community Wi-Fi in shared spaces keeps residents connected while supporting remote work opportunities.
           </IntroText>
         </GreyContent>
       </GreySection>
-
-      <GoldDivider />
     </>
   );
 };

@@ -16,7 +16,7 @@ const GreySection = styled.section`
 `;
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: ${({ theme }) => theme.maxWidth.content};
   margin: 0 auto;
 `;
 
@@ -46,7 +46,7 @@ const ServiceCard = styled.div`
   
   h4 {
     color: ${({ theme }) => theme.colors.darkBlue};
-    font-size: ${({ theme }) => theme.fontSizes.lg};
+    font-size: ${({ theme }) => theme.fontSizes.md};
     font-weight: ${({ theme }) => theme.fontWeights.medium};
     margin-bottom: ${({ theme }) => theme.spacing.sm};
   }

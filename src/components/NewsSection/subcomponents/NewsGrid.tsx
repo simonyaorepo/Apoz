@@ -53,7 +53,7 @@ const ArticleImage = styled.div`
 `;
 
 const ArticleTitle = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
+  font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.darkBlue};
   margin: 0 0 ${({ theme }) => theme.spacing.sm} 0;

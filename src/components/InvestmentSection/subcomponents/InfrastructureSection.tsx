@@ -2,13 +2,14 @@ import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
-import { Container, ContentWrapper } from "../../ui/Containers";
+import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
 import { TextContent, SubsectionTitle, SectionTitle } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { INFRASTRUCTURE_INVESTMENT_DATA } from "./investmentSectionData";
 import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 import { StyledTable } from "../../ui/Table";
+import GoldDivider from "../../ui/GoldDivider";
 
 const TimelineCard = styled.div`
   padding: ${({ theme }) => theme.spacing.lg};
@@ -17,7 +18,7 @@ const TimelineCard = styled.div`
   
   h4 {
     color: ${({ theme }) => theme.colors.darkBlue};
-    font-size: ${({ theme }) => theme.fontSizes.lg};
+    font-size: ${({ theme }) => theme.fontSizes.md};
     font-weight: ${({ theme }) => theme.fontWeights.medium};
     margin-bottom: ${({ theme }) => theme.spacing.sm};
   }
@@ -100,7 +101,7 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
 
       <TealSection>
         <TealBox>
-          <p style={{ color: 'white', fontSize: '1.125rem', lineHeight: '1.8' }}>
+          <p style={{ color: 'white', lineHeight: '1.8' }}>
             Infrastructure development underpins the success of APOZ's industrial facilities and affordable housing, creating a fully integrated trade and manufacturing ecosystem with transportation, utilities, digital connectivity, FTZ facilities, residential infrastructure, and environmental systems.
           </p>
         </TealBox>
@@ -108,7 +109,7 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
       
       <GreySection>
         <Container>
-          <ContentWrapper>
+          <TextContent>
             <SectionTitle>Infrastructure Scope</SectionTitle>
             <StyledTable>
               <thead>
@@ -128,9 +129,11 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
                 ))}
               </tbody>
             </StyledTable>
-          </ContentWrapper>
+          </TextContent>
         </Container>
       </GreySection>
+
+      <GoldDivider />
 
       <GreySection>
         <Container>

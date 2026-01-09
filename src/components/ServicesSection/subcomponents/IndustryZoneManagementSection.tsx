@@ -1,12 +1,21 @@
 import React from "react";
 import TextHero from "../../TextHero";
+import GoldDivider from "../../ui/GoldDivider";
+import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
-import { TextContent } from "../../ui/Typography";
+import { TextContent, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
 import { INDUSTRY_ZONE_MANAGEMENT_DATA } from "../servicesSectionData";
+
+const TealText = styled.p`
+  color: white;
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  line-height: 1.7;
+  margin: 0;
+`;
 
 interface IndustryZoneManagementSectionProps {
   onNavigate: (page: string) => void;
@@ -28,18 +37,9 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
               {INDUSTRY_ZONE_MANAGEMENT_DATA.content.intro.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
-              <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Core Responsibilities</h3>
-              <p style={{ marginBottom: '0.75rem' }}>
-                The management team oversees day-to-day operations of all industrial facilities including maintenance, security, and regulatory compliance.
-              </p>
-              <p style={{ marginBottom: '0.75rem' }}>
-                They coordinate Foreign-Trade Zone (FTZ) operations and ensure all customs procedures meet federal requirements.
-              </p>
-              <p style={{ marginBottom: '0.75rem' }}>
-                Supporting tenant businesses through lease management and operational services is a key priority.
-              </p>
+              <SubsectionTitle>Core Responsibilities</SubsectionTitle>
               <p>
-                Maintaining infrastructure systems such as utilities, roads, and waste management ensures smooth operations across the park.
+                The management team oversees day-to-day operations of all industrial facilities including maintenance, security, and regulatory compliance. They coordinate Foreign-Trade Zone (FTZ) operations and ensure all customs procedures meet federal requirements, while supporting tenant businesses through lease management and operational services remains a key priority. Maintaining infrastructure systems such as utilities, roads, and waste management ensures smooth operations across the park.
               </p>
             </TextContent>
             <IllustrationBox>
@@ -92,16 +92,16 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
 
       <TealSection>
         <TealBox>
-          <p style={{ color: 'white', fontSize: '1.125rem', lineHeight: '1.8' }}>
+          <TealText>
             APOZ industrial zone management integrates Foreign-Trade Zone (FTZ) operations with comprehensive tenant services, infrastructure oversight, and logistics coordination to maximize cost savings and operational efficiency for manufacturing and distribution tenants.
-          </p>
+          </TealText>
         </TealBox>
       </TealSection>
       
       <GreySection>
         <Container>
           <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>Key Management Services</h3>
+            <SubsectionTitle>Key Management Services</SubsectionTitle>
             <StyledTable>
               <thead>
                 <tr>
@@ -124,6 +124,8 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
         </Container>
       </GreySection>
 
+      <GoldDivider />
+
       <GreySection>
         <Container>
           <GreyContentGrid>
@@ -134,18 +136,9 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
               />
             </ImageBox>
             <TextContent>
-              <h3 style={{ marginBottom: '1.5rem' }}>{INDUSTRY_ZONE_MANAGEMENT_DATA.content.tenantSupport.heading}</h3>
-              <p style={{ marginBottom: '0.75rem' }}>
-                Tenants receive comprehensive support including FTZ compliance assistance to maximize duty savings and navigate customs regulations.
-              </p>
-              <p style={{ marginBottom: '0.75rem' }}>
-                The team provides ongoing operational guidance for manufacturing and logistics processes.
-              </p>
-              <p style={{ marginBottom: '0.75rem' }}>
-                They facilitate connections to local suppliers, service providers, and business networks.
-              </p>
+              <SubsectionTitle>{INDUSTRY_ZONE_MANAGEMENT_DATA.content.tenantSupport.heading}</SubsectionTitle>
               <p>
-                Additional support includes workforce recruitment assistance and training program coordination to help businesses build and retain qualified teams.
+                Tenants receive comprehensive support including FTZ compliance assistance to maximize duty savings and navigate customs regulations. The team provides ongoing operational guidance for manufacturing and logistics processes, while facilitating connections to local suppliers, service providers, and business networks. Additional support includes workforce recruitment assistance and training program coordination to help businesses build and retain qualified teams.
               </p>
             </TextContent>
           </GreyContentGrid>
@@ -155,18 +148,9 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
       <GreySection>
         <Container>
           <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>{INDUSTRY_ZONE_MANAGEMENT_DATA.content.technology.heading}</h3>
-            <p style={{ marginBottom: '0.75rem' }}>
-              The industrial zone leverages advanced technology systems for enhanced security and operational efficiency.
-            </p>
-            <p style={{ marginBottom: '0.75rem' }}>
-              Real-time monitoring of utilities and environmental systems ensures optimal facility performance.
-            </p>
-            <p style={{ marginBottom: '0.75rem' }}>
-              Digital platforms streamline FTZ documentation and customs reporting.
-            </p>
+            <SubsectionTitle>{INDUSTRY_ZONE_MANAGEMENT_DATA.content.technology.heading}</SubsectionTitle>
             <p>
-              Smart building controls optimize energy usage across all facilities, reducing costs and supporting sustainability goals.
+              The industrial zone leverages advanced technology systems for enhanced security and operational efficiency. Real-time monitoring of utilities and environmental systems ensures optimal facility performance, while digital platforms streamline FTZ documentation and customs reporting. Smart building controls optimize energy usage across all facilities, reducing costs and supporting sustainability goals.
             </p>
           </TextContent>
         </Container>

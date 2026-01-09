@@ -11,19 +11,19 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-  max-width: ${({ theme }) => theme.maxWidth.container};
+  max-width: ${({ theme }) => theme.maxWidth.content};
   margin: 0 auto;
 `;
 
 const SummaryText = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
-  line-height: 1.8;
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  line-height: 1.7;
   color: ${({ theme }) => theme.colors.foreground};
   margin: 0;
   
   @media (max-width: 768px) {
-    font-size: ${({ theme }) => theme.fontSizes.md};
-    line-height: 1.7;
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    line-height: 1.6;
   }
 `;
 
@@ -35,7 +35,7 @@ const SummarySection: React.FC<SummarySectionProps> = ({ text }) => {
   return (
     <Section>
       <Container>
-        <SummaryText>{text}</SummaryText>
+        <SummaryText dangerouslySetInnerHTML={{ __html: text }} />
       </Container>
     </Section>
   );

@@ -29,7 +29,7 @@ const BenefitsTable = styled.table`
   width: 100%;
   border-collapse: collapse;
   margin: 2rem 0;
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   background: rgba(255, 255, 255, 0.1);
 
   th, td {
@@ -50,7 +50,7 @@ const BenefitsTable = styled.table`
 `;
 
 const WhiteText = styled.p`
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   line-height: 1.6;
   color: white;
   margin-bottom: 1rem;
@@ -64,7 +64,7 @@ const ExampleBox = styled.div`
 `;
 
 const ExampleTitle = styled.h4`
-  font-size: 1.25rem;
+  font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: 600;
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 1rem;
@@ -93,10 +93,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
       <WhiteSection>
         <ContentWrapper>
           <IntroText>
-            APOZ's residential zone combines affordable housing development with powerful tax incentives through Qualified Opportunity Zone (QOZ) and Qualified Opportunity Fund (QOF) structures, plus Low-Income Housing Tax Credit (LIHTC) financing.
-          </IntroText>
-          <IntroText>
-            This creates a unique investment opportunity where capital gains tax benefits meet community impact, delivering both financial returns and social value.
+            APOZ's residential zone combines affordable housing development with powerful tax incentives through Qualified Opportunity Zone and Qualified Opportunity Fund structures, plus Low-Income Housing Tax Credit (LIHTC) financing. This creates a unique investment opportunity where capital gains tax benefits meet community impact, delivering both financial returns and social value.
           </IntroText>
 
           <SectionTitle>Qualified Opportunity Zone (QOZ) Benefits</SectionTitle>

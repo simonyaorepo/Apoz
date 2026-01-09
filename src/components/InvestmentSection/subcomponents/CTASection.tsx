@@ -17,8 +17,8 @@ const CTATitle = styled.h2`
 `;
 
 const CTAText = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
-  line-height: 1.8;
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  line-height: 1.7;
   color: rgba(255, 255, 255, 0.9);
   max-width: 800px;
   margin: 0 auto ${({ theme }) => theme.spacing.xl};
@@ -27,7 +27,7 @@ const CTAText = styled.p`
 const CTAButton = styled.button`
   background: ${({ theme }) => theme.colors.gold};
   color: ${({ theme }) => theme.colors.darkBlue};
-  font-size: ${({ theme }) => theme.fontSizes.lg};
+  font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.xxl};
   border: none;

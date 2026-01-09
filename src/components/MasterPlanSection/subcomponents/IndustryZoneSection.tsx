@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
-import { Container, ContentWrapper } from "../../ui/Containers";
+import { Container } from "../../ui/Containers";
 import { ContentGrid } from "../../ui/Grids";
 import { TextContent, IntroText, SectionTitle, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox } from "../../ui/Media";
@@ -192,7 +192,7 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
 
       <TealSection>
         <TealBox>
-          <p style={{ color: 'white', fontSize: '1.125rem', lineHeight: '1.8' }}>
+          <p style={{ color: 'white', lineHeight: '1.8' }}>
             Strategic master planning integrates FTZ-171 advantages with QOZ tax incentives, creating a world-class industrial ecosystem positioned along the Houston Gulf Coast Corridor for advanced manufacturing and global trade infrastructure.
           </p>
         </TealBox>
@@ -200,7 +200,7 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
 
       <GreySection>
         <Container>
-          <ContentWrapper>
+          <TextContent>
             <SectionTitle>Key Infrastructure Services</SectionTitle>
             <StyledTable>
               <thead>
@@ -238,7 +238,7 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
                 </tr>
               </tbody>
             </StyledTable>
-          </ContentWrapper>
+          </TextContent>
         </Container>
       </GreySection>
     </>

@@ -59,14 +59,14 @@ const Divider = styled.div`
 
 const TagLine = styled.div`
   color: ${({ theme }) => theme.colors.goldAccent};
-  font-size: 1.125rem;
+  font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: 400;
 `;
 
 const Description = styled.p`
   color: ${({ theme }) => theme.colors.grayAccent};
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  line-height: 1.6;
   margin: 0;
 `;
 

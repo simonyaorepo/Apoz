@@ -33,15 +33,15 @@ const ExampleBox = styled.div`
 `;
 
 const ExampleTitle = styled.h4`
-  font-size: 1.25rem;
+  font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: 600;
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 1rem;
 `;
 
 const ExampleText = styled.p`
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  line-height: 1.7;
   color: ${({ theme }) => theme.colors.darkBlue};
   margin-bottom: 0.75rem;
 `;
@@ -124,7 +124,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
       <TealSection>
         <TealBox>
           <TealTitle>Key FTZ Benefits for Investors & Tenants</TealTitle>
-          <div style={{ color: 'white', fontSize: '0.9375rem', lineHeight: '1.7' }}>
+          <div style={{ color: 'white', lineHeight: '1.7' }}>
             <p style={{ marginBottom: '1rem' }}>
               <strong>Duty Deferral:</strong> Pay customs duties only when products enter the U.S. market, improving cash flow.
             </p>
@@ -149,7 +149,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
           <SectionTitle>Target Industries & Investment Opportunities</SectionTitle>
           
           <HighlightBox>
-            <SectionTitle>Renewable Energy & Clean Tech</SectionTitle>
+            <ExampleTitle>Renewable Energy & Clean Tech</ExampleTitle>
             <RequirementsList>
               <div>
                 <RequirementTitle>Solar panel manufacturing and assembly</RequirementTitle>
@@ -171,7 +171,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
           </HighlightBox>
 
           <HighlightBox>
-            <SectionTitle>Advanced Manufacturing</SectionTitle>
+            <ExampleTitle>Advanced Manufacturing</ExampleTitle>
             <RequirementsList>
               <div>
                 <RequirementTitle>Electronics & semiconductors</RequirementTitle>
@@ -193,7 +193,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
           </HighlightBox>
 
           <HighlightBox>
-            <SectionTitle>Logistics & E-Commerce</SectionTitle>
+            <ExampleTitle>Logistics & E-Commerce</ExampleTitle>
             <RequirementsList>
               <div>
                 <RequirementTitle>Cross-border fulfillment centers</RequirementTitle>

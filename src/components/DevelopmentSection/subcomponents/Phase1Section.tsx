@@ -234,14 +234,14 @@ const Phase1Section: React.FC = () => {
             <PhaseParagraph>
               <strong>Target Raise:</strong> {PHASE_1_DATA.financing.targetRaise}
             </PhaseParagraph>
-            <PhaseParagraph>
-              <strong>Funding Sources:</strong>
+            <PhaseParagraph style={{ marginTop: '1rem' }}>
+              <strong>Capital Sources:</strong>
             </PhaseParagraph>
             {PHASE_1_DATA.financing.sources.map((source, idx) => (
               <PhaseParagraph key={idx} dangerouslySetInnerHTML={{ __html: source }} />
             ))}
             <PhaseParagraph style={{ marginTop: '1.5rem' }}>
-              <strong>Estimated ROI:</strong> {PHASE_1_DATA.financing.returns.description}. {PHASE_1_DATA.financing.returns.details.join('. ')}.
+              {PHASE_1_DATA.financing.returnsSummary}
             </PhaseParagraph>
           </PhaseTextContent>
         </PhaseContentBlock>
