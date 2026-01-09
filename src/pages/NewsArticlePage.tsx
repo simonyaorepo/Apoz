@@ -36,7 +36,7 @@ const HeroImage = styled.img<{ $showTop?: boolean }>`
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: ${({ $showTop }) => $showTop ? 'cover' : 'contain'};
+  object-fit: cover;
   object-position: ${({ $showTop }) => $showTop ? 'center -10%' : 'center center'};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
