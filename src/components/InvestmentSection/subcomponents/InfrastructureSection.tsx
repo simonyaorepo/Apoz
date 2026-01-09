@@ -2,6 +2,7 @@ import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
+import { TealText } from "../../ui/TealComponents";
 import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
 import { TextContent, SubsectionTitle, SectionTitle } from "../../ui/Typography";
@@ -101,9 +102,9 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
 
       <TealSection>
         <TealBox>
-          <p style={{ color: 'white', lineHeight: '1.8' }}>
+          <TealText>
             Infrastructure development underpins the success of APOZ's industrial facilities and affordable housing, creating a fully integrated trade and manufacturing ecosystem with transportation, utilities, digital connectivity, FTZ facilities, residential infrastructure, and environmental systems.
-          </p>
+          </TealText>
         </TealBox>
       </TealSection>
       

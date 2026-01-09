@@ -2,6 +2,7 @@ import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
+import { TealTitle, TealText } from "../../ui/TealComponents";
 import GoldDivider from "../../ui/GoldDivider";
 import { ContentWrapper } from "../../ui/Containers";
 import { IntroText, SectionTitle } from "../../ui/Typography";
@@ -12,19 +13,6 @@ interface IndustryZoneInvestmentSectionProps {
   onNavigate: (page: string) => void;
 }
 
-
-
-const TealTitle = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.h4};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
-  color: white;
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.h5};
-  }
-`;
-
 const ExampleBox = styled.div`
   background: white;
   padding: 2rem;
@@ -33,7 +21,7 @@ const ExampleBox = styled.div`
 `;
 
 const ExampleTitle = styled.h4`
-  font-size: ${({ theme }) => theme.fontSizes.md};
+  font-size: ${({ theme }) => theme.fontSizes.h5};
   font-weight: 600;
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 1rem;
@@ -124,23 +112,21 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
       <TealSection>
         <TealBox>
           <TealTitle>Key FTZ Benefits for Investors & Tenants</TealTitle>
-          <div style={{ color: 'white', lineHeight: '1.7' }}>
-            <p style={{ marginBottom: '1rem' }}>
-              <strong>Duty Deferral:</strong> Pay customs duties only when products enter the U.S. market, improving cash flow.
-            </p>
-            <p style={{ marginBottom: '1rem' }}>
-              <strong>Duty Elimination:</strong> No duties on re-exported goods, ideal for global supply chains.
-            </p>
-            <p style={{ marginBottom: '1rem' }}>
-              <strong>Inverted Tariffs:</strong> If components have higher duties than finished products, pay the lower finished-product duty rate.
-            </p>
-            <p style={{ marginBottom: '1rem' }}>
-              <strong>Cash Flow Improvement:</strong> Lower upfront costs improve working capital and investor ROI.
-            </p>
-            <p style={{ marginBottom: '0' }}>
-              <strong>QOZ + FTZ Synergy:</strong> Combine capital gains tax deferral with customs savings for maximum returns.
-            </p>
-          </div>
+          <TealText>
+            <strong>Duty Deferral:</strong> Pay customs duties only when products enter the U.S. market, improving cash flow.
+          </TealText>
+          <TealText>
+            <strong>Duty Elimination:</strong> No duties on re-exported goods, ideal for global supply chains.
+          </TealText>
+          <TealText>
+            <strong>Inverted Tariffs:</strong> If components have higher duties than finished products, pay the lower finished-product duty rate.
+          </TealText>
+          <TealText>
+            <strong>Cash Flow Improvement:</strong> Lower upfront costs improve working capital and investor ROI.
+          </TealText>
+          <TealText>
+            <strong>QOZ + FTZ Synergy:</strong> Combine capital gains tax deferral with customs savings for maximum returns.
+          </TealText>
         </TealBox>
       </TealSection>
 

@@ -2,6 +2,7 @@ import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
+import { TealText } from "../../ui/TealComponents";
 import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
 import { TextContent, SectionTitle } from "../../ui/Typography";
@@ -71,7 +72,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
               ))}
               <SubsectionTitle>Target Partners</SubsectionTitle>
               {INTERNATIONAL_HUB_DATA.content.targetPartners.map((partner, idx) => (
-                <p key={idx} style={{ marginBottom: idx < INTERNATIONAL_HUB_DATA.content.targetPartners.length - 1 ? '0.75rem' : '0' }} dangerouslySetInnerHTML={{ __html: partner }} />
+                <p key={idx} dangerouslySetInnerHTML={{ __html: partner }} />
               ))}
             </TextContent>
             <IllustrationBox>
@@ -116,9 +117,9 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
 
       <TealSection>
         <TealBox>
-          <p style={{ color: 'white', lineHeight: '1.8' }}>
+          <TealText>
             APOZ's International Hub serves as a global trade gateway connecting Asia-Pacific manufacturers with U.S. markets through FTZ-171 duty-free operations, cross-border e-commerce platforms, advanced manufacturing clusters, and tax-advantaged investment structures for international capital.
-          </p>
+          </TealText>
         </TealBox>
       </TealSection>
       
@@ -158,9 +159,9 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
               />
             </ImageBox>
             <TextContent>
-              <h3 style={{ marginBottom: '1.5rem' }}>{INTERNATIONAL_HUB_DATA.content.advantages.heading}</h3>
+              <SubsectionTitle>{INTERNATIONAL_HUB_DATA.content.advantages.heading}</SubsectionTitle>
               {INTERNATIONAL_HUB_DATA.content.advantages.items.map((item, idx) => (
-                <p key={idx} style={{ marginBottom: idx < INTERNATIONAL_HUB_DATA.content.advantages.items.length - 1 ? '0.75rem' : '0' }} dangerouslySetInnerHTML={{ __html: item }} />
+                <p key={idx} dangerouslySetInnerHTML={{ __html: item }} />
               ))}
             </TextContent>
           </GreyContentGrid>
@@ -170,7 +171,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
       <WhiteSection>
         <Container>
           <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>{INTERNATIONAL_HUB_DATA.content.industries.heading}</h3>
+            <SubsectionTitle>{INTERNATIONAL_HUB_DATA.content.industries.heading}</SubsectionTitle>
             <IndustryGrid>
               {INTERNATIONAL_HUB_DATA.content.industries.sectors.map((industry, idx) => (
                 <IndustryCard key={idx}>

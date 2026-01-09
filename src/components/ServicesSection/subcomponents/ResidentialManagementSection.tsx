@@ -28,7 +28,7 @@ const IntroText = styled.p`
 
 const SectionTitle = styled.h2`
   font-size: ${({ theme }) => theme.fontSizes['2xl']};
-  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
   color: ${({ theme }) => theme.colors.primary};
   margin: 3rem 0 1.5rem;
   

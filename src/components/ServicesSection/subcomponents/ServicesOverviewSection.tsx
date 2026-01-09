@@ -2,36 +2,12 @@ import React from "react";
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { SERVICES_OVERVIEW_DATA } from "../servicesSectionData";
-import { TealSection, TealBox } from "../../ui/Sections";
+import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
+import { TealTitle, TealSubtitle, TealText, TealContentBlock } from "../../ui/TealComponents";
+import { Container } from "../../ui/Containers";
+import { ContentGrid } from "../../ui/Grids";
+import { TextContent, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox } from "../../ui/Media";
-
-const WhiteSection = styled.section`
-  background: white;
-  padding: ${({ theme }) => theme.spacing.xxl} 5vw;
-`;
-
-const GreySection = styled.section`
-  background: ${({ theme }) => theme.colors.grey};
-  padding: ${({ theme }) => theme.spacing.xxl} 5vw;
-`;
-
-const Container = styled.div`
-  max-width: ${({ theme }) => theme.maxWidth.content};
-  margin: 0 auto;
-`;
-
-const ContentGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: ${({ theme }) => theme.spacing.xxl};
-  align-items: center;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const TextContent = styled.div``;
 
 const ServicesList = styled.div`
   display: grid;
@@ -106,7 +82,7 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
               {SERVICES_OVERVIEW_DATA.content.intro.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
-              <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Key Offerings</h3>
+              <SubsectionTitle>Key Offerings</SubsectionTitle>
               <ServicesList>
                 {SERVICES_OVERVIEW_DATA.content.coreServices.map((service, idx) => (
                   <ServiceCard key={idx}>
@@ -158,12 +134,12 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
 
       <TealSection>
         <TealBox>
-          <h3 style={{ marginBottom: '1.5rem', color: 'white' }}>{SERVICES_OVERVIEW_DATA.content.tradeLogistics.heading}</h3>
+          <TealTitle>{SERVICES_OVERVIEW_DATA.content.tradeLogistics.heading}</TealTitle>
           {SERVICES_OVERVIEW_DATA.content.tradeLogistics.services.map((service, idx) => (
-            <div key={idx} style={{ marginBottom: idx === SERVICES_OVERVIEW_DATA.content.tradeLogistics.services.length - 1 ? '0' : '1.5rem' }}>
-              <h4 style={{ color: 'white', fontSize: '1.125rem', marginBottom: '0.5rem' }}>{service.title}</h4>
-              <p style={{ color: 'white', fontSize: '0.9375rem', opacity: 0.95, margin: 0 }}>{service.description}</p>
-            </div>
+            <TealContentBlock key={idx}>
+              <TealSubtitle>{service.title}</TealSubtitle>
+              <TealText>{service.description}</TealText>
+            </TealContentBlock>
           ))}
         </TealBox>
       </TealSection>
@@ -171,9 +147,9 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
       <GreySection>
         <Container>
           <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>{SERVICES_OVERVIEW_DATA.content.tenantServices.heading}</h3>
+            <SubsectionTitle>{SERVICES_OVERVIEW_DATA.content.tenantServices.heading}</SubsectionTitle>
             {SERVICES_OVERVIEW_DATA.content.tenantServices.services.map((service, idx) => (
-              <p key={idx} style={{ marginBottom: '0.75rem' }} dangerouslySetInnerHTML={{ __html: service }} />
+              <p key={idx} dangerouslySetInnerHTML={{ __html: service }} />
             ))}
           </TextContent>
         </Container>
@@ -182,7 +158,7 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
       <GreySection>
         <Container>
           <TextContent>
-            <h3 style={{ marginBottom: '1.5rem' }}>APOZ Service Advantage</h3>
+            <SubsectionTitle>APOZ Service Advantage</SubsectionTitle>
             <AdvantagesGrid>
               {SERVICES_OVERVIEW_DATA.content.advantages.map((item, idx) => (
                 <AdvantageCard key={idx}>

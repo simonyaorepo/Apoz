@@ -1,6 +1,7 @@
 import React from "react";
 import TextHero from "../../TextHero";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
+import { TealText } from "../../ui/TealComponents";
 import { Container } from "../../ui/Containers";
 import { ContentGrid } from "../../ui/Grids";
 import { TextContent, IntroText, SectionTitle, SubsectionTitle } from "../../ui/Typography";
@@ -74,9 +75,9 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
 
       <TealSection>
         <TealBox>
-          <p style={{ color: 'white', lineHeight: '1.8' }}>
+          <TealText>
             Affordable housing development integrated with QOF/LIHTC financing creates a sustainable residential ecosystem supporting industrial workforce needs while delivering long-term value through high occupancy stability and tax-advantaged returns.
-          </p>
+          </TealText>
         </TealBox>
       </TealSection>
 
