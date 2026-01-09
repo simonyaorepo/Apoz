@@ -17,6 +17,10 @@ const NavBar = styled.nav<{ $scrolled: boolean }>`
   background: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ $scrolled }) => $scrolled ? "0 8px 32px rgba(0,0,0,0.15)" : "none"};
   min-height: 5rem;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    min-height: 4rem;
+  }
 `;
 
 const NavContainer = styled.div`
@@ -34,8 +38,13 @@ const NavRow = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 5rem;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    height: 4rem;
+  }
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    height: 3rem;
+    height: 3.5rem;
   }
 `;
 
@@ -50,6 +59,14 @@ const LogoIcon = styled.img`
   height: 4rem;
   width: auto;
   object-fit: contain;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    height: 3rem;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    height: 2.5rem;
+  }
 `;
 
 const LogoText = styled.div`
@@ -82,7 +99,7 @@ const NavLinks = styled.div<{ $isOpen?: boolean }>`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     position: fixed;
-    top: 5rem;
+    top: 4rem;
     left: 0;
     right: 0;
     bottom: 0;

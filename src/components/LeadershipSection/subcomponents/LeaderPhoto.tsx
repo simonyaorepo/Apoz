@@ -15,7 +15,7 @@ const PhotoHalfTop = styled.div<{ $mobile?: string }>`
     display: block;
   }
   
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: 992px) {
     height: ${({ $mobile }) => $mobile === 'full' ? '250px' : '125px'};
   }
 `;

@@ -39,7 +39,7 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({
 }) => {
   return (
     <React.Fragment>
-      <WhiteSection>
+      <WhiteSection $isFirst={index === 0}>
         <Container>
           <Grid $reverse={reverse}>
             <PhotoWrapper $reverse={reverse}>
@@ -56,7 +56,7 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({
       <GreySection $index={index}>
         <Container>
           <Grid $reverse={reverse}>
-            <PhotoWrapper $reverse={reverse} style={{ display: 'none' }} className="mobile-hide-photo">
+            <PhotoWrapper $reverse={reverse} className="mobile-hide-photo">
               <LeaderPhoto photo={member.photo} name={member.name} half="bottom" />
             </PhotoWrapper>
             <GreyContentWrapper $reverse={reverse} $index={index}>

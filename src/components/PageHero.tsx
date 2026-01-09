@@ -12,20 +12,23 @@ const HeroSection = styled.section`
   justify-content: flex-start;
   overflow: hidden;
   background: ${({ theme }) => theme.colors.darkBlue};
+  margin-top: 5rem;
   
   @media (max-width: 1024px) {
     min-height: 500px;
     height: 55vh;
   }
   
-  @media (max-width: 768px) {
-    min-height: 450px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    min-height: 400px;
     height: 50vh;
+    margin-top: 4rem;
   }
   
   @media (max-width: 480px) {
-    min-height: 400px;
-    height: 48vh;
+    min-height: 350px;
+    height: 45vh;
+    margin-top: 3.5rem;
   }
 `;
 
@@ -37,6 +40,11 @@ const HeroImage = styled.img`
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    object-fit: cover;
+    object-position: center center;
+  }
 `;
 
 const Overlay = styled.div`

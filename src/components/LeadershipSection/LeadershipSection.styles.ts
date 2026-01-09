@@ -1,15 +1,28 @@
 import styled from "styled-components";
 
-export const WhiteSection = styled.section`
+export const WhiteSection = styled.section<{ $isFirst?: boolean }>`
   background: ${({ theme }) => theme.colors.white};
   width: 100%;
   padding: ${({ theme }) => theme.spacing.xxxl} 0 0 0;
+  
+  ${({ $isFirst }) => $isFirst && `
+    margin-top: 5rem;
+    
+    @media (max-width: 768px) {
+      margin-top: 4rem;
+    }
+  `}
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding-bottom: ${({ theme }) => theme.spacing.xl};
+  }
 `;
 
 export const GreySection = styled.section<{ $index?: number }>`
   background: ${({ theme }) => theme.colors.grey};
   width: 100%;
   padding: 0;
+  margin-top: 0;
 `;
 
 export const Container = styled.div`
@@ -36,7 +49,7 @@ export const PhotoWrapper = styled.div<{ $reverse?: boolean }>`
   flex-shrink: 0;
   
   &.mobile-hide-photo {
-    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    @media (max-width: 992px) {
       display: none !important;
     }
   }
