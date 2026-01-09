@@ -103,25 +103,25 @@ const SocialIcon = styled.button`
   background: none;
   box-shadow: none;
   transition: border-color 0.2s, color 0.2s;
-  & > svg {
-    color: ${({ theme }) => theme.colors.gold};
-    fill: ${({ theme }) => theme.colors.gold};
+  color: ${({ theme }) => theme.colors.gold};
+  
+  svg {
     width: 2.5rem;
     height: 2.5rem;
   }
+  
   &:hover {
     border-color: ${({ theme }) => theme.colors.gold};
-  }
-  &:hover > svg {
     color: ${({ theme }) => theme.colors.goldAccent};
-    fill: ${({ theme }) => theme.colors.goldAccent};
   }
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    width: 2.2rem;
-    height: 2.2rem;
-    & > svg {
-      width: 1.5rem;
-      height: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    
+    svg {
+      width: 2.2rem;
+      height: 2.2rem;
     }
   }
 `;
