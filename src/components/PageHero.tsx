@@ -151,7 +151,7 @@ const PageHero: React.FC<PageHeroProps> = ({
 }) => {
   return (
     <HeroSection>
-      <HeroImage src={backgroundImage} alt={title} />
+      <HeroImage src={backgroundImage} alt={title} fetchPriority="high" loading="eager" />
       <Overlay />
       <ContentBox>
         <Breadcrumb>
