@@ -1,4 +1,4 @@
-
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import { PremiumCard } from "../../PremiumCard";
 
@@ -43,22 +43,32 @@ const Grid = styled.div`
   }
 `;
 
-const ProjectPreview: React.FC<ProjectPreviewProps> = ({ projects, onNavigate }) => (
-  <Wrapper>
-    <Title>Development Phases</Title>
-    <Divider />
-    <Grid>
-      {projects.map((project, index) => (
-        <PremiumCard
-          key={index}
-          image={project.image}
-          title={project.title}
-          subtitle={project.subtitle}
-          onClick={() => onNavigate('projects')}
-        />
-      ))}
-    </Grid>
-  </Wrapper>
-);
+const ProjectPreview: React.FC<ProjectPreviewProps> = ({ projects, onNavigate }) => {
+  const { t } = useTranslation('home');
+  
+  const projectTitles = [
+    { title: t('projectPreviews.title1'), subtitle: t('projectPreviews.subtitle1') },
+    { title: t('projectPreviews.title2'), subtitle: t('projectPreviews.subtitle2') },
+    { title: t('projectPreviews.title3'), subtitle: t('projectPreviews.subtitle3') }
+  ];
+  
+  return (
+    <Wrapper>
+      <Title>{t('projectPreviews.heading', 'Development Phases')}</Title>
+      <Divider />
+      <Grid>
+        {projects.map((project, index) => (
+          <PremiumCard
+            key={index}
+            image={project.image}
+            title={projectTitles[index]?.title || project.title}
+            subtitle={projectTitles[index]?.subtitle || project.subtitle}
+            onClick={() => onNavigate('projects')}
+          />
+        ))}
+      </Grid>
+    </Wrapper>
+  );
+};
 
 export default ProjectPreview;

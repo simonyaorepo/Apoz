@@ -1,7 +1,7 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import styled from "styled-components";
-import { SERVICES_OVERVIEW_DATA } from "../servicesSectionData";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { TealTitle, TealSubtitle, TealText, TealContentBlock } from "../../ui/TealComponents";
 import { Container } from "../../ui/Containers";
@@ -67,29 +67,47 @@ interface ServicesOverviewSectionProps {
 }
 
 const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation('services');
+  const { t: tCommon } = useTranslation('common');
+  
   return (
     <>
       <TextHero
-        title={SERVICES_OVERVIEW_DATA.title}
-        backgroundImage={SERVICES_OVERVIEW_DATA.backgroundImage}
-        breadcrumbs={SERVICES_OVERVIEW_DATA.breadcrumbs}
+        title={t('overview.title')}
+        backgroundImage="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: tCommon('breadcrumbs.home'), href: '/' },
+          { label: t('overview.title') }
+        ]}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              {SERVICES_OVERVIEW_DATA.content.intro.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-              <SubsectionTitle>Key Offerings</SubsectionTitle>
+              <p>{t('overview.intro')}</p>
+              <SubsectionTitle>{tCommon('keyOfferings', 'Key Offerings')}</SubsectionTitle>
               <ServicesList>
-                {SERVICES_OVERVIEW_DATA.content.coreServices.map((service, idx) => (
-                  <ServiceCard key={idx}>
-                    <h4>{service.title}</h4>
-                    <p>{service.description}</p>
-                  </ServiceCard>
-                ))}
+                <ServiceCard>
+                  <h4>{t('overview.coreService1_title')}</h4>
+                  <p>{t('overview.coreService1_description')}</p>
+                </ServiceCard>
+                <ServiceCard>
+                  <h4>{t('overview.coreService2_title')}</h4>
+                  <p>{t('overview.coreService2_description')}</p>
+                </ServiceCard>
+                <ServiceCard>
+                  <h4>{t('overview.coreService3_title')}</h4>
+                  <p>{t('overview.coreService3_description')}</p>
+                </ServiceCard>
+                <ServiceCard>
+                  <h4>{t('overview.coreService4_title')}</h4>
+                  <p>{t('overview.coreService4_description')}</p>
+                </ServiceCard>
+                <ServiceCard>
+                  <h4>{t('overview.coreService5_title')}</h4>
+                  <p>{t('overview.coreService5_description')}</p>
+                </ServiceCard>
               </ServicesList>
             </TextContent>
             <IllustrationBox>
@@ -134,23 +152,34 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
 
       <TealSection>
         <TealBox>
-          <TealTitle>{SERVICES_OVERVIEW_DATA.content.tradeLogistics.heading}</TealTitle>
-          {SERVICES_OVERVIEW_DATA.content.tradeLogistics.services.map((service, idx) => (
-            <TealContentBlock key={idx}>
-              <TealSubtitle>{service.title}</TealSubtitle>
-              <TealText>{service.description}</TealText>
-            </TealContentBlock>
-          ))}
+          <TealTitle>{t('overview.tradeLogistics_heading')}</TealTitle>
+          <TealContentBlock>
+            <TealSubtitle>{t('overview.tradeLogistics1_title')}</TealSubtitle>
+            <TealText>{t('overview.tradeLogistics1_description')}</TealText>
+          </TealContentBlock>
+          <TealContentBlock>
+            <TealSubtitle>{t('overview.tradeLogistics2_title')}</TealSubtitle>
+            <TealText>{t('overview.tradeLogistics2_description')}</TealText>
+          </TealContentBlock>
+          <TealContentBlock>
+            <TealSubtitle>{t('overview.tradeLogistics3_title')}</TealSubtitle>
+            <TealText>{t('overview.tradeLogistics3_description')}</TealText>
+          </TealContentBlock>
+          <TealContentBlock>
+            <TealSubtitle>{t('overview.tradeLogistics4_title')}</TealSubtitle>
+            <TealText>{t('overview.tradeLogistics4_description')}</TealText>
+          </TealContentBlock>
         </TealBox>
       </TealSection>
       
       <GreySection>
         <Container>
           <TextContent>
-            <SubsectionTitle>{SERVICES_OVERVIEW_DATA.content.tenantServices.heading}</SubsectionTitle>
-            {SERVICES_OVERVIEW_DATA.content.tenantServices.services.map((service, idx) => (
-              <p key={idx} dangerouslySetInnerHTML={{ __html: service }} />
-            ))}
+            <SubsectionTitle>{t('overview.tenantServices_heading')}</SubsectionTitle>
+            <p dangerouslySetInnerHTML={{ __html: t('overview.tenantService1') }} />
+            <p dangerouslySetInnerHTML={{ __html: t('overview.tenantService2') }} />
+            <p dangerouslySetInnerHTML={{ __html: t('overview.tenantService3') }} />
+            <p dangerouslySetInnerHTML={{ __html: t('overview.tenantService4') }} />
           </TextContent>
         </Container>
       </GreySection>
@@ -158,14 +187,24 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
       <GreySection>
         <Container>
           <TextContent>
-            <SubsectionTitle>APOZ Service Advantage</SubsectionTitle>
+            <SubsectionTitle>{tCommon('serviceAdvantage', 'APOZ Service Advantage')}</SubsectionTitle>
             <AdvantagesGrid>
-              {SERVICES_OVERVIEW_DATA.content.advantages.map((item, idx) => (
-                <AdvantageCard key={idx}>
-                  <h4>{item.feature}</h4>
-                  <p>{item.edge}</p>
-                </AdvantageCard>
-              ))}
+              <AdvantageCard>
+                <h4>{t('overview.advantage1_feature')}</h4>
+                <p>{t('overview.advantage1_edge')}</p>
+              </AdvantageCard>
+              <AdvantageCard>
+                <h4>{t('overview.advantage2_feature')}</h4>
+                <p>{t('overview.advantage2_edge')}</p>
+              </AdvantageCard>
+              <AdvantageCard>
+                <h4>{t('overview.advantage3_feature')}</h4>
+                <p>{t('overview.advantage3_edge')}</p>
+              </AdvantageCard>
+              <AdvantageCard>
+                <h4>{t('overview.advantage4_feature')}</h4>
+                <p>{t('overview.advantage4_edge')}</p>
+              </AdvantageCard>
             </AdvantagesGrid>
           </TextContent>
         </Container>

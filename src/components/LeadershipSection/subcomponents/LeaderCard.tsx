@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import { LeaderPhoto } from "./LeaderPhoto";
 import {
   WhiteSection,
@@ -37,6 +38,7 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({
   expanded,
   onToggleExpanded,
 }) => {
+  const { t } = useTranslation('common');
   return (
     <React.Fragment>
       <WhiteSection $isFirst={index === 0}>
@@ -66,7 +68,7 @@ export const LeaderCard: React.FC<LeaderCardProps> = ({
                 ))}
               </LeaderBio>
               <ReadMoreButton onClick={() => onToggleExpanded(member.id)}>
-                {expanded ? 'READ LESS' : 'READ MORE'}
+                {expanded ? t('readLess').toUpperCase() : t('readMore').toUpperCase()}
               </ReadMoreButton>
             </GreyContentWrapper>
           </Grid>

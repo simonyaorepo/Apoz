@@ -1,0 +1,44 @@
+{
+  "title": "Leadership Team",
+  "teamMembers": {
+    "davidChamp": {
+      "title": "APOZ Project Founder, Chairman & CEO",
+      "name": "David Champ",
+      "bio1": "Mr. David Champ has over 30 years of executive leadership experience in real estate development, property & casualty insurance, renewable energy, financial advisory, and franchise development industries. He served as CEO and COO of several publicly listed companies, including XT Energy Group, 808 Renewable Energy and others.",
+      "bio2": "He successfully developed more than 20 franchised restaurants in the U.S. and China. He led major real estate projects including Paradise Island and luxury waterfront developments in New York and Florida, operating 20+ businesses with 2,000+ employees in China and New York.",
+      "bio3": "Mr. Champ received the 2006 U.S. Department of Commerce 'Minority Retailer of the Year' Award and serves as Founding Chairman of MEFEX (Minority Enterprise Franchise Expo Steering Committee) and the Asian American Business Alliance (AABA). He is a Guest Professor at SUNY Stony Brook Manhattan MBA Program. He studied at St. John's University, New York and the Tuck School of Business at Dartmouth College."
+    },
+    "ericFang": {
+      "title": "Board Member & APOZ Division COO",
+      "name": "Eric Fang",
+      "bio1": "Mr. Eric Fang has over 30 years of experience in technology investment, corporate management, and strategic consulting in both the U.S. and China. He is the CEO of Skytower Group Inc. and Atlas Renewable LLC, and previously served as Vice Chairman, President, and CEO of the U.S.-based National Center for Sustainable Development.",
+      "bio2": "Mr. Fang is a Board Advisor to the George H.W. Bush Foundation for U.S.-China Relations and serves on the Advisory Board of Energy Vault (NYSE: NRGV). As Founder of SinoAccess Group, he has guided Fortune 500 companies entering the China market.",
+      "bio3": "He delivered 8 major satellite telecommunications infrastructure projects backed by the World Bank and U.S. Ex-Im Bank, with total project value exceeding USD $1 billion."
+    },
+    "boCollins": {
+      "title": "Executive Director & Board Member",
+      "name": "James Robert 'Bo' Collins",
+      "bio1": "Mr. James Robert 'Bo' Collins is the former President of the New York Mercantile Exchange (NYMEX), where he oversaw its IPO and subsequent $8.3 billion sale to CME Group. He is currently Chairman & CEO of Mercantile Global Holdings, operating the San Juan Mercantile Exchange and its partner bank, SJMBT, for crypto trading and custody.",
+      "bio2": "Mr. Collins founded energy trading hedge funds and multiple financial and technology companies. He brings deep expertise in crude oil market services and financial product development to APOZ."
+    },
+    "treyBoring": {
+      "title": "Strategic Partner of APOZ",
+      "name": "Trey W. Boring",
+      "bio1": "Trey W. Boring is the President of IMS Worldwide, Inc. (IMSW) and a recognized leader in the Foreign-Trade Zone (FTZ) industry. With over 20 years of professional experience, Mr. Boring has successfully completed 150+ FTZ projects nationwide.",
+      "bio2": "He provides activation assistance, operational manuals, and compliance frameworks for a diverse range of clients, specializing in FTZ activation and operational system design. Mr. Boring helps companies optimize supply chains and inventory control, working closely with U.S. Customs and Border Protection (CBP) to ensure regulatory compliance and zone operations."
+    },
+    "kenarLiu": {
+      "title": "Board Member & Strategic Partner in Financing",
+      "name": "Kenar Liu",
+      "bio1": "Mr. Kenar Liu is a seasoned expert in industrial real estate and fund management, specializing in industrial real estate development and operations, industrial fund management, industrial park investment and operations, listed company mergers and acquisitions, and investment advisory services.",
+      "bio2": "As Chairman of Multinational Investment Alliance and Multinational Finance Group, he led the establishment of the 200 billion RMB Yangtze River Industrial Fund and driven numerous industrial park projects exceeding 10 billion RMB.",
+      "bio3": "Mr. Liu's projects span China, Australia, the Middle East, and Southeast Asia, bringing extensive international experience to APOZ."
+    },
+    "tinaWise": {
+      "title": "Board Member & APOZ Division President",
+      "name": "Tina Pei Wise",
+      "bio1": "Ms. Wise completed advanced studies in Sustainable Investment at Harvard University and possesses strong expertise in strategic economic management and international business development. As a Partner at Voss Law Firm, she has successfully led nationwide insurance claim recoveries and co-initiated a $20 million storm fund.",
+      "bio2": "She is the Founder of M&C Associates and Co-founder of LeadForward Collaboration. Ms. Wise previously served as Vice President of the National Center for Sustainable Development and is active in U.S.-China exchanges on sustainable development and industrial innovation."
+    }
+  }
+}

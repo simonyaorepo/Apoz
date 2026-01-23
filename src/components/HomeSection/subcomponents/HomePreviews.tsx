@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import GoldButton from "../../ui/GoldButton";
 
@@ -155,27 +156,27 @@ const IconManagement = () => (
 );
 
 const HomePreviews: React.FC<HomePreviewsProps> = ({ onNavigate }) => {
+  const { t } = useTranslation('home');
+  
   const navItems = [
-    { Icon: IconOverview, title: "Overview", route: "home/overview" },
-    { Icon: IconWhoWeAre, title: "Who We Are", route: "home/who-are-we" },
-    { Icon: IconVision, title: "Our Vision", route: "home/vision" },
-    { Icon: IconMission, title: "Our Mission", route: "home/mission" },
-    { Icon: IconManagement, title: "Management", route: "home/management" },
+    { Icon: IconOverview, title: t('previews.navItems.overview'), route: "home/overview" },
+    { Icon: IconWhoWeAre, title: t('previews.navItems.whoWeAre'), route: "home/who-are-we" },
+    { Icon: IconVision, title: t('previews.navItems.vision'), route: "home/vision" },
+    { Icon: IconMission, title: t('previews.navItems.mission'), route: "home/mission" },
+    { Icon: IconManagement, title: t('previews.navItems.management'), route: "home/management" },
   ];
   
   return (
     <Section>
       <Container>
         <LeftContent>
-          <Title>Learn More About APOZ</Title>
+          <Title>{t('previews.title')}</Title>
           <Divider />
           <Description>
-            Explore the strategic advantages, mission, vision, and leadership behind Houston APOZ—
-            America's premier gateway for international manufacturers seeking to establish operations 
-            in the United States through our unique FTZ and QOZ dual-status platform.
+            {t('previews.description')}
           </Description>
           <div>
-            <GoldButton onClick={() => onNavigate('master-plan')}>View Master Plan</GoldButton>
+            <GoldButton onClick={() => onNavigate('master-plan')}>{t('previews.button')}</GoldButton>
           </div>
         </LeftContent>
         <RightContent>

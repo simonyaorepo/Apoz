@@ -1,30 +1,33 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import PreviewsComponent from "../../ui/PreviewsComponent";
 
 const InvestmentPreviews: React.FC = () => {
+  const { t } = useTranslation('investment');
+  
   const investments = [
     {
       id: "overview",
-      title: "Investment Overview",
-      description: "Comprehensive investment structure, capital strategy, investor benefits (QOZ tax deferral + FTZ advantages), IRR potential (15-18% + 3-5% uplift), and exit pathways (REIT, Strategic Sale, IPO).",
+      title: t('previews.overview.title'),
+      description: t('previews.overview.description'),
       route: "/investment/overview"
     },
     {
       id: "infrastructure",
-      title: "Infrastructure Investment",
-      description: "Core infrastructure development across transportation, utilities, digital connectivity, FTZ facilities, residential amenities, and environmental systems. Phase 1 & 2 timeline with QOF, municipal, federal, and private funding sources.",
+      title: t('previews.infrastructure.title'),
+      description: t('previews.infrastructure.description'),
       route: "/investment/infrastructure"
     },
     {
       id: "industry-zone",
-      title: "Industry Zone Investment",
-      description: "Manufacturing and industrial facilities within FTZ framework. Advanced manufacturing, logistics operations, value-added processing, and international trade facilitation with customs and duty advantages.",
+      title: t('previews.industryZone.title'),
+      description: t('previews.industryZone.description'),
       route: "/investment/industry-zone"
     },
     {
       id: "residential-zone",
-      title: "Residential Zone Investment",
-      description: "Affordable housing development within QOZ framework. Mixed-income residential communities, workforce housing, and community amenities driving long-term appreciation and social impact.",
+      title: t('previews.residentialZone.title'),
+      description: t('previews.residentialZone.description'),
       route: "/investment/residential-zone"
     }
   ];

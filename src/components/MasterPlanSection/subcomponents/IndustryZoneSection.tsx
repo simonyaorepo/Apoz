@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { TealText } from "../../ui/TealComponents";
@@ -13,15 +14,17 @@ interface IndustryZoneSectionProps {
 }
 
 const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation(['masterPlan', 'common']);
+  
   return (
     <>
       <TextHero
-        title="Industry Zone"
+        title={t('industryZone.title', 'Industry Zone')}
         backgroundImage="/assets/images/masterPlan/industryZone/hero.jpg"
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Master Plan", href: "/master-plan" },
-          { label: "Industry Zone" }
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.masterPlan'), href: "/master-plan" },
+          { label: t('common:breadcrumbs.industryZone') }
         ]}
       />
       
@@ -30,14 +33,14 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
           <ContentGrid>
             <TextContent>
               <IntroText>
-                The APOZ industrial zone is designed as a smart logistics and manufacturing hub, integrating Foreign Trade Zone (FTZ) operations with Qualified Opportunity Zone (QOZ) investor advantages.
+                {t('industryZone.intro_paragraph1')}
               </IntroText>
               <IntroText>
-                Industrial zone management ensures smooth operations for tenants while maximizing the site's competitive benefits.
+                {t('industryZone.intro_paragraph2')}
               </IntroText>
-              <SubsectionTitle>Core Development Features</SubsectionTitle>
+              <SubsectionTitle>{t('industryZone.core_features_title')}</SubsectionTitle>
               <p>
-                Manage facilities, infrastructure, and bonded warehouses. Coordinate with U.S. Customs & Border Protection (CBP) for FTZ compliance. Provide integrated logistics, supply chain, and tenant services. Support cross-border manufacturers relocating to the U.S.
+                {t('industryZone.core_features_description')}
               </p>
             </TextContent>
             <IllustrationBox>
@@ -70,7 +73,7 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
       <TealSection>
         <TealBox>
           <TealText>
-            Strategic master planning integrates FTZ-171 advantages with QOZ tax incentives, creating a world-class industrial ecosystem positioned along the Houston Gulf Coast Corridor for advanced manufacturing and global trade infrastructure.
+            {t('industryZone.teal_description')}
           </TealText>
         </TealBox>
       </TealSection>
@@ -78,40 +81,40 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
       <GreySection>
         <Container>
           <TextContent>
-            <SectionTitle>Key Infrastructure Services</SectionTitle>
+            <SectionTitle>{t('industryZone.services_title')}</SectionTitle>
             <StyledTable>
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Scope</th>
-                  <th>Impact</th>
+                  <th>{t('industryZone.table_category_header')}</th>
+                  <th>{t('industryZone.table_scope_header')}</th>
+                  <th>{t('industryZone.table_impact_header')}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-label="Category"><strong>Tenant Operations</strong></td>
-                  <td data-label="Scope">Leasing, onboarding, site orientation, and ongoing tenant relations.</td>
-                  <td data-label="Impact">Increases occupancy & tenant retention.</td>
+                  <td data-label={t('industryZone.table_category_header')}><strong>{t('industryZone.table_tenant_operations_category')}</strong></td>
+                  <td data-label={t('industryZone.table_scope_header')}>{t('industryZone.table_tenant_operations_scope')}</td>
+                  <td data-label={t('industryZone.table_impact_header')}>{t('industryZone.table_tenant_operations_impact')}</td>
                 </tr>
                 <tr>
-                  <td data-label="Category"><strong>FTZ Administration</strong></td>
-                  <td data-label="Scope">Duty-free operations, customs reporting, bonded storage, and compliance audits.</td>
-                  <td data-label="Impact">Maximizes cost savings for tenants and investors.</td>
+                  <td data-label={t('industryZone.table_category_header')}><strong>{t('industryZone.table_ftz_administration_category')}</strong></td>
+                  <td data-label={t('industryZone.table_scope_header')}>{t('industryZone.table_ftz_administration_scope')}</td>
+                  <td data-label={t('industryZone.table_impact_header')}>{t('industryZone.table_ftz_administration_impact')}</td>
                 </tr>
                 <tr>
-                  <td data-label="Category"><strong>Infrastructure Management</strong></td>
-                  <td data-label="Scope">Roads, drainage, power, telecom, EV-ready facilities.</td>
-                  <td data-label="Impact">Maintains site efficiency & reliability.</td>
+                  <td data-label={t('industryZone.table_category_header')}><strong>{t('industryZone.table_infrastructure_management_category')}</strong></td>
+                  <td data-label={t('industryZone.table_scope_header')}>{t('industryZone.table_infrastructure_management_scope')}</td>
+                  <td data-label={t('industryZone.table_impact_header')}>{t('industryZone.table_infrastructure_management_impact')}</td>
                 </tr>
                 <tr>
-                  <td data-label="Category"><strong>Logistics Coordination</strong></td>
-                  <td data-label="Scope">Trucking, rail, and last-mile distribution optimization.</td>
-                  <td data-label="Impact">Reduces supply chain costs & increases APOZ competitiveness.</td>
+                  <td data-label={t('industryZone.table_category_header')}><strong>{t('industryZone.table_logistics_coordination_category')}</strong></td>
+                  <td data-label={t('industryZone.table_scope_header')}>{t('industryZone.table_logistics_coordination_scope')}</td>
+                  <td data-label={t('industryZone.table_impact_header')}>{t('industryZone.table_logistics_coordination_impact')}</td>
                 </tr>
                 <tr>
-                  <td data-label="Category"><strong>Safety & Security</strong></td>
-                  <td data-label="Scope">24/7 monitoring, customs-controlled entry, and ESG compliance.</td>
-                  <td data-label="Impact">Protects tenants, workers, and cargo.</td>
+                  <td data-label={t('industryZone.table_category_header')}><strong>{t('industryZone.table_safety_security_category')}</strong></td>
+                  <td data-label={t('industryZone.table_scope_header')}>{t('industryZone.table_safety_security_scope')}</td>
+                  <td data-label={t('industryZone.table_impact_header')}>{t('industryZone.table_safety_security_impact')}</td>
                 </tr>
               </tbody>
             </StyledTable>

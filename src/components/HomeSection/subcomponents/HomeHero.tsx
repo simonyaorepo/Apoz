@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import GoldButton from "../../ui/GoldButton";
-import { NEWS_ARTICLES } from "../../NewsSection/subcomponents/newsSectionData";
 
 const HeroSection = styled.section`
   position: relative;
@@ -174,16 +174,25 @@ const ArrowRight = () => (
 
 const HomeHero: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation(['news', 'common']);
   const [index, setIndex] = useState(0);
-  const article = NEWS_ARTICLES[index];
-  const goLeft = () => setIndex(i => (i === 0 ? NEWS_ARTICLES.length - 1 : i - 1));
-  const goRight = () => setIndex(i => (i === NEWS_ARTICLES.length - 1 ? 0 : i + 1));
-  // Use first paragraph as summary, or fallback
-  const summary = article.paragraphs?.[0] || '';
-  // Use subtitle from data, fallback to empty string
-  const subtitle = (article as any).subtitle || '';
+  
+  const totalArticles = 17;
+  const articleId = totalArticles - index; // Latest first (17, 16, 15, ...)
+  
+  const goLeft = () => setIndex(i => (i === 0 ? totalArticles - 1 : i - 1));
+  const goRight = () => setIndex(i => (i === totalArticles - 1 ? 0 : i + 1));
+  
+  const article = {
+    id: articleId,
+    title: t(`news:articles.${articleId}.title`),
+    image: t(`news:articles.${articleId}.image`),
+    summary: t(`news:articles.${articleId}.p1`)
+  };
+  
   // Check if this needs top positioning (faces at top)
   const showTop = article.image.includes('07-21-25') || article.image.includes('09-13-25');
+  
   return (
     <HeroSection>
       <HeroImage
@@ -193,11 +202,10 @@ const HomeHero: React.FC = () => {
       />
       <Overlay />
       <ContentBox>
-        {subtitle && <Subtitle>{subtitle}</Subtitle>}
         <Headline>{article.title}</Headline>
-        <Summary>{summary}</Summary>
+        <Summary>{article.summary}</Summary>
         <GoldButton onClick={() => navigate(`/news/${article.id}`)}>
-          Learn More
+          {t('common:common.learnMore')}
         </GoldButton>
       </ContentBox>
       <ArrowButtonRow>

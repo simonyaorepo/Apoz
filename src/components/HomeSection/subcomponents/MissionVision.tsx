@@ -1,4 +1,5 @@
 
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 const Wrapper = styled.div``;
@@ -52,25 +53,22 @@ const Paragraph = styled.p`
   margin-bottom: 24px;
 `;
 
-const MissionVision: React.FC = () => (
+const MissionVision: React.FC = () => {
+  const { t } = useTranslation('home');
+  
+  return (
   <Wrapper>
     {/* Mission */}
     <Section style={{ background: '#fff' }}>
       <Grid>
         <Img src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBoYW5kc2hha2UlMjBidXNpbmVzc3xlbnwxfHx8fDE3NjQ2NTg4MDh8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Mission" />
         <MissionText>
-          <Title>Our Mission</Title>
+          <Title>{t('mission.title')}</Title>
           <Paragraph>
-            To become the leading sustainable renewable industry park in North America, serving as 
-            the gateway for Asia-Pacific enterprises to enter the U.S. market, integrate into global 
-            supply chains, and access international capital markets while promoting green growth, 
-            economic opportunity, and cross-border innovation.
+            {t('mission.paragraph1')}
           </Paragraph>
           <Paragraph style={{ marginBottom: 0 }}>
-            We envision APOZ as a model industrial ecosystem that not only harnesses renewable energy 
-            to power economic development, but also maximizes FTZ and QOZ incentives to enhance capital 
-            efficiency, fostering ESG-aligned investments that create long-term social and economic impact 
-            and serves as a platform for IPO readiness, supply chain finance, and global expansion.
+            {t('mission.paragraph2')}
           </Paragraph>
         </MissionText>
       </Grid>
@@ -79,25 +77,16 @@ const MissionVision: React.FC = () => (
     <Section>
       <Grid>
         <VisionText>
-          <Title>Our Vision</Title>
-          <Paragraph>
-            Our vision is to position Houston APOZ as a world-class industrial and community hub that 
-            fuels America's re-industrialization while creating global win-win partnerships. By offering 
-            international companies a secure, policy-aligned, and innovation-driven environment, we 
-            empower them to achieve strong returns on investment, expand their market presence, and 
-            contribute directly to the U.S. industrial renaissance.
-          </Paragraph>
+          <Title>{t('vision.title')}</Title>
           <Paragraph style={{ marginBottom: 0 }}>
-            We envision APOZ as more than an industrial zone—it is a living model of sustainable growth. 
-            By combining advanced manufacturing, trade facilitation, and modern township infrastructure, 
-            APOZ aims to become a landmark destination where global enterprises, local communities, and 
-            the United States economy grow together.
+            {t('vision.paragraph')}
           </Paragraph>
         </VisionText>
         <Img src="https://images.unsplash.com/photo-1695067438561-75492f7b6a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjQ2MDkxMDF8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Vision" />
       </Grid>
     </Section>
   </Wrapper>
-);
+  );
+};
 
 export default MissionVision;

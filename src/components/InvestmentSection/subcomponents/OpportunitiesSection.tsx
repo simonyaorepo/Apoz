@@ -1,10 +1,10 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import { WhiteSection } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { SectionTitle } from "../../ui/Typography";
 import { Card } from "../../ui/Card";
-import { opportunities } from "./investmentSectionData";
 
 const OpportunitiesGrid = styled.div`
   display: grid;
@@ -35,10 +35,35 @@ const OpportunityDescription = styled.p`
 `;
 
 const OpportunitiesSection: React.FC = () => {
+  const { t } = useTranslation('investment');
+  
+  const opportunities = [
+    {
+      title: t('investment:opportunities.opportunity1_title'),
+      description: t('investment:opportunities.opportunity1_description'),
+      image: "https://images.unsplash.com/photo-1565008576549-57569a49371d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800"
+    },
+    {
+      title: t('investment:opportunities.opportunity2_title'),
+      description: t('investment:opportunities.opportunity2_description'),
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800"
+    },
+    {
+      title: t('investment:opportunities.opportunity3_title'),
+      description: t('investment:opportunities.opportunity3_description'),
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800"
+    },
+    {
+      title: t('investment:opportunities.opportunity4_title'),
+      description: t('investment:opportunities.opportunity4_description'),
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800"
+    }
+  ];
+  
   return (
     <WhiteSection style={{ paddingBottom: '6rem' }}>
       <Container>
-        <SectionTitle>Current Opportunities</SectionTitle>
+        <SectionTitle>{t('investment:opportunities.title')}</SectionTitle>
         <OpportunitiesGrid>
           {opportunities.map((opportunity, index) => (
             <Card key={index} variant="image-overlay" $image={opportunity.image}>

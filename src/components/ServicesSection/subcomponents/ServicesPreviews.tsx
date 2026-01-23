@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 const Section = styled.section`
@@ -116,30 +117,31 @@ const ArrowButton = styled.div`
 
 const ServicesPreviews: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation('services');
   
   const services = [
     {
       id: "overview",
-      title: "Services Overview",
-      description: "Comprehensive overview of all APOZ services including industrial park development, FTZ solutions, QOZ investment access, affordable housing, and business relocation support.",
+      title: t('previews.overview_title'),
+      description: t('previews.overview_description'),
       route: "/services/overview"
     },
     {
       id: "community",
-      title: "Community Management",
-      description: "Parks, recreation facilities, public safety services, and neighborhood development programs. Supporting livable, sustainable communities within APOZ.",
+      title: t('previews.community_title'),
+      description: t('previews.community_description'),
       route: "/services/community-management"
     },
     {
       id: "industry",
-      title: "Industry Zone Management",
-      description: "Comprehensive industrial park operations, tenant services, FTZ activation support, infrastructure maintenance, and technology integration for manufacturing facilities.",
+      title: t('previews.industry_title'),
+      description: t('previews.industry_description'),
       route: "/services/industry-zone-management"
     },
     {
       id: "residential",
-      title: "Residential Management",
-      description: "Property management, leasing services, community amenities, security, and smart home technology for 2,000 affordable workforce housing units.",
+      title: t('previews.residential_title'),
+      description: t('previews.residential_description'),
       route: "/services/residential-management"
     }
   ];

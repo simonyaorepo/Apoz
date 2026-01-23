@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 const Section = styled.section`
@@ -71,6 +72,8 @@ const Description = styled.p`
 `;
 
 const AboutIntro: React.FC = () => {
+  const { t } = useTranslation('home');
+  
   return (
     <Section>
       <Container>
@@ -81,31 +84,17 @@ const AboutIntro: React.FC = () => {
           />
         </ImageWrapper>
         <TextContent>
-          <Title>Join America's New Industrial Revolution</Title>
+          <Title>{t('intro.title')}</Title>
           <Divider />
-          <TagLine>Partnering in U.S. Re-Industrialization</TagLine>
+          <TagLine>{t('intro.tagline')}</TagLine>
           <Description>
-            The United States is embarking on a bold re-industrialization journey, and we, at APOZ, 
-            invite manufacturers, enterprises, and investors from around the world to be part of it. 
-            Today, "Made in USA" is more than a label—it is a symbol of market access, innovation, 
-            and long-term growth. By localizing production in America, global partners can tap into 
-            the world's largest consumer market, align with forward-looking U.S. policies, and create 
-            sustainable value for their businesses and communities.
+            {t('intro.description1')}
           </Description>
           <Description>
-            For Chinese, Korean, Taiwanese, and Japanese manufacturers, this is the moment to 
-            expand beyond exports and establish a direct presence in the U.S. Local production 
-            reduces risks from trade barriers, strengthens customer trust, and unlocks new 
-            opportunities in high-demand sectors such as semiconductors, automotive, clean energy, 
-            pharmaceuticals, and advanced machinery.
+            {t('intro.description2')}
           </Description>
           <Description>
-            Saudi Arabian and Middle East enterprises are also uniquely positioned to seize this 
-            opportunity with investment. Aligned with Vision 2030, Saudi investors and industrial 
-            champions can extend their capabilities into the U.S. by localizing energy, chemicals, 
-            advanced materials, and green technologies. This partnership bridges two transforming 
-            economies, amplifying growth in both markets while reinforcing the global strength of 
-            "Made in USA."
+            {t('intro.description3')}
           </Description>
         </TextContent>
       </Container>

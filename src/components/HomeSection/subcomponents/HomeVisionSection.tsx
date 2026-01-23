@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import {
   WhiteSection,
@@ -12,28 +13,31 @@ import {
   IllustrationBox,
   ImageBox,
 } from "./SharedStyles";
-import { HOME_VISION_DATA } from "./homeSectionData";
 
 interface VisionSectionProps {
   onNavigate: (page: string) => void;
 }
 
 const VisionSection: React.FC<VisionSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation('home');
+  const { t: tCommon } = useTranslation('common');
+  
   return (
     <>
       <TextHero
-        title={HOME_VISION_DATA.title}
-        backgroundImage={HOME_VISION_DATA.backgroundImage}
-        breadcrumbs={HOME_VISION_DATA.breadcrumbs}
+        title={t('visionPage.title')}
+        backgroundImage="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: tCommon('breadcrumbs.home'), href: '/' },
+          { label: t('visionPage.title') }
+        ]}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              {HOME_VISION_DATA.content.intro.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
+              <p>{t('visionPage.intro')}</p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +85,7 @@ const VisionSection: React.FC<VisionSectionProps> = ({ onNavigate: _onNavigate }
 
       <TealSection>
         <TealBox>
-          <p>{HOME_VISION_DATA.content.highlight}</p>
+          <p>{t('visionPage.highlight')}</p>
         </TealBox>
       </TealSection>
 
@@ -95,9 +99,10 @@ const VisionSection: React.FC<VisionSectionProps> = ({ onNavigate: _onNavigate }
               />
             </ImageBox>
             <TextContent>
-              {HOME_VISION_DATA.content.objectives.map((objective, idx) => (
-                <p key={idx}>{objective}</p>
-              ))}
+              <p>{t('visionPage.objective1')}</p>
+              <p>{t('visionPage.objective2')}</p>
+              <p>{t('visionPage.objective3')}</p>
+              <p>{t('visionPage.objective4')}</p>
             </TextContent>
           </GreyContentGrid>
         </Container>

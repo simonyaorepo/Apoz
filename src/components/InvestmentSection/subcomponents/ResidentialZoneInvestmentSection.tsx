@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import GoldDivider from "../../ui/GoldDivider";
@@ -78,52 +79,54 @@ const HighlightBox = styled.div`
 `;
 
 const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation(['investment', 'common']);
+  
   return (
     <>
       <TextHero
-        title="Residential Zone Investment Opportunities"
+        title={t('residentialZone.title', 'Residential Zone Investment Opportunities')}
         backgroundImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Investment", href: "/investment" },
-          { label: "Residential Zone" }
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.investment'), href: "/investment" },
+          { label: t('common:breadcrumbs.residentialZone') }
         ]}
       />
       
       <WhiteSection>
         <ContentWrapper>
           <IntroText>
-            APOZ's residential zone combines affordable housing development with powerful tax incentives through Qualified Opportunity Zone and Qualified Opportunity Fund structures, plus Low-Income Housing Tax Credit (LIHTC) financing. This creates a unique investment opportunity where capital gains tax benefits meet community impact, delivering both financial returns and social value.
+            {t('residentialZone.intro')}
           </IntroText>
 
-          <SectionTitle>Qualified Opportunity Zone (QOZ) Benefits</SectionTitle>
+          <SectionTitle>{t('residentialZone.qoz_benefits_title')}</SectionTitle>
           <IntroText>
-            The APOZ residential zone is strategically positioned within a federally designated Qualified Opportunity Zone, offering investors significant federal tax advantages when they invest through a Qualified Opportunity Fund (QOF).
+            {t('residentialZone.qoz_intro')}
           </IntroText>
 
           <StyledTable>
             <thead>
               <tr>
-                <th>Benefit</th>
-                <th>Details</th>
-                <th>Timeline</th>
+                <th>{t('residentialZone.qoz_benefit_header')}</th>
+                <th>{t('residentialZone.qoz_details_header')}</th>
+                <th>{t('residentialZone.qoz_timeline_header')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="Benefit"><strong>Capital Gains Deferral</strong></td>
-                <td data-label="Details">Pay no federal tax on reinvested gains until Dec 31, 2026</td>
-                <td data-label="Timeline">Up to ~2 years (if invested now)</td>
+                <td data-label={t('residentialZone.qoz_benefit_header')}><strong>{t('residentialZone.qoz_deferral_benefit')}</strong></td>
+                <td data-label={t('residentialZone.qoz_details_header')}>{t('residentialZone.qoz_deferral_details')}</td>
+                <td data-label={t('residentialZone.qoz_timeline_header')}>{t('residentialZone.qoz_deferral_timeline')}</td>
               </tr>
               <tr>
-                <td data-label="Benefit"><strong>Tax-Free Growth</strong></td>
-                <td data-label="Details">After 10+ years, pay zero federal capital gains tax on profits from the QOZ investment</td>
-                <td data-label="Timeline">10+ years</td>
+                <td data-label={t('residentialZone.qoz_benefit_header')}><strong>{t('residentialZone.qoz_growth_benefit')}</strong></td>
+                <td data-label={t('residentialZone.qoz_details_header')}>{t('residentialZone.qoz_growth_details')}</td>
+                <td data-label={t('residentialZone.qoz_timeline_header')}>{t('residentialZone.qoz_growth_timeline')}</td>
               </tr>
               <tr>
-                <td data-label="Benefit"><strong>Step-Up in Basis</strong></td>
-                <td data-label="Details">Previously reduced taxable gains by up to 15% after 7 years (expired for new investors in 2021)</td>
-                <td data-label="Timeline">N/A</td>
+                <td data-label={t('residentialZone.qoz_benefit_header')}><strong>{t('residentialZone.qoz_stepup_benefit')}</strong></td>
+                <td data-label={t('residentialZone.qoz_details_header')}>{t('residentialZone.qoz_stepup_details')}</td>
+                <td data-label={t('residentialZone.qoz_timeline_header')}>{t('residentialZone.qoz_stepup_timeline')}</td>
               </tr>
             </tbody>
           </StyledTable>
@@ -132,100 +135,100 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
 
       <TealSection>
         <TealBox>
-          <TealTitle>Investment Example: $1M Capital Gain</TealTitle>
+          <TealTitle>{t('residentialZone.example_title')}</TealTitle>
           <WhiteText>
-            If an investor sells stock for a $1M gain and invests into APOZ residential development via a QOF:
+            {t('residentialZone.example_intro')}
           </WhiteText>
           <BenefitsTable>
             <thead>
               <tr>
-                <th>Scenario</th>
-                <th>Tax Treatment</th>
-                <th>Result</th>
+                <th>{t('residentialZone.example_scenario_header')}</th>
+                <th>{t('residentialZone.example_tax_header')}</th>
+                <th>{t('residentialZone.example_result_header')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Without QOF</strong></td>
-                <td>Pays ~$240K federal capital gains tax (24%)</td>
-                <td>$760K to invest</td>
+                <td><strong>{t('residentialZone.example_without_qof')}</strong></td>
+                <td>{t('residentialZone.example_without_tax')}</td>
+                <td>{t('residentialZone.example_without_result')}</td>
               </tr>
               <tr>
-                <td><strong>With QOF Investment</strong></td>
-                <td>Tax deferred until 2026; full $1M compounds</td>
-                <td>$1M to invest now</td>
+                <td><strong>{t('residentialZone.example_with_qof')}</strong></td>
+                <td>{t('residentialZone.example_with_tax')}</td>
+                <td>{t('residentialZone.example_with_result')}</td>
               </tr>
               <tr>
-                <td><strong>After 10 Years</strong></td>
-                <td>If investment grows to $3M</td>
-                <td>$2M appreciation = 100% tax-free</td>
+                <td><strong>{t('residentialZone.example_after_10y')}</strong></td>
+                <td>{t('residentialZone.example_after_tax')}</td>
+                <td>{t('residentialZone.example_after_result')}</td>
               </tr>
             </tbody>
           </BenefitsTable>
           <WhiteText>
-            <strong>Net Result:</strong> Investor keeps significantly more profit through tax deferral and tax-free growth.
+            {t('residentialZone.example_net_result')}
           </WhiteText>
         </TealBox>
       </TealSection>
 
       <GreySection>
         <ContentWrapper>
-          <SectionTitle>How Qualified Opportunity Funds (QOFs) Work</SectionTitle>
+          <SectionTitle>{t('residentialZone.qof_how_title')}</SectionTitle>
           <IntroText>
-            A QOF is a special investment vehicle created under the 2017 U.S. Tax Cuts and Jobs Act to channel private capital into Qualified Opportunity Zones and unlock major tax incentives for investors.
+            {t('residentialZone.qof_intro')}
           </IntroText>
 
           <StyledTable>
             <thead>
               <tr>
-                <th>Step</th>
-                <th>Process</th>
-                <th>Who's Involved</th>
+                <th>{t('residentialZone.qof_step_header')}</th>
+                <th>{t('residentialZone.qof_process_header')}</th>
+                <th>{t('residentialZone.qof_involved_header')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="Step"><strong>1. Capital Gain Event</strong></td>
-                <td data-label="Process">Investor sells stock, crypto, business, or property and realizes gains</td>
-                <td data-label="Who's Involved">Investor</td>
+                <td data-label={t('residentialZone.qof_step_header')}><strong>{t('residentialZone.qof_step1_step')}</strong></td>
+                <td data-label={t('residentialZone.qof_process_header')}>{t('residentialZone.qof_step1_process')}</td>
+                <td data-label={t('residentialZone.qof_involved_header')}>{t('residentialZone.qof_step1_involved')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>2. Invest into QOF</strong></td>
-                <td data-label="Process">Within 180 days, investor contributes gains into a QOF</td>
-                <td data-label="Who's Involved">Investor + QOF</td>
+                <td data-label={t('residentialZone.qof_step_header')}><strong>{t('residentialZone.qof_step2_step')}</strong></td>
+                <td data-label={t('residentialZone.qof_process_header')}>{t('residentialZone.qof_step2_process')}</td>
+                <td data-label={t('residentialZone.qof_involved_header')}>{t('residentialZone.qof_step2_involved')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>3. QOF Deploys Funds</strong></td>
-                <td data-label="Process">QOF invests at least 90% of assets into QOZ projects like APOZ</td>
-                <td data-label="Who's Involved">QOF Manager + Developer</td>
+                <td data-label={t('residentialZone.qof_step_header')}><strong>{t('residentialZone.qof_step3_step')}</strong></td>
+                <td data-label={t('residentialZone.qof_process_header')}>{t('residentialZone.qof_step3_process')}</td>
+                <td data-label={t('residentialZone.qof_involved_header')}>{t('residentialZone.qof_step3_involved')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>4. Hold Investment</strong></td>
-                <td data-label="Process">Investors hold their QOF shares for 5, 7, or 10+ years to unlock tax breaks</td>
-                <td data-label="Who's Involved">Investor</td>
+                <td data-label={t('residentialZone.qof_step_header')}><strong>{t('residentialZone.qof_step4_step')}</strong></td>
+                <td data-label={t('residentialZone.qof_process_header')}>{t('residentialZone.qof_step4_process')}</td>
+                <td data-label={t('residentialZone.qof_involved_header')}>{t('residentialZone.qof_step4_involved')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>5. Exit & Tax-Free Growth</strong></td>
-                <td data-label="Process">After 10+ years, any appreciation on the QOF investment is tax-free</td>
-                <td data-label="Who's Involved">Investor</td>
+                <td data-label={t('residentialZone.qof_step_header')}><strong>{t('residentialZone.qof_step5_step')}</strong></td>
+                <td data-label={t('residentialZone.qof_process_header')}>{t('residentialZone.qof_step5_process')}</td>
+                <td data-label={t('residentialZone.qof_involved_header')}>{t('residentialZone.qof_step5_involved')}</td>
               </tr>
             </tbody>
           </StyledTable>
 
           <HighlightBox>
-            <SectionTitle>QOF Requirements</SectionTitle>
+            <SectionTitle>{t('residentialZone.qof_requirements_title')}</SectionTitle>
             <RequirementsList>
               <div>
-                <RequirementTitle>90% Asset Test</RequirementTitle>
-                <RequirementText>At least 90% of QOF assets must be in QOZ property or businesses.</RequirementText>
+                <RequirementTitle>{t('residentialZone.qof_req1_title')}</RequirementTitle>
+                <RequirementText>{t('residentialZone.qof_req1_text')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>180-Day Reinvestment Window</RequirementTitle>
-                <RequirementText>Investors must invest capital gains into the QOF within 180 days of realizing them.</RequirementText>
+                <RequirementTitle>{t('residentialZone.qof_req2_title')}</RequirementTitle>
+                <RequirementText>{t('residentialZone.qof_req2_text')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Substantial Improvement</RequirementTitle>
-                <RequirementText>If buying existing property, QOF must double the investment basis within 30 months.</RequirementText>
+                <RequirementTitle>{t('residentialZone.qof_req3_title')}</RequirementTitle>
+                <RequirementText>{t('residentialZone.qof_req3_text')}</RequirementText>
               </div>
             </RequirementsList>
           </HighlightBox>
@@ -236,27 +239,27 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
 
       <GreySection>
         <ContentWrapper>
-          <SectionTitle>LIHTC Financing for Affordable Housing</SectionTitle>
+          <SectionTitle>{t('residentialZone.lihtc_title')}</SectionTitle>
           <IntroText>
-            The Low-Income Housing Tax Credit (LIHTC) program provides federal tax credits to developers who build or rehabilitate affordable rental housing. APOZ residential projects can layer LIHTC financing with QOZ/QOF incentives.
+            {t('residentialZone.lihtc_intro')}
           </IntroText>
 
           <RequirementsList>
             <div>
-              <RequirementTitle>Federal Tax Credits</RequirementTitle>
-              <RequirementText>Dollar-for-dollar reduction in federal tax liability over 10 years.</RequirementText>
+              <RequirementTitle>{t('residentialZone.lihtc_req1_title')}</RequirementTitle>
+              <RequirementText>{t('residentialZone.lihtc_req1_text')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>Equity Investment</RequirementTitle>
-              <RequirementText>LIHTC syndicators provide upfront equity in exchange for tax credits.</RequirementText>
+              <RequirementTitle>{t('residentialZone.lihtc_req2_title')}</RequirementTitle>
+              <RequirementText>{t('residentialZone.lihtc_req2_text')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>Affordability Requirements</RequirementTitle>
-              <RequirementText>Units must remain affordable for 30+ years, ensuring community impact.</RequirementText>
+              <RequirementTitle>{t('residentialZone.lihtc_req3_title')}</RequirementTitle>
+              <RequirementText>{t('residentialZone.lihtc_req3_text')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>Combined QOZ + LIHTC</RequirementTitle>
-              <RequirementText>Maximize capital stack with both federal incentive programs.</RequirementText>
+              <RequirementTitle>{t('residentialZone.lihtc_req4_title')}</RequirementTitle>
+              <RequirementText>{t('residentialZone.lihtc_req4_text')}</RequirementText>
             </div>
           </RequirementsList>
         </ContentWrapper>
@@ -266,33 +269,33 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
 
       <GreySection>
         <ContentWrapper>
-          <SectionTitle>Investment Structure & Returns</SectionTitle>
+          <SectionTitle>{t('residentialZone.structure_title')}</SectionTitle>
           
           <ExampleBox>
-            <ExampleTitle>Target Returns (Illustrative)</ExampleTitle>
+            <ExampleTitle>{t('residentialZone.structure_returns_title')}</ExampleTitle>
             <IntroText>
-              The affordable housing portfolio targets an 8-12% stabilized yield, with projected IRRs of 15-20% when QOZ tax benefits are factored in. After the 10-year hold period, investors pay zero federal capital gains tax on exit. The strong ESG profile makes this particularly attractive to institutional investors.
+              {t('residentialZone.structure_returns_text')}
             </IntroText>
           </ExampleBox>
 
-          <SectionTitle>Target Investor Profile</SectionTitle>
+          <SectionTitle>{t('residentialZone.investor_profile_title')}</SectionTitle>
           <IntroText>
-            This opportunity is ideal for high-net-worth individuals with recent capital gains, as well as family offices seeking tax-advantaged real estate investments. Impact investors focused on affordable housing and community development will appreciate the social returns, while institutional funds with LIHTC investment mandates can fulfill their requirements. Asia-Pacific investors seeking U.S. market entry will find the combined tax benefits particularly compelling.
+            {t('residentialZone.investor_profile_text')}
           </IntroText>
 
-          <SectionTitle>Exit Strategies</SectionTitle>
+          <SectionTitle>{t('residentialZone.exit_strategies_title')}</SectionTitle>
           <RequirementsList>
             <div>
-              <RequirementText>Multiple exit pathways exist for investors, including REIT conversion and securitization of stabilized assets.</RequirementText>
+              <RequirementText>{t('residentialZone.exit_strategy1')}</RequirementText>
             </div>
             <div>
-              <RequirementText>Portfolio sale to institutional affordable housing funds offers a direct exit strategy.</RequirementText>
+              <RequirementText>{t('residentialZone.exit_strategy2')}</RequirementText>
             </div>
             <div>
-              <RequirementText>Investors can also refinance after the 10-year hold period to realize tax-free gains while retaining ownership.</RequirementText>
+              <RequirementText>{t('residentialZone.exit_strategy3')}</RequirementText>
             </div>
             <div>
-              <RequirementText>Strategic sales to public housing authorities or non-profit organizations provide mission-aligned exit opportunities.</RequirementText>
+              <RequirementText>{t('residentialZone.exit_strategy4')}</RequirementText>
             </div>
           </RequirementsList>
         </ContentWrapper>
@@ -304,4 +307,5 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
 };
 
 export default ResidentialZoneInvestmentSection;
+
 

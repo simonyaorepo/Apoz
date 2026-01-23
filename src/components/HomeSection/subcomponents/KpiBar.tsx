@@ -1,4 +1,4 @@
-
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 interface KpiMetric {
@@ -50,17 +50,29 @@ const Label = styled.div`
   letter-spacing: 2px;
 `;
 
-const KpiBar: React.FC<KpiBarProps> = ({ metrics }) => (
-  <Wrapper>
-    <Grid>
-      {metrics.map((metric, index) => (
-        <Metric key={index} isLast={index === metrics.length - 1}>
-          <Value>{metric.value}</Value>
-          <Label>{metric.label}</Label>
-        </Metric>
-      ))}
-    </Grid>
-  </Wrapper>
-);
+const KpiBar: React.FC<KpiBarProps> = ({ metrics }) => {
+  const { t } = useTranslation('home');
+  
+  const labels = [
+    t('kpi.homePrice'),
+    t('kpi.acres'),
+    t('kpi.jobs'),
+    t('kpi.investment'),
+    t('kpi.unique')
+  ];
+  
+  return (
+    <Wrapper>
+      <Grid>
+        {metrics.map((metric, index) => (
+          <Metric key={index} isLast={index === metrics.length - 1}>
+            <Value>{metric.value}</Value>
+            <Label>{labels[index]}</Label>
+          </Metric>
+        ))}
+      </Grid>
+    </Wrapper>
+  );
+};
 
 export default KpiBar;

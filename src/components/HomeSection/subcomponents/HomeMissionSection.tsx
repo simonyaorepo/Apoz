@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import {
   WhiteSection,
@@ -12,28 +13,31 @@ import {
   IllustrationBox,
   ImageBox,
 } from "./SharedStyles";
-import { HOME_MISSION_DATA } from "./homeSectionData";
 
 interface MissionSectionProps {
   onNavigate: (page: string) => void;
 }
 
 const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation('home');
+  const { t: tCommon } = useTranslation('common');
+  
   return (
     <>
       <TextHero
-        title={HOME_MISSION_DATA.title}
-        backgroundImage={HOME_MISSION_DATA.backgroundImage}
-        breadcrumbs={HOME_MISSION_DATA.breadcrumbs}
+        title={t('missionPage.title')}
+        backgroundImage="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: tCommon('breadcrumbs.home'), href: '/' },
+          { label: t('missionPage.title') }
+        ]}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              {HOME_MISSION_DATA.content.intro.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
+              <p>{t('missionPage.intro')}</p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +93,7 @@ const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate
 
       <TealSection>
         <TealBox>
-          <p>{HOME_MISSION_DATA.content.highlight}</p>
+          <p>{t('missionPage.highlight')}</p>
         </TealBox>
       </TealSection>
 
@@ -103,9 +107,10 @@ const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate
               />
             </ImageBox>
             <TextContent>
-              {HOME_MISSION_DATA.content.pillars.items.map((pillar, idx) => (
-                <p key={idx}>{pillar.title}: {pillar.description}</p>
-              ))}
+              <p><strong>{t('missionPage.pillar1_title')}:</strong> {t('missionPage.pillar1_description')}</p>
+              <p><strong>{t('missionPage.pillar2_title')}:</strong> {t('missionPage.pillar2_description')}</p>
+              <p><strong>{t('missionPage.pillar3_title')}:</strong> {t('missionPage.pillar3_description')}</p>
+              <p><strong>{t('missionPage.pillar4_title')}:</strong> {t('missionPage.pillar4_description')}</p>
             </TextContent>
           </GreyContentGrid>
         </Container>

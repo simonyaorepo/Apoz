@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import SummaryBlock from "./SummaryBlock";
 import QuoteSection from "./QuoteSection";
@@ -13,24 +14,25 @@ import {
   PhaseTitle,
   PhaseParagraph
 } from "./SharedStyles";
-import { PHASE_1_DATA } from "../developmentSectionData";
 
 const Phase1Section: React.FC = () => {
+  const { t } = useTranslation(['development', 'common']);
+  
   return (
     <>
       <TextHero
-        title={PHASE_1_DATA.title}
-        backgroundImage={PHASE_1_DATA.backgroundImage}
+        title={t('development:phase1.title')}
+        backgroundImage="/assets/images/development/phase1/hero.jpg"
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Development", href: "/development" },
-          { label: "Phase 1" }
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.development'), href: "/development" },
+          { label: t('common:breadcrumbs.phase1') }
         ]}
       />
       
       <PhaseSection>
         <SummaryBlock
-          content={PHASE_1_DATA.overview.intro}
+          content={[t('development:phase1.intro1'), t('development:phase1.intro2')]}
           imageSrc="/assets/images/development/phase1/1.jpg"
           imageAlt="Phase 1 Overview"
           reverse={true}
@@ -46,10 +48,9 @@ const Phase1Section: React.FC = () => {
             />
           </PhaseImageWrapper>
           <PhaseTextContent>
-            <PhaseTitle>Strategic Positioning</PhaseTitle>
-            {PHASE_1_DATA.overview.positioning.map((paragraph, idx) => (
-              <PhaseParagraph key={idx}>{paragraph}</PhaseParagraph>
-            ))}
+            <PhaseTitle>{t('development:phaseTitles.strategicPositioning')}</PhaseTitle>
+            <PhaseParagraph>{t('development:phase1.positioning1')}</PhaseParagraph>
+            <PhaseParagraph>{t('development:phase1.positioning2')}</PhaseParagraph>
           </PhaseTextContent>
         </PhaseContentBlock>
 
@@ -63,19 +64,11 @@ const Phase1Section: React.FC = () => {
             />
           </PhaseImageWrapper>
           <PhaseTextContent $reverse>
-            <PhaseTitle>Key Objectives of Phase 1</PhaseTitle>
-            <PhaseParagraph>
-              <strong>Infrastructure Development:</strong> Roads, utilities, data connectivity.
-            </PhaseParagraph>
-            <PhaseParagraph>
-              <strong>Anchor Tenants:</strong> Attract initial manufacturing & distribution tenants.
-            </PhaseParagraph>
-            <PhaseParagraph>
-              <strong>Financial Close:</strong> Raise funds via QOF, REITs, and strategic LPs.
-            </PhaseParagraph>
-            <PhaseParagraph>
-              <strong>Regulatory Activation:</strong> FTZ approval, environmental permits, construction readiness.
-            </PhaseParagraph>
+            <PhaseTitle>{t('development:phaseTitles.keyObjectivesPhase1')}</PhaseTitle>
+            <PhaseParagraph>{t('development:phase1.objective1')}</PhaseParagraph>
+            <PhaseParagraph>{t('development:phase1.objective2')}</PhaseParagraph>
+            <PhaseParagraph>{t('development:phase1.objective3')}</PhaseParagraph>
+            <PhaseParagraph>{t('development:phase1.objective4')}</PhaseParagraph>
           </PhaseTextContent>
         </PhaseContentBlock>
 
@@ -89,12 +82,22 @@ const Phase1Section: React.FC = () => {
             />
           </PhaseImageWrapper>
           <PhaseTextContent>
-            <PhaseTitle>Phase 1 Investment & Timeline</PhaseTitle>
-            {PHASE_1_DATA.timeline.map((item, idx) => (
-              <PhaseParagraph key={idx}>
-                <strong>{item.milestone}</strong> ({item.targetDate}): {item.keyActions}
-              </PhaseParagraph>
-            ))}
+            <PhaseTitle>{t('development:phaseTitles.phase1InvestmentTimeline')}</PhaseTitle>
+            <PhaseParagraph>
+              <strong>{t('development:phase1.timeline1_milestone')}</strong> ({t('development:phase1.timeline1_targetDate')}): {t('development:phase1.timeline1_keyActions')}
+            </PhaseParagraph>
+            <PhaseParagraph>
+              <strong>{t('development:phase1.timeline2_milestone')}</strong> ({t('development:phase1.timeline2_targetDate')}): {t('development:phase1.timeline2_keyActions')}
+            </PhaseParagraph>
+            <PhaseParagraph>
+              <strong>{t('development:phase1.timeline3_milestone')}</strong> ({t('development:phase1.timeline3_targetDate')}): {t('development:phase1.timeline3_keyActions')}
+            </PhaseParagraph>
+            <PhaseParagraph>
+              <strong>{t('development:phase1.timeline4_milestone')}</strong> ({t('development:phase1.timeline4_targetDate')}): {t('development:phase1.timeline4_keyActions')}
+            </PhaseParagraph>
+            <PhaseParagraph>
+              <strong>{t('development:phase1.timeline5_milestone')}</strong> ({t('development:phase1.timeline5_targetDate')}): {t('development:phase1.timeline5_keyActions')}
+            </PhaseParagraph>
           </PhaseTextContent>
         </PhaseContentBlock>
 
@@ -108,18 +111,19 @@ const Phase1Section: React.FC = () => {
             />
           </PhaseImageWrapper>
           <PhaseTextContent $reverse>
-            <PhaseTitle>Phase 1 Financing Structure</PhaseTitle>
+            <PhaseTitle>{t('development:phaseTitles.phase1FinancingStructure')}</PhaseTitle>
             <PhaseParagraph>
-              <strong>Target Raise:</strong> {PHASE_1_DATA.financing.targetRaise}
+              <strong>{t('development:phase1.financing_targetRaiseLabel')}</strong> {t('development:phase1.financing_targetRaise')}
             </PhaseParagraph>
             <PhaseParagraph style={{ marginTop: '1rem' }}>
-              <strong>Capital Sources:</strong>
+              <strong>{t('development:phase1.financing_capitalSourcesLabel')}</strong>
             </PhaseParagraph>
-            {PHASE_1_DATA.financing.sources.map((source, idx) => (
-              <PhaseParagraph key={idx} dangerouslySetInnerHTML={{ __html: source }} />
-            ))}
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('development:phase1.financing_source1') }} />
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('development:phase1.financing_source2') }} />
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('development:phase1.financing_source3') }} />
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('development:phase1.financing_source4') }} />
             <PhaseParagraph style={{ marginTop: '1.5rem' }}>
-              {PHASE_1_DATA.financing.returnsSummary}
+              {t('development:phase1.financing_returnsSummary')}
             </PhaseParagraph>
           </PhaseTextContent>
         </PhaseContentBlock>
@@ -127,7 +131,7 @@ const Phase1Section: React.FC = () => {
       
       <GoldDivider />
       
-      <QuoteSection quote="Phase One establishes APOZ as the premier FTZ+QOZ dual-status business park, creating unprecedented economic opportunity in Southeast Texas with 9.8M sq. ft. of industrial space and integrated workforce housing." />
+      <QuoteSection quote={t('development:phase1.quote')} />
     </>
   );
 };

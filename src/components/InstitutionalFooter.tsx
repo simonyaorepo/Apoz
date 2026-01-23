@@ -2,6 +2,7 @@ import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Mail, MapPin } from "lucide-react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 interface InstitutionalFooterProps {
   onNavigate: (page: string) => void;
@@ -24,8 +25,8 @@ const FooterContainer = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 2fr 1.2fr 1.5fr;
+  gap: 4rem;
   margin-bottom: 4rem;
   padding-top: 2rem;
   align-items: start;
@@ -148,7 +149,7 @@ const LinkList = styled.ul`
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
 `;
 
 const LinkButton = styled.button`
@@ -159,6 +160,8 @@ const LinkButton = styled.button`
   font-weight: 400;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  padding: 0;
   &:hover {
     color: ${({ theme }) => theme.colors.white};
     transform: translateX(2px);
@@ -170,7 +173,6 @@ const LinkButton = styled.button`
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     text-align: center;
     font-size: ${({ theme }) => theme.fontSizes['0.97']};
-    margin-bottom: 0.5rem;
   }
 `;
 
@@ -238,20 +240,22 @@ interface FooterSection {
 }
 
 export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
+  const { t } = useTranslation('common');
+  
   const footerSections: FooterSection[] = [
     {
-      title: "Navigation",
+      title: t('footer.navigation'),
       links: [
-        { label: "Home", page: "home" },
-        { label: "Master Plan", page: "master-plan" },
-        { label: "Our Services", page: "services" },
-        { label: "Investment", page: "investment" },
-        { label: "Development", page: "development" },
-        { label: "News", page: "news" },
+        { label: t('nav.home'), page: "home" },
+        { label: t('nav.masterPlan'), page: "master-plan" },
+        { label: t('nav.services'), page: "services" },
+        { label: t('nav.investment'), page: "investment" },
+        { label: t('nav.development'), page: "development" },
+        { label: t('nav.news'), page: "news" },
       ],
     },
     {
-      title: "Contact",
+      title: t('footer.contact'),
       items: [
         { icon: MapPin, text: "123 Innovation Park Drive, Houston, TX 77001" },
         { icon: Mail, text: "info@apoz.us" },
@@ -273,7 +277,7 @@ export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
               </div>
             </LogoRow>
             <Description>
-              Building sustainable communities and fostering economic growth through master-planned development in Greater Houston.
+              {t('footer.description')}
             </Description>
             <SocialRow>
               <SocialIcon><FaFacebookF /></SocialIcon>
@@ -310,11 +314,11 @@ export function InstitutionalFooter({ onNavigate }: InstitutionalFooterProps) {
           ))}
         </Grid>
         <BottomBar>
-          <Copyright>© 2025 Asia Pacific Opportunity Zone. All rights reserved.</Copyright>
+          <Copyright>{t('footer.copyright')}</Copyright>
           <LegalLinks>
-            <LinkButton>Privacy Policy</LinkButton>
-            <LinkButton>Terms of Service</LinkButton>
-            <LinkButton>Legal</LinkButton>
+            <LinkButton>{t('footer.privacy')}</LinkButton>
+            <LinkButton>{t('footer.terms')}</LinkButton>
+            <LinkButton>{t('footer.legal')}</LinkButton>
           </LegalLinks>
         </BottomBar>
       </FooterContainer>

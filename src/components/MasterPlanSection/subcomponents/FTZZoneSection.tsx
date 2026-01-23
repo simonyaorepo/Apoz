@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import GoldDivider from "../../ui/GoldDivider";
 import { ContentWrapper, GreyContent } from "../../ui/Containers";
@@ -15,22 +16,24 @@ interface FTZZoneSectionProps {
 }
 
 const FTZZoneSection: React.FC<FTZZoneSectionProps> = () => {
+  const { t } = useTranslation(['masterPlan', 'common']);
+  
   return (
     <>
       <TextHero
-        title="Foreign Trade Zone (FTZ-171)"
+        title={t('ftz.title', 'Foreign Trade Zone (FTZ-171)')}
         backgroundImage="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Master Plan", href: "/master-plan" },
-          { label: "FTZ-171" }
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.masterPlan'), href: "/master-plan" },
+          { label: t('common:breadcrumbs.ftzZone') }
         ]}
       />
 
       <WhiteSection>
         <ContentWrapper>
           <IntroText>
-            Foreign Trade Zone 171 (FTZ-171) is a designated U.S. Customs and Border Protection territory that allows businesses to defer, reduce, or eliminate customs duties on foreign goods. The APOZ property operates under FTZ-171 activation, enabling international trade advantages for industrial tenants.
+            {t('ftz.intro_paragraph')}
           </IntroText>
         </ContentWrapper>
       </WhiteSection>
@@ -39,38 +42,38 @@ const FTZZoneSection: React.FC<FTZZoneSectionProps> = () => {
 
       <GreySection>
         <GreyContent>
-          <SectionTitle>FTZ Activation Process</SectionTitle>
+          <SectionTitle>{t('ftz.activation_title')}</SectionTitle>
           <StyledTable>
             <thead>
               <tr>
-                <th>Step</th>
-                <th>Process</th>
+                <th>{t('ftz.activation_step_header')}</th>
+                <th>{t('ftz.activation_process_header')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="Step"><strong>1. Site Application</strong></td>
-                <td data-label="Process">Submit FTZ site activation application to grantee (Guam Economic Development Authority)</td>
+                <td data-label={t('ftz.activation_step_header')}><strong>{t('ftz.activation_step1_step')}</strong></td>
+                <td data-label={t('ftz.activation_process_header')}>{t('ftz.activation_step1_process')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>2. CBP Review</strong></td>
-                <td data-label="Process">U.S. Customs and Border Protection reviews application and conducts site inspection</td>
+                <td data-label={t('ftz.activation_step_header')}><strong>{t('ftz.activation_step2_step')}</strong></td>
+                <td data-label={t('ftz.activation_process_header')}>{t('ftz.activation_step2_process')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>3. Approval & Bonding</strong></td>
-                <td data-label="Process">CBP approves activation; operator obtains FTZ activity bond</td>
+                <td data-label={t('ftz.activation_step_header')}><strong>{t('ftz.activation_step3_step')}</strong></td>
+                <td data-label={t('ftz.activation_process_header')}>{t('ftz.activation_step3_process')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>4. Inventory System</strong></td>
-                <td data-label="Process">Implement CBP-approved inventory tracking system (RFID/digital)</td>
+                <td data-label={t('ftz.activation_step_header')}><strong>{t('ftz.activation_step4_step')}</strong></td>
+                <td data-label={t('ftz.activation_process_header')}>{t('ftz.activation_step4_process')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>5. Operations Start</strong></td>
-                <td data-label="Process">Begin FTZ operations under CBP supervision with admitted foreign merchandise</td>
+                <td data-label={t('ftz.activation_step_header')}><strong>{t('ftz.activation_step5_step')}</strong></td>
+                <td data-label={t('ftz.activation_process_header')}>{t('ftz.activation_step5_process')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>6. Annual Reporting</strong></td>
-                <td data-label="Process">Submit annual reports to CBP and grantee on FTZ activities</td>
+                <td data-label={t('ftz.activation_step_header')}><strong>{t('ftz.activation_step6_step')}</strong></td>
+                <td data-label={t('ftz.activation_process_header')}>{t('ftz.activation_step6_process')}</td>
               </tr>
             </tbody>
           </StyledTable>
@@ -83,31 +86,31 @@ const FTZZoneSection: React.FC<FTZZoneSectionProps> = () => {
         <Container>
           <GreyContentGrid style={{ gridTemplateColumns: '1.5fr 1.25fr', alignItems: 'center' }}>
             <div>
-              <SectionTitle>FTZ Compliance Requirements</SectionTitle>
+              <SectionTitle>{t('ftz.compliance_title')}</SectionTitle>
               <RequirementsList>
                 <div>
-                  <RequirementTitle>Security & Fencing</RequirementTitle>
-                  <RequirementText>Secure perimeter with controlled access points monitored by CBP</RequirementText>
+                  <RequirementTitle>{t('ftz.compliance_security_title')}</RequirementTitle>
+                  <RequirementText>{t('ftz.compliance_security_text')}</RequirementText>
                 </div>
                 <div>
-                  <RequirementTitle>Inventory Tracking</RequirementTitle>
-                  <RequirementText>Real-time digital system tracking all admitted, manipulated, and removed merchandise</RequirementText>
+                  <RequirementTitle>{t('ftz.compliance_inventory_title')}</RequirementTitle>
+                  <RequirementText>{t('ftz.compliance_inventory_text')}</RequirementText>
                 </div>
                 <div>
-                  <RequirementTitle>Record Keeping</RequirementTitle>
-                  <RequirementText>Maintain detailed records of all FTZ transactions for CBP audit (5 years minimum)</RequirementText>
+                  <RequirementTitle>{t('ftz.compliance_record_title')}</RequirementTitle>
+                  <RequirementText>{t('ftz.compliance_record_text')}</RequirementText>
                 </div>
                 <div>
-                  <RequirementTitle>CBP Access</RequirementTitle>
-                  <RequirementText>Provide 24/7 CBP access to FTZ facilities for inspection and supervision</RequirementText>
+                  <RequirementTitle>{t('ftz.compliance_cbp_access_title')}</RequirementTitle>
+                  <RequirementText>{t('ftz.compliance_cbp_access_text')}</RequirementText>
                 </div>
                 <div>
-                  <RequirementTitle>Prohibited Activities</RequirementTitle>
-                  <RequirementText>No retail trade, domestic merchandise storage (except for export), or activities violating CBP regulations</RequirementText>
+                  <RequirementTitle>{t('ftz.compliance_prohibited_title')}</RequirementTitle>
+                  <RequirementText>{t('ftz.compliance_prohibited_text')}</RequirementText>
                 </div>
                 <div>
-                  <RequirementTitle>Annual Certification</RequirementTitle>
-                  <RequirementText>Submit annual FTZ activity reports and pay grantee fees</RequirementText>
+                  <RequirementTitle>{t('ftz.compliance_annual_cert_title')}</RequirementTitle>
+                  <RequirementText>{t('ftz.compliance_annual_cert_text')}</RequirementText>
                 </div>
               </RequirementsList>
             </div>
@@ -126,38 +129,38 @@ const FTZZoneSection: React.FC<FTZZoneSectionProps> = () => {
 
       <GreySection>
         <GreyContent>
-          <SectionTitle>Permitted FTZ Activities</SectionTitle>
+          <SectionTitle>{t('ftz.activities_title')}</SectionTitle>
           <StyledTable>
             <thead>
               <tr>
-                <th>Activity</th>
-                <th>Description</th>
+                <th>{t('ftz.activities_activity_header')}</th>
+                <th>{t('ftz.activities_description_header')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="Activity"><strong>Storage</strong></td>
-                <td data-label="Description">Indefinite storage of foreign merchandise without duty payment</td>
+                <td data-label={t('ftz.activities_activity_header')}><strong>{t('ftz.activities_storage_activity')}</strong></td>
+                <td data-label={t('ftz.activities_description_header')}>{t('ftz.activities_storage_description')}</td>
               </tr>
               <tr>
-                <td data-label="Activity"><strong>Manufacturing</strong></td>
-                <td data-label="Description">Processing, assembly, manufacturing using foreign and domestic components</td>
+                <td data-label={t('ftz.activities_activity_header')}><strong>{t('ftz.activities_manufacturing_activity')}</strong></td>
+                <td data-label={t('ftz.activities_description_header')}>{t('ftz.activities_manufacturing_description')}</td>
               </tr>
               <tr>
-                <td data-label="Activity"><strong>Exhibition</strong></td>
-                <td data-label="Description">Display of foreign merchandise for trade shows or demonstrations</td>
+                <td data-label={t('ftz.activities_activity_header')}><strong>{t('ftz.activities_exhibition_activity')}</strong></td>
+                <td data-label={t('ftz.activities_description_header')}>{t('ftz.activities_exhibition_description')}</td>
               </tr>
               <tr>
-                <td data-label="Activity"><strong>Sampling & Testing</strong></td>
-                <td data-label="Description">Product testing, quality control, and sample distribution</td>
+                <td data-label={t('ftz.activities_activity_header')}><strong>{t('ftz.activities_sampling_activity')}</strong></td>
+                <td data-label={t('ftz.activities_description_header')}>{t('ftz.activities_sampling_description')}</td>
               </tr>
               <tr>
-                <td data-label="Activity"><strong>Destruction</strong></td>
-                <td data-label="Description">Destruction of defective or obsolete merchandise without duty</td>
+                <td data-label={t('ftz.activities_activity_header')}><strong>{t('ftz.activities_destruction_activity')}</strong></td>
+                <td data-label={t('ftz.activities_description_header')}>{t('ftz.activities_destruction_description')}</td>
               </tr>
               <tr>
-                <td data-label="Activity"><strong>Re-Export</strong></td>
-                <td data-label="Description">Export of foreign merchandise to third countries duty-free</td>
+                <td data-label={t('ftz.activities_activity_header')}><strong>{t('ftz.activities_reexport_activity')}</strong></td>
+                <td data-label={t('ftz.activities_description_header')}>{t('ftz.activities_reexport_description')}</td>
               </tr>
             </tbody>
           </StyledTable>

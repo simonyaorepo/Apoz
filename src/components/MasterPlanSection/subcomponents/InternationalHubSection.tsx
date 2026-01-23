@@ -1,26 +1,14 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { TealText } from "../../ui/TealComponents";
 import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
-import { TextContent, SectionTitle } from "../../ui/Typography";
+import { TextContent, SectionTitle, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
-import { INTERNATIONAL_HUB_DATA } from "../masterPlanSectionData";
-
-const SubsectionTitle = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.h4};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
-  color: ${({ theme }) => theme.colors.darkBlue};
-  margin-top: ${({ theme }) => theme.spacing.xxl};
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.h5};
-  }
-`;
 
 const IndustryGrid = styled.div`
   display: grid;
@@ -55,25 +43,31 @@ interface InternationalHubSectionProps {
 }
 
 const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation(['masterPlan', 'common']);
+  
   return (
     <>
       <TextHero
-        title={INTERNATIONAL_HUB_DATA.title}
-        backgroundImage={INTERNATIONAL_HUB_DATA.backgroundImage}
-        breadcrumbs={INTERNATIONAL_HUB_DATA.breadcrumbs}
+        title={t('internationalHub.title')}
+        backgroundImage="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.masterPlan'), href: "/master-plan" },
+          { label: t('internationalHub.title') }
+        ]}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              {INTERNATIONAL_HUB_DATA.content.intro.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-              <SubsectionTitle>Target Partners</SubsectionTitle>
-              {INTERNATIONAL_HUB_DATA.content.targetPartners.map((partner, idx) => (
-                <p key={idx} dangerouslySetInnerHTML={{ __html: partner }} />
-              ))}
+              <p>{t('internationalHub.intro1')}</p>
+              <p>{t('internationalHub.intro2')}</p>
+              <SubsectionTitle>{t('internationalHub.targetPartners_title', 'Target Partners')}</SubsectionTitle>
+              <p>{t('internationalHub.targetPartner1')}</p>
+              <p>{t('internationalHub.targetPartner2')}</p>
+              <p>{t('internationalHub.targetPartner3')}</p>
+              <p>{t('internationalHub.targetPartner4')}</p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +112,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
       <TealSection>
         <TealBox>
           <TealText>
-            APOZ's International Hub serves as a global trade gateway connecting Asia-Pacific manufacturers with U.S. markets through FTZ-171 duty-free operations, cross-border e-commerce platforms, advanced manufacturing clusters, and tax-advantaged investment structures for international capital.
+            {t('internationalHub.teal_description')}
           </TealText>
         </TealBox>
       </TealSection>
@@ -126,23 +120,36 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
       <GreySection>
         <Container>
           <TextContent>
-            <SectionTitle>Core Functions of the International Hub</SectionTitle>
+            <SectionTitle>{t('internationalHub.core_functions_title')}</SectionTitle>
             <StyledTable>
               <thead>
                 <tr>
-                  <th>Function</th>
-                  <th>Description</th>
-                  <th>Impact</th>
+                  <th>{t('internationalHub.function_header', 'Function')}</th>
+                  <th>{t('internationalHub.description_header', 'Description')}</th>
+                  <th>{t('internationalHub.impact_header', 'Impact')}</th>
                 </tr>
               </thead>
               <tbody>
-                {INTERNATIONAL_HUB_DATA.content.coreFunctions.map((item, idx) => (
-                  <tr key={idx}>
-                    <td data-label="Function"><strong>{item.function}</strong></td>
-                    <td data-label="Description">{item.description}</td>
-                    <td data-label="Impact">{item.impact}</td>
-                  </tr>
-                ))}
+                <tr>
+                  <td data-label={t('internationalHub.function_header', 'Function')}><strong>{t('internationalHub.coreFunction1_function')}</strong></td>
+                  <td data-label={t('internationalHub.description_header', 'Description')}>{t('internationalHub.coreFunction1_description')}</td>
+                  <td data-label={t('internationalHub.impact_header', 'Impact')}>{t('internationalHub.coreFunction1_impact')}</td>
+                </tr>
+                <tr>
+                  <td data-label={t('internationalHub.function_header', 'Function')}><strong>{t('internationalHub.coreFunction2_function')}</strong></td>
+                  <td data-label={t('internationalHub.description_header', 'Description')}>{t('internationalHub.coreFunction2_description')}</td>
+                  <td data-label={t('internationalHub.impact_header', 'Impact')}>{t('internationalHub.coreFunction2_impact')}</td>
+                </tr>
+                <tr>
+                  <td data-label={t('internationalHub.function_header', 'Function')}><strong>{t('internationalHub.coreFunction3_function')}</strong></td>
+                  <td data-label={t('internationalHub.description_header', 'Description')}>{t('internationalHub.coreFunction3_description')}</td>
+                  <td data-label={t('internationalHub.impact_header', 'Impact')}>{t('internationalHub.coreFunction3_impact')}</td>
+                </tr>
+                <tr>
+                  <td data-label={t('internationalHub.function_header', 'Function')}><strong>{t('internationalHub.coreFunction4_function')}</strong></td>
+                  <td data-label={t('internationalHub.description_header', 'Description')}>{t('internationalHub.coreFunction4_description')}</td>
+                  <td data-label={t('internationalHub.impact_header', 'Impact')}>{t('internationalHub.coreFunction4_impact')}</td>
+                </tr>
               </tbody>
             </StyledTable>
           </TextContent>
@@ -159,10 +166,11 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
               />
             </ImageBox>
             <TextContent>
-              <SubsectionTitle>{INTERNATIONAL_HUB_DATA.content.advantages.heading}</SubsectionTitle>
-              {INTERNATIONAL_HUB_DATA.content.advantages.items.map((item, idx) => (
-                <p key={idx} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
+              <SubsectionTitle>{t('internationalHub.advantages_heading')}</SubsectionTitle>
+              <p dangerouslySetInnerHTML={{ __html: t('internationalHub.advantage1') }} />
+              <p dangerouslySetInnerHTML={{ __html: t('internationalHub.advantage2') }} />
+              <p dangerouslySetInnerHTML={{ __html: t('internationalHub.advantage3') }} />
+              <p dangerouslySetInnerHTML={{ __html: t('internationalHub.advantage4') }} />
             </TextContent>
           </GreyContentGrid>
         </Container>
@@ -171,14 +179,24 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
       <WhiteSection>
         <Container>
           <TextContent>
-            <SubsectionTitle>{INTERNATIONAL_HUB_DATA.content.industries.heading}</SubsectionTitle>
+            <SubsectionTitle>{t('internationalHub.industries_heading')}</SubsectionTitle>
             <IndustryGrid>
-              {INTERNATIONAL_HUB_DATA.content.industries.sectors.map((industry, idx) => (
-                <IndustryCard key={idx}>
-                  <h4>{industry.name}</h4>
-                  <p>{industry.description}</p>
-                </IndustryCard>
-              ))}
+              <IndustryCard>
+                <h4>{t('internationalHub.industry1_name')}</h4>
+                <p>{t('internationalHub.industry1_description')}</p>
+              </IndustryCard>
+              <IndustryCard>
+                <h4>{t('internationalHub.industry2_name')}</h4>
+                <p>{t('internationalHub.industry2_description')}</p>
+              </IndustryCard>
+              <IndustryCard>
+                <h4>{t('internationalHub.industry3_name')}</h4>
+                <p>{t('internationalHub.industry3_description')}</p>
+              </IndustryCard>
+              <IndustryCard>
+                <h4>{t('internationalHub.industry4_name')}</h4>
+                <p>{t('internationalHub.industry4_description')}</p>
+              </IndustryCard>
             </IndustryGrid>
           </TextContent>
         </Container>

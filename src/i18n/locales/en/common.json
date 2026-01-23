@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "home": "Home",
+    "development": "Development",
+    "masterPlan": "Master Plan",
+    "investment": "Investment",
+    "services": "Our Services",
+    "news": "News",
+    "overview": "Overview",
+    "whoWeAre": "Who Are We",
+    "vision": "Our Vision",
+    "mission": "Our Mission",
+    "management": "Management",
+    "industryZone": "Industry Zone",
+    "affordableLivingZone": "Affordable Living Zone",
+    "internationalHub": "International Hub",
+    "ftzZone": "FTZ Zone",
+    "qozZone": "QOZ Zone",
+    "qofZone": "QOF Zone",
+    "communityManagement": "Community Management",
+    "industryZoneManagement": "Industry Zone Management",
+    "residentialManagement": "Residential Management",
+    "residentialZone": "Residential Zone",
+    "infrastructure": "Infrastructure",
+    "phase1": "Phase 1",
+    "phase2": "Phase 2",
+    "phase3": "Phase 3"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started",
+    "viewAll": "View All",
+    "back": "Back",
+    "viewDetails": "View Details",
+    "exploreMore": "Explore More",
+    "exploreDevelopment": "Explore Development"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "contact": "Contact",
+    "about": "About",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "legal": "Legal",
+    "navigation": "Navigation",
+    "description": "Building sustainable communities and fostering economic growth through master-planned development in Greater Houston.",
+    "copyright": "© 2025 Asia Pacific Opportunity Zone. All rights reserved."
+  }
+}

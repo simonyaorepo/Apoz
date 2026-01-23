@@ -1,10 +1,10 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
-import { AlertCircle, CheckCircle, TrendingUp, AlertTriangle } from "lucide-react";
+import { AlertCircle, CheckCircle, TrendingUp, AlertTriangle, Shield, Globe, DollarSign, Zap, Building2 } from "lucide-react";
 import { GreySection } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { SectionTitle } from "../../ui/Typography";
-import { SWOT_ANALYSIS } from "./investmentSectionData";
 
 const TabsContainer = styled.div`
   display: flex;
@@ -107,7 +107,32 @@ const EmptyState = styled.div`
 type TabType = 'strengths' | 'weaknesses' | 'opportunities' | 'threats';
 
 const SWOTAnalysis: React.FC = () => {
+  const { t } = useTranslation('investment');
   const [activeTab, setActiveTab] = React.useState<TabType>('opportunities');
+  
+  // Define SWOT data using translations
+  const swotData = {
+    strengths: [
+      { icon: Shield, title: t('swot.strength1_title'), description: t('swot.strength1_description') },
+      { icon: Globe, title: t('swot.strength2_title'), description: t('swot.strength2_description') },
+      { icon: TrendingUp, title: t('swot.strength3_title'), description: t('swot.strength3_description') },
+      { icon: DollarSign, title: t('swot.strength4_title'), description: t('swot.strength4_description') }
+    ],
+    weaknesses: [
+      { icon: Zap, title: t('swot.weakness1_title'), description: t('swot.weakness1_description') },
+      { icon: Building2, title: t('swot.weakness2_title'), description: t('swot.weakness2_description') }
+    ],
+    opportunities: [
+      { title: t('swot.opportunity1_title'), description: t('swot.opportunity1_description'), highlight: true },
+      { title: t('swot.opportunity2_title'), description: t('swot.opportunity2_description'), highlight: true },
+      { title: t('swot.opportunity3_title'), description: t('swot.opportunity3_description'), highlight: false },
+      { title: t('swot.opportunity4_title'), description: t('swot.opportunity4_description'), highlight: false }
+    ],
+    threats: [
+      { title: t('swot.threat1_title'), description: t('swot.threat1_description') },
+      { title: t('swot.threat2_title'), description: t('swot.threat2_description') }
+    ]
+  };
 
   const getIconForTab = (tab: TabType) => {
     switch (tab) {
@@ -129,7 +154,7 @@ const SWOTAnalysis: React.FC = () => {
       case 'strengths':
         return (
           <CardsGrid>
-            {SWOT_ANALYSIS.strengths.map((item, index) => (
+            {swotData.strengths.map((item, index) => (
               <Card key={index}>
                 <CardHeader>
                   <item.icon size={24} />
@@ -144,7 +169,7 @@ const SWOTAnalysis: React.FC = () => {
       case 'weaknesses':
         return (
           <CardsGrid>
-            {SWOT_ANALYSIS.weaknesses.map((item, index) => (
+            {swotData.weaknesses.map((item, index) => (
               <Card key={index}>
                 <CardHeader>
                   <item.icon size={24} />
@@ -159,7 +184,7 @@ const SWOTAnalysis: React.FC = () => {
       case 'opportunities':
         return (
           <CardsGrid>
-            {SWOT_ANALYSIS.opportunities.map((item, index) => (
+            {swotData.opportunities.map((item, index) => (
               <Card key={index} $highlight={item.highlight}>
                 <CardHeader $highlight={item.highlight}>
                   <Icon size={24} />
@@ -176,7 +201,7 @@ const SWOTAnalysis: React.FC = () => {
       case 'threats':
         return (
           <CardsGrid>
-            {SWOT_ANALYSIS.threats.map((item, index) => (
+            {swotData.threats.map((item, index) => (
               <Card key={index}>
                 <CardHeader>
                   <Icon size={24} />
@@ -196,33 +221,33 @@ const SWOTAnalysis: React.FC = () => {
   return (
     <GreySection style={{ background: '#f8f9fa' }}>
       <Container>
-        <SectionTitle style={{ textAlign: 'center' }}>{SWOT_ANALYSIS.title}</SectionTitle>
-        <Subtitle>{SWOT_ANALYSIS.subtitle}</Subtitle>
+        <SectionTitle style={{ textAlign: 'center' }}>{t('swot.title')}</SectionTitle>
+        <Subtitle>{t('swot.subtitle')}</Subtitle>
         
         <TabsContainer>
           <Tab 
             $active={activeTab === 'opportunities'} 
             onClick={() => setActiveTab('opportunities')}
           >
-            Opportunities
+            {t('swot.opportunities_title')}
           </Tab>
           <Tab 
             $active={activeTab === 'strengths'} 
             onClick={() => setActiveTab('strengths')}
           >
-            Strengths
+            {t('swot.strengths_title')}
           </Tab>
           <Tab 
             $active={activeTab === 'weaknesses'} 
             onClick={() => setActiveTab('weaknesses')}
           >
-            Weaknesses
+            {t('swot.weaknesses_title')}
           </Tab>
           <Tab 
             $active={activeTab === 'threats'} 
             onClick={() => setActiveTab('threats')}
           >
-            Threats
+            {t('swot.threats_title')}
           </Tab>
         </TabsContainer>
         

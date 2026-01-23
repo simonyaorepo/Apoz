@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { TealText } from "../../ui/TealComponents";
@@ -14,15 +15,17 @@ interface AffordableLivingZoneSectionProps {
 }
 
 const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation(['masterPlan', 'common']);
+  
   return (
     <>
       <TextHero
-        title="Affordable Living Zone"
+        title={t('affordableLiving.title', 'Affordable Living Zone')}
         backgroundImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Master Plan", href: "/master-plan" },
-          { label: "Affordable Living Zone" }
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.masterPlan'), href: "/master-plan" },
+          { label: t('common:breadcrumbs.affordableLivingZone') }
         ]}
       />
       
@@ -31,11 +34,11 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
           <ContentGrid>
             <TextContent>
               <IntroText>
-                The residential component of APOZ supports the Phase 1 industrial tenants by providing affordable, high-quality workforce housing within walking or short commuting distance to the industrial park.
+                {t('affordableLiving.intro_paragraph')}
               </IntroText>
-              <SubsectionTitle>Development Objectives</SubsectionTitle>
+              <SubsectionTitle>{t('affordableLiving.objectives_title', 'Development Objectives')}</SubsectionTitle>
               <p>
-                Manage 2,000 affordable homes under Phase 2 development. Provide property services and community amenities to residents. Ensure sustainable, livable, and attractive environments for families. Support APOZ's vision as an integrated 'live-work-play' ecosystem.
+                {t('affordableLiving.objectives_description')}
               </p>
             </TextContent>
             <IllustrationBox>
@@ -76,7 +79,7 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
       <TealSection>
         <TealBox>
           <TealText>
-            Affordable housing development integrated with QOF/LIHTC financing creates a sustainable residential ecosystem supporting industrial workforce needs while delivering long-term value through high occupancy stability and tax-advantaged returns.
+            {t('affordableLiving.teal_description')}
           </TealText>
         </TealBox>
       </TealSection>
@@ -84,52 +87,52 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
       <GreySection>
         <Container>
           <TextContent>
-            <SectionTitle>Core Development Services</SectionTitle>
+            <SectionTitle>{t('affordableLiving.services_title')}</SectionTitle>
             <StyledTable>
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Scope</th>
-                  <th>Impact</th>
+                  <th>{t('affordableLiving.table_category_header')}</th>
+                  <th>{t('affordableLiving.table_scope_header')}</th>
+                  <th>{t('affordableLiving.table_impact_header')}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-label="Category"><strong>Leasing & Tenant Relations</strong></td>
-                  <td data-label="Scope">Manage rental agreements, onboarding, and renewals.</td>
-                  <td data-label="Impact">Maintains high occupancy rates and predictable income.</td>
+                  <td data-label={t('affordableLiving.table_category_header')}><strong>{t('affordableLiving.table_leasing_tenant_category')}</strong></td>
+                  <td data-label={t('affordableLiving.table_scope_header')}>{t('affordableLiving.table_leasing_tenant_scope')}</td>
+                  <td data-label={t('affordableLiving.table_impact_header')}>{t('affordableLiving.table_leasing_tenant_impact')}</td>
                 </tr>
                 <tr>
-                  <td data-label="Category"><strong>Property Maintenance</strong></td>
-                  <td data-label="Scope">Ongoing repairs, landscaping, and facility upkeep.</td>
-                  <td data-label="Impact">Enhances asset value and resident satisfaction.</td>
+                  <td data-label={t('affordableLiving.table_category_header')}><strong>{t('affordableLiving.table_property_maintenance_category')}</strong></td>
+                  <td data-label={t('affordableLiving.table_scope_header')}>{t('affordableLiving.table_property_maintenance_scope')}</td>
+                  <td data-label={t('affordableLiving.table_impact_header')}>{t('affordableLiving.table_property_maintenance_impact')}</td>
                 </tr>
                 <tr>
-                  <td data-label="Category"><strong>Community Services</strong></td>
-                  <td data-label="Scope">Operate parks, schools, clinics, recreation areas, and local retail.</td>
-                  <td data-label="Impact">Creates a well-rounded residential experience.</td>
+                  <td data-label={t('affordableLiving.table_category_header')}><strong>{t('affordableLiving.table_community_services_category')}</strong></td>
+                  <td data-label={t('affordableLiving.table_scope_header')}>{t('affordableLiving.table_community_services_scope')}</td>
+                  <td data-label={t('affordableLiving.table_impact_header')}>{t('affordableLiving.table_community_services_impact')}</td>
                 </tr>
                 <tr>
-                  <td data-label="Category"><strong>Security & Safety</strong></td>
-                  <td data-label="Scope">On-site 24/7 security and compliance with housing regulations.</td>
-                  <td data-label="Impact">Ensures a safe and comfortable living environment.</td>
+                  <td data-label={t('affordableLiving.table_category_header')}><strong>{t('affordableLiving.table_security_safety_category')}</strong></td>
+                  <td data-label={t('affordableLiving.table_scope_header')}>{t('affordableLiving.table_security_safety_scope')}</td>
+                  <td data-label={t('affordableLiving.table_impact_header')}>{t('affordableLiving.table_security_safety_impact')}</td>
                 </tr>
                 <tr>
-                  <td data-label="Category"><strong>Sustainability Programs</strong></td>
-                  <td data-label="Scope">Implement energy efficiency, waste management, and green spaces.</td>
-                  <td data-label="Impact">Aligns with ESG-focused investment strategies.</td>
+                  <td data-label={t('affordableLiving.table_category_header')}><strong>{t('affordableLiving.table_sustainability_programs_category')}</strong></td>
+                  <td data-label={t('affordableLiving.table_scope_header')}>{t('affordableLiving.table_sustainability_programs_scope')}</td>
+                  <td data-label={t('affordableLiving.table_impact_header')}>{t('affordableLiving.table_sustainability_programs_impact')}</td>
                 </tr>
               </tbody>
             </StyledTable>
 
-            <SubsectionTitle>Integration Benefits</SubsectionTitle>
+            <SubsectionTitle>{t('affordableLiving.integration_benefits_title')}</SubsectionTitle>
             <BulletList>
-              <li>Attracts skilled labor for Phase 1 industrial tenants.</li>
-              <li>Improves employee retention through housing stability.</li>
-              <li>Enhances the long-term appeal of APOZ for manufacturers and logistics operators.</li>
-              <li>High Occupancy Stability: Workforce-driven demand ensures consistent rental yields.</li>
-              <li>QOZ Tax Advantages: Residential investments benefit from capital gains deferral and tax-free growth.</li>
-              <li>REIT Readiness: Stabilized residential assets can be securitized for exit strategies.</li>
+              <li>{t('affordableLiving.benefit1')}</li>
+              <li>{t('affordableLiving.benefit2')}</li>
+              <li>{t('affordableLiving.benefit3')}</li>
+              <li>{t('affordableLiving.benefit4')}</li>
+              <li>{t('affordableLiving.benefit5')}</li>
+              <li>{t('affordableLiving.benefit6')}</li>
             </BulletList>
           </TextContent>
         </Container>

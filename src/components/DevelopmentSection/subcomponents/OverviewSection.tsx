@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import TextHero from "../../TextHero";
 
@@ -84,6 +85,8 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({
   backgroundImage,
   breadcrumbLabel,
 }) => {
+  const { t } = useTranslation('common');
+  
   return (
     <>
       <HeroWrapper>
@@ -91,8 +94,8 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({
           title={title}
           backgroundImage={backgroundImage}
           breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Development", href: "/development" },
+            { label: t('breadcrumbs.home'), href: "/" },
+            { label: t('breadcrumbs.development'), href: "/development" },
             { label: breadcrumbLabel }
           ]}
         />

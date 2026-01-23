@@ -1,8 +1,8 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import TextHero from "../../TextHero";
 import GoldDivider from "../../ui/GoldDivider";
-import { RESIDENTIAL_MANAGEMENT_DATA } from "../servicesSectionData";
 import { WhiteSection, TealSection, TealBox } from "../../ui/Sections";
 import { StyledTable } from "../../ui/Table";
 
@@ -80,38 +80,70 @@ interface ResidentialManagementSectionProps {
 }
 
 const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation(['services', 'common']);
+  
+  const coreServices = [
+    {
+      category: t('services:residentialManagement.coreService1_category'),
+      scope: t('services:residentialManagement.coreService1_scope'),
+      impact: t('services:residentialManagement.coreService1_impact')
+    },
+    {
+      category: t('services:residentialManagement.coreService2_category'),
+      scope: t('services:residentialManagement.coreService2_scope'),
+      impact: t('services:residentialManagement.coreService2_impact')
+    },
+    {
+      category: t('services:residentialManagement.coreService3_category'),
+      scope: t('services:residentialManagement.coreService3_scope'),
+      impact: t('services:residentialManagement.coreService3_impact')
+    },
+    {
+      category: t('services:residentialManagement.coreService4_category'),
+      scope: t('services:residentialManagement.coreService4_scope'),
+      impact: t('services:residentialManagement.coreService4_impact')
+    },
+    {
+      category: t('services:residentialManagement.coreService5_category'),
+      scope: t('services:residentialManagement.coreService5_scope'),
+      impact: t('services:residentialManagement.coreService5_impact')
+    }
+  ];
+  
   return (
     <>
       <TextHero
-        title={RESIDENTIAL_MANAGEMENT_DATA.title}
-        backgroundImage={RESIDENTIAL_MANAGEMENT_DATA.backgroundImage}
-        breadcrumbs={RESIDENTIAL_MANAGEMENT_DATA.breadcrumbs}
+        title={t('services:residentialManagement.title')}
+        backgroundImage="https://images.unsplash.com/photo-1605146769289-440113cc3d00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.services'), href: "/services" },
+          { label: t('common:nav.residentialManagement') }
+        ]}
       />
       
       <WhiteSection>
         <ContentWrapper>
-          {RESIDENTIAL_MANAGEMENT_DATA.content.intro.map((paragraph, index) => (
-            <IntroText key={index}>{paragraph}</IntroText>
-          ))}
+          <IntroText>{t('services:residentialManagement.intro')}</IntroText>
 
-          <SectionTitle>Primary Objectives</SectionTitle>
+          <SectionTitle>{t('services:residentialManagement.primary_objectives_title')}</SectionTitle>
           <IntroText>
-            The residential management team is committed to providing high-quality, affordable housing options for workforce families while creating a safe and welcoming community environment. Beyond property management, the team maintains excellent conditions through proactive maintenance and capital improvements. Resident support extends to financial literacy programs and job placement assistance, and through close partnerships with local schools and community organizations, residents gain access to education and enrichment opportunities.
+            {t('services:residentialManagement.primary_objectives_text')}
           </IntroText>
 
           <GoldDivider />
 
-          <SectionTitle>Core Residential Management Services</SectionTitle>
+          <SectionTitle>{t('services:residentialManagement.core_services_title')}</SectionTitle>
           <StyledTable>
             <thead>
               <tr>
-                <th>Service Category</th>
-                <th>Scope</th>
-                <th>Impact</th>
+                <th>{t('services:residentialManagement.service_category_header')}</th>
+                <th>{t('services:residentialManagement.scope_header')}</th>
+                <th>{t('services:residentialManagement.impact_header')}</th>
               </tr>
             </thead>
             <tbody>
-              {RESIDENTIAL_MANAGEMENT_DATA.content.coreServices.map((service, index) => (
+              {coreServices.map((service, index) => (
                 <tr key={index}>
                   <td data-label="Service Category"><strong>{service.category}</strong></td>
                   <td data-label="Scope">{service.scope}</td>
@@ -125,18 +157,18 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
 
       <TealSection>
         <TealBox>
-          <TealTitle>Integration with APOZ Industrial Park</TealTitle>
+          <TealTitle>{t('services:residentialManagement.integration_title')}</TealTitle>
           <TealText>
-            Residential management is a critical part of APOZ's ecosystem, attracting skilled labor for Phase 1 industrial tenants while improving employee retention through housing stability. This integrated approach enhances the long-term appeal of APOZ for manufacturers and logistics operators seeking a reliable workforce.
+            {t('services:residentialManagement.integration_text')}
           </TealText>
         </TealBox>
       </TealSection>
 
       <GreySection>
         <GreyContent>
-          <SectionTitle>Technology & Smart Community Features</SectionTitle>
+          <SectionTitle>{t('services:residentialManagement.technology_title')}</SectionTitle>
           <IntroText>
-            APOZ residential zones leverage smart home technology to enhance energy efficiency and resident convenience, featuring programmable thermostats and LED lighting systems throughout. Residents benefit from an intuitive online portal that streamlines rent payment, maintenance requests, and community communication. Security is prioritized through advanced access control systems, providing peace of mind for all families. Additionally, community Wi-Fi in shared spaces keeps residents connected while supporting remote work opportunities.
+            {t('services:residentialManagement.technology_text')}
           </IntroText>
         </GreyContent>
       </GreySection>

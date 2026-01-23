@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import {
   WhiteSection,
@@ -12,28 +13,32 @@ import {
   IllustrationBox,
   ImageBox,
 } from "./SharedStyles";
-import { WHO_WE_ARE_DATA } from "./homeSectionData";
 
 interface WhoWeAreSectionProps {
   onNavigate: (page: string) => void;
 }
 
 const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation('home');
+  const { t: tCommon } = useTranslation('common');
+  
   return (
     <>
       <TextHero
-        title={WHO_WE_ARE_DATA.title}
-        backgroundImage={WHO_WE_ARE_DATA.backgroundImage}
-        breadcrumbs={WHO_WE_ARE_DATA.breadcrumbs}
+        title={t('whoWeAre.title')}
+        backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: tCommon('breadcrumbs.home'), href: '/' },
+          { label: t('whoWeAre.title') }
+        ]}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              {WHO_WE_ARE_DATA.content.intro.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
+              <p>{t('whoWeAre.intro1')}</p>
+              <p>{t('whoWeAre.intro2')}</p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +86,7 @@ const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = ({ onNavigate: _onNaviga
 
       <TealSection>
         <TealBox>
-          <p>{WHO_WE_ARE_DATA.content.highlight}</p>
+          <p>{t('whoWeAre.highlight')}</p>
         </TealBox>
       </TealSection>
 
@@ -95,8 +100,8 @@ const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = ({ onNavigate: _onNaviga
               />
             </ImageBox>
             <TextContent>
-              <p>{WHO_WE_ARE_DATA.content.location.description}</p>
-              <p>{WHO_WE_ARE_DATA.content.location.details}</p>
+              <p>{t('whoWeAre.location_description')}</p>
+              <p>{t('whoWeAre.location_details')}</p>
             </TextContent>
           </GreyContentGrid>
         </Container>

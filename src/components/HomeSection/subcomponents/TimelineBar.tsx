@@ -1,4 +1,5 @@
 
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 interface TimelineItem {
@@ -86,18 +87,44 @@ const Description = styled.p`
   font-size: 15px;
 `;
 
-const TimelineBar: React.FC<TimelineBarProps> = ({ items }) => (
-  <Wrapper>
-    <Title>Project Timeline</Title>
-    <Divider />
-    <Grid>
-      {items.map((item, index) => (
-        <Item key={index}>
-          <NumberCircle>{index + 1}</NumberCircle>
-          <Period>{item.period}</Period>
-          <Label>{item.label}</Label>
-          <Description>{item.description}</Description>
-        </Item>
+const TimelineBar: React.FC<TimelineBarProps> = ({ items }) => {
+  const { t } = useTranslation('home');
+  
+  const timelineData = [
+    {
+      period: t('timeline.q2_2025_period'),
+      label: t('timeline.q2_2025_label'),
+      description: t('timeline.q2_2025_description')
+    },
+    {
+      period: t('timeline.q4_2025_period'),
+      label: t('timeline.q4_2025_label'),
+      description: t('timeline.q4_2025_description')
+    },
+    {
+      period: t('timeline.2026_period'),
+      label: t('timeline.2026_label'),
+      description: t('timeline.2026_description')
+    }
+  ];
+  
+  return (
+    <Wrapper>
+      <Title>{t('timeline.title', 'Project Timeline')}</Title>
+      <Divider />
+      <Grid>
+        {timelineData.map((item, index) => (
+          <Item key={index}>
+            <NumberCircle>{index + 1}</NumberCircle>
+            <Period>{item.period}</Period>
+            <Label>{item.label}</Label>
+            <Description>{item.description}</Description>
+          </Item>
+        ))}
+      </Grid>
+    </Wrapper>
+  );
+};
       ))}
     </Grid>
   </Wrapper>

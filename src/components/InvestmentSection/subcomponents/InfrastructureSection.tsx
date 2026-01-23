@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
@@ -7,7 +8,6 @@ import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
 import { TextContent, SubsectionTitle, SectionTitle } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
-import { INFRASTRUCTURE_INVESTMENT_DATA } from "./investmentSectionData";
 import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 import { StyledTable } from "../../ui/Table";
 import GoldDivider from "../../ui/GoldDivider";
@@ -42,21 +42,41 @@ interface InfrastructureSectionProps {
 }
 
 const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation(['investment', 'common']);
+  const { t: tCommon } = useTranslation('common');
+  
+  const scopeItems = [
+    { category: t('infrastructure.scope_transportation_category'), components: t('infrastructure.scope_transportation_components'), purpose: t('infrastructure.scope_transportation_purpose') },
+    { category: t('infrastructure.scope_utilities_category'), components: t('infrastructure.scope_utilities_components'), purpose: t('infrastructure.scope_utilities_purpose') },
+    { category: t('infrastructure.scope_digital_category'), components: t('infrastructure.scope_digital_components'), purpose: t('infrastructure.scope_digital_purpose') },
+    { category: t('infrastructure.scope_ftz_category'), components: t('infrastructure.scope_ftz_components'), purpose: t('infrastructure.scope_ftz_purpose') },
+    { category: t('infrastructure.scope_residential_category'), components: t('infrastructure.scope_residential_components'), purpose: t('infrastructure.scope_residential_purpose') },
+    { category: t('infrastructure.scope_environmental_category'), components: t('infrastructure.scope_environmental_components'), purpose: t('infrastructure.scope_environmental_purpose') }
+  ];
+  
+  const timeline = [
+    { phase: t('infrastructure.timeline_phase1_phase'), scope: t('infrastructure.timeline_phase1_scope'), milestones: t('infrastructure.timeline_phase1_milestones') },
+    { phase: t('infrastructure.timeline_phase2_phase'), scope: t('infrastructure.timeline_phase2_scope'), milestones: t('infrastructure.timeline_phase2_milestones') }
+  ];
+  
   return (
     <>
       <TextHero
-        title={INFRASTRUCTURE_INVESTMENT_DATA.title}
-        backgroundImage={INFRASTRUCTURE_INVESTMENT_DATA.backgroundImage}
-        breadcrumbs={INFRASTRUCTURE_INVESTMENT_DATA.breadcrumbs}
+        title={t('infrastructure.title')}
+        backgroundImage="https://images.unsplash.com/photo-1581094794329-c8112a89af12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: tCommon('breadcrumbs.home'), href: '/' },
+          { label: t('hero.title'), href: '/investment' },
+          { label: t('infrastructure.title') }
+        ]}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              {INFRASTRUCTURE_INVESTMENT_DATA.content.intro.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
+              <p>{t('infrastructure.intro1')}</p>
+              <p>{t('infrastructure.intro2')}</p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +123,7 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
       <TealSection>
         <TealBox>
           <TealText>
-            Infrastructure development underpins the success of APOZ's industrial facilities and affordable housing, creating a fully integrated trade and manufacturing ecosystem with transportation, utilities, digital connectivity, FTZ facilities, residential infrastructure, and environmental systems.
+            {t('infrastructure.tealIntro')}
           </TealText>
         </TealBox>
       </TealSection>
@@ -111,21 +131,21 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
       <GreySection>
         <Container>
           <TextContent>
-            <SectionTitle>Infrastructure Scope</SectionTitle>
+            <SectionTitle>{t('infrastructure.scope_title')}</SectionTitle>
             <StyledTable>
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Key Components</th>
-                  <th>Purpose</th>
+                  <th>{t('infrastructure.scope_category_header')}</th>
+                  <th>{t('infrastructure.scope_components_header')}</th>
+                  <th>{t('infrastructure.scope_purpose_header')}</th>
                 </tr>
               </thead>
               <tbody>
-                {INFRASTRUCTURE_INVESTMENT_DATA.content.scope.map((item, idx) => (
+                {scopeItems.map((item, idx) => (
                   <tr key={idx}>
-                    <td data-label="Category"><strong>{item.category}</strong></td>
-                    <td data-label="Key Components">{item.components}</td>
-                    <td data-label="Purpose">{item.purpose}</td>
+                    <td data-label={t('infrastructure.scope_category_header')}><strong>{item.category}</strong></td>
+                    <td data-label={t('infrastructure.scope_components_header')}>{item.components}</td>
+                    <td data-label={t('infrastructure.scope_purpose_header')}>{item.purpose}</td>
                   </tr>
                 ))}
               </tbody>
@@ -146,12 +166,12 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
               />
             </ImageBox>
             <TextContent>
-              <SubsectionTitle>Construction & Development Timeline</SubsectionTitle>
-              {INFRASTRUCTURE_INVESTMENT_DATA.content.timeline.map((item, idx) => (
+              <SubsectionTitle>{t('infrastructure.timeline_title')}</SubsectionTitle>
+              {timeline.map((item, idx) => (
                 <TimelineCard key={idx}>
                   <h4>{item.phase}</h4>
-                  <p className="scope"><strong>Scope:</strong> {item.scope}</p>
-                  <p className="milestones"><strong>Key Milestones:</strong> {item.milestones}</p>
+                  <p className="scope"><strong>{t('infrastructure.timeline_scope_header')}:</strong> {item.scope}</p>
+                  <p className="milestones"><strong>{t('infrastructure.timeline_milestones_header')}:</strong> {item.milestones}</p>
                 </TimelineCard>
               ))}
             </TextContent>
@@ -162,23 +182,23 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
       <WhiteSection>
         <Container>
           <TextContent>
-            <SubsectionTitle>{INFRASTRUCTURE_INVESTMENT_DATA.content.funding.heading}</SubsectionTitle>
+            <SubsectionTitle>{t('infrastructure.funding_title')}</SubsectionTitle>
             <RequirementsList>
               <div>
-                <RequirementTitle>Private Capital via QOF</RequirementTitle>
-                <RequirementText>Leverage Qualified Opportunity Zone (QOZ) tax benefits.</RequirementText>
+                <RequirementTitle>{t('labels.privateCapitalQOF')}</RequirementTitle>
+                <RequirementText>{t('infrastructure.funding_source1')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Infrastructure Financing</RequirementTitle>
-                <RequirementText>Partnerships with Texas development authorities.</RequirementText>
+                <RequirementTitle>{t('labels.infrastructureFinancing')}</RequirementTitle>
+                <RequirementText>{t('infrastructure.funding_source2')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Tenant Participation</RequirementTitle>
-                <RequirementText>Built-to-suit facilities include partial cost-sharing.</RequirementText>
+                <RequirementTitle>{t('labels.tenantParticipation')}</RequirementTitle>
+                <RequirementText>{t('infrastructure.funding_source3')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Public-Private Grants</RequirementTitle>
-                <RequirementText>Potential HUD and DOE programs for sustainable energy and housing.</RequirementText>
+                <RequirementTitle>{t('labels.publicPrivateGrants')}</RequirementTitle>
+                <RequirementText>{t('infrastructure.funding_source4')}</RequirementText>
               </div>
             </RequirementsList>
           </TextContent>

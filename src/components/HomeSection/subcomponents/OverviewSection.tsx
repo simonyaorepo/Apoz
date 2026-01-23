@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import {
   WhiteSection,
@@ -12,28 +13,32 @@ import {
   IllustrationBox,
   ImageBox,
 } from "./SharedStyles";
-import { OVERVIEW_DATA } from "./homeSectionData";
 
 interface OverviewSectionProps {
   onNavigate: (page: string) => void;
 }
 
 const OverviewSection: React.FC<OverviewSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation('home');
+  const { t: tCommon } = useTranslation('common');
+  
   return (
     <>
       <TextHero
-        title={OVERVIEW_DATA.title}
-        backgroundImage={OVERVIEW_DATA.backgroundImage}
-        breadcrumbs={OVERVIEW_DATA.breadcrumbs}
+        title={t('overview.title')}
+        backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: tCommon('breadcrumbs.home'), href: '/' },
+          { label: t('overview.title') }
+        ]}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              {OVERVIEW_DATA.content.intro.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
+              <p>{t('overview.intro1')}</p>
+              <p>{t('overview.intro2')}</p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +89,7 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({ onNavigate: _onNaviga
 
       <TealSection>
         <TealBox>
-          <p>{OVERVIEW_DATA.content.highlight}</p>
+          <p>{t('overview.highlight')}</p>
         </TealBox>
       </TealSection>
 
@@ -98,9 +103,8 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({ onNavigate: _onNaviga
               />
             </ImageBox>
             <TextContent>
-              {OVERVIEW_DATA.content.saudiPartnership.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
+              <p>{t('overview.saudiPartnership1')}</p>
+              <p>{t('overview.saudiPartnership2')}</p>
             </TextContent>
           </GreyContentGrid>
         </Container>

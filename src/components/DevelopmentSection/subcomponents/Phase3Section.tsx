@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import OverviewSection from "./OverviewSection";
 import SummaryBlock from "./SummaryBlock";
 import QuoteSection from "./QuoteSection";
@@ -15,20 +16,22 @@ import {
 } from "./SharedStyles";
 
 const Phase3Section: React.FC = () => {
+  const { t } = useTranslation('development');
+  
   return (
     <>
       <OverviewSection
-        title="Phase 3"
+        title={t('phase3.title', 'Phase 3')}
         backgroundImage="https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
-        breadcrumbLabel="Phase 3"
+        breadcrumbLabel={t('phase3.breadcrumb', 'Phase 3')}
       />
       
       <PhaseSection>
         <SummaryBlock
           content={[
-            "Phase 3 represents the future vision of APOZ, expanding into commercial and mixed-use developments that complete our master-planned community.",
-            "Building on the foundation of Phase 1 infrastructure and Phase 2 residential growth, Phase 3 will introduce commercial centers, industrial parks, and innovation districts that leverage our unique dual FTZ and QOZ designation.",
-            "This phase will create thousands of jobs, attract international investment from Fortune 500 companies, and establish APOZ as a premier business destination and smart innovation hub in Southeast Texas."
+            t('development:phase3.summary1'),
+            t('development:phase3.summary2'),
+            t('development:phase3.summary3')
           ]}
           imageSrc="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
           imageAlt="Phase 3 Overview"
@@ -45,15 +48,12 @@ const Phase3Section: React.FC = () => {
             />
           </PhaseImageWrapper>
           <PhaseTextContent>
-            <PhaseTitle>Smart Innovation Hub for Sustainable Growth</PhaseTitle>
+            <PhaseTitle>{t('development:phaseTitles.smartInnovationHub')}</PhaseTitle>
             <PhaseParagraph>
-              Phase 3 envisions APOZ as a world-class innovation hub that seamlessly integrates advanced manufacturing, 
-              global logistics, sustainable energy, commercial real estate, and smart living ecosystems. Building on 
-              Phases I & II, Phase III scales APOZ into a next-generation economic powerhouse.
+              {t('development:phase3.hub1')}
             </PhaseParagraph>
             <PhaseParagraph>
-              This phase positions APOZ to attract global investment from leading multinational enterprises and 
-              high-tech industries, fostering innovation across advanced manufacturing and logistics sectors.
+              {t('development:phase3.hub2')}
             </PhaseParagraph>
           </PhaseTextContent>
         </PhaseContentBlock>
@@ -68,15 +68,12 @@ const Phase3Section: React.FC = () => {
             />
           </PhaseImageWrapper>
           <PhaseTextContent $reverse>
-            <PhaseTitle>Advanced Manufacturing & Global Logistics</PhaseTitle>
+            <PhaseTitle>{t('development:phaseTitles.advancedManufacturing')}</PhaseTitle>
             <PhaseParagraph>
-              Leveraging APOZ's unique dual FTZ+QOZ status, Phase 3 attracts Fortune 500 companies and international 
-              manufacturers seeking to localize production and manufacture "Made in USA" products. The development 
-              provides cutting-edge facilities for AI, semiconductors, clean energy, and pharmaceuticals.
+              {t('development:phase3.manufacturing1')}
             </PhaseParagraph>
             <PhaseParagraph>
-              Strategic proximity to the Port of Houston, I-10 corridor access, and established FTZ infrastructure 
-              create an unparalleled logistics advantage for global supply chain optimization.
+              {t('development:phase3.manufacturing2')}
             </PhaseParagraph>
           </PhaseTextContent>
         </PhaseContentBlock>
@@ -91,16 +88,12 @@ const Phase3Section: React.FC = () => {
             />
           </PhaseImageWrapper>
           <PhaseTextContent>
-            <PhaseTitle>Sustainable Energy & Long-Term Vision</PhaseTitle>
+            <PhaseTitle>{t('development:phaseTitles.sustainableEnergy')}</PhaseTitle>
             <PhaseParagraph>
-              Phase 3 promotes sustainable growth through energy efficiency, green infrastructure, and circular economy 
-              initiatives. Solar farms, renewable energy integration, and environmental stewardship principles are 
-              embedded throughout the development.
+              {t('development:phase3.energy1')}
             </PhaseParagraph>
             <PhaseParagraph>
-              This phase reflects APOZ's commitment to long-term economic resilience, technological leadership, 
-              and its role as a strategic gateway for international collaboration and industrial excellence—creating 
-              the future of integrated development where commerce, innovation, and community converge.
+              {t('development:phase3.energy2')}
             </PhaseParagraph>
           </PhaseTextContent>
         </PhaseContentBlock>
@@ -108,7 +101,7 @@ const Phase3Section: React.FC = () => {
       
       <GoldDivider />
       
-      <QuoteSection quote="Phase 3 establishes APOZ as a world-class innovation hub where advanced manufacturing, sustainable energy, and global commerce converge to build lasting economic prosperity." />
+      <QuoteSection quote={t('development:phase3.quote')} />
     </>
   );
 };

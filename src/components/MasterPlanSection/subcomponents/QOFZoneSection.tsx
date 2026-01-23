@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import GoldDivider from "../../ui/GoldDivider";
 import { ContentWrapper, GreyContent } from "../../ui/Containers";
@@ -12,22 +13,24 @@ interface QOFZoneSectionProps {
 }
 
 const QOFZoneSection: React.FC<QOFZoneSectionProps> = () => {
+  const { t } = useTranslation(['masterPlan', 'common']);
+  
   return (
     <>
       <TextHero
-        title="Qualified Opportunity Fund (QOF)"
+        title={t('qof.title', 'Qualified Opportunity Fund (QOF)')}
         backgroundImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Master Plan", href: "/master-plan" },
-          { label: "QOF" }
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.masterPlan'), href: "/master-plan" },
+          { label: t('common:breadcrumbs.qofZone') }
         ]}
       />
 
       <WhiteSection>
         <ContentWrapper>
           <IntroText>
-            A Qualified Opportunity Fund (QOF) is an investment vehicle organized as a corporation or partnership for the purpose of investing in Qualified Opportunity Zone property. QOFs must hold at least 90% of their assets in QOZ property to maintain qualified status.
+            {t('qof.intro_paragraph')}
           </IntroText>
         </ContentWrapper>
       </WhiteSection>
@@ -36,34 +39,34 @@ const QOFZoneSection: React.FC<QOFZoneSectionProps> = () => {
 
       <GreySection>
         <GreyContent>
-          <SectionTitle>QOF Qualification Requirements</SectionTitle>
+          <SectionTitle>{t('qof.qualification_title')}</SectionTitle>
           <StyledTable>
             <thead>
               <tr>
-                <th>Requirement</th>
-                <th>Description</th>
+                <th>{t('qof.qualification_requirement_header')}</th>
+                <th>{t('qof.qualification_description_header')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="Requirement"><strong>90% Asset Test</strong></td>
-                <td data-label="Description">At least 90% of fund assets must be invested in QOZ property</td>
+                <td data-label={t('qof.qualification_requirement_header')}><strong>{t('qof.qualification_90_percent_test_requirement')}</strong></td>
+                <td data-label={t('qof.qualification_description_header')}>{t('qof.qualification_90_percent_test_description')}</td>
               </tr>
               <tr>
-                <td data-label="Requirement"><strong>Self-Certification</strong></td>
-                <td data-label="Description">Fund must self-certify to the IRS using Form 8996</td>
+                <td data-label={t('qof.qualification_requirement_header')}><strong>{t('qof.qualification_self_cert_requirement')}</strong></td>
+                <td data-label={t('qof.qualification_description_header')}>{t('qof.qualification_self_cert_description')}</td>
               </tr>
               <tr>
-                <td data-label="Requirement"><strong>Annual Reporting</strong></td>
-                <td data-label="Description">Submit compliance certification annually with federal tax return</td>
+                <td data-label={t('qof.qualification_requirement_header')}><strong>{t('qof.qualification_annual_reporting_requirement')}</strong></td>
+                <td data-label={t('qof.qualification_description_header')}>{t('qof.qualification_annual_reporting_description')}</td>
               </tr>
               <tr>
-                <td data-label="Requirement"><strong>180-Day Investment</strong></td>
-                <td data-label="Description">Investors must invest capital gains within 180 days of realization</td>
+                <td data-label={t('qof.qualification_requirement_header')}><strong>{t('qof.qualification_180_day_requirement')}</strong></td>
+                <td data-label={t('qof.qualification_description_header')}>{t('qof.qualification_180_day_description')}</td>
               </tr>
               <tr>
-                <td data-label="Requirement"><strong>Substantial Improvement</strong></td>
-                <td data-label="Description">Must improve existing QOZ property by amount equal to purchase price within 30 months</td>
+                <td data-label={t('qof.qualification_requirement_header')}><strong>{t('qof.qualification_substantial_improvement_requirement')}</strong></td>
+                <td data-label={t('qof.qualification_description_header')}>{t('qof.qualification_substantial_improvement_description')}</td>
               </tr>
             </tbody>
           </StyledTable>
@@ -74,27 +77,27 @@ const QOFZoneSection: React.FC<QOFZoneSectionProps> = () => {
 
       <WhiteSection>
         <ContentWrapper>
-          <SectionTitle>QOF Formation Process</SectionTitle>
+          <SectionTitle>{t('qof.formation_title')}</SectionTitle>
           <RequirementsList>
             <div>
-              <RequirementTitle>1. Entity Formation</RequirementTitle>
-              <RequirementText>Organize as corporation or partnership for investment purposes</RequirementText>
+              <RequirementTitle>{t('qof.formation_step1_title')}</RequirementTitle>
+              <RequirementText>{t('qof.formation_step1_text')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>2. Self-Certification</RequirementTitle>
-              <RequirementText>File IRS Form 8996 to certify QOF status</RequirementText>
+              <RequirementTitle>{t('qof.formation_step2_title')}</RequirementTitle>
+              <RequirementText>{t('qof.formation_step2_text')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>3. Acquire QOZ Property</RequirementTitle>
-              <RequirementText>Purchase or develop qualifying property within designated zones</RequirementText>
+              <RequirementTitle>{t('qof.formation_step3_title')}</RequirementTitle>
+              <RequirementText>{t('qof.formation_step3_text')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>4. Maintain Compliance</RequirementTitle>
-              <RequirementText>Meet 90% asset test measured semi-annually, file annual certifications</RequirementText>
+              <RequirementTitle>{t('qof.formation_step4_title')}</RequirementTitle>
+              <RequirementText>{t('qof.formation_step4_text')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>5. Documentation</RequirementTitle>
-              <RequirementText>Maintain records of all QOZ property investments and improvements</RequirementText>
+              <RequirementTitle>{t('qof.formation_step5_title')}</RequirementTitle>
+              <RequirementText>{t('qof.formation_step5_text')}</RequirementText>
             </div>
           </RequirementsList>
         </ContentWrapper>

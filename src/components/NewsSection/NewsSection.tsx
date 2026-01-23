@@ -1,9 +1,8 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import PageHero from "../PageHero";
 import NewsGrid from "./subcomponents/NewsGrid";
-
-import { NEWS_ARTICLES } from "./subcomponents/newsSectionData";
 
 const SectionWrapper = styled.div`
   width: 100%;
@@ -24,25 +23,36 @@ const TitleSection = styled.section`
 `;
 
 const NewsSection: React.FC = () => {
-  // Sort articles by date (newest first)
-  const sortedArticles = [...NEWS_ARTICLES].sort((a, b) => {
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  const { t } = useTranslation(['news', 'common']);
+  
+  // Build articles from translations (sorted newest first: 17 to 1)
+  const articles = Array.from({ length: 17 }, (_, i) => {
+    const articleId = 17 - i; // Reverse order
+    return {
+      id: articleId,
+      title: t(`news:articles.${articleId}.title`),
+      date: t(`news:articles.${articleId}.date`),
+      location: t(`news:articles.${articleId}.location`),
+      category: t(`news:articles.${articleId}.category`),
+      image: t(`news:articles.${articleId}.image`),
+      paragraphs: [] // Not needed for grid display
+    };
   });
 
   return (
     <SectionWrapper>
       <PageHero
-        title="News"
+        title={t('common:nav.news')}
         backgroundImage="https://images.unsplash.com/photo-1504711434969-e33886168f5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "News" }
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.news') }
         ]}
       />
       <TitleSection>
-        <h1>News Release</h1>
+        <h1>{t('news:hero.title')}</h1>
       </TitleSection>
-      <NewsGrid articles={sortedArticles} />
+      <NewsGrid articles={articles} />
     </SectionWrapper>
   );
 };

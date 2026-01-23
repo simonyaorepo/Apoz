@@ -1,0 +1,138 @@
+{
+  "hero": {
+    "headline": "Shaping the Future of Global Trade & Community Living",
+    "news1": "Groundbreaking Set for Fall 2025",
+    "news2": "Global Investor Interest Surges",
+    "news3": "Asia-Pacific Partnerships Expand",
+    "cta1": "Explore Projects",
+    "cta2": "Learn More"
+  },
+  "features": {
+    "tile1Title": "Momentum Builds for APOZ",
+    "tile1Date": "June 4, 2025",
+    "tile2Title": "APOZ Project Unveiled at ITC",
+    "tile2Date": "May 24, 2025",
+    "tile3Title": "Shanghai Overseas Conference",
+    "tile3Date": "May 20, 2025"
+  },
+  "kpi": {
+    "homePrice": "Starting Home Price",
+    "acres": "Acres Development",
+    "jobs": "Jobs Created",
+    "investment": "Foreign Investment",
+    "unique": "FTZ+QOZ in U.S."
+  },
+  "valueProps": {
+    "tradeHub": {
+      "title": "International Trade Hub",
+      "text": "A designated Free Trade Zone promoting global commerce and logistics."
+    },
+    "infrastructure": {
+      "title": "Master-Planned Infrastructure",
+      "text": "Seamlessly blending housing, retail, and industry for long-term growth."
+    },
+    "affordable": {
+      "title": "Affordable Living",
+      "text": "High-quality homes starting at $188,000 to support working families and first-time buyers."
+    },
+    "sustainability": {
+      "title": "Sustainability Focus",
+      "text": "Thoughtfully planned green spaces and long-term environmental resilience."
+    },
+    "partnerships": {
+      "title": "Strategic Partnerships",
+      "text": "Developed in collaboration with the International Trade Center and local leadership."
+    },
+    "investmentReady": {
+      "title": "Investment-Ready",
+      "text": "Multiple development phases underway, with active interest from U.S. and Asia-Pacific investors."
+    }
+  },
+  "mission": {
+    "title": "Our Mission",
+    "paragraph1": "APOZ is dedicated to creating a dynamic, sustainable, and innovation-driven industrial and residential community in Southeast Texas.",
+    "paragraph2": "By integrating smart infrastructure, green energy, and global partnerships, APOZ aims to become a hub for advanced manufacturing, international trade, and inclusive housing."
+  },
+  "vision": {
+    "title": "Our Vision",
+    "paragraph": "Our vision is to empower growth — not only for businesses but also for the communities they serve — by transforming underdeveloped land into high-value economic zones that support long-term prosperity and global collaboration."
+  },
+  "intro": {
+    "title": "Join America's New Industrial Revolution",
+    "tagline": "Partnering in U.S. Re-Industrialization",
+    "description1": "The United States is embarking on a bold re-industrialization journey, and we, at APOZ, invite manufacturers, enterprises, and investors from around the world to be part of it. Today, \"Made in USA\" is more than a label—it is a symbol of market access, innovation, and long-term growth. By localizing production in America, global partners can tap into the world's largest consumer market, align with forward-looking U.S. policies, and create sustainable value for their businesses and communities.",
+    "description2": "For Chinese, Korean, Taiwanese, and Japanese manufacturers, this is the moment to expand beyond exports and establish a direct presence in the U.S. Local production reduces risks from trade barriers, strengthens customer trust, and unlocks new opportunities in high-demand sectors such as semiconductors, automotive, clean energy, pharmaceuticals, and advanced machinery.",
+    "description3": "Saudi Arabian and Middle East enterprises are also uniquely positioned to seize this opportunity with investment. Aligned with Vision 2030, Saudi investors and industrial champions can extend their capabilities into the U.S. by localizing energy, chemicals, advanced materials, and green technologies. This partnership bridges two transforming economies, amplifying growth in both markets while reinforcing the global strength of \"Made in USA.\""
+  },
+  "projectPreviews": {
+    "title1": "Infrastructure & Site Preparation",
+    "subtitle1": "Phase 1 | 2025–2026",
+    "title2": "Residential Communities",
+    "subtitle2": "Affordable Housing Starting at $188K",
+    "title3": "Industrial & Logistics Parks",
+    "subtitle3": "Free Trade Zone Facilities"
+  },
+  "timeline": {
+    "q2_2025_period": "Q2 2025",
+    "q2_2025_label": "Planning",
+    "q2_2025_description": "Architectural design & county approval",
+    "q4_2025_period": "Q4 2025",
+    "q4_2025_label": "Groundbreaking",
+    "q4_2025_description": "Construction commencement",
+    "2026_period": "2026+",
+    "2026_label": "Development",
+    "2026_description": "Residential & commercial phases"
+  },
+  "overview": {
+    "title": "Overview",
+    "intro1": "The United States is entering a new era of growth with President Trump's re-industrialization initiative, a bold national effort to bring manufacturing back home and re-establish America as the world's leading industrial power. Through a combination of strategic tariffs, pro-growth policies, and targeted federal support, this initiative is designed to create jobs, strengthen supply chains, and secure America's future in advanced manufacturing and technology.",
+    "intro2": "Major corporations are already responding with historic commitments. Companies such as NVIDIA, IBM, TSMC, General Motors, and Johnson & Johnson are investing trillions of dollars in U.S. facilities for semiconductors, AI, pharmaceuticals, and clean energy. These investments represent one of the largest waves of industrial expansion in modern history and position America at the forefront of global innovation.",
+    "reindustrialization_heading": "Join America's New Industrial Revolution",
+    "reindustrialization_description": "The United States is embarking on a bold re-industrialization journey, and we, at APOZ, invite manufacturers, enterprises, and investors from around the world to be part of it. Today, 'Made in USA' is more than a label—it is a symbol of market access, innovation, and long-term growth.",
+    "reindustrialization_details": "By localizing production in America, global partners can tap into the world's largest consumer market, align with forward-looking U.S. policies, and create sustainable value for their businesses and communities.",
+    "highlight": "For Chinese, Korean, Taiwanese, and Japanese manufacturers, this is the moment to expand beyond exports and establish a direct presence in the U.S. Local production reduces risks from trade barriers, strengthens customer trust, and unlocks new opportunities in high-demand sectors such as semiconductors, automotive, clean energy, pharmaceuticals, and advanced machinery.",
+    "saudiPartnership1": "Saudi Arabian and Middle East enterprises are also uniquely positioned to seize this opportunity with investment. Aligned with Vision 2030, Saudi investors and industrial champions can extend their capabilities into the U.S. by localizing energy, chemicals, advanced materials, and green technologies, setting up industry and renewable funds to support the collaboration between United States and Saudi Arabia.",
+    "saudiPartnership2": "This partnership bridges two transforming economies, amplifying growth in both markets while reinforcing the global strength of 'Made in USA.'"
+  },
+  "whoWeAre": {
+    "title": "Who We Are",
+    "intro1": "The Houston APOZ Free Trade Zone located in Winnie, Texas, within U.S. Foreign Trade Zone (FTZ) 171 is being established as a strategic gateway for global manufacturers and investors to participate in the United States' re-industrialization movement.",
+    "intro2": "Designed with both Free Trade Zone (FTZ) and Qualified Opportunity Zone (QOZ) benefits, APOZ offers an unmatched platform for enterprises from China, Korea, Japan, Saudi Arabia, and other international partners to localize production investment and proudly manufacture under the 'Made in USA' brand.",
+    "highlight": "Beyond its economic advantages, APOZ is conceived as a sustainable growth community—integrating industrial infrastructure with residential, commercial, and township development. This forward-looking ecosystem ensures that companies, workers, and families can thrive together, creating not only industrial prosperity but also vibrant communities that support long-term growth.",
+    "location_heading": "Strategic Location",
+    "location_description": "APOZ is strategically located in Winnie, Texas, within the Houston metropolitan area, close to the Port of Houston, City of Baytown, and City of Beaumont. The site is adjacent to Interstate 10 at the SE corner of Exit 822 and FM 1410.",
+    "location_details": "Phase One encompasses 436 acres, with Phase Two planned for an additional 210 acres, providing extensive space for industrial, commercial, and residential development."
+  },
+  "visionPage": {
+    "title": "Our Vision",
+    "intro": "Our vision is to position Houston APOZ as a world-class industrial and community hub that fuels America's re-industrialization while creating global win-win partnerships. By offering international companies a secure, policy-aligned, and innovation-driven environment, we empower them to achieve strong returns on investment, expand their market presence, and contribute directly to the U.S. industrial renaissance.",
+    "highlight": "We envision APOZ as more than an industrial zone—it is a living model of sustainable growth. By combining advanced manufacturing, trade facilitation, and modern township infrastructure, APOZ aims to become a landmark destination where global enterprises, local communities, and the United States economy grow together.",
+    "objective1": "Position Houston APOZ as the premier destination for international manufacturers seeking U.S. market access",
+    "objective2": "Create a sustainable community that integrates industrial prosperity with residential quality of life",
+    "objective3": "Establish a model for how strategic trade zones can drive regional economic transformation",
+    "objective4": "Build lasting partnerships between Asia-Pacific enterprises and American communities"
+  },
+  "missionPage": {
+    "title": "Our Mission",
+    "intro": "To become the leading sustainable renewable industry park in North America, serving as the gateway for Asia-Pacific enterprises to enter the U.S. market, integrate into global supply chains, and access international capital markets while promoting green growth, economic opportunity, and cross-border innovation.",
+    "highlight": "We envision APOZ as a model industrial ecosystem that not only harnesses renewable energy to power economic development, but also maximizes FTZ and QOZ incentives to enhance capital efficiency, fostering ESG-aligned investments that create long-term social and economic impact and serves as a platform for IPO readiness, supply chain finance, and global expansion.",
+    "pillars_heading": "Mission Pillars",
+    "pillar1_title": "Sustainable Development",
+    "pillar1_description": "Harness renewable energy and green technologies to power economic growth while protecting environmental resources",
+    "pillar2_title": "Market Gateway",
+    "pillar2_description": "Serve as the premier entry point for Asia-Pacific enterprises establishing North American operations",
+    "pillar3_title": "Capital Efficiency",
+    "pillar3_description": "Maximize FTZ and QOZ incentives to create optimal investment structures for international partners",
+    "pillar4_title": "Global Integration",
+    "pillar4_description": "Facilitate supply chain finance, IPO readiness, and cross-border innovation for participating enterprises"
+  },
+  "management": {
+    "title": "Management",
+    "intro1": "APOZ is led by a seasoned management team with deep expertise in international trade, sustainable development, real estate, and strategic partnerships. Our leadership combines decades of experience in cross-border commerce, industrial development, and community planning.",
+    "intro2": "The management team brings together professionals who have successfully navigated complex international projects, government relations, and large-scale infrastructure development across multiple continents.",
+    "highlight": "Our leadership is committed to building APOZ as more than a development project—it's a strategic initiative that bridges economies, creates sustainable value, and establishes new models for international industrial cooperation.",
+    "redirect_heading": "Meet Our Leadership",
+    "redirect_description": "For detailed information about our management team and their extensive backgrounds, please visit our dedicated Leadership page.",
+    "redirect_linkText": "View Leadership Team"
+  }
+}

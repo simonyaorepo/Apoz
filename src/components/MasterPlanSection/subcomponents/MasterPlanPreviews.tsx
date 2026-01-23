@@ -1,42 +1,45 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import PreviewsComponent from "../../ui/PreviewsComponent";
 
 const MasterPlanPreviews: React.FC = () => {
+  const { t } = useTranslation('masterPlan');
+  
   const masterPlan = [
     {
       id: "international-hub",
-      title: "International Hub",
-      description: "Global business gateway integrating FTZ operations with international partnerships. Trade facilitation, business services, cultural exchange, and cross-border collaboration platform.",
+      title: t('previews.internationalHub.title'),
+      description: t('previews.internationalHub.description'),
       route: "/master-plan/international-hub"
     },
     {
       id: "ftz-zone",
-      title: "FTZ Zone",
-      description: "Foreign Trade Zone with customs advantages, duty deferral, streamlined logistics, and regulatory flexibility. Supporting international manufacturing, distribution, and value-added operations.",
+      title: t('previews.ftzZone.title'),
+      description: t('previews.ftzZone.description'),
       route: "/master-plan/ftz-zone"
     },
     {
       id: "qof-zone",
-      title: "QOF Zone",
-      description: "Qualified Opportunity Fund structure enabling capital gains tax deferral and exclusion. Long-term investment vehicle targeting 10+ year hold periods with QOZ tax benefits and community impact.",
+      title: t('previews.qofZone.title'),
+      description: t('previews.qofZone.description'),
       route: "/master-plan/qof-zone"
     },
     {
       id: "qoz-zone",
-      title: "QOZ Zone",
-      description: "Qualified Opportunity Zone designation providing tax incentives for long-term investment. Capital gains deferral, basis step-up (10%), and permanent exclusion (10 years+) driving community development.",
+      title: t('previews.qozZone.title'),
+      description: t('previews.qozZone.description'),
       route: "/master-plan/qoz-zone"
     },
     {
       id: "industry-zone",
-      title: "Industry Zone",
-      description: "Manufacturing and industrial district leveraging FTZ advantages for international trade and production. Advanced manufacturing, logistics, and value-added processing facilities.",
+      title: t('previews.industryZone.title'),
+      description: t('previews.industryZone.description'),
       route: "/master-plan/industry-zone"
     },
     {
       id: "affordable-living-zone",
-      title: "Affordable Living Zone",
-      description: "Sustainable residential development providing workforce housing and community amenities. Mixed-income housing, green spaces, educational facilities, and social infrastructure.",
+      title: t('previews.affordableLivingZone.title'),
+      description: t('previews.affordableLivingZone.description'),
       route: "/master-plan/affordable-living-zone"
     }
   ];

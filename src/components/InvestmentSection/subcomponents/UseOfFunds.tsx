@@ -1,9 +1,9 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import { WhiteSection } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { SectionTitle } from "../../ui/Typography";
-import { USE_OF_FUNDS } from "./investmentSectionData";
 
 const PhasesContainer = styled.div`
   display: grid;
@@ -145,63 +145,73 @@ const TotalAmount = styled.span`
   font-family: 'Courier New', monospace;
 `;
 
-const formatCurrency = (value: number): string => {
-  return `$${value.toLocaleString()}`;
-};
-
 const UseOfFunds: React.FC = () => {
+  const { t } = useTranslation('investment');
+  
   return (
     <WhiteSection>
       <Container>
-        <SectionTitle>{USE_OF_FUNDS.title}</SectionTitle>
+        <SectionTitle>{t('useOfFunds.title')}</SectionTitle>
         
         <PhasesContainer>
           {/* Phase One - Stage One */}
           <PhaseCard>
             <PhaseHeader>
-              <PhaseTitle>{USE_OF_FUNDS.phaseOne.title}</PhaseTitle>
-              <PhaseNote>{USE_OF_FUNDS.phaseOne.note}</PhaseNote>
+              <PhaseTitle>{t('useOfFunds.phase1_stage1_title')}</PhaseTitle>
+              <PhaseNote>{t('useOfFunds.phase1_stage1_note')}</PhaseNote>
             </PhaseHeader>
             <PhaseBody>
               <CategorySection>
-                <CategoryLabel>{USE_OF_FUNDS.phaseOne.landAndSoft.label}</CategoryLabel>
+                <CategoryLabel>{t('useOfFunds.land_soft_costs_label')}</CategoryLabel>
                 <ItemsGrid>
-                  {USE_OF_FUNDS.phaseOne.landAndSoft.items.map((item, index) => (
-                    <Item key={index}>
-                      <ItemName>{item.name}</ItemName>
-                      <ItemAmount>{formatCurrency(item.amount)}</ItemAmount>
-                    </Item>
-                  ))}
+                  <Item>
+                    <ItemName>{t('useOfFunds.land_acquisition')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage1_land_acquisition_amount')}</ItemAmount>
+                  </Item>
+                  <Item>
+                    <ItemName>{t('useOfFunds.design_fees')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage1_design_fees_amount')}</ItemAmount>
+                  </Item>
                 </ItemsGrid>
                 <Subtotal>
-                  <SubtotalLabel>Subtotal</SubtotalLabel>
+                  <SubtotalLabel>{t('useOfFunds.subtotal')}</SubtotalLabel>
                   <SubtotalAmount>
-                    {formatCurrency(USE_OF_FUNDS.phaseOne.landAndSoft.subtotal)}
+                    {t('useOfFunds.phase1_stage1_land_soft_subtotal')}
                   </SubtotalAmount>
                 </Subtotal>
               </CategorySection>
               
               <CategorySection>
-                <CategoryLabel>{USE_OF_FUNDS.phaseOne.hardCosts.label}</CategoryLabel>
+                <CategoryLabel>{t('useOfFunds.hard_costs_label')}</CategoryLabel>
                 <ItemsGrid>
-                  {USE_OF_FUNDS.phaseOne.hardCosts.items.map((item, index) => (
-                    <Item key={index}>
-                      <ItemName>{item.name}</ItemName>
-                      <ItemAmount>{formatCurrency(item.amount)}</ItemAmount>
-                    </Item>
-                  ))}
+                  <Item>
+                    <ItemName>{t('useOfFunds.building_construction')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage1_building_construction_amount')}</ItemAmount>
+                  </Item>
+                  <Item>
+                    <ItemName>{t('useOfFunds.water_sewer')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage1_water_sewer_amount')}</ItemAmount>
+                  </Item>
+                  <Item>
+                    <ItemName>{t('useOfFunds.parking')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage1_parking_amount')}</ItemAmount>
+                  </Item>
+                  <Item>
+                    <ItemName>{t('useOfFunds.misc_expenses')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage1_misc_amount')}</ItemAmount>
+                  </Item>
                 </ItemsGrid>
                 <Subtotal>
-                  <SubtotalLabel>Subtotal</SubtotalLabel>
+                  <SubtotalLabel>{t('useOfFunds.subtotal')}</SubtotalLabel>
                   <SubtotalAmount>
-                    {formatCurrency(USE_OF_FUNDS.phaseOne.hardCosts.subtotal)}
+                    {t('useOfFunds.phase1_stage1_hard_costs_subtotal')}
                   </SubtotalAmount>
                 </Subtotal>
               </CategorySection>
               
               <PhaseSubtotal>
-                <SubtotalLabel>Phase Total</SubtotalLabel>
-                <SubtotalAmount>{formatCurrency(USE_OF_FUNDS.phaseOneStageTwo.total)}</SubtotalAmount>
+                <SubtotalLabel>{t('useOfFunds.total')}</SubtotalLabel>
+                <SubtotalAmount>{t('useOfFunds.phase1_stage1_total')}</SubtotalAmount>
               </PhaseSubtotal>
             </PhaseBody>
           </PhaseCard>
@@ -209,26 +219,40 @@ const UseOfFunds: React.FC = () => {
           {/* Phase One - Stage Two */}
           <PhaseCard>
             <PhaseHeader>
-              <PhaseTitle>{USE_OF_FUNDS.phaseOneStageTwo.title}</PhaseTitle>
-              <PhaseNote>{USE_OF_FUNDS.phaseOneStageTwo.note}</PhaseNote>
+              <PhaseTitle>{t('useOfFunds.phase1_stage2_title')}</PhaseTitle>
+              <PhaseNote>{t('useOfFunds.phase1_stage2_note')}</PhaseNote>
             </PhaseHeader>
             <PhaseBody>
               <CategorySection>
-                <CategoryLabel>{USE_OF_FUNDS.phaseOneStageTwo.costs.label}</CategoryLabel>
+                <CategoryLabel>{t('useOfFunds.full_development_costs_label')}</CategoryLabel>
                 <ItemsGrid>
-                  {USE_OF_FUNDS.phaseOneStageTwo.costs.items.map((item, index) => (
-                    <Item key={index}>
-                      <ItemName>{item.name}</ItemName>
-                      <ItemAmount>{formatCurrency(item.amount)}</ItemAmount>
-                    </Item>
-                  ))}
+                  <Item>
+                    <ItemName>{t('useOfFunds.soft_costs')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage2_soft_costs_amount')}</ItemAmount>
+                  </Item>
+                  <Item>
+                    <ItemName>{t('useOfFunds.industrial_space')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage2_industrial_space_amount')}</ItemAmount>
+                  </Item>
+                  <Item>
+                    <ItemName>{t('useOfFunds.commercial_space')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage2_commercial_space_amount')}</ItemAmount>
+                  </Item>
+                  <Item>
+                    <ItemName>{t('useOfFunds.residential_units')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage2_residential_units_amount')}</ItemAmount>
+                  </Item>
+                  <Item>
+                    <ItemName>{t('useOfFunds.misc')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase1_stage2_misc_amount')}</ItemAmount>
+                  </Item>
                 </ItemsGrid>
               </CategorySection>
               
               <PhaseSubtotal>
-                <SubtotalLabel>Phase Total</SubtotalLabel>
+                <SubtotalLabel>{t('useOfFunds.total')}</SubtotalLabel>
                 <SubtotalAmount>
-                  {formatCurrency(USE_OF_FUNDS.phaseOneStageTwo.total)}
+                  {t('useOfFunds.phase1_stage2_total')}
                 </SubtotalAmount>
               </PhaseSubtotal>
             </PhaseBody>
@@ -237,46 +261,38 @@ const UseOfFunds: React.FC = () => {
           {/* Phase Two */}
           <PhaseCard>
             <PhaseHeader>
-              <PhaseTitle>{USE_OF_FUNDS.phaseTwo.title}</PhaseTitle>
-              <PhaseNote>{USE_OF_FUNDS.phaseTwo.note}</PhaseNote>
+              <PhaseTitle>{t('useOfFunds.phase2_title')}</PhaseTitle>
+              <PhaseNote>{t('useOfFunds.phase2_note')}</PhaseNote>
             </PhaseHeader>
             <PhaseBody>
               <CategorySection>
-                <CategoryLabel>{USE_OF_FUNDS.phaseTwo.residential.label}</CategoryLabel>
+                <CategoryLabel>{t('useOfFunds.residential_sales_label')}</CategoryLabel>
                 <ItemsGrid>
                   <Item>
-                    <ItemName>Total Units</ItemName>
-                    <ItemAmount>{USE_OF_FUNDS.phaseTwo.residential.units} units</ItemAmount>
+                    <ItemName>{t('labels.totalUnits')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase2_units')}</ItemAmount>
                   </Item>
                   <Item>
-                    <ItemName>Cost Per Unit</ItemName>
-                    <ItemAmount>
-                      {formatCurrency(USE_OF_FUNDS.phaseTwo.residential.costPerUnit)}
-                    </ItemAmount>
+                    <ItemName>{t('labels.costPerUnit')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase2_cost_per_unit')}</ItemAmount>
                   </Item>
                   <Item>
-                    <ItemName>Sales Price Per Unit</ItemName>
-                    <ItemAmount>
-                      {formatCurrency(USE_OF_FUNDS.phaseTwo.residential.salesPricePerUnit)}
-                    </ItemAmount>
+                    <ItemName>{t('labels.salesPricePerUnit')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase2_sales_price_per_unit')}</ItemAmount>
                   </Item>
                   <Item>
-                    <ItemName>Total Project Cost</ItemName>
-                    <ItemAmount>
-                      {formatCurrency(USE_OF_FUNDS.phaseTwo.residential.totalCost)}
-                    </ItemAmount>
+                    <ItemName>{t('labels.totalProjectCost')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase2_total_cost')}</ItemAmount>
                   </Item>
                   <Item>
-                    <ItemName>Total Revenue</ItemName>
-                    <ItemAmount>
-                      {formatCurrency(USE_OF_FUNDS.phaseTwo.residential.totalRevenue)}
-                    </ItemAmount>
+                    <ItemName>{t('labels.totalRevenue')}</ItemName>
+                    <ItemAmount>{t('useOfFunds.phase2_total_revenue')}</ItemAmount>
                   </Item>
                 </ItemsGrid>
                 <SuccessSubtotal>
-                  <SubtotalLabel>Gross Profit</SubtotalLabel>
+                  <SubtotalLabel>{t('labels.grossProfit')}</SubtotalLabel>
                   <SubtotalAmount>
-                    {formatCurrency(USE_OF_FUNDS.phaseTwo.residential.grossProfit)}
+                    {t('useOfFunds.phase2_gross_profit')}
                   </SubtotalAmount>
                 </SuccessSubtotal>
               </CategorySection>
@@ -285,9 +301,9 @@ const UseOfFunds: React.FC = () => {
         </PhasesContainer>
         
         <Total>
-          <TotalLabel>Total Project Investment</TotalLabel>
+          <TotalLabel>{t('useOfFunds.total_investment_title')}</TotalLabel>
           <TotalAmount>
-            {formatCurrency(USE_OF_FUNDS.totalInvestment.grandTotal)}
+            {t('useOfFunds.grand_total')}
           </TotalAmount>
         </Total>
       </Container>

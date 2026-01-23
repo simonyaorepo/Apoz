@@ -1,4 +1,5 @@
 
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 interface FinalContactProps {
@@ -43,16 +44,19 @@ const ContactButton = styled.button`
   }
 `;
 
-const FinalContact: React.FC<FinalContactProps> = ({ onNavigate }) => (
-  <Wrapper>
-    <Title>Ready to Get Involved?</Title>
-    <Description>
-      Contact us to learn about investment opportunities and partnership possibilities
-    </Description>
-    <ContactButton onClick={() => onNavigate('contact')}>
-      Contact Us
-    </ContactButton>
-  </Wrapper>
-);
+const FinalContact: React.FC<FinalContactProps> = ({ onNavigate }) => {
+  const { t } = useTranslation('home');
+  return (
+    <Wrapper>
+      <Title>{t('contact.title')}</Title>
+      <Description>
+        {t('contact.description')}
+      </Description>
+      <ContactButton onClick={() => onNavigate('contact')}>
+        {t('contact.button')}
+      </ContactButton>
+    </Wrapper>
+  );
+};
 
 export default FinalContact;

@@ -1,9 +1,19 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import type { NewsArticle as NewsArticleType } from "./newsSectionData";
+import { useTranslation } from 'react-i18next';
+
+interface NewsArticle {
+  id: number;
+  title: string;
+  date: string;
+  location: string;
+  category: string;
+  image: string;
+  paragraphs?: string[];
+}
 
 interface NewsGridProps {
-  articles: NewsArticleType[];
+  articles: NewsArticle[];
 }
 
 const GridSection = styled.section`
@@ -89,6 +99,7 @@ const ArticleDate = styled.div`
 
 const NewsGrid = ({ articles }: NewsGridProps) => {
   const navigate = useNavigate();
+  const { t } = useTranslation('news');
   
   return (
     <GridSection>
@@ -100,7 +111,7 @@ const NewsGrid = ({ articles }: NewsGridProps) => {
                 <img src={article.image} alt={article.title} />
               </ArticleImage>
               <ArticleTitle>{article.title}</ArticleTitle>
-              <ArticleExcerpt>{article.paragraphs[0]}</ArticleExcerpt>
+              <ArticleExcerpt>{t(`articles.${article.id}.p1`)}</ArticleExcerpt>
               <ArticleDate>{article.date}</ArticleDate>
             </ArticleCard>
           ))}

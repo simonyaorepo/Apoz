@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import GoldButton from "../../ui/GoldButton";
 
@@ -149,36 +150,29 @@ const IconMission = () => (
 );
 
 const WhoWeAre: React.FC<WhoWeAreProps> = ({ onNavigate }) => {
+  const { t } = useTranslation('home');
+  
   const navItems = [
-    { Icon: IconApproach, title: "Our Approach", route: "/about/approach" },
-    { Icon: IconPartnership, title: "Our Partnership", route: "/about/partnership" },
-    { Icon: IconVision, title: "Our Vision", route: "home/vision" },
-    { Icon: IconMission, title: "Our Mission", route: "home/mission" },
+    { Icon: IconApproach, title: t('whoWeAre.approach', 'Our Approach'), route: "/about/approach" },
+    { Icon: IconPartnership, title: t('whoWeAre.partnership', 'Our Partnership'), route: "/about/partnership" },
+    { Icon: IconVision, title: t('whoWeAre.visionLink', 'Our Vision'), route: "home/vision" },
+    { Icon: IconMission, title: t('whoWeAre.missionLink', 'Our Mission'), route: "home/mission" },
   ];
+  
   return (
     <Section>
       <Container>
         <LeftContent>
-          <Title>Who We Are</Title>
+          <Title>{t('whoWeAre.title')}</Title>
           <Divider />
           <Description>
-            The Houston APOZ Free Trade Zone located in Winnie, Texas, within U.S. Foreign 
-            Trade Zone (FTZ) 171 is being established as a strategic gateway for global 
-            manufacturers and investors to participate in the United States' re-industrialization 
-            movement. Designed with both Free Trade Zone (FTZ) and Qualified Opportunity Zone 
-            (QOZ) benefits, APOZ offers an unmatched platform for enterprises from China, Korea, 
-            Japan, Saudi Arabia, and other international partners to localize production investment 
-            and proudly manufacture under the "Made in USA" brand.
+            {t('whoWeAre.intro1')}
           </Description>
           <Description>
-            Beyond its economic advantages, APOZ is conceived as a sustainable growth 
-            community—integrating industrial infrastructure with residential, commercial, and 
-            township development. This forward-looking ecosystem ensures that companies, 
-            workers, and families can thrive together, creating not only industrial prosperity but also 
-            vibrant communities that support long-term growth.
+            {t('whoWeAre.intro2')}
           </Description>
           <div>
-            <GoldButton onClick={() => onNavigate('about')}>Learn More</GoldButton>
+            <GoldButton onClick={() => onNavigate('about')}>{t('common.learnMore', 'Learn More')}</GoldButton>
           </div>
         </LeftContent>
         <RightContent>

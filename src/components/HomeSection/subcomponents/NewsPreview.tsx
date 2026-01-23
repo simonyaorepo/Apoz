@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { NEWS_ARTICLES } from "../../NewsSection/subcomponents/newsSectionData";
+import { useTranslation } from 'react-i18next';
 import GoldButton from "../../ui/GoldButton";
 
 const NewsSection = styled.section`
@@ -130,15 +130,23 @@ const ArticleExcerpt = styled.p`
 
 const NewsPreview: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation(['news', 'home']);
   
-  // Get the latest 3 news articles
-  const latestNews = NEWS_ARTICLES.slice(0, 3);
+  // Get the latest 3 news articles (17, 16, 15)
+  const latestNews = [17, 16, 15].map(articleId => ({
+    id: articleId,
+    title: t(`articles.${articleId}.title`),
+    date: t(`articles.${articleId}.date`),
+    category: t(`articles.${articleId}.category`),
+    image: t(`articles.${articleId}.image`),
+    excerpt: t(`articles.${articleId}.p1`)
+  }));
 
   return (
     <NewsSection>
       <Container>
         <SectionHeader>
-          <Title>News</Title>
+          <Title>{t('home:newsPreview.title')}</Title>
           <Divider />
         </SectionHeader>
         
@@ -158,7 +166,7 @@ const NewsPreview: React.FC = () => {
                 </ArticleMeta>
                 <ArticleTitle>{article.title}</ArticleTitle>
                 <ArticleExcerpt>
-                  {article.paragraphs[0].substring(0, 120)}...
+                  {article.excerpt.substring(0, 120)}...
                 </ArticleExcerpt>
               </ArticleContent>
             </ArticleCard>
@@ -168,7 +176,7 @@ const NewsPreview: React.FC = () => {
         <BottomDivider />
         <ButtonWrapper>
           <GoldButton onClick={() => navigate('/news')}>
-            Read More
+            {t('read_more')}
           </GoldButton>
         </ButtonWrapper>
       </Container>

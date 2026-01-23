@@ -1,10 +1,10 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import { DollarSign, Building2, Home } from "lucide-react";
 import { WhiteSection } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { SectionTitle } from "../../ui/Typography";
-import { FINANCIAL_PROJECTIONS } from "./investmentSectionData";
 
 const ProjectionsGrid = styled.div`
   display: grid;
@@ -149,39 +149,98 @@ const formatNumber = (value: number): string => {
 };
 
 const FinancialProjections: React.FC = () => {
+  const { t } = useTranslation('investment');
+  
+  const projections = [
+    {
+      year: t('projections.year_2026'),
+      totalRevenue: 1000000,
+      industrial: { sqft: 400000, revenue: 0 },
+      commercial: { sqft: 0, revenue: 0 },
+      residential: { units: 100, revenue: 0 },
+      otherIncome: 1000000,
+      note: t('projections.year_2026_note')
+    },
+    {
+      year: t('projections.year_2027'),
+      totalRevenue: 11500000,
+      industrial: { sqft: 2400000, revenue: 7200000 },
+      commercial: { sqft: 100000, revenue: 0 },
+      residential: { units: 300, revenue: 1800000 },
+      otherIncome: 2500000,
+      note: t('projections.year_2027_note')
+    },
+    {
+      year: t('projections.year_2028'),
+      totalRevenue: 56600000,
+      industrial: { sqft: 5400000, revenue: 43200000 },
+      commercial: { sqft: 500000, revenue: 3000000 },
+      residential: { units: 700, revenue: 5400000 },
+      otherIncome: 5000000,
+      note: t('projections.year_2028_note')
+    },
+    {
+      year: t('projections.year_2029'),
+      totalRevenue: 132800000,
+      industrial: { sqft: 7400000, revenue: 97200000 },
+      commercial: { sqft: 600000, revenue: 15000000 },
+      residential: { units: 1000, revenue: 12600000 },
+      otherIncome: 8000000,
+      note: t('projections.year_2029_note')
+    },
+    {
+      year: t('projections.year_2030'),
+      totalRevenue: 178200000,
+      industrial: { sqft: 9800000, revenue: 133200000 },
+      commercial: { sqft: 700000, revenue: 18000000 },
+      residential: { units: 1500, revenue: 18000000 },
+      otherIncome: 9000000,
+      note: t('projections.year_2030_note')
+    },
+    {
+      year: t('projections.year_2030_plus'),
+      totalRevenue: 234400000,
+      industrial: { sqft: 9800000, revenue: 176400000 },
+      commercial: { sqft: 700000, revenue: 21000000 },
+      residential: { units: 1500, revenue: 27000000 },
+      otherIncome: 10000000,
+      note: t('projections.year_2030_plus_note')
+    }
+  ];
+  
   return (
     <WhiteSection>
       <Container>
-        <SectionTitle>{FINANCIAL_PROJECTIONS.title}</SectionTitle>
-        <Subtitle>{FINANCIAL_PROJECTIONS.subtitle}</Subtitle>
+        <SectionTitle>{t('projections.title')}</SectionTitle>
+        <Subtitle>{t('projections.subtitle')}</Subtitle>
         
         <RatesSection>
-          <RatesTitle>Rental Rate Structure</RatesTitle>
+          <RatesTitle>{t('labels.rentalRateStructure')}</RatesTitle>
           <RatesGrid>
             <RateItem>
               <p>
-                <strong>Industrial</strong>
-                {FINANCIAL_PROJECTIONS.rentalRates.industrial}
+                <strong>{t('labels.industrial')}</strong>
+                {t('projections.rental_rates_industrial')}
               </p>
             </RateItem>
             <RateItem>
               <p>
-                <strong>Commercial</strong>
-                {FINANCIAL_PROJECTIONS.rentalRates.commercial}
+                <strong>{t('labels.commercial')}</strong>
+                {t('projections.rental_rates_commercial')}
               </p>
             </RateItem>
             <RateItem>
               <p>
-                <strong>Residential</strong>
-                {FINANCIAL_PROJECTIONS.rentalRates.residential}
+                <strong>{t('labels.residential')}</strong>
+                {t('projections.rental_rates_residential')}
               </p>
             </RateItem>
           </RatesGrid>
         </RatesSection>
         
         <ProjectionsGrid>
-          {FINANCIAL_PROJECTIONS.projections.map((projection, index) => {
-            const isHighlight = projection.year === "2030+";
+          {projections.map((projection, index) => {
+            const isHighlight = projection.year === t('projections.year_2030_plus');
             return (
               <YearCard key={index} $isHighlight={isHighlight}>
                 <YearHeader $isHighlight={isHighlight}>
@@ -195,7 +254,7 @@ const FinancialProjections: React.FC = () => {
                   <Metric $isHighlight={isHighlight}>
                     <Building2 size={20} />
                     <div>
-                      <MetricLabel $isHighlight={isHighlight}>Industrial</MetricLabel>
+                      <MetricLabel $isHighlight={isHighlight}>{t('labels.industrial')}</MetricLabel>
                       <MetricValue $isHighlight={isHighlight}>
                         {formatNumber(projection.industrial.sqft)} sq ft
                       </MetricValue>
@@ -205,7 +264,7 @@ const FinancialProjections: React.FC = () => {
                   <Metric $isHighlight={isHighlight}>
                     <Building2 size={20} />
                     <div>
-                      <MetricLabel $isHighlight={isHighlight}>Commercial</MetricLabel>
+                      <MetricLabel $isHighlight={isHighlight}>{t('labels.commercial')}</MetricLabel>
                       <MetricValue $isHighlight={isHighlight}>
                         {formatNumber(projection.commercial.sqft)} sq ft
                       </MetricValue>
@@ -215,7 +274,7 @@ const FinancialProjections: React.FC = () => {
                   <Metric $isHighlight={isHighlight}>
                     <Home size={20} />
                     <div>
-                      <MetricLabel $isHighlight={isHighlight}>Residential</MetricLabel>
+                      <MetricLabel $isHighlight={isHighlight}>{t('labels.residential')}</MetricLabel>
                       <MetricValue $isHighlight={isHighlight}>
                         {formatNumber(projection.residential.units)} units
                       </MetricValue>
@@ -225,7 +284,7 @@ const FinancialProjections: React.FC = () => {
                   <Metric $isHighlight={isHighlight}>
                     <DollarSign size={20} />
                     <div>
-                      <MetricLabel $isHighlight={isHighlight}>Other Income</MetricLabel>
+                      <MetricLabel $isHighlight={isHighlight}>{t('labels.otherIncome')}</MetricLabel>
                       <MetricValue $isHighlight={isHighlight}>
                         {formatCurrency(projection.otherIncome)}
                       </MetricValue>

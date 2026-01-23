@@ -1,11 +1,12 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
+import { DollarSign, Globe, TrendingUp, Shield, Zap, Building2 } from "lucide-react";
 import { GreySection } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { SectionTitle } from "../../ui/Typography";
 import { Card, CardTitle, CardDescription } from "../../ui/Card";
 import { IconCircle } from "../../ui/IconCircle";
-import { benefits } from "./investmentSectionData";
 
 const BenefitsGrid = styled.div`
   display: grid;
@@ -23,10 +24,21 @@ const CenteredCard = styled.div`
 `;
 
 const BenefitsSection: React.FC = () => {
+  const { t } = useTranslation('investment');
+  
+  const benefits = [
+    { icon: DollarSign, title: t('benefits.benefit1_title'), description: t('benefits.benefit1_description') },
+    { icon: Globe, title: t('benefits.benefit2_title'), description: t('benefits.benefit2_description') },
+    { icon: TrendingUp, title: t('benefits.benefit3_title'), description: t('benefits.benefit3_description') },
+    { icon: Shield, title: t('benefits.benefit4_title'), description: t('benefits.benefit4_description') },
+    { icon: Zap, title: t('benefits.benefit5_title'), description: t('benefits.benefit5_description') },
+    { icon: Building2, title: t('benefits.benefit6_title'), description: t('benefits.benefit6_description') }
+  ];
+  
   return (
     <GreySection>
       <Container>
-        <SectionTitle>Why Invest in APOZ?</SectionTitle>
+        <SectionTitle>{t('whyInvest.title')}</SectionTitle>
         <BenefitsGrid>
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;

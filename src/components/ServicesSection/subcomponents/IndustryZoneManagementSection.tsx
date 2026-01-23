@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import GoldDivider from "../../ui/GoldDivider";
 import styled from "styled-components";
@@ -8,7 +9,6 @@ import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
 import { TextContent, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
-import { INDUSTRY_ZONE_MANAGEMENT_DATA } from "../servicesSectionData";
 
 const TealText = styled.p`
   color: white;
@@ -22,24 +22,57 @@ interface IndustryZoneManagementSectionProps {
 }
 
 const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation(['services', 'common']);
+  
+  const services = [
+    {
+      category: t('services:industryZoneManagement.service1_category'),
+      scope: t('services:industryZoneManagement.service1_scope'),
+      impact: t('services:industryZoneManagement.service1_impact')
+    },
+    {
+      category: t('services:industryZoneManagement.service2_category'),
+      scope: t('services:industryZoneManagement.service2_scope'),
+      impact: t('services:industryZoneManagement.service2_impact')
+    },
+    {
+      category: t('services:industryZoneManagement.service3_category'),
+      scope: t('services:industryZoneManagement.service3_scope'),
+      impact: t('services:industryZoneManagement.service3_impact')
+    },
+    {
+      category: t('services:industryZoneManagement.service4_category'),
+      scope: t('services:industryZoneManagement.service4_scope'),
+      impact: t('services:industryZoneManagement.service4_impact')
+    },
+    {
+      category: t('services:industryZoneManagement.service5_category'),
+      scope: t('services:industryZoneManagement.service5_scope'),
+      impact: t('services:industryZoneManagement.service5_impact')
+    }
+  ];
+  
   return (
     <>
       <TextHero
-        title={INDUSTRY_ZONE_MANAGEMENT_DATA.title}
-        backgroundImage={INDUSTRY_ZONE_MANAGEMENT_DATA.backgroundImage}
-        breadcrumbs={INDUSTRY_ZONE_MANAGEMENT_DATA.breadcrumbs}
+        title={t('services:industryZoneManagement.title')}
+        backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.services'), href: "/services" },
+          { label: t('common:nav.industryZoneManagement') }
+        ]}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              {INDUSTRY_ZONE_MANAGEMENT_DATA.content.intro.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-              <SubsectionTitle>Core Responsibilities</SubsectionTitle>
+              <p>{t('services:industryZoneManagement.intro1')}</p>
+              <p>{t('services:industryZoneManagement.intro2')}</p>
+              <SubsectionTitle>{t('services:industryZoneManagement.core_responsibilities_title')}</SubsectionTitle>
               <p>
-                The management team oversees day-to-day operations of all industrial facilities including maintenance, security, and regulatory compliance. They coordinate Foreign-Trade Zone (FTZ) operations and ensure all customs procedures meet federal requirements, while supporting tenant businesses through lease management and operational services remains a key priority. Maintaining infrastructure systems such as utilities, roads, and waste management ensures smooth operations across the park.
+                {t('services:industryZoneManagement.core_responsibilities_text')}
               </p>
             </TextContent>
             <IllustrationBox>
@@ -93,7 +126,7 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
       <TealSection>
         <TealBox>
           <TealText>
-            APOZ industrial zone management integrates Foreign-Trade Zone (FTZ) operations with comprehensive tenant services, infrastructure oversight, and logistics coordination to maximize cost savings and operational efficiency for manufacturing and distribution tenants.
+            {t('industryZoneManagement.tealIntro')}
           </TealText>
         </TealBox>
       </TealSection>
@@ -101,21 +134,21 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
       <GreySection>
         <Container>
           <TextContent>
-            <SubsectionTitle>Key Management Services</SubsectionTitle>
+            <SubsectionTitle>{t('sectionHeaders.keyManagementServices')}</SubsectionTitle>
             <StyledTable>
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Scope</th>
-                  <th>Impact</th>
+                  <th>{t('services:tableHeaders.category')}</th>
+                  <th>{t('services:tableHeaders.scope')}</th>
+                  <th>{t('services:tableHeaders.impact')}</th>
                 </tr>
               </thead>
               <tbody>
-                {INDUSTRY_ZONE_MANAGEMENT_DATA.content.services.map((service, idx) => (
+                {services.map((service, idx) => (
                   <tr key={idx}>
-                    <td data-label="Category">{service.category}</td>
-                    <td data-label="Scope">{service.scope}</td>
-                    <td data-label="Impact">{service.impact}</td>
+                    <td data-label={t('services:tableHeaders.category')}>{service.category}</td>
+                    <td data-label={t('services:tableHeaders.scope')}>{service.scope}</td>
+                    <td data-label={t('services:tableHeaders.impact')}>{service.impact}</td>
                   </tr>
                 ))}
               </tbody>
@@ -136,9 +169,9 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
               />
             </ImageBox>
             <TextContent>
-              <SubsectionTitle>{INDUSTRY_ZONE_MANAGEMENT_DATA.content.tenantSupport.heading}</SubsectionTitle>
+              <SubsectionTitle>{t('services:industryZoneManagement.tenantSupport_heading')}</SubsectionTitle>
               <p>
-                Tenants receive comprehensive support including FTZ compliance assistance to maximize duty savings and navigate customs regulations. The team provides ongoing operational guidance for manufacturing and logistics processes, while facilitating connections to local suppliers, service providers, and business networks. Additional support includes workforce recruitment assistance and training program coordination to help businesses build and retain qualified teams.
+                {t('services:industryZoneManagement.tenantSupport_text')}
               </p>
             </TextContent>
           </GreyContentGrid>
@@ -148,9 +181,9 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
       <GreySection>
         <Container>
           <TextContent>
-            <SubsectionTitle>{INDUSTRY_ZONE_MANAGEMENT_DATA.content.technology.heading}</SubsectionTitle>
+            <SubsectionTitle>{t('services:industryZoneManagement.technology_heading')}</SubsectionTitle>
             <p>
-              The industrial zone leverages advanced technology systems for enhanced security and operational efficiency. Real-time monitoring of utilities and environmental systems ensures optimal facility performance, while digital platforms streamline FTZ documentation and customs reporting. Smart building controls optimize energy usage across all facilities, reducing costs and supporting sustainability goals.
+              {t('services:industryZoneManagement.technology_text')}
             </p>
           </TextContent>
         </Container>

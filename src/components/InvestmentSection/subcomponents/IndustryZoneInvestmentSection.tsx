@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
@@ -42,67 +43,69 @@ const HighlightBox = styled.div`
 `;
 
 const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation(['investment', 'common']);
+  
   return (
     <>
       <TextHero
-        title="Industry Zone Investment Opportunities"
+        title={t('industryZone.title', 'Industry Zone Investment Opportunities')}
         backgroundImage="https://images.unsplash.com/photo-1581094271901-8022df4466f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Investment", href: "/investment" },
-          { label: "Industry Zone" }
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.investment'), href: "/investment" },
+          { label: t('common:breadcrumbs.industryZone') }
         ]}
       />
       
       <WhiteSection>
         <ContentWrapper>
           <IntroText>
-            APOZ's industrial zone leverages Foreign Trade Zone (FTZ-171) designation to provide significant cost advantages for manufacturing, logistics, and import/export operations. Combined with strategic location along the Houston Gulf Coast Corridor, this creates compelling investment opportunities in advanced manufacturing and global trade infrastructure.
+            {t('industryZoneFTZ.intro')}
           </IntroText>
 
-          <SectionTitle>Foreign Trade Zone (FTZ-171) Advantages</SectionTitle>
+          <SectionTitle>{t('industryZoneFTZ.ftzTitle')}</SectionTitle>
           <IntroText>
-            A Foreign Trade Zone (FTZ) is a designated secure area within the U.S., considered outside of U.S. Customs territory for duty purposes. Companies can import, store, assemble, manufacture, and re-export goods without paying U.S. customs duties until they enter U.S. commerce.
+            {t('industryZoneFTZ.ftzDefinition')}
           </IntroText>
 
           <StyledTable>
             <thead>
               <tr>
-                <th>Step</th>
-                <th>Process</th>
-                <th>Who's Involved</th>
+                <th>{t('industryZoneFTZ.tableStep')}</th>
+                <th>{t('industryZoneFTZ.tableProcess')}</th>
+                <th>{t('industryZoneFTZ.tableWhoInvolved')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="Step"><strong>1. Apply for FTZ Designation</strong></td>
-                <td data-label="Process">File with the U.S. Foreign-Trade Zones Board for activation</td>
-                <td data-label="Who's Involved">Project developer, FTZ consultant</td>
+                <td data-label={t('industryZoneFTZ.tableStep')}><strong>{t('industryZoneFTZ.step1')}</strong></td>
+                <td data-label={t('industryZoneFTZ.tableProcess')}>{t('industryZoneFTZ.step1Process')}</td>
+                <td data-label={t('industryZoneFTZ.tableWhoInvolved')}>{t('industryZoneFTZ.step1Who')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>2. Activate the Zone</strong></td>
-                <td data-label="Process">Coordinate with U.S. Customs and Border Protection (CBP) for site inspection & approval</td>
-                <td data-label="Who's Involved">Developer, CBP</td>
+                <td data-label={t('industryZoneFTZ.tableStep')}><strong>{t('industryZoneFTZ.step2')}</strong></td>
+                <td data-label={t('industryZoneFTZ.tableProcess')}>{t('industryZoneFTZ.step2Process')}</td>
+                <td data-label={t('industryZoneFTZ.tableWhoInvolved')}>{t('industryZoneFTZ.step2Who')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>3. Operate Under FTZ Status</strong></td>
-                <td data-label="Process">Tenants import raw materials or finished goods into the zone duty-free</td>
-                <td data-label="Who's Involved">Tenants, customs brokers</td>
+                <td data-label={t('industryZoneFTZ.tableStep')}><strong>{t('industryZoneFTZ.step3')}</strong></td>
+                <td data-label={t('industryZoneFTZ.tableProcess')}>{t('industryZoneFTZ.step3Process')}</td>
+                <td data-label={t('industryZoneFTZ.tableWhoInvolved')}>{t('industryZoneFTZ.step3Who')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>4. Manufacturing & Storage</strong></td>
-                <td data-label="Process">Goods can be processed, assembled, packaged, or stored within the zone</td>
-                <td data-label="Who's Involved">Manufacturers, logistics firms</td>
+                <td data-label={t('industryZoneFTZ.tableStep')}><strong>{t('industryZoneFTZ.step4')}</strong></td>
+                <td data-label={t('industryZoneFTZ.tableProcess')}>{t('industryZoneFTZ.step4Process')}</td>
+                <td data-label={t('industryZoneFTZ.tableWhoInvolved')}>{t('industryZoneFTZ.step4Who')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>5. Entry to U.S. Commerce</strong></td>
-                <td data-label="Process">Duties are paid only when goods leave FTZ into U.S. markets</td>
-                <td data-label="Who's Involved">Importers, CBP</td>
+                <td data-label={t('industryZoneFTZ.tableStep')}><strong>{t('industryZoneFTZ.step5')}</strong></td>
+                <td data-label={t('industryZoneFTZ.tableProcess')}>{t('industryZoneFTZ.step5Process')}</td>
+                <td data-label={t('industryZoneFTZ.tableWhoInvolved')}>{t('industryZoneFTZ.step5Who')}</td>
               </tr>
               <tr>
-                <td data-label="Step"><strong>6. Re-export Without Duty</strong></td>
-                <td data-label="Process">Goods shipped overseas incur zero U.S. customs duties</td>
-                <td data-label="Who's Involved">Exporters</td>
+                <td data-label={t('industryZoneFTZ.tableStep')}><strong>{t('industryZoneFTZ.step6')}</strong></td>
+                <td data-label={t('industryZoneFTZ.tableProcess')}>{t('industryZoneFTZ.step6Process')}</td>
+                <td data-label={t('industryZoneFTZ.tableWhoInvolved')}>{t('industryZoneFTZ.step6Who')}</td>
               </tr>
             </tbody>
           </StyledTable>
@@ -111,91 +114,81 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
 
       <TealSection>
         <TealBox>
-          <TealTitle>Key FTZ Benefits for Investors & Tenants</TealTitle>
-          <TealText>
-            <strong>Duty Deferral:</strong> Pay customs duties only when products enter the U.S. market, improving cash flow.
-          </TealText>
-          <TealText>
-            <strong>Duty Elimination:</strong> No duties on re-exported goods, ideal for global supply chains.
-          </TealText>
-          <TealText>
-            <strong>Inverted Tariffs:</strong> If components have higher duties than finished products, pay the lower finished-product duty rate.
-          </TealText>
-          <TealText>
-            <strong>Cash Flow Improvement:</strong> Lower upfront costs improve working capital and investor ROI.
-          </TealText>
-          <TealText>
-            <strong>QOZ + FTZ Synergy:</strong> Combine capital gains tax deferral with customs savings for maximum returns.
-          </TealText>
+          <TealTitle>{t('industryZoneFTZ.benefitsTitle')}</TealTitle>
+          <TealText>{t('industryZoneFTZ.benefit1')}</TealText>
+          <TealText>{t('industryZoneFTZ.benefit2')}</TealText>
+          <TealText>{t('industryZoneFTZ.benefit3')}</TealText>
+          <TealText>{t('industryZoneFTZ.benefit4')}</TealText>
+          <TealText>{t('industryZoneFTZ.benefit5')}</TealText>
         </TealBox>
       </TealSection>
 
       <GreySection>
         <ContentWrapper>
-          <SectionTitle>Target Industries & Investment Opportunities</SectionTitle>
+          <SectionTitle>{t('industryZoneFTZ.targetIndustriesTitle')}</SectionTitle>
           
           <HighlightBox>
-            <ExampleTitle>Renewable Energy & Clean Tech</ExampleTitle>
+            <ExampleTitle>{t('industryZoneFTZ.renewableEnergyTitle')}</ExampleTitle>
             <RequirementsList>
               <div>
-                <RequirementTitle>Solar panel manufacturing and assembly</RequirementTitle>
-                <RequirementText>Import components duty-free and assemble in APOZ for domestic distribution.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.solarTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.solarDesc')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>EV battery production</RequirementTitle>
-                <RequirementText>Leverage FTZ for cost-effective battery cell imports and assembly operations.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.evBatteryTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.evBatteryDesc')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Hydrogen fuel cell manufacturing</RequirementTitle>
-                <RequirementText>Process components for both domestic and export markets.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.hydrogenTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.hydrogenDesc')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Energy storage systems</RequirementTitle>
-                <RequirementText>Serve as assembly and distribution hub for North America.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.energyStorageTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.energyStorageDesc')}</RequirementText>
               </div>
             </RequirementsList>
           </HighlightBox>
 
           <HighlightBox>
-            <ExampleTitle>Advanced Manufacturing</ExampleTitle>
+            <ExampleTitle>{t('industryZoneFTZ.advancedManufacturingTitle')}</ExampleTitle>
             <RequirementsList>
               <div>
-                <RequirementTitle>Electronics & semiconductors</RequirementTitle>
-                <RequirementText>Assembly operations with duty advantages for components.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.electronicsTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.electronicsDesc')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Smart manufacturing & IoT</RequirementTitle>
-                <RequirementText>Robotics and automation systems production.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.smartManufacturingTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.smartManufacturingDesc')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Consumer goods</RequirementTitle>
-                <RequirementText>Final assembly and packaging for U.S. distribution networks.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.consumerGoodsTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.consumerGoodsDesc')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Medical devices</RequirementTitle>
-                <RequirementText>Manufacturing with regulatory compliance support.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.medicalDevicesTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.medicalDevicesDesc')}</RequirementText>
               </div>
             </RequirementsList>
           </HighlightBox>
 
           <HighlightBox>
-            <ExampleTitle>Logistics & E-Commerce</ExampleTitle>
+            <ExampleTitle>{t('industryZoneFTZ.logisticsTitle')}</ExampleTitle>
             <RequirementsList>
               <div>
-                <RequirementTitle>Cross-border fulfillment centers</RequirementTitle>
-                <RequirementText>Bonded warehousing for Asia-Pacific goods.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.fulfillmentTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.fulfillmentDesc')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Last-mile distribution hubs</RequirementTitle>
-                <RequirementText>Strategic Houston metro access for rapid delivery.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.lastMileTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.lastMileDesc')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Cold storage facilities</RequirementTitle>
-                <RequirementText>Temperature-controlled logistics for specialized goods.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.coldStorageTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.coldStorageDesc')}</RequirementText>
               </div>
               <div>
-                <RequirementTitle>Transloading operations</RequirementTitle>
-                <RequirementText>Container-to-truck transfer with duty deferral benefits.</RequirementText>
+                <RequirementTitle>{t('industryZoneFTZ.transloadingTitle')}</RequirementTitle>
+                <RequirementText>{t('industryZoneFTZ.transloadingDesc')}</RequirementText>
               </div>
             </RequirementsList>
           </HighlightBox>
@@ -206,43 +199,33 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
 
       <GreySection>
         <ContentWrapper>
-          <SectionTitle>Investment Returns & Tenant Advantages</SectionTitle>
+          <SectionTitle>{t('industryZoneFTZ.roiTitle')}</SectionTitle>
           
           <ExampleBox>
-            <ExampleTitle>ROI Enhancement Through FTZ</ExampleTitle>
-            <ExampleText>
-              Example: A solar panel assembly operation importing $10M in components annually
-            </ExampleText>
-            <ExampleText>
-              <strong>Without FTZ:</strong> Pays $2.5M in customs duties upfront (25% tariff on certain components)
-            </ExampleText>
-            <ExampleText>
-              <strong>With FTZ:</strong> Defers duties until finished panels enter U.S. commerce, or pays $0 on re-exported panels
-            </ExampleText>
-            <ExampleText>
-              <strong>Cash flow improvement:</strong> $2.5M working capital retained annually
-            </ExampleText>
-            <ExampleText>
-              <strong>Investor benefit:</strong> Higher NOI and property value due to tenant cost savings
-            </ExampleText>
+            <ExampleTitle>{t('industryZoneFTZ.roiExampleTitle')}</ExampleTitle>
+            <ExampleText>{t('industryZoneFTZ.roiExample1')}</ExampleText>
+            <ExampleText>{t('industryZoneFTZ.roiExample2')}</ExampleText>
+            <ExampleText>{t('industryZoneFTZ.roiExample3')}</ExampleText>
+            <ExampleText>{t('industryZoneFTZ.roiExample4')}</ExampleText>
+            <ExampleText>{t('industryZoneFTZ.roiExample5')}</ExampleText>
           </ExampleBox>
 
-          <SectionTitle>Asia-Pacific Manufacturing Partnerships</SectionTitle>
+          <SectionTitle>{t('industryZoneFTZ.partnershipsTitle')}</SectionTitle>
           <RequirementsList>
             <div>
-              <RequirementText>APOZ specifically targets manufacturers from China, ASEAN, Korea, Japan, and India seeking "friend-shoring" alternatives and U.S. market access.</RequirementText>
+              <RequirementText>{t('industryZoneFTZ.partnership1')}</RequirementText>
             </div>
             <div>
-              <RequirementText>FTZ status makes APOZ ideal for companies establishing U.S. manufacturing footprints while maintaining Asia-Pacific supply chains.</RequirementText>
+              <RequirementText>{t('industryZoneFTZ.partnership2')}</RequirementText>
             </div>
             <div>
-              <RequirementText>The zone supports joint ventures between U.S. and Asia-Pacific firms requiring duty-efficient operations.</RequirementText>
+              <RequirementText>{t('industryZoneFTZ.partnership3')}</RequirementText>
             </div>
             <div>
-              <RequirementText>Export-oriented manufacturers serving both U.S. and global markets benefit from the strategic positioning.</RequirementText>
+              <RequirementText>{t('industryZoneFTZ.partnership4')}</RequirementText>
             </div>
             <div>
-              <RequirementText>Firms seeking to diversify away from single-country manufacturing risk find APOZ an attractive option.</RequirementText>
+              <RequirementText>{t('industryZoneFTZ.partnership5')}</RequirementText>
             </div>
           </RequirementsList>
         </ContentWrapper>
@@ -252,72 +235,72 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
 
       <GreySection>
         <ContentWrapper>
-          <SectionTitle>Combined QOZ + FTZ Investment Benefits</SectionTitle>
+          <SectionTitle>{t('industryZoneFTZ.combinedBenefitsTitle')}</SectionTitle>
           
           <StyledTable>
             <thead>
               <tr>
-                <th>Incentive Structure</th>
-                <th>Tax/Duty Benefit</th>
-                <th>Impact on Investment</th>
+                <th>{t('industryZoneFTZ.tableIncentive')}</th>
+                <th>{t('industryZoneFTZ.tableTaxBenefit')}</th>
+                <th>{t('industryZoneFTZ.tableImpact')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="Incentive Structure"><strong>QOZ (Investor Side)</strong></td>
-                <td data-label="Tax/Duty Benefit">Capital gains tax deferral + tax-free growth</td>
-                <td data-label="Impact on Investment">Attracts equity investors with 15-20% IRR boost</td>
+                <td data-label={t('industryZoneFTZ.tableIncentive')}><strong>{t('industryZoneFTZ.qozInvestor')}</strong></td>
+                <td data-label={t('industryZoneFTZ.tableTaxBenefit')}>{t('industryZoneFTZ.qozBenefit')}</td>
+                <td data-label={t('industryZoneFTZ.tableImpact')}>{t('industryZoneFTZ.qozImpact')}</td>
               </tr>
               <tr>
-                <td data-label="Incentive Structure"><strong>FTZ (Tenant Side)</strong></td>
-                <td data-label="Tax/Duty Benefit">Eliminates or defers customs duties</td>
-                <td data-label="Impact on Investment">Attracts import/export tenants, higher rents</td>
+                <td data-label={t('industryZoneFTZ.tableIncentive')}><strong>{t('industryZoneFTZ.ftzTenant')}</strong></td>
+                <td data-label={t('industryZoneFTZ.tableTaxBenefit')}>{t('industryZoneFTZ.ftzBenefit')}</td>
+                <td data-label={t('industryZoneFTZ.tableImpact')}>{t('industryZoneFTZ.ftzImpact')}</td>
               </tr>
               <tr>
-                <td data-label="Incentive Structure"><strong>Combined Effect</strong></td>
-                <td data-label="Tax/Duty Benefit">Lower overall project costs + higher returns</td>
-                <td data-label="Impact on Investment">Premium property valuations and exits</td>
+                <td data-label={t('industryZoneFTZ.tableIncentive')}><strong>{t('industryZoneFTZ.combinedEffect')}</strong></td>
+                <td data-label={t('industryZoneFTZ.tableTaxBenefit')}>{t('industryZoneFTZ.combinedBenefit')}</td>
+                <td data-label={t('industryZoneFTZ.tableImpact')}>{t('industryZoneFTZ.combinedImpact')}</td>
               </tr>
             </tbody>
           </StyledTable>
 
-          <SectionTitle>Exit Strategies</SectionTitle>
+          <SectionTitle>{t('industryZoneFTZ.exitStrategiesTitle')}</SectionTitle>
           <RequirementsList>
             <div>
-              <RequirementText>Exit pathways include sale to industrial REITs specializing in logistics and manufacturing properties.</RequirementText>
+              <RequirementText>{t('industryZoneFTZ.exit1')}</RequirementText>
             </div>
             <div>
-              <RequirementText>Portfolio securitization of stabilized FTZ assets offers another attractive option.</RequirementText>
+              <RequirementText>{t('industryZoneFTZ.exit2')}</RequirementText>
             </div>
             <div>
-              <RequirementText>Strategic sale to foreign investors seeking U.S. industrial exposure provides international exit opportunities.</RequirementText>
+              <RequirementText>{t('industryZoneFTZ.exit3')}</RequirementText>
             </div>
             <div>
-              <RequirementText>Refinancing after the 10-year QOZ hold period allows investors to realize tax-free appreciation.</RequirementText>
+              <RequirementText>{t('industryZoneFTZ.exit4')}</RequirementText>
             </div>
           </RequirementsList>
 
-          <SectionTitle>Best Practices for FTZ Investment Success</SectionTitle>
+          <SectionTitle>{t('industryZoneFTZ.bestPracticesTitle')}</SectionTitle>
           <RequirementsList>
             <div>
-              <RequirementTitle>Early Engagement</RequirementTitle>
-              <RequirementText>Bring FTZ specialists and customs brokers into project planning from the outset.</RequirementText>
+              <RequirementTitle>{t('industryZoneFTZ.practice1Title')}</RequirementTitle>
+              <RequirementText>{t('industryZoneFTZ.practice1Desc')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>Integrated Incentives</RequirementTitle>
-              <RequirementText>Layer FTZ, QOZ, and state/local incentives to maximize ROI.</RequirementText>
+              <RequirementTitle>{t('industryZoneFTZ.practice2Title')}</RequirementTitle>
+              <RequirementText>{t('industryZoneFTZ.practice2Desc')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>Digital Inventory Systems</RequirementTitle>
-              <RequirementText>Use ERP systems to manage bonded inventory and avoid CBP penalties.</RequirementText>
+              <RequirementTitle>{t('industryZoneFTZ.practice3Title')}</RequirementTitle>
+              <RequirementText>{t('industryZoneFTZ.practice3Desc')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>Tenant Education</RequirementTitle>
-              <RequirementText>Provide training and legal support to maximize tenant FTZ utilization.</RequirementText>
+              <RequirementTitle>{t('industryZoneFTZ.practice4Title')}</RequirementTitle>
+              <RequirementText>{t('industryZoneFTZ.practice4Desc')}</RequirementText>
             </div>
             <div>
-              <RequirementTitle>Marketing to Asia-Pacific</RequirementTitle>
-              <RequirementText>Highlight duty savings in bilingual investor and tenant materials.</RequirementText>
+              <RequirementTitle>{t('industryZoneFTZ.practice5Title')}</RequirementTitle>
+              <RequirementText>{t('industryZoneFTZ.practice5Desc')}</RequirementText>
             </div>
           </RequirementsList>
         </ContentWrapper>

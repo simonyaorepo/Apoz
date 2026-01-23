@@ -1,6 +1,6 @@
 
 import { useParams, useNavigate } from "react-router-dom";
-import { NEWS_ARTICLES } from "../components/NewsSection/subcomponents/newsSectionData";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import { Button } from "../components/ui/button";
 
@@ -115,18 +115,41 @@ const ArticleParagraph = styled.p`
 
 export default function NewsArticlePage() {
   const { id } = useParams<{ id: string }>();
-  const article = NEWS_ARTICLES.find(a => a.id === Number(id));
+  const { t } = useTranslation('news');
   const navigate = useNavigate();
-
-  if (!article) {
+  
+  // Validate article ID exists (1-17)
+  const articleId = Number(id);
+  if (!articleId || articleId < 1 || articleId > 17) {
     return (
       <PageBackground>
         <ContentWrapper>
-          <h1>Article not found</h1>
-          <button onClick={() => navigate('/news')}>Back to News</button>
+          <h1>{t('article_not_found')}</h1>
+          <Button onClick={() => navigate('/news')}>{t('back_to_news')}</Button>
         </ContentWrapper>
       </PageBackground>
     );
+  }
+  
+  // Build article from translations
+  const article = {
+    id: articleId,
+    title: t(`articles.${articleId}.title`),
+    date: t(`articles.${articleId}.date`),
+    location: t(`articles.${articleId}.location`),
+    category: t(`articles.${articleId}.category`),
+    image: t(`articles.${articleId}.image`),
+    paragraphs: [] as string[]
+  };
+  
+  // Gather all paragraphs (p1-p7, not all articles have all paragraphs)
+  let paragraphIndex = 1;
+  while (true) {
+    const key = `articles.${articleId}.p${paragraphIndex}`;
+    const paragraph = t(key);
+    if (paragraph === key) break; // Translation missing means no more paragraphs
+    article.paragraphs.push(paragraph);
+    paragraphIndex++;
   }
 
   return (
@@ -144,7 +167,7 @@ export default function NewsArticlePage() {
         {article.paragraphs.map((p, i) => (
           <ArticleParagraph key={i}>{p}</ArticleParagraph>
         ))}
-        <Button onClick={() => navigate('/news')} style={{marginTop: 32}}>Back to News</Button>
+        <Button onClick={() => navigate('/news')} style={{marginTop: 32}}>{t('back_to_news')}</Button>
       </ContentWrapper>
     </PageBackground>
   );

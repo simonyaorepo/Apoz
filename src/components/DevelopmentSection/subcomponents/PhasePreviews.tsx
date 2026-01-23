@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 const Section = styled.section`
@@ -116,24 +117,25 @@ const ArrowButton = styled.div`
 
 const PhasePreviews: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation('development');
   
   const phases = [
     {
       id: "phase1",
-      title: "Phase 1",
-      description: "Infrastructure & Site Preparation (2025–2026). Roads, utilities, and core infrastructure underway. Partnerships with local contractors and public agencies.",
+      title: t('previews.phase1_title'),
+      description: t('previews.phase1_description'),
       route: "/development/phase1"
     },
     {
       id: "phase2",
-      title: "Phase 2",
-      description: "Residential Expansion. Affordable homes starting at $188,000. Family-friendly neighborhoods with parks, schools, and services. Energy-efficient construction and green space integration.",
+      title: t('previews.phase2_title'),
+      description: t('previews.phase2_description'),
       route: "/development/phase2"
     },
     {
       id: "phase3",
-      title: "Phase 3",
-      description: "Future Development. Commercial zones, innovation districts, and sustainability initiatives. Smart city infrastructure, renewable energy, and workforce development.",
+      title: t('previews.phase3_title'),
+      description: t('previews.phase3_description'),
       route: "/development/phase3"
     }
   ];

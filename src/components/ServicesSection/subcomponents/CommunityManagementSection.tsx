@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import GoldDivider from "../../ui/GoldDivider";
 import styled from "styled-components";
@@ -9,7 +10,6 @@ import { TextContent, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { OutlineCard } from "../../ui/Cards";
 import { StyledTable } from "../../ui/Table";
-import { COMMUNITY_MANAGEMENT_DATA } from "../servicesSectionData";
 
 const TealText = styled.p`
   color: white;
@@ -23,24 +23,76 @@ interface CommunityManagementSectionProps {
 }
 
 const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation(['services', 'common']);
+  
+  const services = [
+    {
+      category: t('services:communityManagement.service1_category'),
+      scope: t('services:communityManagement.service1_scope'),
+      impact: t('services:communityManagement.service1_impact')
+    },
+    {
+      category: t('services:communityManagement.service2_category'),
+      scope: t('services:communityManagement.service2_scope'),
+      impact: t('services:communityManagement.service2_impact')
+    },
+    {
+      category: t('services:communityManagement.service3_category'),
+      scope: t('services:communityManagement.service3_scope'),
+      impact: t('services:communityManagement.service3_impact')
+    },
+    {
+      category: t('services:communityManagement.service4_category'),
+      scope: t('services:communityManagement.service4_scope'),
+      impact: t('services:communityManagement.service4_impact')
+    },
+    {
+      category: t('services:communityManagement.service5_category'),
+      scope: t('services:communityManagement.service5_scope'),
+      impact: t('services:communityManagement.service5_impact')
+    }
+  ];
+
+  const divisions = [
+    {
+      name: t('services:communityManagement.division1_name'),
+      description: t('services:communityManagement.division1_description')
+    },
+    {
+      name: t('services:communityManagement.division2_name'),
+      description: t('services:communityManagement.division2_description')
+    },
+    {
+      name: t('services:communityManagement.division3_name'),
+      description: t('services:communityManagement.division3_description')
+    },
+    {
+      name: t('services:communityManagement.division4_name'),
+      description: t('services:communityManagement.division4_description')
+    }
+  ];
+  
   return (
     <>
       <TextHero
-        title={COMMUNITY_MANAGEMENT_DATA.title}
-        backgroundImage={COMMUNITY_MANAGEMENT_DATA.backgroundImage}
-        breadcrumbs={COMMUNITY_MANAGEMENT_DATA.breadcrumbs}
+        title={t('services:communityManagement.title')}
+        backgroundImage="https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        breadcrumbs={[
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.services'), href: "/services" },
+          { label: t('common:nav.communityManagement') }
+        ]}
       />
       
       <WhiteSection>
         <Container>
           <ContentGrid>
             <TextContent>
-              {COMMUNITY_MANAGEMENT_DATA.content.intro.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-              <SubsectionTitle>Core Goals</SubsectionTitle>
+              <p>{t('services:communityManagement.intro1')}</p>
+              <p>{t('services:communityManagement.intro2')}</p>
+              <SubsectionTitle>{t('services:communityManagement.core_goals_title')}</SubsectionTitle>
               <p>
-                The community management team focuses on fostering a safe, vibrant, and sustainable residential environment for all residents. They maintain high-quality amenities and common areas while building a strong sense of community through events and programming. The team also coordinates seamlessly with the industrial park operations to ensure residents benefit from proximity to employment opportunities.
+                {t('services:communityManagement.core_goals_text')}
               </p>
             </TextContent>
             <IllustrationBox>
@@ -94,7 +146,7 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
       <TealSection>
         <TealBox>
           <TealText>
-            APOZ community management delivers comprehensive residential services, amenities, and tenant support programs that create a thriving live-work ecosystem for industrial park employees and their families.
+            {t('communityManagement.tealIntro')}
           </TealText>
         </TealBox>
       </TealSection>
@@ -102,21 +154,21 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
       <GreySection>
         <Container>
           <TextContent>
-            <SubsectionTitle>Key Community Management Services</SubsectionTitle>
+            <SubsectionTitle>{t('sectionHeaders.keyCommunityServices')}</SubsectionTitle>
             <StyledTable>
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Scope</th>
-                  <th>Impact</th>
+                  <th>{t('services:tableHeaders.category')}</th>
+                  <th>{t('services:tableHeaders.scope')}</th>
+                  <th>{t('services:tableHeaders.impact')}</th>
                 </tr>
               </thead>
               <tbody>
-                {COMMUNITY_MANAGEMENT_DATA.content.services.map((service, idx) => (
+                {services.map((service, idx) => (
                   <tr key={idx}>
-                    <td data-label="Category">{service.category}</td>
-                    <td data-label="Scope">{service.scope}</td>
-                    <td data-label="Impact">{service.impact}</td>
+                    <td data-label={t('services:tableHeaders.category')}>{service.category}</td>
+                    <td data-label={t('services:tableHeaders.scope')}>{service.scope}</td>
+                    <td data-label={t('services:tableHeaders.impact')}>{service.impact}</td>
                   </tr>
                 ))}
               </tbody>
@@ -137,9 +189,9 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
               />
             </ImageBox>
             <TextContent>
-              <SubsectionTitle>{COMMUNITY_MANAGEMENT_DATA.content.integration.heading}</SubsectionTitle>
+              <SubsectionTitle>{t('services:communityManagement.integration_heading')}</SubsectionTitle>
               <p>
-                {COMMUNITY_MANAGEMENT_DATA.content.integration.description} The residential zone provides workforce housing for industrial park employees, creating a live-work ecosystem that reduces commute times and improves quality of life. Community programs are designed to support working families with childcare services and after-school activities, while shared infrastructure including transit connections and recreational facilities benefits both residential and commercial areas. The overall development attracts skilled workers and their families to support long-term industrial growth.
+                {t('services:communityManagement.integration_full_text')}
               </p>
             </TextContent>
           </GreyContentGrid>
@@ -149,9 +201,9 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
       <GreySection>
         <Container>
           <TextContent>
-            <SubsectionTitle>{COMMUNITY_MANAGEMENT_DATA.content.teamFunctions.heading}</SubsectionTitle>
+            <SubsectionTitle>{t('services:communityManagement.teamFunctions_heading')}</SubsectionTitle>
             <TwoColumnGrid>
-              {COMMUNITY_MANAGEMENT_DATA.content.teamFunctions.divisions.map((division, idx) => (
+              {divisions.map((division, idx) => (
                 <OutlineCard key={idx}>
                   <h4>{division.name}</h4>
                   <p>{division.description}</p>

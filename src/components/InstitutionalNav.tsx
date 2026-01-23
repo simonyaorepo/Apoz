@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 interface InstitutionalNavProps {
   currentPage: string;
@@ -113,6 +115,15 @@ const NavLinks = styled.div<{ $isOpen?: boolean }>`
     transform: ${({ $isOpen }) => $isOpen ? 'translateX(0)' : 'translateX(100%)'};
     transition: transform 0.3s ease-in-out;
     box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+  }
+`;
+
+const LanguageSwitcherWrapper = styled.div`
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 100%;
+    padding-top: ${({ theme }) => theme.spacing.md};
+    border-top: 1px solid ${({ theme }) => theme.colors.lightGrey};
+    margin-top: ${({ theme }) => theme.spacing.md};
   }
 `;
 
@@ -310,6 +321,7 @@ const MobileSubmenuButton = styled.button`
 `;
 
 export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavProps) {
+  const { t } = useTranslation('common');
   const [scrolled, setScrolled] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState<string | null>(null);
   const [dropdownLeft, setDropdownLeft] = useState<number | null>(null);
@@ -329,57 +341,57 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
   const menuItems = [
     { 
       id: "home", 
-      label: "Home",
+      label: t('nav.home'),
       submenu: [
-        { label: "Overview", id: "home/overview" },
-        { label: "Who Are We", id: "home/who-are-we" },
-        { label: "Our Vision", id: "home/vision" },
-        { label: "Our Mission", id: "home/mission" },
-        { label: "Management", id: "home/management" },
+        { label: t('nav.overview'), id: "home/overview" },
+        { label: t('nav.whoWeAre'), id: "home/who-are-we" },
+        { label: t('nav.vision'), id: "home/vision" },
+        { label: t('nav.mission'), id: "home/mission" },
+        { label: t('nav.management'), id: "home/management" },
       ]
     },
     { 
       id: "master-plan", 
-      label: "Master Plan",
+      label: t('nav.masterPlan'),
       submenu: [
-        { label: "Industry Zone", id: "master-plan/industry-zone" },
-        { label: "Affordable Living Zone", id: "master-plan/affordable-living-zone" },
-        { label: "International Hub", id: "master-plan/international-hub" },
-        { label: "FTZ Zone", id: "master-plan/ftz-zone" },
-        { label: "QOZ Zone", id: "master-plan/qoz-zone" },
-        { label: "QOF Zone", id: "master-plan/qof-zone" },
+        { label: t('nav.industryZone'), id: "master-plan/industry-zone" },
+        { label: t('nav.affordableLivingZone'), id: "master-plan/affordable-living-zone" },
+        { label: t('nav.internationalHub'), id: "master-plan/international-hub" },
+        { label: t('nav.ftzZone'), id: "master-plan/ftz-zone" },
+        { label: t('nav.qozZone'), id: "master-plan/qoz-zone" },
+        { label: t('nav.qofZone'), id: "master-plan/qof-zone" },
       ]
     },
     { 
       id: "services", 
-      label: "Our Services",
+      label: t('nav.services'),
       submenu: [
-        { label: "Overview", id: "services/overview" },
-        { label: "Community Management", id: "services/community-management" },
-        { label: "Industry Zone Management", id: "services/industry-zone-management" },
-        { label: "Residential Management", id: "services/residential-management" },
+        { label: t('nav.overview'), id: "services/overview" },
+        { label: t('nav.communityManagement'), id: "services/community-management" },
+        { label: t('nav.industryZoneManagement'), id: "services/industry-zone-management" },
+        { label: t('nav.residentialManagement'), id: "services/residential-management" },
       ]
     },
     { 
       id: "investment", 
-      label: "Investment",
+      label: t('nav.investment'),
       submenu: [
-        { label: "Overview", id: "investment/overview" },
-        { label: "Industry Zone", id: "investment/industry-zone" },
-        { label: "Residential Zone", id: "investment/residential-zone" },
-        { label: "Infrastructure", id: "investment/infrastructure" },
+        { label: t('nav.overview'), id: "investment/overview" },
+        { label: t('nav.industryZone'), id: "investment/industry-zone" },
+        { label: t('nav.residentialZone'), id: "investment/residential-zone" },
+        { label: t('nav.infrastructure'), id: "investment/infrastructure" },
       ]
     },
     { 
       id: "development", 
-      label: "Development",
+      label: t('nav.development'),
       submenu: [
-        { label: "Phase 1", id: "development/phase1" },
-        { label: "Phase 2", id: "development/phase2" },
-        { label: "Phase 3", id: "development/phase3" },
+        { label: t('nav.phase1'), id: "development/phase1" },
+        { label: t('nav.phase2'), id: "development/phase2" },
+        { label: t('nav.phase3'), id: "development/phase3" },
       ]
     },
-    { id: "news", label: "News" },
+    { id: "news", label: t('nav.news') },
   ];
 
   return (
@@ -401,7 +413,8 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
           </HamburgerButton>
           
           {/* Navigation */}
-          <NavLinks $isOpen={mobileMenuOpen}>{menuItems.map((item) => {
+          <NavLinks $isOpen={mobileMenuOpen}>
+            {menuItems.map((item) => {
               const handleEnter = () => {
                 if (closeTimeout.current) clearTimeout(closeTimeout.current);
                 if (item.submenu) {
@@ -505,6 +518,9 @@ export function InstitutionalNav({ currentPage, onNavigate }: InstitutionalNavPr
                 </NavItemWrapper>
               );
             })}
+            <LanguageSwitcherWrapper>
+              <LanguageSwitcher />
+            </LanguageSwitcherWrapper>
           </NavLinks>
         </NavRow>
       </NavContainer>

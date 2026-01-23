@@ -1,4 +1,5 @@
 
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import { SkytowerArrow } from "../../SkytowerArrow";
 
@@ -75,22 +76,26 @@ const TileArrow = styled.div`
   right: ${({ theme }) => theme.spacing.lg};
 `;
 
-const FeatureTiles: React.FC<FeatureTilesProps> = ({ tiles, onNavigate }) => (
-  <Grid>
-    {tiles.map((tile, index) => (
-      <Tile key={index} onClick={() => onNavigate('news')}>
-        <TileImg src={tile.image} alt={tile.title} />
-        <TileOverlay />
-        <TileInfo>
-          <TileDate>{tile.date}</TileDate>
-          <TileTitle>{tile.title}</TileTitle>
-        </TileInfo>
-        <TileArrow>
-          <SkytowerArrow />
-        </TileArrow>
-      </Tile>
-    ))}
-  </Grid>
-);
+const FeatureTiles: React.FC<FeatureTilesProps> = ({ tiles, onNavigate }) => {
+  const { t } = useTranslation('home');
+  
+  return (
+    <Grid>
+      {tiles.map((tile, index) => (
+        <Tile key={index} onClick={() => onNavigate('news')}>
+          <TileImg src={tile.image} alt={tile.title} />
+          <TileOverlay />
+          <TileInfo>
+            <TileDate>{t(`features.tile${index + 1}Date`)}</TileDate>
+            <TileTitle>{t(`features.tile${index + 1}Title`)}</TileTitle>
+          </TileInfo>
+          <TileArrow>
+            <SkytowerArrow />
+          </TileArrow>
+        </Tile>
+      ))}
+    </Grid>
+  );
+};
 
 export default FeatureTiles;

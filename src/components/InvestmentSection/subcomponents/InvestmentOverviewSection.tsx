@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import BenefitsSection from "./BenefitsSection";
 import OpportunitiesSection from "./OpportunitiesSection";
@@ -6,7 +7,6 @@ import SWOTAnalysis from "./SWOTAnalysis";
 import styled from "styled-components";
 import { WhiteSection } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
-import { INVESTMENT_OVERVIEW } from "./investmentSectionData";
 
 const IntroSection = styled(WhiteSection)`
   background: ${({ theme }) => theme.colors.white};
@@ -182,78 +182,103 @@ interface InvestmentOverviewSectionProps {
 }
 
 const InvestmentOverviewSection: React.FC<InvestmentOverviewSectionProps> = ({ onNavigate: _onNavigate }) => {
+  const { t } = useTranslation(['investment', 'common']);
+  
   return (
     <>
       <TextHero
-        title="Investment Overview"
+        title={t('overview.title')}
         backgroundImage="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Investment", href: "/investment" },
-          { label: "Overview" }
+          { label: t('common:breadcrumbs.home'), href: "/" },
+          { label: t('common:breadcrumbs.investment'), href: "/investment" },
+          { label: t('overview.breadcrumb') }
         ]}
       />
       
       <IntroSection>
         <Container>
           <IntroText>
-            {INVESTMENT_OVERVIEW.description} APOZ is strategically located in a federally designated Qualified Opportunity Zone and Foreign-Trade Zone, offering investors powerful tax incentives including capital gains deferral and duty savings. The project is structured to accommodate both equity and debt investors across multiple phases, with strong exit strategies through REIT conversion or institutional buyouts.
+            {t('overview.description')}
           </IntroText>
 
-          <SectionTitle>Investment Strategy</SectionTitle>
+          <SectionTitle>{t('overview.strategy_title')}</SectionTitle>
           <StrategyTable>
             <thead>
               <tr>
-                <th>Phase</th>
-                <th>Scope</th>
-                <th>Capital Required</th>
-                <th>Funding Sources</th>
+                <th>{t('overview.strategy_phase_header')}</th>
+                <th>{t('overview.strategy_scope_header')}</th>
+                <th>{t('overview.strategy_capital_header')}</th>
+                <th>{t('overview.strategy_funding_header')}</th>
               </tr>
             </thead>
             <tbody>
-              {INVESTMENT_OVERVIEW.investmentStrategy.map((phase, index) => (
-                <tr key={index}>
-                  <td data-label="Phase"><strong>{phase.phase}</strong></td>
-                  <td data-label="Scope">{phase.scope}</td>
-                  <td data-label="Capital Required">{phase.capitalRequired}</td>
-                  <td data-label="Funding Sources">{phase.fundingSources}</td>
-                </tr>
-              ))}
+              <tr>
+                <td data-label={t('overview.strategy_phase_header')}><strong>{t('overview.strategy_phase1_phase')}</strong></td>
+                <td data-label={t('overview.strategy_scope_header')}>{t('overview.strategy_phase1_scope')}</td>
+                <td data-label={t('overview.strategy_capital_header')}>{t('overview.strategy_phase1_capital')}</td>
+                <td data-label={t('overview.strategy_funding_header')}>{t('overview.strategy_phase1_funding')}</td>
+              </tr>
+              <tr>
+                <td data-label={t('overview.strategy_phase_header')}><strong>{t('overview.strategy_phase2_phase')}</strong></td>
+                <td data-label={t('overview.strategy_scope_header')}>{t('overview.strategy_phase2_scope')}</td>
+                <td data-label={t('overview.strategy_capital_header')}>{t('overview.strategy_phase2_capital')}</td>
+                <td data-label={t('overview.strategy_funding_header')}>{t('overview.strategy_phase2_funding')}</td>
+              </tr>
+              <tr>
+                <td data-label={t('overview.strategy_phase_header')}><strong>{t('overview.strategy_phase3_phase')}</strong></td>
+                <td data-label={t('overview.strategy_scope_header')}>{t('overview.strategy_phase3_scope')}</td>
+                <td data-label={t('overview.strategy_capital_header')}>{t('overview.strategy_phase3_capital')}</td>
+                <td data-label={t('overview.strategy_funding_header')}>{t('overview.strategy_phase3_funding')}</td>
+              </tr>
             </tbody>
           </StrategyTable>
 
-          <SectionTitle>Capital Structure</SectionTitle>
+          <SectionTitle>{t('overview.capital_structure_title')}</SectionTitle>
           <CapitalStructureGrid>
-            {INVESTMENT_OVERVIEW.capitalStructure.map((item, index) => (
-              <CapitalCard key={index}>
-                <h4>{item.layer}</h4>
-                <p><strong>Role:</strong> {item.role}</p>
-                <p><strong>Return Type:</strong> {item.returnType}</p>
-              </CapitalCard>
-            ))}
+            <CapitalCard>
+              <h4>{t('overview.capital_equity_layer')}</h4>
+              <p><strong>{t('overview.capital_role_header')}:</strong> {t('overview.capital_equity_role')}</p>
+              <p><strong>{t('overview.capital_return_header')}:</strong> {t('overview.capital_equity_return')}</p>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('overview.capital_preferred_layer')}</h4>
+              <p><strong>{t('overview.capital_role_header')}:</strong> {t('overview.capital_preferred_role')}</p>
+              <p><strong>{t('overview.capital_return_header')}:</strong> {t('overview.capital_preferred_return')}</p>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('overview.capital_debt_layer')}</h4>
+              <p><strong>{t('overview.capital_role_header')}:</strong> {t('overview.capital_debt_role')}</p>
+              <p><strong>{t('overview.capital_return_header')}:</strong> {t('overview.capital_debt_return')}</p>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('overview.capital_developer_layer')}</h4>
+              <p><strong>{t('overview.capital_role_header')}:</strong> {t('overview.capital_developer_role')}</p>
+              <p><strong>{t('overview.capital_return_header')}:</strong> {t('overview.capital_developer_return')}</p>
+            </CapitalCard>
           </CapitalStructureGrid>
 
-          <SectionTitle>Investor Benefits</SectionTitle>
+          <SectionTitle>{t('investment:overview.investor_benefits_title')}</SectionTitle>
           <div>
-            <SubsectionTitle>QOZ Tax Benefits</SubsectionTitle>
+            <SubsectionTitle>{t('investment:overview.qoz_tax_title')}</SubsectionTitle>
             <InfoText>
-              Investors can defer capital gains taxes until December 31, 2026 by investing through a Qualified Opportunity Fund (QOF). After holding the investment for 10 years, all appreciation becomes permanently tax-free, creating significant long-term wealth-building potential.
+              {t('investment:overview.qoz_tax_description')}
             </InfoText>
 
-            <SubsectionTitle>FTZ Operating Advantages</SubsectionTitle>
+            <SubsectionTitle>{t('investment:overview.ftz_operating_title')}</SubsectionTitle>
             <InfoText>
-              The Foreign-Trade Zone designation allows tenants to defer or eliminate customs duties on imported goods, significantly reducing operating costs. Companies engaged in manufacturing or re-export can achieve substantial savings, improving overall project returns and tenant retention.
+              {t('investment:overview.ftz_operating_description')}
             </InfoText>
 
-            <SubsectionTitle>IRR Potential</SubsectionTitle>
-            <InfoText><strong>Base Case:</strong> {INVESTMENT_OVERVIEW.investorBenefits.irrPotential.baseCase}</InfoText>
-            <InfoText><strong>With QOZ Benefits:</strong> {INVESTMENT_OVERVIEW.investorBenefits.irrPotential.withQOZ}</InfoText>
+            <SubsectionTitle>{t('investment:overview.irr_potential_title')}</SubsectionTitle>
+            <InfoText><strong>{t('investment:overview.irr_baseLabel')}</strong> {t('investment:overview.irr_base')}</InfoText>
+            <InfoText><strong>{t('investment:overview.irr_qozLabel')}</strong> {t('investment:overview.irr_with_qoz')}</InfoText>
           </div>
 
-          <SectionTitle>Exit Strategy</SectionTitle>
-          {INVESTMENT_OVERVIEW.exitStrategy.map((strategy, index) => (
-            <InfoText key={index}>{strategy}</InfoText>
-          ))}
+          <SectionTitle>{t('investment:overview.exit_strategy_title')}</SectionTitle>
+          <InfoText>{t('investment:overview.exit_reit')}</InfoText>
+          <InfoText>{t('investment:overview.exit_sale')}</InfoText>
+          <InfoText>{t('investment:overview.exit_ipo')}</InfoText>
         </Container>
       </IntroSection>
 

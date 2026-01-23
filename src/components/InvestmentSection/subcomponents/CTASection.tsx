@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import { Container } from "../../ui/Containers";
 
@@ -47,17 +48,17 @@ const CTAButton = styled.button`
 `;
 
 const CTASection: React.FC = () => {
+  const { t } = useTranslation('investment');
+  
   return (
     <Section>
       <Container>
-        <CTATitle>Your Role in a Shared Vision</CTATitle>
+        <CTATitle>{t('cta.title')}</CTATitle>
         <CTAText>
-          Whether you are a private equity firm, institutional investor, international partner, or a mission-aligned fund, 
-          APOZ is a platform for forward-thinking capital to thrive. Our leadership team will work directly with you to 
-          align project goals, risk management, and long-term return.
+          {t('cta.description')}
         </CTAText>
         <CTAButton onClick={() => window.location.href = 'mailto:info@apoz.com'}>
-          Schedule a Meeting
+          {t('cta.button')}
         </CTAButton>
       </Container>
     </Section>

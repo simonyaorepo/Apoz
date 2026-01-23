@@ -1,4 +1,4 @@
-
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 interface ValueProp {
@@ -64,19 +64,25 @@ const CardText = styled.p`
   line-height: 1.6;
 `;
 
-const ValueProps: React.FC<ValuePropsProps> = ({ propsList }) => (
-  <div>
-    <SectionTitle>What Sets APOZ Apart</SectionTitle>
-    <Divider />
-    <Grid>
-      {propsList.map((prop, index) => (
-        <Card key={index}>
-          <CardTitle>{prop.title}</CardTitle>
-          <CardText>{prop.text}</CardText>
-        </Card>
-      ))}
-    </Grid>
-  </div>
-);
+const ValueProps: React.FC<ValuePropsProps> = ({ propsList }) => {
+  const { t } = useTranslation('home');
+  
+  const propKeys = ['tradeHub', 'infrastructure', 'affordable', 'sustainability', 'partnerships', 'investmentReady'];
+  
+  return (
+    <div>
+      <SectionTitle>{t('valueProps.sectionTitle', 'What Sets APOZ Apart')}</SectionTitle>
+      <Divider />
+      <Grid>
+        {propKeys.map((key, index) => (
+          <Card key={index}>
+            <CardTitle>{t(`valueProps.${key}.title`)}</CardTitle>
+            <CardText>{t(`valueProps.${key}.text`)}</CardText>
+          </Card>
+        ))}
+      </Grid>
+    </div>
+  );
+};
 
 export default ValueProps;
