@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "translate:add": "node scripts/add-translation.js",
+    "translate:validate": "node scripts/validate-translations.js",
+    "translate:validate:all": "node scripts/validate-translations.js"
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
