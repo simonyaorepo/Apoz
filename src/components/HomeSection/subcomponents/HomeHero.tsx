@@ -67,15 +67,6 @@ const ContentBox = styled.div`
   }
 `;
 
-const Subtitle = styled.div`
-  color: ${({ theme }) => theme.colors.goldAccent};
-  font-size: 0.8125rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  margin: 0;
-  line-height: 1.4;
-`;
-
 const Headline = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.h3};
   font-weight: ${({ theme }) => theme.fontWeights.medium};

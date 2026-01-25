@@ -87,7 +87,7 @@ const Description = styled.p`
   font-size: 15px;
 `;
 
-const TimelineBar: React.FC<TimelineBarProps> = ({ items }) => {
+const TimelineBar: React.FC<TimelineBarProps> = ({ items: _items }) => {
   const { t } = useTranslation('home');
   
   const timelineData = [
