@@ -30,6 +30,14 @@ const Section = styled.section`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: ${({ theme }) => theme.spacing.xxl} 5vw;
+    
+    &::before {
+      top: ${({ theme }) => theme.spacing.xxl};
+    }
+    
+    &::after {
+      bottom: ${({ theme }) => theme.spacing.xxl};
+    }
   }
 `;
 
