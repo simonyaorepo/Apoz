@@ -125,9 +125,5 @@ const TimelineBar: React.FC<TimelineBarProps> = ({ items }) => {
     </Wrapper>
   );
 };
-      ))}
-    </Grid>
-  </Wrapper>
-);
 
 export default TimelineBar;
