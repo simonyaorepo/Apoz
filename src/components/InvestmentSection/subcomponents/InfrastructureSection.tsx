@@ -127,8 +127,8 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
           </TealText>
         </TealBox>
       </TealSection>
-      
-      <GreySection>
+
+      <GreySection $reducedTopPadding>
         <Container>
           <TextContent>
             <SectionTitle>{t('infrastructure.scope_title')}</SectionTitle>

@@ -1,78 +1,28 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
-import styled from "styled-components";
 import TextHero from "../../TextHero";
 import GoldDivider from "../../ui/GoldDivider";
-import { WhiteSection, TealSection, TealBox } from "../../ui/Sections";
+import styled from "styled-components";
+import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
+import { TextContent, SubsectionTitle } from "../../ui/Typography";
+import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
 
-const ContentWrapper = styled.div`
-  max-width: ${({ theme }) => theme.maxWidth.content};
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: 3rem 1.5rem;
-  }
-`;
-
-const IntroText = styled.p`
+const TealText = styled.p`
+  color: white;
   font-size: ${({ theme }) => theme.fontSizes.md};
   line-height: 1.7;
-  color: ${({ theme }) => theme.colors.darkBlue};
-  margin-bottom: 2rem;
+  margin: 0;
+`;
+
+const IntroTextContent = styled(TextContent)`
+  margin-bottom: ${({ theme }) => theme.spacing.xxl};
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.sm};
+    margin-bottom: ${({ theme }) => theme.spacing.xl};
   }
-`;
-
-const SectionTitle = styled.h2`
-  font-size: ${({ theme }) => theme.fontSizes['2xl']};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
-  color: ${({ theme }) => theme.colors.primary};
-  margin: 3rem 0 1.5rem;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.xl};
-    margin: 2rem 0 1rem;
-  }
-`;
-
-const TealTitle = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.h5};
-  font-weight: ${({ theme }) => theme.fontWeights.semibold};
-  color: white;
-  margin-bottom: 1.5rem;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.md};
-  }
-`;
-
-const TealText = styled.p`
-  color: rgba(255, 255, 255, 0.95);
-  font-size: ${({ theme }) => theme.fontSizes.sm};
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-const GreySection = styled.div`
-  background: ${({ theme }) => theme.colors.backgroundAlt};
-  padding: 4rem 2rem;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: 3rem 1.5rem;
-  }
-`;
-
-const GreyContent = styled.div`
-  max-width: ${({ theme }) => theme.maxWidth.content};
-  margin: 0 auto;
 `;
 
 interface ResidentialManagementSectionProps {
@@ -123,54 +73,105 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
       />
       
       <WhiteSection>
-        <ContentWrapper>
-          <IntroText>{t('services:residentialManagement.intro')}</IntroText>
-
-          <SectionTitle>{t('services:residentialManagement.primary_objectives_title')}</SectionTitle>
-          <IntroText>
-            {t('services:residentialManagement.primary_objectives_text')}
-          </IntroText>
-
-          <GoldDivider />
-
-          <SectionTitle>{t('services:residentialManagement.core_services_title')}</SectionTitle>
-          <StyledTable>
-            <thead>
-              <tr>
-                <th>{t('services:residentialManagement.service_category_header')}</th>
-                <th>{t('services:residentialManagement.scope_header')}</th>
-                <th>{t('services:residentialManagement.impact_header')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {coreServices.map((service, index) => (
-                <tr key={index}>
-                  <td data-label="Service Category"><strong>{service.category}</strong></td>
-                  <td data-label="Scope">{service.scope}</td>
-                  <td data-label="Impact">{service.impact}</td>
-                </tr>
-              ))}
-            </tbody>
-          </StyledTable>
-        </ContentWrapper>
+        <Container>
+          <IntroTextContent>
+            <p>{t('services:residentialManagement.intro')}</p>
+          </IntroTextContent>
+          <ContentGrid>
+            <TextContent>
+              <SubsectionTitle>{t('services:residentialManagement.primary_objectives_title')}</SubsectionTitle>
+              <p>
+                {t('services:residentialManagement.primary_objectives_text')}
+              </p>
+            </TextContent>
+            <IllustrationBox>
+              <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Ground line */}
+                <line x1="30" y1="310" x2="620" y2="310" stroke="#0a3a3f" strokeWidth="2"/>
+                
+                {/* Residential buildings */}
+                <path d="M 80 240 L 105 215 L 130 240" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <rect x="85" y="240" width="40" height="70" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <rect x="95" y="255" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
+                <rect x="110" y="255" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
+                
+                <path d="M 165 240 L 190 215 L 215 240" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <rect x="170" y="240" width="40" height="70" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <rect x="180" y="255" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
+                <rect x="195" y="255" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
+                
+                {/* Amenities building */}
+                <rect x="280" y="230" width="80" height="80" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <rect x="295" y="250" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
+                <rect x="330" y="250" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
+                
+                {/* People */}
+                <circle cx="420" cy="270" r="12" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <line x1="420" y1="282" x2="420" y2="300" stroke="#0a3a3f" strokeWidth="2"/>
+                
+                {/* Maintenance vehicle */}
+                <rect x="480" y="270" width="60" height="40" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <circle cx="500" cy="310" r="10" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <circle cx="520" cy="310" r="10" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+              </svg>
+            </IllustrationBox>
+          </ContentGrid>
+        </Container>
       </WhiteSection>
 
       <TealSection>
         <TealBox>
-          <TealTitle>{t('services:residentialManagement.integration_title')}</TealTitle>
           <TealText>
             {t('services:residentialManagement.integration_text')}
           </TealText>
         </TealBox>
       </TealSection>
+      
+      <GreySection $reducedTopPadding>
+        <Container>
+          <TextContent>
+            <SubsectionTitle>{t('services:residentialManagement.core_services_title')}</SubsectionTitle>
+            <StyledTable>
+              <thead>
+                <tr>
+                  <th>{t('services:tableHeaders.category')}</th>
+                  <th>{t('services:tableHeaders.scope')}</th>
+                  <th>{t('services:tableHeaders.impact')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {coreServices.map((service, idx) => (
+                  <tr key={idx}>
+                    <td data-label={t('services:tableHeaders.category')}>{service.category}</td>
+                    <td data-label={t('services:tableHeaders.scope')}>{service.scope}</td>
+                    <td data-label={t('services:tableHeaders.impact')}>{service.impact}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </StyledTable>
+          </TextContent>
+        </Container>
+      </GreySection>
+
+      <GoldDivider />
 
       <GreySection>
-        <GreyContent>
-          <SectionTitle>{t('services:residentialManagement.technology_title')}</SectionTitle>
-          <IntroText>
-            {t('services:residentialManagement.technology_text')}
-          </IntroText>
-        </GreyContent>
+        <Container>
+          <GreyContentGrid>
+            <ImageBox>
+              <img 
+                src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
+                alt="Residential management"
+              />
+            </ImageBox>
+            <TextContent>
+              <SubsectionTitle>{t('services:residentialManagement.technology_title')}</SubsectionTitle>
+              <p>
+                {t('services:residentialManagement.technology_text')}
+              </p>
+            </TextContent>
+          </GreyContentGrid>
+        </Container>
       </GreySection>
     </>
   );

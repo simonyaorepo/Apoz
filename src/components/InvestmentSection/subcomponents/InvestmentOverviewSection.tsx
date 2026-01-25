@@ -7,6 +7,7 @@ import SWOTAnalysis from "./SWOTAnalysis";
 import styled from "styled-components";
 import { WhiteSection } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
+import { SectionTitle, SubsectionTitle } from "../../ui/Typography";
 
 const IntroSection = styled(WhiteSection)`
   background: ${({ theme }) => theme.colors.white};
@@ -20,29 +21,6 @@ const IntroText = styled.p`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: ${({ theme }) => theme.fontSizes.sm};
-  }
-`;
-
-const SectionTitle = styled.h2`
-  font-size: ${({ theme }) => theme.fontSizes.h3};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
-  color: ${({ theme }) => theme.colors.primary};
-  margin: ${({ theme }) => theme.spacing.xxxl} 0 ${({ theme }) => theme.spacing.lg};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.h4};
-  }
-`;
-
-const SubsectionTitle = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.h4};
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
-  color: ${({ theme }) => theme.colors.darkBlue};
-  margin-top: ${({ theme }) => theme.spacing.lg};
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.h5};
   }
 `;
 
@@ -276,9 +254,154 @@ const InvestmentOverviewSection: React.FC<InvestmentOverviewSectionProps> = ({ o
           </div>
 
           <SectionTitle>{t('investment:overview.exit_strategy_title')}</SectionTitle>
-          <InfoText>{t('investment:overview.exit_reit')}</InfoText>
-          <InfoText>{t('investment:overview.exit_sale')}</InfoText>
-          <InfoText>{t('investment:overview.exit_ipo')}</InfoText>
+          <InfoText dangerouslySetInnerHTML={{ __html: t('investment:overview.exit_reit') }} />
+          <InfoText dangerouslySetInnerHTML={{ __html: t('investment:overview.exit_sale') }} />
+          <InfoText dangerouslySetInnerHTML={{ __html: t('investment:overview.exit_ipo') }} />
+
+          <SectionTitle>{t('targetIndustries.title')}</SectionTitle>
+          <IntroText>{t('targetIndustries.intro')}</IntroText>
+          <CapitalStructureGrid>
+            <CapitalCard>
+              <h4>{t('targetIndustries.ev_title')}</h4>
+              <p>{t('targetIndustries.ev_description')}</p>
+              <p><strong>{t('targetIndustries.ev_tariff')}</strong></p>
+              <InfoText>{t('targetIndustries.ev_opportunity')}</InfoText>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('targetIndustries.solar_title')}</h4>
+              <p>{t('targetIndustries.solar_description')}</p>
+              <p><strong>{t('targetIndustries.solar_tariff')}</strong></p>
+              <InfoText>{t('targetIndustries.solar_opportunity')}</InfoText>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('targetIndustries.electronics_title')}</h4>
+              <p>{t('targetIndustries.electronics_description')}</p>
+              <p><strong>{t('targetIndustries.electronics_tariff')}</strong></p>
+              <InfoText>{t('targetIndustries.electronics_opportunity')}</InfoText>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('targetIndustries.modular_title')}</h4>
+              <p>{t('targetIndustries.modular_description')}</p>
+              <p><strong>{t('targetIndustries.modular_tariff')}</strong></p>
+              <InfoText>{t('targetIndustries.modular_opportunity')}</InfoText>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('targetIndustries.medical_title')}</h4>
+              <p>{t('targetIndustries.medical_description')}</p>
+              <p><strong>{t('targetIndustries.medical_tariff')}</strong></p>
+              <InfoText>{t('targetIndustries.medical_opportunity')}</InfoText>
+            </CapitalCard>
+          </CapitalStructureGrid>
+
+          <SectionTitle>{t('dualProduction.title')}</SectionTitle>
+          <IntroText>{t('dualProduction.intro')}</IntroText>
+          <StrategyTable>
+            <thead>
+              <tr>
+                <th>Step</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Step"><strong>{t('dualProduction.step1_title')}</strong></td>
+                <td data-label="Description">{t('dualProduction.step1_description')}</td>
+              </tr>
+              <tr>
+                <td data-label="Step"><strong>{t('dualProduction.step2_title')}</strong></td>
+                <td data-label="Description">{t('dualProduction.step2_description')}</td>
+              </tr>
+              <tr>
+                <td data-label="Step"><strong>{t('dualProduction.step3_title')}</strong></td>
+                <td data-label="Description">{t('dualProduction.step3_description')}</td>
+              </tr>
+              <tr>
+                <td data-label="Step"><strong>{t('dualProduction.step4_title')}</strong></td>
+                <td data-label="Description">{t('dualProduction.step4_description')}</td>
+              </tr>
+            </tbody>
+          </StrategyTable>
+          <CapitalStructureGrid>
+            <CapitalCard>
+              <h4>{t('dualProduction.benefit1_title')}</h4>
+              <InfoText>{t('dualProduction.benefit1_description')}</InfoText>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('dualProduction.benefit2_title')}</h4>
+              <InfoText>{t('dualProduction.benefit2_description')}</InfoText>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('dualProduction.benefit3_title')}</h4>
+              <InfoText>{t('dualProduction.benefit3_description')}</InfoText>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('dualProduction.benefit4_title')}</h4>
+              <InfoText>{t('dualProduction.benefit4_description')}</InfoText>
+            </CapitalCard>
+          </CapitalStructureGrid>
+
+          <SectionTitle>{t('marketContext.title')}</SectionTitle>
+          <CapitalStructureGrid>
+            <CapitalCard>
+              <h4>{t('marketContext.section301_title')}</h4>
+              <InfoText>{t('marketContext.section301_description')}</InfoText>
+              <InfoText><strong>{t('marketContext.section301_impact')}</strong></InfoText>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('marketContext.tradeData_title')}</h4>
+              <InfoText>{t('marketContext.tradeData_description')}</InfoText>
+              <InfoText><strong>{t('marketContext.tradeData_trend')}</strong></InfoText>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('marketContext.reshoring_title')}</h4>
+              <InfoText>{t('marketContext.reshoring_description')}</InfoText>
+              <InfoText><strong>{t('marketContext.reshoring_drivers')}</strong></InfoText>
+            </CapitalCard>
+            <CapitalCard>
+              <h4>{t('marketContext.timing_title')}</h4>
+              <InfoText>{t('marketContext.timing_description')}</InfoText>
+              <InfoText><strong>{t('marketContext.timing_urgency')}</strong></InfoText>
+            </CapitalCard>
+          </CapitalStructureGrid>
+
+          <SectionTitle>{t('eb5Program.title')}</SectionTitle>
+          <IntroText>{t('eb5Program.intro')}</IntroText>
+          <InfoText><strong>{t('eb5Program.investment_title')}:</strong> {t('eb5Program.investment_amount')}</InfoText>
+          <InfoText><strong>{t('eb5Program.jobs_title')}:</strong> {t('eb5Program.jobs_requirement')}</InfoText>
+          <SubsectionTitle>{t('eb5Program.benefits_title')}</SubsectionTitle>
+          <InfoText>• {t('eb5Program.benefit1')}</InfoText>
+          <InfoText>• {t('eb5Program.benefit2')}</InfoText>
+          <InfoText>• {t('eb5Program.benefit3')}</InfoText>
+          <InfoText>• {t('eb5Program.benefit4')}</InfoText>
+          <InfoText>• {t('eb5Program.benefit5')}</InfoText>
+          <SubsectionTitle>{t('eb5Program.process_title')}</SubsectionTitle>
+          <StrategyTable>
+            <thead>
+              <tr>
+                <th>Step</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Step"><strong>Step 1</strong></td>
+                <td data-label="Description">{t('eb5Program.process_step1')}</td>
+              </tr>
+              <tr>
+                <td data-label="Step"><strong>Step 2</strong></td>
+                <td data-label="Description">{t('eb5Program.process_step2')}</td>
+              </tr>
+              <tr>
+                <td data-label="Step"><strong>Step 3</strong></td>
+                <td data-label="Description">{t('eb5Program.process_step3')}</td>
+              </tr>
+              <tr>
+                <td data-label="Step"><strong>Step 4</strong></td>
+                <td data-label="Description">{t('eb5Program.process_step4')}</td>
+              </tr>
+            </tbody>
+          </StrategyTable>
+          <InfoText><strong>{t('eb5Program.dualBenefit_title')}:</strong> {t('eb5Program.dualBenefit_description')}</InfoText>
         </Container>
       </IntroSection>
 

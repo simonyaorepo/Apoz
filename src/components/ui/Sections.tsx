@@ -1,22 +1,32 @@
 import styled from "styled-components";
 
-export const WhiteSection = styled.section`
+export const WhiteSection = styled.section<{ $noBottomPadding?: boolean }>`
   background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.xl};
+  padding-bottom: ${({ $noBottomPadding }) => $noBottomPadding ? '0' : undefined};
   overflow-x: hidden;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
+    padding-bottom: ${({ $noBottomPadding }) => $noBottomPadding ? '0' : undefined};
   }
 `;
 
-export const GreySection = styled.section`
+export const GreySection = styled.section<{ $noTopPadding?: boolean; $reducedTopPadding?: boolean }>`
   background: ${({ theme }) => theme.colors.grey};
   padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.xl};
+  padding-top: ${({ $noTopPadding, $reducedTopPadding, theme }) => 
+    $noTopPadding ? '0' : 
+    $reducedTopPadding ? theme.spacing.xxl : 
+    undefined};
   position: relative;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
+    padding-top: ${({ $noTopPadding, $reducedTopPadding, theme }) => 
+      $noTopPadding ? '0' : 
+      $reducedTopPadding ? theme.spacing.xl : 
+      undefined};
   }
 `;
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
+import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { TealText } from "../../ui/TealComponents";
 import { Container } from "../../ui/Containers";
@@ -8,6 +9,14 @@ import { ContentGrid } from "../../ui/Grids";
 import { TextContent, IntroText, SectionTitle, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
+
+const IntroTextContent = styled(TextContent)`
+  margin-bottom: ${({ theme }) => theme.spacing.xxl};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing.xl};
+  }
+`;
 
 interface IndustryZoneSectionProps {
   onNavigate: (page: string) => void;
@@ -30,14 +39,16 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
       
       <WhiteSection>
         <Container>
+          <IntroTextContent>
+            <IntroText>
+              {t('industryZone.intro_paragraph1')}
+            </IntroText>
+            <IntroText>
+              {t('industryZone.intro_paragraph2')}
+            </IntroText>
+          </IntroTextContent>
           <ContentGrid>
             <TextContent>
-              <IntroText>
-                {t('industryZone.intro_paragraph1')}
-              </IntroText>
-              <IntroText>
-                {t('industryZone.intro_paragraph2')}
-              </IntroText>
               <SubsectionTitle>{t('industryZone.core_features_title')}</SubsectionTitle>
               <p>
                 {t('industryZone.core_features_description')}
@@ -78,7 +89,7 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
         </TealBox>
       </TealSection>
 
-      <GreySection>
+      <GreySection $reducedTopPadding>
         <Container>
           <TextContent>
             <SectionTitle>{t('industryZone.services_title')}</SectionTitle>

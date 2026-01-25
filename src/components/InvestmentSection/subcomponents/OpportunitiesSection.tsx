@@ -39,23 +39,23 @@ const OpportunitiesSection: React.FC = () => {
   
   const opportunities = [
     {
-      title: t('investment:opportunities.opportunity1_title'),
-      description: t('investment:opportunities.opportunity1_description'),
+      title: t('opportunities.opportunity1_title'),
+      description: t('opportunities.opportunity1_description'),
       image: "https://images.unsplash.com/photo-1565008576549-57569a49371d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800"
     },
     {
-      title: t('investment:opportunities.opportunity2_title'),
-      description: t('investment:opportunities.opportunity2_description'),
+      title: t('opportunities.opportunity2_title'),
+      description: t('opportunities.opportunity2_description'),
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800"
     },
     {
-      title: t('investment:opportunities.opportunity3_title'),
-      description: t('investment:opportunities.opportunity3_description'),
+      title: t('opportunities.opportunity3_title'),
+      description: t('opportunities.opportunity3_description'),
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800"
     },
     {
-      title: t('investment:opportunities.opportunity4_title'),
-      description: t('investment:opportunities.opportunity4_description'),
+      title: t('opportunities.opportunity4_title'),
+      description: t('opportunities.opportunity4_description'),
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800"
     }
   ];
@@ -63,7 +63,7 @@ const OpportunitiesSection: React.FC = () => {
   return (
     <WhiteSection style={{ paddingBottom: '6rem' }}>
       <Container>
-        <SectionTitle>{t('investment:opportunities.title')}</SectionTitle>
+        <SectionTitle>{t('opportunitiesSection.title')}</SectionTitle>
         <OpportunitiesGrid>
           {opportunities.map((opportunity, index) => (
             <Card key={index} variant="image-overlay" $image={opportunity.image}>

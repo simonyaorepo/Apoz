@@ -17,6 +17,14 @@ const TealText = styled.p`
   margin: 0;
 `;
 
+const IntroTextContent = styled(TextContent)`
+  margin-bottom: ${({ theme }) => theme.spacing.xxl};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing.xl};
+  }
+`;
+
 interface IndustryZoneManagementSectionProps {
   onNavigate: (page: string) => void;
 }
@@ -66,10 +74,12 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
       
       <WhiteSection>
         <Container>
+          <IntroTextContent>
+            <p>{t('services:industryZoneManagement.intro1')}</p>
+            <p>{t('services:industryZoneManagement.intro2')}</p>
+          </IntroTextContent>
           <ContentGrid>
             <TextContent>
-              <p>{t('services:industryZoneManagement.intro1')}</p>
-              <p>{t('services:industryZoneManagement.intro2')}</p>
               <SubsectionTitle>{t('services:industryZoneManagement.core_responsibilities_title')}</SubsectionTitle>
               <p>
                 {t('services:industryZoneManagement.core_responsibilities_text')}
@@ -131,7 +141,7 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
         </TealBox>
       </TealSection>
       
-      <GreySection>
+      <GreySection $reducedTopPadding>
         <Container>
           <TextContent>
             <SubsectionTitle>{t('sectionHeaders.keyManagementServices')}</SubsectionTitle>

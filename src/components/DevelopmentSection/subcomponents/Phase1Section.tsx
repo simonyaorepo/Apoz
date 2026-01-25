@@ -65,10 +65,10 @@ const Phase1Section: React.FC = () => {
           </PhaseImageWrapper>
           <PhaseTextContent $reverse>
             <PhaseTitle>{t('development:phaseTitles.keyObjectivesPhase1')}</PhaseTitle>
-            <PhaseParagraph>{t('development:phase1.objective1')}</PhaseParagraph>
-            <PhaseParagraph>{t('development:phase1.objective2')}</PhaseParagraph>
-            <PhaseParagraph>{t('development:phase1.objective3')}</PhaseParagraph>
-            <PhaseParagraph>{t('development:phase1.objective4')}</PhaseParagraph>
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('development:phase1.objective1') }} />
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('development:phase1.objective2') }} />
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('development:phase1.objective3') }} />
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('development:phase1.objective4') }} />
           </PhaseTextContent>
         </PhaseContentBlock>
 

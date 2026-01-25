@@ -107,10 +107,7 @@ const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate
               />
             </ImageBox>
             <TextContent>
-              <p><strong>{t('missionPage.pillar1_title')}:</strong> {t('missionPage.pillar1_description')}</p>
-              <p><strong>{t('missionPage.pillar2_title')}:</strong> {t('missionPage.pillar2_description')}</p>
-              <p><strong>{t('missionPage.pillar3_title')}:</strong> {t('missionPage.pillar3_description')}</p>
-              <p><strong>{t('missionPage.pillar4_title')}:</strong> {t('missionPage.pillar4_description')}</p>
+              <p>{t('missionPage.pillars_description')}</p>
             </TextContent>
           </GreyContentGrid>
         </Container>

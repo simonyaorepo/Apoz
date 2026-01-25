@@ -83,32 +83,17 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
       
       <WhiteSection>
         <Container>
+          <TextContent style={{ marginBottom: '3rem' }}>
+            <p>{t('overview.intro')}</p>
+          </TextContent>
           <ContentGrid>
             <TextContent>
-              <p>{t('overview.intro')}</p>
               <SubsectionTitle>{tCommon('keyOfferings', 'Key Offerings')}</SubsectionTitle>
-              <ServicesList>
-                <ServiceCard>
-                  <h4>{t('overview.coreService1_title')}</h4>
-                  <p>{t('overview.coreService1_description')}</p>
-                </ServiceCard>
-                <ServiceCard>
-                  <h4>{t('overview.coreService2_title')}</h4>
-                  <p>{t('overview.coreService2_description')}</p>
-                </ServiceCard>
-                <ServiceCard>
-                  <h4>{t('overview.coreService3_title')}</h4>
-                  <p>{t('overview.coreService3_description')}</p>
-                </ServiceCard>
-                <ServiceCard>
-                  <h4>{t('overview.coreService4_title')}</h4>
-                  <p>{t('overview.coreService4_description')}</p>
-                </ServiceCard>
-                <ServiceCard>
-                  <h4>{t('overview.coreService5_title')}</h4>
-                  <p>{t('overview.coreService5_description')}</p>
-                </ServiceCard>
-              </ServicesList>
+              <p><strong>{t('overview.coreService1_title')}:</strong> {t('overview.coreService1_description')}</p>
+              <p><strong>{t('overview.coreService2_title')}:</strong> {t('overview.coreService2_description')}</p>
+              <p><strong>{t('overview.coreService3_title')}:</strong> {t('overview.coreService3_description')}</p>
+              <p><strong>{t('overview.coreService4_title')}:</strong> {t('overview.coreService4_description')}</p>
+              <p><strong>{t('overview.coreService5_title')}:</strong> {t('overview.coreService5_description')}</p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +157,7 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
         </TealBox>
       </TealSection>
       
-      <GreySection>
+      <GreySection $reducedTopPadding>
         <Container>
           <TextContent>
             <SubsectionTitle>{t('overview.tenantServices_heading')}</SubsectionTitle>
@@ -204,6 +189,111 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
               <AdvantageCard>
                 <h4>{t('overview.advantage4_feature')}</h4>
                 <p>{t('overview.advantage4_edge')}</p>
+              </AdvantageCard>
+            </AdvantagesGrid>
+          </TextContent>
+        </Container>
+      </GreySection>
+
+      <WhiteSection>
+        <Container>
+          <TextContent>
+            <SubsectionTitle>{t('softLandingServices.title')}</SubsectionTitle>
+            <p>{t('softLandingServices.intro')}</p>
+            
+            <ServicesList style={{ marginTop: '2rem' }}>
+              <ServiceCard>
+                <h4>{t('softLandingServices.baseline_title')}</h4>
+                <p>{t('softLandingServices.baseline_subtitle')}</p>
+                <ul style={{ marginTop: '1rem', paddingLeft: '1.5rem' }}>
+                  <li>{t('softLandingServices.baseline_item1')}</li>
+                  <li>{t('softLandingServices.baseline_item2')}</li>
+                  <li>{t('softLandingServices.baseline_item3')}</li>
+                  <li>{t('softLandingServices.baseline_item4')}</li>
+                  <li>{t('softLandingServices.baseline_item5')}</li>
+                  <li>{t('softLandingServices.baseline_item6')}</li>
+                </ul>
+                <p style={{ marginTop: '1rem', fontSize: '0.875rem', fontStyle: 'italic' }}>{t('softLandingServices.baseline_pricing')}</p>
+              </ServiceCard>
+
+              <ServiceCard>
+                <h4>{t('softLandingServices.enhanced_title')}</h4>
+                <p>{t('softLandingServices.enhanced_subtitle')}</p>
+                <ul style={{ marginTop: '1rem', paddingLeft: '1.5rem' }}>
+                  <li>{t('softLandingServices.enhanced_item1')}</li>
+                  <li>{t('softLandingServices.enhanced_item2')}</li>
+                  <li>{t('softLandingServices.enhanced_item3')}</li>
+                  <li>{t('softLandingServices.enhanced_item4')}</li>
+                  <li>{t('softLandingServices.enhanced_item5')}</li>
+                  <li>{t('softLandingServices.enhanced_item6')}</li>
+                  <li>{t('softLandingServices.enhanced_item7')}</li>
+                </ul>
+                <p style={{ marginTop: '1rem', fontSize: '0.875rem', fontStyle: 'italic' }}>{t('softLandingServices.enhanced_pricing')}</p>
+              </ServiceCard>
+
+              <ServiceCard style={{ borderLeft: '3px solid #D4AF37' }}>
+                <h4>{t('softLandingServices.premier_title')} (PREMIUM)</h4>
+                <p>{t('softLandingServices.premier_subtitle')}</p>
+                <ul style={{ marginTop: '1rem', paddingLeft: '1.5rem' }}>
+                  <li>{t('softLandingServices.premier_item1')}</li>
+                  <li>{t('softLandingServices.premier_item2')}</li>
+                  <li>{t('softLandingServices.premier_item3')}</li>
+                  <li>{t('softLandingServices.premier_item4')}</li>
+                  <li>{t('softLandingServices.premier_item5')}</li>
+                  <li>{t('softLandingServices.premier_item6')}</li>
+                  <li>{t('softLandingServices.premier_item7')}</li>
+                  <li>{t('softLandingServices.premier_item8')}</li>
+                  <li>{t('softLandingServices.premier_item9')}</li>
+                </ul>
+                <p style={{ marginTop: '1rem', fontSize: '0.875rem', fontStyle: 'italic' }}>{t('softLandingServices.premier_pricing')}</p>
+              </ServiceCard>
+            </ServicesList>
+          </TextContent>
+        </Container>
+      </WhiteSection>
+
+      <GreySection>
+        <Container>
+          <TextContent>
+            <SubsectionTitle>{t('infrastructureServices.title')}</SubsectionTitle>
+            <p>{t('infrastructureServices.intro')}</p>
+            
+            <AdvantagesGrid style={{ marginTop: '2rem' }}>
+              <AdvantageCard>
+                <h4>{t('infrastructureServices.power_title')}</h4>
+                <ul style={{ marginTop: '1rem', paddingLeft: '1.5rem', fontSize: '0.875rem' }}>
+                  <li>{t('infrastructureServices.power_capacity')}</li>
+                  <li>{t('infrastructureServices.power_reliability')}</li>
+                  <li>{t('infrastructureServices.power_features')}</li>
+                </ul>
+              </AdvantageCard>
+
+              <AdvantageCard>
+                <h4>{t('infrastructureServices.water_title')}</h4>
+                <ul style={{ marginTop: '1rem', paddingLeft: '1.5rem', fontSize: '0.875rem' }}>
+                  <li>{t('infrastructureServices.water_supply')}</li>
+                  <li>{t('infrastructureServices.water_wastewater')}</li>
+                  <li>{t('infrastructureServices.water_capacity')}</li>
+                </ul>
+              </AdvantageCard>
+
+              <AdvantageCard>
+                <h4>{t('infrastructureServices.telecom_title')}</h4>
+                <ul style={{ marginTop: '1rem', paddingLeft: '1.5rem', fontSize: '0.875rem' }}>
+                  <li>{t('infrastructureServices.telecom_fiber')}</li>
+                  <li>{t('infrastructureServices.telecom_providers')}</li>
+                  <li>{t('infrastructureServices.telecom_capacity')}</li>
+                </ul>
+              </AdvantageCard>
+
+              <AdvantageCard>
+                <h4>{t('infrastructureServices.transportation_title')}</h4>
+                <ul style={{ marginTop: '1rem', paddingLeft: '1.5rem', fontSize: '0.875rem' }}>
+                  <li>{t('infrastructureServices.transportation_highway')}</li>
+                  <li>{t('infrastructureServices.transportation_port')}</li>
+                  <li>{t('infrastructureServices.transportation_rail')}</li>
+                  <li>{t('infrastructureServices.transportation_air')}</li>
+                </ul>
               </AdvantageCard>
             </AdvantagesGrid>
           </TextContent>

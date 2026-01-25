@@ -107,24 +107,14 @@
     "title": "Our Vision",
     "intro": "Our vision is to position Houston APOZ as a world-class industrial and community hub that fuels America's re-industrialization while creating global win-win partnerships. By offering international companies a secure, policy-aligned, and innovation-driven environment, we empower them to achieve strong returns on investment, expand their market presence, and contribute directly to the U.S. industrial renaissance.",
     "highlight": "We envision APOZ as more than an industrial zone—it is a living model of sustainable growth. By combining advanced manufacturing, trade facilitation, and modern township infrastructure, APOZ aims to become a landmark destination where global enterprises, local communities, and the United States economy grow together.",
-    "objective1": "Position Houston APOZ as the premier destination for international manufacturers seeking U.S. market access",
-    "objective2": "Create a sustainable community that integrates industrial prosperity with residential quality of life",
-    "objective3": "Establish a model for how strategic trade zones can drive regional economic transformation",
-    "objective4": "Build lasting partnerships between Asia-Pacific enterprises and American communities"
+    "objectives_description": "Our vision encompasses four strategic objectives that drive everything we do. We aim to position Houston APOZ as the premier destination for international manufacturers seeking U.S. market access, while creating a sustainable community that integrates industrial prosperity with residential quality of life. We are establishing a model for how strategic trade zones can drive regional economic transformation, and building lasting partnerships between Asia-Pacific enterprises and American communities that create mutual value and long-term growth."
   },
   "missionPage": {
     "title": "Our Mission",
     "intro": "To become the leading sustainable renewable industry park in North America, serving as the gateway for Asia-Pacific enterprises to enter the U.S. market, integrate into global supply chains, and access international capital markets while promoting green growth, economic opportunity, and cross-border innovation.",
     "highlight": "We envision APOZ as a model industrial ecosystem that not only harnesses renewable energy to power economic development, but also maximizes FTZ and QOZ incentives to enhance capital efficiency, fostering ESG-aligned investments that create long-term social and economic impact and serves as a platform for IPO readiness, supply chain finance, and global expansion.",
     "pillars_heading": "Mission Pillars",
-    "pillar1_title": "Sustainable Development",
-    "pillar1_description": "Harness renewable energy and green technologies to power economic growth while protecting environmental resources",
-    "pillar2_title": "Market Gateway",
-    "pillar2_description": "Serve as the premier entry point for Asia-Pacific enterprises establishing North American operations",
-    "pillar3_title": "Capital Efficiency",
-    "pillar3_description": "Maximize FTZ and QOZ incentives to create optimal investment structures for international partners",
-    "pillar4_title": "Global Integration",
-    "pillar4_description": "Facilitate supply chain finance, IPO readiness, and cross-border innovation for participating enterprises"
+    "pillars_description": "Our mission rests on four interconnected pillars. Sustainable Development drives us to harness renewable energy and green technologies to power economic growth while protecting environmental resources. As a Market Gateway, we serve as the premier entry point for Asia-Pacific enterprises establishing North American operations. Through Capital Efficiency, we maximize FTZ and QOZ incentives to create optimal investment structures for international partners. Finally, our commitment to Global Integration facilitates supply chain finance, IPO readiness, and cross-border innovation for all participating enterprises."
   },
   "management": {
     "title": "Management",
@@ -154,5 +144,26 @@
   },
   "newsPreview": {
     "title": "News"
+  },
+  "whyNow": {
+    "title": "Why Now?",
+    "subtitle": "The Perfect Storm for U.S. Manufacturing Investment",
+    "intro": "The convergence of trade policy shifts, supply chain disruptions, and government incentives has created a once-in-a-generation opportunity for strategic manufacturing investment.",
+    "tariff_title": "Section 301 Tariffs Reshape Trade",
+    "tariff_stat": "25% tariffs on $370B in Chinese imports",
+    "tariff_description": "U.S.-China trade declined 20% as companies seek tariff-free supply chains",
+    "tariff_impact": "Manufacturers face 15-30% cost increases without U.S. production alternatives",
+    "reshoring_title": "Manufacturing Reshoring Accelerates",
+    "reshoring_stat": "364,000+ jobs returning to U.S. in 2023",
+    "reshoring_description": "Record-high reshoring driven by tariffs, supply chain risk, and government incentives",
+    "reshoring_trend": "Mexico and U.S. manufacturing hubs capturing market share from China direct imports",
+    "policy_title": "Government Incentives Multiply",
+    "policy_description": "IRA, CHIPS Act, and Inflation Reduction Act deploying $400B+ in manufacturing incentives",
+    "policy_benefit": "Tax credits, grants, and accelerated depreciation for clean energy, semiconductors, and advanced manufacturing",
+    "policy_timing": "Time-limited programs require 2025-2027 project commitments to qualify",
+    "window_title": "Strategic Window Closing",
+    "window_description": "First-mover advantage in securing FTZ-activated facilities and QOZ tax benefits before capacity fills",
+    "window_urgency": "Prime industrial locations with dual FTZ+QOZ status are limited and filling rapidly",
+    "window_action": "Companies must act now to secure facilities, qualify for incentives, and establish market position"
   }
 }

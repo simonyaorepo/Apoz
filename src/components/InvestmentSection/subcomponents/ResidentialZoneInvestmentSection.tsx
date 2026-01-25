@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import styled from "styled-components";
 import GoldDivider from "../../ui/GoldDivider";
-import { ContentWrapper } from "../../ui/Containers";
+import { Container } from "../../ui/Containers";
 import { IntroText, SectionTitle } from "../../ui/Typography";
 import { StyledTable } from "../../ui/Table";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
@@ -94,7 +94,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
       />
       
       <WhiteSection>
-        <ContentWrapper>
+        <Container>
           <IntroText>
             {t('residentialZone.intro')}
           </IntroText>
@@ -130,7 +130,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
               </tr>
             </tbody>
           </StyledTable>
-        </ContentWrapper>
+        </Container>
       </WhiteSection>
 
       <TealSection>
@@ -171,8 +171,8 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
         </TealBox>
       </TealSection>
 
-      <GreySection>
-        <ContentWrapper>
+      <GreySection $reducedTopPadding>
+        <Container>
           <SectionTitle>{t('residentialZone.qof_how_title')}</SectionTitle>
           <IntroText>
             {t('residentialZone.qof_intro')}
@@ -232,13 +232,13 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
               </div>
             </RequirementsList>
           </HighlightBox>
-        </ContentWrapper>
+        </Container>
       </GreySection>
 
       <GoldDivider />
 
       <GreySection>
-        <ContentWrapper>
+        <Container>
           <SectionTitle>{t('residentialZone.lihtc_title')}</SectionTitle>
           <IntroText>
             {t('residentialZone.lihtc_intro')}
@@ -262,13 +262,13 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
               <RequirementText>{t('residentialZone.lihtc_req4_text')}</RequirementText>
             </div>
           </RequirementsList>
-        </ContentWrapper>
+        </Container>
       </GreySection>
 
       <GoldDivider />
 
       <GreySection>
-        <ContentWrapper>
+        <Container>
           <SectionTitle>{t('residentialZone.structure_title')}</SectionTitle>
           
           <ExampleBox>
@@ -298,7 +298,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
               <RequirementText>{t('residentialZone.exit_strategy4')}</RequirementText>
             </div>
           </RequirementsList>
-        </ContentWrapper>
+        </Container>
       </GreySection>
 
       <GoldDivider />

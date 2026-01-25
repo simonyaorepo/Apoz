@@ -176,10 +176,7 @@
     "intro1": "APOZ International Hub is strategically positioned along the Houston Gulf Coast Corridor in Winnie, Texas, with designation within both Qualified Opportunity Zone (QOZ) and Foreign Trade Zone (FTZ-171).",
     "intro2": "The purpose is to create a cross-border trade and innovation hub connecting Asia-Pacific manufacturers, U.S. markets, and global logistics networks.",
     "targetPartners_title": "Target Partners",
-    "targetPartner1": "Asia-Pacific manufacturing firms seeking U.S. market entry",
-    "targetPartner2": "Logistics and e-commerce fulfillment operators",
-    "targetPartner3": "Energy and green technology enterprises",
-    "targetPartner4": "Investment funds leveraging QOZ & FTZ incentives",
+    "targetPartners_description": "The International Hub serves as a strategic gateway for diverse international partners. We welcome Asia-Pacific manufacturing firms seeking to establish U.S. market presence, logistics and e-commerce fulfillment operators expanding their North American networks, energy and green technology enterprises investing in sustainable infrastructure, and investment funds seeking to leverage the unique combination of QOZ tax advantages and FTZ duty benefits.",
     "coreFunction1_function": "Global Trade Gateway",
     "coreFunction1_description": "APOZ serves as an international logistics platform for Asia-Pacific companies importing/exporting goods.",
     "coreFunction1_impact": "Expands U.S. market access for Asia-based manufacturers.",
@@ -193,10 +190,10 @@
     "coreFunction4_description": "Offers tax-advantaged entry for global investors through Qualified Opportunity Funds (QOFs).",
     "coreFunction4_impact": "Maximizes investor returns and increases APOZ competitiveness.",
     "advantages_heading": "Strategic Advantages",
-    "advantage1": "FTZ-171 Status: Duty-free imports/exports for global supply chains.",
-    "advantage2": "QOZ Tax Benefits: Attracts global capital through capital gains tax deferral and tax-free growth.",
-    "advantage3": "Proximity to Houston Port: Seamless integration with one of the busiest shipping hubs in the U.S.",
-    "advantage4": "Asia-Pacific Connectivity: Focused on serving Chinese, ASEAN, Korean, Japanese, and Indian manufacturers seeking 'friend-shoring' options.",
+    "advantage1": "<strong>FTZ-171 Status:</strong> Duty-free imports/exports for global supply chains.",
+    "advantage2": "<strong>QOZ Tax Benefits:</strong> Attracts global capital through capital gains tax deferral and tax-free growth.",
+    "advantage3": "<strong>Proximity to Houston Port:</strong> Seamless integration with one of the busiest shipping hubs in the U.S.",
+    "advantage4": "<strong>Asia-Pacific Connectivity:</strong> Focused on serving Chinese, ASEAN, Korean, Japanese, and Indian manufacturers seeking 'friend-shoring' options.",
     "industries_heading": "Key Industries Targeted",
     "industry1_name": "Renewable Energy & Hydrogen Economy",
     "industry1_description": "Solar panels, EV batteries, hydrogen fuel cells, energy storage.",
@@ -379,6 +376,14 @@
       "title": "International Hub",
       "description": "Global business gateway integrating FTZ operations with international partnerships. Trade facilitation, business services, cultural exchange, and cross-border collaboration platform."
     },
+    "sustainability": {
+      "title": "Sustainability & ESG",
+      "description": "LEED Silver certification, net-zero vision 2035, 2-10MW solar, LID stormwater, 30+ acres green space. ESG reporting aligned with GRESB/SASB standards to attract environmentally conscious investors."
+    },
+    "acreageBreakdown": {
+      "title": "Site Acreage Breakdown",
+      "description": "Industrial (347), Logistics (22), Support (75), Residential (29), Commercial (10), Exhibition (10). Master planned development with flexibility for market-driven optimization."
+    },
     "ftzZone": {
       "title": "FTZ Zone",
       "description": "Foreign Trade Zone with customs advantages, duty deferral, streamlined logistics, and regulatory flexibility. Supporting international manufacturing, distribution, and value-added operations."
@@ -399,5 +404,55 @@
       "title": "Affordable Living Zone",
       "description": "Sustainable residential development providing workforce housing and community amenities. Mixed-income housing, green spaces, educational facilities, and social infrastructure."
     }
+  },
+  "sustainability": {
+    "title": "Sustainability & ESG",
+    "subtitle": "Environmental Leadership & Long-Term Resilience",
+    "intro": "APOZ integrates sustainable development principles throughout master planning, targeting LEED Silver certification and net-zero operations by 2035 to attract environmentally conscious tenants and investors.",
+    "leed_title": "LEED Silver Certification Target",
+    "leed_description": "All industrial facilities designed to achieve LEED Silver certification through energy-efficient building systems, sustainable site development, and water conservation measures",
+    "leed_features": "High-performance building envelopes, LED lighting, smart HVAC systems, and sustainable materials selection",
+    "stormwater_title": "Low Impact Development (LID)",
+    "stormwater_description": "Bioswales, permeable pavements, retention ponds, and native landscaping to manage stormwater runoff and reduce environmental impact",
+    "stormwater_benefit": "Reduces flooding risk, improves water quality, and creates natural habitat corridors",
+    "renewable_title": "Renewable Energy Infrastructure",
+    "renewable_description": "Solar-ready rooftops on all industrial buildings with capacity for on-site solar arrays and battery storage systems",
+    "renewable_target": "Initial 2MW solar installation expandable to 10MW+ as development phases complete",
+    "renewable_benefit": "Reduces tenant operating costs, provides grid resilience, and supports corporate sustainability commitments",
+    "netZero_title": "Net-Zero Vision 2035",
+    "netZero_description": "Long-term commitment to achieve net-zero carbon emissions through renewable energy generation, energy-efficient operations, and advanced waste heat recovery",
+    "netZero_pathway": "Phased implementation of solar + battery storage, EV charging infrastructure, and operational efficiency programs",
+    "waste_title": "Waste Reduction & Circular Economy",
+    "waste_description": "Construction waste diversion programs, tenant recycling support, and circular economy initiatives to minimize landfill waste",
+    "waste_target": "75% construction waste diversion rate, tenant waste reduction programs, and industrial symbiosis opportunities",
+    "green_title": "Green Space & Ecology",
+    "green_description": "30+ acres of parks, walking trails, and natural buffers integrating ecological preservation with community amenities",
+    "green_features": "Native plantings, wildlife corridors, outdoor gathering spaces, and employee wellness areas",
+    "esg_title": "ESG Reporting & Transparency",
+    "esg_description": "Annual sustainability reporting tracking energy, water, waste, and carbon metrics aligned with GRESB and SASB standards",
+    "esg_benefit": "Attracts ESG-focused investors, qualifies for green financing, and supports tenant sustainability goals"
+  },
+  "acreageBreakdown": {
+    "title": "Site Acreage Breakdown",
+    "subtitle": "Master Planned Development",
+    "industrial_title": "Industrial & Manufacturing Zone",
+    "industrial_acres": "347 acres",
+    "industrial_description": "Core manufacturing facilities, warehousing, and assembly operations with FTZ-activated capabilities",
+    "logistics_title": "Logistics & Distribution Zone",
+    "logistics_acres": "22 acres",
+    "logistics_description": "Dedicated logistics hub for container storage, cross-docking, and distribution operations",
+    "support_title": "Support Services & Infrastructure",
+    "support_acres": "75 acres",
+    "support_description": "Roads, utilities, stormwater management, power substations, and common infrastructure",
+    "residential_title": "Residential Zone",
+    "residential_acres": "29 acres",
+    "residential_description": "Workforce housing development with 2,000+ affordable housing units",
+    "commercial_title": "Commercial & Retail Zone",
+    "commercial_acres": "10 acres",
+    "commercial_description": "Retail, dining, services, and amenities serving workforce and local community",
+    "exhibition_title": "Exhibition & Innovation Zone",
+    "exhibition_acres": "10 acres",
+    "exhibition_description": "Product showrooms, innovation center, and business development facilities",
+    "flexibility_note": "Acreage allocations subject to final engineering and market demand; zones may be adjusted during phased development to optimize project performance"
   }
 }

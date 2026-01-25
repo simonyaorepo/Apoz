@@ -18,6 +18,14 @@ const TealText = styled.p`
   margin: 0;
 `;
 
+const IntroTextContent = styled(TextContent)`
+  margin-bottom: ${({ theme }) => theme.spacing.xxl};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing.xl};
+  }
+`;
+
 interface CommunityManagementSectionProps {
   onNavigate: (page: string) => void;
 }
@@ -86,10 +94,12 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
       
       <WhiteSection>
         <Container>
+          <IntroTextContent>
+            <p>{t('services:communityManagement.intro1')}</p>
+            <p>{t('services:communityManagement.intro2')}</p>
+          </IntroTextContent>
           <ContentGrid>
             <TextContent>
-              <p>{t('services:communityManagement.intro1')}</p>
-              <p>{t('services:communityManagement.intro2')}</p>
               <SubsectionTitle>{t('services:communityManagement.core_goals_title')}</SubsectionTitle>
               <p>
                 {t('services:communityManagement.core_goals_text')}
@@ -151,7 +161,7 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
         </TealBox>
       </TealSection>
       
-      <GreySection>
+      <GreySection $reducedTopPadding>
         <Container>
           <TextContent>
             <SubsectionTitle>{t('sectionHeaders.keyCommunityServices')}</SubsectionTitle>

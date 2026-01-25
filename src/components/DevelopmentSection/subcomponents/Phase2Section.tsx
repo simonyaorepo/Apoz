@@ -44,10 +44,10 @@ const Phase2Section: React.FC = () => {
           </PhaseImageWrapper>
           <PhaseTextContent>
             <PhaseTitle>{t('phase2.developmentObjectives')}</PhaseTitle>
-            <PhaseParagraph>{t('phase2.objective1')}</PhaseParagraph>
-            <PhaseParagraph>{t('phase2.objective2')}</PhaseParagraph>
-            <PhaseParagraph>{t('phase2.objective3')}</PhaseParagraph>
-            <PhaseParagraph>{t('phase2.objective4')}</PhaseParagraph>
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('phase2.objective1') }} />
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('phase2.objective2') }} />
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('phase2.objective3') }} />
+            <PhaseParagraph dangerouslySetInnerHTML={{ __html: t('phase2.objective4') }} />
           </PhaseTextContent>
         </PhaseContentBlock>
 

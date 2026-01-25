@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
+import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { TealText } from "../../ui/TealComponents";
 import { Container } from "../../ui/Containers";
@@ -9,6 +10,14 @@ import { TextContent, IntroText, SectionTitle, SubsectionTitle } from "../../ui/
 import { IllustrationBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
 import { BulletList } from "../../ui/Lists";
+
+const IntroTextContent = styled(TextContent)`
+  margin-bottom: ${({ theme }) => theme.spacing.xxl};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing.xl};
+  }
+`;
 
 interface AffordableLivingZoneSectionProps {
   onNavigate: (page: string) => void;
@@ -31,11 +40,13 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
       
       <WhiteSection>
         <Container>
+          <IntroTextContent>
+            <IntroText>
+              {t('affordableLiving.intro_paragraph')}
+            </IntroText>
+          </IntroTextContent>
           <ContentGrid>
             <TextContent>
-              <IntroText>
-                {t('affordableLiving.intro_paragraph')}
-              </IntroText>
               <SubsectionTitle>{t('affordableLiving.objectives_title', 'Development Objectives')}</SubsectionTitle>
               <p>
                 {t('affordableLiving.objectives_description')}
@@ -84,7 +95,7 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
         </TealBox>
       </TealSection>
 
-      <GreySection>
+      <GreySection $reducedTopPadding>
         <Container>
           <TextContent>
             <SectionTitle>{t('affordableLiving.services_title')}</SectionTitle>

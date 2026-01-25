@@ -99,10 +99,7 @@ const VisionSection: React.FC<VisionSectionProps> = ({ onNavigate: _onNavigate }
               />
             </ImageBox>
             <TextContent>
-              <p>{t('visionPage.objective1')}</p>
-              <p>{t('visionPage.objective2')}</p>
-              <p>{t('visionPage.objective3')}</p>
-              <p>{t('visionPage.objective4')}</p>
+              <p>{t('visionPage.objectives_description')}</p>
             </TextContent>
           </GreyContentGrid>
         </Container>

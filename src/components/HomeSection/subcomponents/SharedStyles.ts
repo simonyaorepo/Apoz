@@ -12,7 +12,7 @@ export const WhiteSection = styled.section`
 
 export const GreySection = styled.section`
   background: ${({ theme }) => theme.colors.grey};
-  padding: ${({ theme }) => theme.spacing.xxxl} ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => `${theme.spacing.xxl} ${theme.spacing.xl}`};
   position: relative;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -32,7 +32,7 @@ export const TealSection = styled.section`
 `;
 
 export const Container = styled.div`
-  max-width: ${({ theme }) => theme.maxWidth.container};
+  max-width: ${({ theme }) => theme.maxWidth.content};
   margin: 0 auto;
   padding: 0 ${({ theme }) => theme.spacing.md};
   

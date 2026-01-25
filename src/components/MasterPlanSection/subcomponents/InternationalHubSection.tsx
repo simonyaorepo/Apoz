@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
+import GoldDivider from "../../ui/GoldDivider";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { TealText } from "../../ui/TealComponents";
@@ -9,6 +10,14 @@ import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
 import { TextContent, SectionTitle, SubsectionTitle } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
+
+const IntroTextContent = styled(TextContent)`
+  margin-bottom: ${({ theme }) => theme.spacing.xxl};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing.xl};
+  }
+`;
 
 const IndustryGrid = styled.div`
   display: grid;
@@ -59,15 +68,16 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
       
       <WhiteSection>
         <Container>
+          <IntroTextContent>
+            <p>{t('internationalHub.intro1')}</p>
+            <p>{t('internationalHub.intro2')}</p>
+          </IntroTextContent>
           <ContentGrid>
             <TextContent>
-              <p>{t('internationalHub.intro1')}</p>
-              <p>{t('internationalHub.intro2')}</p>
               <SubsectionTitle>{t('internationalHub.targetPartners_title', 'Target Partners')}</SubsectionTitle>
-              <p>{t('internationalHub.targetPartner1')}</p>
-              <p>{t('internationalHub.targetPartner2')}</p>
-              <p>{t('internationalHub.targetPartner3')}</p>
-              <p>{t('internationalHub.targetPartner4')}</p>
+              <p>
+                {t('internationalHub.targetPartners_description')}
+              </p>
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +127,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
         </TealBox>
       </TealSection>
       
-      <GreySection>
+      <GreySection $reducedTopPadding>
         <Container>
           <TextContent>
             <SectionTitle>{t('internationalHub.core_functions_title')}</SectionTitle>
@@ -155,6 +165,8 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
           </TextContent>
         </Container>
       </GreySection>
+      
+      <GoldDivider />
       
       <GreySection>
         <Container>
@@ -198,6 +210,106 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
                 <p>{t('internationalHub.industry4_description')}</p>
               </IndustryCard>
             </IndustryGrid>
+          </TextContent>
+        </Container>
+      </WhiteSection>
+
+      <GoldDivider />
+
+      <GreySection>
+        <Container>
+          <TextContent>
+            <SubsectionTitle>{t('sustainability.title')}</SubsectionTitle>
+            <p>{t('sustainability.intro')}</p>
+            <p>{t('sustainability.leed_description')}</p>
+            
+            <IndustryGrid>
+              <IndustryCard>
+                <h4>{t('sustainability.leed_title')}</h4>
+                <p>{t('sustainability.leed_features')}</p>
+              </IndustryCard>
+              <IndustryCard>
+                <h4>{t('sustainability.stormwater_title')}</h4>
+                <p>{t('sustainability.stormwater_description')}</p>
+                <p><strong>{t('sustainability.stormwater_benefit')}</strong></p>
+              </IndustryCard>
+              <IndustryCard>
+                <h4>{t('sustainability.renewable_title')}</h4>
+                <p>{t('sustainability.renewable_description')}</p>
+                <p>{t('sustainability.renewable_target')}</p>
+                <p><strong>{t('sustainability.renewable_benefit')}</strong></p>
+              </IndustryCard>
+              <IndustryCard>
+                <h4>{t('sustainability.netZero_title')}</h4>
+                <p>{t('sustainability.netZero_description')}</p>
+                <p><strong>{t('sustainability.netZero_pathway')}</strong></p>
+              </IndustryCard>
+              <IndustryCard>
+                <h4>{t('sustainability.waste_title')}</h4>
+                <p>{t('sustainability.waste_description')}</p>
+                <p><strong>{t('sustainability.waste_target')}</strong></p>
+              </IndustryCard>
+              <IndustryCard>
+                <h4>{t('sustainability.green_title')}</h4>
+                <p>{t('sustainability.green_description')}</p>
+                <p><strong>{t('sustainability.green_features')}</strong></p>
+              </IndustryCard>
+              <IndustryCard>
+                <h4>{t('sustainability.esg_title')}</h4>
+                <p>{t('sustainability.esg_description')}</p>
+                <p><strong>{t('sustainability.esg_benefit')}</strong></p>
+              </IndustryCard>
+            </IndustryGrid>
+          </TextContent>
+        </Container>
+      </GreySection>
+
+      <WhiteSection>
+        <Container>
+          <TextContent>
+            <SubsectionTitle>{t('acreageBreakdown.title')}</SubsectionTitle>
+            <StyledTable>
+              <thead>
+                <tr>
+                  <th>Zone</th>
+                  <th>Acres</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Zone">{t('acreageBreakdown.industrial_title')}</td>
+                  <td data-label="Acres"><strong>{t('acreageBreakdown.industrial_acres')}</strong></td>
+                  <td data-label="Description">{t('acreageBreakdown.industrial_description')}</td>
+                </tr>
+                <tr>
+                  <td data-label="Zone">{t('acreageBreakdown.logistics_title')}</td>
+                  <td data-label="Acres"><strong>{t('acreageBreakdown.logistics_acres')}</strong></td>
+                  <td data-label="Description">{t('acreageBreakdown.logistics_description')}</td>
+                </tr>
+                <tr>
+                  <td data-label="Zone">{t('acreageBreakdown.support_title')}</td>
+                  <td data-label="Acres"><strong>{t('acreageBreakdown.support_acres')}</strong></td>
+                  <td data-label="Description">{t('acreageBreakdown.support_description')}</td>
+                </tr>
+                <tr>
+                  <td data-label="Zone">{t('acreageBreakdown.residential_title')}</td>
+                  <td data-label="Acres"><strong>{t('acreageBreakdown.residential_acres')}</strong></td>
+                  <td data-label="Description">{t('acreageBreakdown.residential_description')}</td>
+                </tr>
+                <tr>
+                  <td data-label="Zone">{t('acreageBreakdown.commercial_title')}</td>
+                  <td data-label="Acres"><strong>{t('acreageBreakdown.commercial_acres')}</strong></td>
+                  <td data-label="Description">{t('acreageBreakdown.commercial_description')}</td>
+                </tr>
+                <tr>
+                  <td data-label="Zone">{t('acreageBreakdown.exhibition_title')}</td>
+                  <td data-label="Acres"><strong>{t('acreageBreakdown.exhibition_acres')}</strong></td>
+                  <td data-label="Description">{t('acreageBreakdown.exhibition_description')}</td>
+                </tr>
+              </tbody>
+            </StyledTable>
+            <p style={{ fontStyle: 'italic', marginTop: '2rem' }}>{t('acreageBreakdown.flexibility_note')}</p>
           </TextContent>
         </Container>
       </WhiteSection>

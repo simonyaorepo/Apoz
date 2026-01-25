@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { TealTitle, TealText } from "../../ui/TealComponents";
 import GoldDivider from "../../ui/GoldDivider";
-import { ContentWrapper } from "../../ui/Containers";
+import { Container } from "../../ui/Containers";
 import { IntroText, SectionTitle } from "../../ui/Typography";
 import { StyledTable } from "../../ui/Table";
 import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
@@ -58,7 +58,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
       />
       
       <WhiteSection>
-        <ContentWrapper>
+        <Container>
           <IntroText>
             {t('industryZoneFTZ.intro')}
           </IntroText>
@@ -109,22 +109,22 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
               </tr>
             </tbody>
           </StyledTable>
-        </ContentWrapper>
+        </Container>
       </WhiteSection>
 
       <TealSection>
         <TealBox>
           <TealTitle>{t('industryZoneFTZ.benefitsTitle')}</TealTitle>
-          <TealText>{t('industryZoneFTZ.benefit1')}</TealText>
-          <TealText>{t('industryZoneFTZ.benefit2')}</TealText>
-          <TealText>{t('industryZoneFTZ.benefit3')}</TealText>
-          <TealText>{t('industryZoneFTZ.benefit4')}</TealText>
-          <TealText>{t('industryZoneFTZ.benefit5')}</TealText>
+          <TealText dangerouslySetInnerHTML={{ __html: t('industryZoneFTZ.benefit1') }} />
+          <TealText dangerouslySetInnerHTML={{ __html: t('industryZoneFTZ.benefit2') }} />
+          <TealText dangerouslySetInnerHTML={{ __html: t('industryZoneFTZ.benefit3') }} />
+          <TealText dangerouslySetInnerHTML={{ __html: t('industryZoneFTZ.benefit4') }} />
+          <TealText dangerouslySetInnerHTML={{ __html: t('industryZoneFTZ.benefit5') }} />
         </TealBox>
       </TealSection>
 
-      <GreySection>
-        <ContentWrapper>
+      <GreySection $reducedTopPadding>
+        <Container>
           <SectionTitle>{t('industryZoneFTZ.targetIndustriesTitle')}</SectionTitle>
           
           <HighlightBox>
@@ -192,22 +192,22 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
               </div>
             </RequirementsList>
           </HighlightBox>
-        </ContentWrapper>
+        </Container>
       </GreySection>
 
       <GoldDivider />
 
       <GreySection>
-        <ContentWrapper>
+        <Container>
           <SectionTitle>{t('industryZoneFTZ.roiTitle')}</SectionTitle>
           
           <ExampleBox>
             <ExampleTitle>{t('industryZoneFTZ.roiExampleTitle')}</ExampleTitle>
-            <ExampleText>{t('industryZoneFTZ.roiExample1')}</ExampleText>
-            <ExampleText>{t('industryZoneFTZ.roiExample2')}</ExampleText>
-            <ExampleText>{t('industryZoneFTZ.roiExample3')}</ExampleText>
-            <ExampleText>{t('industryZoneFTZ.roiExample4')}</ExampleText>
-            <ExampleText>{t('industryZoneFTZ.roiExample5')}</ExampleText>
+            <ExampleText dangerouslySetInnerHTML={{ __html: t('industryZoneFTZ.roiExample1') }} />
+            <ExampleText dangerouslySetInnerHTML={{ __html: t('industryZoneFTZ.roiExample2') }} />
+            <ExampleText dangerouslySetInnerHTML={{ __html: t('industryZoneFTZ.roiExample3') }} />
+            <ExampleText dangerouslySetInnerHTML={{ __html: t('industryZoneFTZ.roiExample4') }} />
+            <ExampleText dangerouslySetInnerHTML={{ __html: t('industryZoneFTZ.roiExample5') }} />
           </ExampleBox>
 
           <SectionTitle>{t('industryZoneFTZ.partnershipsTitle')}</SectionTitle>
@@ -228,13 +228,13 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
               <RequirementText>{t('industryZoneFTZ.partnership5')}</RequirementText>
             </div>
           </RequirementsList>
-        </ContentWrapper>
+        </Container>
       </GreySection>
 
       <GoldDivider />
 
       <GreySection>
-        <ContentWrapper>
+        <Container>
           <SectionTitle>{t('industryZoneFTZ.combinedBenefitsTitle')}</SectionTitle>
           
           <StyledTable>
@@ -303,7 +303,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
               <RequirementText>{t('industryZoneFTZ.practice5Desc')}</RequirementText>
             </div>
           </RequirementsList>
-        </ContentWrapper>
+        </Container>
       </GreySection>
 
       <GoldDivider />

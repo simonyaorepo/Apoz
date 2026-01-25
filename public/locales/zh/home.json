@@ -107,24 +107,14 @@
     "title": "我们的愿景",
     "intro": "我们的愿景是将休斯顿APOZ定位为世界级的工业和社区中心，推动美国的再工业化，同时创造全球双赢的合作伙伴关系。通过为国际公司提供安全、政策一致和创新驱动的环境，我们使他们能够实现强劲的投资回报，扩大市场份额，并直接为美国工业复兴做出贡献。",
     "highlight": "我们将APOZ设想为不仅仅是一个工业区——它是可持续增长的活生生的模式。通过结合先进制造、贸易便利化和现代城镇基础设施，APOZ旨在成为全球企业、当地社区和美国经济共同增长的标志性目的地。",
-    "objective1": "将休斯顿APOZ定位为寻求美国市场准入的国际制造商的首选目的地",
-    "objective2": "创建将工业繁荣与住宅生活质量相结合的可持续社区",
-    "objective3": "建立战略贸易区如何推动区域经济转型的模式",
-    "objective4": "在亚太企业和美国社区之间建立持久的合作伙伴关系"
+    "objectives_description": "我们的愿景包含四个驱动我们所有工作的战略目标。我们致力于将休斯顿APOZ打造为国际制造商寻求美国市场准入的首选目的地，同时创建一个将工业繁荣与居住生活质量相结合的可持续社区。我们正在建立战略贸易区如何推动区域经济转型的典范，并在亚太企业与美国社区之间建立持久的合作伙伴关系，创造互惠价值和长期增长。"
   },
   "missionPage": {
     "title": "我们的使命",
     "intro": "成为北美领先的可持续可再生工业园区，作为亚太企业进入美国市场、融入全球供应链、进入国际资本市场的门户，同时促进绿色增长、经济机会和跨境创新。",
     "highlight": "我们将APOZ设想为一个模范工业生态系统，不仅利用可再生能源推动经济发展，而且最大化FTZ和QOZ激励措施以提高资本效率，培育ESG一致的投资，创造长期的社会和经济影响，并作为IPO准备、供应链金融和全球扩张的平台。",
     "pillars_heading": "使命支柱",
-    "pillar1_title": "可持续发展",
-    "pillar1_description": "利用可再生能源和绿色技术推动经济增长，同时保护环境资源",
-    "pillar2_title": "市场门户",
-    "pillar2_description": "作为亚太企业建立北美业务的首要入口",
-    "pillar3_title": "资本效率",
-    "pillar3_description": "最大化FTZ和QOZ激励措施，为国际合作伙伴创造最佳投资结构",
-    "pillar4_title": "全球整合",
-    "pillar4_description": "为参与企业提供供应链金融、IPO准备和跨境创新的便利"
+    "pillars_description": "我们的使命建立在四个相互关联的支柱之上。可持续发展驱使我们利用可再生能源和绿色技术推动经济增长，同时保护环境资源。作为市场门户，我们是亚太企业建立北美业务的首选入口。通过资本效率，我们最大化FTZ和QOZ激励措施，为国际合作伙伴创造最优投资结构。最后，我们对全球整合的承诺为所有参与企业提供供应链金融、IPO准备和跨境创新的便利。"
   },
   "management": {
     "title": "管理团队",
@@ -154,5 +144,26 @@
   },
   "newsPreview": {
     "title": "新闻"
+  },
+  "whyNow": {
+    "title": "[TRANSLATE] Why Now?",
+    "subtitle": "[TRANSLATE] The Perfect Storm for U.S. Manufacturing Investment",
+    "intro": "[TRANSLATE] The convergence of trade policy shifts, supply chain disruptions, and government incentives has created a once-in-a-generation opportunity for strategic manufacturing investment.",
+    "tariff_title": "[TRANSLATE] Section 301 Tariffs Reshape Trade",
+    "tariff_stat": "[TRANSLATE] 25% tariffs on $370B in Chinese imports",
+    "tariff_description": "[TRANSLATE] U.S.-China trade declined 20% as companies seek tariff-free supply chains",
+    "tariff_impact": "[TRANSLATE] Manufacturers face 15-30% cost increases without U.S. production alternatives",
+    "reshoring_title": "[TRANSLATE] Manufacturing Reshoring Accelerates",
+    "reshoring_stat": "[TRANSLATE] 364,000+ jobs returning to U.S. in 2023",
+    "reshoring_description": "[TRANSLATE] Record-high reshoring driven by tariffs, supply chain risk, and government incentives",
+    "reshoring_trend": "[TRANSLATE] Mexico and U.S. manufacturing hubs capturing market share from China direct imports",
+    "policy_title": "[TRANSLATE] Government Incentives Multiply",
+    "policy_description": "[TRANSLATE] IRA, CHIPS Act, and Inflation Reduction Act deploying $400B+ in manufacturing incentives",
+    "policy_benefit": "[TRANSLATE] Tax credits, grants, and accelerated depreciation for clean energy, semiconductors, and advanced manufacturing",
+    "policy_timing": "[TRANSLATE] Time-limited programs require 2025-2027 project commitments to qualify",
+    "window_title": "[TRANSLATE] Strategic Window Closing",
+    "window_description": "[TRANSLATE] First-mover advantage in securing FTZ-activated facilities and QOZ tax benefits before capacity fills",
+    "window_urgency": "[TRANSLATE] Prime industrial locations with dual FTZ+QOZ status are limited and filling rapidly",
+    "window_action": "[TRANSLATE] Companies must act now to secure facilities, qualify for incentives, and establish market position"
   }
 }

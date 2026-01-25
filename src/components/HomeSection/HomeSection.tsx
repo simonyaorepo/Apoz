@@ -1,6 +1,7 @@
 
 import HomeHero from "./subcomponents/HomeHero";
 import AboutIntro from "./subcomponents/AboutIntro";
+import WhyNowSection from "./subcomponents/WhyNowSection";
 import HomePreviews from "./subcomponents/HomePreviews";
 import OverviewSection from "./subcomponents/OverviewSection";
 import WhoWeAreSection from "./subcomponents/WhoWeAreSection";
@@ -29,6 +30,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({ onNavigate, section }) => {
     <div>
       <HomeHero />
       <AboutIntro />
+      <WhyNowSection />
       <HomePreviews onNavigate={onNavigate} />
       <NewsPreview />
     </div>

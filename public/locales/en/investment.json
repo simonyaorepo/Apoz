@@ -62,9 +62,9 @@
     "irr_base": "~15-18%",
     "irr_with_qoz": "+3-5% IRR uplift",
     "exit_strategy_title": "Exit Strategy",
-    "exit_reit": "REIT Conversion: Pool APOZ assets into a publicly traded REIT.",
-    "exit_sale": "Strategic Sale: Sell stabilized assets to institutional investors.",
-    "exit_ipo": "IPO Listing: Potential for cross-border listing in the U.S."
+    "exit_reit": "<strong>REIT Conversion:</strong> Pool APOZ assets into a publicly traded REIT.",
+    "exit_sale": "<strong>Strategic Sale:</strong> Sell stabilized assets to institutional investors.",
+    "exit_ipo": "<strong>IPO Listing:</strong> Potential for cross-border listing in the U.S."
   },
   "benefits": {
     "benefit1_title": "FTZ + QOZ Dual Benefits",
@@ -318,10 +318,10 @@
     "timeline_phase2_scope": "Affordable homes, schools, community facilities",
     "timeline_phase2_milestones": "Residential water, gas, telecom integration",
     "funding_title": "Investment & Funding Structure",
-    "funding_source1": "Private Capital via QOF: Leverage Qualified Opportunity Zone (QOZ) tax benefits.",
-    "funding_source2": "Infrastructure Financing: Partnerships with Texas development authorities.",
-    "funding_source3": "Tenant Participation: Built-to-suit facilities include partial cost-sharing.",
-    "funding_source4": "Public-Private Grants: Potential HUD and DOE programs for sustainable energy and housing.",
+    "funding_source1": "Leverage Qualified Opportunity Zone (QOZ) tax benefits.",
+    "funding_source2": "Partnerships with Texas development authorities.",
+    "funding_source3": "Built-to-suit facilities include partial cost-sharing.",
+    "funding_source4": "Potential HUD and DOE programs for sustainable energy and housing.",
     "benefits_title": "Infrastructure Benefits",
     "benefits_tenants_title": "Benefits for Tenants",
     "benefits_tenant1": "Reliable bonded logistics infrastructure",
@@ -423,6 +423,22 @@
       "title": "Investment Overview",
       "description": "Comprehensive investment structure, capital strategy, investor benefits (QOZ tax deferral + FTZ advantages), IRR potential (15-18% + 3-5% uplift), and exit pathways (REIT, Strategic Sale, IPO)."
     },
+    "targetIndustries": {
+      "title": "Target Industries",
+      "description": "Five high-growth manufacturing sectors facing Section 301 tariffs: Electric Vehicles (25%), Solar Equipment (25-50%), Consumer Electronics (7.5-25%), Modular Construction (25%), and Medical Devices (7.5-25%). Optimal candidates for dual production model."
+    },
+    "dualProduction": {
+      "title": "Dual Production Model",
+      "description": "Asia-Pacific component manufacturing + U.S. final assembly strategy. Maintain cost-effective sourcing while achieving 'Made in USA' status to avoid Section 301 tariffs and qualify for government contracts."
+    },
+    "marketContext": {
+      "title": "Market Context: Why Now?",
+      "description": "Section 301 tariffs on $370B Chinese imports, 364,000+ reshoring jobs in 2023, $400B+ government manufacturing incentives. Strategic window to secure FTZ+QOZ facilities before capacity fills."
+    },
+    "eb5Program": {
+      "title": "EB-5 Immigration Investment",
+      "description": "$800K Rural TEA investment for Green Card pathway. Create 10 jobs, qualify for priority processing, combine with QOZ tax benefits for unique dual-advantage unavailable in most U.S. markets."
+    },
     "infrastructure": {
       "title": "Infrastructure Investment",
       "description": "Core infrastructure development across transportation, utilities, digital connectivity, FTZ facilities, residential amenities, and environmental systems. Phase 1 & 2 timeline with QOF, municipal, federal, and private funding sources."
@@ -436,7 +452,7 @@
       "description": "Affordable housing development within QOZ framework. Mixed-income residential communities, workforce housing, and community amenities driving long-term appreciation and social impact."
     }
   },
-  "opportunities": {
+  "opportunitiesSection": {
     "title": "Current Opportunities"
   },
   "cta": {
@@ -491,11 +507,11 @@
     "step6Process": "Goods shipped overseas incur zero U.S. customs duties",
     "step6Who": "Exporters",
     "benefitsTitle": "Key FTZ Benefits for Investors & Tenants",
-    "benefit1": "Duty Deferral: Pay customs duties only when products enter the U.S. market, improving cash flow.",
-    "benefit2": "Duty Elimination: No duties on re-exported goods, ideal for global supply chains.",
-    "benefit3": "Inverted Tariffs: If components have higher duties than finished products, pay the lower finished-product duty rate.",
-    "benefit4": "Cash Flow Improvement: Lower upfront costs improve working capital and investor ROI.",
-    "benefit5": "QOZ + FTZ Synergy: Combine capital gains tax deferral with customs savings for maximum returns.",
+    "benefit1": "<strong>Duty Deferral:</strong> Pay customs duties only when products enter the U.S. market, improving cash flow.",
+    "benefit2": "<strong>Duty Elimination:</strong> No duties on re-exported goods, ideal for global supply chains.",
+    "benefit3": "<strong>Inverted Tariffs:</strong> If components have higher duties than finished products, pay the lower finished-product duty rate.",
+    "benefit4": "<strong>Cash Flow Improvement:</strong> Lower upfront costs improve working capital and investor ROI.",
+    "benefit5": "<strong>QOZ + FTZ Synergy:</strong> Combine capital gains tax deferral with customs savings for maximum returns.",
     "targetIndustriesTitle": "Target Industries & Investment Opportunities",
     "renewableEnergyTitle": "Renewable Energy & Clean Tech",
     "solarTitle": "Solar panel manufacturing and assembly",
@@ -526,11 +542,11 @@
     "transloadingDesc": "Container-to-truck transfer with duty deferral benefits.",
     "roiTitle": "Investment Returns & Tenant Advantages",
     "roiExampleTitle": "ROI Enhancement Through FTZ",
-    "roiExample1": "Example: A solar panel assembly operation importing $10M in components annually",
-    "roiExample2": "Without FTZ: Pays $2.5M in customs duties upfront (25% tariff on certain components)",
-    "roiExample3": "With FTZ: Defers duties until finished panels enter U.S. commerce, or pays $0 on re-exported panels",
-    "roiExample4": "Cash flow improvement: $2.5M working capital retained annually",
-    "roiExample5": "Investor benefit: Higher NOI and property value due to tenant cost savings",
+    "roiExample1": "<strong>Example:</strong> A solar panel assembly operation importing $10M in components annually",
+    "roiExample2": "<strong>Without FTZ:</strong> Pays $2.5M in customs duties upfront (25% tariff on certain components)",
+    "roiExample3": "<strong>With FTZ:</strong> Defers duties until finished panels enter U.S. commerce, or pays $0 on re-exported panels",
+    "roiExample4": "<strong>Cash flow improvement:</strong> $2.5M working capital retained annually",
+    "roiExample5": "<strong>Investor benefit:</strong> Higher NOI and property value due to tenant cost savings",
     "partnershipsTitle": "Asia-Pacific Manufacturing Partnerships",
     "partnership1": "APOZ specifically targets manufacturers from China, ASEAN, Korea, Japan, and India seeking \"friend-shoring\" alternatives and U.S. market access.",
     "partnership2": "FTZ status makes APOZ ideal for companies establishing U.S. manufacturing footprints while maintaining Asia-Pacific supply chains.",
@@ -566,5 +582,93 @@
     "practice4Desc": "Provide training and legal support to maximize tenant FTZ utilization.",
     "practice5Title": "Marketing to Asia-Pacific",
     "practice5Desc": "Highlight duty savings in bilingual investor and tenant materials."
+  },
+  "targetIndustries": {
+    "title": "Target Industries",
+    "intro": "APOZ specifically targets five high-growth manufacturing sectors facing significant tariff headwinds from Section 301 trade policies. These industries represent optimal candidates for the dual production model combining Asia-Pacific component manufacturing with U.S. final assembly.",
+    "ev_title": "Electric Vehicles & Components",
+    "ev_description": "Battery assembly, electric motors, charging infrastructure, and EV component manufacturing",
+    "ev_tariff": "25% tariff on Chinese EV components",
+    "ev_opportunity": "Growing U.S. EV market with strong policy support and consumer demand",
+    "solar_title": "Solar Equipment & Components",
+    "solar_description": "Solar panel assembly, inverters, mounting systems, and energy storage solutions",
+    "solar_tariff": "25-50% tariffs on Chinese solar equipment",
+    "solar_opportunity": "IRA incentives driving massive U.S. solar deployment through 2030",
+    "electronics_title": "Consumer Electronics",
+    "electronics_description": "Smartphones, tablets, wearables, smart home devices, and IoT products",
+    "electronics_tariff": "7.5-25% tariffs on Chinese electronics",
+    "electronics_opportunity": "Retailers seeking tariff-free supply chains for U.S. market distribution",
+    "modular_title": "Modular Construction",
+    "modular_description": "Prefabricated building components, modular housing units, and construction systems",
+    "modular_tariff": "25% tariff on Chinese building materials",
+    "modular_opportunity": "Housing shortage driving demand for cost-effective construction solutions",
+    "medical_title": "Medical Devices & Equipment",
+    "medical_description": "Diagnostic equipment, surgical instruments, patient monitoring devices, and medical supplies",
+    "medical_tariff": "7.5-25% tariffs on Chinese medical devices",
+    "medical_opportunity": "Healthcare expansion and supply chain resilience requirements"
+  },
+  "dualProduction": {
+    "title": "Dual Production Model",
+    "subtitle": "Asia-Pacific + USA Manufacturing Integration",
+    "intro": "The dual production model allows manufacturers to maintain cost-effective component production in Asia while completing final assembly, quality control, and value-added manufacturing at APOZ—resulting in 'Made in USA' products that avoid Section 301 tariffs.",
+    "step1_title": "Component Manufacturing (Asia-Pacific)",
+    "step1_description": "Produce components, subassemblies, and parts in existing Asia-Pacific facilities where labor costs remain competitive",
+    "step2_title": "Duty-Free Import to FTZ",
+    "step2_description": "Ship components to APOZ's Foreign-Trade Zone without paying import duties upon entry",
+    "step3_title": "Final Assembly & Value Addition (USA)",
+    "step3_description": "Complete final assembly, testing, packaging, and customization at APOZ facilities",
+    "step4_title": "Tariff-Free Distribution",
+    "step4_description": "Products enter U.S. commerce as 'Made in USA' goods, exempt from Section 301 tariffs",
+    "benefit1_title": "Cost Optimization",
+    "benefit1_description": "Maintain low-cost component sourcing while accessing U.S. market tariff-free",
+    "benefit2_title": "Supply Chain Control",
+    "benefit2_description": "Reduce shipping times and improve inventory management with U.S.-based operations",
+    "benefit3_title": "Market Access",
+    "benefit3_description": "Meet Buy American requirements and qualify for government contracts",
+    "benefit4_title": "Risk Mitigation",
+    "benefit4_description": "Diversify manufacturing footprint and reduce exposure to trade policy changes"
+  },
+  "marketContext": {
+    "title": "Market Context: Why Now?",
+    "subtitle": "Trade Policy & Manufacturing Reshoring Trends",
+    "intro": "The convergence of Section 301 tariffs, supply chain disruptions, and government incentives has created unprecedented demand for U.S.-based manufacturing solutions that maintain cost competitiveness.",
+    "section301_title": "Section 301 Tariffs",
+    "section301_description": "U.S. tariffs on Chinese imports range from 7.5% to 50%, with 25% tariffs on $370 billion in goods including machinery, electronics, and industrial equipment",
+    "section301_impact": "Manufacturers face 15-30% cost increases on China-sourced products entering U.S. commerce",
+    "tradeData_title": "U.S.-China Trade Decline",
+    "tradeData_description": "U.S. imports from China declined from $538B (2022) to $427B (2023), representing 20% reduction",
+    "tradeData_trend": "Companies actively relocating supply chains to Mexico, Vietnam, and U.S. manufacturing hubs",
+    "reshoring_title": "Manufacturing Reshoring Acceleration",
+    "reshoring_description": "Reshoring Initiative reports record-high job announcements with 364,000+ manufacturing jobs returning to U.S. in 2023",
+    "reshoring_drivers": "Driven by tariffs, supply chain resilience, government incentives (IRA, CHIPS Act), and nearshoring strategies",
+    "timing_title": "Strategic Window of Opportunity",
+    "timing_description": "Companies must establish U.S. manufacturing capabilities now to secure market access, qualify for incentives, and maintain competitiveness",
+    "timing_urgency": "First-mover advantage in securing FTZ-activated facilities, QOZ tax benefits, and anchor tenant positioning"
+  },
+  "eb5Program": {
+    "title": "EB-5 Immigration Investment",
+    "subtitle": "Green Card Pathway for Qualified Investors",
+    "intro": "APOZ's location in a designated Rural Targeted Employment Area (TEA) qualifies for the EB-5 Immigrant Investor Program, offering foreign investors and their families a pathway to U.S. permanent residency.",
+    "investment_title": "Investment Requirements",
+    "investment_amount": "$800,000 minimum investment in Rural TEA project",
+    "investment_standard": "($1,050,000 standard amount; APOZ qualifies for reduced Rural TEA threshold)",
+    "investment_structure": "Investment through APOZ Qualified Opportunity Fund or direct project equity",
+    "jobs_title": "Job Creation Requirements",
+    "jobs_requirement": "Create or preserve at least 10 full-time jobs for U.S. workers",
+    "jobs_timing": "Within 2 years of investor's conditional permanent residence approval",
+    "jobs_indirect": "Indirect jobs from construction and operations count toward requirement",
+    "benefits_title": "EB-5 Program Benefits",
+    "benefit1": "U.S. Green Cards for investor, spouse, and unmarried children under 21",
+    "benefit2": "No country-specific caps or quotas for Rural TEA set-aside visas",
+    "benefit3": "Priority processing and faster adjudication for Rural TEA investments",
+    "benefit4": "Potential investment return through QOZ tax benefits and project profits",
+    "benefit5": "Pathway to U.S. citizenship after 5 years of permanent residence",
+    "process_title": "EB-5 Process Timeline",
+    "process_step1": "File I-526E petition with USCIS (12-18 month processing for Rural TEA)",
+    "process_step2": "Receive conditional Green Card valid for 2 years",
+    "process_step3": "File I-829 petition to remove conditions after job creation verified",
+    "process_step4": "Receive permanent Green Card with no conditions",
+    "dualBenefit_title": "EB-5 + QOZ Dual Benefits",
+    "dualBenefit_description": "Investors can combine immigration benefits through EB-5 with tax advantages from Qualified Opportunity Zone investment, creating unique value proposition unavailable in most U.S. markets"
   }
 }
