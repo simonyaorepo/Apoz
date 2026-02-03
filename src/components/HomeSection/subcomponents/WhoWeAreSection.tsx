@@ -26,7 +26,7 @@ const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = ({ onNavigate: _onNaviga
     <>
       <TextHero
         title={t('whoWeAre.title')}
-        backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        backgroundImage="/assets/images/home/whoWeAre-hero.jpg"
         breadcrumbs={[
           { label: tCommon('breadcrumbs.home'), href: '/' },
           { label: t('whoWeAre.title') }

@@ -11,8 +11,7 @@
     "impact": "影响"
   },
   "overview": {
-    "title": "我们的服务",
-    "intro": "APOZ（亚太机会区）被设计为德克萨斯州温尼的一站式商业和投资中心，整合工业、住宅和贸易服务。",
+    "title": "我们的服务概览",    "breadcrumb": "概览",    "intro": "APOZ（亚太机会区）被设计为德克萨斯州温尼的一站式商业和投资中心，整合工业、住宅和贸易服务。",
     "coreService1_title": "工业园区开发",
     "coreService1_description": "定制仓库、保税物流中心和制造工厂。",
     "coreService2_title": "对外贸易区（FTZ-171）解决方案",

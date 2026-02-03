@@ -84,7 +84,7 @@ const FTZZoneSection: React.FC<FTZZoneSectionProps> = () => {
 
       <GreySection>
         <Container>
-          <GreyContentGrid style={{ gridTemplateColumns: '1.5fr 1.25fr', alignItems: 'center' }}>
+          <GreyContentGrid>
             <div>
               <SectionTitle>{t('ftz.compliance_title')}</SectionTitle>
               <RequirementsList>

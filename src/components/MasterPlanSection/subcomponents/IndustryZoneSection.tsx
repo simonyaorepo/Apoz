@@ -29,7 +29,7 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
     <>
       <TextHero
         title={t('industryZone.title', 'Industry Zone')}
-        backgroundImage="/assets/images/masterPlan/industryZone/hero.jpg"
+        backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
         breadcrumbs={[
           { label: t('common:breadcrumbs.home'), href: "/" },
           { label: t('common:breadcrumbs.masterPlan'), href: "/master-plan" },

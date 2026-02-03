@@ -11,7 +11,8 @@
     "impact": "Impact"
   },
   "overview": {
-    "title": "Our Services",
+    "title": "Our Services Overview",
+    "breadcrumb": "Overview",
     "intro": "APOZ (Asia Pacific Opportunity Zone) is designed as a one-stop business and investment hub in Winnie, Texas, integrating industrial, residential, and trade services.",
     "coreService1_title": "Industrial Park Development",
     "coreService1_description": "Build-to-suit warehouses, bonded logistics centers, and manufacturing plants.",

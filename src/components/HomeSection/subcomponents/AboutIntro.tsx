@@ -79,7 +79,7 @@ const AboutIntro: React.FC = () => {
       <Container>
         <ImageWrapper>
           <StyledImage 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" 
+            src="/assets/images/home/intro.jpg" 
             alt="APOZ Development" 
           />
         </ImageWrapper>

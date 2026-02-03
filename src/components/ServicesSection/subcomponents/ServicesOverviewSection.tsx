@@ -77,7 +77,8 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
         backgroundImage="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
         breadcrumbs={[
           { label: tCommon('breadcrumbs.home'), href: '/' },
-          { label: t('overview.title') }
+          { label: tCommon('breadcrumbs.services'), href: '/services' },
+          { label: t('overview.breadcrumb') }
         ]}
       />
       
