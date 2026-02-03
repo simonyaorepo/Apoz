@@ -96,7 +96,7 @@ const ManagementSection: React.FC<ManagementSectionProps> = ({ onNavigate: _onNa
     <>
       <TextHero
         title={t('management.title')}
-        backgroundImage="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        backgroundImage="/assets/images/home/management/hero.png"
         breadcrumbs={[
           { label: tCommon('breadcrumbs.home'), href: '/' },
           { label: t('management.title') }

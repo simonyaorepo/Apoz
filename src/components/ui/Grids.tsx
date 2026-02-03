@@ -4,11 +4,10 @@ export const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: ${({ theme }) => theme.spacing.xxxl};
-  max-width: calc(1180px + 10vw);
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding: 0 5vw;
+  max-width: ${({ theme }) => theme.maxWidth.home};
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
   align-items: center;
   box-sizing: border-box;
   
@@ -32,11 +31,10 @@ export const GreyContentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: ${({ theme }) => theme.spacing.xxxl};
-  max-width: calc(1180px + 10vw);
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding: 0 5vw;
+  max-width: ${({ theme }) => theme.maxWidth.home};
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
   align-items: center;
   box-sizing: border-box;
   

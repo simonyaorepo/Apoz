@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import GoldButton from "../../ui/GoldButton";
+import { NEWS_METADATA } from "../../NewsSection/subcomponents/newsMetadata";
 
 const HeroSection = styled.section`
   position: relative;
@@ -174,10 +175,11 @@ const HomeHero: React.FC = () => {
   const goLeft = () => setIndex(i => (i === 0 ? totalArticles - 1 : i - 1));
   const goRight = () => setIndex(i => (i === totalArticles - 1 ? 0 : i + 1));
   
+  const metadata = NEWS_METADATA[articleId];
   const article = {
-    id: articleId,
+    id: metadata.id,
     title: t(`news:articles.${articleId}.title`),
-    image: t(`news:articles.${articleId}.image`),
+    image: metadata.image,
     summary: t(`news:articles.${articleId}.p1`)
   };
   

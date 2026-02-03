@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import PageHero from "../PageHero";
 import NewsGrid from "./subcomponents/NewsGrid";
+import { NEWS_METADATA } from "./subcomponents/newsMetadata";
 
 const SectionWrapper = styled.div`
   width: 100%;
@@ -25,16 +26,17 @@ const TitleSection = styled.section`
 const NewsSection: React.FC = () => {
   const { t } = useTranslation(['news', 'common']);
   
-  // Build articles from translations (sorted newest first: 17 to 1)
+  // Build articles from metadata + translations (sorted newest first: 17 to 1)
   const articles = Array.from({ length: 17 }, (_, i) => {
     const articleId = 17 - i; // Reverse order
+    const metadata = NEWS_METADATA[articleId];
     return {
-      id: articleId,
+      id: metadata.id,
       title: t(`news:articles.${articleId}.title`),
       date: t(`news:articles.${articleId}.date`),
       location: t(`news:articles.${articleId}.location`),
       category: t(`news:articles.${articleId}.category`),
-      image: t(`news:articles.${articleId}.image`),
+      image: metadata.image,
       paragraphs: [] // Not needed for grid display
     };
   });

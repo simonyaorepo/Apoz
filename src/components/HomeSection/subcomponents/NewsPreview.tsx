@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import GoldButton from "../../ui/GoldButton";
+import { NEWS_METADATA } from "../../NewsSection/subcomponents/newsMetadata";
 
 const NewsSection = styled.section`
   background: ${({ theme }) => theme.colors.grey};
@@ -133,14 +134,17 @@ const NewsPreview: React.FC = () => {
   const { t } = useTranslation(['news', 'home']);
   
   // Get the latest 3 news articles (17, 16, 15)
-  const latestNews = [17, 16, 15].map(articleId => ({
-    id: articleId,
-    title: t(`articles.${articleId}.title`),
-    date: t(`articles.${articleId}.date`),
-    category: t(`articles.${articleId}.category`),
-    image: t(`articles.${articleId}.image`),
-    excerpt: t(`articles.${articleId}.p1`)
-  }));
+  const latestNews = [17, 16, 15].map(articleId => {
+    const metadata = NEWS_METADATA[articleId];
+    return {
+      id: metadata.id,
+      title: t(`articles.${articleId}.title`),
+      date: t(`articles.${articleId}.date`),
+      category: t(`articles.${articleId}.category`),
+      image: metadata.image,
+      excerpt: t(`articles.${articleId}.p1`)
+    };
+  });
 
   return (
     <NewsSection>

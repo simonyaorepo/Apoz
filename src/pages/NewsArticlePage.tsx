@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 import { Button } from "../components/ui/button";
+import { NEWS_METADATA } from "../components/NewsSection/subcomponents/newsMetadata";
 
 const HeroSection = styled.section`
   position: relative;
@@ -131,14 +132,15 @@ export default function NewsArticlePage() {
     );
   }
   
-  // Build article from translations
+  // Build article from metadata + translations
+  const metadata = NEWS_METADATA[articleId];
   const article = {
-    id: articleId,
+    id: metadata.id,
     title: t(`articles.${articleId}.title`),
     date: t(`articles.${articleId}.date`),
     location: t(`articles.${articleId}.location`),
     category: t(`articles.${articleId}.category`),
-    image: t(`articles.${articleId}.image`),
+    image: metadata.image,
     paragraphs: [] as string[]
   };
   
