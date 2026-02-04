@@ -64,7 +64,7 @@ const CardText = styled.p`
   line-height: 1.6;
 `;
 
-const ValueProps: React.FC<ValuePropsProps> = ({ propsList: _propsList }) => {
+const ValueProps: React.FC<ValuePropsProps> = () => {
   const { t } = useTranslation('home');
   
   const propKeys = ['tradeHub', 'infrastructure', 'affordable', 'sustainability', 'partnerships', 'investmentReady'];
@@ -86,3 +86,4 @@ const ValueProps: React.FC<ValuePropsProps> = ({ propsList: _propsList }) => {
 };
 
 export default ValueProps;
+

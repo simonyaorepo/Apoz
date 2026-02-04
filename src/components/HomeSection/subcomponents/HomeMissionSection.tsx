@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import { WhiteSection, GreySection } from "../../ui/Sections";
-import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { TextContent, TealSection, TealBox } from "./SharedStyles";
@@ -11,7 +10,7 @@ interface MissionSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate }) => {
+const MissionSection: React.FC<MissionSectionProps> = () => {
   const { t } = useTranslation('home');
   const { t: tCommon } = useTranslation('common');
   

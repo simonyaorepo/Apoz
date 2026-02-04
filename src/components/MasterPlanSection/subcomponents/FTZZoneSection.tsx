@@ -9,7 +9,6 @@ import { WhiteSection, GreySection } from "../../ui/Sections";
 import { RequirementsList, RequirementTitle, RequirementText } from "../../ui/Requirements";
 import { GreyContentGrid } from "../../ui/Grids";
 import { ImageBox } from "../../ui/Media";
-import { Container } from "../../ui/Containers";
 
 interface FTZZoneSectionProps {
   onNavigate: (page: string) => void;

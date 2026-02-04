@@ -29,7 +29,7 @@ interface ResidentialManagementSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> = ({ onNavigate: _onNavigate }) => {
+const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> = () => {
   const { t } = useTranslation(['services', 'common']);
   
   const coreServices = [
@@ -176,3 +176,4 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
 };
 
 export default ResidentialManagementSection;
+

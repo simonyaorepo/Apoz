@@ -23,7 +23,7 @@ interface AffordableLivingZoneSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = ({ onNavigate: _onNavigate }) => {
+const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = () => {
   const { t } = useTranslation(['masterPlan', 'common']);
   
   return (
@@ -153,3 +153,4 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
 };
 
 export default AffordableLivingZoneSection;
+

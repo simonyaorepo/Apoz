@@ -66,7 +66,7 @@ interface ServicesOverviewSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNavigate: _onNavigate }) => {
+const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = () => {
   const { t } = useTranslation('services');
   const { t: tCommon } = useTranslation('common');
   
@@ -305,3 +305,4 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
 };
 
 export default ServicesOverviewSection;
+

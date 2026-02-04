@@ -29,7 +29,7 @@ interface IndustryZoneManagementSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps> = ({ onNavigate: _onNavigate }) => {
+const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps> = () => {
   const { t } = useTranslation(['services', 'common']);
   
   const services = [
@@ -201,3 +201,4 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
 };
 
 export default IndustryZoneManagementSection;
+

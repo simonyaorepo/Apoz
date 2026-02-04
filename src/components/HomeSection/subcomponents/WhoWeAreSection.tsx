@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
 import { WhiteSection, GreySection } from "../../ui/Sections";
-import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { TextContent, TealSection, TealBox } from "./SharedStyles";
@@ -11,7 +10,7 @@ interface WhoWeAreSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = ({ onNavigate: _onNavigate }) => {
+const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = () => {
   const { t } = useTranslation('home');
   const { t: tCommon } = useTranslation('common');
   

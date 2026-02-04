@@ -51,7 +51,7 @@ interface InternationalHubSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNavigate: _onNavigate }) => {
+const InternationalHubSection: React.FC<InternationalHubSectionProps> = () => {
   const { t } = useTranslation(['masterPlan', 'common']);
   
   return (
@@ -316,3 +316,4 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
 };
 
 export default InternationalHubSection;
+

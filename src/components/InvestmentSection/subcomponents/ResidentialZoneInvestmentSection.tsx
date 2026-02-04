@@ -78,7 +78,7 @@ const HighlightBox = styled.div`
   margin: 2rem 0;
 `;
 
-const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectionProps> = ({ onNavigate: _onNavigate }) => {
+const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectionProps> = () => {
   const { t } = useTranslation(['investment', 'common']);
   
   return (
@@ -307,5 +307,6 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
 };
 
 export default ResidentialZoneInvestmentSection;
+
 
 

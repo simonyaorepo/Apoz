@@ -41,7 +41,7 @@ interface InfrastructureSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigate: _onNavigate }) => {
+const InfrastructureSection: React.FC<InfrastructureSectionProps> = () => {
   const { t } = useTranslation(['investment', 'common']);
   const { t: tCommon } = useTranslation('common');
   
@@ -205,3 +205,4 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
 };
 
 export default InfrastructureSection;
+

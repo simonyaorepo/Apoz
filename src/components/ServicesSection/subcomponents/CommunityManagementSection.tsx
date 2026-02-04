@@ -30,7 +30,7 @@ interface CommunityManagementSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({ onNavigate: _onNavigate }) => {
+const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = () => {
   const { t } = useTranslation(['services', 'common']);
   
   const services = [
@@ -226,3 +226,4 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
 };
 
 export default CommunityManagementSection;
+

@@ -8,7 +8,7 @@ interface ManagementSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const ManagementSection: React.FC<ManagementSectionProps> = ({ onNavigate: _onNavigate }) => {
+const ManagementSection: React.FC<ManagementSectionProps> = () => {
   const { t } = useTranslation('home');
   const { t: tCommon } = useTranslation('common');
   const { t: tLeadership } = useTranslation('leadership');
@@ -118,3 +118,5 @@ const ManagementSection: React.FC<ManagementSectionProps> = ({ onNavigate: _onNa
 };
 
 export default ManagementSection;
+
+

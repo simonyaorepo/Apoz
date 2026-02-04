@@ -159,7 +159,7 @@ interface InvestmentOverviewSectionProps {
   onNavigate: (page: string) => void;
 }
 
-const InvestmentOverviewSection: React.FC<InvestmentOverviewSectionProps> = ({ onNavigate: _onNavigate }) => {
+const InvestmentOverviewSection: React.FC<InvestmentOverviewSectionProps> = () => {
   const { t } = useTranslation(['investment', 'common']);
   
   return (
@@ -413,3 +413,4 @@ const InvestmentOverviewSection: React.FC<InvestmentOverviewSectionProps> = ({ o
 };
 
 export default InvestmentOverviewSection;
+
