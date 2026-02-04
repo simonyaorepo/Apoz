@@ -1,18 +1,11 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
-import {
-  WhiteSection,
-  GreySection,
-  Container,
-  ContentGrid,
-  GreyContentGrid,
-  TextContent,
-  TealSection,
-  TealBox,
-  IllustrationBox,
-  ImageBox,
-} from "./SharedStyles";
+import { WhiteSection, GreySection } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
+import { IllustrationBox, ImageBox } from "../../ui/Media";
+import { TextContent, TealSection, TealBox } from "./SharedStyles";
 
 interface OverviewSectionProps {
   onNavigate: (page: string) => void;
@@ -34,8 +27,7 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({ onNavigate: _onNaviga
       />
       
       <WhiteSection>
-        <Container>
-          <ContentGrid>
+        <ContentGrid>
             <TextContent>
               <p>{t('overview.intro1')}</p>
               <p>{t('overview.intro2')}</p>
@@ -84,7 +76,6 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({ onNavigate: _onNaviga
               </svg>
             </IllustrationBox>
           </ContentGrid>
-        </Container>
       </WhiteSection>
 
       <TealSection>
@@ -94,11 +85,10 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({ onNavigate: _onNaviga
       </TealSection>
 
       <GreySection>
-        <Container>
-          <GreyContentGrid>
+        <GreyContentGrid>
             <ImageBox>
               <img 
-                src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
                 alt="Strategic business partnership"
               />
             </ImageBox>
@@ -106,8 +96,7 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({ onNavigate: _onNaviga
               <p>{t('overview.saudiPartnership1')}</p>
               <p>{t('overview.saudiPartnership2')}</p>
             </TextContent>
-          </GreyContentGrid>
-        </Container>
+        </GreyContentGrid>
       </GreySection>
     </>
   );

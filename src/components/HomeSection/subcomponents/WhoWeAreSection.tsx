@@ -1,18 +1,11 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
-import {
-  WhiteSection,
-  GreySection,
-  Container,
-  ContentGrid,
-  GreyContentGrid,
-  TextContent,
-  TealSection,
-  TealBox,
-  IllustrationBox,
-  ImageBox,
-} from "./SharedStyles";
+import { WhiteSection, GreySection } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
+import { IllustrationBox, ImageBox } from "../../ui/Media";
+import { TextContent, TealSection, TealBox } from "./SharedStyles";
 
 interface WhoWeAreSectionProps {
   onNavigate: (page: string) => void;
@@ -34,8 +27,7 @@ const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = ({ onNavigate: _onNaviga
       />
       
       <WhiteSection>
-        <Container>
-          <ContentGrid>
+        <ContentGrid>
             <TextContent>
               <p>{t('whoWeAre.intro1')}</p>
               <p>{t('whoWeAre.intro2')}</p>
@@ -81,7 +73,6 @@ const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = ({ onNavigate: _onNaviga
               </svg>
             </IllustrationBox>
           </ContentGrid>
-        </Container>
       </WhiteSection>
 
       <TealSection>
@@ -91,8 +82,7 @@ const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = ({ onNavigate: _onNaviga
       </TealSection>
 
       <GreySection>
-        <Container>
-          <GreyContentGrid>
+        <GreyContentGrid>
             <ImageBox>
               <img 
                 src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
@@ -103,8 +93,7 @@ const WhoWeAreSection: React.FC<WhoWeAreSectionProps> = ({ onNavigate: _onNaviga
               <p>{t('whoWeAre.location_description')}</p>
               <p>{t('whoWeAre.location_details')}</p>
             </TextContent>
-          </GreyContentGrid>
-        </Container>
+        </GreyContentGrid>
       </GreySection>
     </>
   );

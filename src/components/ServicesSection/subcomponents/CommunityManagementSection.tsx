@@ -98,7 +98,8 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
             <p>{t('services:communityManagement.intro1')}</p>
             <p>{t('services:communityManagement.intro2')}</p>
           </IntroTextContent>
-          <ContentGrid>
+        </Container>
+        <ContentGrid>
             <TextContent>
               <SubsectionTitle>{t('services:communityManagement.core_goals_title')}</SubsectionTitle>
               <p>
@@ -150,7 +151,6 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
               </svg>
             </IllustrationBox>
           </ContentGrid>
-        </Container>
       </WhiteSection>
 
       <TealSection>
@@ -190,11 +190,10 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
       <GoldDivider />
 
       <GreySection>
-        <Container>
-          <GreyContentGrid>
+        <GreyContentGrid>
             <ImageBox>
               <img 
-                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
+                src="https://images.unsplash.com/photo-1528605105345-5344ea20e269?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
                 alt="Community management"
               />
             </ImageBox>
@@ -204,8 +203,7 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ({
                 {t('services:communityManagement.integration_full_text')}
               </p>
             </TextContent>
-          </GreyContentGrid>
-        </Container>
+        </GreyContentGrid>
       </GreySection>
 
       <GreySection>

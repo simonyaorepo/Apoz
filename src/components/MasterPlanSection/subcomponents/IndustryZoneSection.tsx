@@ -47,7 +47,8 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
               {t('industryZone.intro_paragraph2')}
             </IntroText>
           </IntroTextContent>
-          <ContentGrid>
+        </Container>
+        <ContentGrid>
             <TextContent>
               <SubsectionTitle>{t('industryZone.core_features_title')}</SubsectionTitle>
               <p>
@@ -78,7 +79,6 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = ({ onNavigate: _
               </svg>
             </IllustrationBox>
           </ContentGrid>
-        </Container>
       </WhiteSection>
 
       <TealSection>

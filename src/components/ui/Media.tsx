@@ -15,11 +15,13 @@ export const IllustrationBox = styled.div`
   padding: ${({ theme }) => theme.spacing.lg};
   flex-shrink: 0;
   position: relative;
+  min-width: 0;
   
   svg {
     width: 80%;
     height: auto;
     transform: translate(-10%, -60px);
+    flex-shrink: 0;
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -47,8 +49,7 @@ export const IllustrationBox = styled.div`
 
 export const ImageBox = styled.div`
   width: 100%;
-  max-width: 65%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   
   img {
@@ -58,7 +59,6 @@ export const ImageBox = styled.div`
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    max-width: 100%;
     aspect-ratio: 16 / 9;
   }
 `;

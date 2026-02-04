@@ -87,7 +87,8 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
           <TextContent style={{ marginBottom: '3rem' }}>
             <p>{t('overview.intro')}</p>
           </TextContent>
-          <ContentGrid>
+        </Container>
+        <ContentGrid>
             <TextContent>
               <SubsectionTitle>{tCommon('keyOfferings', 'Key Offerings')}</SubsectionTitle>
               <p><strong>{t('overview.coreService1_title')}:</strong> {t('overview.coreService1_description')}</p>
@@ -133,7 +134,6 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = ({ onNav
               </svg>
             </IllustrationBox>
           </ContentGrid>
-        </Container>
       </WhiteSection>
 
       <TealSection>

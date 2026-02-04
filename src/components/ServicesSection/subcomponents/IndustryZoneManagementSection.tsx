@@ -78,7 +78,8 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
             <p>{t('services:industryZoneManagement.intro1')}</p>
             <p>{t('services:industryZoneManagement.intro2')}</p>
           </IntroTextContent>
-          <ContentGrid>
+        </Container>
+        <ContentGrid>
             <TextContent>
               <SubsectionTitle>{t('services:industryZoneManagement.core_responsibilities_title')}</SubsectionTitle>
               <p>
@@ -129,8 +130,7 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
                 <rect x="555" y="238" width="10" height="15" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
               </svg>
             </IllustrationBox>
-          </ContentGrid>
-        </Container>
+        </ContentGrid>
       </WhiteSection>
 
       <TealSection>
@@ -170,8 +170,7 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
       <GoldDivider />
 
       <GreySection>
-        <Container>
-          <GreyContentGrid>
+        <GreyContentGrid>
             <ImageBox>
               <img 
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
@@ -184,8 +183,7 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
                 {t('services:industryZoneManagement.tenantSupport_text')}
               </p>
             </TextContent>
-          </GreyContentGrid>
-        </Container>
+        </GreyContentGrid>
       </GreySection>
 
       <GreySection>

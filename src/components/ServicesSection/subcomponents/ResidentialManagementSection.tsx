@@ -77,7 +77,8 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
           <IntroTextContent>
             <p>{t('services:residentialManagement.intro')}</p>
           </IntroTextContent>
-          <ContentGrid>
+        </Container>
+        <ContentGrid>
             <TextContent>
               <SubsectionTitle>{t('services:residentialManagement.primary_objectives_title')}</SubsectionTitle>
               <p>
@@ -115,8 +116,7 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
                 <circle cx="520" cy="310" r="10" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
               </svg>
             </IllustrationBox>
-          </ContentGrid>
-        </Container>
+        </ContentGrid>
       </WhiteSection>
 
       <TealSection>
@@ -156,11 +156,10 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
       <GoldDivider />
 
       <GreySection>
-        <Container>
-          <GreyContentGrid>
+        <GreyContentGrid>
             <ImageBox>
               <img 
-                src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
+                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
                 alt="Residential management"
               />
             </ImageBox>
@@ -170,8 +169,7 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
                 {t('services:residentialManagement.technology_text')}
               </p>
             </TextContent>
-          </GreyContentGrid>
-        </Container>
+        </GreyContentGrid>
       </GreySection>
     </>
   );

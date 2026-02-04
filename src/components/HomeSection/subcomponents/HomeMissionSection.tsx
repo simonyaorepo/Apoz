@@ -1,18 +1,11 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
-import {
-  WhiteSection,
-  GreySection,
-  Container,
-  ContentGrid,
-  GreyContentGrid,
-  TextContent,
-  TealSection,
-  TealBox,
-  IllustrationBox,
-  ImageBox,
-} from "./SharedStyles";
+import { WhiteSection, GreySection } from "../../ui/Sections";
+import { Container } from "../../ui/Containers";
+import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
+import { IllustrationBox, ImageBox } from "../../ui/Media";
+import { TextContent, TealSection, TealBox } from "./SharedStyles";
 
 interface MissionSectionProps {
   onNavigate: (page: string) => void;
@@ -34,8 +27,7 @@ const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate
       />
       
       <WhiteSection>
-        <Container>
-          <ContentGrid>
+        <ContentGrid>
             <TextContent>
               <p>{t('missionPage.intro')}</p>
             </TextContent>
@@ -88,7 +80,6 @@ const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate
               </svg>
             </IllustrationBox>
           </ContentGrid>
-        </Container>
       </WhiteSection>
 
       <TealSection>
@@ -98,19 +89,17 @@ const MissionSection: React.FC<MissionSectionProps> = ({ onNavigate: _onNavigate
       </TealSection>
 
       <GreySection>
-        <Container>
-          <GreyContentGrid>
+        <GreyContentGrid>
             <ImageBox>
               <img 
-                src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
                 alt="Mission and collaboration"
               />
             </ImageBox>
             <TextContent>
               <p>{t('missionPage.pillars_description')}</p>
             </TextContent>
-          </GreyContentGrid>
-        </Container>
+        </GreyContentGrid>
       </GreySection>
     </>
   );

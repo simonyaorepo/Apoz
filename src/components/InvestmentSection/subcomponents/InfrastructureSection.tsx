@@ -72,8 +72,7 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
       />
       
       <WhiteSection>
-        <Container>
-          <ContentGrid>
+        <ContentGrid>
             <TextContent>
               <p>{t('infrastructure.intro1')}</p>
               <p>{t('infrastructure.intro2')}</p>
@@ -117,7 +116,6 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
               </svg>
             </IllustrationBox>
           </ContentGrid>
-        </Container>
       </WhiteSection>
 
       <TealSection>
@@ -157,11 +155,10 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
       <GoldDivider />
 
       <GreySection>
-        <Container>
-          <GreyContentGrid>
+        <GreyContentGrid>
             <ImageBox>
               <img 
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
                 alt="Construction and development"
               />
             </ImageBox>
@@ -175,8 +172,7 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({ onNavigat
                 </TimelineCard>
               ))}
             </TextContent>
-          </GreyContentGrid>
-        </Container>
+        </GreyContentGrid>
       </GreySection>
 
       <WhiteSection>

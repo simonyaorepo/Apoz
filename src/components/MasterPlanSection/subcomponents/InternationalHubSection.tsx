@@ -72,7 +72,8 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
             <p>{t('internationalHub.intro1')}</p>
             <p>{t('internationalHub.intro2')}</p>
           </IntroTextContent>
-          <ContentGrid>
+        </Container>
+        <ContentGrid>
             <TextContent>
               <SubsectionTitle>{t('internationalHub.targetPartners_title', 'Target Partners')}</SubsectionTitle>
               <p>
@@ -116,7 +117,6 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
               </svg>
             </IllustrationBox>
           </ContentGrid>
-        </Container>
       </WhiteSection>
 
       <TealSection>
@@ -169,8 +169,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
       <GoldDivider />
       
       <GreySection>
-        <Container>
-          <GreyContentGrid>
+        <GreyContentGrid>
             <ImageBox>
               <img 
                 src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
@@ -184,8 +183,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = ({ onNav
               <p dangerouslySetInnerHTML={{ __html: t('internationalHub.advantage3') }} />
               <p dangerouslySetInnerHTML={{ __html: t('internationalHub.advantage4') }} />
             </TextContent>
-          </GreyContentGrid>
-        </Container>
+        </GreyContentGrid>
       </GreySection>
 
       <WhiteSection>

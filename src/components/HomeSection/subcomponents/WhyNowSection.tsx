@@ -2,26 +2,29 @@ import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 const Section = styled.section`
-  background: ${({ theme }) => theme.gradients.tealOverlay};
-  padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
-  position: relative;
+  background: ${({ theme }) => theme.colors.white};
+  padding: ${({ theme }) => theme.spacing.xxxl} 0;
   
   @media (max-width: 768px) {
-    padding: ${({ theme }) => theme.spacing.xxl} 5vw;
+    padding: ${({ theme }) => theme.spacing.xxl} 0;
   }
 `;
 
 const Container = styled.div`
-  max-width: 1180px;
+  max-width: ${({ theme }) => theme.maxWidth.content};
   margin: 0 auto;
+  padding: 0 ${({ theme }) => theme.spacing.xl};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding: 0 ${({ theme }) => theme.spacing.lg};
+  }
 `;
 
 const Title = styled.h2`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.darkBlue};
   font-size: ${({ theme }) => theme.fontSizes.h2};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
-  text-align: center;
-  margin-bottom: ${({ theme }) => theme.spacing.xxxl};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: ${({ theme }) => theme.fontSizes.h3};
@@ -30,55 +33,52 @@ const Title = styled.h2`
 
 const DataGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: ${({ theme }) => theme.spacing.xl};
   margin-top: ${({ theme }) => theme.spacing.xl};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const DataCard = styled.div`
   padding: ${({ theme }) => theme.spacing.xl};
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: ${({ theme }) => theme.colors.goldAccent};
-  }
+  background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: ${({ theme }) => theme.radii.md};
 `;
 
 const DataTitle = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.h4};
+  font-size: ${({ theme }) => theme.fontSizes.lg};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.darkBlue};
   margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 
 const DataStat = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes.xl};
+  font-size: ${({ theme }) => theme.fontSizes.h3};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: ${({ theme }) => theme.colors.goldAccent};
+  color: ${({ theme }) => theme.colors.teal};
   margin-bottom: ${({ theme }) => theme.spacing.md};
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.lg};
+    font-size: ${({ theme }) => theme.fontSizes.h4};
   }
 `;
 
 const DataDescription = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.sm};
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  color: ${({ theme }) => theme.colors.foreground};
+  line-height: 1.7;
   margin-bottom: ${({ theme }) => theme.spacing.sm};
 `;
 
 const DataImpact = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.sm};
-  color: ${({ theme }) => theme.colors.goldAccent};
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  color: ${({ theme }) => theme.colors.darkBlue};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
-  line-height: 1.5;
+  line-height: 1.6;
   margin-top: ${({ theme }) => theme.spacing.md};
 `;
 

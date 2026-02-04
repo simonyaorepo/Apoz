@@ -45,7 +45,8 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
               {t('affordableLiving.intro_paragraph')}
             </IntroText>
           </IntroTextContent>
-          <ContentGrid>
+        </Container>
+        <ContentGrid>
             <TextContent>
               <SubsectionTitle>{t('affordableLiving.objectives_title', 'Development Objectives')}</SubsectionTitle>
               <p>
@@ -84,7 +85,6 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
               </svg>
             </IllustrationBox>
           </ContentGrid>
-        </Container>
       </WhiteSection>
 
       <TealSection>

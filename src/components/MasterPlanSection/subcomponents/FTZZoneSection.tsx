@@ -83,46 +83,44 @@ const FTZZoneSection: React.FC<FTZZoneSectionProps> = () => {
       <GoldDivider />
 
       <GreySection>
-        <Container>
-          <GreyContentGrid>
-            <div>
-              <SectionTitle>{t('ftz.compliance_title')}</SectionTitle>
-              <RequirementsList>
-                <div>
-                  <RequirementTitle>{t('ftz.compliance_security_title')}</RequirementTitle>
-                  <RequirementText>{t('ftz.compliance_security_text')}</RequirementText>
-                </div>
-                <div>
-                  <RequirementTitle>{t('ftz.compliance_inventory_title')}</RequirementTitle>
-                  <RequirementText>{t('ftz.compliance_inventory_text')}</RequirementText>
-                </div>
-                <div>
-                  <RequirementTitle>{t('ftz.compliance_record_title')}</RequirementTitle>
-                  <RequirementText>{t('ftz.compliance_record_text')}</RequirementText>
-                </div>
-                <div>
-                  <RequirementTitle>{t('ftz.compliance_cbp_access_title')}</RequirementTitle>
-                  <RequirementText>{t('ftz.compliance_cbp_access_text')}</RequirementText>
-                </div>
-                <div>
-                  <RequirementTitle>{t('ftz.compliance_prohibited_title')}</RequirementTitle>
-                  <RequirementText>{t('ftz.compliance_prohibited_text')}</RequirementText>
-                </div>
-                <div>
-                  <RequirementTitle>{t('ftz.compliance_annual_cert_title')}</RequirementTitle>
-                  <RequirementText>{t('ftz.compliance_annual_cert_text')}</RequirementText>
-                </div>
-              </RequirementsList>
-            </div>
-            <ImageBox style={{ maxWidth: '100%', marginLeft: 'auto' }}>
-              <img 
-                src="/assets/images/masterPlan/FTZ/1.png" 
-                alt="FTZ Compliance"
-                style={{ objectFit: 'contain' }}
-              />
-            </ImageBox>
-          </GreyContentGrid>
-        </Container>
+        <GreyContentGrid>
+          <div>
+            <SectionTitle>{t('ftz.compliance_title')}</SectionTitle>
+            <RequirementsList>
+              <div>
+                <RequirementTitle>{t('ftz.compliance_security_title')}</RequirementTitle>
+                <RequirementText>{t('ftz.compliance_security_text')}</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>{t('ftz.compliance_inventory_title')}</RequirementTitle>
+                <RequirementText>{t('ftz.compliance_inventory_text')}</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>{t('ftz.compliance_record_title')}</RequirementTitle>
+                <RequirementText>{t('ftz.compliance_record_text')}</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>{t('ftz.compliance_cbp_access_title')}</RequirementTitle>
+                <RequirementText>{t('ftz.compliance_cbp_access_text')}</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>{t('ftz.compliance_prohibited_title')}</RequirementTitle>
+                <RequirementText>{t('ftz.compliance_prohibited_text')}</RequirementText>
+              </div>
+              <div>
+                <RequirementTitle>{t('ftz.compliance_annual_cert_title')}</RequirementTitle>
+                <RequirementText>{t('ftz.compliance_annual_cert_text')}</RequirementText>
+              </div>
+            </RequirementsList>
+          </div>
+          <ImageBox style={{ maxWidth: '100%', marginLeft: 'auto' }}>
+            <img 
+              src="/assets/images/masterPlan/FTZ/1.png" 
+              alt="FTZ Compliance"
+              style={{ objectFit: 'contain' }}
+            />
+          </ImageBox>
+        </GreyContentGrid>
       </GreySection>
 
       <GoldDivider />
