@@ -20,6 +20,18 @@ export const TextContent = styled.div`
   }
 `;
 
+export const IntroTextContent = styled(TextContent)`
+  margin-bottom: ${({ theme }) => theme.spacing.xxxl}; /* Extra space before grid sections */
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing.xxl};
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    margin-bottom: ${({ theme }) => theme.spacing.xl};
+  }
+`;
+
 export const IntroText = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.md};
   line-height: 1.7;

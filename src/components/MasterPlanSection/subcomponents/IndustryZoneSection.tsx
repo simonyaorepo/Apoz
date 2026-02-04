@@ -1,22 +1,13 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import TextHero from "../../TextHero";
-import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { TealText } from "../../ui/TealComponents";
 import { Container } from "../../ui/Containers";
 import { ContentGrid } from "../../ui/Grids";
-import { TextContent, IntroText, SectionTitle, SubsectionTitle } from "../../ui/Typography";
+import { TextContent, SectionTitle, SubsectionTitle, IntroTextContent } from "../../ui/Typography";
 import { IllustrationBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
-
-const IntroTextContent = styled(TextContent)`
-  margin-bottom: ${({ theme }) => theme.spacing.xxl};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    margin-bottom: ${({ theme }) => theme.spacing.xl};
-  }
-`;
 
 interface IndustryZoneSectionProps {
   onNavigate: (page: string) => void;
@@ -40,12 +31,8 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = () => {
       <WhiteSection>
         <Container>
           <IntroTextContent>
-            <IntroText>
-              {t('industryZone.intro_paragraph1')}
-            </IntroText>
-            <IntroText>
-              {t('industryZone.intro_paragraph2')}
-            </IntroText>
+            <p>{t('industryZone.intro_paragraph1')}</p>
+            <p>{t('industryZone.intro_paragraph2')}</p>
           </IntroTextContent>
         </Container>
         <ContentGrid>
@@ -57,25 +44,25 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = () => {
             </TextContent>
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="30" y1="310" x2="620" y2="310" stroke="#0a3a3f" strokeWidth="2"/>
-                <rect x="60" y="180" width="120" height="130" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="75" y="200" width="22" height="28" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="105" y="200" width="22" height="28" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="135" y="200" width="22" height="28" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="75" y="245" width="22" height="28" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="105" y="245" width="22" height="28" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="135" y="245" width="22" height="28" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="85" y="145" width="70" height="45" rx="3" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <line x1="30" y1="310" x2="620" y2="310" stroke="currentColor" strokeWidth="2"/>
+                <rect x="60" y="180" width="120" height="130" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="75" y="200" width="22" height="28" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="105" y="200" width="22" height="28" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="135" y="200" width="22" height="28" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="75" y="245" width="22" height="28" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="105" y="245" width="22" height="28" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="135" y="245" width="22" height="28" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="85" y="145" width="70" height="45" rx="3" stroke="currentColor" strokeWidth="2" fill="none"/>
                 <text x="120" y="173" textAnchor="middle" fontSize="20" fontWeight="bold" fill="#0a3a3f">FTZ</text>
-                <rect x="220" y="200" width="100" height="110" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="235" y="220" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="265" y="220" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="295" y="220" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="360" y="220" width="80" height="90" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <circle cx="400" cy="265" r="25" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <path d="M 385 265 L 415 265 M 400 250 L 400 280" stroke="#0a3a3f" strokeWidth="2"/>
-                <rect x="470" y="240" width="100" height="70" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <path d="M 490 275 L 520 260 L 550 275 L 520 290 Z" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <rect x="220" y="200" width="100" height="110" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="235" y="220" width="20" height="25" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="265" y="220" width="20" height="25" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="295" y="220" width="20" height="25" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="360" y="220" width="80" height="90" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <circle cx="400" cy="265" r="25" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <path d="M 385 265 L 415 265 M 400 250 L 400 280" stroke="currentColor" strokeWidth="2"/>
+                <rect x="470" y="240" width="100" height="70" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <path d="M 490 275 L 520 260 L 550 275 L 520 290 Z" stroke="currentColor" strokeWidth="2" fill="none"/>
               </svg>
             </IllustrationBox>
           </ContentGrid>

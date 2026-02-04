@@ -15,13 +15,14 @@ export const IllustrationBox = styled.div`
   padding: ${({ theme }) => theme.spacing.lg};
   flex-shrink: 0;
   position: relative;
-  min-width: 0;
+  min-width: 0; /* Prevents flex item from overflowing its container */
+  color: ${({ theme }) => theme.colors.teal}; /* SVG stroke color - uses theme navy */
   
   svg {
     width: 80%;
     height: auto;
     transform: translate(-10%, -60px);
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents SVG from shrinking below natural size */
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -49,7 +50,7 @@ export const IllustrationBox = styled.div`
 
 export const ImageBox = styled.div`
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 3; /* Landscape orientation for better grid display */
   overflow: hidden;
   
   img {
@@ -59,6 +60,6 @@ export const ImageBox = styled.div`
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 9; /* Wider aspect ratio for mobile */
   }
 `;

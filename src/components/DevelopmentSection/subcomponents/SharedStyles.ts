@@ -4,6 +4,15 @@ import styled from "styled-components";
 
 export const PhaseSection = styled.section`
   background: ${({ theme }) => theme.colors.white};
+  padding: ${({ theme }) => theme.spacing.xxxl} 0;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: ${({ theme }) => theme.spacing.xxl} 0;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: ${({ theme }) => theme.spacing.xl} 0;
+  }
 `;
 
 export const PhaseContentBlock = styled.div<{ $reverse?: boolean }>`
@@ -11,13 +20,27 @@ export const PhaseContentBlock = styled.div<{ $reverse?: boolean }>`
   grid-template-columns: 1fr 1fr;
   gap: ${({ theme }) => theme.spacing.xxxl};
   max-width: ${({ theme }) => theme.maxWidth.wide};
-  margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
+  margin: ${({ theme }) => theme.spacing.xxxl} auto; /* Vertical spacing between stacked blocks */
+  padding: 0 5vw; /* Only horizontal padding */
   align-items: center;
+  
+  &:first-child {
+    margin-top: 0; /* No top margin for first block */
+  }
+  
+  &:last-child {
+    margin-bottom: 0; /* No bottom margin for last block */
+  }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.xl};
+    padding: 0 5vw;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0 ${({ theme }) => theme.spacing.lg};
+    gap: ${({ theme }) => theme.spacing.lg};
   }
 `;
 

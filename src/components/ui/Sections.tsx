@@ -10,6 +10,11 @@ export const WhiteSection = styled.section<{ $noBottomPadding?: boolean }>`
     padding: ${({ theme }) => theme.spacing.xxl} 0;
     padding-bottom: ${({ $noBottomPadding }) => $noBottomPadding ? '0' : undefined};
   }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: ${({ theme }) => theme.spacing.xl} 0;
+    padding-bottom: ${({ $noBottomPadding }) => $noBottomPadding ? '0' : undefined};
+  }
 `;
 
 export const GreySection = styled.section<{ $noTopPadding?: boolean; $reducedTopPadding?: boolean }>`
@@ -28,16 +33,28 @@ export const GreySection = styled.section<{ $noTopPadding?: boolean; $reducedTop
       $reducedTopPadding ? theme.spacing.xl : 
       undefined};
   }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: ${({ theme }) => theme.spacing.xl} 0;
+    padding-top: ${({ $noTopPadding, $reducedTopPadding, theme }) => 
+      $noTopPadding ? '0' : 
+      $reducedTopPadding ? theme.spacing.lg : 
+      undefined};
+  }
 `;
 
 export const TealSection = styled.section`
   background: linear-gradient(to bottom, ${({ theme }) => theme.colors.white} 50%, ${({ theme }) => theme.colors.grey} 50%);
-  padding: ${({ theme }) => theme.spacing.xl} 0;
+  padding: ${({ theme }) => theme.spacing.xxxl} 0;
   position: relative;
   z-index: 10;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) => theme.spacing.lg} 0;
+    padding: ${({ theme }) => theme.spacing.xxl} 0;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: ${({ theme }) => theme.spacing.xl} 0;
   }
 `;
 

@@ -5,8 +5,12 @@ const Section = styled.section`
   background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing.xxxl} 0;
   
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: ${({ theme }) => theme.spacing.xxl} 0;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: ${({ theme }) => theme.spacing.xl} 0;
   }
 `;
 
@@ -17,6 +21,10 @@ const Container = styled.div`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     padding: 0 ${({ theme }) => theme.spacing.lg};
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: 0 ${({ theme }) => theme.spacing.md};
   }
 `;
 
@@ -29,6 +37,11 @@ const Title = styled.h2`
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: ${({ theme }) => theme.fontSizes.h3};
   }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: ${({ theme }) => theme.fontSizes.h4};
+    margin-bottom: ${({ theme }) => theme.spacing.lg};
+  }
 `;
 
 const DataGrid = styled.div`
@@ -39,6 +52,12 @@ const DataGrid = styled.div`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     grid-template-columns: 1fr;
+    gap: ${({ theme }) => theme.spacing.lg};
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    gap: ${({ theme }) => theme.spacing.md};
+    margin-top: ${({ theme }) => theme.spacing.lg};
   }
 `;
 
@@ -47,6 +66,10 @@ const DataCard = styled.div`
   background: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.radii.md};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: ${({ theme }) => theme.spacing.lg};
+  }
 `;
 
 const DataTitle = styled.h3`

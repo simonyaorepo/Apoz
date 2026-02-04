@@ -80,39 +80,39 @@ const InfrastructureSection: React.FC<InfrastructureSectionProps> = () => {
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Ground line */}
-                <line x1="30" y1="310" x2="620" y2="310" stroke="#0a3a3f" strokeWidth="2"/>
+                <line x1="30" y1="310" x2="620" y2="310" stroke="currentColor" strokeWidth="2"/>
                 
                 {/* Road/Transportation */}
-                <rect x="60" y="250" width="150" height="60" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <line x1="80" y1="280" x2="190" y2="280" stroke="#0a3a3f" strokeWidth="2"/>
-                <line x1="100" y1="273" x2="120" y2="273" stroke="#0a3a3f" strokeWidth="1.5"/>
-                <line x1="150" y1="273" x2="170" y2="273" stroke="#0a3a3f" strokeWidth="1.5"/>
+                <rect x="60" y="250" width="150" height="60" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <line x1="80" y1="280" x2="190" y2="280" stroke="currentColor" strokeWidth="2"/>
+                <line x1="100" y1="273" x2="120" y2="273" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="150" y1="273" x2="170" y2="273" stroke="currentColor" strokeWidth="1.5"/>
                 
                 {/* Power/Utilities */}
-                <line x1="240" y1="200" x2="240" y2="310" stroke="#0a3a3f" strokeWidth="3"/>
-                <line x1="230" y1="220" x2="250" y2="220" stroke="#0a3a3f" strokeWidth="2"/>
-                <line x1="230" y1="250" x2="250" y2="250" stroke="#0a3a3f" strokeWidth="2"/>
-                <line x1="230" y1="280" x2="250" y2="280" stroke="#0a3a3f" strokeWidth="2"/>
-                <circle cx="240" cy="190" r="15" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <line x1="240" y1="200" x2="240" y2="310" stroke="currentColor" strokeWidth="3"/>
+                <line x1="230" y1="220" x2="250" y2="220" stroke="currentColor" strokeWidth="2"/>
+                <line x1="230" y1="250" x2="250" y2="250" stroke="currentColor" strokeWidth="2"/>
+                <line x1="230" y1="280" x2="250" y2="280" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="240" cy="190" r="15" stroke="currentColor" strokeWidth="2" fill="none"/>
                 
                 {/* Digital/Connectivity */}
-                <circle cx="340" cy="240" r="40" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <circle cx="340" cy="240" r="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <line x1="315" y1="215" x2="305" y2="205" stroke="#0a3a3f" strokeWidth="2"/>
-                <line x1="365" y1="215" x2="375" y2="205" stroke="#0a3a3f" strokeWidth="2"/>
-                <line x1="365" y1="265" x2="375" y2="275" stroke="#0a3a3f" strokeWidth="2"/>
+                <circle cx="340" cy="240" r="40" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <circle cx="340" cy="240" r="25" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <line x1="315" y1="215" x2="305" y2="205" stroke="currentColor" strokeWidth="2"/>
+                <line x1="365" y1="215" x2="375" y2="205" stroke="currentColor" strokeWidth="2"/>
+                <line x1="365" y1="265" x2="375" y2="275" stroke="currentColor" strokeWidth="2"/>
                 
                 {/* Building/Facilities */}
-                <rect x="430" y="220" width="80" height="90" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="445" y="240" width="18" height="22" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="475" y="240" width="18" height="22" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="445" y="275" width="18" height="22" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="475" y="275" width="18" height="22" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
+                <rect x="430" y="220" width="80" height="90" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="445" y="240" width="18" height="22" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="475" y="240" width="18" height="22" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="445" y="275" width="18" height="22" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="475" y="275" width="18" height="22" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                 
                 {/* Environmental/Green */}
-                <circle cx="560" cy="265" r="25" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <path d="M 550 255 Q 560 245 570 255" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <line x1="560" y1="255" x2="555" y2="260" stroke="#0a3a3f" strokeWidth="1.5"/>
+                <circle cx="560" cy="265" r="25" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <path d="M 550 255 Q 560 245 570 255" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <line x1="560" y1="255" x2="555" y2="260" stroke="currentColor" strokeWidth="1.5"/>
               </svg>
             </IllustrationBox>
           </ContentGrid>

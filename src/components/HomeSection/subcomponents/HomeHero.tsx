@@ -45,7 +45,7 @@ const ContentBox = styled.div`
   left: 0;
   bottom: 0;
   z-index: 3;
-  background: rgba(10, 30, 30, 0.78);
+  background: ${({ theme }) => theme.colors.tealGlass};
   backdrop-filter: blur(6px);
   border-radius: 0;
   padding: ${({ theme }) => theme.spacing.xxl} 64px;

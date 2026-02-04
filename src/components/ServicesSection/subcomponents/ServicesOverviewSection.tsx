@@ -100,37 +100,37 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = () => {
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Ground line */}
-                <line x1="30" y1="310" x2="620" y2="310" stroke="#0a3a3f" strokeWidth="2"/>
+                <line x1="30" y1="310" x2="620" y2="310" stroke="currentColor" strokeWidth="2"/>
                 
                 {/* Industrial building */}
-                <rect x="60" y="200" width="100" height="110" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="75" y="220" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="110" y="220" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="75" y="260" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="110" y="260" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
+                <rect x="60" y="200" width="100" height="110" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="75" y="220" width="20" height="25" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="110" y="220" width="20" height="25" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="75" y="260" width="20" height="25" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="110" y="260" width="20" height="25" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                 
                 {/* Residential homes */}
-                <path d="M 190 240 L 215 215 L 240 240" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="195" y="240" width="40" height="70" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="205" y="255" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
-                <rect x="220" y="255" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
+                <path d="M 190 240 L 215 215 L 240 240" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="195" y="240" width="40" height="70" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="205" y="255" width="10" height="12" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <rect x="220" y="255" width="10" height="12" stroke="currentColor" strokeWidth="1" fill="none"/>
                 
                 {/* Trade/logistics icon */}
-                <rect x="280" y="240" width="80" height="70" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <circle cx="320" cy="275" r="25" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <path d="M 305 275 L 335 275 M 320 260 L 320 290" stroke="#0a3a3f" strokeWidth="2"/>
+                <rect x="280" y="240" width="80" height="70" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <circle cx="320" cy="275" r="25" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <path d="M 305 275 L 335 275 M 320 260 L 320 290" stroke="currentColor" strokeWidth="2"/>
                 
                 {/* Investment/money icon */}
-                <circle cx="420" cy="260" r="40" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <circle cx="420" cy="260" r="40" stroke="currentColor" strokeWidth="2" fill="none"/>
                 <text x="420" y="275" textAnchor="middle" fontSize="32" fontWeight="bold" fill="#0a3a3f">$</text>
                 
                 {/* Services hub */}
-                <rect x="490" y="220" width="90" height="90" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <circle cx="535" cy="265" r="15" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <line x1="520" y1="265" x2="510" y2="265" stroke="#0a3a3f" strokeWidth="2"/>
-                <line x1="550" y1="265" x2="560" y2="265" stroke="#0a3a3f" strokeWidth="2"/>
-                <line x1="535" y1="250" x2="535" y2="240" stroke="#0a3a3f" strokeWidth="2"/>
-                <line x1="535" y1="280" x2="535" y2="290" stroke="#0a3a3f" strokeWidth="2"/>
+                <rect x="490" y="220" width="90" height="90" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <circle cx="535" cy="265" r="15" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <line x1="520" y1="265" x2="510" y2="265" stroke="currentColor" strokeWidth="2"/>
+                <line x1="550" y1="265" x2="560" y2="265" stroke="currentColor" strokeWidth="2"/>
+                <line x1="535" y1="250" x2="535" y2="240" stroke="currentColor" strokeWidth="2"/>
+                <line x1="535" y1="280" x2="535" y2="290" stroke="currentColor" strokeWidth="2"/>
               </svg>
             </IllustrationBox>
           </ContentGrid>

@@ -7,14 +7,14 @@ export const ContentGrid = styled.div`
   max-width: ${({ theme }) => theme.maxWidth.wide};
   width: 100%;
   margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
+  padding: 0 5vw; /* Only horizontal padding - vertical spacing provided by parent section */
   align-items: center;
   box-sizing: border-box;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.xl};
-    align-items: center;
+    padding: 0 5vw;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -25,6 +25,11 @@ export const ContentGrid = styled.div`
       max-width: 100%;
     }
   }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0 ${({ theme }) => theme.spacing.lg};
+    gap: ${({ theme }) => theme.spacing.lg};
+  }
 `;
 
 export const GreyContentGrid = styled.div`
@@ -34,13 +39,14 @@ export const GreyContentGrid = styled.div`
   max-width: ${({ theme }) => theme.maxWidth.wide};
   width: 100%;
   margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
+  padding: 0 5vw; /* Only horizontal padding - vertical spacing provided by parent section */
   align-items: center;
   box-sizing: border-box;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.lg};
+    padding: 0 5vw;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -50,6 +56,11 @@ export const GreyContentGrid = styled.div`
       min-width: 0;
       max-width: 100%;
     }
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0 ${({ theme }) => theme.spacing.lg};
+    gap: ${({ theme }) => theme.spacing.md};
   }
 `;
 

@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
 import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
-import { TextContent, SubsectionTitle } from "../../ui/Typography";
+import { TextContent, SubsectionTitle, IntroTextContent } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
 
@@ -15,14 +15,6 @@ const TealText = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.md};
   line-height: 1.7;
   margin: 0;
-`;
-
-const IntroTextContent = styled(TextContent)`
-  margin-bottom: ${({ theme }) => theme.spacing.xxl};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    margin-bottom: ${({ theme }) => theme.spacing.xl};
-  }
 `;
 
 interface ResidentialManagementSectionProps {
@@ -88,32 +80,32 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
             <IllustrationBox>
               <svg viewBox="0 0 650 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Ground line */}
-                <line x1="30" y1="310" x2="620" y2="310" stroke="#0a3a3f" strokeWidth="2"/>
+                <line x1="30" y1="310" x2="620" y2="310" stroke="currentColor" strokeWidth="2"/>
                 
                 {/* Residential buildings */}
-                <path d="M 80 240 L 105 215 L 130 240" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="85" y="240" width="40" height="70" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="95" y="255" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
-                <rect x="110" y="255" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
+                <path d="M 80 240 L 105 215 L 130 240" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="85" y="240" width="40" height="70" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="95" y="255" width="10" height="12" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <rect x="110" y="255" width="10" height="12" stroke="currentColor" strokeWidth="1" fill="none"/>
                 
-                <path d="M 165 240 L 190 215 L 215 240" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="170" y="240" width="40" height="70" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="180" y="255" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
-                <rect x="195" y="255" width="10" height="12" stroke="#0a3a3f" strokeWidth="1" fill="none"/>
+                <path d="M 165 240 L 190 215 L 215 240" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="170" y="240" width="40" height="70" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="180" y="255" width="10" height="12" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <rect x="195" y="255" width="10" height="12" stroke="currentColor" strokeWidth="1" fill="none"/>
                 
                 {/* Amenities building */}
-                <rect x="280" y="230" width="80" height="80" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <rect x="295" y="250" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
-                <rect x="330" y="250" width="20" height="25" stroke="#0a3a3f" strokeWidth="1.5" fill="none"/>
+                <rect x="280" y="230" width="80" height="80" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <rect x="295" y="250" width="20" height="25" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="330" y="250" width="20" height="25" stroke="currentColor" strokeWidth="1.5" fill="none"/>
                 
                 {/* People */}
-                <circle cx="420" cy="270" r="12" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <line x1="420" y1="282" x2="420" y2="300" stroke="#0a3a3f" strokeWidth="2"/>
+                <circle cx="420" cy="270" r="12" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <line x1="420" y1="282" x2="420" y2="300" stroke="currentColor" strokeWidth="2"/>
                 
                 {/* Maintenance vehicle */}
-                <rect x="480" y="270" width="60" height="40" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <circle cx="500" cy="310" r="10" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
-                <circle cx="520" cy="310" r="10" stroke="#0a3a3f" strokeWidth="2" fill="none"/>
+                <rect x="480" y="270" width="60" height="40" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <circle cx="500" cy="310" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <circle cx="520" cy="310" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
               </svg>
             </IllustrationBox>
         </ContentGrid>

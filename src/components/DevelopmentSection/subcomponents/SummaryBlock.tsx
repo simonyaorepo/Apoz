@@ -6,13 +6,19 @@ const Block = styled.div<{ $reverse?: boolean }>`
   grid-template-columns: ${({ $reverse }) => $reverse ? '1fr 1fr' : '1fr 1fr'};
   gap: ${({ theme }) => theme.spacing.xxxl};
   max-width: ${({ theme }) => theme.maxWidth.wide};
-  margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.xxxl} 5vw;
+  margin: 0 auto ${({ theme }) => theme.spacing.xxxl} auto; /* Bottom margin for spacing before next block */
+  padding: 0 5vw; /* Only horizontal padding */
   align-items: center;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.xl};
+    padding: 0 5vw;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0 ${({ theme }) => theme.spacing.lg};
+    gap: ${({ theme }) => theme.spacing.lg};
   }
 `;
 

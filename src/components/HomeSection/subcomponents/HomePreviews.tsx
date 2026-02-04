@@ -4,7 +4,7 @@ import styled from "styled-components";
 import GoldButton from "../../ui/GoldButton";
 
 const Section = styled.section`
-  background: linear-gradient(rgba(10, 40, 45, 0.85), rgba(10, 40, 45, 0.85)),
+  background: linear-gradient(${({ theme }) => theme.colors.tealOverlay}, ${({ theme }) => theme.colors.tealOverlay}),
     url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=80') center/cover;
   padding: ${({ theme }) => theme.spacing.section} 5vw;
   

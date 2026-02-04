@@ -8,6 +8,10 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: 0 ${({ theme }) => theme.spacing.lg};
   }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: 0 ${({ theme }) => theme.spacing.md};
+  }
 `;
 
 export const ContentWrapper = styled.div`
