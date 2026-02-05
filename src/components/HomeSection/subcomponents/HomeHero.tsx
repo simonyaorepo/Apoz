@@ -164,7 +164,11 @@ const ArrowRight = () => (
 );
 
 
-const HomeHero: React.FC = () => {
+interface HomeHeroProps {
+  onNavigate?: (page: string) => void;
+}
+
+const HomeHero: React.FC<HomeHeroProps> = () => {
   const navigate = useNavigate();
   const { t } = useTranslation(['news', 'common']);
   const [index, setIndex] = useState(0);

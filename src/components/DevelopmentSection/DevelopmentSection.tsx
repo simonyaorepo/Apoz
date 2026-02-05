@@ -8,6 +8,7 @@ import Phase3Section from "./subcomponents/Phase3Section";
 
 interface DevelopmentSectionProps {
   section?: string;
+  onNavigate?: (page: string) => void;
 }
 
 const DevelopmentSection: React.FC<DevelopmentSectionProps> = ({ section }) => {

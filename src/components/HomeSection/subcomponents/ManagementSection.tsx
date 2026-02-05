@@ -4,7 +4,7 @@ import TextHero from "../../TextHero";
 import { LeaderCard } from "../../../components/LeadershipSection/subcomponents/LeaderCard";
 import type { TeamMember } from "../../../components/LeadershipSection/subcomponents/LeaderCard";
 
-const ManagementSection: React.FC = () => {
+const ManagementSection: React.FC<{ onNavigate?: (page: string) => void }> = () => {
   const { t } = useTranslation('home');
   const { t: tCommon } = useTranslation('common');
   const { t: tLeadership } = useTranslation('leadership');

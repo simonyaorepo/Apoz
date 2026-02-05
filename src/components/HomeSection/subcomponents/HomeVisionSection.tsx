@@ -6,7 +6,7 @@ import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { TextContent, TealSection, TealBox } from "./SharedStyles";
 
-const VisionSection: React.FC = () => {
+const VisionSection: React.FC<{ onNavigate?: (page: string) => void }> = () => {
   const { t } = useTranslation('home');
   const { t: tCommon } = useTranslation('common');
   

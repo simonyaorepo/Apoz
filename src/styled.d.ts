@@ -32,6 +32,8 @@ declare module 'styled-components' {
       darkBlueAlt: string;
       teal: string;
       tealDark: string;
+      tealOverlay: string;
+      tealGlass: string;
       grey: string;
       greyDark: string;
       lightGrey: string;

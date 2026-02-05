@@ -2,7 +2,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
-import { Button } from "../components/ui/button";
+import { Button } from "../components/ui/Button";
 import { NEWS_METADATA } from "../components/NewsSection/subcomponents/newsMetadata";
 
 const HeroSection = styled.section`
