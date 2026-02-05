@@ -92,7 +92,7 @@ const ManagementSection: React.FC<{ onNavigate?: (page: string) => void }> = () 
     <>
       <TextHero
         title={t('management.title')}
-        backgroundImage="/assets/images/home/management/hero.png"
+        backgroundImage="/assets/images/home/management/hero.webp"
         breadcrumbs={[
           { label: tCommon('breadcrumbs.home'), href: '/' },
           { label: t('management.title') }

@@ -22,7 +22,7 @@ const Phase1Section: React.FC = () => {
     <>
       <TextHero
         title={t('development:phase1.title')}
-        backgroundImage="/assets/images/development/phase1/hero.png"
+        backgroundImage="/assets/images/development/phase1/hero.webp"
         breadcrumbs={[
           { label: t('common:breadcrumbs.home'), href: "/" },
           { label: t('common:breadcrumbs.development'), href: "/development" },
@@ -33,7 +33,7 @@ const Phase1Section: React.FC = () => {
       <PhaseSection>
         <SummaryBlock
           content={[t('development:phase1.intro1'), t('development:phase1.intro2')]}
-          imageSrc="/assets/images/development/phase1/1.png"
+          imageSrc="/assets/images/development/phase1/1.webp"
           imageAlt="Phase 1 Overview"
           reverse={true}
         />
@@ -43,7 +43,7 @@ const Phase1Section: React.FC = () => {
         <PhaseContentBlock>
           <PhaseImageWrapper>
             <PhaseImage 
-              src="/assets/images/development/phase1/2.png" 
+              src="/assets/images/development/phase1/2.webp" 
               alt="Strategic Positioning"
             />
           </PhaseImageWrapper>
@@ -59,7 +59,7 @@ const Phase1Section: React.FC = () => {
         <PhaseContentBlock $reverse>
           <PhaseImageWrapper $reverse>
             <PhaseImage 
-              src="/assets/images/development/phase1/3.png" 
+              src="/assets/images/development/phase1/3.webp" 
               alt="Key Objectives"
             />
           </PhaseImageWrapper>
@@ -77,7 +77,7 @@ const Phase1Section: React.FC = () => {
         <PhaseContentBlock>
           <PhaseImageWrapper>
             <PhaseImage 
-              src="/assets/images/development/phase1/4.png" 
+              src="/assets/images/development/phase1/4.webp" 
               alt="Investment Timeline"
             />
           </PhaseImageWrapper>

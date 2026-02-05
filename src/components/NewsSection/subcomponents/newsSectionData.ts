@@ -62,7 +62,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "October 8, 2025",
     location: "Bradenton, Florida",
     category: "Event",
-    image: "/assets/images/news/10-08-25.png",
+    image: "/assets/images/news/10-08-25.webp",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), was invited by the Ministry of Economic Affairs of Taiwan (R.O.C.) to attend the Aerospace and UAV Summit to be held in Taipei on October 23rd, 2025.",
       "According to David Champ, President and CEO of the company, this very important summit will be held at the Sheraton Grand Hotel in Taipei on October 23rd. It is focused to promote the collaboration between U.S. and Taiwan in 'Non-Red Supply Chain' and to encourage the Taiwanese companies to set up their manufacturing operations in the U.S.",
@@ -94,7 +94,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "September 30, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Company Update",
-    image: "/assets/images/news/09-30-25.png",
+    image: "/assets/images/news/09-30-25.webp",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), is now gearing up to enter the 700 billion dollar affordable housing market in the U.S.",
       "According to David Champ, President and CEO of the company, affordable housing has been in huge demand throughout the U.S. in recent years (approximately 9 million units according to NLIHC), driven by a mix of economic pressures, demographics shifts, and policy uncertainty.",
@@ -110,7 +110,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "September 19, 2025",
     location: "Bradenton, Florida",
     category: "Company Update",
-    image: "/assets/images/news/09-19-25.png",
+    image: "/assets/images/news/09-19-25.webp",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), is announcing the completion of the architectural design of Paradise Island's Phase One development project.",
       "According to David Champ, President and CEO of the company, ASC Global Inc. executed a L.O.I. with American Software Capital (ASC) in October 2024 to acquire the Paradise Island Project in Florida. It is a 165 acres premium development site, consisted by a peninsula, two larger islands and several smaller islands.",
@@ -126,7 +126,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "September 15, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Event",
-    image: "/assets/images/news/09-15-25.jpg",
+    image: "/assets/images/news/09-15-25.webp",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), held another successful online summit on Zoom for its APOZ (Asia Pacific Opportunity Zone) project on September 5th.",
       "As per Mr. David Champ, President & CEO of Token Communities and Founder of APOZ, now more and more people are realizing this rare and unique FTZ + QOZ dual-status master planned development project is the answer to the present tariff war era as it can create an ideal and harmonious solution to U.S. economic growth and overseas manufacturers.",
@@ -173,7 +173,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     date: "August 11, 2025",
     location: "Asian Pacific Industrial Park",
     category: "Press Release",
-    image: "/assets/images/news/08-11-25.jpg",
+    image: "/assets/images/news/08-11-25.webp",
     paragraphs: [
       "ASC Global Inc., a wholly-owned subsidiary of Token Communities (OTC: TKCM), recently has received a great deal of interests and inquiries from many domestic companies in the U.S.",
       "According to Mr. David Champ, the President & CEO of the company, as the APOZ (Asia Pacific Opportunity Zone) project is moving forward steadily over the past few months, this unique FTZ + QOZ Business Park concept is quickly gaining name recognition from the business communities around the globe.",
