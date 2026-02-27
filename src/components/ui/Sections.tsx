@@ -45,17 +45,8 @@ export const GreySection = styled.section<{ $noTopPadding?: boolean; $reducedTop
 
 export const TealSection = styled.section`
   background: linear-gradient(to bottom, ${({ theme }) => theme.colors.white} 50%, ${({ theme }) => theme.colors.grey} 50%);
-  padding: ${({ theme }) => theme.spacing.xxxl} 0;
   position: relative;
   z-index: 10;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) => theme.spacing.xxl} 0;
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    padding: ${({ theme }) => theme.spacing.xl} 0;
-  }
 `;
 
 export const TealBox = styled.div`

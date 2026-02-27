@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "服务"
+    "title": "我们的服务"
   },
   "nav": {
     "home": "首页"
@@ -117,17 +117,16 @@
     "service5_impact": "保护租户、工人和货物。",
     "tenantSupport_heading": "租户支持服务",
     "tenantSupport_text": "租户获得全面支持，包括FTZ合规协助以最大化关税节省并应对海关法规。团队为制造和物流流程提供持续的运营指导,同时促进与当地供应商、服务提供商和商业网络的连接。额外的支持包括劳动力招聘协助和培训计划协调，帮助企业建立和留住合格的团队。",
-    "technology_heading": "技术和基础设施",
-    "technology_text": "工业区利用先进的技术系统增强安全性和运营效率。实时监控公用事业和环境系统确保设施的最佳性能，而数字平台简化FTZ文档和海关报告。智能建筑控制优化所有设施的能源使用，降低成本并支持可持续发展目标。",
-    "strategicTenantSupport_heading": "战略租户支持",
-    "tenantSupport1": "定制设施：为制造或保税仓库定制设计。",
-    "tenantSupport2": "海关便利化：APOZ为FTZ申报和合规提供直接支持。",
-    "tenantSupport3": "劳动力住房整合：与第二阶段经济适用房开发合作，为员工提供住房。",
-    "tenantSupport4": "搬迁服务：APOZ协助亚太公司在美国建立业务。",
     "technology_heading": "技术与智能区域整合",
     "technology1": "ERP和库存跟踪：用于FTZ报告和供应链可视性的集中平台。",
     "technology2": "智能安全系统：AI驱动的访问控制和货物监控。",
     "technology3": "可持续发展管理：能源优化、EV基础设施和绿色认证。",
+    "technology1_name": "ERP和库存跟踪",
+    "technology1_description": "用于FTZ报告和供应链可视性的集中平台。",
+    "technology2_name": "智能安全系统",
+    "technology2_description": "AI驱动的访问控制和货物监控。",
+    "technology3_name": "可持续发展管理",
+    "technology3_description": "能源优化、EV基础设施和绿色认证。",
     "revenue1_source": "租赁收入",
     "revenue1_description": "来自制造租户、物流运营商和保税仓储。",
     "revenue2_source": "服务费",

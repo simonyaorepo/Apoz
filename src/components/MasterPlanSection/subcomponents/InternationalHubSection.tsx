@@ -119,7 +119,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = () => {
         </TealBox>
       </TealSection>
       
-      <GreySection $reducedTopPadding>
+      <GreySection>
         <Container>
           <TextContent>
             <SectionTitle>{t('internationalHub.core_functions_title')}</SectionTitle>
@@ -178,7 +178,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = () => {
         </GreyContentGrid>
       </GreySection>
 
-      <WhiteSection>
+      <GreySection>
         <Container>
           <TextContent>
             <SubsectionTitle>{t('internationalHub.industries_heading')}</SubsectionTitle>
@@ -202,7 +202,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = () => {
             </IndustryGrid>
           </TextContent>
         </Container>
-      </WhiteSection>
+      </GreySection>
 
       <GoldDivider />
 

@@ -8,8 +8,8 @@ const ServicesHero: React.FC = () => {
   return (
     <PageHero
       backgroundImage="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
-      title={t('overview.title')}
-      breadcrumbs={[{ label: t('nav.home', 'Home'), href: "/" }, { label: t('overview.title') }]}
+      title={t('hero.title')}
+      breadcrumbs={[{ label: t('nav.home', 'Home'), href: "/" }, { label: t('hero.title') }]}
     />
   );
 };

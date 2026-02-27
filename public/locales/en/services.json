@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "Services"
+    "title": "Our Services"
   },
   "nav": {
     "home": "Home"
@@ -123,17 +123,16 @@
     "service5_impact": "Protects tenants, workers, and cargo.",
     "tenantSupport_heading": "Tenant Support Services",
     "tenantSupport_text": "Tenants receive comprehensive support including FTZ compliance assistance to maximize duty savings and navigate customs regulations. The team provides ongoing operational guidance for manufacturing and logistics processes, while facilitating connections to local suppliers, service providers, and business networks. Additional support includes workforce recruitment assistance and training program coordination to help businesses build and retain qualified teams.",
-    "technology_heading": "Technology & Infrastructure",
-    "technology_text": "The industrial zone leverages advanced technology systems for enhanced security and operational efficiency. Real-time monitoring of utilities and environmental systems ensures optimal facility performance, while digital platforms streamline FTZ documentation and customs reporting. Smart building controls optimize energy usage across all facilities, reducing costs and supporting sustainability goals.",
-    "strategicTenantSupport_heading": "Strategic Tenant Support",
-    "tenantSupport1": "Built-to-Suit Facilities: Custom design for manufacturing or bonded warehouses.",
-    "tenantSupport2": "Customs Facilitation: APOZ provides direct support for FTZ declarations and compliance.",
-    "tenantSupport3": "Workforce Housing Integration: Collaboration with Phase 2 affordable housing development to house employees.",
-    "tenantSupport4": "Relocation Services: APOZ assists Asia-Pacific companies setting up U.S. operations.",
     "technology_heading": "Technology & Smart Zone Integration",
     "technology1": "ERP & Inventory Tracking: Centralized platform for FTZ reporting and supply chain visibility.",
     "technology2": "Smart Security Systems: AI-driven access control and cargo monitoring.",
     "technology3": "Sustainability Management: Energy optimization, EV infrastructure, and green certifications.",
+    "technology1_name": "ERP & Inventory Tracking",
+    "technology1_description": "Centralized platform for FTZ reporting and supply chain visibility.",
+    "technology2_name": "Smart Security Systems",
+    "technology2_description": "AI-driven access control and cargo monitoring.",
+    "technology3_name": "Sustainability Management",
+    "technology3_description": "Energy optimization, EV infrastructure, and green certifications.",
     "revenue1_source": "Lease Income",
     "revenue1_description": "From manufacturing tenants, logistics operators, and bonded storage.",
     "revenue2_source": "Service Fees",

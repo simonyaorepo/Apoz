@@ -153,7 +153,7 @@ const CommunityManagementSection: React.FC<CommunityManagementSectionProps> = ()
         </TealBox>
       </TealSection>
       
-      <GreySection $reducedTopPadding>
+      <GreySection>
         <Container>
           <TextContent>
             <SubsectionTitle>{t('sectionHeaders.keyCommunityServices')}</SubsectionTitle>

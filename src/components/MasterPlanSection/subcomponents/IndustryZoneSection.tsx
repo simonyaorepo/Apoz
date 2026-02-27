@@ -76,7 +76,7 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = () => {
         </TealBox>
       </TealSection>
 
-      <GreySection $reducedTopPadding>
+      <GreySection>
         <Container>
           <TextContent>
             <SectionTitle>{t('industryZone.services_title')}</SectionTitle>

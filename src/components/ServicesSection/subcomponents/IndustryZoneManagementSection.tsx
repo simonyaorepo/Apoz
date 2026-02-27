@@ -5,10 +5,11 @@ import GoldDivider from "../../ui/GoldDivider";
 import styled from "styled-components";
 import { WhiteSection, GreySection, TealSection, TealBox } from "../../ui/Sections";
 import { Container } from "../../ui/Containers";
-import { ContentGrid, GreyContentGrid } from "../../ui/Grids";
+import { ContentGrid, GreyContentGrid, TwoColumnGrid } from "../../ui/Grids";
 import { TextContent, SubsectionTitle, IntroTextContent } from "../../ui/Typography";
 import { IllustrationBox, ImageBox } from "../../ui/Media";
 import { StyledTable } from "../../ui/Table";
+import { OutlineCard } from "../../ui/Cards";
 
 const TealText = styled.p`
   color: white;
@@ -49,6 +50,21 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
       category: t('services:industryZoneManagement.service5_category'),
       scope: t('services:industryZoneManagement.service5_scope'),
       impact: t('services:industryZoneManagement.service5_impact')
+    }
+  ];
+  
+  const technologies = [
+    {
+      name: t('services:industryZoneManagement.technology1_name'),
+      description: t('services:industryZoneManagement.technology1_description')
+    },
+    {
+      name: t('services:industryZoneManagement.technology2_name'),
+      description: t('services:industryZoneManagement.technology2_description')
+    },
+    {
+      name: t('services:industryZoneManagement.technology3_name'),
+      description: t('services:industryZoneManagement.technology3_description')
     }
   ];
   
@@ -133,7 +149,7 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
         </TealBox>
       </TealSection>
       
-      <GreySection $reducedTopPadding>
+      <GreySection>
         <Container>
           <TextContent>
             <SubsectionTitle>{t('sectionHeaders.keyManagementServices')}</SubsectionTitle>
@@ -182,9 +198,14 @@ const IndustryZoneManagementSection: React.FC<IndustryZoneManagementSectionProps
         <Container>
           <TextContent>
             <SubsectionTitle>{t('services:industryZoneManagement.technology_heading')}</SubsectionTitle>
-            <p>
-              {t('services:industryZoneManagement.technology_text')}
-            </p>
+            <TwoColumnGrid>
+              {technologies.map((tech, idx) => (
+                <OutlineCard key={idx}>
+                  <h4>{tech.name}</h4>
+                  <p>{tech.description}</p>
+                </OutlineCard>
+              ))}
+            </TwoColumnGrid>
           </TextContent>
         </Container>
       </GreySection>

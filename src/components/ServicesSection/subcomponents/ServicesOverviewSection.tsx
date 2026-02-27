@@ -158,7 +158,7 @@ const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = () => {
         </TealBox>
       </TealSection>
       
-      <GreySection $reducedTopPadding>
+      <GreySection>
         <Container>
           <TextContent>
             <SubsectionTitle>{t('overview.tenantServices_heading')}</SubsectionTitle>

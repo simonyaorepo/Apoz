@@ -123,7 +123,7 @@ const IndustryZoneInvestmentSection: React.FC<IndustryZoneInvestmentSectionProps
         </TealBox>
       </TealSection>
 
-      <GreySection $reducedTopPadding>
+      <GreySection>
         <Container>
           <SectionTitle>{t('industryZoneFTZ.targetIndustriesTitle')}</SectionTitle>
           

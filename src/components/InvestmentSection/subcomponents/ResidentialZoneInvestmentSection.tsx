@@ -171,7 +171,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
         </TealBox>
       </TealSection>
 
-      <GreySection $reducedTopPadding>
+      <GreySection>
         <Container>
           <SectionTitle>{t('residentialZone.qof_how_title')}</SectionTitle>
           <IntroText>

@@ -49,13 +49,17 @@ const StrategyTable = styled.table`
     padding: ${({ theme }) => theme.spacing.lg};
     text-align: left;
     border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-    font-size: ${({ theme }) => theme.fontSizes.md};
   }
   
   th {
     background-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.white};
     font-weight: ${({ theme }) => theme.fontWeights.semibold};
+    font-size: ${({ theme }) => theme.fontSizes.md};
+  }
+  
+  td {
+    font-size: ${({ theme }) => theme.fontSizes.sm};
   }
   
   tr:hover {
@@ -125,14 +129,14 @@ const CapitalCard = styled.div`
   
   h4 {
     color: ${({ theme }) => theme.colors.darkBlue};
-    font-size: ${({ theme }) => theme.fontSizes.h5};
+    font-size: ${({ theme }) => theme.fontSizes.md};
     font-weight: ${({ theme }) => theme.fontWeights.semibold};
     margin-bottom: ${({ theme }) => theme.spacing.sm};
   }
   
   p {
     margin: ${({ theme }) => theme.spacing.sm} 0;
-    font-size: ${({ theme }) => theme.fontSizes.md};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
     color: ${({ theme }) => theme.colors.foreground};
     line-height: 1.6;
     
@@ -146,7 +150,7 @@ const CapitalCard = styled.div`
     padding: ${({ theme }) => theme.spacing.md};
     
     h4 {
-      font-size: ${({ theme }) => theme.fontSizes.md};
+      font-size: ${({ theme }) => theme.fontSizes.sm};
     }
     
     p {

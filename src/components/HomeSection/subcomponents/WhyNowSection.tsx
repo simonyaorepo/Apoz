@@ -73,32 +73,32 @@ const DataCard = styled.div`
 `;
 
 const DataTitle = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
+  font-size: ${({ theme }) => theme.fontSizes.md};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
   color: ${({ theme }) => theme.colors.darkBlue};
   margin-bottom: ${({ theme }) => theme.spacing.md};
 `;
 
 const DataStat = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes.h3};
+  font-size: ${({ theme }) => theme.fontSizes.h4};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   color: ${({ theme }) => theme.colors.teal};
   margin-bottom: ${({ theme }) => theme.spacing.md};
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: ${({ theme }) => theme.fontSizes.h4};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
   }
 `;
 
 const DataDescription = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.md};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   color: ${({ theme }) => theme.colors.foreground};
   line-height: 1.7;
   margin-bottom: ${({ theme }) => theme.spacing.sm};
 `;
 
 const DataImpact = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.md};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
   color: ${({ theme }) => theme.colors.darkBlue};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   line-height: 1.6;

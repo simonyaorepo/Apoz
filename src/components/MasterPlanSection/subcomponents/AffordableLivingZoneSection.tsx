@@ -84,7 +84,7 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
         </TealBox>
       </TealSection>
 
-      <GreySection $reducedTopPadding>
+      <GreySection>
         <Container>
           <TextContent>
             <SectionTitle>{t('affordableLiving.services_title')}</SectionTitle>

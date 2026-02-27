@@ -119,7 +119,7 @@ const ResidentialManagementSection: React.FC<ResidentialManagementSectionProps> 
         </TealBox>
       </TealSection>
       
-      <GreySection $reducedTopPadding>
+      <GreySection>
         <Container>
           <TextContent>
             <SubsectionTitle>{t('services:residentialManagement.core_services_title')}</SubsectionTitle>
