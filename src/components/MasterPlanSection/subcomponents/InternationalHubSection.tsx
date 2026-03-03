@@ -50,7 +50,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = () => {
     <>
       <TextHero
         title={t('internationalHub.title')}
-        backgroundImage="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        backgroundImage="/assets/images/masterPlan/internationalHub/hero.png"
         breadcrumbs={[
           { label: t('common:breadcrumbs.home'), href: "/" },
           { label: t('common:breadcrumbs.masterPlan'), href: "/master-plan" },
@@ -164,7 +164,7 @@ const InternationalHubSection: React.FC<InternationalHubSectionProps> = () => {
         <GreyContentGrid>
             <ImageBox>
               <img 
-                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" 
+                src="/assets/images/masterPlan/internationalHub/hero.png" 
                 alt="Strategic advantages"
               />
             </ImageBox>

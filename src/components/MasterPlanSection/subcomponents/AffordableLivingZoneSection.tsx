@@ -21,7 +21,7 @@ const AffordableLivingZoneSection: React.FC<AffordableLivingZoneSectionProps> = 
     <>
       <TextHero
         title={t('affordableLiving.title', 'Affordable Living Zone')}
-        backgroundImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        backgroundImage="/assets/images/masterPlan/affordableLivingZone/hero.png"
         breadcrumbs={[
           { label: t('common:breadcrumbs.home'), href: "/" },
           { label: t('common:breadcrumbs.masterPlan'), href: "/master-plan" },

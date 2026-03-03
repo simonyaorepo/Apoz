@@ -85,7 +85,7 @@ const ResidentialZoneInvestmentSection: React.FC<ResidentialZoneInvestmentSectio
     <>
       <TextHero
         title={t('residentialZone.title', 'Residential Zone Investment Opportunities')}
-        backgroundImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
+        backgroundImage="/assets/images/investment/residentalZone/hero.png"
         breadcrumbs={[
           { label: t('common:breadcrumbs.home'), href: "/" },
           { label: t('common:breadcrumbs.investment'), href: "/investment" },

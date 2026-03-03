@@ -20,7 +20,7 @@ const IndustryZoneSection: React.FC<IndustryZoneSectionProps> = () => {
     <>
       <TextHero
         title={t('industryZone.title', 'Industry Zone')}
-        backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
+        backgroundImage="/assets/images/masterPlan/industrialZone/hero.png"
         breadcrumbs={[
           { label: t('common:breadcrumbs.home'), href: "/" },
           { label: t('common:breadcrumbs.masterPlan'), href: "/master-plan" },
